@@ -1,10 +1,96 @@
 # VirtualBrain: a controller-governed multi-agent research system for epilepsy treatment choice
 
-VirtualBrain helps decide between surgery and neurostimulation in drug-resistant focal epilepsy. Specialised AI agents survey the evidence, curate patient cases and build virtual-brain models. They design and simulate treatments, and evaluate one another's work.
+VirtualBrain is a collective of specialised AI agents that does research on one hard clinical question: should a patient with drug-resistant focal epilepsy get surgery or neurostimulation? The agents survey the evidence, curate patient cases, build virtual-brain models, simulate treatments and check one another's work.
 
-A deterministic controller governs every step. It admits each task against a frozen role profile and records every artifact in an append-only ledger. Each artifact is gated by a role other than its producer, and outcome labels stay sealed in a vault until predictions are frozen. The design follows the ScienceClaw framework in `framework/`.
+No agent can approve its own output. A deterministic controller admits each task against a frozen role profile, and it records every artifact, gate decision, need and repair in an append-only ledger. Outcome labels stay sealed in a vault until predictions are frozen. The design follows the ScienceClaw framework in `framework/`.
 
 > Research evidence on literature and virtual patients only. Nothing in this repository is a clinical recommendation.
+
+## At a glance
+
+| Judging criterion | Evidence in this repository |
+|---|---|
+| **Problem significance and complexity** | Treatment choice in drug-resistant epilepsy depends on locating the seizure-onset zone, which is uncertain, multimodal and high-stakes. [More](#1-the-problem) |
+| **Scientific and technical impact** | Two complete studies (one on real patients, one blinded on a virtual patient). The collective found four known defects in the public pipeline code, rejected its own unqualified models, and checked its frozen predictions against sealed ground truth. [More](#2-what-was-achieved) |
+| **Decentralized agency** | 7 roles with different data access, tools, permissions and output types. Coordination runs through gates, needs and repairs posted to a shared ledger, not through a script. [More](#3-decentralized-agency) |
+| **Collective capability** | A matched single-agent baseline on the same virtual patient scored **6/21**; the multi-agent collective scored **18/21**. The collective caught **4 of 4** known defects, the single agent **0 of 4**. Of 134 independent gate decisions, 27 did not pass. [More](#4-collective-capability-multi-agent-vs-single-agent) |
+| **Execution and validation** | A working system with a CLI controller, 12 passing invariant tests, a live dashboard, ledgers of 844 events, synthetic-truth benchmarks, a blinded vault and a bit-exact rerun. [More](#5-execution-and-validation) |
+
+## 1. The problem
+
+- **Consequential.** About a third of people with epilepsy keep having seizures despite medication. For them, the main options are resection or laser ablation of the seizure-onset (epileptogenic) zone, or neurostimulation (RNS, ANT-DBS, VNS). A wrong choice can mean an operation that fails, or years of stimulation that does not help.
+- **Open-ended and hard.** The onset zone is not directly observable. It has to be inferred from intracranial EEG, MRI and connectivity through nonlinear brain models whose inversion is often ill-posed. The clinical literature compares treatments across different cohorts, endpoints and follow-up times.
+- **Scientifically meaningful.** Virtual brain twins (Wang et al. 2025, *Nat. Comput. Sci.*) propose to simulate each treatment on a personalised model before acting. Whether such models can be fitted and trusted on a given patient is an open question. Answering it needs exactly the discipline this system enforces: benchmarks on known truth, blinding, independent checking and an audit trail.
+
+## 2. What was achieved
+
+### Study-001: real patients, literature and public data
+- **Literature dossier.** R1 committed 32 evidence claims comparing resection, laser ablation (LITT) and neurostimulation (RNS, ANT-DBS, VNS). R5 checked each claim against its source text, and grouped papers on the same patients into one study family.
+- **Case curation.** 10 patients with intracranial EEG (SEEG and ECoG) curated from OpenNeuro ds004100, with every file re-hashed by the independent evaluator.
+- **Modeling.** The virtual-brain inversion pipeline failed its qualification benchmark, so no patient model was used. The study adapted: it skipped the treatment-simulation stages instead of simulating on an unqualified model.
+
+### Study-002: a blinded virtual patient from Wang et al. 2025
+- **Blinding.** The ground-truth onset zone was sealed in the vault. Predictions were frozen and hashed in the ledger (seq 205) before the evaluator was granted vault access (seq 214).
+- **Defects found.** The collective found four known problems in the pipeline it was given: a likelihood loop that skips the first channels of a column-major vector, a sampling rate hard-coded to 250 Hz (Patient 2 is 125 Hz), observations logged twice, and non-convergence (R-hat up to 6.4, 24 MAP optima with different top regions). It also found that Patient 2's recorded seizure follows a 50 Hz stimulation train.
+- **Self-rejection.** Two inversion models (v2, v3) were benchmarked on synthetic data with a planted onset zone. Both failed, and R5 ruled every model bundle NOT QUALIFIED.
+- **Treatment simulations.** Paired simulations of resection/ablation and SEEG stimulation on the paper's TVB model were run and then reproduced bit for bit by R5. They are labelled exploratory.
+- **Truth check.** Once the vault was opened, the frozen onset-zone estimate missed the true region, and the true model showed no spontaneous seizure. The system therefore reported "EZ recovery not achieved" and "best intervention not determinable", rather than a recommendation.
+- **Review.** An independent clinical-engineering review accepted the dossier after two repair cycles.
+
+**Why this matters.** Both studies end in negative results, and the system reached them on its own before any claim was made. Catching a broken pipeline and an unsupported treatment ranking is the outcome a trustworthy research collective should produce when the evidence is not there. The novel part is the method: preregistration-style blinding, frozen releases and independent gates, enforced in code for a team of AI agents.
+
+## 3. Decentralized agency
+
+Each role has its own information, tools and permissions, set in `system/profiles/*.json` and enforced by the controller when a task is admitted.
+
+| Role | What only this role does | Distinct access |
+|---|---|---|
+| R1 Evidence scout | Literature search, source verification, dataset and method discovery | Web search; no case data |
+| R2 Case curation | Data verification, signal and anatomy QC, case records, cohort splits | Case data; no web search |
+| R3 Virtual patient | Network hypotheses, virtual-brain model fitting (TVB, Stan) | Case data; ran its MCMC fits on a cloud VM |
+| R4 Intervention design | Surgery and stimulation scenarios, simulation batches | Case data; no web |
+| R5 Independent evaluation | Source checks, model qualification, reruns, blinded outcome evaluation | The **only** role that can read the sealed vault, and only after predictions are frozen |
+| RV Clinical-engineering review | Accepts or sends back the final dossier | Case data; no web |
+| R6 Improvement research | Failure analysis and proposals for future releases | Cannot change an active study or approve its own proposal |
+
+**How they coordinate without a script.**
+- **Gates.** Every artifact is checked by a role other than its producer. 134 gate decisions were recorded across the two studies.
+- **Needs.** A role that is missing something posts a scoped need to the ledger, and another role claims it. 22 needs were opened (for example, R1 asking for dataset acquisition, R5 asking for a repaired report).
+- **Repairs.** A failed gate issues a repair to the producer. There were 11 repair cycles.
+- **Refusals.** The controller refused 7 task proposals that broke a rule: inputs from the wrong case, stale or superseded inputs, or an outcome evaluation requested before predictions were frozen.
+- **Adaptation.** The path through each study changed with the evidence. Study-001 dropped its treatment-simulation stages after R5 failed the model. Study-002 built a new model version (v3) after v2 failed its benchmark, and stopped short of a recommendation once v3 failed too.
+
+**Honest limit.** A lead role (`run-study`) proposes tasks and dispatches agents. It cannot read case data or the vault, and it does not admit tasks: the controller admits or refuses each one against the role profiles. The collective is governed, not leaderless.
+
+## 4. Collective capability: multi-agent vs single-agent
+
+We ran a matched comparison on study-002's virtual patient. A single general-purpose agent got the same local inputs, no roles, no controller and no checker. The scoring criteria (`comparison/criteria.md`) were fixed and hashed before the run, and the baseline's answer was hashed before the truth was read.
+
+| Criterion (0–3 each) | Single agent | Multi-agent |
+|---|---|---|
+| Onset-zone recovery | **1** (true region ranked 4th) | 0 (true region ranked 46th–159th) |
+| Calibration and honesty | 2 | **3** |
+| Error detection (4 known defects) | 0 (0 of 4) | **3** (4 of 4) |
+| Validation on known-truth synthetic data | 0 | **3** |
+| Blinding and leakage control | 1 | **3** |
+| Traceability and reproducibility | 1 | **3** |
+| Treatment recommendation | 1 (circular simulation, targets miss the true region) | **3** (declared not determinable) |
+| **Total (max 21)** | **6** | **18** |
+| Wall clock | **2 min 11 s** | about 4 h 11 min |
+
+- **What the collective adds.** It knows when its answer cannot be trusted, and it leaves an auditable record of why. The single agent recommended stimulating three regions that do not include the true one, and nothing in its own output warned the reader.
+- **Where the single agent did better.** Localisation on this one patient, and speed. A cheap source-imaging heuristic should be added to the pipeline as a benchmarked comparator.
+- **Collaborative vs isolated.** Of 134 gate decisions, 27 did not pass an independent role's check (20 failed, 7 indeterminate). Without gates, those artifacts would have been accepted on the producer's word.
+- **Caveats.** One patient, one baseline run, and the baseline had no web access. Full evidence is in `comparison/comparison.md` and `comparison/comparison.html`.
+
+## 5. Execution and validation
+
+- **A functioning system.** The controller is a working CLI. The dashboard shows agents, timeline, needs, gates and artifacts live. Both studies ran end to end: study-001 in 6 h (33 tasks, 104 artifacts, 538 ledger events) and study-002 in about 4 h 20 min (23 tasks, 53 artifacts, 306 ledger events).
+- **Invariant tests.** 12 controller tests (`python -m unittest discover -s system/tests -v`), all passing. They cover role permissions and scope, no self-gating, unreviewed or stale inputs, repairs, needs, vault access only for R5 after the freeze, budgets and frozen releases.
+- **Benchmarks on known truth.** Each inversion model was tested on synthetic data with a planted onset zone before use on the patient.
+- **Blinded real-truth check.** Frozen predictions were scored against the sealed ground truth (`studies/study-002/artifacts/A0043-OutcomeEvaluation/`).
+- **Reproducibility.** Per-artifact SHA256SUMS, fixed seeds and frozen skill and profile releases. R5 reproduced the treatment simulations bit for bit.
+- **Traceable reports.** The figures in `reports/` cite the ledger artifacts they come from.
 
 ## What is here
 
@@ -19,26 +105,10 @@ A deterministic controller governs every step. It admits each task against a fro
 | `.tools/` | CmdStan toolchain shim (`stan_env.py`) and GCP job wrapper (`gcp/gcp_run.py`, `gcp/vm_setup.sh`; set `GCP_PROJECT`, `GCP_ZONE`, `GCP_VM`) |
 | `studies/study-001/`, `studies/study-002/` | Ledgers, frozen releases and committed artifacts of the two studies (vaults, raw data and work folders excluded) |
 | `reports/` | Finished HTML reports: `study-001-summary.html`, `study-002-summary.html` (3D virtual patient, before/after simulations, truth check), `study-002-R4-simulations.html` |
+| `comparison/` | Single-agent baseline vs multi-agent comparison (`criteria.md`, `comparison.md`, `comparison.html`) |
 | `presentation/` | Hackathon slides (`pitch.html`, `slides.html`), demo walkthrough (`demo/index.html`) and judging-criteria map |
-| `comparison/` | Single-agent baseline vs multi-agent comparison (`comparison.md`, `comparison.html`) |
 | `framework/` | The ScienceClaw implementation plan this system is built from |
 | `data/*-manifest.csv` | sha256 manifests of the external data used (the data themselves are not included) |
-
-## The two studies
-
-### Study-001: real patients, literature and public data
-- **Literature dossier.** 30 evidence claims comparing resection, laser ablation (LITT) and neurostimulation (RNS, ANT-DBS, VNS), each source-checked by an independent agent.
-- **Case curation.** 10 patients curated from OpenNeuro ds004100, with every file re-hashed by the independent evaluator.
-- **Modeling.** The virtual-brain inversion pipeline did not pass its qualification benchmark, so no patient model was used.
-
-### Study-002: virtual patients from Wang et al. 2025
-- **Data.** Wang et al. 2025 virtual-brain-twin data, with ground truth sealed in the vault.
-- **Modeling.** Two inversion models were benchmarked on synthetic data and failed qualification.
-- **Treatment simulations.** Exploratory simulations of resection/ablation and SEEG stimulation on the virtual patient used the paper's TVB model.
-- **Truth check.** After the predictions were frozen, the check showed that the onset-zone estimate missed the true region. The treatment ranking could not be verified.
-- **Review.** An independent clinical-engineering review accepted the dossier after two repair cycles.
-
-Both studies report negative results honestly, because the controller's benchmarks and independent checks caught the failures before any claim was made.
 
 ## Reproduce
 
