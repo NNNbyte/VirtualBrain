@@ -1,4 +1,4 @@
-# VirtualBrain: a decentrualized multi-agent research system for epilepsy treatment choice
+# VirtualBrain: a Decentralized multi-agent research system for epilepsy treatment choice
 
 VirtualBrain is a collective of specialised AI agents that does research on one hard clinical question: should a patient with drug-resistant focal epilepsy get surgery or neurostimulation? The agents survey the evidence, curate patient cases, build virtual-brain models, simulate treatments and check one another's work.
 
