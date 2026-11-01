@@ -1,0 +1,51 @@
+{
+  "artifact_id": "A0024-SurgeryPlan",
+  "schema_name": "SurgeryPlan",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0015",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R4-intervention-design",
+  "tool_id": "studies/study-002/work/T0015/sim/p2sim.py",
+  "tool_version": "p2sim 1.0 sha256 7e5cbbaeee3676335fcedef3bc1bb4c888cdeef0db43f958ddd60247ca727c21",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0006-MethodCard",
+    "A0009-PatientCase",
+    "A0010-QCReport",
+    "A0015-Report"
+  ],
+  "input_manifest_hash": "47ff4661bf70c5535d97e920165f2c21c8ec4728321c626c3e19da937c8ebd17",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0024-SurgeryPlan/payload.json",
+      "media_type": "application/json",
+      "sha256": "23fe98c1da91f6f528125a62a90472ad666ad71de5b5b1d95b35f2d0449e6e98",
+      "byte_size": 2573
+    }
+  ],
+  "scientific_context": {
+    "coordinate_frame": "not_applicable (atlas-level virtual patient)",
+    "coordinate_units": "not_applicable (atlas-level virtual patient)",
+    "transform_chain_id": "not_applicable (atlas-level virtual patient)",
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T14:57:24+00:00",
+  "supersedes_id": null,
+  "title": "SurgeryPlan RES-EZ+PZ: estimated EZ set plus the two propagation regions most strongly coupled to it (rule)",
+  "manifest_hash": "71a59aabe8bd6788c2a5e47c222118a4285e98167a83b484a5c45957f47d4a5a"
+}

@@ -1,0 +1,42 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "R5-independent-evaluation",
+  "role": "independent_evaluation",
+  "display_name": "R5 \u00b7 Independent evaluation",
+  "enabled": true,
+  "color": "#b03a4a",
+  "stage": "evaluation",
+  "description": "Independent reruns, simulation comparison, and blinded historical-outcome evaluation.",
+  "skill": "r5-independent-evaluation",
+  "allowed_tools": [
+    "epilepsy-independent-rerun",
+    "epilepsy-robustness",
+    "epilepsy-simulation-comparison",
+    "epilepsy-outcome-evaluation"
+  ],
+  "allowed_output_types": [
+    "simulation_comparison",
+    "outcome_evaluation",
+    "validation_report",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": true,
+    "read_case_data": true,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": false
+  },
+  "reserved_outcome_task_types": [
+    "outcome_evaluation"
+  ],
+  "scope_requirements": {
+    "study_id": "required",
+    "case_id": "required_for_case_tasks",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 10
+  }
+}

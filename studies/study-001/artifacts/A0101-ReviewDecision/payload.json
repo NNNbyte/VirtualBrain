@@ -1,0 +1,89 @@
+{
+  "reviewer_role": "clinical+engineering",
+  "decision": "revision_requested",
+  "intended_use": "Research evidence synthesis and dataset/method landscape for surgery vs neurostimulation in drug-resistant focal epilepsy, plus a report that the virtual-patient arm was not qualified. Not a clinical recommendation for any patient. Acceptance concerns this stated research use only.",
+  "affected_artifact_ids": [
+    "A0099-DecisionBundle",
+    "A0100-Report"
+  ],
+  "reason": {
+    "summary": "The dossier is sound in its main conclusions: literature numbers in sections 1-4 trace to A0063/A0031 and the cited EvidenceClaims A0016-A0030 and A0055-A0057; evidence kinds are tagged per section; the dataset ranking order and per-row facts match A0066 and the cards A0070/A0040/A0038/A0035/A0065/A0034/A0067; cohort split, case list and QC claims match A0071/A0072/A0094; the virtual-patient arm is correctly reported as NOT QUALIFIED with the A0098 numbers reproduced (R-hat max 4.24, 592/600 max treedepth, Left-O2 rank 113 pooled / 4 best mode / 15 FPs; arm A R-hat 1.96, P(rank1)=0.29, 3 FPs; arm B EZ first in all chains but not converged); the open-needs list equals `need list` (N001, N002, N003, N004, N006, N008, N010, N011, N013, N014); the ledger shows no vault reveal and no frozen predictions; no wording reads as a clinical recommendation. Revision is requested for two factual errors, one overstatement on outcome sealing/independence, and an incomplete reproducibility manifest. None of these changes the study's conclusions.",
+    "findings": [
+      {
+        "id": "F1",
+        "severity": "major (numeric error)",
+        "location": "A0100 section 6 'Limits R5 found' ('21 of 61 ictal runs end with constant EDF padding'); A0099 limitations[3] ('trailing EDF padding in 21/61 ictal runs (A0094)')",
+        "error": "Wrong denominator. 61 is the total number of runs swept for the 10 curated cases, not the number of ictal runs.",
+        "correct_value": "21 of 61 runs (41 ictal + 20 interictal) had a trailing constant EDF pad; all 21 are ictal, i.e. 21 of 41 ictal runs.",
+        "source": "A0094 result.r5_additional_findings[0] ('21/61 runs (ictal only, last EDF record)') and trailing_pad_sweep (21 entries, all ictal); ictal run counts per case from the A0072 case table: 4+5+5+2+4+5+4+5+5+2 = 41 ictal, 10 x 2 = 20 interictal."
+      },
+      {
+        "id": "F2",
+        "severity": "major (dataset overlap understated)",
+        "location": "A0100 section 5, sentence after the table ('Omni-iEEG aggregates HUP (58) and Zurich (20) recordings, so it overlaps ranks 1 and 3 (A0040)')",
+        "error": "Incomplete. Omni-iEEG also re-packages the Sarma-lab multicenter datasets ('Multicenter' 26 rows = ds003029 family; 'sourcesink' 39 rows = ds003876).",
+        "correct_value": "Omni-iEEG overlaps ranks 1, 3, 4 and 5 (ds004100, ds003498, ds003029, ds003876) and must not be counted as independent of any of them; its 'hup' subset is also the same family as rank 6 (Kini 2019, fam-hup-penn).",
+        "source": "A0040 eligibility and cohort_overlap ('Must NOT be counted as independent of ds004100, ds003029, ds003876, ds003498'; participants.tsv rows openieeg 185, hup 58, sourcesink 39, Multicenter 26, zurich 20); A0066 rank 2 text; A0065 and A0035 cohort_overlap."
+      },
+      {
+        "id": "F3",
+        "severity": "major (overstatement; independence disclosure incomplete)",
+        "location": "A0100 section 5 intro ('Outcome values in every dataset stay sealed; only the field names were checked.'); A0099/A0100 lack any statement about pre-sealing outcome exposure",
+        "error": "Not true for the whole discovery record. Discovery tasks opened the participants/clinical files that were sealed only afterwards as V001-V007 (ledger seq 105-111), and committed outcome-derived aggregates: A0033-DatasetCard and A0058-Report (both superseded) recorded the ds004100 outcome split S 36 / F 22 and therapy 29/29 (the reason for repair need N008); A0040 records 277 Omni participants with known binary outcome and has_resection=1 (Omni participants.tsv sha 45df8eaf..., later sealed as V007, includes per-subject binary Engel outcome for the HUP subjects); A0035 records NR = no resection for 5 subjects; A0038 records follow-up range 10-46 months with 2 subjects < 12 months.",
+        "correct_value": "State that ds004100 per-subject outcomes were extracted to the vault (V008/V009) at T0015 and never revealed, and that no outcome value appears in any study-cohort artifact; but that discovery-stage roles read participants files of ds004100, Omni-iEEG, ds003029, ds003498, ds003844 and ds003876 before they were sealed (V001-V007), and that cohort-level aggregates (ds004100 S36/F22 in superseded A0033/A0058; A0040 277 known outcomes; A0035 5 NR; A0038 follow-up range) are in the record. Add a limitation that any future P5 outcome evaluation on the ds004100 split must treat these as a leakage-risk path (aggregate split known; Omni per-subject HUP binary outcomes were readable by R1) and that modeling roles must remain isolated from those records.",
+        "source": "Ledger vault_sealed events V001-V009; need N008 'why'; A0058 rank 1 text; A0040 intervention_linkage; A0035 outcome_fields_present; A0038 follow_up_definition."
+      },
+      {
+        "id": "F4",
+        "severity": "moderate (engineering: reproducibility manifest incomplete)",
+        "location": "A0099 reproducibility_manifest; A0100 section 10 ('the artifact ids and manifest hashes are listed in the DecisionBundle's reproducibility_manifest')",
+        "error": "The manifest omits artifacts the report cites directly: A0017-A0030 (all numbers in sections 2-4), A0095-ModelBundle and A0097-ModelBundle (section 1 table and section 7; validation failed), and the 20 case records A0073-A0093 (section 6). It records no seeds and no environment digests, although both exist in the record.",
+        "correct_value": "Add A0017-A0030, A0095 and A0097 (with validation 'failed'), and A0073-A0078, A0080-A0093 PatientCase/QCReport ids with manifest hashes; add seeds: cohort split and case selection 20261101 (A0071, A0072), synthetic benchmark 20261129 (A0098 planted_truth_timing); add environment digests 09f208293c60c5f4... (main env; A0071/A0094 envelopes) and a3a5df5eee455a28... (.venv-model; A0095/A0097 envelopes). Alternatively, attribute every section-7 number to A0098 (where R5 reproduced it) and say explicitly that A0095/A0097 are cited as failed.",
+        "source": "A0099 payload reproducibility_manifest.artifacts (26 entries, none of the above); A0099/A0100 envelopes consumed_artifact_ids; envelopes of A0071, A0094, A0095, A0097 (environment_digest)."
+      },
+      {
+        "id": "F5",
+        "severity": "minor (imprecision)",
+        "location": "A0100 section 1 ('reduces median seizure frequency by roughly 40-75% depending on modality and follow-up')",
+        "error": "The range in the cited synthesis reaches 82% (RNS post-approval cohort, 3 y), which the report's own section 2 table shows.",
+        "correct_value": "roughly 41-82% (ANT-DBS 41% at 1 y to RNS 82% at 3 y in the post-approval cohort), or keep 40-75% and say it excludes the real-world/post-approval RNS cohorts (67-82%).",
+        "source": "A0031 SYNTHESIS paragraph; A0006 via A0031 (median 82% at 3 y)."
+      },
+      {
+        "id": "F6",
+        "severity": "minor (omission in cause list and defect list)",
+        "location": "A0100 section 7 'R5 verdict' and 'Package defects found'",
+        "error": "R5's failure attribution also names the observation model: the iid likelihood over-fits AR(1)-correlated noise (~1470 log units of the ~2700-unit preference for wrong configurations); this is omitted. The defect list gives 'noise padding creates step artefacts' (A0097 F2, R3-reported) but omits the end zero-padding defect (F3) that A0098 lists among confirmed package defects.",
+        "correct_value": "Add 'iid observation model that treats autocorrelated noise as signal' to the pipeline-level causes; list F3 end zero-padding (by inspection) alongside F2.",
+        "source": "A0098 result.log_density_at_truth_vs_posterior and failure_attribution; A0098 failure_cases[4]; A0097 deviations F2/F3."
+      },
+      {
+        "id": "F7",
+        "severity": "minor (evidence-kind labelling at envelope level)",
+        "location": "A0099 and A0100 envelopes: evidence_kind = literature_reported",
+        "error": "Both records also carry observed_measurement (section 6 QC) and simulated_result (section 7) content; the single envelope kind labels all of it as literature. The body keeps kinds apart, so this is a labelling issue, not a conflation in the text.",
+        "correct_value": "Use evidence_kind not_applicable (mixed dossier) on the envelopes, keeping per-section [lit]/[obs]/[sim] tags and per-comparison evidence_kind in the payload.",
+        "source": "A0099/A0100 manifest.json scientific_context.evidence_kind."
+      }
+    ],
+    "verified_without_change": [
+      "Sections 1-4 literature numbers: 58%/73% vs 8%/0/23, n=118 (A0017, A0018); 77% vs 7%, SAE 33%, hemiparesis 26% (A0019); 66%, 46%, 27% (A0020); 52%/47%, HR 2.0 (A0021); 72.5% vs 57.1% (A0027); LITT 53.4-58.0%, SLATE 55.9% Medtronic-funded abstract (A0022-A0024); 67.1% vs 52.5%, RR 0.78, matched RR 0.85 p=0.30, TLE RR 0.88 (A0028); p=0.07 nontumoral (A0029); memory decline 36% (A0018); neurostimulation table (A0031).",
+      "Model-guided stimulation: no clinical outcome study (A0016, need N001); Wang 2025 diagnostic, 2 patients plus synthetic (A0055); cost and parameter sensitivity (A0056); VEP precision 0.6 in 53 patients (A0057).",
+      "Dataset ranking order 1-6 matches A0066; per-row subjects, localisation, outcome field, licence and size match the cards (A0070 57/14.2 GB/CC0; A0040 328 rows/159 GB/licence to_verify; A0038 20/48 GB; A0035 35/11.1 GB/DUA; A0065 39 incl. 10 rns*/5.5 GB; A0034 28 reported; A0067 2 simulated/Apache-2.0).",
+      "Cohort split 34/22, exclusions HUP132 and HUP165, split_hash 255216f5 (A0071); 10 cases 6 dev + 4 test (A0072); 20/20 passed, 254 files, all accept_with_limits, coincident coordinates HUP126/HUP114 (A0094).",
+      "Virtual-patient arm: NOT QUALIFIED correctly reported, P3-P5 not run, need N014, predictions never frozen (status frozen_predictions = []), no vault reveal event in the ledger.",
+      "Open needs in A0099 and A0100 section 8 equal `need list` (10 open)."
+    ]
+  },
+  "repair_stage": "dossier",
+  "acceptance_checks": [
+    "AC1: A0100 section 6 and A0099 limitations state the trailing-pad finding as '21 of 61 runs (all ictal; 21 of 41 ictal runs)' or equivalent, traced to A0094.",
+    "AC2: A0100 section 5 states that Omni-iEEG (A0040) overlaps ranks 1, 3, 4 and 5 (ds004100, ds003498, ds003029, ds003876) and is not independent of any of them.",
+    "AC3: The sentence 'Outcome values in every dataset stay sealed; only the field names were checked' is removed or corrected; the dossier discloses that discovery-stage roles read participants files before sealing (V001-V007) and that outcome-derived aggregates exist in A0033/A0058 (superseded), A0040, A0035 and A0038; a limitation names the leakage-risk path for any future P5 on the ds004100 split. V008/V009 'never opened' remains, consistent with the ledger.",
+    "AC4: A0099 reproducibility_manifest lists A0017-A0030, A0095 and A0097 (validation failed) and the 20 PatientCase/QCReport ids with manifest hashes, plus seeds 20261101 (split, case selection) and 20261129 (synthetic benchmark) and environment digests for the main and model environments; A0100 section 10 matches the manifest.",
+    "AC5: The section 1 neurostimulation range matches A0031 (up to 82%) or explicitly states what it excludes.",
+    "AC6: Section 7 cause list includes the iid observation model / autocorrelated noise (A0098) and the defect list includes F3 end zero-padding.",
+    "AC7: A0099/A0100 envelopes use evidence_kind not_applicable (mixed) or otherwise do not label simulated/observed content as literature_reported.",
+    "AC8: Corrected records are committed with --supersedes A0099-DecisionBundle and --supersedes A0100-Report; report.md equals the new Report body; no other number, ranking, needs list or the NOT QUALIFIED verdict changes without a cited artifact; the dossier is re-submitted to RV."
+  ]
+}

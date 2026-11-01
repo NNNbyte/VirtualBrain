@@ -1,0 +1,102 @@
+[
+ {
+  "img": "img/d1_agents.jpg",
+  "caption": "Live dashboard, study-002: the Agents board. Each role is a separate agent with its own budget, running and finished tasks.",
+  "secs": 7
+ },
+ {
+  "img": "img/d2_timeline.jpg",
+  "caption": "Timeline: every task the controller admitted, refused or finished, read from the append-only ledger.",
+  "secs": 5
+ },
+ {
+  "img": "img/d3_needs.jpg",
+  "caption": "Needs & gates: unmet needs agents posted for others to claim, and gate verdicts recorded by a role other than the producer.",
+  "secs": 6
+ },
+ {
+  "img": "img/d4_artifacts.jpg",
+  "caption": "Artifacts: every committed record with its schema, producer, validation state and provenance.",
+  "secs": 5
+ },
+ {
+  "img": "img/d6_skills.jpg",
+  "caption": "Skills & agents: each role's operating procedure is editable with history. Studies run on a frozen copy, so edits only affect future studies.",
+  "secs": 6
+ },
+ {
+  "img": "img/r1_top.jpg",
+  "caption": "Study-001 report (finished): built from committed, gated records only. Every number links to an artifact.",
+  "secs": 5
+ },
+ {
+  "img": "img/r2.jpg",
+  "caption": "Phases and their outcome: the model gate failed, so intervention design and blinded evaluation were not run.",
+  "secs": 5
+ },
+ {
+  "img": "img/r3.jpg",
+  "caption": "Virtual-patient modelling: R5 re-derived convergence from the raw draws. No region's excitability converged, so the pipeline was not qualified.",
+  "secs": 6
+ },
+ {
+  "img": "img/r4.jpg",
+  "caption": "Quality controls: outcome blinding, independent checking, and the open needs the agents left for the next study.",
+  "secs": 5
+ },
+ {
+  "img": "img/s1_beforeafter.jpg",
+  "caption": "Study-002, exploratory: virtual treatments on blinded virtual Patient 2. Ablating the estimated zone stopped simulated seizures in 5 of 12 fits; pulse-train stimulation did not.",
+  "secs": 8
+ },
+ {
+  "img": "img/b_BASELINE_40.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity before treatment (t = 1.6 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_BASELINE_100.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity before treatment (t = 4.0 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_BASELINE_160.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity before treatment (t = 6.4 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_RES-EZpPZ_40.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity after ablating the estimated EZ + PZ (t = 1.6 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_RES-EZpPZ_100.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity after ablating the estimated EZ + PZ (t = 4.0 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_RES-EZpPZ_160.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity after ablating the estimated EZ + PZ (t = 6.4 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_STIM-PT_40.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity with SEEG pulse-train stimulation (t = 1.6 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_STIM-PT_100.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity with SEEG pulse-train stimulation (t = 4.0 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_STIM-PT_160.jpg",
+  "caption": "Patient 2's own cortex and 205 SEEG contacts. Simulated region activity with SEEG pulse-train stimulation (t = 6.4 s).",
+  "secs": 1.6
+ },
+ {
+  "img": "img/b_TI.jpg",
+  "caption": "Temporal-interference stimulation field from Wang 2025, on the fsaverage5 template. Mapping it onto Patient 2 is an open need.",
+  "secs": 5
+ }
+]

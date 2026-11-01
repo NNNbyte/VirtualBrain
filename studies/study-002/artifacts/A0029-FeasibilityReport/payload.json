@@ -1,0 +1,30 @@
+{
+ "intervention_id": "STIM-PT-chronic",
+ "checks": [
+  {
+   "check": "model mapping",
+   "result": "pass",
+   "detail": "as STIM-PT"
+  },
+  {
+   "check": "numerical stability",
+   "result": "pass",
+   "detail": "selftest pulse train amp 4 (max Istim 0.04) finite at dt 0.05 ms"
+  },
+  {
+   "check": "charge density / safety",
+   "result": "not_assessable",
+   "detail": "model amplitudes have no physical units; no contact geometry"
+  },
+  {
+   "check": "anatomical constraints",
+   "result": "not_assessable",
+   "detail": "no MRI/eloquent mapping"
+  }
+ ],
+ "verdict": "feasible_in_silico",
+ "verdict_reasons": [
+  "fully specified in the model",
+  "physical/device feasibility not assessable; amplitudes are model units"
+ ]
+}

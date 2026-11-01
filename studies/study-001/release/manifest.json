@@ -1,0 +1,25 @@
+{
+  "release_id": "rel-823fa0c912cb",
+  "frozen_at": "2026-11-01T03:32:19+00:00",
+  "files": {
+    ".claude/skills/clinical-engineering-review/SKILL.md": "b1d84d5e87470364390116a0815ead3007f2a29b864a1a29bea133795bfaf3ac",
+    ".claude/skills/r1-evidence-scout/SKILL.md": "ab2a3cd942692802c1849935f12a401844295998b4d3f82d1135404facf77851",
+    ".claude/skills/r2-case-curation/SKILL.md": "b68e2a8151c47b5a2ecdac37bfef89050d5f285429c4dc71b7dff8b417fd41c3",
+    ".claude/skills/r3-virtual-patient/SKILL.md": "e1062b3a8fc13769decc1381b9ef42782e08c240a93646da4222b107e570ec5d",
+    ".claude/skills/r4-intervention-design/SKILL.md": "b14bc97806ddd7589e259d75fd9dadd836528926697ca887c0b5ae4cd99b1be0",
+    ".claude/skills/r5-independent-evaluation/SKILL.md": "c0e3e1834e2bf49671ee49ce9e2def173a806ce7d247f462342cd33f05725f2d",
+    ".claude/skills/r6-improvement-research/SKILL.md": "b5a710a581982f099563ec83f5e4dfd2d2871a7abf8632e98d7018d8cb6b39a6",
+    ".claude/skills/run-study/references/agent-protocol.md": "217f382255a656bb826839cdaf1f6debc6951a4de88611e6d7bc1f2470bb0e61",
+    ".claude/skills/run-study/SKILL.md": "93f0f6675bb769a5d4a79c1f9197c28e6dbdb4693b7643a2c6b70fe8d47aa1f9",
+    "system/profiles/LEAD-study-lead.json": "bcdcebfc2157c81bd63e44cb55debac8be29529051961086f2ba713dda740197",
+    "system/profiles/R1-evidence-scout.json": "8dc9105546a848d19bdd3eb5b9430c93501ef90908a64cae0faf0d785c00fbbb",
+    "system/profiles/R2-case-curation.json": "38a6c9f63c9aada9830169b0e4c331f32dd4da89298cf6daffe88d3aafbac701",
+    "system/profiles/R3-virtual-patient.json": "36ec3095e9d46eb9eaa9577c553feb88fcaee339ecc3abd7842432d6fc88f0e5",
+    "system/profiles/R4-intervention-design.json": "29250875d87d9bbd4808a82aba0c10825ff667cef6bef883d31ab9bb9e9d3cee",
+    "system/profiles/R5-independent-evaluation.json": "99b186301ba50f410c2c5b05412dacb2a5c3e79c1ff8641485607733a79c9b55",
+    "system/profiles/R6-improvement-research.json": "a0413be755556f03ee8d84929341701a114e5dde9e902c4be46cbc90f3b4a2d7",
+    "system/profiles/RV-clinical-engineering-review.json": "ec3b47dce7157fdfbf02d2423bedb8026dcc70ba751974b9753363628b3b3a2d",
+    "system/controller.py": "5eac6c67f310e8fb131dfffdd19821f10d9036ba12ed1dba92a5c8894e2d4219",
+    "system/schemas.py": "65a8ac3df49c712be5c0b25ff3e8908f9121231fa32350eb08e8812526b04dd4"
+  }
+}

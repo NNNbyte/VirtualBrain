@@ -1,0 +1,62 @@
+{
+  "artifact_id": "A0006-MethodCard",
+  "schema_name": "MethodCard",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0004",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "source inspection of vep_stim package + check_cmdstan.py (stanc transpile)",
+  "tool_version": "vep-stim 0.1.0a1; cmdstanpy 1.3.0; CmdStan 2.40 / stanc3 v2.40.0; tvb-library 2.10.0",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0005-ValidationReport"
+  ],
+  "input_manifest_hash": "029da2987746c7b2d6c64ff32aecb97d639bdb9675244ecf486075b16d3b0bbc",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0006-MethodCard/payload.json",
+      "media_type": "application/json",
+      "sha256": "e59c08ec9d6b66a376fb4637a50d021b742270532751bde947f58b7206142dca",
+      "byte_size": 16799
+    },
+    {
+      "uri": "artifacts/A0006-MethodCard/check_cmdstan.py",
+      "media_type": "application/octet-stream",
+      "sha256": "3c8bc797a960889d74cf64c7d3ffdfa2672c2005e9e405feed403f2797d97c87",
+      "byte_size": 1444
+    },
+    {
+      "uri": "artifacts/A0006-MethodCard/check_cmdstan_out.json",
+      "media_type": "application/octet-stream",
+      "sha256": "8f279b9be7a6e19fe7f9aa30f0fd5c8559d42327e60e7786112584f66b1ea6b3",
+      "byte_size": 828
+    },
+    {
+      "uri": "artifacts/A0006-MethodCard/build_payload.py",
+      "media_type": "application/octet-stream",
+      "sha256": "f9fcbe7587343b4d83afaad69f84afb1659dddcbc44960e6a3ba0860222cdb11",
+      "byte_size": 12275
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T13:19:00+00:00",
+  "supersedes_id": "A0003-MethodCard",
+  "title": "vep-stim 0.1.0a1 @5367ef4: Stan 2D-Epileptor inversion (vep_mcmc diffusive / vep_mm_mcmc SC*x) + TVB SpatEpiStim simulator; CmdStan 2.40 available; source defects cited file:line",
+  "manifest_hash": "c0e2e192209f635e6ab817a0d5a78ef8ebf9a40fbf0e7253ce58911d9453bf1d"
+}

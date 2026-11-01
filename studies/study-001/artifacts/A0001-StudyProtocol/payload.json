@@ -1,0 +1,57 @@
+{
+  "protocol_version": "v1",
+  "question": "Among resective/ablative surgery and neurostimulation (RNS, DBS, VNS, and model-guided intracranial stimulation), which intervention is best supported for patients with drug-resistant focal epilepsy, as assessed by (a) literature evidence on clinical outcomes and (b) patient-specific virtual-brain simulations validated against held-out historical outcomes?",
+  "intended_use": "Research evidence on literature and virtual patients. Not a clinical recommendation for any individual patient.",
+  "population": "Patients with drug-resistant focal epilepsy (failed >=2 appropriate antiseizure medications, ILAE definition) who underwent presurgical evaluation with intracranial EEG (SEEG or ECoG) and subsequently received resection, laser ablation, or neurostimulation.",
+  "inclusion_rules": [
+    "Literature: peer-reviewed human studies (RCTs, prospective or retrospective cohorts with n>=10, meta-analyses) reporting seizure outcome after surgery or stimulation, with follow-up >=12 months.",
+    "Datasets: public or permitted-access datasets with intracranial EEG plus electrode localisation, plus a record of the delivered intervention (resected/ablated contacts or stimulation settings), plus a post-intervention outcome class.",
+    "Cases: pass R2 QC (coherent channels, units, sampling rate, coordinates, transform chain, seizure annotations); at least one annotated presurgical seizure.",
+    "Modeling basis: Wang et al. (2025) Virtual brain twins for stimulation in epilepsy, with VBT_INS_Stimulation code, once verified by R1 as a MethodCard; alternatives are a TVB Epileptor network baseline and optional BVEP."
+  ],
+  "exclusion_rules": [
+    "Cases lacking electrode localisation or intervention linkage (kept as literature-only or excluded with a reason).",
+    "Pediatric-only cohorts are recorded but analysed separately unless the protocol is amended.",
+    "Multiple publications on the same patients count as one study family, not as independent evidence."
+  ],
+  "endpoints": {
+    "primary_clinical": "Seizure outcome at >=12 months, in the original Engel or ILAE class as reported.",
+    "binary_mapping": "Prespecified mapping v1: 'favourable' = Engel I or ILAE 1-2; everything else 'unfavourable'. Original classes are always preserved alongside.",
+    "stimulation_secondary": "Median percent seizure-frequency reduction and responder rate (>=50% reduction) at the longest reported follow-up.",
+    "virtual_patient": "Simulated reduction in seizure propagation (number of recruited nodes and seizure duration) relative to a paired no-intervention baseline, per model sample."
+  },
+  "follow_up": ">=12 months for clinical outcome; record the longest available follow-up and its definition.",
+  "split_rules": {
+    "unit": "patient",
+    "development_fraction": 0.6,
+    "test_fraction": 0.4,
+    "stratify_by": ["dataset/cohort family", "intervention class"],
+    "label_access": "Outcome labels are sealed in the vault before modeling. Only the R5 outcome_evaluation task may reveal them, after predictions are frozen.",
+    "leakage_controls": "No patient appears in both partitions. Cohort-family overlap across datasets is recorded. Model fitting uses presurgical data only."
+  },
+  "metrics": [
+    "Literature: pooled or ranged proportion with favourable outcome per intervention class, with study count, total n, design mix, and the heterogeneity noted (no meta-analysis unless >=5 comparable studies).",
+    "Virtual patient: paired simulated effect per candidate (median and 90% interval across model samples), and stability of the candidate ranking across hypotheses and samples.",
+    "Historical validation: concordance between the model-favoured intervention region and the delivered intervention versus the binary outcome (AUC or balanced accuracy, with bootstrap 95% CI), plus abstention rate.",
+    "Reproducibility: fraction of R5 independent reruns matching R4 outputs within declared tolerance."
+  ],
+  "acceptance_criteria": {
+    "evidence_claim": "Supporting passage and location resolve in the cited source; population, design and endpoint transcribed correctly.",
+    "dataset_card": "Reported and verified fields kept distinct; access conditions recorded; verified fields only from inspected files.",
+    "model_bundle": "Convergence diagnostics pass (e.g. R-hat < 1.05 or optimizer converged), recovery check passes on synthetic data, posterior predictive checks reproduce presurgical seizure onset/propagation pattern.",
+    "simulation_batch": "Paired baselines present, seeds recorded, numerical checks pass.",
+    "outcome_evaluation": "Predictions frozen before reveal; metrics computed exactly as above."
+  },
+  "budgets": {
+    "max_cases": 10,
+    "max_parallel_agents": 4,
+    "r1_sources_per_task": 25,
+    "max_repair_cycles": 2,
+    "compute": "local machine only; no cloud spend without user approval"
+  },
+  "approvals_required": [
+    "This protocol (user gate).",
+    "Any dataset download: dataset, size, and license named first.",
+    "Any software installation (e.g. TVB, VBT_INS_Stimulation dependencies)."
+  ]
+}

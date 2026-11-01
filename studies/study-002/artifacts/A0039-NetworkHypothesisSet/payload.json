@@ -1,0 +1,23 @@
+{
+  "case_id": "P1",
+  "synthetic_case": "SYN-P1v3 (synthetic qualification case derived from Wang P1 SC + gain; development partition). Simulated data, not a recording.",
+  "purpose": "Pipeline qualification benchmark only (v3). Hypotheses are the alternatives the v3 inversion must discriminate, drafted from the synthetic SEEG features mapped through the P1 gain. Disclosure: the same agent planted the generating map (logged before any fit), so these hypotheses are not blind; they define what the fit must rule in or out.",
+  "hypotheses": [
+    {"id": "H1", "label": "focal EZ in Left-Supramarginal-posterior (region 58), propagation to SC neighbours",
+     "ez": [58], "pz_candidates": [59, 57, 60, 55],
+     "basis": "the 10 largest-change channels (PFG'11-12, GC'15-16, PFG'14-15, GC'14-15, PFG'12-13: 5.4-6.0 log-power units) all have region 58 as top-gain region; earliest 50% onset 8.5 s on all five"},
+    {"id": "H2", "label": "focal EZ in a neighbour (59 Left-Angular-gyrus or 55) with 58 as early propagation",
+     "ez": [59], "pz_candidates": [58, 60, 55],
+     "basis": "region 55 is 2nd-gain on PFG' channels (14.6 on PFG'12-13), 59/60 on GC' channels; feature onset at 2 Hz cannot separate sub-second propagation"},
+    {"id": "H3", "label": "extended EZ (58 with 59/60/55 jointly epileptogenic)",
+     "ez": [58, 59, 60], "pz_candidates": [55, 57],
+     "basis": "gain overlap between neighbouring supramarginal/angular regions; a joint EZ could produce the same PC1 time course"},
+    {"id": "H0", "label": "no focal EZ among SEEG-visible regions (source outside the free set)",
+     "ez": [], "pz_candidates": [],
+     "basis": "control: the 122 non-free regions are fixed healthy in v3; if the true source lay outside the free set the fit would have to mimic it with visible regions"}
+  ],
+  "source_evidence": ["synthetic SEEG features (features.py, 2 Hz log power) of SYN-P1v3", "P1 gain matrix and SC (A0007 PatientCase)", "T0011 v2 benchmark findings (A0036 per LEAD: EZ/PZ swap, multimodality)"],
+  "priors": {"x0_free": "N(-2.5, 0.5) on 40 free regions (gain >= 25% max U top-3 SC neighbours), others fixed -2.5", "hypothesis_weights": "uniform over H1-H3; H0 is a control"},
+  "unobserved_node_assumptions": "122 regions with max |gain| < 25% of max and not among the top-3 SC neighbours of a visible region are fixed at x0 = -2.5 (healthy) but simulated; a true EZ there is not representable (H0).",
+  "discrimination_checks": ["posterior rank of 58 vs 59/57/60/55 by mean x0 and P(rank 1)", "per-chain (mode) top regions and mean lp", "L-BFGS profile: lp from the planted pattern vs the EZ<->PZ swapped patterns", "arm B with P2 SC (mismatched connectome)", "re-fit on T0011 SYN-P1 data (EZ 44, PZ 40, 42)"]
+}

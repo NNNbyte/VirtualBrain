@@ -1,0 +1,1472 @@
+{
+ "case_id": "HUP173",
+ "thresholds": {
+  "flat_std_uV": 0.5,
+  "flatline_zero_diff_frac": 0.5,
+  "robust_z_logstd": 3.5,
+  "line_ratio_flag": 10.0,
+  "clip_frac": 0.001,
+  "dropout_min_s": 0.5
+ },
+ "versions": {
+  "mne": "1.13.2",
+  "mne_bids": "0.20.0",
+  "numpy": "2.1.0",
+  "pandas": "2.2.3"
+ },
+ "checksums": {
+  "n_files": 29,
+  "n_manifest_rows": 29,
+  "mismatches": [],
+  "not_in_manifest": [],
+  "manifest_rows_not_on_disk": [],
+  "sha256": {
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_acq-seeg_space-fsaverage_coordsystem.json": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_acq-seeg_space-fsaverage_electrodes.tsv": "356281b3f300246470db257a3816c91b29ba111a38dff1df17cab056c91b1a76",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-01_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-01_events.tsv": "71669ee376611a73fb533729a0f71d269485c00a5f782fcf88bef4e9f8e0546d",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-01_ieeg.edf": "9dfc75f4ebda240bcd59532ac799fa0bb9d55593d45437e2c4574eb66e43da69",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-01_ieeg.json": "1c660d33656b94833cebeb603b77e4ca6b659f79ee8e7276e02f6a7576dde1dd",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-02_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-02_events.tsv": "4301790e6b666cffb1b0cd879c5638003d3e47c6bae73d9a138b4031a6ff9433",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-02_ieeg.edf": "5232cac69f7813faa83ca93e6c42588283ec90fc820e1930cc88636cbe4b76f1",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-02_ieeg.json": "344af4ccb3ce6ec7ed86589290ecf3b0d2f3706566dd678fba46f78ed214f086",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-03_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-03_events.tsv": "23669ede44dd204ad10ff360eef2b322f5c1e44ce1ffe3d226fce2804815521b",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-03_ieeg.edf": "0de8f8f727e1e01864d457091fdaef2d3deb2b57395309a2927677ffcd4c8c2f",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-03_ieeg.json": "04ac508947e4c56f55620b1161670ecb559b8ad08c592dfe8454da663d577c07",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-04_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-04_events.tsv": "3570e6ea53e05eadcb844bffc357fe587df681d8ebd40d01a3f5ab5434506bc7",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-04_ieeg.edf": "433f3b4c5892b2a4ec2505e324e98086027df2ceee11ab709b1b600beceac147",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-04_ieeg.json": "f5902b40552156a1dd018cf34499d26cbf28f4c052a17213f32798ce92b41fda",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-05_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-05_events.tsv": "ba5cbe271762a74a285c425670795c9951b5d9a67691d34e47ae741d8aa39a01",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-05_ieeg.edf": "9e88aa0b593bb482d5060a35f6bcab48e327ddd3c0684451a3285320d489d9e8",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-05_ieeg.json": "00011cbd324eb2ea03794df3580f72aed8b607662a9594ee5cfe73ecad9a7226",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-01_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-01_ieeg.edf": "28214e17fb27695c208cbd6ac7f0b913ed67f7d278ef1513668c05424fe93db5",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-01_ieeg.json": "ebc5fbbfa804bb902c2b7e85f7af4bc1f4778d4b317c85d7aa681046e3cf9847",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-02_channels.tsv": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-02_ieeg.edf": "8e61cd0c211a3ceece557da378224b794241741ad680cf5aa7bf4417920eecad",
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-02_ieeg.json": "ebc5fbbfa804bb902c2b7e85f7af4bc1f4778d4b317c85d7aa681046e3cf9847",
+   "sub-HUP173/ses-presurgery/sub-HUP173_ses-presurgery_scans.tsv": "ccada91e649fb2eb3c14c06eb239260cdab1a548ca66177027a3fa74c4c16067"
+  }
+ },
+ "sessions": [
+  "ses-presurgery"
+ ],
+ "runs": [
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-01_ieeg.edf",
+   "task": "ictal",
+   "run": "01",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 227,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 226.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 58112,
+   "duration_s": 227.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 227.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-01_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 30720,
+     "within_recording": true,
+     "sample_consistent": true
+    },
+    {
+     "onset_s": 166.99609375,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 42751,
+     "within_recording": true,
+     "sample_consistent": true
+    }
+   ],
+   "seizure": {
+    "onset_s": [
+     120.0
+    ],
+    "offset_s": [
+     166.99609375
+    ],
+    "duration_s": [
+     46.99609375
+    ],
+    "offset_after_onset": true,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.00390625
+   },
+   "mne_annotations": [
+    {
+     "onset": 120.0,
+     "description": "sz onset"
+    },
+    {
+     "onset": 166.996094,
+     "description": "sz offset"
+    }
+   ],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 63.46593096759037,
+     "min": 45.26552253192129,
+     "max": 4222.299842283059
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "EKG2",
+     "LB01",
+     "LC02",
+     "LE01",
+     "RA01",
+     "RA02",
+     "RB01",
+     "RB02",
+     "RC08",
+     "RE07",
+     "RE08",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 52.84558936204385,
+     "max": 260191.38638816998,
+     "n_above_abs_threshold": 115,
+     "frac_above_abs_threshold": 0.9126984126984127,
+     "relative_outlier_channels": [
+      "EKG1",
+      "RC08",
+      "RE07",
+      "RE08",
+      "RG08"
+     ]
+    },
+    "possible_clipping_channels": [],
+    "all_channel_dropouts": {
+     "count": 1,
+     "total_s": 0.86328125
+    },
+    "data_sha256": "5da4402588dcaa44301a1d1586878bacb83515b634953b1fb22d5c5c789ff3b4"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "EKG2",
+    "LB01",
+    "LC02",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB01",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "LB01",
+    "LC02",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB01",
+    "RB02"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ]
+  },
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-02_ieeg.edf",
+   "task": "ictal",
+   "run": "02",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 215,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 214.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 55040,
+   "duration_s": 215.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 215.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-02_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 30720,
+     "within_recording": true,
+     "sample_consistent": true
+    },
+    {
+     "onset_s": 154.99609375,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 39679,
+     "within_recording": true,
+     "sample_consistent": true
+    }
+   ],
+   "seizure": {
+    "onset_s": [
+     120.0
+    ],
+    "offset_s": [
+     154.99609375
+    ],
+    "duration_s": [
+     34.99609375
+    ],
+    "offset_after_onset": true,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.00390625
+   },
+   "mne_annotations": [
+    {
+     "onset": 120.0,
+     "description": "sz onset"
+    },
+    {
+     "onset": 154.996094,
+     "description": "sz offset"
+    }
+   ],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 68.03485573070631,
+     "min": 37.97936663366244,
+     "max": 4039.140399550301
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "EKG2",
+     "LB01",
+     "LC02",
+     "LC03",
+     "LE01",
+     "RA01",
+     "RA02",
+     "RB02",
+     "RC08",
+     "RE07",
+     "RE08",
+     "RG01",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 8.140962600054864,
+     "max": 1770.731257470476,
+     "n_above_abs_threshold": 54,
+     "frac_above_abs_threshold": 0.42857142857142855,
+     "relative_outlier_channels": [
+      "EKG1",
+      "EKG2",
+      "RE07",
+      "RE08",
+      "RG07",
+      "RG08"
+     ]
+    },
+    "possible_clipping_channels": [
+     "RC08"
+    ],
+    "all_channel_dropouts": {
+     "count": 1,
+     "total_s": 0.96484375
+    },
+    "data_sha256": "0905353a953a22daa25ff84ce0fd2d0516350a9a477b64fb9dd694b39352db18"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "EKG2",
+    "LB01",
+    "LC02",
+    "LC03",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG01",
+    "RG07",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "LB01",
+    "LC02",
+    "LC03",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB02",
+    "RG01"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09"
+   ]
+  },
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-03_ieeg.edf",
+   "task": "ictal",
+   "run": "03",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 205,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 204.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 52480,
+   "duration_s": 205.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 205.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-03_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 30720,
+     "within_recording": true,
+     "sample_consistent": true
+    },
+    {
+     "onset_s": 144.99609375,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 37119,
+     "within_recording": true,
+     "sample_consistent": true
+    }
+   ],
+   "seizure": {
+    "onset_s": [
+     120.0
+    ],
+    "offset_s": [
+     144.99609375
+    ],
+    "duration_s": [
+     24.99609375
+    ],
+    "offset_after_onset": true,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.00390625
+   },
+   "mne_annotations": [
+    {
+     "onset": 120.0,
+     "description": "sz onset"
+    },
+    {
+     "onset": 144.996094,
+     "description": "sz offset"
+    }
+   ],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 67.50077774611455,
+     "min": 39.95878579097481,
+     "max": 4232.901211827804
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "LC02",
+     "LC03",
+     "RA01",
+     "RB02",
+     "RC08",
+     "RE07",
+     "RE08",
+     "RG07",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 1869.5121328157634,
+     "max": 823909.6626418123,
+     "n_above_abs_threshold": 126,
+     "frac_above_abs_threshold": 1.0,
+     "relative_outlier_channels": [
+      "LE01",
+      "LE05",
+      "RC08",
+      "RE07",
+      "RE08",
+      "RG07",
+      "RG08"
+     ]
+    },
+    "possible_clipping_channels": [],
+    "all_channel_dropouts": {
+     "count": 0,
+     "total_s": 0.0
+    },
+    "data_sha256": "335dfdfc88aa75a43deb2b7639a83dc55f4a71b00e8bf1771bb4ad22f16dddb6"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "LC02",
+    "LC03",
+    "LE01",
+    "LE05",
+    "RA01",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "LC02",
+    "LC03",
+    "LE01",
+    "LE05",
+    "RA01",
+    "RB02"
+   ],
+   "marked_bad_not_flagged": [
+    "EKG2",
+    "LE09"
+   ]
+  },
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-04_ieeg.edf",
+   "task": "ictal",
+   "run": "04",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 235,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 234.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 60160,
+   "duration_s": 235.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 235.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-04_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 30720,
+     "within_recording": true,
+     "sample_consistent": true
+    },
+    {
+     "onset_s": 174.99609375,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 44799,
+     "within_recording": true,
+     "sample_consistent": true
+    }
+   ],
+   "seizure": {
+    "onset_s": [
+     120.0
+    ],
+    "offset_s": [
+     174.99609375
+    ],
+    "duration_s": [
+     54.99609375
+    ],
+    "offset_after_onset": true,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.00390625
+   },
+   "mne_annotations": [
+    {
+     "onset": 120.0,
+     "description": "sz onset"
+    },
+    {
+     "onset": 174.996094,
+     "description": "sz offset"
+    }
+   ],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 68.23712818113714,
+     "min": 33.04668373732201,
+     "max": 3521.0289005682284
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "EKG2",
+     "LC02",
+     "RA01",
+     "RB01",
+     "RB02",
+     "RC08",
+     "RE01",
+     "RE08",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 25.517625184610164,
+     "max": 3053805.213018273,
+     "n_above_abs_threshold": 103,
+     "frac_above_abs_threshold": 0.8174603174603174,
+     "relative_outlier_channels": [
+      "EKG1",
+      "EKG2",
+      "RC08",
+      "RE07",
+      "RE08",
+      "RG08"
+     ]
+    },
+    "possible_clipping_channels": [],
+    "all_channel_dropouts": {
+     "count": 0,
+     "total_s": 0.0
+    },
+    "data_sha256": "9678d32e454e8f0ad610c787a09bc2565e22418871e81432f7b836646ab24c2d"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "EKG2",
+    "LC02",
+    "RA01",
+    "RB01",
+    "RB02",
+    "RC08",
+    "RE01",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "LC02",
+    "RA01",
+    "RB01",
+    "RB02",
+    "RE01"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ]
+  },
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-05_ieeg.edf",
+   "task": "ictal",
+   "run": "05",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 274,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 273.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 70144,
+   "duration_s": 274.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 274.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-ictal_acq-seeg_run-05_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 30720,
+     "within_recording": true,
+     "sample_consistent": true
+    },
+    {
+     "onset_s": 213.99609375,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 54783,
+     "within_recording": true,
+     "sample_consistent": true
+    }
+   ],
+   "seizure": {
+    "onset_s": [
+     120.0
+    ],
+    "offset_s": [
+     213.99609375
+    ],
+    "duration_s": [
+     93.99609375
+    ],
+    "offset_after_onset": true,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.00390625
+   },
+   "mne_annotations": [
+    {
+     "onset": 120.0,
+     "description": "sz onset"
+    },
+    {
+     "onset": 213.996094,
+     "description": "sz offset"
+    }
+   ],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 81.71685420569939,
+     "min": 31.973474101899495,
+     "max": 7180.703298660465
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "LC02",
+     "RC08",
+     "RG07",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 40.017186673676335,
+     "max": 74962.65727364269,
+     "n_above_abs_threshold": 122,
+     "frac_above_abs_threshold": 0.9682539682539683,
+     "relative_outlier_channels": [
+      "EKG2",
+      "RC08",
+      "RE07",
+      "RE08"
+     ]
+    },
+    "possible_clipping_channels": [
+     "EKG1",
+     "RG07"
+    ],
+    "all_channel_dropouts": {
+     "count": 1,
+     "total_s": 0.6640625
+    },
+    "data_sha256": "2eec955edb737f5dc742a789264e8a922e0945c0c6ddcd4377f2669f73e6e610"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "EKG2",
+    "LC02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "LC02"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09"
+   ]
+  },
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-01_ieeg.edf",
+   "task": "interictal",
+   "run": "01",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 300,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 299.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 76800,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 300.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": null,
+   "events": [],
+   "seizure": {
+    "onset_s": [],
+    "offset_s": [],
+    "duration_s": [],
+    "offset_after_onset": null,
+    "pre_onset_s": null,
+    "post_offset_s": null
+   },
+   "mne_annotations": [],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 55.58329526778118,
+     "min": 31.249502973093172,
+     "max": 3379.3381011815386
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "EKG2",
+     "RA01",
+     "RC08",
+     "RE07",
+     "RE08",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 70.91634977266057,
+     "max": 958386.1704374927,
+     "n_above_abs_threshold": 122,
+     "frac_above_abs_threshold": 0.9682539682539683,
+     "relative_outlier_channels": [
+      "EKG1",
+      "EKG2",
+      "RC08",
+      "RE07",
+      "RE08",
+      "RG08"
+     ]
+    },
+    "possible_clipping_channels": [],
+    "all_channel_dropouts": {
+     "count": 0,
+     "total_s": 0.0
+    },
+    "data_sha256": "c57041752b37e12083af186c7c2ff88224a97e779634dae1c543d7d938d1bfd6"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "EKG2",
+    "RA01",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "RA01"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ]
+  },
+  {
+   "path": "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_task-interictal_acq-seeg_run-02_ieeg.edf",
+   "task": "interictal",
+   "run": "02",
+   "session": "presurgery",
+   "acquisition": "seeg",
+   "edf_header": {
+    "version": "0",
+    "reserved": "EDF+C",
+    "edf_plus_discontinuous": false,
+    "n_records": 300,
+    "record_duration_s": 1.0,
+    "n_signals": 127,
+    "phys_dims": [
+     "",
+     "uV"
+    ],
+    "phys_range": [
+     -50000.0,
+     50000.0
+    ],
+    "dig_range": [
+     -32768,
+     32767
+    ],
+    "samples_per_record": [
+     57,
+     256
+    ],
+    "has_edf_annotations_signal": true
+   },
+   "sidecar": {
+    "SamplingFrequency": 256.0,
+    "RecordingDuration": 299.99609375,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 0,
+    "SEEGChannelCount": 126,
+    "EEGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "read_raw_bids_warnings": [],
+   "sfreq_hz": 256.0,
+   "n_samples": 76800,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_records_x_duration_s": 300.0,
+   "ch_types_mne": {
+    "seeg": 126
+   },
+   "n_channels": 126,
+   "bads_from_bids": [
+    "EKG1",
+    "EKG2",
+    "LE09",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "mne_montage_coord_frame": "mni_tal",
+   "mne_montage_n_pos": 126,
+   "mne_montage_n_nan": 2,
+   "mne_montage_abs_max": 84.6341,
+   "channels_tsv_sha": "ca680a4703c554fc3350f759a755dd43ec92d38156f299e311eb30701131d5c9",
+   "edf_labels_match_channels_tsv": true,
+   "mne_names_match_channels_tsv": true,
+   "units_tsv": [
+    "\u00b5V"
+   ],
+   "sfreq_tsv": [
+    "256.0"
+   ],
+   "types_tsv": {
+    "SEEG": 126
+   },
+   "events_tsv": null,
+   "events": [],
+   "seizure": {
+    "onset_s": [],
+    "offset_s": [],
+    "duration_s": [],
+    "offset_after_onset": null,
+    "pre_onset_s": null,
+    "post_offset_s": null
+   },
+   "mne_annotations": [],
+   "signal_qc": {
+    "n_nan": 0,
+    "std_uV": {
+     "median": 60.30952221921892,
+     "min": 39.06789730535844,
+     "max": 3651.986915603993
+    },
+    "flat_channels": [],
+    "flatline_channels": [],
+    "high_variance_channels": [
+     "EKG1",
+     "EKG2",
+     "LB01",
+     "LE01",
+     "RA01",
+     "RB01",
+     "RB02",
+     "RC08",
+     "RE07",
+     "RE08",
+     "RG08"
+    ],
+    "low_variance_channels": [],
+    "line_noise_ratio": {
+     "median": 42.80696669027465,
+     "max": 27522.35876412329,
+     "n_above_abs_threshold": 112,
+     "frac_above_abs_threshold": 0.8888888888888888,
+     "relative_outlier_channels": [
+      "EKG1",
+      "EKG2",
+      "RC08",
+      "RE07",
+      "RE08"
+     ]
+    },
+    "possible_clipping_channels": [],
+    "all_channel_dropouts": {
+     "count": 0,
+     "total_s": 0.0
+    },
+    "data_sha256": "dec209c9937dbdda7ee32d03ae9316ee14d35d7d2bacefb24147953e5277506c"
+   },
+   "qc_flagged_union": [
+    "EKG1",
+    "EKG2",
+    "LB01",
+    "LE01",
+    "RA01",
+    "RB01",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "qc_flagged_not_marked_bad": [
+    "LB01",
+    "LE01",
+    "RA01",
+    "RB01",
+    "RB02"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ]
+  }
+ ],
+ "duplicate_signal_runs": [],
+ "channels_tsv_identical_across_runs": true,
+ "channels": {
+  "n_total": 126,
+  "by_type": {
+   "SEEG": 126
+  },
+  "by_status": {
+   "good": 118,
+   "bad": 8
+  },
+  "status_description_values": {
+   "n/a": 107,
+   "resect": 11,
+   "resect,soz": 8
+  },
+  "bad": [
+   "EKG1",
+   "EKG2",
+   "LE09",
+   "RC08",
+   "RE07",
+   "RE08",
+   "RG07",
+   "RG08"
+  ],
+  "soz": [
+   "RA01",
+   "RA02",
+   "RA03",
+   "RA04",
+   "RB01",
+   "RB02",
+   "RB03",
+   "RB04"
+  ],
+  "resect": [
+   "RA01",
+   "RA02",
+   "RA03",
+   "RA04",
+   "RA05",
+   "RA06",
+   "RA07",
+   "RA08",
+   "RA09",
+   "RB01",
+   "RB02",
+   "RB03",
+   "RB04",
+   "RB05",
+   "RB06",
+   "RB07",
+   "RB08",
+   "RB09",
+   "RB10"
+  ],
+  "n_soz": 8,
+  "n_resect": 19,
+  "soz_and_resect": [
+   "RA01",
+   "RA02",
+   "RA03",
+   "RA04",
+   "RB01",
+   "RB02",
+   "RB03",
+   "RB04"
+  ],
+  "soz_not_resected": [],
+  "soz_marked_bad": [],
+  "resect_marked_bad": [],
+  "non_neural_names_typed_as_ieeg": [
+   "EKG1:SEEG",
+   "EKG2:SEEG"
+  ]
+ },
+ "coordinates": {
+  "electrodes_files": [
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_acq-seeg_space-fsaverage_electrodes.tsv"
+  ],
+  "coordsystem_files": [
+   "sub-HUP173/ses-presurgery/ieeg/sub-HUP173_ses-presurgery_acq-seeg_space-fsaverage_coordsystem.json"
+  ],
+  "coordsystem_json": {
+   "iEEGCoordinateSystem": "fsaverage",
+   "iEEGCoordinateSystemDescription": "Defined by FreeSurfer, the MRI (surface RAS) origin is at the center of a 256\u00d7256\u00d7256 mm^3 anisotropic volume (may not be in the center of the head).",
+   "iEEGCoordinateUnits": "m"
+  },
+  "n_electrodes_rows": 126,
+  "n_with_coords": 124,
+  "rows_without_coords": [
+   "EKG1",
+   "EKG2"
+  ],
+  "ranges": {
+   "x": [
+    -69.912,
+    84.6341
+   ],
+   "y": [
+    -74.0511,
+    49.7565
+   ],
+   "z": [
+    -25.2081972883151,
+    71.6938150705311
+   ]
+  },
+  "abs_max": 84.6341,
+  "median_norm": 59.74809380320486,
+  "frac_in_mni_box_mm": 0.967741935483871,
+  "outside_mni_box": [
+   "RE08",
+   "RF08",
+   "RG07",
+   "RG08"
+  ],
+  "frac_left_hemisphere_x_lt_0": 0.3790322580645161,
+  "size_column_values": [
+   "nan"
+  ],
+  "channels_without_coords": [
+   "EKG1",
+   "EKG2"
+  ],
+  "electrodes_not_in_channels": [],
+  "soz_without_coords": [],
+  "resect_without_coords": [],
+  "implied_extent_if_metres_mm": 84634.1
+ }
+}

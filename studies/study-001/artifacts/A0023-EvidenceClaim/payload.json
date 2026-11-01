@@ -1,0 +1,45 @@
+{
+ "claim": "In a consecutive single-centre series of 58 patients with mesial TLE treated with stereotactic laser amygdalohippocampotomy (>=12 months follow-up), 53.4% were Engel I at 1 year (60.5% with vs 33.3% without mesial temporal sclerosis).",
+ "bibliographic_record": {
+  "authors": "Gross RE, Stern MA, Willie JT, Fasano RE, Saindane AM, Soares BP, Pedersen NP, Drane DL",
+  "title": "Stereotactic laser amygdalohippocampotomy for mesial temporal lobe epilepsy",
+  "citation": "Ann Neurol 2018;83(3):575-587",
+  "doi": "10.1002/ana.25180",
+  "pmid": "29420840",
+  "pmcid": "PMC5877322",
+  "publication_type": "journal article"
+ },
+ "supporting_passage": "One year following stereotactic laser amygdalohippocampotomy, 53.4% (95% confidence interval [CI] = 40.8-65.7%) of all patients were free of disabling seizures (Engel I).",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 29420840; https://europepmc.org/abstract/MED/29420840; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "retrospective review of a consecutive single-centre series (Emory), 5-year period",
+  "n_total": 58,
+  "population": "mesial temporal lobe epilepsy, >=12 months follow-up",
+  "intervention": "stereotactic laser amygdalohippocampotomy (MR-guided LITT)"
+ },
+ "endpoint": {
+  "reported_endpoint": "Engel I (free of disabling seizures)",
+  "follow_up": "1 year (and longer)",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "Engel I -> favourable",
+  "values": {
+   "all": "53.4% (95% CI 40.8-65.7)",
+   "MTS": "60.5% (45.6-73.7)",
+   "non-MTS": "33.3% (15.0-58.5)",
+   "repeat ablation": "3 of 9 became seizure free"
+  }
+ },
+ "reported_observation": "53.4% Engel I at 1 year; MTS 60.5% vs non-MTS 33.3%.",
+ "author_inference": "Seizure-free rates lower than, but comparable to, open temporal lobe surgery; verbal memory outcome better than historical open-resection data (historical comparison, not randomised).",
+ "contradictions": [
+  "MTS associated with better outcome here, whereas Wu 2019 multicenter found radiographic hippocampal sclerosis not associated with outcome."
+ ],
+ "study_family_id": "fam-emory-slah",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

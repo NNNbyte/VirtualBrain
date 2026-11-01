@@ -1,0 +1,492 @@
+{
+ "case_id": "HUP105",
+ "dataset_id": "openneuro:ds004100 v1.1.3 (A0070-DatasetCard)",
+ "cohort_partition": "development (A0071-CohortSplit)",
+ "sessions": [
+  "ses-presurgery"
+ ],
+ "recordings": [
+  {
+   "path": "data/ds004100-1.1.3/sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf",
+   "task": "ictal",
+   "run": "01",
+   "acq": "ecog",
+   "sfreq_hz": 500.0,
+   "n_samples": 115000,
+   "duration_s": 230.0,
+   "n_channels": 61,
+   "acq_time": "2022-08-28T22:34:58.000000Z",
+   "read_raw_bids": "ok",
+   "edf_vs_channels_tsv_names_equal": true,
+   "sidecar_recording_duration_s": 229.998
+  },
+  {
+   "path": "data/ds004100-1.1.3/sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf",
+   "task": "ictal",
+   "run": "02",
+   "acq": "ecog",
+   "sfreq_hz": 500.0,
+   "n_samples": 127000,
+   "duration_s": 254.0,
+   "n_channels": 61,
+   "acq_time": "2022-08-28T22:34:59.000000Z",
+   "read_raw_bids": "ok",
+   "edf_vs_channels_tsv_names_equal": true,
+   "sidecar_recording_duration_s": 253.998
+  },
+  {
+   "path": "data/ds004100-1.1.3/sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf",
+   "task": "interictal",
+   "run": "01",
+   "acq": "ecog",
+   "sfreq_hz": 500.0,
+   "n_samples": 150000,
+   "duration_s": 300.0,
+   "n_channels": 61,
+   "acq_time": "2022-08-28T22:52:47.000000Z",
+   "read_raw_bids": "ok",
+   "edf_vs_channels_tsv_names_equal": true,
+   "sidecar_recording_duration_s": 299.998
+  },
+  {
+   "path": "data/ds004100-1.1.3/sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf",
+   "task": "interictal",
+   "run": "02",
+   "acq": "ecog",
+   "sfreq_hz": 500.0,
+   "n_samples": 150000,
+   "duration_s": 300.0,
+   "n_channels": 61,
+   "acq_time": "2022-08-28T22:52:49.000000Z",
+   "read_raw_bids": "ok",
+   "edf_vs_channels_tsv_names_equal": true,
+   "sidecar_recording_duration_s": 299.998
+  }
+ ],
+ "checksums": {
+  "algorithm": "sha256",
+  "manifest": "studies/study-001/work/T0015/retrieval_manifest.csv",
+  "n_files": 17,
+  "n_manifest_rows": 17,
+  "all_match": true,
+  "mismatches": [],
+  "not_in_manifest": [],
+  "missing_on_disk": [],
+  "files": {
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv": "f63a2c1af290e6338663d7507792876d43eb614cd37c4a366119d7683cbedd5b",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_channels.tsv": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_events.tsv": "c368ad52eba4257767e923d49fcad994c82df84715c0ba4d32d5c6959058b165",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf": "c425f0ec289c2fe1c6c5e1986ab37335a589ad171863cb91c6552f6b54b6d69b",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.json": "8a26d12737ed8ff044b04fcdf18b8ab77be75d9a0010514b85e35b291b1c72ff",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_channels.tsv": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_events.tsv": "6ab73ded67dae52de62a347b802898722515eb0673a858883c4e7944a76b1de7",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf": "a7f4d8aed817fa61a627307ad07132018a97d8233cdc2bfeee9fb04d0d662883",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.json": "1792a75cecb283864ba3b24c8417f995e095d5994ee273dff896e18b0fe74449",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_channels.tsv": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf": "d3bff8d8b90041d050be45e45a068fcc398916afef94c66ffeb5c27027d26b81",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.json": "5520391e6ed4f156aa6f418016c28cec655f75234dc29179d238b0121c4d94a4",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_channels.tsv": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf": "c024d30a92c0f2e12841c4ffa4649d3ccd066d4c5f653fb6cf8123e5099fd2bf",
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.json": "5520391e6ed4f156aa6f418016c28cec655f75234dc29179d238b0121c4d94a4",
+   "sub-HUP105/ses-presurgery/sub-HUP105_ses-presurgery_scans.tsv": "b83f2f88e8ddc6d9e33faa414ba87add9a32c4bd4e0e602450e71be31dca2f4b"
+  }
+ },
+ "anatomy": {
+  "source": "template-only; electrodes.tsv coords",
+  "mri_ct": "reported_absent (no anat/CT in release)",
+  "electrodes_tsv": "data/ds004100-1.1.3/sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv",
+  "coordsystem_json": "data/ds004100-1.1.3/sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json",
+  "n_electrode_rows": 61,
+  "n_with_coords": 60,
+  "rows_without_coords": [
+   "EKG"
+  ],
+  "atlas_labels": "not_reported (none in release; not derived here)"
+ },
+ "coordinate_transforms": {
+  "transform_chain_id": "ds004100-coordsystem-as-provided",
+  "steps": [
+   {
+    "from": "electrodes.tsv values",
+    "to": "MNI-like template mm",
+    "op": "identity (values used as-is); declared unit 'm' relabelled as mm on evidence; no spatial transform applied"
+   }
+  ],
+  "declared": {
+   "frame": "fsaverage",
+   "units": "m"
+  },
+  "decision": {
+   "coordinate_units": "mm",
+   "coordinate_units_status": "resolved (values are millimetres; declared 'm' rejected)",
+   "coordinate_frame": "MNI-like template space (fsaverage/MNI305 surface-RAS vs ICBM152 MNI)",
+   "coordinate_frame_status": "to_verify",
+   "decision_text": "Units: mm. Template identity: unresolved between fsaverage (=MNI305 Talairach, coordsystem.json) and ICBM152 MNI (README); both are MNI-type template spaces whose axes agree and whose offsets are a few mm, which coordinate values alone cannot separate. Use as MNI-like template coordinates in mm; do not treat as verified ICBM152 nor as patient-native."
+  },
+  "evidence": {
+   "declared": {
+    "iEEGCoordinateSystem": "fsaverage",
+    "iEEGCoordinateSystemDescription": "Defined by FreeSurfer, the MRI (surface RAS) origin is at the center of a 256×256×256 mm^3 anisotropic volume (may not be in the center of the head).",
+    "iEEGCoordinateUnits": "m"
+   },
+   "readme_claim": "ICBM152 MNI space (dataset README, per A0070-DatasetCard)",
+   "value_ranges_raw": {
+    "x": [
+     -66.817,
+     63.7737
+    ],
+    "y": [
+     -66.3474,
+     36.1831
+    ],
+    "z": [
+     -48.7872126937459,
+     57.9388170659494
+    ]
+   },
+   "max_abs_raw": 66.817,
+   "if_declared_m": "max |coord| 66.8 m -> contacts tens of metres apart: physically impossible",
+   "if_mm_fraction_inside_mni_box": 1.0,
+   "mni_box_mm": {
+    "x": [
+     -80,
+     80
+    ],
+    "y": [
+     -120,
+     90
+    ],
+    "z": [
+     -70,
+     90
+    ]
+   },
+   "contacts_outside_box_if_mm": [],
+   "nearest_neighbour_distance_raw": {
+    "median": 9.200910363949662,
+    "p05": 4.469153550844955,
+    "p95": 13.122951371261669
+   },
+   "consecutive_contact_distance_raw": {
+    "n": 46,
+    "median": 10.07951987704389,
+    "p05": 4.492705874463741,
+    "p95": 13.609731260209724
+   },
+   "nn_interpretation": "median NN / consecutive-contact distances of a few to ~10 units match iEEG inter-contact spacing in mm (SEEG ~3.5-5 mm, ECoG grid ~10 mm)",
+   "hemisphere_prefix_check": {
+    "L_prefix_n": 30,
+    "L_prefix_x_neg": 30,
+    "R_prefix_n": 30,
+    "R_prefix_x_pos": 30
+   },
+   "hemisphere_interpretation": "L-prefixed contacts at x<0 and R-prefixed at x>0 -> RAS orientation consistent",
+   "mne_bids_loader": {
+    "coord_frame": "mni_tal",
+    "n_pos": 60,
+    "max_abs_as_loaded": 66.817,
+    "note": "mne-bids applies coordsystem units literally (m)"
+   },
+   "mne_bids_note": "mne-bids maps fsaverage -> coord_frame 'mni_tal' and keeps the declared unit 'm' literally, so montage positions loaded via read_raw_bids are 1000x too large; scale by 1e-3 to metres."
+  }
+ },
+ "channels": {
+  "n_channels": 61,
+  "counts_by_type_channels_tsv": {
+   "ECOG": 61
+  },
+  "counts_by_type_mne": {
+   "ecog": 61
+  },
+  "status_counts": {
+   "good": 55,
+   "bad": 6
+  },
+  "bad_channels_tsv": [
+   "EKG",
+   "LA1",
+   "LA2",
+   "LA3",
+   "LA4",
+   "RF5"
+  ],
+  "soz": [
+   "RA2",
+   "RA3",
+   "RA4",
+   "RAT1",
+   "RAT2",
+   "RDNET1",
+   "RDNET2",
+   "RDNET3",
+   "RDNET4"
+  ],
+  "n_soz": 9,
+  "resect": [
+   "RAT3",
+   "RAT4",
+   "RDNET3",
+   "RDNET4"
+  ],
+  "n_resect": 4,
+  "soz_and_resect": [
+   "RDNET3",
+   "RDNET4"
+  ],
+  "soz_not_resect": [
+   "RA2",
+   "RA3",
+   "RA4",
+   "RAT1",
+   "RAT2",
+   "RDNET1",
+   "RDNET2"
+  ],
+  "other_status_tags": [],
+  "channels_without_coords": [
+   "EKG"
+  ],
+  "good_channels_without_coords": [],
+  "cross_run_consistency": {
+   "same_channel_list": true,
+   "same_soz": true,
+   "same_resect": true,
+   "same_bad": true
+  },
+  "qc_flags_by_channel": {
+   "high_amplitude_std_gt_500uV": {
+    "LAT1": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "LAT2": [
+     "ictal-01"
+    ],
+    "LAT3": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "LAT4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "LH1": [
+     "ictal-01"
+    ],
+    "LH2": [
+     "ictal-01"
+    ],
+    "LH3": [
+     "ictal-01"
+    ],
+    "LH4": [
+     "ictal-01"
+    ],
+    "LMT1": [
+     "ictal-01"
+    ],
+    "LMT2": [
+     "ictal-01"
+    ],
+    "LMT3": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "LMT4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "LPT3": [
+     "ictal-01"
+    ],
+    "RA1": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RA2": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RA3": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RA4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RAT1": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RDNET1": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RDNET2": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RDNET3": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RDNET4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RF2": [
+     "ictal-01"
+    ],
+    "RF6": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RH1": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RH2": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RH3": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RH4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RMT2": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RMT4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "RPT4": [
+     "ictal-01",
+     "ictal-02"
+    ],
+    "LF3": [
+     "ictal-02"
+    ],
+    "LF4": [
+     "ictal-02"
+    ],
+    "LP6": [
+     "ictal-02"
+    ],
+    "LPT1": [
+     "ictal-02"
+    ],
+    "LPT2": [
+     "ictal-02"
+    ],
+    "RAT2": [
+     "ictal-02"
+    ],
+    "RAT3": [
+     "ictal-02"
+    ],
+    "RAT4": [
+     "ictal-02"
+    ],
+    "RMT3": [
+     "ictal-02"
+    ],
+    "RPT1": [
+     "ictal-02"
+    ],
+    "RPT2": [
+     "ictal-02"
+    ],
+    "RPT3": [
+     "ictal-02"
+    ]
+   }
+  },
+  "type_notes": [
+   "EKG is typed ECOG in channels.tsv but is by name an ECG channel; status=bad and no coordinates -> exclude from iEEG analyses",
+   "Bad-status contacts LA1-LA4 and RF5 (no reason given in status_description)",
+   "Bilateral subdural implant (30 L-prefixed and 30 R-prefixed contacts with coordinates); depth-named RDNET* typed ECOG"
+  ],
+  "tag_semantics": "soz = clinician seizure-onset-zone tag; resect = contact in resection/ablation zone (delivered intervention; resection vs ablation not distinguished)"
+ },
+ "montage": {
+  "reference": "referential as recorded",
+  "iEEGReference_sidecar": "n/a",
+  "reference_electrode": "not_reported",
+  "acquisition": "ecog",
+  "edf_filters": {
+   "highpass_hz": 0.0,
+   "lowpass_hz": 250.0
+  },
+  "power_line_hz": 60
+ },
+ "events": {
+  "source": "events.tsv per ictal run ('sz onset'/'sz offset'); interictal runs have no events.tsv",
+  "seizures_by_run": {
+   "ictal-run-01": [
+    {
+     "onset_s": 120.0,
+     "offset_s": 169.998,
+     "duration_s": 49.998,
+     "pre_onset_s": 120.0,
+     "post_offset_s": 60.002
+    }
+   ],
+   "ictal-run-02": [
+    {
+     "onset_s": 120.0,
+     "offset_s": 193.998,
+     "duration_s": 73.998,
+     "pre_onset_s": 120.0,
+     "post_offset_s": 60.002
+    }
+   ]
+  },
+  "n_seizures": 2,
+  "issues": {
+   "ictal-run-01": [],
+   "ictal-run-02": []
+  },
+  "edf_embedded_annotations": {
+   "ictal-run-01": [],
+   "ictal-run-02": [],
+   "interictal-run-01": [],
+   "interictal-run-02": []
+  }
+ },
+ "units": {
+  "signal_units_channels_tsv": [
+   "µV"
+  ],
+  "signal_units_edf_header": [
+   "µV"
+  ],
+  "mne_internal": "V (mne scales uV->V on read)",
+  "sample_rate_hz": [
+   500.0
+  ],
+  "coordinates": "mm (declared m; see coordinate_transforms)",
+  "time": "s"
+ },
+ "time_window": "ictal runs: 2, total 484.0 s; interictal runs: 2, total 600.0 s",
+ "qc_report_ref": "QCReport committed in same task",
+ "outcomes": "sealed; not read",
+ "tooling": {
+  "worker": "case_qc.py",
+  "worker_sha256": "4200abcfed4cbc39592b462e1caee416af1b93e4b5487a2dba76f613145f3835",
+  "versions": {
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3",
+   "scipy": "1.15.1"
+  }
+ }
+}

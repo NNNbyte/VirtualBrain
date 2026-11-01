@@ -1,0 +1,51 @@
+{
+  "artifact_id": "A0010-EvidenceClaim",
+  "schema_name": "EvidenceClaim",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0003",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "europepmc-rest+build_claims.py",
+  "tool_version": "1.0",
+  "code_commit": null,
+  "environment_digest": "sha256:05F3B3AD978E9C307FF91045F102FBB073981E673A9E0586818E34C73B0F8C1D",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0010-EvidenceClaim/payload.json",
+      "media_type": "application/json",
+      "sha256": "4f73197c08d002ef247cfdb02a136b34accd2ab3020a0429e6f877750637c797",
+      "byte_size": 3614
+    },
+    {
+      "uri": "artifacts/A0010-EvidenceClaim/PMID33830503_abstract.txt",
+      "media_type": "application/octet-stream",
+      "sha256": "b15690ea3521597905eae77e2320bfe95a9b3f35237ef180bceccb9e960528fa",
+      "byte_size": 2012
+    }
+  ],
+  "scientific_context": {
+    "modality_key": "sante_10yr",
+    "evidence_kind": "literature_reported"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:39:54+00:00",
+  "supersedes_id": null,
+  "title": "ANT-DBS: Salanova V 2021 - sante_10yr",
+  "manifest_hash": "bcd87217d7f61abbbc405be1fdb7b5d8df89fec80177ecc33ff4f249f06487db"
+}

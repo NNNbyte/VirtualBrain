@@ -1,0 +1,42 @@
+{
+ "claim": "The 2026 AES/CNS GRADE-based epilepsy surgery guideline strongly recommends anterior temporal lobectomy for MTLE patients at low risk of cognitive decline (moderate certainty), and only conditionally suggests SAH and LITT in MTLE and neocortical resection in neocortical epilepsy (very low to low certainty).",
+ "bibliographic_record": {
+  "authors": "Jobst BC, Bergey G, Roldán-Benítez YM, Hopp JL, et al., Gonzalez-Martinez J",
+  "title": "American Epilepsy Society/Congress of Neurological Surgeons Epilepsy Surgery Clinical Practice Guideline",
+  "citation": "Epilepsy Curr 2026 (online ahead of print), article 15357597261465347; co-published in Neurosurgery doi 10.1227/neu.0000000000004254 (PMID 42929804)",
+  "doi": "10.1177/15357597261465347",
+  "pmid": "42948139",
+  "pmcid": "PMC13710471",
+  "publication_type": "clinical practice guideline (GRADE)"
+ },
+ "supporting_passage": "Following the GRADE process, the following strong recommendation was made based on a moderate level of evidence: (1) anterior temporal lobectomy (ATL) is recommended for people with MTLE at low risk for cognitive decline.",
+ "passage_location": "Abstract (unstructured). Abstract only (full text not read) (PMC full text exists but evidence tables not read). Europe PMC REST API (resultType=core, abstractText) for PMID 42948139; https://europepmc.org/abstract/MED/42948139; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "clinical practice guideline; GRADE systematic review and evidence-to-decision",
+  "population": "adults and children considered for epilepsy surgery (MTLE, neocortical epilepsy, hypothalamic hamartoma, callosotomy); neurostimulation not addressed",
+  "n_studies": "not_reported in abstract"
+ },
+ "endpoint": {
+  "reported_endpoint": "recommendations considering seizures, QoL, mortality, adverse events, verbal memory (critical outcomes)",
+  "follow_up": "not_applicable (guideline)",
+  "meets_protocol_followup_ge_12mo": "not_applicable",
+  "protocol_mapping_v1": "not_applicable",
+  "values": {
+   "ATL in MTLE, low cognitive risk": "strong, moderate certainty",
+   "ATL high cognitive risk / SAH / LITT in MTLE / neocortical resection / callosotomy": "conditional, very low to low certainty",
+   "LITT for hypothalamic hamartoma": "strong despite low evidence"
+  }
+ },
+ "reported_observation": "Strong recommendation only for ATL in MTLE (low cognitive risk); LITT in MTLE conditional with very low-low certainty.",
+ "author_inference": "Conditional recommendations require shared decision-making; every person with DRE should have access to a tertiary epilepsy centre (good practice statement).",
+ "contradictions": [],
+ "study_family_id": "fam-aes-cns-2026-guideline",
+ "overlap_note": "Evidence synthesis that draws on the same primary studies (e.g. Wiebe 2001, ERSET, LITT series); not independent evidence.",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

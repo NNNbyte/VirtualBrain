@@ -1,0 +1,56 @@
+{
+  "claim": "Meta-analysis of 74 VNS studies (3321 patients): seizure frequency reduced 36% at 3-12 months and 51% after >1 year; ~50% of patients had >=50% reduction at last follow-up; seizure freedom rarely achieved.",
+  "intervention_modality": "VNS",
+  "bibliographic_record": {
+    "authors": "Englot DJ, Chang EF, Auguste KI.",
+    "title": "Vagus nerve stimulation for epilepsy: a meta-analysis of efficacy and predictors of response.",
+    "journal": "Journal of neurosurgery",
+    "year": "2011",
+    "volume": "115",
+    "issue": "6",
+    "pages": "1248-1255",
+    "doi": "10.3171/2011.7.jns11977",
+    "pmid": "21838505",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/21838505",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21838505/"
+  },
+  "supporting_passage": "The authors performed the first meta-analysis of VNS efficacy in epilepsy, identifying 74 clinical studies with 3321 patients suffering from intractable epilepsy. [...] After VNS, seizure frequency was reduced by an average of 45%, with a 36% reduction in seizures at 3-12 months after surgery and a 51% reduction after > 1 year of therapy. [...] At the last follow-up, seizures were reduced by 50% or more in approximately 50% of the patients [...] it is important to recognize that complete seizure freedom is rarely achieved using VNS and that a quarter of patients do not receive any benefit from therapy.",
+  "supporting_passages": [
+    "The authors performed the first meta-analysis of VNS efficacy in epilepsy, identifying 74 clinical studies with 3321 patients suffering from intractable epilepsy.",
+    "After VNS, seizure frequency was reduced by an average of 45%, with a 36% reduction in seizures at 3-12 months after surgery and a 51% reduction after > 1 year of therapy.",
+    "At the last follow-up, seizures were reduced by 50% or more in approximately 50% of the patients",
+    "it is important to recognize that complete seizure freedom is rarely achieved using VNS and that a quarter of patients do not receive any benefit from therapy."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 21838505, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "3321 patients, 74 studies (3 Class I RCTs, 2 Class II, 10 prospective, many retrospective)",
+    "design": "meta-analysis",
+    "population": "intractable epilepsy, mixed focal and generalized, adults and children",
+    "age_group": "mixed"
+  },
+  "endpoint": {
+    "measure": "average % seizure reduction; responder rate (>=50%)",
+    "timepoint": "3-12 months; >1 year; last follow-up",
+    "median_pct_reduction": "not_reported (average: 36% at 3-12 mo, 51% at >1 y)",
+    "responder_rate_50pct": {
+      "last_follow_up": "approximately 0.50"
+    },
+    "seizure_freedom": "rare (no rate given in abstract)",
+    "follow_up_months_reported": ">12 for the 51% subgroup"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer VNS is effective and relatively safe for patients not amenable to resection.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Population broader than protocol (includes generalized epilepsy and children); not focal-only. Pools E05 and other trial cohorts - overlaps fam-VNS-E05-trial."
+  ],
+  "study_family_id": "fam-VNS-meta-Englot2011"
+}

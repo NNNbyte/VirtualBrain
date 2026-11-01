@@ -1,0 +1,47 @@
+{
+  "artifact_id": "A0017-NetworkHypothesisSet",
+  "schema_name": "NetworkHypothesisSet",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0014",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": null,
+  "tool_version": null,
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0006-MethodCard",
+    "A0009-PatientCase",
+    "A0010-QCReport"
+  ],
+  "input_manifest_hash": "ea123722cf8706f3974f1b0abcb0ecb8df39c66950b836cd9fa208c92f7956a5",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0017-NetworkHypothesisSet/payload.json",
+      "media_type": "application/json",
+      "sha256": "39bcd31f9bfa1b783dbe2127a08e2bdc633202fa4d7162864fdafe047651e89a",
+      "byte_size": 4763
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "fitted_estimate"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T14:31:50+00:00",
+  "supersedes_id": "A0016-NetworkHypothesisSet",
+  "title": "P2 competing EZ hypotheses: L dorsolateral PFC (F2), orbito/mesial PFC, L amygdala, stimulation-dependent null",
+  "manifest_hash": "9ce912f4e0983327355e3cb38fe3789cba8f854c592b3861a4a6735968c5c00d"
+}

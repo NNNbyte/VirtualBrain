@@ -1,0 +1,19 @@
+{
+  "dataset_id": "candidate-epivr (Kini et al. 2019 virtual resection cohort; IEEG.org)",
+  "study_family_id": "fam-hup-penn",
+  "source_doi": "10.1093/brain/awz303",
+  "repository_url": "https://github.com/ieeg-portal/EpiVR (code only); data reported on https://www.ieeg.org",
+  "reported_subject_count": 28,
+  "reported_subject_count_source": "Abstract (PMC6885672): 'a retrospective cohort of 28 patients'; Table 1: 17 good (Engel I/ILAE 1-2), 11 poor",
+  "data_access": "to_verify: paper's Data availability says imaging, seizure annotations and ECoG are public via IEEG.org (registration-based portal); IEEG.org page could not be rendered by fetch tool. GitHub repo verified to contain code only.",
+  "licence": "Code: MIT (GitHub API). Data: to_verify (IEEG.org terms)",
+  "approx_total_size_gb": null,
+  "approx_total_size_basis": "GitHub repo ~20.7 MB (API 'size' 20731 KB), 79 tree entries, no patient recordings; data size on IEEG.org unknown",
+  "verified_subject_count": null,
+  "verified_modalities": "to_verify (repo tree inspected: code, docs/templates, tiny test NIfTI/mat fixtures only)",
+  "intervention_linkage": "reported: resected electrodes determined by 'a quantitative pipeline using pre- and post-surgical imaging' plus surgical-conference cartoon maps (Results/Methods, PMC6885672); not verified in files",
+  "follow_up_definition": "reported: outcome 'measured at a minimum of 1 year after surgery' from last clinician follow-up (Methods, 'Surgical outcome')",
+  "eligibility": "Superseded in practice by ds004100 (same HUP family, larger, public CC0 BIDS with resect tags). Use only if IEEG.org adds imaging/segmentations absent from ds004100.",
+  "cohort_overlap": "Subset of fam-hup-penn; ds004100 README states a subset of its data was featured in Kini & Bernabei 2019; HUP080 (named in Kini 2019 Fig. 4 discussion) is in ds004100. HUP073 (also named) is not in ds004100.",
+  "checked_on": "2026-10-31"
+}

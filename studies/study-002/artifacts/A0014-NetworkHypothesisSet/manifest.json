@@ -1,0 +1,47 @@
+{
+  "artifact_id": "A0014-NetworkHypothesisSet",
+  "schema_name": "NetworkHypothesisSet",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P1",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0011",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "work/T0011/features.py",
+  "tool_version": null,
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0007-PatientCase",
+    "A0006-MethodCard",
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "03948c45c50f77e6e93fbb292e5537bd0c8cb6f6eaaa53baac5655d929c334b2",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0014-NetworkHypothesisSet/payload.json",
+      "media_type": "application/json",
+      "sha256": "49c8f75e4fc949846943e783a465797aa4bf5b5533ea6b55d6c56ec10f86373b",
+      "byte_size": 4408
+    }
+  ],
+  "scientific_context": {
+    "synthetic_case": "SYN-P1",
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T14:12:19+00:00",
+  "supersedes_id": null,
+  "title": "SYN-P1 benchmark: 4 competing EZ/propagation hypotheses (focal T2-ant, focal STS-ant, extended, network-emergent) + planted reference",
+  "manifest_hash": "ba1dfb54d6a268f3b137838d17394fc56be5a7b8364b92f1276d113d5f152147"
+}

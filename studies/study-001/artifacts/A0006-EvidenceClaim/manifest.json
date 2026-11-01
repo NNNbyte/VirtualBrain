@@ -1,0 +1,51 @@
+{
+  "artifact_id": "A0006-EvidenceClaim",
+  "schema_name": "EvidenceClaim",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0003",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "europepmc-rest+build_claims.py",
+  "tool_version": "1.0",
+  "code_commit": null,
+  "environment_digest": "sha256:05F3B3AD978E9C307FF91045F102FBB073981E673A9E0586818E34C73B0F8C1D",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0006-EvidenceClaim/payload.json",
+      "media_type": "application/json",
+      "sha256": "e366d13fac0b3cfe01d2b7869117a1050a036cf6cc4a180e882c6df3ed4bcc64",
+      "byte_size": 4389
+    },
+    {
+      "uri": "artifacts/A0006-EvidenceClaim/PMID42030518_abstract.txt",
+      "media_type": "application/octet-stream",
+      "sha256": "7be6ad5446f849e79404a3e2b25f9c0f12ae9b24498585b0c61508409c0b89c7",
+      "byte_size": 2822
+    }
+  ],
+  "scientific_context": {
+    "modality_key": "rns_pas_3yr",
+    "evidence_kind": "literature_reported"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:39:53+00:00",
+  "supersedes_id": null,
+  "title": "RNS: Eliashiv D 2026 - rns_pas_3yr",
+  "manifest_hash": "939e92ed2ad21f3681819721a302cd0dd842472b953c54285ba1e5e8307e3657"
+}

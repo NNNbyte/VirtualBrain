@@ -1,0 +1,47 @@
+{
+ "claim": "In a single-centre RCT of 116 children/adolescents (<=18 y) with drug-resistant epilepsy, 77% of the surgery group vs 7% of the medical-therapy group were seizure free at 12 months; serious adverse events occurred in 33% of the surgery group (hemiparesis 26%). Paediatric-only cohort: analyse separately per protocol.",
+ "bibliographic_record": {
+  "authors": "Dwivedi R, Ramanujam B, Chandra PS, Sapra S, Gulati S, et al.",
+  "title": "Surgery for Drug-Resistant Epilepsy in Children",
+  "citation": "N Engl J Med 2017;377(17):1639-1647",
+  "doi": "10.1056/NEJMoa1615335",
+  "pmid": "29069568",
+  "pmcid": null,
+  "publication_type": "journal article"
+ },
+ "supporting_passage": "At 12 months, freedom from seizures occurred in 44 patients (77%) in the surgery group and in 4 (7%) in the medical-therapy group (P<0.001).",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 29069568; https://europepmc.org/abstract/MED/29069568; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "single-centre randomized controlled trial (India; CTRI/2010/091/000525)",
+  "n_total": 116,
+  "arms": {
+   "surgery + medical therapy": 57,
+   "medical therapy alone (waiting list)": 59
+  },
+  "population": "patients aged <=18 years with drug-resistant epilepsy (mixed etiologies; surgery 'appropriate to the underlying cause' -- includes procedures beyond focal resection, breakdown not_reported in abstract)",
+  "protocol_flag": "pediatric-only cohort -> recorded but analysed separately (protocol exclusion rule)"
+ },
+ "endpoint": {
+  "reported_endpoint": "freedom from seizures at 12 months (primary)",
+  "follow_up": "12 months",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "seizure freedom -> favourable (Engel/ILAE class not stated in abstract)",
+  "values": {
+   "surgery": "44/57 (77%)",
+   "medical": "4/59 (7%)",
+   "p": "<0.001"
+  },
+  "adverse": "Serious adverse events occurred in 19 patients (33%) in the surgery group, including hemiparesis in 15 (26%)."
+ },
+ "reported_observation": "77% vs 7% seizure free at 12 months; 33% serious adverse events in surgery arm.",
+ "author_inference": "Surgery gave significantly higher seizure freedom and better behaviour and quality of life than continued medical therapy at 12 months.",
+ "contradictions": [],
+ "study_family_id": "fam-dwivedi2017-aiims-peds-rct",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

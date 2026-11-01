@@ -1,0 +1,85 @@
+{
+  "artifact_id": "A0013-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0008",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "check_stan.py+repro_cases.py+repro_signals.py",
+  "tool_version": "93037704",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0005-ValidationReport",
+    "A0006-MethodCard",
+    "A0007-PatientCase",
+    "A0008-QCReport",
+    "A0009-PatientCase",
+    "A0010-QCReport"
+  ],
+  "input_manifest_hash": "79eb4f7cc67c5aec6e556a1ade439e4ec4eea261752c2d0bc7111d5117e01c23",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0013-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "a358751ce36e7ff978b1ed88b10766c9ee19c8689a2978a1751485ac943a22f5",
+      "byte_size": 13393
+    },
+    {
+      "uri": "artifacts/A0013-ValidationReport/check_stan.py",
+      "media_type": "application/octet-stream",
+      "sha256": "8df76cf4003a7aba758f013e55fb2157c9a085728485d214d31a9c9be54f3c4d",
+      "byte_size": 812
+    },
+    {
+      "uri": "artifacts/A0013-ValidationReport/check_stan_out.json",
+      "media_type": "application/octet-stream",
+      "sha256": "1f795e9eeeaa1a3bbfc5249588b27f15d097f1b413a1f22db9e31579eaa531fe",
+      "byte_size": 303
+    },
+    {
+      "uri": "artifacts/A0013-ValidationReport/repro_cases.py",
+      "media_type": "application/octet-stream",
+      "sha256": "93037704442963db840d1541ff09a1e4b46475f195d62bab44345354b810b957",
+      "byte_size": 7900
+    },
+    {
+      "uri": "artifacts/A0013-ValidationReport/repro_cases_out.json",
+      "media_type": "application/octet-stream",
+      "sha256": "77b2685d78b7d393de8887258195ec14f7d0cdaf9a810250c893d07a346e6d8f",
+      "byte_size": 93993
+    },
+    {
+      "uri": "artifacts/A0013-ValidationReport/repro_signals.py",
+      "media_type": "application/octet-stream",
+      "sha256": "f3e53ee6439e2228bfa3ce826058105ad447f4ca5ac282a8c92d6947d3dede4a",
+      "byte_size": 4541
+    },
+    {
+      "uri": "artifacts/A0013-ValidationReport/repro_signals_out.json",
+      "media_type": "application/octet-stream",
+      "sha256": "1c53397ea974318fba3a6cc75357977a4a0da19fc8695bcf4d9d874a236a8807",
+      "byte_size": 8658
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T13:31:54+00:00",
+  "supersedes_id": null,
+  "title": "R5 check of repaired MethodCard A0006 and P1/P2 case records A0007-A0010 (all passed; region order supported by package convention)",
+  "manifest_hash": "931ab65992fbacb81da5d2964a16f439cebb5a1684b85a9635e3ab2aa3c676bc"
+}

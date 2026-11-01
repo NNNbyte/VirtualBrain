@@ -1,0 +1,7 @@
+{
+  "resource": "The Virtual Brain library (tvb-library) and tvb-data",
+  "access_path": "PyPI tvb-library 2.10.0 / tvb-data 3.0.0; source https://github.com/the-virtual-brain/tvb-root (HEAD 928f90d, 2026-10-20)",
+  "status": "verified_present (PyPI JSON metadata and GitHub tree inspected; not installed)",
+  "conditions": "GPL-3.0-or-later. tvb-data wheel about 52 MB (download needs user approval per protocol). Cite Sanz Leon et al. 2013 and Schirner et al. (arXiv 2102.05888) per package notice.",
+  "verified_at": "2026-10-31"
+}

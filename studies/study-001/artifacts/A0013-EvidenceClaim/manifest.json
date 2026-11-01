@@ -1,0 +1,51 @@
+{
+  "artifact_id": "A0013-EvidenceClaim",
+  "schema_name": "EvidenceClaim",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0003",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "europepmc-rest+build_claims.py",
+  "tool_version": "1.0",
+  "code_commit": null,
+  "environment_digest": "sha256:05F3B3AD978E9C307FF91045F102FBB073981E673A9E0586818E34C73B0F8C1D",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0013-EvidenceClaim/payload.json",
+      "media_type": "application/json",
+      "sha256": "22ce267cde6961a6fb798706179d18bf63e1b7d292a01714633be3d783524fa5",
+      "byte_size": 3524
+    },
+    {
+      "uri": "artifacts/A0013-EvidenceClaim/PMID10999559_abstract.txt",
+      "media_type": "application/octet-stream",
+      "sha256": "2f652c53907b0f861678fd444276d5a06e968321cb0ee269728f0c98e3675182",
+      "byte_size": 1351
+    }
+  ],
+  "scientific_context": {
+    "modality_key": "vns_e05_12mo",
+    "evidence_kind": "literature_reported"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:39:55+00:00",
+  "supersedes_id": null,
+  "title": "VNS: DeGiorgio CM 2000 - vns_e05_12mo",
+  "manifest_hash": "4a85fe8a259490e8160fbe093ee2af5f66741402e8c7eec0430eeed476e0bb8e"
+}

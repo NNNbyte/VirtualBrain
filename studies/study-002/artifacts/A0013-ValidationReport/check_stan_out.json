@@ -1,0 +1,18 @@
+{
+ "cmdstan_path": "C:\\Users\\Pengrui\\.mm\\envs\\cs\\Library\\bin\\cmdstan",
+ "cmdstan_version": [
+  2,
+  40
+ ],
+ "vep_mcmc": {
+  "rc": 0,
+  "stdout": "",
+  "stderr": ""
+ },
+ "vep_mm_mcmc": {
+  "rc": 0,
+  "stdout": "",
+  "stderr": ""
+ },
+ "stanc_version": "stanc3 v2.40.0 (Win32)"
+}

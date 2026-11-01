@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Single vs Multi-Agent</title>
+<style>
+:root{--bg:#f7f7f4;--surface:#ffffff;--ink:#1d1f24;--muted:#5d6370;--line:#dcdcd6;--multi:#2f5fd0;--single:#c2581b;--good:#1f7a4d;--bad:#b3261e;--chip:#eef0f5;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161a;--surface:#1c1f25;--ink:#e8e9ec;--muted:#a1a6b2;--line:#30343c;--multi:#7ea2ff;--single:#ff9a5c;--good:#5cc98e;--bad:#ff7a70;--chip:#262a32;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14161a;--surface:#1c1f25;--ink:#e8e9ec;--muted:#a1a6b2;--line:#30343c;--multi:#7ea2ff;--single:#ff9a5c;--good:#5cc98e;--bad:#ff7a70;--chip:#262a32;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:32px 16px 48px}
+header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+h1{font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.2;margin:0 0 6px;letter-spacing:-.01em}
+h2{font-size:1.1rem;margin:0 0 12px}
+.sub{color:var(--muted);margin:0}
+button.theme{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:inherit;font-size:.85rem;cursor:pointer;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .label{color:var(--muted);font-size:.85rem}
+.kpi .row{display:flex;gap:16px;align-items:baseline;margin-top:6px;flex-wrap:wrap}
+.kpi .v{font-size:1.6rem;font-weight:650;font-variant-numeric:tabular-nums}
+.kpi .who{font-size:.8rem;color:var(--muted);display:block}
+.s{color:var(--single)}.m{color:var(--multi)}
+.legend{display:flex;gap:16px;font-size:.85rem;color:var(--muted);margin-bottom:10px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.crit{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:6px 14px;align-items:center}
+.crit .name{font-size:.92rem}
+.crit .name small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3}
+.bars{display:grid;gap:3px}
+.bar{display:flex;align-items:center;gap:8px}
+.track{flex:1;height:14px;background:var(--chip);border-radius:4px;overflow:hidden;max-width:420px}
+.fill{height:100%;border-radius:4px}
+.fill.s{background:var(--single)}.fill.m{background:var(--multi)}
+.num{font-size:.8rem;font-variant-numeric:tabular-nums;width:2.2em;color:var(--muted)}
+.sep{grid-column:1/-1;border-top:1px solid var(--line);margin:4px 0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:12px}
+ul{margin:0;padding-left:1.1em}
+li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.ok{color:var(--good);font-weight:600}.no{color:var(--bad);font-weight:600}
+.scroll{overflow-x:auto}
+.bottom{border-left:4px solid var(--multi);margin-top:12px}
+.bottom p{margin:0 0 8px}.bottom p:last-child{margin:0}
+footer{color:var(--muted);font-size:.78rem;margin-top:20px;word-break:break-all}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div>
+    <h1>Does the multi-agent design add value?</h1>
+    <p class="sub">The same task on virtual Patient 2 (Wang et al. 2025 virtual brain twins), done by one plain agent and by the controller-governed multi-agent study-002. Scored blind on criteria fixed before the run. Research on virtual patients, not clinical advice.</p>
+  </div>
+  <button class="theme" id="t" type="button">Theme</button>
+</header>
+
+<section class="kpis">
+  <div class="card kpi"><div class="label">Score on criteria 1–7 (max 21)</div>
+    <div class="row"><span class="v s">6<span class="who">single agent</span></span><span class="v m">18<span class="who">multi-agent</span></span></div></div>
+  <div class="card kpi"><div class="label">Rank of the true onset region</div>
+    <div class="row"><span class="v s">4th<span class="who">of 7 listed</span></span><span class="v m">46–159th<span class="who">of 162</span></span></div></div>
+  <div class="card kpi"><div class="label">Known pipeline defects found</div>
+    <div class="row"><span class="v s">0/4<span class="who">single agent</span></span><span class="v m">4/4<span class="who">multi-agent</span></span></div></div>
+  <div class="card kpi"><div class="label">Wall clock</div>
+    <div class="row"><span class="v s">2 min<span class="who">1 agent, local CPU</span></span><span class="v m">4 h 11 min<span class="who">23 tasks, GCP VM</span></span></div></div>
+</section>
+
+<section class="card">
+  <h2>Score by criterion (0–3)</h2>
+  <div class="legend"><span><i style="background:var(--single)"></i>Single agent</span><span><i style="background:var(--multi)"></i>Multi-agent</span></div>
+  <div class="crit" id="crit"></div>
+</section>
+
+<div class="two">
+  <section class="card">
+    <h2>Where the single agent did as well or better</h2>
+    <ul>
+      <li><b>Localisation.</b> A regularised gain-matrix inversion ranked the true region (column 15, Left-F1-lateral-prefrontal) <b>4th</b>, inside its spread zone. Its declared EZ (top 3) still has recall 0.</li>
+      <li>The multi-agent's frozen Bayesian estimates had <b>recall 0</b> in every window, with the true region ranked 46th–159th. Only its exploratory hypothesis H1 listed the region, as a propagation candidate.</li>
+      <li><b>Speed.</b> About 115 times faster, and it used only 2 of its 15 minutes.</li>
+      <li>It found that the gain matrix is badly conditioned (condition number about 5e6) and flagged possible cross-midline leakage.</li>
+    </ul>
+  </section>
+  <section class="card">
+    <h2>Where the multi-agent design paid off</h2>
+    <ul>
+      <li>It found all 4 defects: the likelihood skip, the sampling rate (125 Hz, not 250), the double log and non-convergence (R-hat up to 6.4). It also found that the seizure is stimulation-induced.</li>
+      <li>Two synthetic benchmarks failed, so it rejected its own models and called them "not qualified".</li>
+      <li>Blinding was enforced: predictions frozen at ledger seq 205, vault opened at seq 214, with hashes.</li>
+      <li>R5 reproduced the simulations bit for bit. It made no recommendation, because the truth showed none could be verified.</li>
+    </ul>
+  </section>
+</div>
+
+<section class="card" style="margin-top:12px">
+  <h2>Known defects, as found by each system before the reveal</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Defect</th><th>Single agent</th><th>Multi-agent</th></tr></thead>
+    <tbody>
+      <tr><td>Column-major likelihood skip in <code>vep_mcmc.stan</code></td><td class="no">Missed (it read the file)</td><td class="ok">Found (A0005)</td></tr>
+      <tr><td>Sampling rate per file (P2 is 125 Hz, not 250)</td><td class="no">Not flagged (used 8-ms steps, never ran the pipeline)</td><td class="ok">Found (A0013)</td></tr>
+      <tr><td>Double log of the observations</td><td class="no">Missed</td><td class="ok">Found and fixed (A0036/A0037)</td></tr>
+      <tr><td>Non-convergence or multimodality</td><td class="no">Not tested</td><td class="ok">Found (A0037, A0042)</td></tr>
+      <tr><td>Seizure is stimulation-induced (train at 0.5–3.5 s)</td><td class="no">Missed: its ictal window includes the train</td><td class="ok">Found (A0017 H4)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="card bottom" style="margin-top:12px">
+  <h2>Bottom line</h2>
+  <p>In this test, the multi-agent design did <b>not</b> localise the onset zone better. A 2-minute heuristic came closer than the 4-hour Bayesian pipeline. The single agent, though, recommended stimulating three regions that do not include the true one, based on circular simulations, and nothing in its output warned the reader.</p>
+  <p>What the multi-agent design adds is <b>knowing when its answer can't be trusted</b>: it caught the defects, rejected the models that failed validation, enforced blinding and made the results reproducible. The cost is about 100 times the time. Next step: add the cheap source-imaging baseline to the pipeline as a benchmarked comparator.</p>
+  <p class="sub" style="font-size:.85rem">Caveats: one patient and one baseline run. The baseline had no web access. Study-002 review tasks were still running at scoring time.</p>
+</section>
+
+<footer>Criteria sha256 54ef973c2bc9799bc616767b47ed0da484babddc4b9964ae1f6c4f7afc0551f9 · Baseline answer sha256 3f73e4fa66291553278f638450c463d08823cef31b94c9728f764c8bc75b6df3 · Truth and multi-agent evidence: study-002 artifacts A0005, A0013, A0017, A0037, A0040, A0041, A0042, A0043, A0045, A0046, and the ledger · Full evidence: comparison/comparison.md</footer>
+</main>
+<script>
+const C=[
+ ["1 · Onset-zone recovery","true region rank 4 vs 46–159",1,0],
+ ["2 · Calibration and honesty","",2,3],
+ ["3 · Error detection","0 of 4 vs 4 of 4 known defects",0,3],
+ ["4 · Validation on synthetic truth","",0,3],
+ ["5 · Blinding and leakage control","",1,3],
+ ["6 · Traceability and reproducibility","",1,3],
+ ["7 · Treatment recommendation","",1,3]];
+const el=document.getElementById('crit');
+C.forEach(([n,note,s,m],i)=>{
+ if(i) el.insertAdjacentHTML('beforeend','<div class="sep"></div>');
+ el.insertAdjacentHTML('beforeend',`<div class="name">${n}${note?`<small>${note}</small>`:''}</div>
+ <div class="bars">
+  <div class="bar"><div class="track"><div class="fill s" style="width:${s/3*100}%"></div></div><span class="num">${s}</span></div>
+  <div class="bar"><div class="track"><div class="fill m" style="width:${m/3*100}%"></div></div><span class="num">${m}</span></div>
+ </div>`);
+});
+const root=document.documentElement,b=document.getElementById('t');
+try{const t=localStorage.getItem('cmp-theme');if(t)root.dataset.theme=t}catch(e){}
+b.onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+ root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('cmp-theme',root.dataset.theme)}catch(e){}};
+</script>
+</body>
+</html>

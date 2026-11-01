@@ -1,0 +1,65 @@
+{
+  "artifact_id": "A0060-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0006",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "fetch_check.py+europepmc-rest+webfetch",
+  "tool_version": "1",
+  "code_commit": null,
+  "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0017-EvidenceClaim",
+    "A0018-EvidenceClaim",
+    "A0019-EvidenceClaim",
+    "A0020-EvidenceClaim",
+    "A0021-EvidenceClaim",
+    "A0022-EvidenceClaim",
+    "A0023-EvidenceClaim",
+    "A0024-EvidenceClaim",
+    "A0025-EvidenceClaim",
+    "A0026-EvidenceClaim",
+    "A0027-EvidenceClaim",
+    "A0028-EvidenceClaim",
+    "A0029-EvidenceClaim",
+    "A0030-EvidenceClaim",
+    "A0032-Report"
+  ],
+  "input_manifest_hash": "fd5bf7cec77d33d9d3db92574dcb6d2541ae5cdeb225b6f94f364d534127520c",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0060-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "afa05ce34b34db811e42636b21b124d33304286b88eada853b5ac8ad72065474",
+      "byte_size": 4825
+    },
+    {
+      "uri": "artifacts/A0060-ValidationReport/fetch_check.py",
+      "media_type": "application/octet-stream",
+      "sha256": "c916910f638eed9e8f024be762be44abc5157b46405c86248c6b35e586fd09ba",
+      "byte_size": 2851
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:48:53+00:00",
+  "supersedes_id": null,
+  "title": "R5 source check of R1 surgery/LITT evidence (A0017-A0030, A0032)",
+  "manifest_hash": "e7b3d0d5a7d4eaabf9faaf364c91d4ce5c979c29d5db307440c27a3b47b2415b"
+}

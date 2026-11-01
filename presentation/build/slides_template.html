@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScienceClaw Epilepsy Collective</title>
+<style>
+:root{color-scheme:light;--bg:#e9e7e1;--paper:#fcfcfa;--ink:#111110;--ink2:#4c4b47;--muted:#7a7872;--line:#e2dfd7;--line2:#efede7;
+--blue:#2a78d6;--orange:#eb6834;--green:#1a9e6e;--amber:#d99000;--violet:#6250d6;--slate:#334155;--red:#c8382c;--brain:#cfccc3}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:1920px;height:1080px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--paper);padding:72px 96px 0;display:none;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.12)}
+.slide.on{display:block}
+.slide .notes{display:none}
+.kicker{font-size:22px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}
+h1{font-size:62px;line-height:1.08;letter-spacing:-.02em;margin:0 0 22px;font-weight:720;max-width:1600px;text-wrap:balance}
+h2{font-size:30px;margin:0 0 12px;font-weight:680}
+p,li{font-size:27px;line-height:1.42;color:var(--ink2);margin:0 0 12px}
+ul{margin:0;padding-left:30px}
+strong{color:var(--ink);font-weight:650}
+.small{font-size:20px;line-height:1.4;color:var(--muted)}
+.cite{font-size:17px;color:var(--muted)}
+.tag{display:inline-block;font-size:17px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;padding:4px 12px;border-radius:999px;vertical-align:middle}
+.tag.exp{background:#fde9d9;color:#9a3b10;border:1.5px solid #f4b48f}
+.tag.ok{background:#dcf2e8;color:#0d6b47;border:1.5px solid #9bd8bd}
+.tag.no{background:#f9dedb;color:#93231a;border:1.5px solid #eba79f}
+.footer{position:absolute;left:96px;right:96px;bottom:26px;display:flex;justify-content:space-between;font-size:17px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.cols{display:grid;gap:56px}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 30px}
+.card h2{display:flex;align-items:center;gap:12px}
+.num{font-size:64px;font-weight:740;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.numlab{font-size:21px;color:var(--ink2);margin-top:6px;line-height:1.3}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:8px 0 26px}
+.stat{border-left:5px solid var(--blue);padding:4px 0 4px 20px}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+/* nav + notes */
+#nav{transition:opacity .4s;opacity:0;position:fixed;right:18px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:10;font:14px system-ui;color:#555}
+#nav button{font:inherit;border:1px solid #c9c6bd;background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer}
+#nav button:hover{background:#f3f1ec}
+#nav.show,#nav:hover{opacity:1}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:40vh;overflow:auto;background:#1d1d1b;color:#f1efe9;padding:16px 22px 18px;font:17px/1.5 system-ui;display:none;z-index:9}
+#notes.on{display:block}
+#notes .nt{color:#f0b44c;font-weight:650;margin-bottom:6px}
+/* 3D viewer */
+.viewer{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:18px;overflow:hidden}
+.viewer canvas{display:block;width:100%;height:100%;cursor:grab}
+.vbar{position:absolute;left:16px;right:16px;top:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.vbar button,.vctl button{font:600 17px system-ui;border:1.5px solid var(--line);background:#fff;color:var(--ink2);border-radius:999px;padding:7px 15px;cursor:pointer}
+.vbar button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vctl{position:absolute;left:16px;right:16px;bottom:14px;display:flex;gap:14px;align-items:center;font:17px system-ui;color:var(--ink2)}
+.vctl input[type=range]{flex:1;accent-color:var(--orange)}
+.vctl .tt{font-variant-numeric:tabular-nums;min-width:86px}
+.vleg{position:absolute;right:16px;top:64px;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font:16px/1.45 system-ui;color:var(--ink2);max-width:330px}
+.vleg .grad{height:12px;border-radius:6px;margin:6px 0 2px}
+.vleg .dot{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-right:6px}
+.vcap{position:absolute;left:16px;bottom:58px;font:600 19px system-ui;color:var(--ink);background:rgba(255,255,255,.85);padding:4px 10px;border-radius:8px}
+.heat canvas{image-rendering:pixelated}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- ============ S1 problem ============ -->
+<section class="slide" data-time="22">
+  <div class="kicker">ScienceClaw hackathon · A·04 open scientific challenge</div>
+  <h1>A governed agent collective that tests epilepsy surgery vs stimulation on virtual-brain twins</h1>
+  <div class="cols" style="grid-template-columns:520px 1fr;margin-top:46px;align-items:start">
+    <div class="card" style="border-color:#f4c9b2;background:#fffaf6">
+      <div class="num" style="font-size:132px;color:var(--orange);white-space:nowrap">~1 in 3</div>
+      <div class="numlab" style="font-size:27px;margin-top:14px">people with epilepsy keep having seizures despite medication</div>
+      <div class="cite" style="margin-top:14px">Background, not a study record: Kwan &amp; Brodie, NEJM 2000; Chen et al., JAMA Neurol 2018</div>
+    </div>
+    <div>
+      <h2>The choice is hard, high-stakes and uncertain</h2>
+      <ul>
+        <li><strong>Resection</strong> can stop seizures, but only if the right tissue is found, and it carries risk (memory decline in 36% after temporal surgery in one RCT).</li>
+        <li><strong>Neurostimulation</strong> (RNS, DBS, VNS) is safer but palliative: roughly 40–75% fewer seizures, seizure freedom uncommon.</li>
+        <li><strong>No study</strong> reports outcomes after model-guided stimulation.</li>
+        <li>You cannot try both on the same patient. A virtual-brain twin could, if its answers can be trusted.</li>
+      </ul>
+      <p class="cite" style="margin-top:18px">Figures from our study-001 literature dossier (EvidenceClaims A0018, A0031; open need N001), all source-checked by an independent agent.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px">
+    <div class="card" style="padding:22px 26px;border-left:6px solid var(--slate)"><div class="small" style="text-transform:uppercase;letter-spacing:.06em;font-weight:650">What we built</div><p style="margin:6px 0 0;font-size:25px"><strong>A 7-role agent collective</strong> governed by a deterministic controller</p></div>
+    <div class="card" style="padding:22px 26px;border-left:6px solid var(--green)"><div class="small" style="text-transform:uppercase;letter-spacing:.06em;font-weight:650">Study-001 · done</div><p style="margin:6px 0 0;font-size:25px"><strong>Real patients</strong>: literature, 10 curated iEEG cases, a model audit</p></div>
+    <div class="card" style="padding:22px 26px;border-left:6px solid var(--violet)"><div class="small" style="text-transform:uppercase;letter-spacing:.06em;font-weight:650">Study-002 · running</div><p style="margin:6px 0 0;font-size:25px"><strong>Blinded virtual-brain twin</strong>: treatments simulated before/after</p></div>
+  </div>
+  <div class="footer"><span>ScienceClaw Epilepsy Collective · research evidence on virtual patients, not clinical recommendations</span><span class="pg"></span></div>
+  <aside class="notes">One in three people with epilepsy keep having seizures despite medication. For them the choice is surgery, which can cure but only if we find the right tissue, or neurostimulation, which is safer but rarely stops seizures. Nobody can test both on the same patient. We asked: can a collective of AI agents build and test virtual-brain twins for this choice, rigorously enough that we would trust what it says, and what it refuses to say?</aside>
+</section>
+
+<!-- ============ S2 approach ============ -->
+<section class="slide" data-time="32">
+  <div class="kicker">Our system</div>
+  <h1>Agents propose, a deterministic controller decides</h1>
+  <div style="display:grid;grid-template-columns:1150px 1fr;gap:44px;margin-top:6px">
+    <svg viewBox="0 0 1150 760" width="1150" height="760" role="img" aria-label="Workflow: seven agent roles around a deterministic study controller with ledger, gates, needs board, sealed vault and frozen release">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a877f"/></marker>
+      </defs>
+      <!-- LEAD -->
+      <rect x="380" y="6" width="390" height="92" rx="16" fill="#fff" stroke="#334155" stroke-width="2.5"/>
+      <text x="575" y="44" text-anchor="middle" font-size="25" font-weight="700" fill="#334155">LEAD · orchestrator</text>
+      <text x="575" y="76" text-anchor="middle" font-size="19" fill="#4c4b47">proposes tasks, assembles the dossier</text>
+      <path d="M575 100 L575 168" stroke="#8a877f" stroke-width="2.5" marker-end="url(#ar)"/>
+      <text x="590" y="142" font-size="17" fill="#7a7872">propose task</text>
+      <!-- controller -->
+      <rect x="20" y="172" width="1110" height="210" rx="20" fill="#1f2937"/>
+      <text x="48" y="214" font-size="27" font-weight="720" fill="#fff">Study controller</text>
+      <text x="290" y="214" font-size="20" fill="#c7cdd6">deterministic Python, not an LLM · one append-only ledger per study</text>
+      <g font-size="19" fill="#fff">
+        <rect x="48" y="236" width="252" height="58" rx="10" fill="#374151"/><text x="64" y="261" font-weight="650">Admit / refuse tasks</text><text x="64" y="284" fill="#c7cdd6" font-size="16">vs role profile &amp; inputs</text>
+        <rect x="312" y="236" width="252" height="58" rx="10" fill="#374151"/><text x="328" y="261" font-weight="650">Validate &amp; commit</text><text x="328" y="284" fill="#c7cdd6" font-size="16">schema, hashes, provenance</text>
+        <rect x="576" y="236" width="252" height="58" rx="10" fill="#374151"/><text x="592" y="261" font-weight="650">Gates</text><text x="592" y="284" fill="#c7cdd6" font-size="16">evaluator ≠ producer</text>
+        <rect x="840" y="236" width="262" height="58" rx="10" fill="#374151"/><text x="856" y="261" font-weight="650">Needs board</text><text x="856" y="284" fill="#c7cdd6" font-size="16">post, claim, fulfil gaps</text>
+        <rect x="48" y="306" width="252" height="58" rx="10" fill="#374151"/><text x="64" y="331" font-weight="650">Repairs</text><text x="64" y="354" fill="#c7cdd6" font-size="16">stale inputs cascade</text>
+        <rect x="312" y="306" width="252" height="58" rx="10" fill="#374151"/><text x="328" y="331" font-weight="650">Sealed vault</text><text x="328" y="354" fill="#c7cdd6" font-size="16">truth opened only by R5</text>
+        <rect x="576" y="306" width="252" height="58" rx="10" fill="#374151"/><text x="592" y="331" font-weight="650">Frozen release</text><text x="592" y="354" fill="#c7cdd6" font-size="16">skills+profiles+code hashed</text>
+        <rect x="840" y="306" width="262" height="58" rx="10" fill="#374151"/><text x="856" y="331" font-weight="650">Live dashboard</text><text x="856" y="354" fill="#c7cdd6" font-size="16">board, timeline, skill editor</text>
+      </g>
+      <!-- arrows to roles -->
+      <g stroke="#8a877f" stroke-width="2.5">
+        <path d="M108 386 L108 452" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <path d="M296 386 L296 452" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <path d="M484 386 L484 452" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <path d="M672 386 L672 452" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <path d="M860 386 L860 452" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        <path d="M1048 386 L1048 452" marker-start="url(#ar)" marker-end="url(#ar)"/>
+      </g>
+      <text x="125" y="426" font-size="16" fill="#7a7872">task ↓ · artifact ↑</text>
+      <!-- roles -->
+      <g font-size="17" fill="#4c4b47">
+        <rect x="18" y="456" width="180" height="200" rx="14" fill="#fff" stroke="#2f6fb3" stroke-width="2.5"/>
+        <text x="34" y="490" font-size="23" font-weight="720" fill="#2f6fb3">R1</text><text x="34" y="516" font-weight="650" fill="#111">Evidence scout</text>
+        <text x="34" y="546">web search,</text><text x="34" y="568">source checks,</text><text x="34" y="590">dataset cards</text>
+        <rect x="206" y="456" width="180" height="200" rx="14" fill="#fff" stroke="#2b8a6e" stroke-width="2.5"/>
+        <text x="222" y="490" font-size="23" font-weight="720" fill="#2b8a6e">R2</text><text x="222" y="516" font-weight="650" fill="#111">Case curation</text>
+        <text x="222" y="546">data access,</text><text x="222" y="568">signal QC,</text><text x="222" y="590">blind splits</text>
+        <rect x="394" y="456" width="180" height="200" rx="14" fill="#fff" stroke="#7a4fb0" stroke-width="2.5"/>
+        <text x="410" y="490" font-size="23" font-weight="720" fill="#7a4fb0">R3</text><text x="410" y="516" font-weight="650" fill="#111">Virtual patient</text>
+        <text x="410" y="546">network models,</text><text x="410" y="568">Bayesian fits,</text><text x="410" y="590">cloud compute</text>
+        <rect x="582" y="456" width="180" height="200" rx="14" fill="#fff" stroke="#c0661c" stroke-width="2.5"/>
+        <text x="598" y="490" font-size="23" font-weight="720" fill="#c0661c">R4</text><text x="598" y="516" font-weight="650" fill="#111">Intervention</text>
+        <text x="598" y="546">resection &amp;</text><text x="598" y="568">stimulation</text><text x="598" y="590">simulations</text>
+        <rect x="770" y="456" width="180" height="200" rx="14" fill="#fff" stroke="#b8321b" stroke-width="2.5"/>
+        <text x="786" y="490" font-size="23" font-weight="720" fill="#b8321b">R5</text><text x="786" y="516" font-weight="650" fill="#111">Independent eval</text>
+        <text x="786" y="546">re-derives numbers,</text><text x="786" y="568">qualifies models,</text><text x="786" y="590">opens the vault</text>
+        <rect x="958" y="456" width="176" height="200" rx="14" fill="#fff" stroke="#334155" stroke-width="2.5"/>
+        <text x="974" y="490" font-size="23" font-weight="720" fill="#334155">RV</text><text x="974" y="516" font-weight="650" fill="#111">Clinical review</text>
+        <text x="974" y="546">clinical &amp;</text><text x="974" y="568">engineering</text><text x="974" y="590">sign-off</text>
+      </g>
+      <text x="20" y="700" font-size="19" fill="#4c4b47">Each role = a Claude subagent with its own frozen skill, tool set, permissions and budget.</text>
+      <text x="20" y="730" font-size="19" fill="#4c4b47">R6 (improvement research) proposes changes for the next release only.</text>
+    </svg>
+    <div style="padding-top:6px">
+      <h2>Distributed by design</h2>
+      <ul>
+        <li>Roles hold <strong>different information and powers</strong>: only R1 browses, only R3 uses the cloud VM, only R5 can open the sealed vault.</li>
+        <li>A result counts only after a <strong>different role gates it</strong>. The producer cannot approve its own work.</li>
+        <li>Agents post <strong>unmet needs</strong> any eligible role can claim; failed gates trigger <strong>repairs</strong> that mark downstream work stale.</li>
+        <li>The trajectory <strong>adapts to evidence</strong>: in study-001 the plan stopped at the model gate.</li>
+      </ul>
+      <p class="small" style="margin-top:14px">Honest limit: LEAD proposes tasks, so this is governed, not leaderless. The controller, not LEAD, decides what is admitted and accepted.</p>
+    </div>
+  </div>
+  <div class="footer"><span>ScienceClaw Epilepsy Collective · built on the ScienceClaw framework plan</span><span class="pg"></span></div>
+  <aside class="notes">This is our system. Seven roles, each a Claude agent with its own skill, tools and permissions: R1 searches and verifies literature, R2 curates real patient recordings, R3 builds the virtual patient, R4 designs resections and stimulation, R5 independently re-checks everything, RV reviews clinically, and a lead proposes work. Agents do not decide what counts. A deterministic controller does: it admits or refuses each task against the role's profile, validates every artifact, and accepts a gate only from a role other than the producer. Everything goes into an append-only ledger. Ground truth is sealed in a vault only the evaluator can open, and skills are frozen when a study starts. Agents post unmet needs that others claim.</aside>
+</section>
+
+<!-- ============ S3 collective capability ============ -->
+<section class="slide" data-time="25">
+  <div class="kicker">Collective capability</div>
+  <h1>What independent roles caught that the producers would have shipped</h1>
+  <div class="stat-row" id="s3stats"></div>
+  <div style="display:grid;grid-template-columns:980px 1fr;gap:52px">
+    <div>
+      <h2>Study-001: producer-only vs independently gated</h2>
+      <svg id="s3bars" viewBox="0 0 980 300" width="980" height="300" role="img" aria-label="Producer-only acceptance versus gated outcome"></svg>
+      <p class="small">Comparison is a proxy from the ledger, not a matched single-agent run (that run is next). Gate counts are decisions recorded by R5, RV, LEAD or the user on other roles' artifacts.</p>
+    </div>
+    <div>
+      <h2>Examples from the ledger</h2>
+      <ul style="font-size:24px">
+        <li style="font-size:24px">R5 re-derived R3's convergence stats from raw draws (R-hat 4.24 vs 4.19 reported) and <strong>failed the model</strong> (A0095).</li>
+        <li style="font-size:24px">A dataset card described the raw S3 bucket, <strong>not the DOI-cited release</strong> (A0033, failed).</li>
+        <li style="font-size:24px">The controller <strong>refused tasks</strong> wired to another patient's model or to stale and unreviewed inputs.</li>
+        <li style="font-size:24px">RV sent the final dossier back for <strong>one revision</strong> before accepting it (A0101).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Counts computed at build time from studies/study-001/ledger.jsonl and studies/study-002/ledger.jsonl</span><span class="pg"></span></div>
+  <aside class="notes">Does the collective add anything? We have not yet run a single-agent baseline, so here is the honest proxy: producer-only versus independently gated. In study-001 agents committed 104 artifacts. A different role recorded 101 gate decisions, and 14 did not pass: a dataset card describing the wrong release, a model whose convergence the producer under-reported. That triggered 6 repair cycles, and the controller refused 3 tasks wired to the wrong patient or to stale inputs. A single agent grading its own work would have shipped all of it.</aside>
+</section>
+
+<!-- ============ S4 study-001 ============ -->
+<section class="slide" data-time="23">
+  <div class="kicker">Study-001 · real data · 6 hours</div>
+  <h1>Real patients, honest answer: the published pipeline was not qualified</h1>
+  <div class="cols" style="grid-template-columns:1fr 1fr 1fr;gap:30px;margin-top:10px">
+    <div class="card">
+      <h2><span class="tag ok">passed</span> Literature dossier</h2>
+      <div class="num">32</div><div class="numlab">source-checked evidence claims (RCTs, cohorts, meta-analyses)</div>
+      <svg id="s4lit" viewBox="0 0 470 330" width="470" height="330" style="margin-top:14px" role="img" aria-label="Reported seizure freedom ranges by treatment"></svg>
+      <p class="cite">Seizure freedom as reported; endpoints and follow-up differ, so not a ranking (A0063, A0031).</p>
+    </div>
+    <div class="card">
+      <h2><span class="tag ok">passed</span> Case curation</h2>
+      <div class="num">10</div><div class="numlab">real intracranial-EEG patients (SEEG and ECoG) curated from OpenNeuro ds004100 (HUP), chosen without looking at outcomes</div>
+      <ul style="margin-top:20px">
+        <li style="font-size:23px">56 eligible patients, split 34 dev / 22 test by seed before any modelling</li>
+        <li style="font-size:23px">R5 re-checked all <strong>254 files</strong>; found padded EDF tails in 21 of 41 seizure runs</li>
+        <li style="font-size:23px">Outcome labels sealed in the vault (never opened)</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:#eba79f;background:#fffaf9">
+      <h2><span class="tag no">not qualified</span> Virtual patient</h2>
+      <div class="num">2 / 2</div><div class="numlab">benchmarks failed for the Wang 2025 inversion pipeline</div>
+      <ul style="margin-top:20px">
+        <li style="font-size:23px">No convergence: all 162 x0 R-hat &gt; 1.05 (max 4.24)</li>
+        <li style="font-size:23px">Planted focus top-ranked in only 29% of draws</li>
+        <li style="font-size:23px">4 package defects found (e.g. likelihood skips channels, filters hard-code 250 Hz)</li>
+        <li style="font-size:23px"><strong>So the system stopped</strong>: no simulations, no predictions, vault left sealed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>studies/study-001/report.md · reports/study-001-summary.html · R5 verdict A0098</span><span class="pg"></span></div>
+  <aside class="notes">Study-001 ran on real data in six hours. It produced a literature dossier of 32 source-checked claims: resection gives the best chance of seizure freedom when there is a resectable focus, and stimulation reduces seizures but rarely stops them. It curated 10 real intracranial-EEG patients from OpenNeuro. And when R3 fitted the published virtual-brain pipeline, R5 showed it was not qualified: no convergence, the planted focus not recovered, four code defects. So the system stopped: no simulations, no predictions, and the outcome vault stayed sealed.</aside>
+</section>
+
+<!-- ============ S5 study-002 3D ============ -->
+<section class="slide" data-time="28">
+  <div class="kicker">Study-002 · Wang et al. 2025 virtual-brain-twin data · in progress &nbsp;<span class="tag exp">exploratory · model not qualified</span></div>
+  <h1 style="margin-bottom:18px">A blinded virtual patient, treated in silico</h1>
+  <div style="display:grid;grid-template-columns:1180px 1fr;gap:40px">
+    <div class="viewer interactive" id="v3d" style="height:760px">
+      <canvas aria-label="3D cortex of virtual Patient 2 with SEEG contacts; drag to rotate, wheel to zoom"></canvas>
+      <div class="vbar">
+        <button data-mode="BASELINE" class="on">Before</button>
+        <button data-mode="RES-EZpPZ__ablation">After: ablate EZ+PZ</button>
+        <button data-mode="STIM-PT__amp1">After: pulse-train stim</button>
+        <button data-mode="TI">TI field (template)</button>
+        <span style="flex:1"></span>
+        <button data-view="left">L</button><button data-view="right">R</button><button data-view="top">Top</button><button data-view="front">Front</button>
+      </div>
+      <div class="vleg"></div>
+      <div class="vcap"></div>
+      <div class="vctl"><button class="play">❚❚ Pause</button><input type="range" min="0" max="359" value="0" aria-label="time"><span class="tt">t = 0.0 s</span></div>
+    </div>
+    <div>
+      <h2>What you are looking at</h2>
+      <ul style="font-size:24px">
+        <li style="font-size:24px">Virtual Patient 2's own cortex (Code Ocean anatomy) and its <strong>205 SEEG contacts</strong>.</li>
+        <li style="font-size:24px">Colour = simulated activity of each brain region over 14.4 s, from the agents' own fitted model (A0038, median fit).</li>
+        <li style="font-size:24px">The true epileptogenic zone was <strong>sealed in the vault</strong> (10 items) before any model was fitted.</li>
+        <li style="font-size:24px">Grey regions in "ablate" were removed in silico: the agents' <em>estimated</em> zone, not the truth.</li>
+      </ul>
+      <div class="card" style="margin-top:18px;padding:18px 22px;border-color:#f4b48f;background:#fffaf6">
+        <p style="font-size:21px;margin:0">v2 model <strong>failed its synthetic benchmark</strong> (planted EZ ranked 2nd, R-hat 4.73), so everything here is exploratory. A faster v3 model is frozen and being qualified now.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Anatomy data/wang-co2-ana · simulations studies/study-002/artifacts/A0038-SimulationBatch · TI maps data/wang-5367ef4/data/EMF</span><span class="pg"></span></div>
+  <aside class="notes">Study-002 uses the virtual-brain-twin data of Wang and colleagues, 2025. Here is virtual Patient 2's own cortex and its 205 SEEG contacts. Its true epileptogenic zone was sealed in the vault before any agent fitted anything. Press play: this is simulated seizure activity from the agents' fitted model, before treatment, after virtually ablating the estimated zone, and with the recorded stimulation protocol. The last view is the temporal-interference stimulation field, still on a template brain. The v2 model failed its synthetic benchmark, so all of this is labelled exploratory while v3 is qualified.</aside>
+</section>
+
+<!-- ============ S6 before/after ============ -->
+<section class="slide" data-time="30">
+  <div class="kicker">Study-002 · virtual treatment results &nbsp;<span class="tag exp">exploratory · model not qualified</span></div>
+  <h1 style="margin-bottom:14px">In the model, ablation beat stimulation</h1>
+  <div id="heatrow" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px"></div>
+  <div style="display:grid;grid-template-columns:1050px 1fr;gap:40px;margin-top:12px">
+    <svg id="forest" viewBox="0 0 1050 420" width="1050" height="420" role="img" aria-label="Change in number of seizing regions per virtual intervention, median and 5-95% range over 12 model fits"></svg>
+    <div class="card" style="padding:18px 24px;border-color:#f4b48f;background:#fffaf6;align-self:start">
+      <h2 style="font-size:25px;margin-bottom:6px">Caveats (from the record)</h2>
+      <ul style="padding-left:22px">
+        <li style="font-size:20px;margin-bottom:6px">Model <strong>not qualified</strong>; fits are a MAP ensemble, not a posterior.</li>
+        <li style="font-size:20px;margin-bottom:6px">Primary window: <strong>no baseline seizures</strong> in any of 24 fits, so no ranking. Shown: sensitivity window, 12 fits.</li>
+        <li style="font-size:20px;margin-bottom:6px">Simulated baseline <strong>did not match</strong> the recording (0/10 top channels).</li>
+        <li style="font-size:20px;margin-bottom:6px">4 high-amplitude pulse-train arms <strong>failed numerically</strong>; excluded, not dropped.</li>
+        <li style="font-size:20px;margin-bottom:6px">The ablated set is <strong>9 regions in both hemispheres</strong>: an in-silico test, not a feasible operation.</li>
+        <li style="font-size:20px;margin-bottom:0">Not yet compared with the sealed truth.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>A0038-SimulationBatch (R4, T0017): payload.json, full_runs.json, full_signals_median_sample.npz</span><span class="pg"></span></div>
+  <aside class="notes">The numbers, exploratory. In the sensitivity window, twelve model fits seize in a median of 3.5 regions. Ablating the estimated zone plus the propagation zone cut that by a median of 3 and abolished all seizures in 5 of 12 fits. The SEEG pulse-train stimulation changed nothing; sustained current helped a little and never abolished seizures. But, and the agents wrote these caveats themselves: the model is not qualified, the primary window had no seizures at all, the simulated baseline does not match the recording, and nothing has been checked against the sealed truth yet.</aside>
+</section>
+
+<!-- ============ S7 benefit + next ============ -->
+<section class="slide" data-time="20">
+  <div class="kicker">Patient benefit · next</div>
+  <h1>Rehearse resection vs stimulation on a patient's twin, and know when not to trust it</h1>
+  <svg viewBox="0 0 1728 190" width="1728" height="190" style="margin:8px 0 22px" role="img" aria-label="Pipeline from patient SEEG to virtual twin to in-silico treatments to independent check to clinician">
+    <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a877f"/></marker></defs>
+    <g font-size="22">
+      <rect x="0" y="20" width="300" height="140" rx="16" fill="#fff" stroke="#2b8a6e" stroke-width="2.5"/><text x="150" y="80" text-anchor="middle" font-weight="700">Patient SEEG</text><text x="150" y="112" text-anchor="middle" fill="#4c4b47" font-size="19">+ MRI anatomy</text>
+      <rect x="357" y="20" width="300" height="140" rx="16" fill="#fff" stroke="#7a4fb0" stroke-width="2.5"/><text x="507" y="80" text-anchor="middle" font-weight="700">Virtual-brain twin</text><text x="507" y="112" text-anchor="middle" fill="#4c4b47" font-size="19">qualified on benchmarks</text>
+      <rect x="714" y="20" width="300" height="140" rx="16" fill="#fff" stroke="#c0661c" stroke-width="2.5"/><text x="864" y="80" text-anchor="middle" font-weight="700">In-silico treatments</text><text x="864" y="112" text-anchor="middle" fill="#4c4b47" font-size="19">resection · SEEG · TI stim</text>
+      <rect x="1071" y="20" width="300" height="140" rx="16" fill="#fff" stroke="#b8321b" stroke-width="2.5"/><text x="1221" y="80" text-anchor="middle" font-weight="700">Independent check</text><text x="1221" y="112" text-anchor="middle" fill="#4c4b47" font-size="19">blinded, gated, frozen</text>
+      <rect x="1428" y="20" width="300" height="140" rx="16" fill="#f4f3ef" stroke="#334155" stroke-width="2.5" stroke-dasharray="7 6"/><text x="1578" y="80" text-anchor="middle" font-weight="700">Clinical team</text><text x="1578" y="112" text-anchor="middle" fill="#4c4b47" font-size="19">decides (future work)</text>
+    </g>
+    <g stroke="#8a877f" stroke-width="3"><path d="M302 90L352 90" marker-end="url(#ar2)"/><path d="M659 90L709 90" marker-end="url(#ar2)"/><path d="M1016 90L1066 90" marker-end="url(#ar2)"/><path d="M1373 90L1423 90" marker-end="url(#ar2)"/></g>
+  </svg>
+  <div class="cols" style="grid-template-columns:1fr 1fr;gap:60px">
+    <div>
+      <h2>Why it can help patients</h2>
+      <ul>
+        <li>Compare a <strong>personalised</strong> resection with stimulation before any operation.</li>
+        <li>Guardrails make a "no" visible: blinding, gates by another role, frozen releases, provenance for every number.</li>
+        <li>Study-001 shows the system says <strong>"not qualified"</strong> instead of overclaiming.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Next</h2>
+      <ul>
+        <li>Qualify v3 → freeze predictions → R5 opens the vault for a <strong>blinded test</strong> of zone recovery and treatment ranking.</li>
+        <li>Map the TI field onto the patient (open need N001); move to the 10 curated real cases.</li>
+        <li>Run the same protocol with <strong>one agent</strong> to measure what the collective adds.</li>
+        <li>Share the controller, schemas and skills with other teams.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Research evidence on virtual patients, not clinical recommendations</span><span class="pg"></span></div>
+  <aside class="notes">Why it matters: a patient-specific rehearsal of resection versus stimulation before touching the patient, with guardrails (blinding, independent checks, frozen releases) so the system says "not qualified" when it should. Next: qualify v3, freeze predictions, and let R5 open the vault for a blinded test. Then run the same protocol with a single agent to measure what the collective adds, and share the controller and skills with other teams. Thank you.</aside>
+</section>
+
+</div></div>
+
+<div id="nav"><span id="clock" title="time since first slide">0:00</span><button id="prev" aria-label="Previous slide">◀</button><span id="pos"></span><button id="next" aria-label="Next slide">▶</button><button id="ntoggle" title="Speaker notes (N)">Notes</button></div>
+<div id="notes"></div>
+
+<script>
+const D=/*__DATA__*/null;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const dec=(s,T)=>{const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new T(u.buffer);};
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent,text){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;if(parent)parent.appendChild(e);return e;}
+
+/* ---------- deck ---------- */
+const slides=$$('.slide');let cur=0,t0=null;
+const times=slides.map(s=>+s.dataset.time);
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);$('#stage').style.transform=`scale(${s})`;}
+addEventListener('resize',fit);fit();
+function show(i){cur=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>s.classList.toggle('on',j===cur));
+  $('#pos').textContent=`${cur+1} / ${slides.length}`;
+  const start=times.slice(0,cur).reduce((a,b)=>a+b,0),fmt=x=>`${Math.floor(x/60)}:${String(x%60).padStart(2,'0')}`;
+  $('#notes').innerHTML=`<div class="nt">Slide ${cur+1} · ${times[cur]} s · ${fmt(start)}–${fmt(start+times[cur])} of ${fmt(times.reduce((a,b)=>a+b,0))}</div>`+slides[cur].querySelector('.notes').innerHTML;
+  history.replaceState(null,'','#'+(cur+1));
+  if(cur>0&&t0===null)t0=Date.now();
+  document.dispatchEvent(new CustomEvent('slide',{detail:cur}));}
+slides.forEach((s,i)=>{const p=s.querySelector('.pg');if(p)p.textContent=`${i+1} / ${slides.length}`;});
+addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;
+  if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(cur+1);}
+  else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(cur-1);}
+  else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1);
+  else if(e.key==='n'||e.key==='N')$('#notes').classList.toggle('on');
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}});
+$('#prev').onclick=()=>show(cur-1);$('#next').onclick=()=>show(cur+1);$('#ntoggle').onclick=()=>$('#notes').classList.toggle('on');
+$('#stage').addEventListener('click',e=>{if(e.target.closest('.interactive,button,a,input'))return;const r=$('#stage').getBoundingClientRect();(e.clientX-r.left)<r.width*0.25?show(cur-1):show(cur+1);});
+let hideT;addEventListener('mousemove',()=>{$('#nav').classList.add('show');clearTimeout(hideT);hideT=setTimeout(()=>$('#nav').classList.remove('show'),2000);});
+setInterval(()=>{if(t0===null)return;const s=Math.round((Date.now()-t0)/1000);$('#clock').textContent=`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;},500);
+
+/* ---------- S3 stats + bars ---------- */
+(function(){const a=D.s1,b=D.s2;
+  const st=[[a.artifacts,`artifacts committed by agents in study-001 (${a.tasks} tasks)`],[a.gates,'gate decisions by a role other than the producer'],
+            [(a.gates-a.gates_passed),`did not pass (${a.gates_failed} failed, ${a.gates_indeterminate} indeterminate) → ${a.repairs} repair cycles`],
+            [b.vault,`truth items sealed in study-002's vault before fitting (${b.artifacts} artifacts so far)`]];
+  $('#s3stats').innerHTML=st.map(([n,l],i)=>`<div class="stat" style="border-color:${['#2a78d6','#334155','#b8321b','#7a4fb0'][i]}"><div class="num" style="font-size:${String(n).length>8?46:64}px">${n}</div><div class="numlab">${l}</div></div>`).join('');
+  const s=$('#s3bars'),W=700,x0=250,sc=W/a.artifacts;
+  const row=(y,label,sub,segs)=>{el('text',{x:0,y:y+30,'font-size':23,'font-weight':650,fill:'#111'},s,label);el('text',{x:0,y:y+56,'font-size':18,fill:'#7a7872'},s,sub);
+    let x=x0;segs.forEach(([v,c,t])=>{const w=v*sc;el('rect',{x,y:y+4,width:Math.max(w-2,2),height:56,rx:6,fill:c},s);if(w>60)el('text',{x:x+12,y:y+40,'font-size':20,'font-weight':650,fill:'#fff'},s,t);x+=w;});};
+  row(10,'Producer only','self-assessed',[[a.artifacts,'#9aa4b2',`${a.artifacts} accepted, unchecked`]]);
+  row(110,'Collective','independent gates',[[a.gates_passed,'#1a9e6e',`${a.gates_passed} passed`],[a.gates_failed,'#b8321b',`${a.gates_failed}`],[a.gates_indeterminate,'#d99000',`${a.gates_indeterminate}`]]);
+  const xf=x0+a.gates_passed*sc;
+  el('text',{x:x0+W,y:200,'font-size':19,fill:'#b8321b','font-weight':650,'text-anchor':'end'},s,`${a.gates_failed} failed + ${a.gates_indeterminate} indeterminate → ${a.repairs} repair cycles`);
+  el('text',{x:x0,y:250,'font-size':19,fill:'#4c4b47'},s,`+ ${a.refused} tasks refused by the controller before they ran · ${a.needs} unmet needs posted`);
+  el('text',{x:x0,y:280,'font-size':17,fill:'#7a7872'},s,`Study-001 ledger: ${a.events} events, ${a.first.slice(11,16)}–${a.last.slice(11,16)} UTC, 2026-11-01`);
+})();
+
+/* ---------- S4 literature ranges ---------- */
+(function(){const s=$('#s4lit');const rows=[['Temporal resection (RCTs)',58,73,'#c0661c'],['Temporal resection, long-term',66,72.5,'#c0661c'],['LITT, mesial temporal',53.4,58,'#e3a067'],['RNS (≥12-mo freedom)',18,22,'#2a78d6'],['ANT-DBS (≥6-mo)',16,16,'#2a78d6'],['VNS',8,8,'#2a78d6']];
+  const x0=10,W=440,X=v=>x0+v/100*W;
+  [0,25,50,75,100].forEach(v=>{el('line',{x1:X(v),x2:X(v),y1:6,y2:300,stroke:'#efede7'},s);el('text',{x:X(v),y:322,'font-size':15,fill:'#7a7872','text-anchor':v===0?'start':v===100?'end':'middle'},s,v+'%');});
+  rows.forEach(([n,lo,hi,c],i)=>{const y=14+i*48;el('text',{x:x0,y:y+12,'font-size':16,fill:'#4c4b47'},s,n);
+    el('rect',{x:X(lo)-5,y:y+20,width:Math.max(X(hi)-X(lo),0)+10,height:14,rx:7,fill:c},s);
+    el('text',{x:X(hi)+12,y:y+32,'font-size':15,fill:'#111','font-weight':600},s,lo===hi?`~${lo}%`:`${lo}–${hi}%`);});
+})();
+
+/* ---------- colour map shared by heatmaps and 3D ---------- */
+const STOPS=[[0,[243,241,234]],[0.36,[214,208,195]],[0.42,[240,180,76]],[0.7,[235,104,52]],[1,[160,40,24]]];
+function cmap(t){t=Math.max(0,Math.min(1,t));for(let i=1;i<STOPS.length;i++){if(t<=STOPS[i][0]){const[a,ca]=STOPS[i-1],[b,cb]=STOPS[i],f=(t-a)/(b-a);return ca.map((x,k)=>x+(cb[k]-x)*f);}}return STOPS[STOPS.length-1][1];}
+const LUT=[...Array(256)].map((_,i)=>cmap(i/255));
+const thrT=(-1-D.sim.heat_lo)/(D.sim.heat_hi-D.sim.heat_lo);
+
+/* ---------- S6 heatmaps + forest ---------- */
+(function(){const S=D.sim,rows=S.rows,nr=rows.length,nf=S.n_frames,abl=new Set(S.ablated_names);
+  const host=$('#heatrow');
+  S.arms.forEach((a,ai)=>{const col=['#4c4b47','#c0661c','#2a78d6'][ai];
+    const sz=S.seizing_median[a.key];
+    const d=document.createElement('div');d.className='heat';
+    d.innerHTML=`<div style="font:650 21px system-ui;color:${col};margin-bottom:2px">${a.label}</div>
+      <div style="font:17px system-ui;color:#7a7872;margin-bottom:6px">Median fit: ${sz.length?sz.length+' seizing region'+(sz.length>1?'s':'')+' (sustained ≥ 1 s)':'no seizing region (only brief &lt; 1 s excursions)'}</div>
+      <div style="display:flex;gap:8px"><div class="lab" style="width:${ai===0?200:0}px;flex:none;font:9px/1 system-ui;color:#4c4b47;text-align:right;overflow:hidden"></div>
+      <div style="flex:1;min-width:0"><canvas width="${nf}" height="${nr}" style="width:100%;height:${nr*9}px;border-radius:6px;display:block"></canvas>
+      <canvas class="sg" width="520" height="80" style="width:100%;height:80px;display:block;margin-top:6px"></canvas></div></div>`;
+    host.appendChild(d);
+    const cv=d.querySelector('canvas'),cx=cv.getContext('2d'),im=cx.createImageData(nf,nr),h=dec(S.heat[a.key],Uint8Array);
+    for(let r=0;r<nr;r++)for(let f=0;f<nf;f++){const v=h[r*nf+f];let c=LUT[v];
+      if(a.fam==='res'&&abl.has(rows[r]))c=[91,97,112];const o=(r*nf+f)*4;im.data[o]=c[0];im.data[o+1]=c[1];im.data[o+2]=c[2];im.data[o+3]=255;}
+    cx.putImageData(im,0,0);
+    if(ai===0)d.querySelector('.lab').innerHTML=rows.map(n=>`<div style="height:9px;white-space:nowrap">${n.replace(/-/g,' ')}</div>`).join('');
+    // SEEG strip, same scale per channel across arms
+    const sg=d.querySelector('.sg'),g=sg.getContext('2d'),chs=S.seeg_ch.slice(0,3);
+    chs.forEach((c,ci)=>{const all=S.arms.flatMap(x=>S.seeg[x.key][ci]);const mn=Math.min(...all),mx=Math.max(...all);const tr=S.seeg[a.key][ci];
+      g.strokeStyle=col;g.lineWidth=1.3;g.beginPath();tr.forEach((v,k)=>{const x=k/(tr.length-1)*(sg.width-60)+60,y=ci*26+24-(v-mn)/((mx-mn)||1)*21;k?g.lineTo(x,y):g.moveTo(x,y);});g.stroke();
+      g.fillStyle='#7a7872';g.font='12px system-ui';g.fillText(c,0,ci*26+16);});
+  });
+  const leg=document.createElement('div');leg.style.cssText='grid-column:1/4;display:flex;gap:26px;align-items:center;font:16px system-ui;color:#4c4b47;margin-top:-4px';
+  leg.innerHTML=`<span>Rows: brain regions active in any panel · 0 → ${S.t_end_s.toFixed(1)} s · lines: 3 most active simulated SEEG channels, same scale across panels</span><span style="display:inline-block;width:160px;height:12px;border-radius:6px;background:linear-gradient(90deg,${STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')})"></span><span>rest → above seizure threshold</span><span><span style="display:inline-block;width:14px;height:12px;background:#5b6170;border-radius:3px;vertical-align:-1px"></span> removed in silico</span>`;
+  host.appendChild(leg);
+  // forest
+  const s=$('#forest'),F=S.forest,x0=330,x1=840,lo=-5,hi=2.5,X=v=>x0+(v-lo)/(hi-lo)*(x1-x0),rh=23,y0=40;
+  el('text',{x:0,y:20,'font-size':21,'font-weight':650,fill:'#111'},s,`Change in seizing regions vs paired no-treatment run (median, 5–95%, n = ${F[0].n} fits; baseline median ${S.baseline.n_seizing_regions.median})`);
+  [-5,-4,-3,-2,-1,0,1,2].forEach(v=>{el('line',{x1:X(v),x2:X(v),y1:y0-6,y2:y0+F.length*rh,stroke:v===0?'#8a877f':'#efede7','stroke-width':v===0?1.5:1},s);el('text',{x:X(v),y:y0+F.length*rh+20,'font-size':15,fill:'#7a7872','text-anchor':'middle'},s,v>0?'+'+v:v);});
+  el('text',{x:x1+28,y:y0-12,'font-size':16,fill:'#7a7872'},s,'all seizures abolished');
+  const lab=id=>id.replace('RES-EZ+PZ','Remove EZ+PZ').replace('RES-EZ','Remove EZ').replace('RES-1','Remove top-1').replace('/ablation',' · ablation').replace('/disconnection',' · disconnection').replace('STIM-PT-chronic','Pulse-train, chronic').replace('STIM-PT','Pulse-train (SEEG)').replace('STIM-1','Sustained current, 1 contact').replace('STIM-2','Sustained current, 2 contacts').replace('/amp',' · amp ');
+  F.forEach((r,i)=>{const y=y0+i*rh+rh/2,res=r.id.startsWith('RES'),c=res?(r.id.includes('disconnection')?'#e3a067':'#c0661c'):(r.id.includes('PT')?'#2a78d6':'#7fb0e8');
+    if(i%2===0)el('rect',{x:0,y:y-rh/2,width:1050,height:rh,fill:'#f7f6f2'},s);
+    el('text',{x:0,y:y+6,'font-size':17,fill:'#111','font-weight':i===0?700:400},s,lab(r.id));
+    el('line',{x1:X(r.p05),x2:X(r.p95),y1:y,y2:y,stroke:c,'stroke-width':4,'stroke-linecap':'round'},s);
+    el('circle',{cx:X(r.median),cy:y,r:8,fill:c,stroke:'#fff','stroke-width':2},s);
+    el('text',{x:x1+28,y:y+6,'font-size':17,fill:r.abolish>0?'#111':'#9a988f','font-weight':r.abolish>0?650:400},s,`${Math.round(r.abolish*r.n)} / ${r.n}`);
+    if(i===0)el('text',{x:X(r.median),y:y-12,'font-size':15,fill:'#c0661c','text-anchor':'middle','font-weight':650},s,'−3.0');});
+  el('text',{x:x0,y:y0+F.length*rh+44,'font-size':15,fill:'#7a7872'},s,'← fewer seizing regions          more →');
+})();
+
+/* ---------- 3D viewer ---------- */
+(function(){const root=$('#v3d'),cv=root.querySelector('canvas'),gl=cv.getContext('webgl',{antialias:true});
+  if(!gl){root.insertAdjacentHTML('beforeend','<p style="padding:80px">WebGL is not available in this browser.</p>');return;}
+  const P=D.patient,T=D.template,S=D.sim,NR=162,NF=S.n_frames;
+  function mesh(Vb,Fb){const V=dec(Vb,Float32Array),F=dec(Fb,Uint16Array),N=new Float32Array(V.length);
+    for(let i=0;i<F.length;i+=3){const a=F[i]*3,b=F[i+1]*3,c=F[i+2]*3;const ux=V[b]-V[a],uy=V[b+1]-V[a+1],uz=V[b+2]-V[a+2],wx=V[c]-V[a],wy=V[c+1]-V[a+1],wz=V[c+2]-V[a+2];
+      const nx=uy*wz-uz*wy,ny=uz*wx-ux*wz,nz=ux*wy-uy*wx;for(const k of[a,b,c]){N[k]+=nx;N[k+1]+=ny;N[k+2]+=nz;}}
+    const mk=(d,t)=>{const b=gl.createBuffer();gl.bindBuffer(t,b);gl.bufferData(t,d,gl.STATIC_DRAW);return b;};
+    return {n:V.length/3,nf:F.length,vb:mk(V,gl.ARRAY_BUFFER),nb:mk(N,gl.ARRAY_BUFFER),ib:mk(F,gl.ELEMENT_ARRAY_BUFFER),cb:gl.createBuffer(),C:new Float32Array(V.length)};}
+  const vsM=`attribute vec3 p;attribute vec3 n;attribute vec3 c;uniform mat4 M;uniform mat4 Pm;varying vec3 vc;varying float l;
+    void main(){vec4 q=M*vec4(p,1.);gl_Position=Pm*q;vec3 nn=normalize((M*vec4(n,0.)).xyz);l=.38+.62*abs(nn.z);vc=c;}`;
+  const fsM=`precision mediump float;varying vec3 vc;varying float l;void main(){gl_FragColor=vec4(vc*l,1.);}`;
+  const vsP=`attribute vec3 p;attribute vec3 c;uniform mat4 M;uniform mat4 Pm;uniform float ps;varying vec3 vc;void main(){gl_Position=Pm*(M*vec4(p,1.));gl_PointSize=ps;vc=c;}`;
+  const fsP=`precision mediump float;varying vec3 vc;void main(){vec2 d=gl_PointCoord-.5;float r=length(d);if(r>.5)discard;gl_FragColor=vec4(mix(vc,vec3(1.),step(.38,r)*.0)*(r>.36?.55:1.),1.);}`;
+  const prog=(v,f)=>{const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o;};const p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,v));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,f));gl.linkProgram(p);return p;};
+  const PM=prog(vsM,fsM),PP=prog(vsP,fsP);
+  const mP=mesh(P.v,P.f),mT=mesh(T.v,T.f),RM=dec(P.rm,Int16Array),TI=dec(T.ti,Uint8Array);
+  const CX=dec(P.contacts,Float32Array),nC=CX.length/3,CC=new Float32Array(CX.length);
+  const stimNames=S.stim_contact.match(/^([A-Z']+)(\d+)-(\d+)$/);const stimSet=new Set(stimNames?[stimNames[1]+stimNames[2],stimNames[1]+stimNames[3]]:[]);
+  P.contact_names.forEach((n,i)=>{const c=stimSet.has(n)?[0.10,0.62,0.43]:[0.16,0.24,0.42];CC.set(c,i*3);});
+  const cxb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,cxb);gl.bufferData(gl.ARRAY_BUFFER,CX,gl.STATIC_DRAW);
+  const ccb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,ccb);gl.bufferData(gl.ARRAY_BUFFER,CC,gl.STATIC_DRAW);
+  const frames={};for(const a of S.arms)frames[a.key]=dec(S.u_frames[a.key],Uint8Array);
+  const abl=new Set(S.ablated),BASE=[0.81,0.80,0.76],GREY=[0.36,0.38,0.44];
+  let mode='BASELINE',frame=0,playing=true,rx=-1.75,rz=Math.PI-0.6,zoom=2.75,last=0;
+  function paint(){if(mode==='TI'){const C=mT.C;for(let i=0;i<mT.n;i++){const c=cmapTI(TI[i]/255);C[i*3]=c[0];C[i*3+1]=c[1];C[i*3+2]=c[2];}
+      gl.bindBuffer(gl.ARRAY_BUFFER,mT.cb);gl.bufferData(gl.ARRAY_BUFFER,C,gl.DYNAMIC_DRAW);return;}
+    const fr=frames[mode],rc=new Array(NR);for(let r=0;r<NR;r++){if(mode.startsWith('RES')&&abl.has(r)){rc[r]=GREY;continue;}const c=LUT[fr[frame*NR+r]];rc[r]=[c[0]/255,c[1]/255,c[2]/255];}
+    const C=mP.C;for(let i=0;i<mP.n;i++){const r=RM[i];const c=r<0?BASE:rc[r];C[i*3]=c[0];C[i*3+1]=c[1];C[i*3+2]=c[2];}
+    gl.bindBuffer(gl.ARRAY_BUFFER,mP.cb);gl.bufferData(gl.ARRAY_BUFFER,C,gl.DYNAMIC_DRAW);}
+  function cmapTI(t){const st=[[0,BASE],[.3,BASE],[.55,[0.97,0.86,0.45]],[.8,[0.92,0.41,0.20]],[1,[0.55,0.10,0.10]]];for(let i=1;i<st.length;i++)if(t<=st[i][0]){const f=(t-st[i-1][0])/(st[i][0]-st[i-1][0]);return st[i-1][1].map((x,k)=>x+(st[i][1][k]-x)*f);}return st[4][1];}
+  function mat(){const cx=Math.cos(rx),sx=Math.sin(rx),cz=Math.cos(rz),sz=Math.sin(rz);return new Float32Array([cz,sz*cx,sz*sx,0,-sz,cz*cx,cz*sx,0,0,-sx,cx,0,0,0,-zoom,1]);}
+  function draw(){const w=Math.round(cv.clientWidth*devicePixelRatio),h=Math.round(cv.clientHeight*devicePixelRatio);if(!w||!h)return;if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+    gl.viewport(0,0,w,h);gl.clearColor(1,1,1,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    const a=w/h,f=1/Math.tan(.35),nn=.1,ff=20,Pm=new Float32Array([f/a,0,0,0,0,f,0,0,0,0,(ff+nn)/(nn-ff),-1,0,0,2*ff*nn/(nn-ff),0]),M=mat();
+    const m=mode==='TI'?mT:mP;gl.useProgram(PM);gl.enable(gl.DEPTH_TEST);
+    const at=(pr,name,buf,k)=>{const loc=gl.getAttribLocation(pr,name);gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,k,gl.FLOAT,false,0,0);return loc;};
+    const l1=at(PM,'p',m.vb,3),l2=at(PM,'n',m.nb,3),l3=at(PM,'c',m.cb,3);
+    gl.uniformMatrix4fv(gl.getUniformLocation(PM,'Pm'),false,Pm);gl.uniformMatrix4fv(gl.getUniformLocation(PM,'M'),false,M);
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,m.ib);gl.drawElements(gl.TRIANGLES,m.nf,gl.UNSIGNED_SHORT,0);
+    [l1,l2,l3].forEach(l=>gl.disableVertexAttribArray(l));
+    if(mode!=='TI'){gl.useProgram(PP);gl.disable(gl.DEPTH_TEST);const q1=at(PP,'p',cxb,3),q2=at(PP,'c',ccb,3);
+      gl.uniformMatrix4fv(gl.getUniformLocation(PP,'Pm'),false,Pm);gl.uniformMatrix4fv(gl.getUniformLocation(PP,'M'),false,M);gl.uniform1f(gl.getUniformLocation(PP,'ps'),7*devicePixelRatio);
+      gl.drawArrays(gl.POINTS,0,nC);[q1,q2].forEach(l=>gl.disableVertexAttribArray(l));}}
+  const slider=root.querySelector('input'),tt=root.querySelector('.tt'),play=root.querySelector('.play'),leg=root.querySelector('.vleg'),cap=root.querySelector('.vcap');
+  const gradCSS=`linear-gradient(90deg,${STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')})`;
+  function legend(){const lab={BASELINE:'Before: no treatment','RES-EZpPZ__ablation':'After: estimated EZ + PZ removed (9 regions, both hemispheres)','STIM-PT__amp1':`After: 50 Hz pulse train at ${S.stim_contact}`,TI:'TI stimulation field · template brain'}[mode];
+    cap.textContent=lab+(mode==='TI'?'':` · median fit ${S.median_sample}`);
+    if(mode==='TI'){leg.innerHTML=`<b>TI modulation depth</b> 2·min(|E1|,|E2|)<div class="grad" style="background:linear-gradient(90deg,rgb(207,204,194) 30%,rgb(247,219,115) 55%,rgb(235,104,51) 80%,rgb(140,26,26))"></div><div style="display:flex;justify-content:space-between"><span>0</span><span>99th pct</span></div><div style="margin-top:6px">Wang 2025 EMF maps on fsaverage5. Not yet mapped onto Patient 2 (open need N001).</div>`;}
+    else leg.innerHTML=`<b>Simulated region activity</b><div class="grad" style="background:${gradCSS}"></div><div style="display:flex;justify-content:space-between"><span>rest</span><span>seizure threshold+</span></div>
+      <div style="margin-top:6px"><span class="dot" style="background:#29406b"></span>SEEG contact</div><div><span class="dot" style="background:#1a9e6e"></span>stimulation contacts ${S.stim_contact}</div>${mode.startsWith('RES')?'<div><span class="dot" style="background:#5b6170;border-radius:3px"></span>removed in silico (estimate)</div>':''}`;
+    root.querySelector('.vctl').style.visibility=mode==='TI'?'hidden':'visible';}
+  function setFrame(f){frame=(f+NF)%NF;slider.value=frame;tt.textContent=`t = ${(frame/(NF-1)*S.t_end_s).toFixed(1)} s`;paint();draw();}
+  root.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;root.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('on',x===b));legend();paint();draw();}));
+  const views={left:[-1.4,1.5708],right:[-1.4,-1.5708],top:[0,-1.5708],front:[-1.5,Math.PI]}; // rz=+pi/2 puts +x (patient left) toward the viewer
+  root.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{[rx,rz]=views[b.dataset.view];draw();}));
+  play.addEventListener('click',()=>{playing=!playing;play.textContent=playing?'❚❚ Pause':'▶ Play';});
+  slider.addEventListener('input',()=>{playing=false;play.textContent='▶ Play';setFrame(+slider.value);});
+  let drag=null;cv.addEventListener('mousedown',e=>{drag=[e.clientX,e.clientY];e.preventDefault();});addEventListener('mouseup',()=>drag=null);
+  addEventListener('mousemove',e=>{if(!drag)return;const s=$('#stage').getBoundingClientRect().width/1920;rz+=(e.clientX-drag[0])*.01/s;rx+=(e.clientY-drag[1])*.01/s;drag=[e.clientX,e.clientY];draw();});
+  cv.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(1.4,Math.min(6,zoom*(1+e.deltaY*.001)));draw();},{passive:false});
+  let visible=false;document.addEventListener('slide',e=>{visible=root.closest('.slide').classList.contains('on');if(visible)requestAnimationFrame(()=>{draw();});});
+  function tick(ts){if(visible&&playing&&mode!=='TI'&&ts-last>40){last=ts;setFrame(frame+1);}requestAnimationFrame(tick);}
+  new ResizeObserver(draw).observe(cv);legend();paint();requestAnimationFrame(tick);
+  window.__v3d={setMode:m=>root.querySelector(`[data-mode="${m}"]`).click(),setFrame:f=>{playing=false;play.textContent='▶ Play';setFrame(f);}};
+})();
+
+show(Math.max(0,(parseInt(location.hash.slice(1))||1)-1));
+addEventListener('hashchange',()=>{const n=(parseInt(location.hash.slice(1))||1)-1;if(n!==cur)show(n);});
+</script>
+</body>
+</html>

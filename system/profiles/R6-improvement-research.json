@@ -1,0 +1,37 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "R6-improvement-research",
+  "role": "improvement_research",
+  "display_name": "R6 \u00b7 Improvement research",
+  "enabled": false,
+  "color": "#6b7280",
+  "stage": "improvement",
+  "description": "Diagnose recurring failures and propose offline-benchmarked changes for a future release.",
+  "skill": "r6-improvement-research",
+  "allowed_tools": [
+    "failure-analysis",
+    "offline-benchmark"
+  ],
+  "allowed_output_types": [
+    "improvement_proposal",
+    "benchmark_run",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": false,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": false,
+    "mutate_active_study": false,
+    "approve_own_proposal": false
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "system_release_id": "future_release_only"
+  },
+  "budget": {
+    "max_tasks_per_run": 4
+  }
+}

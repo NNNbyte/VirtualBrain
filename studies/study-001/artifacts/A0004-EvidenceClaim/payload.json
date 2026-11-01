@@ -1,0 +1,58 @@
+{
+  "claim": "Over 9 years of brain-responsive neurostimulation (n=256 treated; 230 in LTT), median seizure reduction was 75%, responder rate 73%, 35% had >=90% reduction, and 18.4% had >=1 year of seizure freedom.",
+  "intervention_modality": "RNS",
+  "bibliographic_record": {
+    "authors": "Nair DR, Laxer KD, Weber PB, Murro AM, Park YD, Barkley GL, Smith BJ, Gwinn RP, Doherty MJ, Noe KH, Zimmerman RS, Bergey GK, Anderson WS, Heck C, Liu CY, Lee RW, Sadler T, Duckrow RB, Hirsch LJ, Wharen RE, Tatum W, Srinivasan S, McKhann GM, Agostini MA, Alexopoulos AV, Jobst BC, Roberts DW, Salanova V, Witt TC, Cash SS, Cole AJ, Worrell GA, Lundstrom BN, Edwards JC, Halford JJ, Spencer DC, Ernst L, Skidmore CT, Sperling MR, Miller I, Geller EB, Berg MJ, Fessler AJ, Rutecki P, Goldman AM, Mizrahi EM, Gross RE, Shields DC, Schwartz TH, Labar DR, Fountain NB, Elias WJ, Olejniczak PW, Villemarette-Pittman NR, Eisenschenk S, Roper SN, Boggs JG, Courtney TA, Sun FT, Seale CG, Miller KL, Skarpaas TL, Morrell MJ, RNS System LTT Study.",
+    "title": "Nine-year prospective efficacy and safety of brain-responsive neurostimulation for focal epilepsy.",
+    "journal": "Neurology",
+    "year": "2020",
+    "volume": "95",
+    "issue": "9",
+    "pages": "e1244-e1256",
+    "doi": "10.1212/wnl.0000000000010154",
+    "pmid": "32690786",
+    "pmcid": "PMC7538230",
+    "source_record_url": "https://europepmc.org/article/MED/32690786",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32690786/"
+  },
+  "supporting_passage": "Of 256 patients treated in the initial trials, 230 participated in the LTT. [...] At 9 years, the median percent reduction in seizure frequency was 75% (p < 0.0001, Wilcoxon signed rank), responder rate was 73%, and 35% had a ≥90% reduction in seizure frequency. [...] We found that 18.4% (47 of 256) experienced ≥1 year of seizure freedom, with 62% (29 of 47) seizure-free at the last follow-up",
+  "supporting_passages": [
+    "Of 256 patients treated in the initial trials, 230 participated in the LTT.",
+    "At 9 years, the median percent reduction in seizure frequency was 75% (p < 0.0001, Wilcoxon signed rank), responder rate was 73%, and 35% had a ≥90% reduction in seizure frequency.",
+    "We found that 18.4% (47 of 256) experienced ≥1 year of seizure freedom, with 62% (29 of 47) seizure-free at the last follow-up"
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 32690786, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "256 treated in feasibility + pivotal trials; 230 enrolled in long-term open-label trial (LTT); n at 9-year timepoint not given in abstract",
+    "design": "prospective open-label long-term treatment trial (NCT00572195), Class IV",
+    "population": "adults with medically intractable focal onset seizures",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "median % reduction; responder rate (>=50%); >=90% reduction; >=1 year seizure-free period",
+    "timepoint": "9 years",
+    "median_pct_reduction": {
+      "108_months": 75
+    },
+    "responder_rate_50pct": {
+      "108_months": 0.73
+    },
+    "seizure_freedom": "18.4% (47/256) had >=1 year seizure freedom at any time; 29/47 seizure-free at last follow-up",
+    "follow_up_months_reported": 108
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer significant and sustained reductions with improved QOL and low SUDEP rate.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Open-label with attrition; denominator at 9 years not given in abstract, so 75%/73% likely reflect completers (survivor bias possible) - verify in full text.",
+    "Includes Morrell 2011/Heck 2014 pivotal patients plus feasibility-trial patients: same study family."
+  ],
+  "study_family_id": "fam-RNS-NeuroPace-feasibility-pivotal-LTT"
+}

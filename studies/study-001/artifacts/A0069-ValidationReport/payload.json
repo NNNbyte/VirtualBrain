@@ -1,0 +1,50 @@
+{
+  "criterion": {
+    "Report": "Report: every number traces to a passed committed claim; ranges labelled by population/procedure",
+    "DatasetCard": "DatasetCard: fields match the cited release metadata; reported vs verified kept distinct; no outcome-derived counts"
+  },
+  "criterion_version": "T0012 scientific_acceptance_criteria (protocol v1, release rel-823fa0c912cb)",
+  "evaluator": "R5-independent-evaluation (instance r5-src-repairs, task T0012)",
+  "evaluated_artifacts": ["A0063-Report", "A0064-DatasetCard", "A0065-DatasetCard", "A0066-Report"],
+  "held_out_data": "none used. Sealed files not opened: ds004100 participants.tsv; ds003876 participants.tsv and sourcedata/ieeg_database_all.xlsx. No EDF recordings downloaded. Only participants.json data dictionaries and BIDS sidecars were read.",
+  "result": {
+    "A0063-Report": {
+      "verdict": "passed",
+      "need": "N007",
+      "basis": "Every number re-traced to the payloads of A0017-A0030 (all R5-passed) or A0001. Family counts recomputed from study_family_id (10 total, 4 LITT). Ranges labelled by population and procedure; de Tisi all-procedure adult figures are reported outside the temporal range; one LITT range (53.4-58.0%) is used throughout; the '15 sources' count is gone; consumed list is correct. SLATE funding and the absence of a peer-reviewed paper trace to the R5 gate note on A0024."
+    },
+    "A0064-DatasetCard": {
+      "verdict": "failed",
+      "need": "N008",
+      "basis": "Independent GraphQL walk of ds004100:1.1.3 plus metadata and sidecars. All headline fields confirmed: 57 subjects, 1341 files, 14.20 GB, CC0, 319 EDF runs (208 ictal / 111 interictal), SEEG 37 / ECoG 20, fsaverage/'m' coordinate frame vs mm-scale values and the README's MNI (marked to_verify), resect and soz tags 57/57, no outcome counts. Failure: the verified field 'every subject has >=1 interictal run' is false, because sub-HUP158 has no interictal run (only task-ictal run-04)."
+    },
+    "A0065-DatasetCard": {
+      "verdict": "passed",
+      "need": "N009",
+      "basis": "Independent GraphQL walk of ds003876:1.0.2 plus all 54 runs' sidecars. Confirmed: 39 subjects; the 10 rns* subjects are RNS-treated per the README (not participants.tsv) and the other 29 are resection/ablation; no rz column in the rns* subjects; rz in 23/29; soz in 39/39; epz in 8/10 rns; no coordinates; interictal only; no stimulation, device, lead or detection fields; sizes 5.52/5.37 GB; CC0."
+    },
+    "A0066-Report": {
+      "verdict": "failed",
+      "need": null,
+      "basis": "All numbers are factually correct against R5's verification and the passed cards A0034/A0035/A0038/A0040, and the report contains no outcome-derived numbers. Failure on traceability: --consumed omits A0064 and A0065, which are the sources of its ds004100/ds003876 figures, and A0064 failed this gate."
+    }
+  },
+  "uncertainty_method": "not_applicable (deterministic metadata and number tracing). Release file trees were enumerated exhaustively through the OpenNeuro GraphQL files(tree) API. Field checks were run across all subjects and runs, not on a sample.",
+  "failure_cases": [
+    "A0064: verified_modalities.ieeg says every subject has >=1 interictal run, but sub-HUP158 has 0 interictal runs in v1.1.3; eligibility caveat (d) omits HUP158.",
+    "A0064 (minor): the stated walk (1342 files / 14196260788 B) misses .datalad/config (63 B); the true walk is 1343 / 14196260851 B. The summary values 1341 / 14196260504 B are correct.",
+    "A0064 / A0066 (minor): 'no stimulation intervention/cases' in ds004100 rests only on the README; participants.json defines an RNS therapy level with sealed values, so this should be labelled README-reported.",
+    "A0066: envelope --consumed omits A0064-DatasetCard and A0065-DatasetCard although the ranking's ds004100/ds003876 numbers and the stimulation-arm conclusion come from them; it also depends on A0064, which failed this gate.",
+    "A0063 (minor, not failing): SLATE (A0024) is a conference abstract, while the protocol inclusion rule asks for peer-reviewed sources. The report flags this, and SLATE does not set either end of the LITT range."
+  ],
+  "verdict": "mixed: A0063 passed (N007 fulfilled), A0065 passed (N009 fulfilled), A0064 failed (N008 open), A0066 failed",
+  "evidence_level": "source_check against primary sources: claim payloads (abstract-level evidence) for A0063; OpenNeuro release-bound metadata (snapshot summaries, full file trees, metadata/sidecar files) for A0064-A0066. No full-text papers re-read and no recordings inspected.",
+  "provenance": {
+    "tools": "work/T0012/scripts/gql.py (sha256 4a8d0bca9c95fcd2b103a9c9cfb49fe69609aaf5b2f04b26844f428648011560), work/T0012/scripts/fetch_meta.py (sha256 3c809b68fdecc65c3f4c85cd88acf2c1d4cc9dc89b07c0d484af159837ebd2de; refuses participants.tsv, sourcedata, xlsx, edf)",
+    "snapshot_trees": {
+      "ds004100_1.1.3": "work/T0012/raw/ds004100_113.json sha256 06eb27eb6609d3aded274d2b5841c453c12f0ba191c55d6527bfe1a0bd1bd00a",
+      "ds003876_1.0.2": "work/T0012/raw/ds003876_102.json sha256 442b27539f22ed949bf48fa4e5a75a4e68f73de77dd85e4fbe136b23f42f863c"
+    },
+    "checked_on": "2026-11-01"
+  }
+}

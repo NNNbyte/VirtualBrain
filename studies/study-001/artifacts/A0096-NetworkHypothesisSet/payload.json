@@ -1,0 +1,100 @@
+{
+ "case_id": "SYN-P2",
+ "case_note": "Synthetic benchmark case built for T0029: planted EZ simulated with vep-stim's own 2D-Epileptor forward model on Wang 2025 Patient 2 SC + SEEG gain (A0067-DatasetCard, P2_SEEG_ts_fit.npz). Not patient data; no outcomes exist or were used. Region names follow the vep-stim VepMrtrixLut order (assumed to match the npz SC/gain order; P1-vs-P2 SC upper-triangle correlation 0.78 vs -0.003 under a random permutation supports a shared ordering, which arm B relies on).",
+ "hypotheses": [
+  {
+   "id": "H1-planted",
+   "label": "Planted truth: EZ = Right-Amygdala (idx0 155, x0=-1.6); sub-threshold PZ = Right-Hippocampus-anterior (153), Right-Rhinal-cortex (134) at x0=-2.1; all other regions x0 = -3+0.15N(0,1) (max -2.64)",
+   "ez_regions": [
+    "Right-Amygdala"
+   ],
+   "pz_regions": [
+    "Right-Hippocampus-anterior",
+    "Right-Rhinal-cortex"
+   ],
+   "basis": "By construction (make_synth.py seed 20261129; EZ drawn with rng.choice from 14 regions with max|gain|>=8 and >=3 contacts above 25% of that max; PZ = the two strongest P2-SC neighbours of the EZ). Full x0 map logged to the task log before any fit and stored in truth.json (attached).",
+   "status": "ground truth (known)"
+  },
+  {
+   "id": "H2-alternative-EZ-elsewhere",
+   "label": "EZ is another well-sampled region (any of the 13 other candidates)",
+   "ez_regions": [
+    "Left-Orbito-frontal-cortex",
+    "Left-F3-Pars-triangularis",
+    "Left-Inferior-frontal-sulcus",
+    "Left-F2-rostral",
+    "Left-F2-caudal",
+    "Left-Middle-frontal-sulcus",
+    "Left-Insula-gyri-brevi",
+    "Left-STS-anterior",
+    "Left-Hippocampus-anterior",
+    "Left-Amygdala",
+    "Right-F2-caudal",
+    "Right-Anterior-cingulate-cortex",
+    "Right-STS-anterior"
+   ],
+   "pz_regions": [],
+   "basis": "Null alternatives for the recovery test: equally well-sampled regions that the planted-EZ draw could have picked.",
+   "status": "false by construction; the fit should rank them below H1"
+  },
+  {
+   "id": "H3-mesiotemporal-blur",
+   "label": "Extended right mesio-temporal/insular EZN: Right-Amygdala plus co-seizing neighbours sharing its contacts (Right-Hippocampus-anterior, Right-Rhinal-cortex, Right-Insula-gyri-longi)",
+   "ez_regions": [
+    "Right-Amygdala",
+    "Right-Hippocampus-anterior",
+    "Right-Rhinal-cortex",
+    "Right-Insula-gyri-longi"
+   ],
+   "pz_regions": [],
+   "basis": "Identifiability alternative: these regions project onto the same few SEEG contacts as the EZ, so amplitude (amp) can be traded against the number of co-seizing regions; the gain-blurred network is a plausible competing explanation of the same sensor data.",
+   "status": "false by construction (only the EZ seizes in the generating simulation); expected failure mode"
+  },
+  {
+   "id": "H4-offset-artefact",
+   "label": "Spurious whole-window seizing regions that only shift channel offsets (high-gain regions whose x is ~+0.9 for the whole fit window)",
+   "ez_regions": [
+    "any region"
+   ],
+   "pz_regions": [],
+   "basis": "The package priors u~N(2,1) and amp=0.005+0.01*|N(0,1)| conflict with realistic log-feature offsets; a region seizing from the first samples acts as a channel offset and lowers the required u.",
+   "status": "false by construction; artefact hypothesis to be discriminated"
+  }
+ ],
+ "source_evidence": [
+  {
+   "artifact": "A0067-DatasetCard",
+   "file": "P2_SEEG_ts_fit.npz",
+   "used": "SC (162x162) and SEEG gain (191x162) for the generating model and both arms' gain; P2 simulated SEEG only to calibrate the observation-noise level through the fixed feature pipeline (out/calib/calibration_p2.json)"
+  },
+  {
+   "artifact": "A0067-DatasetCard",
+   "file": "P1_SEEG_SEEG_fit.npz",
+   "used": "SC only, as the arm-B template connectome (same VEP atlas)"
+  },
+  {
+   "artifact": "A0037-MethodCard",
+   "used": "vep-stim / VBT_INS_Stimulation version pin (5367ef4) and method basis"
+  },
+  {
+   "artifact": "A0001-StudyProtocol",
+   "used": "study scope; no reserved outcomes touched"
+  }
+ ],
+ "priors": {
+  "model_priors_as_in_package": "x0 = -3 + 0.3*eig*x0_star, x0_star~N(0,1) (eig = right singular vectors of the gain => iid N(-3,0.3^2) on x0); z_init = 4.1+0.1*eig*z_init_star; K = 1+K_star, K_star>=-1, N(0,1); amp = 0.005+0.01*amp_star, amp_star>=0, N(0,1); u = 2+u_star, N(0,1); eps = exp(0.33*log_eps_sq-3), log_eps_sq~N(0,10)",
+  "hypothesis_priors": "No informative prior on which hypothesis is true is given to the fit; H1 is known to be true by construction.",
+  "generating_values_vs_priors": "K=1 (prior centre); amp=0.1 (amp_star=9.5, far tail); u_star 2.3..20.5 (far tail), both forced by matching P2 fixed-pipeline log-feature levels (~3.5) and dynamic range (best channel deflection ~2.2), as real features would."
+ },
+ "unobserved_node_assumptions": "Regions with negligible SEEG gain are unobserved; their x0 is informed only by the prior and coupling. False positives are scored only for regions with P(x0>-2.05)>0.5; each FP is reported with its max |gain| so coverage-limited regions can be distinguished. The two PZ regions are sub-threshold (x0=-2.1) and do not seize in the 150-step window; they are reported separately from false positives.",
+ "discrimination_checks": [
+  "Rank of Right-Amygdala by posterior mean x0 (pass: 1st) and P(rank 1) over draws",
+  "R-hat < 1.05 on all 162 x0, bulk ESS, divergences, treedepth saturation (arm A acceptance)",
+  "Number and identity of non-planted regions with P(x0 > -2.05) > 0.5 (false positives), with their max gain",
+  "Estimated amp vs planted 0.1 and number of co-seizing regions (H3 amplitude/extent trade-off)",
+  "Whether spurious regions seize from the first samples (H4 offset artefact)",
+  "Arm B (P1 template SC) vs arm A (matching P2 SC): change in EZ rank, FP count and diagnostics",
+  "L-BFGS sensitivity with u_star prior widened to N(0,10) (diagnoses H4 / amplitude bias; not part of the pass/fail)"
+ ],
+ "formulation_note": "H1-H2 were fixed before any fit (task log). H3 and H4 were added after the L-BFGS rounds exposed the amplitude/extent and offset trade-offs; they are failure-mode hypotheses, not evidence about any patient."
+}

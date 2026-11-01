@@ -1,0 +1,109 @@
+{
+  "artifact_id": "A0098-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0031",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "work/T0031/diag.py+lpcheck.py+withinmode.py+p1_sfreq_check.py+p1_ctrl.py",
+  "tool_version": "T0031 r5-qual",
+  "code_commit": null,
+  "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0067-DatasetCard",
+    "A0079-NetworkHypothesisSet",
+    "A0095-ModelBundle",
+    "A0096-NetworkHypothesisSet",
+    "A0097-ModelBundle"
+  ],
+  "input_manifest_hash": "96fb4bf1a6a25c25ccd688faef92c806142969fa68b3e49a398b7ef947442769",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0098-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "f04e4a2666e15712dd6bfe1e1aa65ee286def4092b0364b174b93dc49986b8e1",
+      "byte_size": 11537
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/diag.py",
+      "media_type": "application/octet-stream",
+      "sha256": "2727dcb017cb34a4762e739a229b82840683af828628d817f167e4888a355ac8",
+      "byte_size": 7519
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/lpcheck.py",
+      "media_type": "application/octet-stream",
+      "sha256": "2ac5aa31d903a54da994543b6498bba9280a28c5d162a6c665f2a0631d70a530",
+      "byte_size": 6693
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/withinmode.py",
+      "media_type": "application/octet-stream",
+      "sha256": "9d554092af4143e3ccdf2f2d3f3cff561ca605121b9aaadbba7fb727a7d98a66",
+      "byte_size": 1610
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/p1_sfreq_check.py",
+      "media_type": "application/octet-stream",
+      "sha256": "432b56e07fb1d7f0e99fd613feb4ed89b3658440f98c6233a92b93b5c90f0e01",
+      "byte_size": 3843
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/p1_ctrl.py",
+      "media_type": "application/octet-stream",
+      "sha256": "3a9549d0b27030f5d34145adaf21201b3bd4e60bf47108c86d0c1a721bc1eb61",
+      "byte_size": 2899
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/diag_T0026.json",
+      "media_type": "application/octet-stream",
+      "sha256": "9ed8e519e2b2f29d1f1a084fd23f8ca82b26136e213fc8cc3d7624c490c56fc8",
+      "byte_size": 4892
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/diag_T0029A.json",
+      "media_type": "application/octet-stream",
+      "sha256": "da204f920d15eadc2a3b703dd142182705296a7d37446701eb7677c4c0e41ba9",
+      "byte_size": 4867
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/diag_T0029B.json",
+      "media_type": "application/octet-stream",
+      "sha256": "fdd9e4ec5810989ea53661b9f3376e1ceff7c505526527fa321c9492f2db9bc9",
+      "byte_size": 5035
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/lpcheck.json",
+      "media_type": "application/octet-stream",
+      "sha256": "bef121345336428b8138d9c483a58e6f1c1d096943f499b3096a4a17c74cb3c6",
+      "byte_size": 49998
+    },
+    {
+      "uri": "artifacts/A0098-ValidationReport/withinmode.json",
+      "media_type": "application/octet-stream",
+      "sha256": "337e57216121a7c3109985e2fc9da26fdd47ead639e837ea9f78e355fb960a94",
+      "byte_size": 2242
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T09:17:55+00:00",
+  "supersedes_id": null,
+  "title": "R5 model qualification of vep-stim benchmarks: VBT-P1 and SYN-P2 both fail; pipeline not qualified for HUP template-connectome fitting",
+  "manifest_hash": "2822c42deedafb80f9a7886451cbe6d3d03513981a6d7845ced071b217c4743e"
+}

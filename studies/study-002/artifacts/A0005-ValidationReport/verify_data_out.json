@@ -1,0 +1,689 @@
+{
+ "hash": {
+  "LICENSE": {
+   "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+   "bytes": 11357,
+   "match": true
+  },
+  "README.md": {
+   "sha256": "aab1a9d147f7c1a280e4843578f721643420123d62138cf212d7d2fd8e6ac45e",
+   "bytes": 4754,
+   "match": true
+  },
+  "data/EMF/lh.E1_normal_field_fs_ico5.mgh": {
+   "sha256": "fbee21e2574129988c6858c9a1d8018e5f0d8dac0118904fc18cc814a63305b6",
+   "bytes": 54199,
+   "match": true
+  },
+  "data/EMF/lh.E2_normal_field_fs_ico5.mgh": {
+   "sha256": "5d31e4c497b283df9871a6715e5122ba64667e077a37af4e673bc519030054e9",
+   "bytes": 54199,
+   "match": true
+  },
+  "data/EMF/rh.E1_normal_field_fs_ico5.mgh": {
+   "sha256": "ec2b275dfb8fa7eb854809d96b536c845b16f0498b053cf51decaf4059f2a95d",
+   "bytes": 54199,
+   "match": true
+  },
+  "data/EMF/rh.E2_normal_field_fs_ico5.mgh": {
+   "sha256": "27f84bc91f6b58dc4d76d2035ba1c8f79a3f31488f6bcfb798f72b5f95d61b58",
+   "bytes": 54199,
+   "match": true
+  },
+  "data/Patient1_SEEG_stimulation.xlsx": {
+   "sha256": "1461762dfa012e366be482d3497768202c335ba775494c6185aba75b45e58611",
+   "bytes": 103768,
+   "match": true
+  },
+  "data/Patient1_TI_stimulation.xlsx": {
+   "sha256": "762b942ae504cfc73817a8a798a3648efc0cbe9338215d982d0a2da9a5eaa8d1",
+   "bytes": 103929,
+   "match": true
+  },
+  "data/Patient2_SEEG_stimulation.xlsx": {
+   "sha256": "500ed23500b1d42343c6d1617fe9d84f83ab82f9908318290cf6d53fc64bc6bb",
+   "bytes": 78204,
+   "match": true
+  },
+  "data/Patient2_TI_stimulation.xlsx": {
+   "sha256": "733ddbc56783f36adf0af5493a8d0761265a9a5eeb1738518a5ecce3ef1e943f",
+   "bytes": 81075,
+   "match": true
+  },
+  "data/VepMrtrixLut.txt": {
+   "sha256": "837e283a2b99dd4bd1b861bb01adefe0826b5de0d08c6bab2db5967b8bbadee5",
+   "bytes": 14501,
+   "match": true
+  },
+  "data/dataSim/Patient1/P1_SEEG_EEG_fit.npz": {
+   "sha256": "cccc62b702c86d1d82b1ff6b9ba3aec7702567dfe350507a3ed324f7245414fc",
+   "bytes": 1927126,
+   "match": true
+  },
+  "data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz": {
+   "sha256": "2e9251922f98a538203a8ac17e8261f940bfe70ad33a71a5639543a84409b8bf",
+   "bytes": 2396306,
+   "match": true
+  },
+  "data/dataSim/Patient1/P1_TI_EEG_fit.npz": {
+   "sha256": "de8094ebf9b2b84a5cac15fffb1c408e90243c4594ea6020dabd6220d6eb65a2",
+   "bytes": 2185126,
+   "match": true
+  },
+  "data/dataSim/Patient1/P1_TI_SEEG_fit.npz": {
+   "sha256": "9ecfc067a87729690be6bcdc9df2e300588502dcd46ec628898c8c8a756efd55",
+   "bytes": 2593106,
+   "match": true
+  },
+  "data/dataSim/Patient2/P2_SEEG_EEG_fit.npz": {
+   "sha256": "408a85607fe4daa7ddcd0f2a344be51337fd28c29cded881a800affbfa213992",
+   "bytes": 1924828,
+   "match": true
+  },
+  "data/dataSim/Patient2/P2_SEEG_ts_fit.npz": {
+   "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+   "bytes": 2768838,
+   "match": true
+  },
+  "data/dataSim/Patient2/P2_TI_EEG_fit.npz": {
+   "sha256": "677d82bb1011dc8dbf7b2f3be7453258db2fa889593da604c822c7b9411a0d01",
+   "bytes": 1305628,
+   "match": true
+  },
+  "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz": {
+   "sha256": "f019151118717f16f8dfa788d39bb0c7aae86fedf1ee87315b31ccd899aba4c9",
+   "bytes": 1847238,
+   "match": true
+  },
+  "examples/Sim_SEEG_nf.ipynb": {
+   "sha256": "deb7b68e56d854560d46f5a5273e3666a5084ffe9bc241d9a32915409adac60c",
+   "bytes": 700150,
+   "match": true
+  },
+  "examples/Sim_SEEG_nf_dk.ipynb": {
+   "sha256": "ab94f7da726887c823dd76a882a5cb9d679cd99b89a8eb7a239fbf30bed26b7b",
+   "bytes": 378363,
+   "match": true
+  },
+  "examples/Sim_SEEG_nf_lc.ipynb": {
+   "sha256": "6c6f5fd75ef9bd3ec9abe8fb9806337af309c15847292ca70c5ba98993d0ed2a",
+   "bytes": 30240,
+   "match": true
+  },
+  "examples/Sim_TI_nf.ipynb": {
+   "sha256": "dc840626525df25b78c67803a31a37b4b8f9f4394e2a00782efda91554a5de16",
+   "bytes": 846686,
+   "match": true
+  },
+  "examples/compute_TI_envelope.ipynb": {
+   "sha256": "4deae645b04386012b5933790446837d97e6bad8d9c2fa6e7673eec58f2c070f",
+   "bytes": 49195,
+   "match": true
+  },
+  "examples/stimulation_plot_time_series_P1_TI.ipynb": {
+   "sha256": "c8fe5e6c4ccfd8099e0e12b6753dd4d873ca2bd66ee8307b092af3a71f8dfa0b",
+   "bytes": 669873,
+   "match": true
+  },
+  "examples/stimulation_plot_time_series_sensor_P2_EEG.ipynb": {
+   "sha256": "31316e5a3d538928dde49c3f84411ab7a7730bcba2ea8f7a4a0eb55ea716e0fd",
+   "bytes": 402134,
+   "match": true
+  }
+ },
+ "npz": {
+  "data/dataSim/Patient1/P1_SEEG_EEG_fit.npz": {
+   "time_steps": {
+    "shape": [
+     1500
+    ],
+    "dtype": "float64",
+    "min": 5.0,
+    "max": 14995.0,
+    "nan": 0
+   },
+   "seeg": {
+    "shape": [
+     128,
+     1500
+    ],
+    "dtype": "float64",
+    "min": -17049.922446713987,
+    "max": 29521.65198435852,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     128,
+     162
+    ],
+    "dtype": "float64",
+    "min": -1.0,
+    "max": 0.4169876421635202,
+    "nan": 0
+   },
+   "ch_names": {
+    "shape": [
+     128
+    ],
+    "dtype": "<U4"
+   },
+   "t_first_last": [
+    5.0,
+    14995.0
+   ],
+   "dt_unique": [
+    10.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "4073b5ab10d2",
+   "ch_first_last": [
+    "E1",
+    "E128"
+   ]
+  },
+  "data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz": {
+   "time_steps": {
+    "shape": [
+     1500
+    ],
+    "dtype": "float64",
+    "min": 5.0,
+    "max": 14995.0,
+    "nan": 0
+   },
+   "seeg": {
+    "shape": [
+     163,
+     1500
+    ],
+    "dtype": "float64",
+    "min": -4.138086447765503,
+    "max": 1.9066824290866637,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     163,
+     162
+    ],
+    "dtype": "float64",
+    "min": 3.2483969730073836e-07,
+    "max": 30.36831937555283,
+    "nan": 0
+   },
+   "ch_names": {
+    "shape": [
+     163
+    ],
+    "dtype": "<U9"
+   },
+   "t_first_last": [
+    5.0,
+    14995.0
+   ],
+   "dt_unique": [
+    10.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "4073b5ab10d2",
+   "ch_first_last": [
+    "TB'1-2",
+    "PP'12-13"
+   ]
+  },
+  "data/dataSim/Patient1/P1_TI_EEG_fit.npz": {
+   "time_steps": {
+    "shape": [
+     1750
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 1749.0,
+    "nan": 0
+   },
+   "seeg": {
+    "shape": [
+     128,
+     1750
+    ],
+    "dtype": "float64",
+    "min": -55164.585050557536,
+    "max": 58999.13324569051,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     128,
+     162
+    ],
+    "dtype": "float64",
+    "min": -1.0,
+    "max": 0.4169876421635202,
+    "nan": 0
+   },
+   "ch_names": {
+    "shape": [
+     128
+    ],
+    "dtype": "<U4"
+   },
+   "t_first_last": [
+    0.0,
+    1749.0
+   ],
+   "dt_unique": [
+    1
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "4073b5ab10d2",
+   "ch_first_last": [
+    "E1",
+    "E128"
+   ]
+  },
+  "data/dataSim/Patient1/P1_TI_SEEG_fit.npz": {
+   "time_steps": {
+    "shape": [
+     1650
+    ],
+    "dtype": "float64",
+    "min": 10.0,
+    "max": 16500.0,
+    "nan": 0
+   },
+   "seeg": {
+    "shape": [
+     163,
+     1650
+    ],
+    "dtype": "float64",
+    "min": -4.142342792113193,
+    "max": 3.177530460208871,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     163,
+     162
+    ],
+    "dtype": "float64",
+    "min": 3.2483969730073836e-07,
+    "max": 30.36831937555283,
+    "nan": 0
+   },
+   "ch_names": {
+    "shape": [
+     163
+    ],
+    "dtype": "<U9"
+   },
+   "t_first_last": [
+    10.0,
+    16500.0
+   ],
+   "dt_unique": [
+    10.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "4073b5ab10d2",
+   "ch_first_last": [
+    "TB'1-2",
+    "PP'12-13"
+   ]
+  },
+  "data/dataSim/Patient2/P2_SEEG_EEG_fit.npz": {
+   "time_steps": {
+    "shape": [
+     1500
+    ],
+    "dtype": "float64",
+    "min": 8.0,
+    "max": 12000.0,
+    "nan": 0
+   },
+   "eeg": {
+    "shape": [
+     128,
+     1500
+    ],
+    "dtype": "float64",
+    "min": -61544.865631335226,
+    "max": 89890.05126224895,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     128,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "t_first_last": [
+    8.0,
+    12000.0
+   ],
+   "dt_unique": [
+    8.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "e3e2dc9f3efa"
+  },
+  "data/dataSim/Patient2/P2_SEEG_ts_fit.npz": {
+   "time_steps": {
+    "shape": [
+     1500
+    ],
+    "dtype": "float64",
+    "min": 8.0,
+    "max": 12000.0,
+    "nan": 0
+   },
+   "seeg": {
+    "shape": [
+     191,
+     1500
+    ],
+    "dtype": "float64",
+    "min": -6.020027178193369,
+    "max": 5.381319799923321,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     191,
+     162
+    ],
+    "dtype": "float64",
+    "min": 3.275870908980849e-07,
+    "max": 88.24500038228474,
+    "nan": 0
+   },
+   "ch_names": {
+    "shape": [
+     191
+    ],
+    "dtype": "<U8"
+   },
+   "t_first_last": [
+    8.0,
+    12000.0
+   ],
+   "dt_unique": [
+    8.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "e3e2dc9f3efa",
+   "ch_first_last": [
+    "TP1-2",
+    "CC'14-15"
+   ]
+  },
+  "data/dataSim/Patient2/P2_TI_EEG_fit.npz": {
+   "time_steps": {
+    "shape": [
+     900
+    ],
+    "dtype": "float64",
+    "min": 10.0,
+    "max": 9000.0,
+    "nan": 0
+   },
+   "eeg": {
+    "shape": [
+     128,
+     900
+    ],
+    "dtype": "float64",
+    "min": -69945.05680381776,
+    "max": 106025.9168842619,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     128,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "t_first_last": [
+    10.0,
+    9000.0
+   ],
+   "dt_unique": [
+    10.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "e3e2dc9f3efa"
+  },
+  "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz": {
+   "time_steps": {
+    "shape": [
+     900
+    ],
+    "dtype": "float64",
+    "min": 10.0,
+    "max": 9000.0,
+    "nan": 0
+   },
+   "seeg": {
+    "shape": [
+     191,
+     900
+    ],
+    "dtype": "float64",
+    "min": -5.895516796011633,
+    "max": 5.269716947309636,
+    "nan": 0
+   },
+   "SC": {
+    "shape": [
+     162,
+     162
+    ],
+    "dtype": "float64",
+    "min": 0.0,
+    "max": 1.0,
+    "nan": 0
+   },
+   "gain": {
+    "shape": [
+     191,
+     162
+    ],
+    "dtype": "float64",
+    "min": 3.275870908980849e-07,
+    "max": 88.24500038228474,
+    "nan": 0
+   },
+   "ch_names": {
+    "shape": [
+     191
+    ],
+    "dtype": "<U8"
+   },
+   "t_first_last": [
+    10.0,
+    9000.0
+   ],
+   "dt_unique": [
+    10.0
+   ],
+   "SC_sym": true,
+   "SC_diag0": true,
+   "SC_max": 1.0,
+   "SC_sha12": "e3e2dc9f3efa",
+   "ch_first_last": [
+    "TP1-2",
+    "CC'14-15"
+   ]
+  }
+ },
+ "mgh": {
+  "data/EMF/lh.E1_normal_field_fs_ico5.mgh": {
+   "shape": [
+    10242,
+    1,
+    1
+   ],
+   "dtype": ">f4",
+   "min": -0.23522217571735382,
+   "max": 0.28889793157577515,
+   "nan": 0,
+   "zooms": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "data/EMF/lh.E2_normal_field_fs_ico5.mgh": {
+   "shape": [
+    10242,
+    1,
+    1
+   ],
+   "dtype": ">f4",
+   "min": -0.15898501873016357,
+   "max": 0.1570279747247696,
+   "nan": 0,
+   "zooms": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "data/EMF/rh.E1_normal_field_fs_ico5.mgh": {
+   "shape": [
+    10242,
+    1,
+    1
+   ],
+   "dtype": ">f4",
+   "min": -0.14349855482578278,
+   "max": 0.11549180746078491,
+   "nan": 0,
+   "zooms": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "data/EMF/rh.E2_normal_field_fs_ico5.mgh": {
+   "shape": [
+    10242,
+    1,
+    1
+   ],
+   "dtype": ">f4",
+   "min": -0.03661465272307396,
+   "max": 0.029065292328596115,
+   "nan": 0,
+   "zooms": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "n_local": 26,
+ "n_manifest": 26,
+ "extra": [],
+ "missing": [],
+ "lut": {
+  "n": 163,
+  "first": "   0   Unknown                                              ",
+  "second": "   1   Left-Frontal-pole                                    ",
+  "last": " 162   Right-Cerebellar-cortex                              "
+ },
+ "license_head": "\n                                 Apache License\n                           Version 2.0, January 2004\n                  "
+}

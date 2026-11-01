@@ -1,0 +1,614 @@
+{
+ "case_id": "HUP114",
+ "cohort_split_role": "test",
+ "findings": [
+  {
+   "check": "checksums",
+   "result": "pass",
+   "detail": "25/25 files match manifest sha256+bytes"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-01",
+   "sfreq_hz": 500.0,
+   "duration_s": 237.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 394.1247616771534,
+    "min": 305.7416670045456,
+    "max": 5853.272244793585
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "LDA2",
+    "LDA3",
+    "LDH1",
+    "LG1",
+    "LG16",
+    "LG31",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG37",
+    "LG38",
+    "LG40",
+    "LG48",
+    "LG49",
+    "RIH4",
+    "RPT4"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 20.67,
+   "frac_channels_line_ratio_gt10": 0.984,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "EKG2",
+    "LG1",
+    "LG16",
+    "LG17",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG38",
+    "LG48",
+    "LG49"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LDA2",
+    "LDA3",
+    "LDH1",
+    "LG37",
+    "LG40",
+    "RIH4",
+    "RPT4"
+   ],
+   "marked_bad_not_flagged": [
+    "LG2",
+    "LG24",
+    "LG25",
+    "LG30",
+    "LG56",
+    "LG57",
+    "LO5"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   }
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-02",
+   "sfreq_hz": 500.0,
+   "duration_s": 230.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 389.1583803902573,
+    "min": 301.3034716755994,
+    "max": 3611.2116434568884
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "LDA1",
+    "LDA2",
+    "LDA3",
+    "LDH1",
+    "LG1",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG37",
+    "LG38",
+    "LG48",
+    "LG49",
+    "LG58",
+    "RAT4",
+    "RMT2",
+    "RMT3",
+    "RMT4",
+    "RPT4"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 27.32,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "LG1",
+    "LG17",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG38",
+    "LG48",
+    "LG49"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LDA1",
+    "LDA2",
+    "LDA3",
+    "LDH1",
+    "LG37",
+    "LG58",
+    "RAT4",
+    "RMT2",
+    "RMT3",
+    "RMT4",
+    "RPT4"
+   ],
+   "marked_bad_not_flagged": [
+    "EKG2",
+    "LG16",
+    "LG24",
+    "LG25",
+    "LG31",
+    "LG56",
+    "LG57",
+    "LO5"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   }
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-03",
+   "sfreq_hz": 500.0,
+   "duration_s": 232.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 362.9543482674787,
+    "min": 278.59165906863524,
+    "max": 3289.8490169560628
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "LG1",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG37",
+    "LG38",
+    "LG40",
+    "LG48",
+    "LG49",
+    "RAT2",
+    "RAT4",
+    "RIH4",
+    "RIH5",
+    "RMT3",
+    "RPT4"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 67.22,
+   "frac_channels_line_ratio_gt10": 0.984,
+   "line_noise_outlier_channels": [
+    "LG1",
+    "LG17",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG38",
+    "LG48",
+    "LG49"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LG37",
+    "LG40",
+    "RAT2",
+    "RAT4",
+    "RIH4",
+    "RIH5",
+    "RMT3",
+    "RPT4"
+   ],
+   "marked_bad_not_flagged": [
+    "EKG2",
+    "LG16",
+    "LG24",
+    "LG25",
+    "LG31",
+    "LG56",
+    "LG57",
+    "LO5"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   }
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-04",
+   "sfreq_hz": 500.0,
+   "duration_s": 252.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 348.17236978469515,
+    "min": 252.99046087777737,
+    "max": 7608.438581081241
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "LG1",
+    "LG16",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG37",
+    "LG38",
+    "LG48",
+    "LG49",
+    "RAT2",
+    "RAT3",
+    "RAT4",
+    "RMT2",
+    "RMT3",
+    "RMT4",
+    "RPT3",
+    "RPT4"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 22.48,
+   "frac_channels_line_ratio_gt10": 0.953,
+   "line_noise_outlier_channels": [
+    "LG1",
+    "LG17",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG37",
+    "LG38",
+    "LG48",
+    "LG49"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LG37",
+    "RAT2",
+    "RAT3",
+    "RAT4",
+    "RMT2",
+    "RMT3",
+    "RMT4",
+    "RPT3",
+    "RPT4"
+   ],
+   "marked_bad_not_flagged": [
+    "EKG2",
+    "LG24",
+    "LG25",
+    "LG31",
+    "LG56",
+    "LG57",
+    "LO5"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   }
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "interictal-01",
+   "sfreq_hz": 500.0,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 128.88668245309063,
+    "min": 103.98950468788804,
+    "max": 2081.0473503880057
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG2",
+    "LG1",
+    "LG16",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG38",
+    "LG48",
+    "LG49"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 66.93,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "LG1",
+    "LG16",
+    "LG17",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG38",
+    "LG48",
+    "LG49"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [],
+   "marked_bad_not_flagged": [
+    "LG24",
+    "LG25",
+    "LG31",
+    "LG56",
+    "LG57",
+    "LO5"
+   ],
+   "annotations_within_recording": null,
+   "annotation_sample_consistent": null,
+   "seizure_offset_after_onset": null,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   }
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "interictal-02",
+   "sfreq_hz": 500.0,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 132.33351564797462,
+    "min": 106.4490101447844,
+    "max": 3714.584136152862
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "LG1",
+    "LG16",
+    "LG2",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG38",
+    "LG48",
+    "LG49",
+    "LG50"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 19.47,
+   "frac_channels_line_ratio_gt10": 0.969,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "LG1",
+    "LG17",
+    "LG30",
+    "LG32",
+    "LG33",
+    "LG34",
+    "LG35",
+    "LG36",
+    "LG48",
+    "LG49",
+    "LG64"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LG50",
+    "LG64"
+   ],
+   "marked_bad_not_flagged": [
+    "LG24",
+    "LG25",
+    "LG31",
+    "LG56",
+    "LG57",
+    "LO5"
+   ],
+   "annotations_within_recording": null,
+   "annotation_sample_consistent": null,
+   "seizure_offset_after_onset": null,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   }
+  },
+  {
+   "check": "coordinate_frame",
+   "result": "to_verify",
+   "decision": {
+    "declared_in_coordsystem_json": {
+     "iEEGCoordinateSystem": "fsaverage",
+     "iEEGCoordinateUnits": "m"
+    },
+    "declared_in_dataset_readme": "electrode localizations in ICBM152 MNI space (README, dataset level)",
+    "evidence": {
+     "value_ranges": {
+      "x": [
+       -68.01,
+       65.9339
+      ],
+      "y": [
+       -67.0153,
+       66.4304
+      ],
+      "z": [
+       -51.9190432734576,
+       51.2303966678344
+      ]
+     },
+     "abs_max": 68.01,
+     "mean_norm": 62.00791550330815,
+     "implied_extent_if_metres_mm": 68010.0,
+     "frac_contacts_in_mni_box_mm[-80,80]x[-120,90]x[-70,90]": 1.0,
+     "outside_box": [],
+     "frac_x_lt_0": 0.768,
+     "mne_bids_read_frame": "mni_tal",
+     "mne_bids_abs_max_as_loaded_m": 68.01
+    },
+    "units_decision": "mm",
+    "units_rationale": "abs max 68.0 with all/most contacts inside a head-sized MNI box: values are mm; the declared 'm' would imply a ~68 m extent, physically impossible",
+    "frame_decision": "MNI-template space (README: ICBM152 MNI); template variant to_verify",
+    "frame_rationale": "Coordinates are in a template (not native) MNI-like space: ranges fit an MNI brain box and the dataset README states ICBM152 MNI. coordsystem.json labels it 'fsaverage' (FreeSurfer surface RAS ~ MNI305). ICBM152 vs MNI305/fsaverage differ by a few mm and cannot be distinguished from contact coordinates alone -> template variant marked to_verify.",
+    "status": "to_verify",
+    "warning": "mne-bids 0.20.0 loads these values as metres (montage abs max ~68.01 'm'); downstream code must rescale by 1e-3."
+   }
+  },
+  {
+   "check": "channel_tags",
+   "n_soz": 2,
+   "n_resect": 4,
+   "n_bad": 21,
+   "soz_and_resect": [
+    "RDA4",
+    "RDH4"
+   ],
+   "soz_not_resected": []
+  }
+ ],
+ "missingness": {
+  "mri": "reported_absent",
+  "iEEGReference": "not_reported",
+  "channels_without_coords": [
+   "EKG1",
+   "EKG2"
+  ],
+  "electrode_size": "not_reported",
+  "atlas_labels": "not_reported",
+  "interictal_events": "reported_absent (no events.tsv for interictal runs)",
+  "manufacturer": "not_reported",
+  "outcomes": "sealed (not accessed)"
+ },
+ "limits": [
+  "strong 60 Hz line noise on most channels (not notch filtered; SoftwareFilters n/a) in runs ['ictal-01', 'ictal-02', 'ictal-03', 'ictal-04', 'interictal-01', 'interictal-02']: notch filter downstream",
+  "non-neural channels typed as iEEG in channels.tsv: ['EKG1:ECOG', 'EKG2:ECOG'] (exclude from neural analyses)",
+  "channels without coordinates: ['EKG1', 'EKG2']",
+  "coordinate frame: units resolved as mm; template variant (ICBM152 per README vs fsaverage per coordsystem.json) to_verify; coordsystem.json units 'm' are wrong"
+ ],
+ "exclusion_reasons": [],
+ "verdict": "accept_with_limits",
+ "thresholds": {
+  "flat_std_uV": 0.5,
+  "flatline_zero_diff_frac": 0.5,
+  "robust_z_logstd": 3.5,
+  "line_ratio_flag": 10.0,
+  "clip_frac": 0.001,
+  "dropout_min_s": 0.5
+ },
+ "tool": {
+  "script": "studies/study-001/work/T0020/qc_case.py",
+  "sha256": "76ddfd7e35badbe21c26238dd58d6f43bd52ec6ded653d401ce0dfa6219dad59",
+  "versions": {
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3"
+  }
+ }
+}

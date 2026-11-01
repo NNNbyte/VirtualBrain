@@ -1,0 +1,60 @@
+{
+  "resource": "GitHub repository HuifangWang/VBT_INS_Stimulation @ 5367ef4afb976271ecc6297b70a95dd3d944af61 (code + simulated virtual-patient data) and the installed package vep-stim 0.1.0a1 from the same commit",
+  "access_path": "Public GitHub (no credentials). Local copy data/wang-5367ef4 (26 files) with retrieval manifest data/wang-5367ef4-manifest.csv; package in .venv-model/Lib/site-packages/vep_stim. Download approved by the user (protocol gate on A0001: 'Approve all').",
+  "status": "verified_present: 26/26 files sha256-match the manifest; no files outside the manifest; package direct_url.json commit_id matches.",
+  "conditions": {
+    "license": "Apache License 2.0 (LICENSE file opened). Redistribution with license/notice; no clinical-use warranty.",
+    "data_use": "Simulated virtual-patient data; no identifiable patient data in opened files. Research use only; results are not clinical recommendations.",
+    "study_restrictions": "Reserved files must be sealed in the study vault before any R3/R4 task: examples/Sim_SEEG_nf.ipynb, examples/Sim_SEEG_nf_dk.ipynb, examples/Sim_SEEG_nf_lc.ipynb, examples/Sim_TI_nf.ipynb, data/Patient1_SEEG_stimulation.xlsx, data/Patient1_TI_stimulation.xlsx, data/Patient2_SEEG_stimulation.xlsx, data/Patient2_TI_stimulation.xlsx (not opened by R1).",
+    "reserved_files": [
+      {
+        "path": "examples/Sim_SEEG_nf.ipynb",
+        "bytes": 700150,
+        "sha256": "deb7b68e56d854560d46f5a5273e3666a5084ffe9bc241d9a32915409adac60c",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "examples/Sim_SEEG_nf_dk.ipynb",
+        "bytes": 378363,
+        "sha256": "ab94f7da726887c823dd76a882a5cb9d679cd99b89a8eb7a239fbf30bed26b7b",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "examples/Sim_SEEG_nf_lc.ipynb",
+        "bytes": 30240,
+        "sha256": "6c6f5fd75ef9bd3ec9abe8fb9806337af309c15847292ca70c5ba98993d0ed2a",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "examples/Sim_TI_nf.ipynb",
+        "bytes": 846686,
+        "sha256": "dc840626525df25b78c67803a31a37b4b8f9f4394e2a00782efda91554a5de16",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "data/Patient1_SEEG_stimulation.xlsx",
+        "bytes": 103768,
+        "sha256": "1461762dfa012e366be482d3497768202c335ba775494c6185aba75b45e58611",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "data/Patient1_TI_stimulation.xlsx",
+        "bytes": 103929,
+        "sha256": "762b942ae504cfc73817a8a798a3648efc0cbe9338215d982d0a2da9a5eaa8d1",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "data/Patient2_SEEG_stimulation.xlsx",
+        "bytes": 78204,
+        "sha256": "500ed23500b1d42343c6d1617fe9d84f83ab82f9908318290cf6d53fc64bc6bb",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      },
+      {
+        "path": "data/Patient2_TI_stimulation.xlsx",
+        "bytes": 81075,
+        "sha256": "733ddbc56783f36adf0af5493a8d0761265a9a5eeb1738518a5ecce3ef1e943f",
+        "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+      }
+    ]
+  }
+}

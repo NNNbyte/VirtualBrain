@@ -1,0 +1,163 @@
+{
+ "seed": 20261101,
+ "qualified_counts": {
+  "development": 32,
+  "test": 20
+ },
+ "qualified_by_cell": {
+  "development": {
+   "ABLATION|SEEG": 15,
+   "ABLATION|ECOG": 1,
+   "RESECTION|SEEG": 6,
+   "RESECTION|ECOG": 10
+  },
+  "test": {
+   "ABLATION|SEEG": 9,
+   "ABLATION|ECOG": 1,
+   "RESECTION|SEEG": 4,
+   "RESECTION|ECOG": 6
+  }
+ },
+ "proposal": [
+  {
+   "subject": "sub-HUP126",
+   "partition": "development",
+   "therapy": "ABLATION",
+   "implant": "ECOG",
+   "acq": [
+    "ecog"
+   ],
+   "n_ictal_runs": 4,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 2,
+   "n_resect_channels": 9,
+   "n_contacts_with_xyz": 114
+  },
+  {
+   "subject": "sub-HUP151",
+   "partition": "development",
+   "therapy": "ABLATION",
+   "implant": "SEEG",
+   "acq": [
+    "seeg"
+   ],
+   "n_ictal_runs": 5,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 3,
+   "n_resect_channels": 7,
+   "n_contacts_with_xyz": 178
+  },
+  {
+   "subject": "sub-HUP141",
+   "partition": "development",
+   "therapy": "ABLATION",
+   "implant": "SEEG",
+   "acq": [
+    "seeg"
+   ],
+   "n_ictal_runs": 5,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 13,
+   "n_resect_channels": 13,
+   "n_contacts_with_xyz": 115
+  },
+  {
+   "subject": "sub-HUP105",
+   "partition": "development",
+   "therapy": "RESECTION",
+   "implant": "ECOG",
+   "acq": [
+    "ecog"
+   ],
+   "n_ictal_runs": 2,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 9,
+   "n_resect_channels": 4,
+   "n_contacts_with_xyz": 60
+  },
+  {
+   "subject": "sub-HUP123",
+   "partition": "development",
+   "therapy": "RESECTION",
+   "implant": "ECOG",
+   "acq": [
+    "ecog"
+   ],
+   "n_ictal_runs": 4,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 7,
+   "n_resect_channels": 24,
+   "n_contacts_with_xyz": 124
+  },
+  {
+   "subject": "sub-HUP173",
+   "partition": "development",
+   "therapy": "RESECTION",
+   "implant": "SEEG",
+   "acq": [
+    "seeg"
+   ],
+   "n_ictal_runs": 5,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 8,
+   "n_resect_channels": 19,
+   "n_contacts_with_xyz": 124
+  },
+  {
+   "subject": "sub-HUP114",
+   "partition": "test",
+   "therapy": "ABLATION",
+   "implant": "ECOG",
+   "acq": [
+    "ecog"
+   ],
+   "n_ictal_runs": 4,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 2,
+   "n_resect_channels": 4,
+   "n_contacts_with_xyz": 125
+  },
+  {
+   "subject": "sub-HUP157",
+   "partition": "test",
+   "therapy": "ABLATION",
+   "implant": "SEEG",
+   "acq": [
+    "seeg"
+   ],
+   "n_ictal_runs": 5,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 14,
+   "n_resect_channels": 6,
+   "n_contacts_with_xyz": 170
+  },
+  {
+   "subject": "sub-HUP070",
+   "partition": "test",
+   "therapy": "RESECTION",
+   "implant": "ECOG",
+   "acq": [
+    "ecog"
+   ],
+   "n_ictal_runs": 5,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 10,
+   "n_resect_channels": 23,
+   "n_contacts_with_xyz": 78
+  },
+  {
+   "subject": "sub-HUP166",
+   "partition": "test",
+   "therapy": "RESECTION",
+   "implant": "SEEG",
+   "acq": [
+    "seeg"
+   ],
+   "n_ictal_runs": 2,
+   "n_interictal_runs": 2,
+   "n_soz_channels": 5,
+   "n_resect_channels": 15,
+   "n_contacts_with_xyz": 169
+  }
+ ]
+}

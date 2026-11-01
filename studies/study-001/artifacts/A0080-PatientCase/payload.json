@@ -1,0 +1,484 @@
+{
+ "case_id": "HUP157",
+ "bids_subject": "sub-HUP157",
+ "dataset_id": "openneuro:ds004100 v1.1.3 (A0070-DatasetCard)",
+ "split": "test (A0071-CohortSplit)",
+ "sessions": [
+  {
+   "session": "presurgery",
+   "acquisitions": [
+    "seeg"
+   ]
+  }
+ ],
+ "recordings": [
+  {
+   "run_id": "task-ictal_acq-seeg_run-01",
+   "task": "ictal",
+   "acq": "seeg",
+   "run": "01",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_ieeg.edf",
+   "edf_sha256": "84a4f30373714b59d917d771c7b2db6cbfea2b4fec303ab0b4c2f37b2c735095",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_channels.tsv",
+   "events_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_events.tsv",
+   "sfreq_hz": 1024.0,
+   "duration_s": 235.0,
+   "n_samples": 240640,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 234.9990234375,
+   "power_line_hz": 60
+  },
+  {
+   "run_id": "task-ictal_acq-seeg_run-02",
+   "task": "ictal",
+   "acq": "seeg",
+   "run": "02",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_ieeg.edf",
+   "edf_sha256": "2208f1a11c8a1d7e5dbb911d1173c05ce54dc58d3f077d473adaa084defbf7d0",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_channels.tsv",
+   "events_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_events.tsv",
+   "sfreq_hz": 1024.0,
+   "duration_s": 257.0,
+   "n_samples": 263168,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 256.9990234375,
+   "power_line_hz": 60
+  },
+  {
+   "run_id": "task-ictal_acq-seeg_run-03",
+   "task": "ictal",
+   "acq": "seeg",
+   "run": "03",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_ieeg.edf",
+   "edf_sha256": "2d972d0b5a929f3782cfba9d62d8190adbfa8815e5d29d34b63a8530a3cad1af",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_channels.tsv",
+   "events_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_events.tsv",
+   "sfreq_hz": 1024.0,
+   "duration_s": 257.0,
+   "n_samples": 263168,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 256.9990234375,
+   "power_line_hz": 60
+  },
+  {
+   "run_id": "task-ictal_acq-seeg_run-04",
+   "task": "ictal",
+   "acq": "seeg",
+   "run": "04",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_ieeg.edf",
+   "edf_sha256": "8e50cce6c2ee1edb760d9613ec0cfa93daead73f70f2c71b226042ea54d664ce",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_channels.tsv",
+   "events_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_events.tsv",
+   "sfreq_hz": 1024.0,
+   "duration_s": 240.0,
+   "n_samples": 245760,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 239.9990234375,
+   "power_line_hz": 60
+  },
+  {
+   "run_id": "task-ictal_acq-seeg_run-05",
+   "task": "ictal",
+   "acq": "seeg",
+   "run": "05",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_ieeg.edf",
+   "edf_sha256": "fce447abd0c346de16861dbaca1eb25f3f973c6a00b2539a3b233727ccbfec0f",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_channels.tsv",
+   "events_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_events.tsv",
+   "sfreq_hz": 1024.0,
+   "duration_s": 240.0,
+   "n_samples": 245760,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 239.9990234375,
+   "power_line_hz": 60
+  },
+  {
+   "run_id": "task-interictal_acq-seeg_run-01",
+   "task": "interictal",
+   "acq": "seeg",
+   "run": "01",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-01_ieeg.edf",
+   "edf_sha256": "86dbe52eae8c936b0a03c0d8c59327487adb9a918414e95b91db457dc4f65154",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-01_channels.tsv",
+   "events_tsv": null,
+   "sfreq_hz": 1024.0,
+   "duration_s": 300.0,
+   "n_samples": 307200,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 299.9990234375,
+   "power_line_hz": 60
+  },
+  {
+   "run_id": "task-interictal_acq-seeg_run-02",
+   "task": "interictal",
+   "acq": "seeg",
+   "run": "02",
+   "edf_path": "data/ds004100-1.1.3/sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-02_ieeg.edf",
+   "edf_sha256": "7543bba0b8707bee671560fa6755e1988468d0617c4b8bbf93573914538b019f",
+   "channels_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-02_channels.tsv",
+   "events_tsv": null,
+   "sfreq_hz": 1024.0,
+   "duration_s": 300.0,
+   "n_samples": 307200,
+   "n_channels": 172,
+   "edf_format": "EDF+C",
+   "sidecar_RecordingDuration_s": 299.9990234375,
+   "power_line_hz": 60
+  }
+ ],
+ "recording_summary": {
+  "n_ictal_runs": 5,
+  "ictal_total_s": 1229.0,
+  "annotated_seizure_total_s": 328.995,
+  "n_interictal_runs": 2,
+  "interictal_total_s": 600.0
+ },
+ "checksums": {
+  "manifest": "studies/study-001/work/T0015/retrieval_manifest.csv",
+  "n_files": 29,
+  "n_match": 29,
+  "mismatches": [],
+  "not_in_manifest": [],
+  "in_manifest_missing_locally": [],
+  "sha256": {
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_acq-seeg_space-fsaverage_coordsystem.json": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_acq-seeg_space-fsaverage_electrodes.tsv": "9bf2764b07d77603ca3f9102411587a733c1e3c30b24ee022a2d3fbfb7642a41",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_events.tsv": "eb0d31acea9081070c25e22665729c064e38a17d31a80876bc840064da1620f6",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_ieeg.edf": "84a4f30373714b59d917d771c7b2db6cbfea2b4fec303ab0b4c2f37b2c735095",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-01_ieeg.json": "7d3e3621fc57f489e6e525ba2b59248bfbe116d0ac3bfe9de100b30eecb4fea8",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_events.tsv": "dfa4933454db2e60e9d510381fdda929996f3171eabb23061f3ea2e2363231a2",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_ieeg.edf": "2208f1a11c8a1d7e5dbb911d1173c05ce54dc58d3f077d473adaa084defbf7d0",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-02_ieeg.json": "289b1ccf7dca664717269518b64aca2652b2220990b6a2d7f69f712139022470",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_events.tsv": "dfa4933454db2e60e9d510381fdda929996f3171eabb23061f3ea2e2363231a2",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_ieeg.edf": "2d972d0b5a929f3782cfba9d62d8190adbfa8815e5d29d34b63a8530a3cad1af",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-03_ieeg.json": "289b1ccf7dca664717269518b64aca2652b2220990b6a2d7f69f712139022470",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_events.tsv": "69b810d7220f4aa424d81e3bc524dcd09507cd5127350aaeb052bcb4a82af5ac",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_ieeg.edf": "8e50cce6c2ee1edb760d9613ec0cfa93daead73f70f2c71b226042ea54d664ce",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-04_ieeg.json": "407e7f72f08b0e700f221c5525c509bff05e864544ea52f2f4727f6f097b1c99",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_events.tsv": "69b810d7220f4aa424d81e3bc524dcd09507cd5127350aaeb052bcb4a82af5ac",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_ieeg.edf": "fce447abd0c346de16861dbaca1eb25f3f973c6a00b2539a3b233727ccbfec0f",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-ictal_acq-seeg_run-05_ieeg.json": "407e7f72f08b0e700f221c5525c509bff05e864544ea52f2f4727f6f097b1c99",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-01_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-01_ieeg.edf": "86dbe52eae8c936b0a03c0d8c59327487adb9a918414e95b91db457dc4f65154",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-01_ieeg.json": "9d92083a3c2303de01f591556f2a2a0fa2ba632f532021cf9f95dff40d7f741d",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-02_channels.tsv": "d234d31a503e95e8ac12283517946a3dc76b11320e99b9400550df6052f16307",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-02_ieeg.edf": "7543bba0b8707bee671560fa6755e1988468d0617c4b8bbf93573914538b019f",
+   "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_task-interictal_acq-seeg_run-02_ieeg.json": "9d92083a3c2303de01f591556f2a2a0fa2ba632f532021cf9f95dff40d7f741d",
+   "sub-HUP157/ses-presurgery/sub-HUP157_ses-presurgery_scans.tsv": "2ec00c457543f2b076ab703eaa399bd15ca3eaab5005a17c261eb99db0ee331d"
+  }
+ },
+ "anatomy": {
+  "status": "template-only; electrodes.tsv coords",
+  "mri": "reported_absent (no anat/ in v1.1.3)",
+  "ct": "reported_absent",
+  "electrodes_tsv": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_acq-seeg_space-fsaverage_electrodes.tsv",
+  "coordsystem_json": "sub-HUP157/ses-presurgery/ieeg/sub-HUP157_ses-presurgery_acq-seeg_space-fsaverage_coordsystem.json",
+  "atlas_labels": "not_reported (none in electrodes.tsv)"
+ },
+ "coordinate_transforms": {
+  "transform_chain_id": "ds004100-coordsystem-as-provided",
+  "declared_coordsystem_json": {
+   "iEEGCoordinateSystem": "fsaverage",
+   "iEEGCoordinateSystemDescription": "Defined by FreeSurfer, the MRI (surface RAS) origin is at the center of a 256×256×256 mm^3 anisotropic volume (may not be in the center of the head).",
+   "iEEGCoordinateUnits": "m"
+  },
+  "declared_readme": "README (dataset level, A0070): electrode localizations in ICBM152 MNI space",
+  "decision": {
+   "units": "mm",
+   "units_basis": "value magnitudes and inter-contact spacing; coordsystem.json iEEGCoordinateUnits='m' judged a metadata error",
+   "frame": "MNI-like template space (RAS, mm); specific template to_verify: README says ICBM152 MNI, coordsystem.json says fsaverage (FreeSurfer fsaverage = MNI305 Talairach space). MNI305 vs ICBM152 differ by a near-identity affine (few mm), not resolvable from coordinate values alone",
+   "frame_status": "to_verify"
+  },
+  "evidence": [
+   "abs max coordinate 77.9465: >1 so values cannot be metres for a head (would be >1 m)",
+   "median within-shaft nearest-contact spacing 4.93 (typical SEEG/ECoG pitch 3.5-10 mm)",
+   "100.0% of contacts inside MNI brain box [-80,80]x[-120,90]x[-70,90] mm",
+   "L-prefixed contacts with x<0: 1.0; R-prefixed with x>0: 1.0 (RAS orientation check)"
+  ],
+  "value_ranges_mm": {
+   "x": [
+    -70.334,
+    77.8653
+   ],
+   "y": [
+    -77.9465,
+    66.5699
+   ],
+   "z": [
+    -27.2135226880879,
+    51.9603127237509
+   ]
+  },
+  "frac_inside_mni_box": 1.0,
+  "median_within_shaft_spacing_mm": 4.927695493660161,
+  "hemisphere_check": {
+   "n_L_prefixed": 81,
+   "frac_L_x_neg": 1.0,
+   "n_R_prefixed": 89,
+   "frac_R_x_pos": 1.0
+  },
+  "transforms_applied": "none - coordinates used numerically as provided; only the unit label is corrected (m -> mm); no subject-to-template registration information is available (no MRI/CT)",
+  "downstream_hazard": "mne_bids.read_raw_bids honours the declared 'm' and places contacts up to 77.9465 m from origin; consumers must rescale by 1e-3 (or read electrodes.tsv as mm) before any geometry use"
+ },
+ "channels": {
+  "n_channels": 172,
+  "counts_by_type_channels_tsv": {
+   "SEEG": 172
+  },
+  "counts_by_status_channels_tsv": {
+   "good": 164,
+   "bad": 8
+  },
+  "bad_channels_tsv": [
+   "EKG1",
+   "EKG2",
+   "LC10",
+   "LD1",
+   "LE10",
+   "LE11",
+   "RB10",
+   "RB11"
+  ],
+  "non_neural_by_name": [
+   "EKG1",
+   "EKG2"
+  ],
+  "non_neural_typed_as_neural_in_tsv": [
+   "EKG1",
+   "EKG2"
+  ],
+  "n_good_neural": 164,
+  "soz": {
+   "n": 14,
+   "channels": [
+    "LA1",
+    "LA2",
+    "LB1",
+    "LB2",
+    "LB7",
+    "LB8",
+    "LB9",
+    "LC1",
+    "LC2",
+    "LC7",
+    "LC8",
+    "LC9",
+    "LJ1",
+    "RJ1"
+   ],
+   "source": "channels.tsv status_description tag 'soz' (clinician-marked)"
+  },
+  "resect": {
+   "n": 6,
+   "channels": [
+    "LA1",
+    "LA2",
+    "LA3",
+    "LB1",
+    "LB2",
+    "LB3"
+   ],
+   "source": "channels.tsv status_description tag 'resect' (delivered intervention zone: resection or ablation, not distinguished)"
+  },
+  "soz_and_resect": [
+   "LA1",
+   "LA2",
+   "LB1",
+   "LB2"
+  ],
+  "soz_or_resect_marked_bad": [],
+  "identical_across_runs": {
+   "soz": true,
+   "resect": true,
+   "bad": true
+  },
+  "channel_names_match_edf_all_runs": true,
+  "n_with_coordinates": 170,
+  "channels_without_coordinates": [
+   "EKG1",
+   "EKG2"
+  ],
+  "good_neural_channels_without_coordinates": []
+ },
+ "montage": {
+  "reference": "referential as recorded",
+  "iEEGReference_sidecar": [
+   "n/a"
+  ],
+  "reference_electrode": "not_reported",
+  "rereferencing_applied": "none"
+ },
+ "events": {
+  "task-ictal_acq-seeg_run-01": {
+   "annotations": [
+    {
+     "trial_type": "sz onset",
+     "onset_s": 120.0,
+     "sample": 122880
+    },
+    {
+     "trial_type": "sz offset",
+     "onset_s": 174.9990234375,
+     "sample": 179199
+    }
+   ],
+   "coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 54.9990234375,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.0009765625
+   }
+  },
+  "task-ictal_acq-seeg_run-02": {
+   "annotations": [
+    {
+     "trial_type": "sz onset",
+     "onset_s": 120.0,
+     "sample": 122880
+    },
+    {
+     "trial_type": "sz offset",
+     "onset_s": 196.9990234375,
+     "sample": 201727
+    }
+   ],
+   "coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 76.9990234375,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.0009765625
+   }
+  },
+  "task-ictal_acq-seeg_run-03": {
+   "annotations": [
+    {
+     "trial_type": "sz onset",
+     "onset_s": 120.0,
+     "sample": 122880
+    },
+    {
+     "trial_type": "sz offset",
+     "onset_s": 196.9990234375,
+     "sample": 201727
+    }
+   ],
+   "coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 76.9990234375,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.0009765625
+   }
+  },
+  "task-ictal_acq-seeg_run-04": {
+   "annotations": [
+    {
+     "trial_type": "sz onset",
+     "onset_s": 120.0,
+     "sample": 122880
+    },
+    {
+     "trial_type": "sz offset",
+     "onset_s": 179.9990234375,
+     "sample": 184319
+    }
+   ],
+   "coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 59.9990234375,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.0009765625
+   }
+  },
+  "task-ictal_acq-seeg_run-05": {
+   "annotations": [
+    {
+     "trial_type": "sz onset",
+     "onset_s": 120.0,
+     "sample": 122880
+    },
+    {
+     "trial_type": "sz offset",
+     "onset_s": 179.9990234375,
+     "sample": 184319
+    }
+   ],
+   "coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 59.9990234375,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.0009765625
+   }
+  },
+  "task-interictal_acq-seeg_run-01": {
+   "annotations": [],
+   "coherence": "no events.tsv (interictal run; none expected)"
+  },
+  "task-interictal_acq-seeg_run-02": {
+   "annotations": [],
+   "coherence": "no events.tsv (interictal run; none expected)"
+  }
+ },
+ "units": {
+  "signal": [
+   "µV"
+  ],
+  "signal_edf_phys_dim": [
+   "uV"
+  ],
+  "signal_as_loaded_by_mne": "V (scaled from EDF uV)",
+  "edf_physical_range_uv": [
+   [
+    -50000.0,
+    50000.0
+   ]
+  ],
+  "time": "s",
+  "coordinates": "mm",
+  "coordinates_declared": "m",
+  "sampling_rate_hz": 1024.0
+ },
+ "intervention_linkage": "contact-level 'resect' tags only (delivered intervention); resection-vs-ablation not distinguished here",
+ "outcome": "sealed - not read, not included",
+ "qc_tool": {
+  "script": "studies/study-001/work/T0023/qc_case.py",
+  "sha256": "8fb98caee640768a278aa12688a9410164ce68edde3c61520e6e5b18a8c16d67",
+  "versions": {
+   "python": "3.11.9",
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3"
+  }
+ }
+}

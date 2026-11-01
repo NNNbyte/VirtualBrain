@@ -1,0 +1,134 @@
+{
+ "T0026": {
+  "[1, 2]": {
+   "x0_rhat_max": 2.808,
+   "x0_rhat_median": 1.82,
+   "n_gt_1_05": 160,
+   "lp_rhat": 1.628,
+   "lp_first_half_mean": [
+    24507.0,
+    24513.9
+   ],
+   "lp_second_half_mean": [
+    24478.9,
+    24491.0
+   ]
+  },
+  "[3, 4]": {
+   "x0_rhat_max": 2.707,
+   "x0_rhat_median": 1.89,
+   "n_gt_1_05": 162,
+   "lp_rhat": 1.859,
+   "lp_first_half_mean": [
+    24200.9,
+    24168.0
+   ],
+   "lp_second_half_mean": [
+    24186.3,
+    24149.5
+   ]
+  },
+  "[5, 6]": {
+   "x0_rhat_max": 3.006,
+   "x0_rhat_median": 1.978,
+   "n_gt_1_05": 162,
+   "lp_rhat": 1.116,
+   "lp_first_half_mean": [
+    24205.7,
+    24201.9
+   ],
+   "lp_second_half_mean": [
+    24208.2,
+    24196.3
+   ]
+  },
+  "[7, 8]": {
+   "x0_rhat_max": 3.052,
+   "x0_rhat_median": 1.869,
+   "n_gt_1_05": 159,
+   "lp_rhat": 1.612,
+   "lp_first_half_mean": [
+    23993.0,
+    23983.4
+   ],
+   "lp_second_half_mean": [
+    23965.3,
+    23959.1
+   ]
+  }
+ },
+ "T0029A": {
+  "[1, 2]": {
+   "x0_rhat_max": 1.83,
+   "x0_rhat_median": 1.021,
+   "n_gt_1_05": 32,
+   "lp_rhat": 1.154,
+   "lp_first_half_mean": [
+    38206.2,
+    38225.4
+   ],
+   "lp_second_half_mean": [
+    38218.3,
+    38226.0
+   ]
+  },
+  "[5, 6]": {
+   "x0_rhat_max": 1.71,
+   "x0_rhat_median": 1.009,
+   "n_gt_1_05": 15,
+   "lp_rhat": 1.225,
+   "lp_first_half_mean": [
+    37982.0,
+    37964.5
+   ],
+   "lp_second_half_mean": [
+    37988.3,
+    37967.3
+   ]
+  }
+ },
+ "T0029B": {
+  "[1, 2]": {
+   "x0_rhat_max": 1.828,
+   "x0_rhat_median": 1.005,
+   "n_gt_1_05": 11,
+   "lp_rhat": 1.031,
+   "lp_first_half_mean": [
+    38220.1,
+    38224.7
+   ],
+   "lp_second_half_mean": [
+    38230.6,
+    38222.4
+   ]
+  },
+  "[3, 4]": {
+   "x0_rhat_max": 1.84,
+   "x0_rhat_median": 1.008,
+   "n_gt_1_05": 16,
+   "lp_rhat": 1.001,
+   "lp_first_half_mean": [
+    38225.5,
+    38227.9
+   ],
+   "lp_second_half_mean": [
+    38226.6,
+    38227.7
+   ]
+  },
+  "[5, 6]": {
+   "x0_rhat_max": 1.826,
+   "x0_rhat_median": 1.004,
+   "n_gt_1_05": 14,
+   "lp_rhat": 1.435,
+   "lp_first_half_mean": [
+    38208.8,
+    38237.8
+   ],
+   "lp_second_half_mean": [
+    38209.3,
+    38240.6
+   ]
+  }
+ }
+}

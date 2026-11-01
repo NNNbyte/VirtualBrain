@@ -1,0 +1,34 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "LEAD-study-lead",
+  "role": "study_lead",
+  "display_name": "Lead \u00b7 Study orchestrator & dossier builder",
+  "enabled": true,
+  "color": "#334155",
+  "stage": "all",
+  "description": "Main session running /run-study: proposes tasks, dispatches agents, assembles the DecisionBundle.",
+  "skill": "run-study",
+  "allowed_tools": [
+    "dossier-builder"
+  ],
+  "allowed_output_types": [
+    "study_protocol",
+    "decision_bundle",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": false,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": true
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 10
+  }
+}

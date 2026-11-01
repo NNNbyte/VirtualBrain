@@ -1,0 +1,106 @@
+{
+ "criterion": "patient ids, recordings, units, coordinates, transforms, channels and annotations coherent and traceable to checksummed raw files; exclusions have reasons",
+ "criterion_version": "study-001 T0027 frozen acceptance criterion (protocol v1, release rel-823fa0c912cb)",
+ "evaluator": "R5-independent-evaluation (instance r5-case-qc); independent of R2 producer; R2 QC scripts (work/T0016, T0020, T0023) not used",
+ "evaluated_artifacts": [
+  "A0073-PatientCase",
+  "A0074-QCReport",
+  "A0075-PatientCase",
+  "A0076-QCReport",
+  "A0077-PatientCase",
+  "A0078-QCReport",
+  "A0080-PatientCase",
+  "A0081-QCReport",
+  "A0082-PatientCase",
+  "A0083-QCReport",
+  "A0084-PatientCase",
+  "A0085-QCReport",
+  "A0086-PatientCase",
+  "A0087-QCReport",
+  "A0088-PatientCase",
+  "A0089-QCReport",
+  "A0090-PatientCase",
+  "A0091-QCReport",
+  "A0092-PatientCase",
+  "A0093-QCReport"
+ ],
+ "held_out_data": "not_applicable (case-curation check on raw ds004100 v1.1.3 files; no outcomes accessed; participants.tsv and vault not opened)",
+ "result": {
+  "gates": {
+   "passed": 20,
+   "failed": 0,
+   "indeterminate": 0
+  },
+  "checksums": "all 254 files of the 10 cases re-hashed (sha256, every file not just a sample): 254/254 match T0015 retrieval_manifest (sha+bytes) and every PatientCase checksum entry; no files missing or unlisted",
+  "facts": "for all 10 cases R5 recount equals payload: ictal/interictal run counts, per-run sfreq, n_samples, duration, n_channels (own EDF header parser), EDF labels == channels.tsv, soz/resect/bad sets (channels.tsv status/status_description, identical across runs), one 'sz onset'+'sz offset' per ictal run at the stated times with sample==onset*fs, sidecar RecordingDuration = EDF duration - 1 sample",
+  "coordinate_units": "mm confirmed in all 10 cases (declared 'm' wrong): max|coord| 66.8-92.9, nearest-neighbour median 4.7-9.3 (SEEG 4.7-6.3, ECoG 7.6-9.3), consecutive-contact median 4.9-11.1, L/R prefix vs sign of x 100% consistent, 96.8-100% inside MNI box [-80,80]x[-120,90]x[-70,90] (HUP173 RE08/RF08/RG07/RG08 at x 80.6-84.6). Template identity ICBM152 vs fsaverage/MNI305 remains to_verify.",
+  "signal_spot_checks": {
+   "HUP105": "all-channel step 3.1-3.4 mV at 229.56/253.54 s confirmed; it is the step into a 0.44/0.46 s trailing constant EDF pad; ictal amplitude rise confined to seizure; line ratio 27/15 dB",
+   "HUP173": "trailing pad 0.86/0.96/0.66 s ictal-01/02/05 confirmed (+0.04/0.09 s in 03/04 unreported); line 14.9 dB ictal-01",
+   "HUP070": "trailing pad 0.547 s ictal-05 confirmed (+0.48/0.17/0.10/0.04 s in 01/03/04/02 unreported); no 60 Hz contamination",
+   "HUP151": "LD1 std 5.55/5.41 mV ictal-02/04, RG10 6.51 mV ictal-02 confirmed; several contacts at ~34.8-34.9 mV = saturation; unreported trailing pad 0.82 s (ictal-01), 0.33 s (ictal-03)",
+   "HUP166": "LC11 flat interictal-01 (8.7 uV, 51% zero diffs), low-variance interictal-02 (4.6 uV), 48% zero diffs ictal-01; unreported 0.50 s pad ictal-01",
+   "HUP141": "LB01/RB10 top amplitude confirmed; unreported trailing pad in all 5 ictal runs (0.13-0.97 s)",
+   "HUP157": "60 Hz ictal-01 21.7 dB confirmed; RA1/RB1/RB2 high variance; unreported 0.30 s pad ictal-02",
+   "HUP126": "LDAH3/LDAH4/LDMH3 high amplitude and LG64 line outlier confirmed; no pad",
+   "HUP123": "60 Hz ictal-02 16.3 dB confirmed; no pad",
+   "HUP114": "LG37 (24 mV peak), LDA3, LDH1 high amplitude; no pad",
+   "EKG": "EKG channels typed ECOG/SEEG (status bad) confirmed in 9 cases; HUP070 non-neural EEG EKG1/EKG2/RR/Rate-Ref typed ECOG, bad"
+  },
+  "trailing_pad_sweep": {
+   "HUP151:ictal_acq-seeg_run-01": 0.8164,
+   "HUP151:ictal_acq-seeg_run-03": 0.3262,
+   "HUP141:ictal_acq-seeg_run-01": 0.127,
+   "HUP141:ictal_acq-seeg_run-02": 0.5977,
+   "HUP141:ictal_acq-seeg_run-03": 0.9473,
+   "HUP141:ictal_acq-seeg_run-04": 0.168,
+   "HUP141:ictal_acq-seeg_run-05": 0.9668,
+   "HUP105:ictal_acq-ecog_run-01": 0.438,
+   "HUP105:ictal_acq-ecog_run-02": 0.458,
+   "HUP173:ictal_acq-seeg_run-01": 0.8633,
+   "HUP173:ictal_acq-seeg_run-02": 0.9648,
+   "HUP173:ictal_acq-seeg_run-03": 0.043,
+   "HUP173:ictal_acq-seeg_run-04": 0.0859,
+   "HUP173:ictal_acq-seeg_run-05": 0.6641,
+   "HUP157:ictal_acq-seeg_run-02": 0.2988,
+   "HUP070:ictal_acq-ecog_run-01": 0.4766,
+   "HUP070:ictal_acq-ecog_run-02": 0.0371,
+   "HUP070:ictal_acq-ecog_run-03": 0.168,
+   "HUP070:ictal_acq-ecog_run-04": 0.0977,
+   "HUP070:ictal_acq-ecog_run-05": 0.5469,
+   "HUP166:ictal_acq-seeg_run-01": 0.499
+  },
+  "r5_additional_findings": [
+   "trailing all-channel constant (~0.76 uV = digital zero) EDF pad in 21/61 runs (ictal only, last EDF record, <1 s): R2 reported it only for HUP173 (3 runs), HUP070 (1 run) and HUP105 (as 'transient'); recommend cohort-wide rule: drop last 1 s (last EDF record) of every ictal run",
+   "duplicate/coincident coordinates not reported by R2: HUP126 LG57==LMT3 (0 mm); HUP114 RDA1==RDH1 (0 mm), RDA2/RDH2 0.69 mm, RDA3/RDH3 1.4 mm (signals distinct) - affects geometry near HUP114 SOZ (RDA4/RDH4); HUP166 LJ8/LK3 0.95 mm",
+   "HUP151 ictal-02/04 amplifier saturation (~34.8 mV) on LD1 and others"
+  ],
+  "modeling_concerns": {
+   "HUP126": "soz 2 contacts (both resected); 12 good contacts lack coords; LG57/LMT3 coincident coords",
+   "HUP151": "soz 3, RF3 soz not resected; LD1/RG10 saturated in ictal-02/04",
+   "HUP141": "soz == resect (13/13): no soz-vs-resection contrast",
+   "HUP105": "7/9 soz not resected; bilateral grid; 500 Hz; large DC offsets",
+   "HUP123": "5/7 soz not resected; 3 resected contacts bad (RG37/41/43); RS01 no coords; right hemisphere only",
+   "HUP173": "256 Hz (Nyquist 128 Hz)",
+   "HUP114": "only 2 soz contacts; 21/127 bad; RDA/RDH coincident coordinates",
+   "HUP157": "10/14 soz not resected; severe 60 Hz in ictal-01/05",
+   "HUP070": "seizures only 5-13 s; left hemisphere only; 19/82 bad",
+   "HUP166": "soz (LJ1-5) and resect disjoint; LB0 (resect) no coords; LC11 flat"
+  }
+ },
+ "uncertainty_method": "deterministic re-computation (exact hash/count/set equality); signal metrics are single-pass point estimates with fixed thresholds (flat std<0.5 uV or >50% zero diffs; robust log-std z>5; 60 Hz band 59-61 vs 50-57/63-70 Hz Welch 2 s; step = >50% channels |diff|>20 robust SD); signal QC spot-checked 1-5 ictal runs per case (19 runs incl. 2 HUP166 interictal), end-pad sweep on all 61 runs",
+ "failure_cases": [],
+ "verdict": "passed (20/20 artifacts) with documented limits: unreported trailing EDF pads and coincident coordinates noted in gate reasons; none changes an accept_with_limits verdict",
+ "evidence_level": "independent re-verification against checksummed raw files (observed_measurement); coordinate template identity to_verify",
+ "tooling": {
+  "scripts": {
+   "r5_facts.py": "c14326481f32b1fc23c09350fdec174f9988d90055c3a8b53129d86b80178b0d",
+   "r5_compare.py": "e46e96c13cfb5498b63b8383041e26f5f7ce6a172d025ff1121c57e52f9527f5",
+   "r5_signal_qc.py": "ab572d7d3aa78a4eaee8d42232fcaff3378a7ba2b131a0054048ecb150fcd40b",
+   "r5_endpad_sweep.py": "80422287e2776121c672a4db10c8b7097e9ea3eac1224330d77b5db3ad807b5f",
+   "r5_gates.py": "a2caec7a2fd303c66b6c75869c09561dcba013478a5a739356b1cc99e01365b3"
+  },
+  "mne": "1.13.2",
+  "python": "3.11"
+ }
+}

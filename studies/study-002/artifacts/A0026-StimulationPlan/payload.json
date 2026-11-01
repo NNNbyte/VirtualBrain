@@ -1,0 +1,44 @@
+{
+ "intervention_id": "STIM-PT",
+ "intervention_class": "SEEG-contact electrical stimulation (paper method: gain-weighted 50 Hz pulse train, diagnostic protocol)",
+ "contacts_and_device": {
+  "contact_rule": "bipolar SEEG channel (P2 montage, 191 channels) with the largest gain to the top-1 estimated EZ region",
+  "device": "virtual SEEG bipolar pair (no device model)",
+  "waveform": {
+   "shape": "biphasic, charge-balanced (+amp 1 ms, -amp 1 ms; 2 ms total pulse)",
+   "frequency_hz": 50,
+   "pulse_width_ms": "2 total (1 per phase)",
+   "train_onset_ms": 500,
+   "train_duration_ms": 3000,
+   "amplitude_sweep_model_units": [
+    0.5,
+    1,
+    2,
+    4
+   ],
+   "amplitude_scaling": "Istim_i(t) = amp * 0.01 * g_ci / max_i g_ci * p(t); p in {+1,-1,0}"
+  }
+ },
+ "physical_mapping": {
+  "model_nodes": "VEP atlas regions (162)",
+  "mapping": "TVB StimuliRegion; spatial weight = contact gain row (package convention: per-node weight array), scaled to max 1 and by 0.01 per model unit; temporal = BiphasicPulseTrain (TVB PulseTrain form); enters SpatEpiStim u1 as +400*Istim and the accumulator m (dm=(1/tau3)(-m+1000|Istim|), H(m-1.8) raises excitability)",
+  "field_or_VTA_estimate": "gain row used as a reciprocity proxy for the stimulation field (Wang-style weighting); no VTA model",
+  "coordinate_frame": "not_applicable (atlas-level virtual patient)",
+  "coordinate_units": "not_applicable (atlas-level virtual patient)",
+  "transform_chain_id": "not_applicable (atlas-level virtual patient)",
+  "simulator": "studies/study-002/work/T0015/sim/p2sim.py (p2sim 1.0)"
+ },
+ "constraints": {
+  "eloquent_cortex": "not_reported (virtual patient; no functional mapping) - not applied",
+  "vascular": "not_reported (no imaging) - not applied",
+  "contact_positions": "reported_absent (no MRI / electrode coordinates, A0010); contacts are identified only by bipolar channel name and gain row",
+  "reserved_outcomes": "not used; candidates are rules applied to the fitted EZ estimate only",
+  "interpretation": "virtual intervention on a model; research evidence, not a clinical recommendation",
+  "safety_limits": "charge density not assessable: amplitudes are model units with no mapping to mA or contact surface area",
+  "numerical": "dt = 0.05 ms; per-region Istim must stay <= ~0.04 (single-node test: NaN at 0.04 with dt 0.1 ms, stable to 0.045 at 0.05 ms; raw-gain weights (max 88) are numerically infeasible)"
+ },
+ "feasibility_verdict": "feasible_in_silico (model units; not a device setting)",
+ "outputs": "induced response (regions with seizure onset during the train or within 2 s after it) and seizure metrics over the horizon",
+ "spec": "studies/study-002/work/amend/r4_common_spec.json v2 (sha256 70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461)",
+ "status_note": "rule committed before any P2 model existed (T0015); concrete contacts are derived in the simulation task"
+}

@@ -1,0 +1,178 @@
+[
+ {
+  "chain": 1,
+  "init_opt_lp": 1254.3,
+  "ez_rank": 2,
+  "top3": [
+   42,
+   44,
+   38
+  ],
+  "n_gt_crit": 23
+ },
+ {
+  "chain": 2,
+  "init_opt_lp": 1246.5,
+  "ez_rank": 2,
+  "top3": [
+   46,
+   44,
+   78
+  ],
+  "n_gt_crit": 14
+ },
+ {
+  "chain": 3,
+  "init_opt_lp": 1199.6,
+  "ez_rank": 3,
+  "top3": [
+   38,
+   42,
+   44
+  ],
+  "n_gt_crit": 12
+ },
+ {
+  "chain": 4,
+  "init_opt_lp": 1190.5,
+  "ez_rank": 2,
+  "top3": [
+   38,
+   44,
+   42
+  ],
+  "n_gt_crit": 22
+ },
+ {
+  "chain": 5,
+  "init_opt_lp": 1177.0,
+  "ez_rank": 3,
+  "top3": [
+   46,
+   38,
+   44
+  ],
+  "n_gt_crit": 15
+ },
+ {
+  "chain": 6,
+  "init_opt_lp": 1143.7,
+  "ez_rank": 6,
+  "top3": [
+   42,
+   78,
+   53
+  ],
+  "n_gt_crit": 19
+ },
+ {
+  "chain": 7,
+  "init_opt_lp": 1142.0,
+  "ez_rank": 3,
+  "top3": [
+   42,
+   40,
+   44
+  ],
+  "n_gt_crit": 19
+ },
+ {
+  "chain": 8,
+  "init_opt_lp": 1091.1,
+  "ez_rank": 2,
+  "top3": [
+   53,
+   44,
+   40
+  ],
+  "n_gt_crit": 20
+ },
+ {
+  "chain": 9,
+  "init_opt_lp": 1039.7,
+  "ez_rank": 14,
+  "top3": [
+   33,
+   40,
+   59
+  ],
+  "n_gt_crit": 24
+ },
+ {
+  "chain": 10,
+  "init_opt_lp": 1007.4,
+  "ez_rank": 60,
+  "top3": [
+   0,
+   33,
+   3
+  ],
+  "n_gt_crit": 31
+ },
+ {
+  "chain": 11,
+  "init_opt_lp": 992.6,
+  "ez_rank": 160,
+  "top3": [
+   12,
+   26,
+   40
+  ],
+  "n_gt_crit": 36
+ },
+ {
+  "chain": 12,
+  "init_opt_lp": 970.2,
+  "ez_rank": 8,
+  "top3": [
+   11,
+   78,
+   125
+  ],
+  "n_gt_crit": 16
+ },
+ {
+  "chain": 13,
+  "init_opt_lp": 947.7,
+  "ez_rank": 6,
+  "top3": [
+   69,
+   1,
+   112
+  ],
+  "n_gt_crit": 19
+ },
+ {
+  "chain": 14,
+  "init_opt_lp": 889.7,
+  "ez_rank": 30,
+  "top3": [
+   40,
+   53,
+   8
+  ],
+  "n_gt_crit": 19
+ },
+ {
+  "chain": 15,
+  "init_opt_lp": 861.3,
+  "ez_rank": 3,
+  "top3": [
+   80,
+   155,
+   44
+  ],
+  "n_gt_crit": 14
+ },
+ {
+  "chain": 16,
+  "init_opt_lp": 836.0,
+  "ez_rank": 120,
+  "top3": [
+   42,
+   13,
+   2
+  ],
+  "n_gt_crit": 15
+ }
+]

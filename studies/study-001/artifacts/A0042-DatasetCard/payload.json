@@ -1,0 +1,17 @@
+{
+  "dataset_id": "Wang et al. 2025 VBT stimulation data (Code Ocean capsules)",
+  "study_family_id": "fam-aphm-marseille-vbt",
+  "source_doi": "10.1038/s43588-025-00841-6; capsules 10.24433/CO.3316132.v1 and 10.24433/CO.2143670.v1",
+  "repository_url": "https://github.com/HuifangWang/VBT_INS_Stimulation (code); Code Ocean capsules",
+  "reported_subject_count": "2 patients reported (Engel II and Engel I post-surgery); capsules contain one patient's preprocessed anatomy + simulated data (Data availability, PMC12457187)",
+  "data_access": "to_verify: capsule contents not inspected; raw patient SEEG 'not public', on request to corresponding authors / F. Bartolomei",
+  "licence": "to_verify",
+  "approx_total_size_gb": null,
+  "verified_subject_count": null,
+  "verified_modalities": "to_verify",
+  "intervention_linkage": "stimulation-induced seizures (SEEG stimulation, temporal interference) are modelled; stimulation outcome for patients not reported; simulated results are not observed outcomes",
+  "follow_up_definition": "post-surgical Engel class reported for 2 patients; follow-up length to_verify",
+  "eligibility": "Not a validation cohort (n=2, raw data restricted). Relevant as modeling basis (MethodCard task). Related EBRAINS 'Virtual Epileptic Patient Cohort' doi:10.25493/XWG2-S8X (30 virtual patients, synthetic SEEG) is simulated, not observed - not opened.",
+  "cohort_overlap": "AP-HM Marseille family; independent of Penn/JHU/Zurich families.",
+  "checked_on": "2026-10-31"
+}

@@ -1,0 +1,33 @@
+{
+ "intervention_id": "RES-EZ",
+ "intervention_class": "resection_ablation (virtual, atlas-region level)",
+ "geometry": {
+  "kind": "set of whole VEP-atlas regions (region rule, not a patient-space volume)",
+  "region_rule": "EZ set (if empty: [top1])",
+  "ez_estimate_rule": "EZ estimate from the P2 ModelBundle named in the simulation task: top-1 = region with highest posterior median (MAP ensemble: median over converged optima) x0; EZ set = regions with P(x0 > threshold) > 0.5 (MAP ensemble: fraction of optima > 0.5), threshold as defined in the ModelBundle",
+  "region_indexing": "0-based npz columns = VepMrtrixLut index - 1 (A0009)",
+  "coordinate_frame": "not_applicable (atlas-level virtual patient)",
+  "coordinate_units": "not_applicable (atlas-level virtual patient)",
+  "transform_chain_id": "not_applicable (atlas-level virtual patient)",
+  "patient_space_geometry": "not_accessible (no MRI/surfaces for P2)"
+ },
+ "physical_mapping": {
+  "model_nodes": "VEP atlas regions (162-node P2 connectome); whole-region removal",
+  "implementation_primary": "(a) ablation: x0 of removed regions set to the healthy value -3.0 in the full SpatEpiStim model",
+  "implementation_secondary": "(b) disconnection: SC rows and columns of removed regions set to 0",
+  "simulator": "studies/study-002/work/T0015/sim/p2sim.py (p2sim 1.0)"
+ },
+ "constraints": {
+  "eloquent_cortex": "not_reported (virtual patient; no functional mapping) - not applied",
+  "vascular": "not_reported (no imaging) - not applied",
+  "contact_positions": "reported_absent (no MRI / electrode coordinates, A0010); contacts are identified only by bipolar channel name and gain row",
+  "reserved_outcomes": "not used; candidates are rules applied to the fitted EZ estimate only",
+  "interpretation": "virtual intervention on a model; research evidence, not a clinical recommendation",
+  "tissue_removed": "number of whole regions removed is reported as the cost objective",
+  "size_cap": "none prespecified"
+ },
+ "feasibility_verdict": "feasible_in_silico (model-level only; surgical feasibility not assessable without anatomy)",
+ "description": "estimated EZ set",
+ "spec": "studies/study-002/work/amend/r4_common_spec.json v2 (sha256 70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461)",
+ "status_note": "rule committed before any P2 model existed (T0015); concrete regions are derived in the simulation task and recorded there"
+}

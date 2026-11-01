@@ -1,0 +1,278 @@
+{
+ "ez_estimate": {
+  "top1": 82,
+  "ez_set": [],
+  "threshold": -2.06,
+  "source": "A0018-ModelBundle map_ensemble_P2_post.csv",
+  "rule": "top1 = argmax median x0 over optima; EZ set = fraction of optima with x0 > -2.06 above 0.5 (empty -> [top1])",
+  "median_x0_top5": [
+   [
+    82,
+    -2.2781212
+   ],
+   [
+    7,
+    -2.4309533500000002
+   ],
+   [
+    1,
+    -2.4796043
+   ],
+   [
+    8,
+    -2.4875974000000003
+   ],
+   [
+    27,
+    -2.4877035999999997
+   ]
+  ],
+  "frac_gt_thr_ez": [],
+  "n_optima": 24
+ },
+ "derived": {
+  "top1": 82,
+  "ez_set": [
+   82
+  ],
+  "pz": [
+   81,
+   88
+  ],
+  "stim1_contact": 81,
+  "stim2_contacts": [
+   81,
+   82
+  ]
+ },
+ "candidates": [
+  {
+   "id": "RES-1/ablation",
+   "family": "RES-1",
+   "type": "ablation",
+   "regions": [
+    82
+   ],
+   "primary": true
+  },
+  {
+   "id": "RES-1/disconnection",
+   "family": "RES-1",
+   "type": "disconnection",
+   "regions": [
+    82
+   ],
+   "primary": false
+  },
+  {
+   "id": "RES-EZ/ablation",
+   "family": "RES-EZ",
+   "type": "ablation",
+   "regions": [
+    82
+   ],
+   "primary": true
+  },
+  {
+   "id": "RES-EZ/disconnection",
+   "family": "RES-EZ",
+   "type": "disconnection",
+   "regions": [
+    82
+   ],
+   "primary": false
+  },
+  {
+   "id": "RES-EZ+PZ/ablation",
+   "family": "RES-EZ+PZ",
+   "type": "ablation",
+   "regions": [
+    82,
+    81,
+    88
+   ],
+   "primary": true
+  },
+  {
+   "id": "RES-EZ+PZ/disconnection",
+   "family": "RES-EZ+PZ",
+   "type": "disconnection",
+   "regions": [
+    82,
+    81,
+    88
+   ],
+   "primary": false
+  },
+  {
+   "id": "STIM-PT/amp0.5",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 0.5,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "STIM-PT/amp1",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 1.0,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "STIM-PT/amp2",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 2.0,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "STIM-PT/amp4",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 4.0,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "STIM-PT-chronic/amp0.5",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 0.5,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "STIM-PT-chronic/amp1",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 1.0,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "STIM-PT-chronic/amp2",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 2.0,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "STIM-PT-chronic/amp4",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 4.0,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "STIM-1/amp0.5",
+   "family": "STIM-1",
+   "type": "sustained_current",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 0.5
+  },
+  {
+   "id": "STIM-1/amp1",
+   "family": "STIM-1",
+   "type": "sustained_current",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 1.0
+  },
+  {
+   "id": "STIM-1/amp2",
+   "family": "STIM-1",
+   "type": "sustained_current",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 2.0
+  },
+  {
+   "id": "STIM-2/amp1",
+   "family": "STIM-2",
+   "type": "sustained_current",
+   "contacts": [
+    81,
+    82
+   ],
+   "contact_names": [
+    "R7-8",
+    "R8-9"
+   ],
+   "amp": 1.0
+  }
+ ]
+}

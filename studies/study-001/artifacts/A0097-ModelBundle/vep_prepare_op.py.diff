@@ -1,0 +1,26 @@
+--- pkg_orig/vep_prepare_op.py	2026-11-01 02:12:53.320572500 -0500
++++ scripts/vep_prepare_op_fixed.py	2026-11-01 02:17:34.659474800 -0500
+@@ -125,8 +125,9 @@
+ 
+ def seeg_log_power(a, win_len, pad=True):
+     envlp = np.empty_like(a)
+-    # pad with zeros at the end to compute moving average of same length as the signal itself
+-    envlp_pad = np.pad(a, ((0, win_len), (0, 0)), 'constant')
++    # T0029 patch F3: the package zero-pads the END ('constant'), so the last win_len samples average in
++    # zeros and the log-power falls off artificially at the end of every window. Pad by reflection instead.
++    envlp_pad = np.pad(a, ((0, win_len), (0, 0)), 'reflect')
+     for i in range(a.shape[0]):
+         envlp[i, :] = np.log(np.mean(envlp_pad[i:i+win_len, :]**2, axis=0))
+     return envlp
+@@ -154,7 +155,10 @@
+     return slp
+ 
+ def prepare_data_feature_op(SC, seeg, gain, sfreq, hpf=10.0, lpf=1.0):
+-  
++    # T0029 patch F1: callers must pass the TRUE sampling rate (notebooks hard-code sfreq=250 for data
++    # sampled at 100 Hz (P1, 10 ms) / 125 Hz (P2, 8 ms)). Fixed at the call site (calibrate_p2.py derives
++    # sfreq from time_steps); no change to this function body.
++
+        
+     slp = compute_slp_sim(seeg, sfreq, hpf, lpf)
+     data = {

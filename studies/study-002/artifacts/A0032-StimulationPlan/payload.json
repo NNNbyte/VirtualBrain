@@ -1,0 +1,31 @@
+{
+ "intervention_id": "TI",
+ "intervention_class": "temporal-interference (TI) transcranial stimulation",
+ "contacts_and_device": {
+  "device": "TI scalp electrode pairs per Wang 2025 (data/EMF field maps, fsaverage5)",
+  "waveform": {
+   "carriers_hz": [
+    1000,
+    1005
+   ],
+   "beat_hz": 5,
+   "envelope": "Hilbert amplitude of E1+E2 (compute_TI_envelope.ipynb)"
+  }
+ },
+ "physical_mapping": {
+  "status": "not_accessible",
+  "detail": "EMF normal-field maps are on fsaverage5 vertices; no fsaverage5 -> 162 VEP region mapping and no P2 surface/region mapping (N001)",
+  "coordinate_frame": "fsaverage5 (field maps only); no transform to the model",
+  "coordinate_units": "not_reported",
+  "transform_chain_id": "missing (N001)"
+ },
+ "constraints": {
+  "eloquent_cortex": "not_reported (virtual patient; no functional mapping) - not applied",
+  "vascular": "not_reported (no imaging) - not applied",
+  "contact_positions": "reported_absent (no MRI / electrode coordinates, A0010); contacts are identified only by bipolar channel name and gain row",
+  "reserved_outcomes": "not used; candidates are rules applied to the fitted EZ estimate only",
+  "interpretation": "virtual intervention on a model; research evidence, not a clinical recommendation"
+ },
+ "feasibility_verdict": "infeasible (no documented field-to-node mapping; need N001)",
+ "spec": "studies/study-002/work/amend/r4_common_spec.json v2 (sha256 70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461)"
+}

@@ -1,0 +1,38 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "R3-virtual-patient",
+  "role": "virtual_patient",
+  "display_name": "R3 \u00b7 Virtual patient",
+  "enabled": true,
+  "color": "#7a4fb0",
+  "stage": "modeling",
+  "description": "Fit competing virtual-brain models (VBT/TVB/BVEP) and test held-out behaviour.",
+  "skill": "r3-virtual-patient",
+  "allowed_tools": [
+    "epilepsy-network-baseline",
+    "epilepsy-tvb-fit",
+    "epilepsy-bvep-inference",
+    "epilepsy-heldout-check"
+  ],
+  "allowed_output_types": [
+    "network_hypothesis_set",
+    "model_bundle",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": true,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": false
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "case_id": "required_for_case_tasks",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 10
+  }
+}

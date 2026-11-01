@@ -1,0 +1,70 @@
+{
+  "artifact_id": "A0041-SimulationComparison",
+  "schema_name": "SimulationComparison",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0020",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "studies/study-002/work/T0015/sim/p2sim.py",
+  "tool_version": "p2sim 1.0 sha256 0c6f3923",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0038-SimulationBatch",
+    "A0035-SimulationRequest",
+    "A0034-InterventionScenarioSet"
+  ],
+  "input_manifest_hash": "f920c3b29119bff098b06be09ac99f0e0aee323425487fd20ee6f5e04223f911",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0041-SimulationComparison/payload.json",
+      "media_type": "application/json",
+      "sha256": "82b134e2b950374146537636742b732628b32b89c4383f0f29b0b5bb123f2acf",
+      "byte_size": 8284
+    },
+    {
+      "uri": "artifacts/A0041-SimulationComparison/rerun_comparison.json",
+      "media_type": "application/octet-stream",
+      "sha256": "6fd059fad122b202a07af97e8c3243b8cef676d677b39ece61e26c24a6adf38c",
+      "byte_size": 2525
+    },
+    {
+      "uri": "artifacts/A0041-SimulationComparison/runs.json",
+      "media_type": "application/octet-stream",
+      "sha256": "56ff2b86c932f37f1872f21674a1530a2e184e676b7df0a1fbb3c2bd31f435e5",
+      "byte_size": 16046
+    },
+    {
+      "uri": "artifacts/A0041-SimulationComparison/r4check.py",
+      "media_type": "application/octet-stream",
+      "sha256": "f8c85980f02e1016e621d2105abe634ce2bba2ad432498d358e46c15cbcb0f15",
+      "byte_size": 2355
+    },
+    {
+      "uri": "artifacts/A0041-SimulationComparison/cmp.py",
+      "media_type": "application/octet-stream",
+      "sha256": "4b4b1af1b522b6b0968c35a5c645628bc44bf416ecec07c8eca4713ab457cab4",
+      "byte_size": 1784
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T17:11:33+00:00",
+  "supersedes_id": null,
+  "title": "R5 spot-rerun of A0038 (6 full-window sims, bit-exact) + recomputed paired effects",
+  "manifest_hash": "a68dfa6e9668567d88be81b6d9660a8ce8d0730f8a0a254f5183076b2f448de1"
+}

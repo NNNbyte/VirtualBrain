@@ -1,0 +1,59 @@
+{
+  "claim": "In a retrospective 8-centre real-world RNS cohort (n=150), median seizure reduction was 67% at 1 year, 75% at 2 years, 82% at >=3 years and 74% at last follow-up (mean 2.3 y); 18% reported clinical seizure freedom.",
+  "intervention_modality": "RNS",
+  "bibliographic_record": {
+    "authors": "Razavi B, Rao VR, Lin C, Bujarski KA, Patra SE, Burdette DE, Geller EB, Brown MM, Johnson EA, Drees C, Chang EF, Greenwood JE, Heck CN, Jobst BC, Gwinn RP, Warner NM, Halpern CH.",
+    "title": "Real-world experience with direct brain-responsive neurostimulation for focal onset seizures.",
+    "journal": "Epilepsia",
+    "year": "2020",
+    "volume": "61",
+    "issue": "8",
+    "pages": "1749-1757",
+    "doi": "10.1111/epi.16593",
+    "pmid": "32658325",
+    "pmcid": "PMC7496294",
+    "source_record_url": "https://europepmc.org/article/MED/32658325",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32658325/"
+  },
+  "supporting_passage": "One hundred fifty patients met the criteria for analysis. [...] The median reduction in seizures was 67% (interquartile range [IQR] = 33%-93%, n = 149) at 1 year, 75% (IQR = 50%-94%, n = 93) at 2 years, 82% (IQR = 50%-96%, n = 38) at ≥3 years, and 74% (IQR = 50%-96%, n = 150) at last follow-up (mean = 2.3 years). [...] Thirty-five percent of patients had a ≥90% seizure frequency reduction, and 18% of patients reported being clinically seizure-free at last follow-up.",
+  "supporting_passages": [
+    "One hundred fifty patients met the criteria for analysis.",
+    "The median reduction in seizures was 67% (interquartile range [IQR] = 33%-93%, n = 149) at 1 year, 75% (IQR = 50%-94%, n = 93) at 2 years, 82% (IQR = 50%-96%, n = 38) at ≥3 years, and 74% (IQR = 50%-96%, n = 150) at last follow-up (mean = 2.3 years).",
+    "Thirty-five percent of patients had a ≥90% seizure frequency reduction, and 18% of patients reported being clinically seizure-free at last follow-up."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 32658325, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 150,
+    "design": "retrospective multicenter chart review (8 US comprehensive epilepsy centers), treated >=1 year",
+    "population": "adults treated per RNS indication (medically intractable focal onset seizures)",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "median % change in disabling seizure frequency; >=90% reduction; clinically seizure-free",
+    "timepoint": "1, 2, >=3 years and last follow-up (mean 2.3 y)",
+    "median_pct_reduction": {
+      "12_months": 67,
+      "24_months": 75,
+      ">=36_months": 82,
+      "last_follow_up": 74
+    },
+    "responder_rate_50pct": "not_reported (in abstract)",
+    "seizure_freedom": "18% clinically seizure-free at last follow-up (patient-reported)",
+    "follow_up_months_reported": "mean 27.6 (2.3 y)"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors suggest clinical experience has informed more effective programming.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Outcomes exceed pivotal/LTT trial at matched timepoints (e.g. 67% vs 44% at 1 y) - authors attribute to improved programming; retrospective design and shrinking n (38 at >=3 y) limit comparability.",
+    "Possible patient overlap with later multicenter retrospective series (e.g. Sadeghzadeh 2026) and with RNS trial patients at the same centers is not reported - to_verify."
+  ],
+  "study_family_id": "fam-RNS-realworld-8center-Razavi2020"
+}

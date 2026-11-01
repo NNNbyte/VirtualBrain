@@ -1,0 +1,592 @@
+{
+ "meta": {
+  "simulator": "p2sim 1.0 (T0015)",
+  "simulator_sha256": "0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0",
+  "settings": {
+   "dt_ms": 0.05,
+   "horizon_ms": 14400.0,
+   "monitor_period_ms": 4.0,
+   "coupling_a0": 0.1,
+   "coupling_theta": -1.0,
+   "seizure_var": "u1",
+   "seizure_threshold": -1.0,
+   "seizure_gap_ms": 250.0,
+   "seizure_min_ms": 1000.0,
+   "ref_window_ms": [
+    250.0,
+    750.0
+   ],
+   "logpower_hpf_hz": 10.0,
+   "logpower_lpf_hz": 1.0,
+   "logpower_win_s": 0.4,
+   "logpower_sd_floor": 0.1,
+   "seeg_noise_sd": 0.02,
+   "save_period_ms": 20.0,
+   "pt_istim_per_unit": 0.01,
+   "pt_freq_hz": 50.0,
+   "pt_phase_ms": 1.0,
+   "pt_onset_ms": 500.0,
+   "pt_duration_ms": 3000.0,
+   "induced_window_after_ms": 2000.0
+  },
+  "spec_sha256": "70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461",
+  "npz": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\data\\wang-5367ef4\\data\\dataSim\\Patient2\\P2_SEEG_ts_fit.npz",
+  "npz_sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+  "n_samples": 12,
+  "n_candidates": 18,
+  "median_sample_index": 10,
+  "median_sample_id": "A0018-full-start7",
+  "wall_total_s": 1299.6386227607727,
+  "jobs": 21,
+  "cpu_count": 22,
+  "per_sim_wall_s": {
+   "median": 73.7935848236084,
+   "max": 253.95192742347717
+  },
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26100-SP0",
+  "numerical_checks": {
+   "all_finite": false,
+   "max_abs_state": 8.175982490007884
+  },
+  "initial_state": [
+   -1.9874211348668254,
+   -18.7492138365767,
+   4.0503154605326985,
+   -1.3025850711774591,
+   -1.171202456526445e-38,
+   -0.5962263404600476,
+   0.0
+  ]
+ },
+ "summary": {
+  "baseline": {
+   "n_seizing_regions": {
+    "median": 3.5,
+    "p05": 2.0,
+    "p95": 7.349999999999998
+   },
+   "total_seizure_duration_s": {
+    "median": 21.318,
+    "p05": 9.725800000000001,
+    "p95": 35.394199999999984
+   },
+   "n_seeg_channels_exceeding": {
+    "median": 191.0,
+    "p05": 191.0,
+    "p95": 191.0
+   }
+  },
+  "effects": {
+   "RES-1/ablation": {
+    "family": "RES-1",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -1.0,
+     "p05": -1.9,
+     "p95": 0.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -2.25,
+     "p05": -10.7414,
+     "p95": 0.06659999999999976
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -3.0,
+     "p05": -12.35,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 92.99999999999999
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "RES-1/disconnection": {
+    "family": "RES-1",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -2.0,
+     "p95": 0.4499999999999993
+    },
+    "d_total_seizure_duration_s": {
+     "median": -0.3739999999999988,
+     "p05": -3.9468000000000014,
+     "p95": 6.044999999999996
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": -28.799999999999997,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "RES-EZ/ablation": {
+    "family": "RES-EZ",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -2.5,
+     "p05": -4.9,
+     "p95": -1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -13.472000000000001,
+     "p05": -24.1742,
+     "p95": -4.116800000000006
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -12.5,
+     "p05": -75.45,
+     "p95": -0.5500000000000007
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 227.99999999999994
+    },
+    "frac_abolish_all": 0.25,
+    "frac_abolish_all_given_baseline_seizes": 0.25
+   },
+   "RES-EZ/disconnection": {
+    "family": "RES-EZ",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -1.0,
+     "p05": -3.45,
+     "p95": -0.5500000000000007
+    },
+    "d_total_seizure_duration_s": {
+     "median": -4.997999999999998,
+     "p05": -12.4314,
+     "p95": -0.10980000000000187
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.16666666666666666,
+    "frac_abolish_all_given_baseline_seizes": 0.16666666666666666
+   },
+   "RES-EZ+PZ/ablation": {
+    "family": "RES-EZ+PZ",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -3.0,
+     "p05": -4.9,
+     "p95": -1.5500000000000007
+    },
+    "d_total_seizure_duration_s": {
+     "median": -17.471999999999998,
+     "p05": -26.275199999999998,
+     "p95": -7.3058000000000005
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -31.0,
+     "p05": -77.35,
+     "p95": -4.550000000000001
+    },
+    "d_first_onset_ms": {
+     "median": 144.0,
+     "p05": 0.0,
+     "p95": 2372.4
+    },
+    "frac_abolish_all": 0.4166666666666667,
+    "frac_abolish_all_given_baseline_seizes": 0.4166666666666667
+   },
+   "RES-EZ+PZ/disconnection": {
+    "family": "RES-EZ+PZ",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -1.0,
+     "p05": -3.45,
+     "p95": -0.5500000000000007
+    },
+    "d_total_seizure_duration_s": {
+     "median": -5.5319999999999965,
+     "p05": -12.4314,
+     "p95": -0.12080000000000166
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.16666666666666666,
+    "frac_abolish_all_given_baseline_seizes": 0.16666666666666666
+   },
+   "STIM-PT/amp0.5": {
+    "family": "STIM-PT",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -0.8999999999999999,
+     "p95": 1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": 0.597999999999999,
+     "p05": -0.5177999999999998,
+     "p95": 2.281000000000002
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": -5.8,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT/amp1": {
+    "family": "STIM-PT",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -0.8999999999999999,
+     "p95": 1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": 0.5440000000000005,
+     "p05": -1.3127999999999997,
+     "p95": 3.7845999999999984
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": -25.8,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT/amp2": {
+    "family": "STIM-PT",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -1.9,
+     "p95": 1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -0.6419999999999986,
+     "p05": -19.3906,
+     "p95": 3.3545999999999987
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": -191.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 104.0
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT/amp4": {
+    "family": "STIM-PT",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -2.9,
+     "p95": 2.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -17.238,
+     "p05": -29.873599999999996,
+     "p95": 3.4701999999999984
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -191.0,
+     "p05": -191.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 92.99999999999999
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT-chronic/amp0.5": {
+    "family": "STIM-PT-chronic",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -0.44999999999999996,
+     "p95": 1.4499999999999993
+    },
+    "d_total_seizure_duration_s": {
+     "median": 3.9000000000000004,
+     "p05": -0.3300000000000007,
+     "p95": 9.8704
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": -5.8,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT-chronic/amp1": {
+    "family": "STIM-PT-chronic",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -0.8999999999999999,
+     "p95": 1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": 4.846,
+     "p05": -1.0250000000000006,
+     "p95": 10.51
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": -25.8,
+     "p95": 0.0
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT-chronic/amp2": {
+    "family": "STIM-PT-chronic",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -1.3499999999999999,
+     "p95": 1.4499999999999993
+    },
+    "d_total_seizure_duration_s": {
+     "median": -10.644000000000002,
+     "p05": -18.7644,
+     "p95": 4.056999999999995
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -191.0,
+     "p05": -191.0,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 92.99999999999999
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-PT-chronic/amp4": {
+    "family": "STIM-PT-chronic",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": 0.0,
+     "p05": -1.9,
+     "p95": 1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -17.464000000000002,
+     "p05": -29.794799999999995,
+     "p95": -3.796200000000004
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -191.0,
+     "p05": -191.0,
+     "p95": -191.0
+    },
+    "d_first_onset_ms": {
+     "median": 0.0,
+     "p05": 0.0,
+     "p95": 92.99999999999999
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-1/amp0.5": {
+    "family": "STIM-1",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -0.5,
+     "p05": -1.0,
+     "p95": 0.4499999999999993
+    },
+    "d_total_seizure_duration_s": {
+     "median": -3.137999999999998,
+     "p05": -9.323199999999998,
+     "p95": 2.3969999999999976
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": 0.0,
+     "p05": -6.35,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 2.0,
+     "p05": 0.0,
+     "p95": 168.7999999999999
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-1/amp1": {
+    "family": "STIM-1",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -1.0,
+     "p05": -1.9,
+     "p95": 0.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -5.081999999999999,
+     "p05": -10.198200000000002,
+     "p95": -0.029399999999999742
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -4.0,
+     "p05": -12.35,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 4.0,
+     "p05": 0.0,
+     "p95": 94.79999999999998
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-1/amp2": {
+    "family": "STIM-1",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -1.0,
+     "p05": -1.45,
+     "p95": 1.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -5.7559999999999985,
+     "p05": -10.1494,
+     "p95": 0.2841999999999971
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -2.0,
+     "p05": -15.35,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 4.0,
+     "p05": 2.2,
+     "p95": 94.79999999999998
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   },
+   "STIM-2/amp1": {
+    "family": "STIM-2",
+    "n_samples": 12,
+    "d_n_seizing_regions": {
+     "median": -0.5,
+     "p05": -1.9,
+     "p95": 0.0
+    },
+    "d_total_seizure_duration_s": {
+     "median": -5.072000000000001,
+     "p05": -10.558200000000001,
+     "p95": -0.03420000000000118
+    },
+    "d_n_seeg_channels_exceeding": {
+     "median": -3.5,
+     "p05": -12.8,
+     "p95": 0.0
+    },
+    "d_first_onset_ms": {
+     "median": 4.0,
+     "p05": 0.0,
+     "p95": 94.79999999999998
+    },
+    "frac_abolish_all": 0.0,
+    "frac_abolish_all_given_baseline_seizes": 0.0
+   }
+  },
+  "ranking": [
+   "RES-EZ+PZ/ablation",
+   "RES-EZ/ablation",
+   "STIM-1/amp2",
+   "RES-EZ+PZ/disconnection",
+   "STIM-1/amp1",
+   "RES-EZ/disconnection",
+   "RES-1/ablation",
+   "STIM-2/amp1",
+   "STIM-1/amp0.5",
+   "STIM-PT-chronic/amp4",
+   "STIM-PT/amp4",
+   "STIM-PT-chronic/amp2",
+   "STIM-PT/amp2",
+   "RES-1/disconnection",
+   "STIM-PT/amp1",
+   "STIM-PT/amp0.5",
+   "STIM-PT-chronic/amp0.5",
+   "STIM-PT-chronic/amp1"
+  ],
+  "rank_first_fraction": {
+   "RES-1/ablation": 0.0,
+   "RES-1/disconnection": 0.0,
+   "RES-EZ/ablation": 0.6666666666666666,
+   "RES-EZ/disconnection": 0.0,
+   "RES-EZ+PZ/ablation": 0.3333333333333333,
+   "RES-EZ+PZ/disconnection": 0.0,
+   "STIM-PT/amp0.5": 0.0,
+   "STIM-PT/amp1": 0.0,
+   "STIM-PT/amp2": 0.0,
+   "STIM-PT/amp4": 0.0,
+   "STIM-PT-chronic/amp0.5": 0.0,
+   "STIM-PT-chronic/amp1": 0.0,
+   "STIM-PT-chronic/amp2": 0.0,
+   "STIM-PT-chronic/amp4": 0.0,
+   "STIM-1/amp0.5": 0.0,
+   "STIM-1/amp1": 0.0,
+   "STIM-1/amp2": 0.0,
+   "STIM-2/amp1": 0.0
+  },
+  "note": "paired differences candidate - baseline per sample; ranking by median reduction in seizing regions, ties by total seizure duration (all candidates incl. secondary disconnection arms)"
+ }
+}

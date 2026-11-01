@@ -1,0 +1,45 @@
+{
+  "artifact_id": "A0046-AccessRecord",
+  "schema_name": "AccessRecord",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0005",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "curl+python-stdlib metadata inspection",
+  "tool_version": "py3.11",
+  "code_commit": null,
+  "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0046-AccessRecord/payload.json",
+      "media_type": "application/json",
+      "sha256": "798cdf8b81ac2ba5e6563289496cc1f02943a531e99ee48726f1af62103749f8",
+      "byte_size": 323
+    }
+  ],
+  "scientific_context": {
+    "verification_basis": "public_listing_and_metadata_files",
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:42:45+00:00",
+  "supersedes_id": null,
+  "title": "AccessRecord: IEEG.org Kini 2019 data",
+  "manifest_hash": "017be8c1b0bf62f94a6d600e1726870ba6f6247f74f529ef0b6220960cb5c53e"
+}

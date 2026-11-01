@@ -1,0 +1,6 @@
+{
+  "resource": "openneuro:ds004100",
+  "access_path": "https://openneuro.org/datasets/ds004100 ; s3://openneuro.org/ds004100 (anonymous) ; DataLad/openneuro-py",
+  "status": "verified_present (public, metadata fetched anonymously)",
+  "conditions": "CC0; no DUA; ~19.9 GB; user download approval required by protocol"
+}

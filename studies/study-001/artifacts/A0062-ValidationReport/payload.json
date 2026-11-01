@@ -1,0 +1,37 @@
+{
+  "criterion": [
+    "EvidenceClaim: supporting passage and location resolve in the cited source; population, design and endpoint transcribed correctly (protocol acceptance_criteria.evidence_claim)",
+    "DatasetCard/MethodCard/AccessRecord: reported vs verified fields kept distinct; verified fields only from inspected files; access conditions recorded (protocol acceptance_criteria.dataset_card)",
+    "Report: every number traces to a committed artifact in the same task"
+  ],
+  "criterion_version": "protocol v1 / TaskMessage T0008 scientific_acceptance_criteria (system release rel-823fa0c912cb)",
+  "evaluator": "R5-independent-evaluation (instance r5-src-methods-data); did not produce any evaluated artifact",
+  "evaluated_artifacts": [
+    "A0033-DatasetCard", "A0034-DatasetCard", "A0035-DatasetCard", "A0036-DatasetCard", "A0037-MethodCard",
+    "A0038-DatasetCard", "A0039-MethodCard", "A0040-DatasetCard", "A0041-MethodCard", "A0042-DatasetCard",
+    "A0043-AccessRecord", "A0044-AccessRecord", "A0045-AccessRecord", "A0046-AccessRecord", "A0047-AccessRecord",
+    "A0048-AccessRecord", "A0049-AccessRecord", "A0050-AccessRecord", "A0051-AccessRecord", "A0052-AccessRecord",
+    "A0053-AccessRecord", "A0054-AccessRecord", "A0055-EvidenceClaim", "A0056-EvidenceClaim", "A0057-EvidenceClaim",
+    "A0058-Report", "A0059-Report"
+  ],
+  "held_out_data": "none used. Sealed outcome files were deliberately NOT opened: no participants.tsv/participants.json, clinical_data_summary.xlsx (ds003029), clinical_ch_sheet_zurich.xlsx (ds003498), ds003876 sourcedata xlsx, or Omni-iEEG participants files. No recordings downloaded; only S3/HF listings, dataset_description.json, README, CHANGES, coordsystem.json, electrodes.tsv, channels.tsv, events.tsv and ieeg.json sidecars were read.",
+  "result": {
+    "counts": {"passed": 20, "failed": 2, "indeterminate": 5, "total": 27},
+    "passed": ["A0034", "A0035", "A0037", "A0038", "A0039", "A0040", "A0041", "A0043", "A0044", "A0048", "A0049", "A0050", "A0051", "A0053", "A0054", "A0055", "A0056", "A0057", "A0058", "A0059"],
+    "failed": ["A0033-DatasetCard", "A0036-DatasetCard"],
+    "indeterminate": ["A0042-DatasetCard", "A0045-AccessRecord", "A0046-AccessRecord", "A0047-AccessRecord", "A0052-AccessRecord"],
+    "key_claim_wang2025": "Confirmed in Europe PMC full text PMC12457187: the abstract frames the work as 'a high-resolution virtual brain twin framework for EZN diagnosis based on stimulation-induced seizures'; Methods > Patient data reports exactly 2 La Timone patients (23F occipital, Engel II; 19M frontal, Engel I) plus synthetic data; therapeutic use is future work (Discussion). Not validated for therapeutic stimulation optimisation.",
+    "code_sources": "All GitHub (5 repos), PyPI (vep-stim 404, tvb-library 2.10.0, tvb-data 3.0.0, cmdstanpy 1.3.0), DataCite (2 capsule DOIs) and Crossref facts in A0037/A0039/A0041/A0043/A0051/A0053/A0054 reproduced exactly (commit hashes, dates, licences, versions, dependencies). reproduction_status not_attempted in all three MethodCards.",
+    "ds004100_fitness": "Fit for the resection/ablation virtual-intervention arm with caveats; not fit for the stimulation arm or for patient-specific connectomes. Use DOI snapshot v1.1.3: 57 subjects (ECoG 20, SEEG 37), 208 ictal runs, 14.20 GB, CC0; per-subject fsaverage electrode coordinates and contact-level resect and soz tags present for all 57. Exclude sub-HUP132 (dropped from v1.1.0 onward; stale S3 objects only; no resect/soz tags). sub-HUP165 has no ictal run. Coordinate frame conflict (coordsystem fsaverage, metres vs README ICBM152 MNI) must be resolved by R2. No MRI/DWI/CT, so connectomes are template-based (non-personalised). Follow-up duration not in metadata. Outcome labels must stay sealed; A0033/A0058 already expose per-therapy aggregates."
+  },
+  "uncertainty_method": "Not a statistical evaluation. Each verifiable field was re-derived from the primary source (API/metadata/full text) at 2026-10-31; verdicts are categorical. Indeterminate is used where the source blocks scripted access (Code Ocean HTTP 403; IEEG.org JS-only page). Fields that depend on sealed participants/clinical files are reported as not re-verifiable rather than assumed correct.",
+  "failure_cases": [
+    {"artifact": "A0033-DatasetCard", "issue": "Verified counts and size are taken from the raw S3 bucket (58 subjects, 19.88 GB, 213 ictal runs), not from the DOI-cited snapshot v1.1.3 (57 subjects, 14.20 GB, 1341 files; sub-HUP132 removed at v1.1.0 per OpenNeuro snapshot summaries). Also places per-therapy outcome aggregates from sealed participants.tsv into an unsealed card.", "action": "R1 to supersede with v1.1.3-bound values and outcome aggregates removed."},
+    {"artifact": "A0036-DatasetCard", "issue": "README not inspected; README states rns-prefixed subjects (10 of 39 on S3) were treated with RNS, not resection/ablation. Card relays Omni-iEEG has_resection=1 for all 39 subjects without challenge and rates the dataset low fit without noting this RNS-treated, outcome-labelled cohort, which matters for the stimulation arm.", "action": "R1 to supersede; lead to reconsider the A0058 negative statement on stimulation-arm data (RNS treatment present; stimulation settings not seen)."},
+    {"artifact": "A0042/A0045/A0047/A0052", "issue": "Code Ocean capsule contents unverifiable (HTTP 403). A0042 and A0052 leave licence to_verify although DataCite rights are known.", "action": "Existing need N004 (capsule access) remains open."},
+    {"artifact": "A0046-AccessRecord", "issue": "IEEG.org terms/registration unverifiable by scripted access.", "action": "Manual check by user if the Kini 2019 data are needed."},
+    {"artifact": "A0040/A0058 (caveat, passed)", "issue": "Omni-iEEG hup subset includes withdrawn HUP132, and its sourcesink has_resection flag conflicts with the ds003876 README for rns* subjects. A0058 traceability passes but inherits the A0033/A0036 errors."}
+  ],
+  "verdict": "partially_accepted: 20/27 artifacts pass; A0033 and A0036 fail and need superseding cards before R2 data curation relies on them; 5 artifacts indeterminate because the sources block access.",
+  "evidence_level": "independent source re-verification (metadata, repository APIs and peer-reviewed full text/abstracts); no data reanalysis or code execution"
+}

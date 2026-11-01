@@ -1,0 +1,44 @@
+{
+  "artifact_id": "A0039-MethodCard",
+  "schema_name": "MethodCard",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0004",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "r1-web-verification (GitHub API, DataCite, Crossref, Europe PMC, PyPI)",
+  "tool_version": "2026-10-31",
+  "code_commit": null,
+  "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0039-MethodCard/payload.json",
+      "media_type": "application/json",
+      "sha256": "3a6328e093452658336d02d22bf81639d99206e739badc7ec2c71a62f95f3217",
+      "byte_size": 4601
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:42:44+00:00",
+  "supersedes_id": null,
+  "title": "TVB Epileptor network baseline (tvb-library 2.10.0) - MethodCard",
+  "manifest_hash": "0628b9332706f373b5d88c2abb1ad8bc02416f7ab2cfccb8891d7b77c1d3c4c2"
+}

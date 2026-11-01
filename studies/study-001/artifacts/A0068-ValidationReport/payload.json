@@ -1,0 +1,26 @@
+{
+  "criterion": "DatasetCard: every listed file resolves at the pinned commit with matching sha256; contents described from opened arrays; simulated data labelled as simulated, not observed outcomes",
+  "criterion_version": "T0013 frozen acceptance criterion (protocol v1, release rel-823fa0c912cb)",
+  "evaluator": "R5-independent-evaluation (instance r5-src-wang); did not produce A0067 (producer R1, T0011)",
+  "evaluated_artifacts": ["A0067-DatasetCard"],
+  "held_out_data": "not_applicable (source check; no reserved outcomes accessed)",
+  "result": {
+    "pinned_commit": "GitHub API /commits/5367ef4afb976271ecc6297b70a95dd3d944af61 -> 200, 2025-11-11T12:56:56Z 'Cleanup empty vep directory'; still default-branch HEAD on 2026-11-01. Recursive tree truncated=false, 117 entries.",
+    "file_resolution": "8/8 listed paths present under data/dataSim/Patient{1,2} in the tree; no other dataSim data files except .DS_Store. For each attached file: git blob sha1 (header 'blob SIZE' + NUL + content) == tree sha, size == tree size == card bytes.",
+    "checksums": "8/8 recomputed sha256 == card files[].sha256 == envelope payload_refs sha256; payload.json sha256 matches envelope.",
+    "array_contents": "np.load(allow_pickle=False) succeeded on all 8; every key, shape, dtype, min/max (6 dp) and ch_names first/last match the card. P1_*_EEG store 128-ch EEG under key 'seeg' (ch_names E1..E128); P2_*_EEG use key 'eeg' and have no ch_names. time_steps: step 10 starting 5 (P1_SEEG_*), 10..16500 (P1_TI_SEEG), int64 0..1749 (P1_TI_EEG; plot notebook does time_steps*10), step 8 to 12000 (P2_SEEG_*), step 10 to 9000 (P2_TI_*). SC 162x162 in [0,1], symmetric, zero diagonal, identical across a patient's 4 files, P1 != P2. Gain 163/191/128 x 162.",
+    "simulated_labelling": "stimulation_plot_time_series_P1_TI.ipynb and ..._sensor_P2_EEG.ipynb headers say they output 'the simulated data for Patient 1/2'; run_samplings_mcmc.ipynb and run_samplings-mm_inference.ipynb load them from data/dataSim as data_sim and fit them (50 stan-optimize, best 8 inits, 2 chains each); mm notebook comments 'stimulated-NF data'. Sim_SEEG_nf.ipynb (PulseTrain 50 Hz, 3 mA, TemporalAverage period 10 ms) and Sim_TI_nf.ipynb (I=0.3, TI_2_fields_norm_downsampled.npz, /data/ana/vep/tvb inputs not in repo) are the generators. Card's evidence kind simulated_result and its statement that these are fitting inputs, not fitted estimates or observed recordings/outcomes, are correct. README itself does not mention dataSim (it describes data/ as parcellation data); the simulated interpretation rests on the notebooks, which the card cites.",
+    "licence": "LICENSE at sha is Apache-2.0; README has no separate data licence. DataCite rightsList: 10.24433/CO.3316132.v1 GPL + CC BY-NC-ND 4.0; 10.24433/CO.2143670.v1 GPL + CC BY-NC 4.0. Card statement accurate.",
+    "reproduction_limits": "Confirmed: '## The output of the HMC is approximately 32 GB' with sampling cells commented out (both run notebooks); np.random.normal(0,0.2) feature noise in run_samplings_mcmc.ipynb and no seed call in any checked notebook; npz files contain no x0/EZ; Sim notebooks use EZ 'Left-F1-lateral-prefrontal' with x0 -2.2 (SEEG) and -2.3/-2.1 (TI) under a generic /data/ana/vep subject dir. Feature settings hpf=10, lpf=1, sfreq=250, n_samples=150 confirmed."
+  },
+  "uncertainty_method": "not_applicable (deterministic hash and array comparisons; exact match required)",
+  "failure_cases": [
+    "None blocking.",
+    "Minor: card cites x0 '-2.2/-2.3'; Sim_TI_nf.ipynb also sets -2.1 on another region (card already says per-file mapping not verified).",
+    "Minor: reproduction settings (added noise, hpf=10) are for run_samplings_mcmc.ipynb only; run_samplings-mm_inference.ipynb uses a different active pipeline (hpf=4, sfreq 250, crop 440:1100 with boundary padding from the signal, noise lines commented out). Card attributes the settings correctly but R3 should not apply them to the multimodal fit.",
+    "Minor: EEG gain normalisation differs between patients (P1 EEG gain range -1..0.417, P2 EEG gain 0..1); ranges are recorded per file but not flagged as a loader caveat.",
+    "Not verified: overlap between Code Ocean capsule data and these repo files (capsules not accessed); paper-level claims rely on A0037."
+  ],
+  "verdict": "passed",
+  "evidence_level": "source_verified: repository files independently re-downloaded via GitHub API metadata and re-opened; simulated_result data, n=2 patients from one study family, not a validation cohort"
+}

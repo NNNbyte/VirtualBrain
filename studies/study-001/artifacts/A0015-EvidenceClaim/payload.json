@@ -1,0 +1,59 @@
+{
+  "claim": "VNS Therapy Patient Outcome Registry (n=5554): responder rate 49% and seizure freedom 5.1% at 0-4 months, rising to 63% responders and 8.2% seizure-free at 24-48 months.",
+  "intervention_modality": "VNS",
+  "bibliographic_record": {
+    "authors": "Englot DJ, Rolston JD, Wright CW, Hassnain KH, Chang EF.",
+    "title": "Rates and Predictors of Seizure Freedom With Vagus Nerve Stimulation for Intractable Epilepsy.",
+    "journal": "Neurosurgery",
+    "year": "2016",
+    "volume": "79",
+    "issue": "3",
+    "pages": "345-353",
+    "doi": "10.1227/neu.0000000000001165",
+    "pmid": "26645965",
+    "pmcid": "PMC4884552",
+    "source_record_url": "https://europepmc.org/article/MED/26645965",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26645965/"
+  },
+  "supporting_passage": "We examined 5554 patients from the VNS therapy Patient Outcome Registry, and also performed a systematic review of the literature including 2869 patients across 78 studies. [...] Overall, 49% of patients responded to VNS therapy 0 to 4 months after implantation (≥50% reduction seizure frequency), with 5.1% of patients becoming seizure-free, while 63% of patients were responders at 24 to 48 months, with 8.2% achieving seizure freedom. [...] at last follow-up, 60.1% of individuals were responders, with 8.0% achieving seizure freedom.",
+  "supporting_passages": [
+    "We examined 5554 patients from the VNS therapy Patient Outcome Registry, and also performed a systematic review of the literature including 2869 patients across 78 studies.",
+    "Overall, 49% of patients responded to VNS therapy 0 to 4 months after implantation (≥50% reduction seizure frequency), with 5.1% of patients becoming seizure-free, while 63% of patients were responders at 24 to 48 months, with 8.2% achieving seizure freedom.",
+    "at last follow-up, 60.1% of individuals were responders, with 8.0% achieving seizure freedom."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 26645965, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "5554 registry patients; plus 2869 patients in 78-study systematic review",
+    "design": "manufacturer registry analysis + systematic review",
+    "population": "intractable epilepsy, mixed seizure types (predominantly generalized type was a predictor)",
+    "age_group": "mixed"
+  },
+  "endpoint": {
+    "measure": "responder rate (>=50%); seizure freedom",
+    "timepoint": "0-4 months; 24-48 months; last follow-up (review)",
+    "median_pct_reduction": "not_reported (in abstract)",
+    "responder_rate_50pct": {
+      "24_48_months": 0.63,
+      "review_last_follow_up": 0.601
+    },
+    "seizure_freedom": {
+      "24_48_months": 0.082,
+      "review_last_follow_up": 0.08
+    },
+    "follow_up_months_reported": "24-48"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer response and seizure freedom increase over time, but complete seizure freedom is uncommon.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Not restricted to focal epilepsy; registry data are physician-reported and denominators per interval not in abstract. Systematic-review arm overlaps Englot 2011 meta-analysis."
+  ],
+  "study_family_id": "fam-VNS-PatientOutcomeRegistry-Englot2016"
+}

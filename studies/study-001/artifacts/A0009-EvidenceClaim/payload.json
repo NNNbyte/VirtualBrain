@@ -1,0 +1,60 @@
+{
+  "claim": "SANTE long-term follow-up: median seizure reduction 41% at 1 year and 69% at 5 years; responder rate 43% at 1 year and 68% at 5 years; 16% seizure-free for >=6 months during 5 years.",
+  "intervention_modality": "ANT-DBS",
+  "bibliographic_record": {
+    "authors": "Salanova V, Witt T, Worth R, Henry TR, Gross RE, Nazzaro JM, Labar D, Sperling MR, Sharan A, Sandok E, Handforth A, Stern JM, Chung S, Henderson JM, French J, Baltuch G, Rosenfeld WE, Garcia P, Barbaro NM, Fountain NB, Elias WJ, Goodman RR, Pollard JR, Tröster AI, Irwin CP, Lambrecht K, Graves N, Fisher R, SANTE Study Group.",
+    "title": "Long-term efficacy and safety of thalamic stimulation for drug-resistant partial epilepsy.",
+    "journal": "Neurology",
+    "year": "2015",
+    "volume": "84",
+    "issue": "10",
+    "pages": "1017-1025",
+    "doi": "10.1212/wnl.0000000000001334",
+    "pmid": "25663221",
+    "pmcid": "PMC4352097",
+    "source_record_url": "https://europepmc.org/article/MED/25663221",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25663221/"
+  },
+  "supporting_passage": "The median percent seizure reduction from baseline at 1 year was 41%, and 69% at 5 years. [...] The responder rate (≥50% reduction in seizure frequency) at 1 year was 43%, and 68% at 5 years. [...] In the 5 years of follow-up, 16% of subjects were seizure-free for at least 6 months.",
+  "supporting_passages": [
+    "The median percent seizure reduction from baseline at 1 year was 41%, and 69% at 5 years.",
+    "The responder rate (≥50% reduction in seizure frequency) at 1 year was 43%, and 68% at 5 years.",
+    "In the 5 years of follow-up, 16% of subjects were seizure-free for at least 6 months."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 25663221, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "110 implanted in SANTE (n at 5 years not given in abstract)",
+    "design": "open-label long-term follow-up of RCT, Class IV",
+    "population": "adults with drug-resistant partial (localization-related) epilepsy",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "median % reduction; responder rate; seizure-free >=6 months",
+    "timepoint": "1 and 5 years",
+    "median_pct_reduction": {
+      "12_months": 41,
+      "60_months": 69
+    },
+    "responder_rate_50pct": {
+      "12_months": 0.43,
+      "60_months": 0.68
+    },
+    "seizure_freedom": "16% seizure-free for >=6 months at some point in 5 years",
+    "follow_up_months_reported": 60
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer sustained efficacy and safety.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Abstract classification statement reports a 34% serious device-related adverse event rate at 5 years.",
+    "Open-label, parameters adjusted at investigator discretion; completer denominators not in abstract."
+  ],
+  "study_family_id": "fam-SANTE-ANT-DBS-trial"
+}

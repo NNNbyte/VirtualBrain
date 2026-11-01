@@ -1,0 +1,24 @@
+{
+  "dataset_id": "openneuro:ds003876 (Epilepsy-iEEG-Interictal-Multicenter-Dataset; source-sink)",
+  "study_family_id": "fam-jhu-sarma-multicenter",
+  "source_doi": "10.18112/openneuro.ds003876.v1.0.2",
+  "repository_url": "https://openneuro.org/datasets/ds003876",
+  "reported_subject_count": "not_reported (README not inspected)",
+  "data_access": "verified_present (public)",
+  "licence": "CC0 (dataset_description.json)",
+  "approx_total_size_gb": 5.52,
+  "approx_total_size_basis": "S3 listing sum (491 objects) on 2026-10-31",
+  "verified_subject_count": 39,
+  "verified_subject_count_basis": "39 sub-* dirs in S3 listing; participants.tsv has 51 rows (sites NIH 14, KUMC 13, MIAMI 10, JHU 8, UMF 5, JHH 2) -> inconsistency",
+  "verified_modalities": {
+    "ieeg": "verified_present (interictal)",
+    "electrode_localisation": "reported_absent: 0 electrodes.tsv in listing",
+    "seizure_annotations": "to_verify"
+  },
+  "intervention_linkage": "to_verify: Omni-iEEG re-release marks has_resection=1 for all 39 'sourcesink' subjects, original channel tags not inspected; stimulation_settings reported_absent",
+  "outcome_fields_present": "participants.tsv: outcome S/F, engel_score, ilae_score, years_follow_up (mixed units, e.g. '12 MONTHS', '6 MONTHS', '1', n/a)",
+  "follow_up_definition": "inconsistent free-text; several entries < 12 months (e.g. '4 MONTHS', '6 MONTHS') -> fails >=12 month rule for those patients",
+  "eligibility": "Low fit: no localisation; interictal only; follow-up heterogeneous. Overlaps ds003029.",
+  "cohort_overlap": "Shares NIH/JHH/UMF patients with ds003029 (same family). Present in Omni-iEEG as sub-sourcesink*.",
+  "checked_on": "2026-10-31"
+}

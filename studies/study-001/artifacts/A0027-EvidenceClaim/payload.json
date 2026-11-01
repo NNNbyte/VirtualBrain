@@ -1,0 +1,47 @@
+{
+ "claim": "A meta-analysis restricted to follow-up >24 months in mesial TLE found seizure freedom of 72.5% [65.6-78.5%] after temporal lobe resection vs 57.1% [51.2-62.7%] after MRgLITT (P<0.01), with more minor (transient) complications after resection.",
+ "bibliographic_record": {
+  "authors": "Ekman FR, Bjellvi J, Ljunggren S, Malmgren K, Nilsson D",
+  "title": "Laser Interstitial Thermal Therapy versus Open Surgery for Mesial Temporal Lobe Epilepsy: A Systematic Review and Meta-Analysis",
+  "citation": "World Neurosurg 2024;192:224-235.e15",
+  "doi": "10.1016/j.wneu.2024.09.090",
+  "pmid": "39332763",
+  "pmcid": null,
+  "publication_type": "systematic review and meta-analysis"
+ },
+ "supporting_passage": "For seizure freedom, TLR was superior, with 72.5% [65.6%, 78.5%] of patients achieving postoperative seizure freedom compared to 57.1% [51.2%, 62.7%] for MRgLITT (P value <0.01).",
+ "passage_location": "Abstract (unstructured). Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 39332763; https://europepmc.org/abstract/MED/39332763; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "systematic review and meta-analysis (pooled proportions per arm; mostly non-comparative/observational studies -- study count and n not_reported in abstract)",
+  "n_studies": "not_reported in abstract",
+  "n_patients": "not_reported in abstract",
+  "population": "drug-resistant mesial temporal lobe epilepsy"
+ },
+ "endpoint": {
+  "reported_endpoint": "postoperative seizure freedom at follow-up >24 months",
+  "follow_up": ">24 months",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "seizure freedom -> favourable (definition, e.g. Engel I vs IA, to_verify)",
+  "values": {
+   "TLR": "72.5% [65.6-78.5]",
+   "MRgLITT": "57.1% [51.2-62.7]",
+   "p": "<0.01",
+   "minor complications": "TLR 9.9% vs LITT 4.1% (P=0.04)",
+   "major complications": "2.0% vs 2.7% (P=0.54)"
+  }
+ },
+ "reported_observation": "TLR 72.5% vs LITT 57.1% seizure freedom at >24 months; minor complications more frequent with TLR.",
+ "author_inference": "TLR provides superior seizure freedom but increased risk of transient complications.",
+ "contradictions": [
+  "Pichardo-Rojas 2026 found no significant LITT vs open difference in propensity-matched studies (RR 0.85, p=0.30) and in TLE studies (RR 0.88, p=0.34); Ekman compares pooled single-arm proportions, which is more confounded by patient selection."
+ ],
+ "study_family_id": "fam-litt-pooled-meta-analyses",
+ "overlap_note": "Pools published LITT and resection series; overlaps with other meta-analyses in this family (to_verify which primary studies).",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

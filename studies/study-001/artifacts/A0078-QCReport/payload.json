@@ -1,0 +1,589 @@
+{
+ "case_id": "HUP173",
+ "cohort_split_role": "development",
+ "findings": [
+  {
+   "check": "checksums",
+   "result": "pass",
+   "detail": "29/29 files match manifest sha256+bytes"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-01",
+   "sfreq_hz": 256.0,
+   "duration_s": 227.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 63.46593096759037,
+    "min": 45.26552253192129,
+    "max": 4222.299842283059
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "LB01",
+    "LC02",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB01",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 52.85,
+   "frac_channels_line_ratio_gt10": 0.913,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 1,
+    "total_s": 0.86328125
+   },
+   "qc_flagged_not_marked_bad": [
+    "LB01",
+    "LC02",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB01",
+    "RB02"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [
+     {
+      "start_s": 226.133,
+      "end_s": 226.996,
+      "len_s": 0.863,
+      "value_uV_median": 0.7629510948318056
+     }
+    ],
+    "internal": []
+   },
+   "high_variance_in_soz_note": "['RA01', 'RA02', 'RB01', 'RB02']: SOZ-tagged; high variance consistent with epileptiform/ictal activity, not treated as bad"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-02",
+   "sfreq_hz": 256.0,
+   "duration_s": 215.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 68.03485573070631,
+    "min": 37.97936663366244,
+    "max": 4039.140399550301
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "LB01",
+    "LC02",
+    "LC03",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG01",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 8.14,
+   "frac_channels_line_ratio_gt10": 0.429,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "EKG2",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "possible_clipping": [
+    "RC08"
+   ],
+   "all_channel_dropouts": {
+    "count": 1,
+    "total_s": 0.96484375
+   },
+   "qc_flagged_not_marked_bad": [
+    "LB01",
+    "LC02",
+    "LC03",
+    "LE01",
+    "RA01",
+    "RA02",
+    "RB02",
+    "RG01"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [
+     {
+      "start_s": 214.031,
+      "end_s": 214.996,
+      "len_s": 0.965,
+      "value_uV_median": 0.7629510948318056
+     }
+    ],
+    "internal": []
+   },
+   "high_variance_in_soz_note": "['RA01', 'RA02', 'RB02']: SOZ-tagged; high variance consistent with epileptiform/ictal activity, not treated as bad"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-03",
+   "sfreq_hz": 256.0,
+   "duration_s": 205.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 67.50077774611455,
+    "min": 39.95878579097481,
+    "max": 4232.901211827804
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "LC02",
+    "LC03",
+    "RA01",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 1869.51,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "LE01",
+    "LE05",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG07",
+    "RG08"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LC02",
+    "LC03",
+    "LE01",
+    "LE05",
+    "RA01",
+    "RB02"
+   ],
+   "marked_bad_not_flagged": [
+    "EKG2",
+    "LE09"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   },
+   "high_variance_in_soz_note": "['RA01', 'RB02']: SOZ-tagged; high variance consistent with epileptiform/ictal activity, not treated as bad"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-04",
+   "sfreq_hz": 256.0,
+   "duration_s": 235.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 68.23712818113714,
+    "min": 33.04668373732201,
+    "max": 3521.0289005682284
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "LC02",
+    "RA01",
+    "RB01",
+    "RB02",
+    "RC08",
+    "RE01",
+    "RE08",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 25.52,
+   "frac_channels_line_ratio_gt10": 0.817,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "EKG2",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LC02",
+    "RA01",
+    "RB01",
+    "RB02",
+    "RE01"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   },
+   "high_variance_in_soz_note": "['RA01', 'RB01', 'RB02']: SOZ-tagged; high variance consistent with epileptiform/ictal activity, not treated as bad"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-05",
+   "sfreq_hz": 256.0,
+   "duration_s": 274.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 81.71685420569939,
+    "min": 31.973474101899495,
+    "max": 7180.703298660465
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "LC02",
+    "RC08",
+    "RG07",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 40.02,
+   "frac_channels_line_ratio_gt10": 0.968,
+   "line_noise_outlier_channels": [
+    "EKG2",
+    "RC08",
+    "RE07",
+    "RE08"
+   ],
+   "possible_clipping": [
+    "EKG1",
+    "RG07"
+   ],
+   "all_channel_dropouts": {
+    "count": 1,
+    "total_s": 0.6640625
+   },
+   "qc_flagged_not_marked_bad": [
+    "LC02"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true,
+   "dropout_segments": {
+    "trailing_padding": [
+     {
+      "start_s": 273.332,
+      "end_s": 273.996,
+      "len_s": 0.664,
+      "value_uV_median": 0.7629510948318056
+     }
+    ],
+    "internal": []
+   }
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "interictal-01",
+   "sfreq_hz": 256.0,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 55.58329526778118,
+    "min": 31.249502973093172,
+    "max": 3379.3381011815386
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "RA01",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 70.92,
+   "frac_channels_line_ratio_gt10": 0.968,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "EKG2",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "RA01"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ],
+   "annotations_within_recording": null,
+   "annotation_sample_consistent": null,
+   "seizure_offset_after_onset": null,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   },
+   "high_variance_in_soz_note": "['RA01']: SOZ-tagged; high variance consistent with epileptiform/ictal activity, not treated as bad"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "interictal-02",
+   "sfreq_hz": 256.0,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 60.30952221921892,
+    "min": 39.06789730535844,
+    "max": 3651.986915603993
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "EKG2",
+    "LB01",
+    "LE01",
+    "RA01",
+    "RB01",
+    "RB02",
+    "RC08",
+    "RE07",
+    "RE08",
+    "RG08"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 42.81,
+   "frac_channels_line_ratio_gt10": 0.889,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "EKG2",
+    "RC08",
+    "RE07",
+    "RE08"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "LB01",
+    "LE01",
+    "RA01",
+    "RB01",
+    "RB02"
+   ],
+   "marked_bad_not_flagged": [
+    "LE09",
+    "RG07"
+   ],
+   "annotations_within_recording": null,
+   "annotation_sample_consistent": null,
+   "seizure_offset_after_onset": null,
+   "dropout_segments": {
+    "trailing_padding": [],
+    "internal": []
+   },
+   "high_variance_in_soz_note": "['RA01', 'RB01', 'RB02']: SOZ-tagged; high variance consistent with epileptiform/ictal activity, not treated as bad"
+  },
+  {
+   "check": "coordinate_frame",
+   "result": "to_verify",
+   "decision": {
+    "declared_in_coordsystem_json": {
+     "iEEGCoordinateSystem": "fsaverage",
+     "iEEGCoordinateUnits": "m"
+    },
+    "declared_in_dataset_readme": "electrode localizations in ICBM152 MNI space (README, dataset level)",
+    "evidence": {
+     "value_ranges": {
+      "x": [
+       -69.912,
+       84.6341
+      ],
+      "y": [
+       -74.0511,
+       49.7565
+      ],
+      "z": [
+       -25.2081972883151,
+       71.6938150705311
+      ]
+     },
+     "abs_max": 84.6341,
+     "mean_norm": 59.74809380320486,
+     "implied_extent_if_metres_mm": 84634.1,
+     "frac_contacts_in_mni_box_mm[-80,80]x[-120,90]x[-70,90]": 0.967741935483871,
+     "outside_box": [
+      "RE08",
+      "RF08",
+      "RG07",
+      "RG08"
+     ],
+     "frac_x_lt_0": 0.3790322580645161,
+     "mne_bids_read_frame": "mni_tal",
+     "mne_bids_abs_max_as_loaded_m": 84.6341
+    },
+    "units_decision": "mm",
+    "units_rationale": "abs max 84.6 with all/most contacts inside a head-sized MNI box: values are mm; the declared 'm' would imply a ~85 m extent, physically impossible",
+    "frame_decision": "MNI-template space (README: ICBM152 MNI); template variant to_verify",
+    "frame_rationale": "Coordinates are in a template (not native) MNI-like space: ranges fit an MNI brain box and the dataset README states ICBM152 MNI. coordsystem.json labels it 'fsaverage' (FreeSurfer surface RAS ~ MNI305). ICBM152 vs MNI305/fsaverage differ by a few mm and cannot be distinguished from contact coordinates alone -> template variant marked to_verify.",
+    "status": "to_verify",
+    "warning": "mne-bids 0.20.0 loads these values as metres (montage abs max ~84.6341 'm'); downstream code must rescale by 1e-3."
+   }
+  },
+  {
+   "check": "channel_tags",
+   "n_soz": 8,
+   "n_resect": 19,
+   "n_bad": 8,
+   "soz_and_resect": [
+    "RA01",
+    "RA02",
+    "RA03",
+    "RA04",
+    "RB01",
+    "RB02",
+    "RB03",
+    "RB04"
+   ],
+   "soz_not_resected": []
+  }
+ ],
+ "missingness": {
+  "mri": "reported_absent",
+  "iEEGReference": "not_reported",
+  "channels_without_coords": [
+   "EKG1",
+   "EKG2"
+  ],
+  "electrode_size": "not_reported",
+  "atlas_labels": "not_reported",
+  "interictal_events": "reported_absent (no events.tsv for interictal runs)",
+  "manufacturer": "not_reported",
+  "outcomes": "sealed (not accessed)"
+ },
+ "limits": [
+  "ictal-01: trailing all-channel constant padding 0.863 s in last EDF record (after seizure offset); trim to sidecar RecordingDuration",
+  "ictal-02: trailing all-channel constant padding 0.965 s in last EDF record (after seizure offset); trim to sidecar RecordingDuration",
+  "ictal-05: trailing all-channel constant padding 0.664 s in last EDF record (after seizure offset); trim to sidecar RecordingDuration",
+  "strong 60 Hz line noise on most channels (not notch filtered; SoftwareFilters n/a) in runs ['ictal-01', 'ictal-03', 'ictal-04', 'ictal-05', 'interictal-01', 'interictal-02']: notch filter downstream",
+  "non-neural channels typed as iEEG in channels.tsv: ['EKG1:SEEG', 'EKG2:SEEG'] (exclude from neural analyses)",
+  "channels without coordinates: ['EKG1', 'EKG2']",
+  "coordinate frame: units resolved as mm; template variant (ICBM152 per README vs fsaverage per coordsystem.json) to_verify; coordsystem.json units 'm' are wrong"
+ ],
+ "exclusion_reasons": [],
+ "verdict": "accept_with_limits",
+ "thresholds": {
+  "flat_std_uV": 0.5,
+  "flatline_zero_diff_frac": 0.5,
+  "robust_z_logstd": 3.5,
+  "line_ratio_flag": 10.0,
+  "clip_frac": 0.001,
+  "dropout_min_s": 0.5
+ },
+ "tool": {
+  "script": "studies/study-001/work/T0020/qc_case.py",
+  "sha256": "76ddfd7e35badbe21c26238dd58d6f43bd52ec6ded653d401ce0dfa6219dad59",
+  "versions": {
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3"
+  }
+ }
+}

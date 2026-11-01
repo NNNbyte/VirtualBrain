@@ -1,0 +1,106 @@
+{
+ "case_id": "P2",
+ "findings": [
+  {
+   "check": "checksums",
+   "result": "pass",
+   "detail": "P2_SEEG_ts_fit.npz, P2_TI_SEEG_ts_fit.npz and VepMrtrixLut.txt sha256 + byte size match data/wang-5367ef4-manifest.csv"
+  },
+  {
+   "check": "format",
+   "result": "pass",
+   "detail": "npz loads with allow_pickle=False; keys time_steps, seeg, SC, gain, ch_names; shapes coherent (191 ch, 162 regions)"
+  },
+  {
+   "check": "channel coherence",
+   "result": "pass",
+   "detail": "191 unique bipolar names; gain rows = 191; identical channel lists, SC and gain across both sessions"
+  },
+  {
+   "check": "time base",
+   "result": "pass_with_limits",
+   "detail": "uniform steps (8 ms in ses-seegstim, 10 ms in ses-tistim); no gaps; unit not stored -> sample rate inferred (125 / 100 Hz). The two sessions have DIFFERENT sampling rates: per-file rate must be used."
+  },
+  {
+   "check": "NaN/Inf",
+   "result": "pass",
+   "detail": "0 NaN, 0 Inf in signals, gain and SC"
+  },
+  {
+   "check": "flat channels",
+   "result": "pass",
+   "detail": "no channel with std < 1e-9; no channel below 1% of median std; longest run of identical consecutive samples = 1"
+  },
+  {
+   "check": "clipping",
+   "result": "pass",
+   "detail": "no channel with >1% of samples at its extreme value"
+  },
+  {
+   "check": "padding",
+   "result": "pass",
+   "detail": "no frames identical to the previous frame; no leading/trailing constant padding"
+  },
+  {
+   "check": "DC offsets",
+   "result": "note",
+   "detail": "raw values span -6.02..5.38 (per-channel means about -6..+5.4) while median per-channel std is 0.0019 (ses-seegstim) / 0.0128 (ses-tistim): large static offsets dominate the raw values; models must handle per-channel offset (data-centred priors per A0001)."
+  },
+  {
+   "check": "steps/discontinuities",
+   "result": "explained",
+   "detail": "many >20 MAD sample-to-sample jumps, all inside the initial transient and the stimulation epochs (pulse-train / TI waveform), plus the post-stimulation event. ses-seegstim: 0 of 14244 flagged samples outside these epochs; ses-tistim: 76 of 33383 outside, all in the low-amplitude baseline 470-1000 ms where the per-channel MAD threshold is very small (late tail of the initial transient), not abrupt steps"
+  },
+  {
+   "check": "initial transient",
+   "result": "note",
+   "detail": "both sessions start with a decaying transient (ses-seegstim ~8-200 ms; ses-tistim ~10-450 ms), likely from initial conditions; consider excluding from fitting"
+  },
+  {
+   "check": "stimulation artefact",
+   "result": "note",
+   "detail": "ses-seegstim: 50-Hz train ~504-3504 ms (below the 62.5-Hz Nyquist at 125 Hz); ses-tistim: ~5-Hz periodic drive ~1010-3000 ms. These epochs are driven responses, not spontaneous activity."
+  },
+  {
+   "check": "spectrum",
+   "result": "note",
+   "detail": "ses-seegstim spectral peak at 50 Hz besides slow (<1 Hz) power; ses-tistim peak at ~5 Hz"
+  },
+  {
+   "check": "anatomy",
+   "result": "limited",
+   "detail": "atlas-level only: SC 162x162 symmetric, zero diagonal, max 1; gain 191x162 positive, no zero rows/cols. No MRI, no contact coordinates: contact-in-brain and transform checks not applicable."
+  },
+  {
+   "check": "region order",
+   "result": "to_verify",
+   "detail": "npz has no region-label key; LUT order (1..162) assumed for SC/gain columns"
+  },
+  {
+   "check": "label leakage",
+   "result": "pass",
+   "detail": "no generating parameters, EZ labels or stimulation settings are present in the npz files; ground truth extracted only to the separate truth file for sealing"
+  }
+ ],
+ "missingness": {
+  "mri": "reported_absent",
+  "electrode_coordinates": "reported_absent",
+  "time_units": "not_reported",
+  "signal_units": "not_reported",
+  "event_annotations": "reported_absent (epochs derived from signals by R2)",
+  "stimulation_parameters_in_data_files": "reported_absent",
+  "region_labels_in_npz": "reported_absent (LUT used)",
+  "clinical_outcome": "not_applicable (virtual patient)"
+ },
+ "ground_truth_extraction": {
+  "truth_file": "studies/study-002/work/T0005/ground_truth_P2.json",
+  "sha256": "98651a7dee52aecd4e47702a591844e517d377ce28ce2013467059bc56c08b5f",
+  "status": "partially_ambiguous",
+  "summary": "EZ identity unambiguous and consistent across the reserved notebooks; generating parameter values are session-specific (SEEG-stim vs TI configurations differ); which of two SEEG notebooks produced P2_SEEG_ts_fit.npz is ambiguous, but both carry the same region-level EZ configuration. Details only in the sealed file."
+ },
+ "verdict": "accept_with_limits",
+ "verdict_reasons": [
+  "Signals clean (no NaN, flat, clipped or padded channels) and checksummed; channels/SC/gain coherent across sessions.",
+  "Limits: simulated data with undeclared units and inferred sample rates (125 vs 100 Hz between sessions); atlas-level anatomy only (no MRI/coordinates); large per-channel DC offsets; initial transients and stimulation-driven epochs should be handled explicitly by the observation model."
+ ]
+}

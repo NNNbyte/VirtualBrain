@@ -1,0 +1,57 @@
+{
+  "artifact_id": "A0072-Report",
+  "schema_name": "Report",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": "fam-hup-penn",
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0015",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R2-case-curation",
+  "tool_id": "fetch_tree.py+download.py+verify_manifest.py+survey_cases.py+select_cases.py",
+  "tool_version": "py3.11.9",
+  "code_commit": null,
+  "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0070-DatasetCard"
+  ],
+  "input_manifest_hash": "18a4e8d78168779731afd1625971d21c17b5ff00d24c704295b76d5950022f6c",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0072-Report/payload.json",
+      "media_type": "application/json",
+      "sha256": "34d4bce9a23f355e69251b9a53152e3d21ba0310e0777653c575e7e08c1fa6ee",
+      "byte_size": 8649
+    },
+    {
+      "uri": "artifacts/A0072-Report/retrieval_manifest.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "62e8da45fa70ed025c10efdb5b053bdce53d6c99a1e0b7d43bbd13b249f94c5d",
+      "byte_size": 221467
+    },
+    {
+      "uri": "artifacts/A0072-Report/case_selection.json",
+      "media_type": "application/octet-stream",
+      "sha256": "943b199749408c1d69992c3aa0f8d9e7f69a77105922bed8ade5fc1026d991cb",
+      "byte_size": 3251
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "observed_measurement"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T04:42:57+00:00",
+  "supersedes_id": null,
+  "title": "ds004100 v1.1.3 retrieval manifest + outcome-blind case-selection proposal (10 cases)",
+  "manifest_hash": "cf7443fabec286383cd0ef8e8151f31d9215cc83b59c24b12919d055449abdb6"
+}

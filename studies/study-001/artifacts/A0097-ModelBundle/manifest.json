@@ -1,0 +1,175 @@
+{
+  "artifact_id": "A0097-ModelBundle",
+  "schema_name": "ModelBundle",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": "SYN-P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0029",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "vep-stim vep_mcmc.stan (patched copy work/T0029/stan/vep_mcmc_fixed.stan) via CmdStan; scripts in t0029_code.zip",
+  "tool_version": "vep_stim 0.1.0a1 + T0029 patches P1-P3,F1-F3; CmdStan 2.40.0",
+  "code_commit": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+  "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0037-MethodCard",
+    "A0067-DatasetCard"
+  ],
+  "input_manifest_hash": "ac19ccac9803d7b2a32e4129ad804715295c4c33489ccf7fa3f3fd5f534f614b",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0097-ModelBundle/payload.json",
+      "media_type": "application/json",
+      "sha256": "589f01ad4b7b6b8932f0a6abc9ae6fa7c24d0524dbcbaa690c2ebc38923d8145",
+      "byte_size": 77035
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/calibration_p2.json",
+      "media_type": "application/octet-stream",
+      "sha256": "6ef01ffde27a5514f711f929c4989bbbffc5087d8c9a0a6860be4dfb69bb363b",
+      "byte_size": 854
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/lp_truth.json",
+      "media_type": "application/octet-stream",
+      "sha256": "aa991f6b7d082130cf7c18932fad65b98afa9663d5a446a2a23fb2cfbdb6d218",
+      "byte_size": 32
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_A.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "9d324b9c5f5e3468665758b30240f1f33a7c6ceb4d875188f362be08d2f5f9d8",
+      "byte_size": 6326
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_A_pkgmodel.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "7c1ee6a38a46ab6eb0416ca332b69e22ed4117cf11ad522d19ff3323f9c360c9",
+      "byte_size": 4859
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_A_tight.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "5707b8b4ad49480289b3f4b9dee5ba70a414f84efed58bc63d810f8ecbb75aec",
+      "byte_size": 8913
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_A_wideu.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "4c0b618cda963086dd8d918f2804fc473e2d22aaaae74f5f4d8912f7adbde0de",
+      "byte_size": 2904
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_B.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "9f339a3565c5ec216d180f86cf1fd314fba62c96d6cd1f0a1cdea82c4f0881dc",
+      "byte_size": 5117
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_B_tight.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "79c4ad5282987d25f6378db081ceda5fab03f0f771f5e7ec53472c980be1c957",
+      "byte_size": 8741
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/map_ensemble_B_wideu.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "ed7132cdbf5fcc78f9a077d02544f6763f7ece06cff5a7a7884188d41b695e96",
+      "byte_size": 2133
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/nuts_summary_armA.json",
+      "media_type": "application/octet-stream",
+      "sha256": "2595f6d311e1574babad2b162f79278ddf18be201d42eb0c37ed0dcd68421d27",
+      "byte_size": 5776
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/nuts_summary_armB.json",
+      "media_type": "application/octet-stream",
+      "sha256": "35a7a304205d565c4ac2ba0a00dbf33671843d3790ff70a6fb49f674de7340f9",
+      "byte_size": 5690
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/pip_freeze.txt",
+      "media_type": "application/octet-stream",
+      "sha256": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+      "byte_size": 1512
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/posterior_x0_by_region_armA.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "c06cfaa584e9fc531379e9df69b0b4b9af9627d3618b8837f6ebe9023fea8b97",
+      "byte_size": 21073
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/posterior_x0_by_region_armB.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "57899613489575c84c76f84f3257242ded4e588e06f233879c8b85f061bd815f",
+      "byte_size": 21589
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/stansummary_armA.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "6afa639a06e2d99d0dccf01e08c57167b317596a5a3789a72a3342e4c8866d0e",
+      "byte_size": 105580
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/stansummary_armB.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "6f82d7d80bde3f03062ea91716128c60e33a125e364210fed5ebd6b80baffe6e",
+      "byte_size": 106213
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/synth_SYN-P2.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "23787d70d6d2eb5c62f25563c532da481aa8d3e6323a1b3c4a0cdefe6a2aa99c",
+      "byte_size": 1308580
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/t0029_code.zip",
+      "media_type": "application/octet-stream",
+      "sha256": "cbd48e9cf84e22313cda57646bb8a3915189b9fdaa9a2467483fd7f992cca485",
+      "byte_size": 58959
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/vep_mcmc.stan.diff",
+      "media_type": "application/octet-stream",
+      "sha256": "9ef3ac189d84fb8fe45054181f4dadbf6c0b46317eba1f98ed78933b73e9bda8",
+      "byte_size": 6559
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/vep_prepare_op.py.diff",
+      "media_type": "application/octet-stream",
+      "sha256": "9a738432be63e279e7d0f93393314c20ce66686810bfaad7142c712753fd4e61",
+      "byte_size": 1262
+    },
+    {
+      "uri": "artifacts/A0097-ModelBundle/verify_patch.json",
+      "media_type": "application/octet-stream",
+      "sha256": "93e40d51fa2b91fc042c3555d0517b6cccfafe61fcb5cd1821de2c8e6ae944b7",
+      "byte_size": 599
+    }
+  ],
+  "scientific_context": {
+    "intended_use": "pipeline qualification benchmark only",
+    "network_hypothesis_set": "A0096-NetworkHypothesisSet",
+    "arm_A_verdict": "FAIL",
+    "evidence_kind": "fitted_estimate"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T09:04:31+00:00",
+  "supersedes_id": null,
+  "title": "ModelBundle SYN-P2 vep-stim synthetic recovery benchmark: arm A (P2 SC) FAIL on R-hat, EZ 1st by pooled mean only; arm B (P1 template SC) EZ 1st in all chains, not converged",
+  "manifest_hash": "f44ab7e44e710a584e4988c8fb63b0b033af15978c0969a9236f32d50a02c041"
+}

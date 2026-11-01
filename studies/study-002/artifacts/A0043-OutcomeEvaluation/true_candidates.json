@@ -1,0 +1,381 @@
+{
+ "candidates": [
+  {
+   "id": "full:RES-1/ablation",
+   "family": "RES-1",
+   "type": "ablation",
+   "regions": [
+    82
+   ],
+   "primary": true
+  },
+  {
+   "id": "full:RES-1/disconnection",
+   "family": "RES-1",
+   "type": "disconnection",
+   "regions": [
+    82
+   ],
+   "primary": false
+  },
+  {
+   "id": "full:RES-EZ/ablation",
+   "family": "RES-EZ",
+   "type": "ablation",
+   "regions": [
+    1,
+    7,
+    27,
+    40,
+    82,
+    83,
+    108
+   ],
+   "primary": true
+  },
+  {
+   "id": "full:RES-EZ/disconnection",
+   "family": "RES-EZ",
+   "type": "disconnection",
+   "regions": [
+    1,
+    7,
+    27,
+    40,
+    82,
+    83,
+    108
+   ],
+   "primary": false
+  },
+  {
+   "id": "full:RES-EZ+PZ/ablation",
+   "family": "RES-EZ+PZ",
+   "type": "ablation",
+   "regions": [
+    1,
+    7,
+    27,
+    40,
+    82,
+    83,
+    108,
+    12,
+    93
+   ],
+   "primary": true
+  },
+  {
+   "id": "full:RES-EZ+PZ/disconnection",
+   "family": "RES-EZ+PZ",
+   "type": "disconnection",
+   "regions": [
+    1,
+    7,
+    27,
+    40,
+    82,
+    83,
+    108,
+    12,
+    93
+   ],
+   "primary": false
+  },
+  {
+   "id": "full:STIM-PT/amp0.5",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 0.5,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "full:STIM-PT/amp1",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 1.0,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "full:STIM-PT/amp2",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 2.0,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "full:STIM-PT/amp4",
+   "family": "STIM-PT",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 4.0,
+   "weight_norm": "max1",
+   "onset_ms": 500.0,
+   "duration_ms": 3000.0
+  },
+  {
+   "id": "full:STIM-PT-chronic/amp0.5",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 0.5,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "full:STIM-PT-chronic/amp1",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 1.0,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "full:STIM-PT-chronic/amp2",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 2.0,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "full:STIM-PT-chronic/amp4",
+   "family": "STIM-PT-chronic",
+   "type": "pulse_train",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 4.0,
+   "weight_norm": "max1",
+   "onset_ms": 0.0,
+   "duration_ms": null
+  },
+  {
+   "id": "full:STIM-1/amp0.5",
+   "family": "STIM-1",
+   "type": "sustained_current",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 0.5
+  },
+  {
+   "id": "full:STIM-1/amp1",
+   "family": "STIM-1",
+   "type": "sustained_current",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 1.0
+  },
+  {
+   "id": "full:STIM-1/amp2",
+   "family": "STIM-1",
+   "type": "sustained_current",
+   "contacts": [
+    81
+   ],
+   "contact_names": [
+    "R7-8"
+   ],
+   "amp": 2.0
+  },
+  {
+   "id": "full:STIM-2/amp1",
+   "family": "STIM-2",
+   "type": "sustained_current",
+   "contacts": [
+    81,
+    82
+   ],
+   "contact_names": [
+    "R7-8",
+    "R8-9"
+   ],
+   "amp": 1.0
+  },
+  {
+   "id": "post:RES-EZ+PZ/ablation",
+   "family": "RES-EZ+PZ",
+   "type": "ablation",
+   "regions": [
+    82,
+    81,
+    88
+   ],
+   "primary": true
+  },
+  {
+   "id": "post:RES-EZ+PZ/disconnection",
+   "family": "RES-EZ+PZ",
+   "type": "disconnection",
+   "regions": [
+    82,
+    81,
+    88
+   ],
+   "primary": false
+  },
+  {
+   "id": "ORACLE:true-EZ/ablation",
+   "family": "ORACLE",
+   "type": "ablation",
+   "regions": [
+    15
+   ],
+   "primary": true
+  },
+  {
+   "id": "ORACLE:true-EZ/disconnection",
+   "family": "ORACLE",
+   "type": "disconnection",
+   "regions": [
+    15
+   ],
+   "primary": false
+  }
+ ],
+ "alias": {
+  "full:RES-1/ablation": [
+   "full:RES-1/ablation",
+   "post:RES-1/ablation",
+   "post:RES-EZ/ablation"
+  ],
+  "full:RES-1/disconnection": [
+   "full:RES-1/disconnection",
+   "post:RES-1/disconnection",
+   "post:RES-EZ/disconnection"
+  ],
+  "full:RES-EZ/ablation": [
+   "full:RES-EZ/ablation"
+  ],
+  "full:RES-EZ/disconnection": [
+   "full:RES-EZ/disconnection"
+  ],
+  "full:RES-EZ+PZ/ablation": [
+   "full:RES-EZ+PZ/ablation"
+  ],
+  "full:RES-EZ+PZ/disconnection": [
+   "full:RES-EZ+PZ/disconnection"
+  ],
+  "full:STIM-PT/amp0.5": [
+   "full:STIM-PT/amp0.5",
+   "post:STIM-PT/amp0.5"
+  ],
+  "full:STIM-PT/amp1": [
+   "full:STIM-PT/amp1",
+   "post:STIM-PT/amp1"
+  ],
+  "full:STIM-PT/amp2": [
+   "full:STIM-PT/amp2",
+   "post:STIM-PT/amp2"
+  ],
+  "full:STIM-PT/amp4": [
+   "full:STIM-PT/amp4",
+   "post:STIM-PT/amp4"
+  ],
+  "full:STIM-PT-chronic/amp0.5": [
+   "full:STIM-PT-chronic/amp0.5",
+   "post:STIM-PT-chronic/amp0.5"
+  ],
+  "full:STIM-PT-chronic/amp1": [
+   "full:STIM-PT-chronic/amp1",
+   "post:STIM-PT-chronic/amp1"
+  ],
+  "full:STIM-PT-chronic/amp2": [
+   "full:STIM-PT-chronic/amp2",
+   "post:STIM-PT-chronic/amp2"
+  ],
+  "full:STIM-PT-chronic/amp4": [
+   "full:STIM-PT-chronic/amp4",
+   "post:STIM-PT-chronic/amp4"
+  ],
+  "full:STIM-1/amp0.5": [
+   "full:STIM-1/amp0.5",
+   "post:STIM-1/amp0.5"
+  ],
+  "full:STIM-1/amp1": [
+   "full:STIM-1/amp1",
+   "post:STIM-1/amp1"
+  ],
+  "full:STIM-1/amp2": [
+   "full:STIM-1/amp2",
+   "post:STIM-1/amp2"
+  ],
+  "full:STIM-2/amp1": [
+   "full:STIM-2/amp1",
+   "post:STIM-2/amp1"
+  ],
+  "post:RES-EZ+PZ/ablation": [
+   "post:RES-EZ+PZ/ablation"
+  ],
+  "post:RES-EZ+PZ/disconnection": [
+   "post:RES-EZ+PZ/disconnection"
+  ],
+  "ORACLE:true-EZ/ablation": [
+   "ORACLE:true-EZ/ablation"
+  ],
+  "ORACLE:true-EZ/disconnection": [
+   "ORACLE:true-EZ/disconnection"
+  ]
+ },
+ "n_samples": 2
+}

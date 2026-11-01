@@ -1,0 +1,130 @@
+{
+  "artifact_id": "A0038-SimulationBatch",
+  "schema_name": "SimulationBatch",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0017",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": "A0018-ModelBundle",
+  "producer_role": "R4-intervention-design",
+  "tool_id": "studies/study-002/work/T0015/sim/p2sim.py",
+  "tool_version": "p2sim 1.0 sha256 0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0009-PatientCase",
+    "A0015-Report",
+    "A0017-NetworkHypothesisSet",
+    "A0018-ModelBundle"
+  ],
+  "input_manifest_hash": "37b7630411e0d7db15ffb8866cdf51236edb99d08b419e4903030c5d0935192b",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0038-SimulationBatch/payload.json",
+      "media_type": "application/json",
+      "sha256": "840a1668515376aa9737a22df706756314aada487c89c24a040f9b767c9a21b6",
+      "byte_size": 40490
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/full_candidates.json",
+      "media_type": "application/octet-stream",
+      "sha256": "ec8dcc0fe91e631f7fd938daca887416e30a282ceaf39c727d462af1614a838b",
+      "byte_size": 5080
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/full_runs.json",
+      "media_type": "application/octet-stream",
+      "sha256": "12ce6a6af9e5dd86d32096d2c58934898bb10b414fe152f4aa7813acdbbd92b6",
+      "byte_size": 624969
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/full_signals_median_sample.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "6811585606facee926b57c1a573ce0b6d96957893faf22db3633a2d674909e74",
+      "byte_size": 22792704
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/full_summary.json",
+      "media_type": "application/octet-stream",
+      "sha256": "938fae6b33bb99bf54fb199db91e9d53dad2727adb64c382a83b91f73f3f6360",
+      "byte_size": 14539
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/post_candidates.json",
+      "media_type": "application/octet-stream",
+      "sha256": "c73067564db22852096c80afbb2c9a7fcbddf50ec626610b7fbbab0525a6f0c0",
+      "byte_size": 4506
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/post_runs.json",
+      "media_type": "application/octet-stream",
+      "sha256": "bcbb7e5d9d64077241db557c0509318a571a23765dfdfa6b38b5332c637f30e8",
+      "byte_size": 438036
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/post_signals_median_sample.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "d823ff0183541f203ade5f1b1fcb14abd6aab148c6ce3a57ec88569d02a9ad73",
+      "byte_size": 10998933
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/post_summary.json",
+      "media_type": "application/octet-stream",
+      "sha256": "5a6baf3e9421273e2d826ea61eb965f8b89c9e78d966ff04b3bef68bb6955716",
+      "byte_size": 12244
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/samples_post.json",
+      "media_type": "application/octet-stream",
+      "sha256": "4daa71144d55aa33a6d834356ab1cb2fc3aa3b21334837ec92ca3040f569cd5c",
+      "byte_size": 50914
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/samples_full.json",
+      "media_type": "application/octet-stream",
+      "sha256": "a4539005325b8cbc9a759fd8938313c468946daf7d3b21e45f54480d6daaedac",
+      "byte_size": 25607
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/ez_post.json",
+      "media_type": "application/octet-stream",
+      "sha256": "43efc517fa1ea3f6b44a1dac91f0b16322a7562da528d96ab4dea3581b3caea3",
+      "byte_size": 497
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/ez_full.json",
+      "media_type": "application/octet-stream",
+      "sha256": "bee02f34b1bd325f211e010a637f874d04abfe2c90c4dadd6fed175971b32949",
+      "byte_size": 775
+    },
+    {
+      "uri": "artifacts/A0038-SimulationBatch/finalize.py",
+      "media_type": "application/octet-stream",
+      "sha256": "1eb36fc3db0124b74baf062e015d251d7e0bc76790b14a137dce4bfa64fed7eb",
+      "byte_size": 10721
+    }
+  ],
+  "scientific_context": {
+    "sample_rate_hz": 50,
+    "time_window": "0-7760 ms (post) / 0-14400 ms (full), model ms",
+    "signal_units": "model units (SEEG = gain @ (q1-u1))",
+    "reference_montage": "bipolar (P2 gain rows)",
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T15:52:36+00:00",
+  "supersedes_id": null,
+  "title": "P2 paired intervention simulations on A0018 MAP ensemble, post (24) + full (12) windows - PRELIMINARY, model not qualified",
+  "manifest_hash": "3c611005473cb2063d2b3d0d288c891d7b9167a5b1a49a3006dd464919a20d7c"
+}

@@ -1,0 +1,57 @@
+{
+  "claim": "Prospective 12-month extension of the E05 VNS trial: median seizure reduction 45% at 12 months; 35% of 195 had >50% reduction and 20% had >75% reduction.",
+  "intervention_modality": "VNS",
+  "bibliographic_record": {
+    "authors": "DeGiorgio CM, Schachter SC, Handforth A, Salinsky M, Thompson J, Uthman B, Reed R, Collins S, Tecoma E, Morris GL, Vaughn B, Naritoku DK, Henry T, Labar D, Gilmartin R, Labiner D, Osorio I, Ristanovic R, Jones J, Murphy J, Ney G, Wheless J, Lewis P, Heck C.",
+    "title": "Prospective long-term study of vagus nerve stimulation for the treatment of refractory seizures.",
+    "journal": "Epilepsia",
+    "year": "2000",
+    "volume": "41",
+    "issue": "9",
+    "pages": "1195-1200",
+    "doi": "10.1111/j.1528-1157.2000.tb00325.x",
+    "pmid": "10999559",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/10999559",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10999559/"
+  },
+  "supporting_passage": "Patients with six or more complex partial or generalized tonic-clonic seizures enrolled in the pivotal EO5 study were prospectively evaluated for 12 months. [...] The median reduction at 12 months after completion of the initial double-blind study was 45%. At 12 months, 35% of 195 subjects had a >50% reduction in seizures, and 20% of 195 had a >75% reduction in seizures.",
+  "supporting_passages": [
+    "Patients with six or more complex partial or generalized tonic-clonic seizures enrolled in the pivotal EO5 study were prospectively evaluated for 12 months.",
+    "The median reduction at 12 months after completion of the initial double-blind study was 45%. At 12 months, 35% of 195 subjects had a >50% reduction in seizures, and 20% of 195 had a >75% reduction in seizures."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 10999559, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 195,
+    "design": "prospective open-label extension of E05 RCT (low-stimulation arm crossed over)",
+    "population": "patients with refractory partial-onset seizures from E05",
+    "age_group": "adolescent and adult (per E05 eligibility)"
+  },
+  "endpoint": {
+    "measure": "median % reduction; >50% and >75% responder rates",
+    "timepoint": "12 months after completion of double-blind phase",
+    "median_pct_reduction": {
+      "12_months": 45
+    },
+    "responder_rate_50pct": {
+      "12_months": 0.35,
+      "note": "defined as >50% reduction"
+    },
+    "seizure_freedom": "not_reported (in abstract)",
+    "follow_up_months_reported": 12
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer VNS efficacy improves during 12 months.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Same patients as Handforth 1998 (E05); also likely included in Englot 2011 meta-analysis pooled data."
+  ],
+  "study_family_id": "fam-VNS-E05-trial"
+}

@@ -1,0 +1,140 @@
+{
+ "dataset_id": "openneuro:ds004100 v1.1.3 (A0070-DatasetCard)",
+ "unit": "patient",
+ "development_ids": [
+  "sub-HUP060",
+  "sub-HUP065",
+  "sub-HUP074",
+  "sub-HUP075",
+  "sub-HUP082",
+  "sub-HUP087",
+  "sub-HUP089",
+  "sub-HUP094",
+  "sub-HUP105",
+  "sub-HUP106",
+  "sub-HUP107",
+  "sub-HUP112",
+  "sub-HUP117",
+  "sub-HUP123",
+  "sub-HUP126",
+  "sub-HUP130",
+  "sub-HUP134",
+  "sub-HUP135",
+  "sub-HUP138",
+  "sub-HUP141",
+  "sub-HUP146",
+  "sub-HUP148",
+  "sub-HUP150",
+  "sub-HUP151",
+  "sub-HUP160",
+  "sub-HUP162",
+  "sub-HUP164",
+  "sub-HUP171",
+  "sub-HUP173",
+  "sub-HUP179",
+  "sub-HUP180",
+  "sub-HUP181",
+  "sub-HUP185",
+  "sub-HUP188"
+ ],
+ "test_ids": [
+  "sub-HUP064",
+  "sub-HUP070",
+  "sub-HUP080",
+  "sub-HUP086",
+  "sub-HUP088",
+  "sub-HUP097",
+  "sub-HUP111",
+  "sub-HUP114",
+  "sub-HUP116",
+  "sub-HUP133",
+  "sub-HUP139",
+  "sub-HUP140",
+  "sub-HUP142",
+  "sub-HUP144",
+  "sub-HUP157",
+  "sub-HUP158",
+  "sub-HUP163",
+  "sub-HUP166",
+  "sub-HUP172",
+  "sub-HUP177",
+  "sub-HUP187",
+  "sub-HUP190"
+ ],
+ "excluded_ids": {
+  "sub-HUP132": "no recordings in release",
+  "sub-HUP165": "no annotated presurgical seizure (0 task-ictal runs) - protocol inclusion requires >=1"
+ },
+ "eligibility_rule": "StudyProtocol A0001 case inclusion: at least one annotated presurgical seizure (task-ictal run with events.tsv 'sz onset'). 57 subjects in release; sub-HUP165 has 0 ictal runs -> ineligible for modeling. sub-HUP132 appears in participants.tsv but has no recordings in v1.1.3 (removed at 1.1.0) -> not a release subject. sub-HUP158 is eligible (1 ictal run) but has no interictal run (limitation, recorded). R2 signal/anatomy QC per case is still pending; a case failing QC is excluded later without re-splitting (it keeps its partition).",
+ "n_eligible": 56,
+ "n_development": 34,
+ "n_test": 22,
+ "fractions_target": {
+  "development": 0.6,
+  "test": 0.4
+ },
+ "stratification": {
+  "variables": [
+   "cohort family (single family: fam-hup-penn)",
+   "intervention class (participants.tsv 'therapy': ABLATION/RESECTION; no RNS rows present in v1.1.3)",
+   "implant type (participants.tsv 'implant' SEEG/ECOG; agrees with acq- file label for 57/57)"
+  ],
+  "method": "within each therapy x implant stratum: floor(0.6 n) to development, remaining development slots (to reach round(0.6*56)=34) by largest fractional remainder (seeded tie-break); members shuffled with random.Random(seed) after sorting ids",
+  "seed": 20261101,
+  "strata_counts": {
+   "ABLATION|ECOG": {
+    "n": 2,
+    "development": 1,
+    "test": 1
+   },
+   "ABLATION|SEEG": {
+    "n": 25,
+    "development": 15,
+    "test": 10
+   },
+   "RESECTION|ECOG": {
+    "n": 18,
+    "development": 11,
+    "test": 7
+   },
+   "RESECTION|SEEG": {
+    "n": 11,
+    "development": 7,
+    "test": 4
+   }
+  },
+  "outcome_blind": true,
+  "script": "work/T0015/make_split.py"
+ },
+ "cohort_families": [
+  {
+   "family_id": "fam-hup-penn",
+   "site": "Hospital of the University of Pennsylvania (HUP)",
+   "datasets_in_split": [
+    "openneuro:ds004100 v1.1.3"
+   ],
+   "overlap_notes": "Same patients may appear in other HUP-derived resources: Kini & Bernabei 2019 / EpiVR subset (A0034; e.g. HUP080), Bernabei 2022 subset, Omni-iEEG 'hup' subset (re-packages ds004100, A0040), and HUP-labelled subjects in the fragility multicenter collection (ds003029, A0035) per A0066/A0070. None of these may be pooled as independent cohorts or used as external test data for this split; any future addition must map subject ids across sources first and keep each patient in the partition assigned here."
+  }
+ ],
+ "partitions": {
+  "development": {
+   "n_patients": 34,
+   "ictal_runs": 130,
+   "interictal_runs": 68,
+   "use": "model building, hypothesis selection, fitting, tuning"
+  },
+  "test": {
+   "n_patients": 22,
+   "ictal_runs": 78,
+   "interictal_runs": 41,
+   "use": "held out; predictions frozen before R5 outcome_evaluation"
+  },
+  "within_patient": "all runs (ictal and interictal) of a patient stay in that patient's partition; seizure-level sub-partitions, if needed, are defined inside a ModelBundle using presurgical data only"
+ },
+ "label_access_policy": "outcomes sealed in vault; only R5 outcome_evaluation after prediction freeze",
+ "label_access_details": "Outcome columns ('outcome', 'engel') were separated into work/T0015/outcomes_to_seal.json for the lead to seal; no outcome value appears in this artifact. Raw data/ds004100-1.1.3/participants.tsv still contains them and must be access-restricted (not read by modeling roles). Split and case selection used only non-outcome linkage (therapy, implant) and sidecar counts.",
+ "leakage_controls": "patient-level; disjoint id sets asserted; no outcome used; split_hash immutable",
+ "split_hash": "255216f575a2e635e3fcece16cc2f3e3ea1d12c6222676f1281d41f90d17fa23",
+ "split_hash_definition": "sha256 of json.dumps({'development_ids': sorted, 'test_ids': sorted}, sort_keys=True, separators=(',',':'))",
+ "retrieval_manifest_sha256": "62e8da45fa70ed025c10efdb5b053bdce53d6c99a1e0b7d43bbd13b249f94c5d"
+}

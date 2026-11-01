@@ -1,0 +1,26 @@
+{
+  "claim": "The authors state that model-based VBT approaches are computationally expensive and parameter sensitive, which may challenge clinical use such as optimising stimulation parameters.",
+  "bibliographic_record": {
+    "authors": "Wang HE, Dollomaja B, Triebkorn P, Duma GM, Williamson A, Makhalova J, Lemarechal J-D, Bartolomei F, Jirsa V",
+    "title": "Virtual brain twins for stimulation in epilepsy",
+    "journal": "Nature Computational Science",
+    "year": 2025,
+    "volume": "5",
+    "issue": "9",
+    "pages": "754-768",
+    "doi": "10.1038/s43588-025-00841-6",
+    "pmid": "40764764",
+    "pmcid": "PMC12457187",
+    "published": "2025-08-05",
+    "preprint": "medRxiv 10.1101/2024.07.25.24310396 (seen in search results; not opened)",
+    "article_license": "CC BY 4.0",
+    "verified_via": "Europe PMC full-text XML (PMC12457187) and pmc.ncbi.nlm.nih.gov, fetched 2026-10-31"
+  },
+  "supporting_passage": "The current pipeline has several limitations. Model-based approaches are usually computationally expensive and parameter sensitive, which may pose challenges for real time use in clinical routine, such as the optimization of stimulation parameters.",
+  "passage_location": "Discussion (limitations paragraph), PMC12457187",
+  "population_and_design": "Author-stated limitation of a methodological study (n=2 + synthetic).",
+  "endpoint": "not_applicable (methodological limitation)",
+  "evidence_kind": "literature_reported",
+  "contradictions": "None found. The paper reports no runtimes or hardware.",
+  "study_family_id": "VEP-INS-Marseille-LaTimone (Jirsa/Bartolomei group; patient overlap across VEP papers not reported - to_verify)"
+}

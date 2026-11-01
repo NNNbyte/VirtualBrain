@@ -1,0 +1,30 @@
+{
+ "intervention_id": "STIM-SUSTAINED",
+ "checks": [
+  {
+   "check": "model mapping",
+   "result": "pass",
+   "detail": "SpatEpiStimHyp: explicit input I_hyp_i = amp * w_i added to the excitability equation ds=(1/tau0)(4(u1 - x0 + I_hyp - H) - s); w = contact gain row normalised to max 1; x0 itself unchanged"
+  },
+  {
+   "check": "numerical stability",
+   "result": "pass",
+   "detail": "selftest pulse train amp 4 (max Istim 0.04) finite at dt 0.05 ms"
+  },
+  {
+   "check": "charge density / safety",
+   "result": "not_assessable",
+   "detail": "model amplitudes have no physical units; no contact geometry"
+  },
+  {
+   "check": "anatomical constraints",
+   "result": "not_assessable",
+   "detail": "no MRI/eloquent mapping"
+  }
+ ],
+ "verdict": "feasible_in_silico",
+ "verdict_reasons": [
+  "fully specified in the model",
+  "physical/device feasibility not assessable; amplitudes are model units"
+ ]
+}

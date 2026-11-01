@@ -1,0 +1,56 @@
+{
+  "claim": "In the European MORE registry of routine ANT-DBS (170 eligible), 41% were responders (>=50% reduction) at last follow-up (median 3.5 y); 5-year completers' median monthly seizures fell from 16 to 7.9.",
+  "intervention_modality": "ANT-DBS",
+  "bibliographic_record": {
+    "authors": "Kaufmann E, Peltola J, Colon AJ, Lehtimäki K, Majtanik M, Mai JK, Bóné B, Bentes C, Coenen V, Gil-Nagel A, Goncalves-Ferreira AJ, Ryvlin P, Taylor R, Brionne TC, Gielen F, Song S, Boon P, MORE study group.",
+    "title": "Long-term evaluation of anterior thalamic deep brain stimulation for epilepsy in the European MORE registry.",
+    "journal": "Epilepsia",
+    "year": "2024",
+    "volume": "65",
+    "issue": "8",
+    "pages": "2438-2458",
+    "doi": "10.1111/epi.18003",
+    "pmid": "38837755",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/38837755",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38837755/"
+  },
+  "supporting_passage": "Of 170 eligible PwE, 104, 62, and 49 completed the 3-, 4-, and 5-year follow-up, respectively. [...] The 5-year follow-up cohort had a median seizure frequency reduction from 16 per month at baseline to 7.9 per month at 5-year follow-up (p < .001) [...] At last follow-up (median 3.5 years), 41% (69/170) of PwE were responders.",
+  "supporting_passages": [
+    "Of 170 eligible PwE, 104, 62, and 49 completed the 3-, 4-, and 5-year follow-up, respectively.",
+    "The 5-year follow-up cohort had a median seizure frequency reduction from 16 per month at baseline to 7.9 per month at 5-year follow-up (p < .001)",
+    "At last follow-up (median 3.5 years), 41% (69/170) of PwE were responders."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 38837755, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "170 eligible (179 implanted for safety); 49 completed 5 years",
+    "design": "multicenter manufacturer (Medtronic) registry of clinical-routine ANT-DBS; prospective vs retrospective enrolment not stated in abstract",
+    "population": "people with drug-resistant focal epilepsy treated with ANT-DBS",
+    "age_group": "not_reported (in abstract)"
+  },
+  "endpoint": {
+    "measure": "responder rate (>=50%) at last follow-up; median monthly seizure frequency",
+    "timepoint": "last follow-up median 3.5 y; 5 years",
+    "median_pct_reduction": "not_reported as % (16 -> 7.9 seizures/month in 5-year completers, ratio of group medians ~51% computed by R1 - NOT a per-patient median % reduction and not author-reported)",
+    "responder_rate_50pct": {
+      "last_follow_up_median_42_months": 0.41
+    },
+    "seizure_freedom": "not_reported (in abstract)",
+    "follow_up_months_reported": "median 42 (3.5 y) at last follow-up; up to 60"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer further support for long-term routine ANT-DBS; outcome modifiers may inform selection.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Responder rate (41%, intention-to-treat denominator 170) is lower than SANTE 5-year 68% (completer-based) - denominators differ.",
+    "Unifocal epilepsy and no prior surgery associated with larger reductions."
+  ],
+  "study_family_id": "fam-MORE-ANT-DBS-registry"
+}

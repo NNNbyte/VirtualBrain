@@ -1,0 +1,14 @@
+{
+ "verdict": "NOT QUALIFIED (v3 benchmark failed)",
+ "pass_criterion": "planted EZ rank 1 by posterior mean x0, all free-x0 R-hat < 1.05, no unexplained divergences",
+ "nuts": "no post-warmup draws: NUTS (dense_e, 8 chains/arm, warmup 400, max_treedepth 10) did not finish warmup in 42 min (arm A) / 47 min (arm B); stopped at the 17:00 UTC cut-off. R-hat, ESS, divergences, treedepth: not computable (no draws)",
+ "pathfinder_32_paths": {"arm_A_SYN-P1v3_P1SC": "EZ 58 P(rank 1) 0.012; top mean x0 38, 34, 57(PZ), 48, 37; 385 s",
+                         "arm_B_SYN-P1v3_P2SC": "EZ 58 rank 28 by mean, P(rank 1) 0.205; top 57(PZ), 40, 71; 727 s",
+                         "T0011_SYN-P1_P1SC": "EZ 44 rank 38, P(rank 1) 0.003; top 137, 139, 37; 260 s",
+                         "multimodality": "32 distinct per-path ELBOs per arm (spread ~50 nats)"},
+ "speedup": {"parameters": "68 (v3) vs ~520 (v2), 7.6x fewer",
+             "gradient": "v3 44.5 ms vs v2 21.8 ms on the same VM (0.49x, i.e. slower) because nsub 2 -> 5; per Euler step 1.2x faster",
+             "wall_clock_per_fit": "v2: no complete NUTS fit (frozen settings no warmup iteration 50 in 24 min; run2 partial at 64 min); v3: Pathfinder 4-12 min, NUTS warmup not finished in 42-47 min. No end-to-end speedup demonstrated."},
+ "diagnosis": "the bottleneck is not parameter count but a rugged, multimodal likelihood from structural misfit: the 2D Epileptor + linear log-power observation map cannot reproduce the 6D-generated PC1 time course (per-PC noise sigma_1 ~4x baseline at every optimum); every L-BFGS start (96/96) and every Pathfinder path (32/32) ends in a different optimum; EZ vs PZ separation is 2-4 nats in profile. Pinning z_init and restricting the free set did not remove the EZ/PZ ambiguity.",
+ "recommendation": "do not use v3 for patient fitting. Next: (1) a nonlinear observation model for log power (log of gain^2-weighted source power plus noise floor) or fit generator-consistent features; (2) a time-scale parameter for the fast subsystem or nsub chosen from the data's onset rise time; (3) tempering / SMC or per-mode reporting instead of single-run NUTS; (4) the LEAD's stimulation paradigm (prespecified in the task log) before P2 transfer."
+}

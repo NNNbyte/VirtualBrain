@@ -1,0 +1,26 @@
+{
+ "intervention_id": "TI",
+ "checks": [
+  {
+   "check": "field-to-node mapping",
+   "result": "fail",
+   "detail": "data/EMF maps on fsaverage5 (20484 vertices); no vertex->VEP region mapping in repo @5367ef4; N001 open"
+  },
+  {
+   "check": "patient surface / region mapping",
+   "result": "fail",
+   "detail": "no P2 cortical surface or region mapping (A0010: no MRI)"
+  },
+  {
+   "check": "simulator support",
+   "result": "pass",
+   "detail": "package TI_SpatioTemporalPattern would accept a [regions x time] pattern if a mapping existed"
+  }
+ ],
+ "verdict": "infeasible",
+ "verdict_reasons": [
+  "TI cannot be mapped to model nodes without an exact documented mapping (need N001)",
+  "simulate only if N001 is fulfilled"
+ ],
+ "need_ref": "N001"
+}

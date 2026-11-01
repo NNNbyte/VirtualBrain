@@ -1,0 +1,45 @@
+{
+ "claim": "In a retrospective 11-centre cohort of 234 patients treated with LITT for mesial TLE, 58.0% achieved Engel I outcomes at both 1 and 2 years; more anterior/medial/inferior ablations including greater amygdala volume were associated with Engel I.",
+ "bibliographic_record": {
+  "authors": "Wu C, Jermakowicz WJ, Chakravorti S, Cajigas I, Sharan AD, et al.",
+  "title": "Effects of surgical targeting in laser interstitial thermal therapy for mesial temporal lobe epilepsy: A multicenter study of 234 patients",
+  "citation": "Epilepsia 2019;60(6):1171-1183",
+  "doi": "10.1111/epi.15565",
+  "pmid": "31112302",
+  "pmcid": "PMC6551254",
+  "publication_type": "journal article"
+ },
+ "supporting_passage": "At both 1 and 2 years after LITT, 58.0% achieved Engel I outcomes.",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 31112302; https://europepmc.org/abstract/MED/31112302; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "multicenter retrospective cohort (11 US centres)",
+  "n_total": 234,
+  "population": "mesial temporal lobe epilepsy treated with MR-guided LITT (age range not_reported in abstract)",
+  "intervention": "laser interstitial thermal therapy"
+ },
+ "endpoint": {
+  "reported_endpoint": "Engel class I",
+  "follow_up": "1 and 2 years after LITT (n analysed at each time point not_reported in abstract)",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "Engel I -> favourable",
+  "values": {
+   "Engel I at 1 y": "58.0%",
+   "Engel I at 2 y": "58.0%"
+  },
+  "predictors": "history of bilateral tonic-clonic seizures decreased chance of Engel I; radiographic hippocampal sclerosis not associated"
+ },
+ "reported_observation": "58.0% Engel I at 1 and 2 years; ablation location (anterior, medial, inferior; amygdala) associated with Engel I.",
+ "author_inference": "LITT is viable for properly evaluated mTLE; ablations should prioritise amygdala plus hippocampal head, parahippocampal gyrus and rhinal cortices.",
+ "contradictions": [
+  "Unlike Gross 2018 (Emory) and Chen 2023 IPD-MA, radiographic hippocampal sclerosis was not associated with seizure outcome here."
+ ],
+ "study_family_id": "fam-litt-mtle-us-multicenter-wu2019",
+ "overlap_note": "Several contributing centres (e.g. Jefferson, Miami, Columbia) are also SLATE sites; patient overlap with SLATE and with single-centre LITT series is possible (to_verify). Likely pooled in later LITT meta-analyses.",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

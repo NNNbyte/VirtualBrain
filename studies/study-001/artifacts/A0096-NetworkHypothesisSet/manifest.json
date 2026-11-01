@@ -1,0 +1,52 @@
+{
+  "artifact_id": "A0096-NetworkHypothesisSet",
+  "schema_name": "NetworkHypothesisSet",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": "SYN-P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0029",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "studies/study-001/work/T0029/scripts/make_synth.py",
+  "tool_version": "T0029 seed 20261129",
+  "code_commit": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+  "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0037-MethodCard",
+    "A0067-DatasetCard"
+  ],
+  "input_manifest_hash": "ac19ccac9803d7b2a32e4129ad804715295c4c33489ccf7fa3f3fd5f534f614b",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0096-NetworkHypothesisSet/payload.json",
+      "media_type": "application/json",
+      "sha256": "2517e639272a0cef664f7adb2bf9843c9375f3010dbed8600ce3b94a7da9d3dd",
+      "byte_size": 6249
+    },
+    {
+      "uri": "artifacts/A0096-NetworkHypothesisSet/truth.json",
+      "media_type": "application/octet-stream",
+      "sha256": "55bb36bceb53c8ee9aed6a252489f612d228e514bd7ae72a79e1fc0096367988",
+      "byte_size": 18412
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T07:31:15+00:00",
+  "supersedes_id": null,
+  "title": "NHS SYN-P2: planted Right-Amygdala EZ (+2 sub-threshold PZ) on Wang P2 SC/gain, with competing artefact hypotheses",
+  "manifest_hash": "4d6b5c680e79598ae5c9d7093bfb9685fbba306030c8646e059f55f7ade8cc90"
+}

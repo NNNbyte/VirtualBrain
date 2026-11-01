@@ -1,0 +1,7 @@
+{
+  "resource": "BVEP code (ins-amu/BVEP)",
+  "access_path": "https://github.com/ins-amu/BVEP (public; HEAD 69baec4, 2025-09-15; release v0.1 2021-12-13)",
+  "status": "verified_present (metadata, README, tree inspected via GitHub API; not cloned; repo about 155 MB, much of it vendored optimisation-benchmark sources)",
+  "conditions": "GPL-3.0. Repo includes example/benchmark arrays (e.g. SC_nn162.npy, SC_nn400.npy, P5/P6_Sim_true.npy); their provenance and patient linkage were not checked.",
+  "verified_at": "2026-10-31"
+}

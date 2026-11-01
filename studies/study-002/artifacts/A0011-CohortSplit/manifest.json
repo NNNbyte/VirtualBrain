@@ -1,0 +1,46 @@
+{
+  "artifact_id": "A0011-CohortSplit",
+  "schema_name": "CohortSplit",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0007",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R2-case-curation",
+  "tool_id": "work/T0007/build_split.py",
+  "tool_version": "1.0",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0007-PatientCase",
+    "A0009-PatientCase"
+  ],
+  "input_manifest_hash": "cd9ed7ad73c9b0a40e053b41cee1f71a725ab445847235c10fcb9d11b087e4ce",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0011-CohortSplit/payload.json",
+      "media_type": "application/json",
+      "sha256": "65399af65b8714209a31a7196d65127fb4365f8a32fb40bfc4110b5dc07c77e1",
+      "byte_size": 5973
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T13:25:32+00:00",
+  "supersedes_id": null,
+  "title": "CohortSplit study-002: dev P1 (+P1-derived synthetic), test P2; P2 truth sealed V001",
+  "manifest_hash": "c6befda6c35f24a822aac7b44fa6bdf308f8f5dcb9b5ce82d57da59f5d114c78"
+}

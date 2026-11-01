@@ -1,0 +1,26 @@
+{
+ "ictal-01": {
+  "duration_s": 237.0,
+  "segments": []
+ },
+ "ictal-02": {
+  "duration_s": 230.0,
+  "segments": []
+ },
+ "ictal-03": {
+  "duration_s": 232.0,
+  "segments": []
+ },
+ "ictal-04": {
+  "duration_s": 252.0,
+  "segments": []
+ },
+ "interictal-01": {
+  "duration_s": 300.0,
+  "segments": []
+ },
+ "interictal-02": {
+  "duration_s": 300.0,
+  "segments": []
+ }
+}

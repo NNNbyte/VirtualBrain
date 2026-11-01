@@ -1,0 +1,266 @@
+{
+ "label": "T0029A",
+ "files": [
+  "studies/study-001/work/T0029/out/nuts_A/chain1.csv",
+  "studies/study-001/work/T0029/out/nuts_A/chain2.csv",
+  "studies/study-001/work/T0029/out/nuts_A/chain4.csv",
+  "studies/study-001/work/T0029/out/nuts_A/chain5.csv",
+  "studies/study-001/work/T0029/out/nuts_A/chain6.csv"
+ ],
+ "n_chains": 5,
+ "draws_per_chain": 300,
+ "max_depth_cfg": [
+  8,
+  8,
+  8,
+  8,
+  8
+ ],
+ "divergences_per_chain": [
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "treedepth_mean": 8.0,
+ "n_at_max_depth": 1500,
+ "stepsize_per_chain": [
+  0.0071178235,
+  0.0065350486,
+  0.011395317,
+  0.0082721417,
+  0.0089864771
+ ],
+ "accept_stat_mean": 0.9572984257606666,
+ "lp_mean_per_chain": [
+  38212.23,
+  38225.7,
+  38165.68,
+  37985.18,
+  37965.9
+ ],
+ "x0_rhat_max": 1.9550961735105488,
+ "x0_rhat_median": 1.0148318514659214,
+ "x0_n_rhat_gt_1_05": 35,
+ "x0_n_rhat_gt_1_01": 110,
+ "x0_ess_bulk_min": 7.123301095629677,
+ "x0_ess_bulk_median": 353.84160710461447,
+ "x0_ess_tail_min": 12.013119293768336,
+ "rhat_lp__": 2.4235838668708305,
+ "ess_bulk_lp__": 6.4304208869754795,
+ "mean_lp__": 38110.93741666667,
+ "mean_per_chain_lp__": [
+  38212.23095,
+  38225.69629,
+  38165.68262,
+  37985.17985,
+  37965.89738
+ ],
+ "rhat_K": 1.6103754321998467,
+ "ess_bulk_K": 8.70998382327031,
+ "mean_K": 0.39096293212566663,
+ "mean_per_chain_K": [
+  0.59685,
+  0.59752,
+  0.31104,
+  0.23287,
+  0.21653
+ ],
+ "rhat_amp": 2.5203242272210824,
+ "ess_bulk_amp": 6.144203262595751,
+ "mean_amp": 0.05001442076466666,
+ "mean_per_chain_amp": [
+  0.05012,
+  0.04932,
+  0.05062,
+  0.04946,
+  0.05056
+ ],
+ "rhat_eps": 1.0893316149801455,
+ "ess_bulk_eps": 44.05663897038604,
+ "mean_eps": 0.13877092518666667,
+ "mean_per_chain_eps": [
+  0.13858,
+  0.13849,
+  0.13872,
+  0.13907,
+  0.139
+ ],
+ "EZ": "Right-Amygdala",
+ "EZ_rhat": 1.1920038339899819,
+ "EZ_ess_bulk": 18.98957934351427,
+ "EZ_rank_pooled_mean": 1,
+ "EZ_x0_mean": -1.5102873567333333,
+ "EZ_x0_sd": 0.04337290213099789,
+ "EZ_rank_per_chain": [
+  1,
+  1,
+  2,
+  2,
+  2
+ ],
+ "EZ_x0_mean_per_chain": [
+  -1.496,
+  -1.481,
+  -1.539,
+  -1.506,
+  -1.53
+ ],
+ "EZ_P_rank1": 0.2886666666666667,
+ "EZ_P_gt_thr": 1.0,
+ "regions_P_gt_thr_above_0_5": [
+  {
+   "region": "Right-Insula-gyri-longi",
+   "P": 1.0,
+   "mean": -1.6341
+  },
+  {
+   "region": "Right-Insula-gyri-brevi",
+   "P": 1.0,
+   "mean": -1.9515
+  },
+  {
+   "region": "Right-Amygdala",
+   "P": 1.0,
+   "mean": -1.5103
+  },
+  {
+   "region": "Right-Rhinal-cortex",
+   "P": 1.0,
+   "mean": -1.7285
+  },
+  {
+   "region": "Right-Hippocampus-anterior",
+   "P": 1.0,
+   "mean": -1.6404
+  },
+  {
+   "region": "Right-F1-mesial-prefrontal",
+   "P": 0.8887,
+   "mean": -1.9574
+  }
+ ],
+ "false_positives_excl_EZ_PZ": [
+  "Right-Insula-gyri-longi",
+  "Right-Insula-gyri-brevi",
+  "Right-F1-mesial-prefrontal"
+ ],
+ "false_positives_excl_EZ_only": [
+  "Right-Insula-gyri-longi",
+  "Right-Insula-gyri-brevi",
+  "Right-Rhinal-cortex",
+  "Right-Hippocampus-anterior",
+  "Right-F1-mesial-prefrontal"
+ ],
+ "top10_pooled_mean": [
+  [
+   "Right-Amygdala",
+   -1.51,
+   1.192
+  ],
+  [
+   "Right-Insula-gyri-longi",
+   -1.634,
+   1.119
+  ],
+  [
+   "Right-Hippocampus-anterior",
+   -1.64,
+   1.143
+  ],
+  [
+   "Right-Rhinal-cortex",
+   -1.729,
+   1.322
+  ],
+  [
+   "Left-Gyrus-rectus",
+   -1.924,
+   1.7
+  ],
+  [
+   "Right-Insula-gyri-brevi",
+   -1.952,
+   1.619
+  ],
+  [
+   "Right-F1-mesial-prefrontal",
+   -1.957,
+   1.955
+  ],
+  [
+   "Left-F3-Pars-Orbitalis",
+   -2.481,
+   1.076
+  ],
+  [
+   "Left-T1-planum-polare",
+   -2.515,
+   1.639
+  ],
+  [
+   "Right-Subcallosal-area",
+   -2.524,
+   1.689
+  ]
+ ],
+ "top5_per_chain": [
+  [
+   "Right-Amygdala",
+   "Right-Putamen",
+   "Right-Insula-gyri-longi",
+   "Right-Hippocampus-anterior",
+   "Right-Rhinal-cortex"
+  ],
+  [
+   "Right-Amygdala",
+   "Right-Putamen",
+   "Right-Insula-gyri-longi",
+   "Right-Hippocampus-anterior",
+   "Right-Rhinal-cortex"
+  ],
+  [
+   "Right-T1-lateral-anterior",
+   "Right-Amygdala",
+   "Right-Hippocampus-anterior",
+   "Right-Insula-gyri-longi",
+   "Right-Rhinal-cortex"
+  ],
+  [
+   "Left-Gyrus-rectus",
+   "Right-Amygdala",
+   "Right-Insula-gyri-longi",
+   "Right-Hippocampus-anterior",
+   "Right-Subcallosal-area"
+  ],
+  [
+   "Left-Gyrus-rectus",
+   "Right-Amygdala",
+   "Right-Insula-gyri-longi",
+   "Right-Hippocampus-anterior",
+   "Right-Subcallosal-area"
+  ]
+ ],
+ "n_regions_P_gt_thr_gt_0_5_per_chain": [
+  7,
+  10,
+  8,
+  10,
+  8
+ ],
+ "PZ": [
+  {
+   "region": "Right-Hippocampus-anterior",
+   "mean": -1.6403650006000001,
+   "rank": 3,
+   "P_gt_thr": 1.0
+  },
+  {
+   "region": "Right-Rhinal-cortex",
+   "mean": -1.7285223522666666,
+   "rank": 4,
+   "P_gt_thr": 1.0
+  }
+ ]
+}

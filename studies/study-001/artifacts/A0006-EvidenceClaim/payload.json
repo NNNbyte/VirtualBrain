@@ -1,0 +1,56 @@
+{
+  "claim": "In the FDA-mandated prospective RNS post-approval study (324 implanted, 271 with 3-year follow-up), median seizure reduction was 82% at 3 years; 41% had >=90% reduction and 22.0% had >=12 months seizure freedom.",
+  "intervention_modality": "RNS",
+  "bibliographic_record": {
+    "authors": "Eliashiv D, Rao VR, Jobst BC, Szaflarski JP, Rolston JD, Kaye LC, Ganguly TM, Bullinger K, Dugan PC, Burdette DE, Peters AY, Sheikh A, Haas KF, Nair DR, Mnatsakanyan L, Quraishi IH, Bensalem-Owen MK, RNS System PAS Study, Doherty MJ, Razavi B, Fisher TL, Skidmore C, Modur PN, Constantino TM, Salanova V, Cole AJ, Taraschenko O, Rivera-Cruz A, Wheless JW, Tandon N, Balabanov A, Aboumatar S, Fried I, Drees C, Shin HW, Jaisani Z, MacIver SE, Patra SE, Chang EF, Willie JT, Gwinn R, Stoub T, Stern JM, Crabtree T, Seale CG, McFadden SC, Norman JF, Johnson L, Morrell MJ.",
+    "title": "Postapproval Study for Brain-Responsive Neurostimulation for Drug-Resistant Focal Epilepsy: Three-Year Efficacy and Interim Safety Results.",
+    "journal": "Neurology",
+    "year": "2026",
+    "volume": "106",
+    "issue": "9",
+    "pages": "e214875",
+    "doi": "10.1212/wnl.0000000000214875",
+    "pmid": "42030518",
+    "pmcid": "PMC13112409",
+    "source_record_url": "https://europepmc.org/article/MED/42030518",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42030518/"
+  },
+  "supporting_passage": "Across 32 US epilepsy centers, 324 patients (mean age 37.1, 59.6% female individuals) were implanted and 271 completed 3 years of follow-up. [...] The median percent reduction in seizure frequency at 6 months was 62% and 82% at 3 years (p < 0.0001; Wilcoxon signed-rank test); 41% had a ≥90% reduction in seizure frequency at 3 years, 42.5% of participants had at least 1 seizure-free period of 6 months or more, and 22.0% experienced seizure freedom for 12 months or more.",
+  "supporting_passages": [
+    "Across 32 US epilepsy centers, 324 patients (mean age 37.1, 59.6% female individuals) were implanted and 271 completed 3 years of follow-up.",
+    "The median percent reduction in seizure frequency at 6 months was 62% and 82% at 3 years (p < 0.0001; Wilcoxon signed-rank test); 41% had a ≥90% reduction in seizure frequency at 3 years, 42.5% of participants had at least 1 seizure-free period of 6 months or more, and 22.0% experienced seizure freedom for 12 months or more."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 42030518, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "324 implanted; 271 completed 3 years",
+    "design": "prospective open-label post-approval study (NCT02403843), Class IV",
+    "population": "adults meeting RNS approved indication (refractory focal-onset seizures)",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "median % reduction in seizure frequency (primary, at 3 years); >=90% reduction; seizure-free periods",
+    "timepoint": "6 months and 3 years",
+    "median_pct_reduction": {
+      "6_months": 62,
+      "36_months": 82
+    },
+    "responder_rate_50pct": "not_reported (in abstract)",
+    "seizure_freedom": "22.0% had seizure freedom for >=12 months; 42.5% had >=6-month seizure-free period",
+    "follow_up_months_reported": 36
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer improvements may reflect changes in programming practice.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Higher than RCT/LTT at comparable time (53% at 2 y in Heck 2014); authors note similarity to Razavi 2020 retrospective real-world data.",
+    "SUDEP rate in abstract pools all RNS trials (n=645) including the pivotal/LTT family - not an independent estimate."
+  ],
+  "study_family_id": "fam-RNS-PostApproval-NCT02403843"
+}

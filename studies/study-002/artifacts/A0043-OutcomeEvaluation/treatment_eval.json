@@ -1,0 +1,940 @@
+{
+ "true_samples": [
+  "TRUE-A-full-params",
+  "TRUE-B-x0-only"
+ ],
+ "true_baselines": {
+  "TRUE-A-full-params": {
+   "n_seizing_regions": 0,
+   "seizing_regions": [],
+   "total_seizure_duration_s": 0.0,
+   "n_seeg_channels_exceeding": 4
+  },
+  "TRUE-B-x0-only": {
+   "n_seizing_regions": 0,
+   "seizing_regions": [],
+   "total_seizure_duration_s": 0.0,
+   "n_seeg_channels_exceeding": 8
+  }
+ },
+ "oracle": {
+  "TRUE-A-full-params": {
+   "ORACLE:true-EZ/ablation": [
+    0,
+    0.0,
+    0
+   ],
+   "ORACLE:true-EZ/disconnection": [
+    0,
+    0.0,
+    0
+   ]
+  },
+  "TRUE-B-x0-only": {
+   "ORACLE:true-EZ/ablation": [
+    0,
+    0.0,
+    0
+   ],
+   "ORACLE:true-EZ/disconnection": [
+    0,
+    0.0,
+    0
+   ]
+  }
+ },
+ "windows": {
+  "full": {
+   "r4_predicted": {
+    "RES-1/ablation": [
+     -1.0,
+     -2.25
+    ],
+    "RES-1/disconnection": [
+     0.0,
+     -0.3739999999999988
+    ],
+    "RES-EZ/ablation": [
+     -2.5,
+     -13.472000000000001
+    ],
+    "RES-EZ/disconnection": [
+     -1.0,
+     -4.997999999999998
+    ],
+    "RES-EZ+PZ/ablation": [
+     -3.0,
+     -17.471999999999998
+    ],
+    "RES-EZ+PZ/disconnection": [
+     -1.0,
+     -5.5319999999999965
+    ],
+    "STIM-PT/amp0.5": [
+     0.0,
+     0.597999999999999
+    ],
+    "STIM-PT/amp1": [
+     0.0,
+     0.5440000000000005
+    ],
+    "STIM-PT/amp2": [
+     0.0,
+     -0.6419999999999986
+    ],
+    "STIM-PT/amp4": [
+     0.0,
+     -17.238
+    ],
+    "STIM-PT-chronic/amp0.5": [
+     0.0,
+     3.9000000000000004
+    ],
+    "STIM-PT-chronic/amp1": [
+     0.0,
+     4.846
+    ],
+    "STIM-PT-chronic/amp2": [
+     0.0,
+     -10.644000000000002
+    ],
+    "STIM-PT-chronic/amp4": [
+     0.0,
+     -17.464000000000002
+    ],
+    "STIM-1/amp0.5": [
+     -0.5,
+     -3.137999999999998
+    ],
+    "STIM-1/amp1": [
+     -1.0,
+     -5.081999999999999
+    ],
+    "STIM-1/amp2": [
+     -1.0,
+     -5.7559999999999985
+    ],
+    "STIM-2/amp1": [
+     -0.5,
+     -5.072000000000001
+    ]
+   },
+   "r4_ranking": [
+    "RES-EZ+PZ/ablation",
+    "RES-EZ/ablation",
+    "STIM-1/amp2",
+    "RES-EZ+PZ/disconnection",
+    "STIM-1/amp1",
+    "RES-EZ/disconnection",
+    "RES-1/ablation",
+    "STIM-2/amp1",
+    "STIM-1/amp0.5",
+    "STIM-PT-chronic/amp4",
+    "STIM-PT/amp4",
+    "STIM-PT-chronic/amp2",
+    "STIM-PT/amp2",
+    "RES-1/disconnection",
+    "STIM-PT/amp1",
+    "STIM-PT/amp0.5",
+    "STIM-PT-chronic/amp0.5",
+    "STIM-PT-chronic/amp1"
+   ],
+   "per_true_variant": {
+    "TRUE-A-full-params": {
+     "true_effects": {
+      "RES-1/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-1/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-PT/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 3
+      },
+      "STIM-PT/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 8
+      },
+      "STIM-PT/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 20
+      },
+      "STIM-PT/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 44
+      },
+      "STIM-PT-chronic/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 3
+      },
+      "STIM-PT-chronic/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 9
+      },
+      "STIM-PT-chronic/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 20
+      },
+      "STIM-PT-chronic/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 47
+      },
+      "STIM-1/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-2/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      }
+     },
+     "true_ranking": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "n_distinct_true_effects": 1,
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "spearman_bootstrap_over_R4_samples": "undefined (constant ranks)",
+     "r4_top": "RES-EZ+PZ/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.5,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.05555555555555555,
+      "tol_s": 0.5
+     },
+     "pulse_train_induced": {
+      "STIM-PT/amp0.5": 0,
+      "STIM-PT/amp1": 0,
+      "STIM-PT/amp2": 0,
+      "STIM-PT/amp4": 0,
+      "STIM-PT-chronic/amp0.5": 0,
+      "STIM-PT-chronic/amp1": 0,
+      "STIM-PT-chronic/amp2": 0,
+      "STIM-PT-chronic/amp4": 0
+     }
+    },
+    "TRUE-B-x0-only": {
+     "true_effects": {
+      "RES-1/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-1/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-PT/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 9
+      },
+      "STIM-PT/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 23
+      },
+      "STIM-PT/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 43
+      },
+      "STIM-PT/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 106
+      },
+      "STIM-PT-chronic/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 11
+      },
+      "STIM-PT-chronic/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 24
+      },
+      "STIM-PT-chronic/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 73
+      },
+      "STIM-PT-chronic/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 166
+      },
+      "STIM-1/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 3
+      },
+      "STIM-2/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      }
+     },
+     "true_ranking": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "n_distinct_true_effects": 1,
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "spearman_bootstrap_over_R4_samples": "undefined (constant ranks)",
+     "r4_top": "RES-EZ+PZ/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.5,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.05555555555555555,
+      "tol_s": 0.5
+     },
+     "pulse_train_induced": {
+      "STIM-PT/amp0.5": 0,
+      "STIM-PT/amp1": 0,
+      "STIM-PT/amp2": 0,
+      "STIM-PT/amp4": 0,
+      "STIM-PT-chronic/amp0.5": 0,
+      "STIM-PT-chronic/amp1": 0,
+      "STIM-PT-chronic/amp2": 0,
+      "STIM-PT-chronic/amp4": 0
+     }
+    }
+   }
+  },
+  "post": {
+   "r4_predicted": {
+    "RES-1/ablation": [
+     0.0,
+     0.0
+    ],
+    "RES-1/disconnection": [
+     0.0,
+     0.0
+    ],
+    "RES-EZ/ablation": [
+     0.0,
+     0.0
+    ],
+    "RES-EZ/disconnection": [
+     0.0,
+     0.0
+    ],
+    "RES-EZ+PZ/ablation": [
+     0.0,
+     0.0
+    ],
+    "RES-EZ+PZ/disconnection": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT/amp0.5": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT/amp1": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT/amp2": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT/amp4": [
+     1.0,
+     2.256
+    ],
+    "STIM-PT-chronic/amp0.5": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT-chronic/amp1": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT-chronic/amp2": [
+     0.0,
+     0.0
+    ],
+    "STIM-PT-chronic/amp4": [
+     1.0,
+     1.704
+    ],
+    "STIM-1/amp0.5": [
+     0.0,
+     0.0
+    ],
+    "STIM-1/amp1": [
+     0.0,
+     0.0
+    ],
+    "STIM-1/amp2": [
+     0.0,
+     0.0
+    ],
+    "STIM-2/amp1": [
+     0.0,
+     0.0
+    ]
+   },
+   "r4_ranking": [
+    "RES-1/ablation",
+    "RES-1/disconnection",
+    "RES-EZ/ablation",
+    "RES-EZ/disconnection",
+    "RES-EZ+PZ/ablation",
+    "RES-EZ+PZ/disconnection",
+    "STIM-PT/amp0.5",
+    "STIM-PT/amp1",
+    "STIM-PT/amp2",
+    "STIM-PT-chronic/amp0.5",
+    "STIM-PT-chronic/amp1",
+    "STIM-PT-chronic/amp2",
+    "STIM-1/amp0.5",
+    "STIM-1/amp1",
+    "STIM-1/amp2",
+    "STIM-2/amp1",
+    "STIM-PT-chronic/amp4",
+    "STIM-PT/amp4"
+   ],
+   "per_true_variant": {
+    "TRUE-A-full-params": {
+     "true_effects": {
+      "RES-1/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-1/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-PT/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 3
+      },
+      "STIM-PT/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 8
+      },
+      "STIM-PT/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 20
+      },
+      "STIM-PT/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 44
+      },
+      "STIM-PT-chronic/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 3
+      },
+      "STIM-PT-chronic/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 9
+      },
+      "STIM-PT-chronic/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 20
+      },
+      "STIM-PT-chronic/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 47
+      },
+      "STIM-1/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-2/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      }
+     },
+     "true_ranking": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "n_distinct_true_effects": 1,
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "spearman_bootstrap_over_R4_samples": "undefined (constant ranks)",
+     "r4_top": "RES-1/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.8888888888888888,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.8888888888888888,
+      "tol_s": 0.5
+     },
+     "pulse_train_induced": {
+      "STIM-PT/amp0.5": 0,
+      "STIM-PT/amp1": 0,
+      "STIM-PT/amp2": 0,
+      "STIM-PT/amp4": 0,
+      "STIM-PT-chronic/amp0.5": 0,
+      "STIM-PT-chronic/amp1": 0,
+      "STIM-PT-chronic/amp2": 0,
+      "STIM-PT-chronic/amp4": 0
+     }
+    },
+    "TRUE-B-x0-only": {
+     "true_effects": {
+      "RES-1/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-1/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/ablation": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "RES-EZ+PZ/disconnection": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-PT/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 9
+      },
+      "STIM-PT/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 23
+      },
+      "STIM-PT/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 43
+      },
+      "STIM-PT/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 106
+      },
+      "STIM-PT-chronic/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 11
+      },
+      "STIM-PT-chronic/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 24
+      },
+      "STIM-PT-chronic/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 73
+      },
+      "STIM-PT-chronic/amp4": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 166
+      },
+      "STIM-1/amp0.5": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      },
+      "STIM-1/amp2": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 3
+      },
+      "STIM-2/amp1": {
+       "d_n_seizing_regions": 0,
+       "d_total_seizure_duration_s": 0.0,
+       "d_n_seeg_channels_exceeding": 0
+      }
+     },
+     "true_ranking": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "n_distinct_true_effects": 1,
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "spearman_bootstrap_over_R4_samples": "undefined (constant ranks)",
+     "r4_top": "RES-1/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.8888888888888888,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.8888888888888888,
+      "tol_s": 0.5
+     },
+     "pulse_train_induced": {
+      "STIM-PT/amp0.5": 0,
+      "STIM-PT/amp1": 0,
+      "STIM-PT/amp2": 0,
+      "STIM-PT/amp4": 0,
+      "STIM-PT-chronic/amp0.5": 0,
+      "STIM-PT-chronic/amp1": 0,
+      "STIM-PT-chronic/amp2": 0,
+      "STIM-PT-chronic/amp4": 0
+     }
+    }
+   }
+  }
+ }
+}

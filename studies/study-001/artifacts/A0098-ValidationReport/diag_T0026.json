@@ -1,0 +1,268 @@
+{
+ "label": "T0026",
+ "files": [
+  "studies/study-001/work/T0026/out/nuts/chain1.csv",
+  "studies/study-001/work/T0026/out/nuts/chain2.csv",
+  "studies/study-001/work/T0026/out/nuts/chain3.csv",
+  "studies/study-001/work/T0026/out/nuts/chain4.csv",
+  "studies/study-001/work/T0026/out/nuts/chain5.csv",
+  "studies/study-001/work/T0026/out/nuts/chain6.csv",
+  "studies/study-001/work/T0026/out/nuts/chain7.csv",
+  "studies/study-001/work/T0026/out/nuts/chain8.csv"
+ ],
+ "n_chains": 8,
+ "draws_per_chain": 75,
+ "max_depth_cfg": [
+  7,
+  7,
+  7,
+  7,
+  7,
+  7,
+  7,
+  7
+ ],
+ "divergences_per_chain": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  8,
+  0,
+  0
+ ],
+ "treedepth_mean": 6.966666666666667,
+ "n_at_max_depth": 592,
+ "stepsize_per_chain": [
+  0.0013816222,
+  0.0014049775,
+  0.0010595007,
+  0.0012135082,
+  0.0003805084,
+  0.00056552097,
+  0.0012316012,
+  0.0014063917
+ ],
+ "accept_stat_mean": 0.9508120239916668,
+ "lp_mean_per_chain": [
+  24492.76,
+  24502.31,
+  24193.49,
+  24158.58,
+  24206.97,
+  24199.09,
+  23978.96,
+  23971.09
+ ],
+ "x0_rhat_max": 4.241096811004616,
+ "x0_rhat_median": 2.777444830305391,
+ "x0_n_rhat_gt_1_05": 162,
+ "x0_n_rhat_gt_1_01": 162,
+ "x0_ess_bulk_min": 9.238840707187004,
+ "x0_ess_bulk_median": 10.065142554545174,
+ "x0_ess_tail_min": 10.8057948376112,
+ "rhat_lp__": 3.534279825037544,
+ "ess_bulk_lp__": 9.48874841291153,
+ "mean_lp__": 24212.906563333334,
+ "mean_per_chain_lp__": [
+  24492.75836,
+  24502.3132,
+  24193.48831,
+  24158.58244,
+  24206.96933,
+  24199.08527,
+  23978.96419,
+  23971.09141
+ ],
+ "rhat_K": 2.8432303804298797,
+ "ess_bulk_K": 10.046645349669454,
+ "mean_K": 0.904733061393899,
+ "mean_per_chain_K": [
+  0.0,
+  0.0,
+  1.87513,
+  1.90907,
+  0.00171,
+  0.00106,
+  1.74151,
+  1.70938
+ ],
+ "rhat_amp": 2.745107103669864,
+ "ess_bulk_amp": 10.06286926912669,
+ "mean_amp": 0.0050000008455,
+ "mean_per_chain_amp": [
+  0.005,
+  0.005,
+  0.005,
+  0.005,
+  0.005,
+  0.005,
+  0.005,
+  0.005
+ ],
+ "rhat_eps": 1.8161245657466438,
+ "ess_bulk_eps": 12.676650221220537,
+ "mean_eps": 0.085660735875,
+ "mean_per_chain_eps": [
+  0.08402,
+  0.08391,
+  0.08579,
+  0.08585,
+  0.08625,
+  0.08633,
+  0.08655,
+  0.08658
+ ],
+ "EZ": "Left-O2",
+ "EZ_rhat": 2.504928069711747,
+ "EZ_ess_bulk": 10.4045130640326,
+ "EZ_rank_pooled_mean": 113,
+ "EZ_x0_mean": -3.0959082258333335,
+ "EZ_x0_sd": 1.0218433676724838,
+ "EZ_rank_per_chain": [
+  4,
+  4,
+  157,
+  149,
+  154,
+  154,
+  157,
+  159
+ ],
+ "EZ_x0_mean_per_chain": [
+  -1.339,
+  -1.338,
+  -3.74,
+  -3.552,
+  -3.544,
+  -3.588,
+  -3.826,
+  -3.84
+ ],
+ "EZ_P_rank1": 0.0,
+ "EZ_P_gt_thr": 0.25,
+ "regions_P_gt_thr_above_0_5": [],
+ "false_positives_excl_EZ_PZ": [],
+ "false_positives_excl_EZ_only": [],
+ "top10_pooled_mean": [
+  [
+   "Left-T3-posterior",
+   -2.25,
+   3.055
+  ],
+  [
+   "Left-F3-pars-opercularis",
+   -2.313,
+   2.684
+  ],
+  [
+   "Left-Caudate-nucleus",
+   -2.352,
+   2.599
+  ],
+  [
+   "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+   -2.466,
+   3.135
+  ],
+  [
+   "Left-SMA",
+   -2.581,
+   2.611
+  ],
+  [
+   "Left-Precuneus",
+   -2.589,
+   3.1
+  ],
+  [
+   "Left-Occipito-temporal-sulcus",
+   -2.597,
+   3.275
+  ],
+  [
+   "Right-Supramarginal-anterior",
+   -2.613,
+   2.665
+  ],
+  [
+   "Left-Postcentral-sulcus",
+   -2.654,
+   2.621
+  ],
+  [
+   "Right-Anterior-cingulate-cortex",
+   -2.659,
+   3.132
+  ]
+ ],
+ "top5_per_chain": [
+  [
+   "Left-Precuneus",
+   "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+   "Left-T2-posterior",
+   "Left-O2",
+   "Right-T2-anterior"
+  ],
+  [
+   "Left-Precuneus",
+   "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+   "Left-T2-posterior",
+   "Left-O2",
+   "Left-Rhinal-cortex"
+  ],
+  [
+   "Left-Superior-parietal-lobule-P1",
+   "Left-O3",
+   "Left-Supramarginal-posterior",
+   "Right-Occipito-temporal-sulcus",
+   "Left-Lingual-sulcus"
+  ],
+  [
+   "Left-Superior-parietal-lobule-P1",
+   "Left-O3",
+   "Left-Supramarginal-posterior",
+   "Left-Putamen",
+   "Right-Thalamus"
+  ],
+  [
+   "Left-STS-posterior",
+   "Left-Cerebellar-cortex",
+   "Left-Paracentral-lobule",
+   "Right-Anterior-cingulate-cortex",
+   "Right-T2-posterior"
+  ],
+  [
+   "Left-STS-posterior",
+   "Left-Cerebellar-cortex",
+   "Right-T2-posterior",
+   "Left-STS-anterior",
+   "Left-Paracentral-lobule"
+  ],
+  [
+   "Left-T3-posterior",
+   "Left-T2-anterior",
+   "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+   "Left-T1-lateral-posterior",
+   "Left-Cuneus"
+  ],
+  [
+   "Left-T3-posterior",
+   "Left-T2-anterior",
+   "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+   "Left-Cuneus",
+   "Left-T1-lateral-posterior"
+  ]
+ ],
+ "n_regions_P_gt_thr_gt_0_5_per_chain": [
+  16,
+  16,
+  14,
+  15,
+  7,
+  6,
+  15,
+  15
+ ]
+}

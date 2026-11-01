@@ -1,0 +1,58 @@
+{
+  "artifact_id": "A0048-DecisionBundle",
+  "schema_name": "DecisionBundle",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0024",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "LEAD-study-lead",
+  "tool_id": null,
+  "tool_version": null,
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0002-DatasetCard",
+    "A0006-MethodCard",
+    "A0009-PatientCase",
+    "A0011-CohortSplit",
+    "A0012-Report",
+    "A0013-ValidationReport",
+    "A0015-Report",
+    "A0034-InterventionScenarioSet",
+    "A0035-SimulationRequest",
+    "A0041-SimulationComparison",
+    "A0042-ValidationReport",
+    "A0043-OutcomeEvaluation",
+    "A0044-ValidationReport",
+    "A0047-ReviewDecision"
+  ],
+  "input_manifest_hash": "953f4d176516add98dcd33e3bcc7d929bdb91f5a6808505e4e13ac336b40c617",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0048-DecisionBundle/payload.json",
+      "media_type": "application/json",
+      "sha256": "0f80237022caf05f4893b69b6b63867aadc729b4b415e722fcf63b15be57e0c2",
+      "byte_size": 5933
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T17:18:12+00:00",
+  "supersedes_id": "A0045-DecisionBundle",
+  "title": "Study-002 DecisionBundle rev 1",
+  "manifest_hash": "8b00e1a886ab606b355122d6f3bbfaa496480758bbd3702f225c67513fd53783"
+}

@@ -1,0 +1,548 @@
+{
+ "dataset_id": "Wang2025-VBT_INS_Stimulation dataSim reproduction benchmark (repo data/dataSim @5367ef4)",
+ "study_family_id": "fam-aphm-marseille-vbt",
+ "study_family_note": "same family id as A0042; A0037 labels the same group 'VEP-INS-Marseille-LaTimone'. Same 2 La Timone patients as the paper; not independent of A0037/A0042.",
+ "source_doi": "10.1038/s43588-025-00841-6",
+ "repository_url": "https://github.com/HuifangWang/VBT_INS_Stimulation/tree/5367ef4afb976271ecc6297b70a95dd3d944af61/data/dataSim",
+ "commit_sha": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+ "commit_verified": "GitHub API /repos/HuifangWang/VBT_INS_Stimulation/commits: default-branch HEAD = 5367ef4afb976271ecc6297b70a95dd3d944af61, 2025-11-11T12:56:56Z 'Cleanup empty vep directory' (checked 2026-11-01); recursive git tree at this sha listed (not truncated).",
+ "reported_subject_count": "2 patients in the paper (P1 left occipital, Engel II; P2 left frontal, Engel I; per A0037); repo folders Patient1 and Patient2",
+ "data_access": "verified_present: public; downloaded from raw.githubusercontent.com at the pinned sha (HTTP 200 for all 8; git blob sha1 of each download equals its tree entry, so these are real files, not LFS pointers). Downloaded under user approval (task parameter user_approved_download). Code Ocean capsules NOT accessed; raw patient SEEG not public and not requested.",
+ "licence": "Apache-2.0 (repo LICENSE at pinned sha; README states no separate data licence or terms). Caveat: the paper's Code Ocean capsules carry GPL (code) + CC BY-NC(-ND) 4.0 (data) per DataCite (recorded in A0037); overlap between capsule data and these files is not verified.",
+ "approx_total_size_mb": 16.95,
+ "verified_subject_count": 2,
+ "verified_modalities": [
+  "simulated SEEG bipolar sensor time series (P1: 163 ch, P2: 191 ch)",
+  "simulated scalp-EEG sensor time series (128 ch)",
+  "region-level structural connectome SC 162x162 (VEP atlas; scaled 0-1, symmetric, zero diagonal; identical across a patient's 4 files, differs between patients)",
+  "region-to-sensor gain matrices (SEEG: 163/191 x 162; EEG: 128 x 162)"
+ ],
+ "verified_modalities_note": "No observed (recorded) patient SEEG/EEG, no imaging volumes, no electrode coordinates, no posterior samples. Signal values are in model units (not uV; units not stated). time_steps unit not stated in files; inferred ms from the TVB monitor period (10 ms) in the simulation notebooks: step 10 for P1 SEEG/TI-SEEG and P2 TI files, 8 for P2 SEEG-stim files, P1_TI_EEG uses integer sample indices.",
+ "evidence_kind_of_contents": "simulated_result. The time series are outputs of the authors' high-resolution TVB neural-field Epileptor-Stimulation simulations of stimulation-induced seizures, projected to sensors; notebooks stimulation_plot_time_series_P1_TI.ipynb and stimulation_plot_time_series_sensor_P2_EEG.ipynb describe them as the simulated data for Patient 1 / Patient 2. They are the INPUT observations to the Bayesian inversion, NOT fitted estimates and NOT observed clinical recordings or outcomes. SC and gain are processed, patient-derived structural inputs.",
+ "intervention_linkage": "Stimulation modality modelled only: SEEG bipolar pulse-train stimulation (Sim_SEEG_nf.ipynb example 50 Hz, 3 mA) and temporal-interference stimulation (Sim_TI_nf.ipynb, TI envelope from SimNIBS fields, example I=0.3). Purpose: EZN estimation from stimulation-induced seizures. No therapeutic stimulation outcome; no patient outcome linkage.",
+ "follow_up_definition": "not_applicable",
+ "eligibility": "reproduction benchmark for R3 model qualification; not a validation cohort",
+ "files": [
+  {
+   "path": "data/dataSim/Patient1/P1_SEEG_EEG_fit.npz",
+   "sha256": "cccc62b702c86d1d82b1ff6b9ba3aec7702567dfe350507a3ed324f7245414fc",
+   "bytes": 1927126,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      5.0,
+      14995.0
+     ]
+    },
+    "seeg": {
+     "shape": [
+      128,
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      -17049.922447,
+      29521.651984
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      128,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      -1.0,
+      0.416988
+     ]
+    },
+    "ch_names": {
+     "shape": [
+      128
+     ],
+     "dtype": "<U4",
+     "first_last": [
+      "E1",
+      "E128"
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P1, SEEG bipolar stimulation scenario, scalp-EEG observation (128 channels E1-E128; NOTE data key is named 'seeg' although it holds EEG)",
+   "attached_as": "P1_SEEG_EEG_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz",
+   "sha256": "2e9251922f98a538203a8ac17e8261f940bfe70ad33a71a5639543a84409b8bf",
+   "bytes": 2396306,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      5.0,
+      14995.0
+     ]
+    },
+    "seeg": {
+     "shape": [
+      163,
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      -4.138086,
+      1.906682
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      163,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      30.368319
+     ]
+    },
+    "ch_names": {
+     "shape": [
+      163
+     ],
+     "dtype": "<U9",
+     "first_last": [
+      "TB'1-2",
+      "PP'12-13"
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P1, SEEG bipolar stimulation scenario, SEEG observation (163 bipolar channels)",
+   "attached_as": "P1_SEEG_SEEG_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient1/P1_TI_EEG_fit.npz",
+   "sha256": "de8094ebf9b2b84a5cac15fffb1c408e90243c4594ea6020dabd6220d6eb65a2",
+   "bytes": 2185126,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      1750
+     ],
+     "dtype": "int64",
+     "range": [
+      0.0,
+      1749.0
+     ]
+    },
+    "seeg": {
+     "shape": [
+      128,
+      1750
+     ],
+     "dtype": "float64",
+     "range": [
+      -55164.585051,
+      58999.133246
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      128,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      -1.0,
+      0.416988
+     ]
+    },
+    "ch_names": {
+     "shape": [
+      128
+     ],
+     "dtype": "<U4",
+     "first_last": [
+      "E1",
+      "E128"
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P1, temporal-interference (TI) stimulation scenario, scalp-EEG observation (128 ch; key 'seeg'; time_steps are integer sample indices 0..1749, plotting notebook multiplies by 10 to get ms)",
+   "attached_as": "P1_TI_EEG_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient1/P1_TI_SEEG_fit.npz",
+   "sha256": "9ecfc067a87729690be6bcdc9df2e300588502dcd46ec628898c8c8a756efd55",
+   "bytes": 2593106,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      1650
+     ],
+     "dtype": "float64",
+     "range": [
+      10.0,
+      16500.0
+     ]
+    },
+    "seeg": {
+     "shape": [
+      163,
+      1650
+     ],
+     "dtype": "float64",
+     "range": [
+      -4.142343,
+      3.17753
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      163,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      30.368319
+     ]
+    },
+    "ch_names": {
+     "shape": [
+      163
+     ],
+     "dtype": "<U9",
+     "first_last": [
+      "TB'1-2",
+      "PP'12-13"
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P1, TI stimulation scenario, SEEG observation (163 bipolar channels); default input of examples/run_samplings_mcmc.ipynb",
+   "attached_as": "P1_TI_SEEG_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient2/P2_SEEG_EEG_fit.npz",
+   "sha256": "408a85607fe4daa7ddcd0f2a344be51337fd28c29cded881a800affbfa213992",
+   "bytes": 1924828,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      8.0,
+      12000.0
+     ]
+    },
+    "eeg": {
+     "shape": [
+      128,
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      -61544.865631,
+      89890.051262
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      128,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P2, SEEG stimulation scenario, scalp-EEG observation (key 'eeg', 128 ch, no ch_names); used with P2_SEEG_ts_fit in examples/run_samplings-mm_inference.ipynb (multimodal SEEG+EEG)",
+   "attached_as": "P2_SEEG_EEG_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+   "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+   "bytes": 2768838,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      8.0,
+      12000.0
+     ]
+    },
+    "seeg": {
+     "shape": [
+      191,
+      1500
+     ],
+     "dtype": "float64",
+     "range": [
+      -6.020027,
+      5.38132
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      191,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      88.245
+     ]
+    },
+    "ch_names": {
+     "shape": [
+      191
+     ],
+     "dtype": "<U8",
+     "first_last": [
+      "TP1-2",
+      "CC'14-15"
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P2, SEEG stimulation scenario, SEEG observation (191 bipolar channels)",
+   "attached_as": "P2_SEEG_ts_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient2/P2_TI_EEG_fit.npz",
+   "sha256": "677d82bb1011dc8dbf7b2f3be7453258db2fa889593da604c822c7b9411a0d01",
+   "bytes": 1305628,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      900
+     ],
+     "dtype": "float64",
+     "range": [
+      10.0,
+      9000.0
+     ]
+    },
+    "eeg": {
+     "shape": [
+      128,
+      900
+     ],
+     "dtype": "float64",
+     "range": [
+      -69945.056804,
+      106025.916884
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      128,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P2, TI stimulation scenario, scalp-EEG observation (key 'eeg', 128 ch, no ch_names)",
+   "attached_as": "P2_TI_EEG_fit.npz"
+  },
+  {
+   "path": "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz",
+   "sha256": "f019151118717f16f8dfa788d39bb0c7aae86fedf1ee87315b31ccd899aba4c9",
+   "bytes": 1847238,
+   "npz_keys": {
+    "time_steps": {
+     "shape": [
+      900
+     ],
+     "dtype": "float64",
+     "range": [
+      10.0,
+      9000.0
+     ]
+    },
+    "seeg": {
+     "shape": [
+      191,
+      900
+     ],
+     "dtype": "float64",
+     "range": [
+      -5.895517,
+      5.269717
+     ]
+    },
+    "SC": {
+     "shape": [
+      162,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      1.0
+     ]
+    },
+    "gain": {
+     "shape": [
+      191,
+      162
+     ],
+     "dtype": "float64",
+     "range": [
+      0.0,
+      88.245
+     ]
+    },
+    "ch_names": {
+     "shape": [
+      191
+     ],
+     "dtype": "<U8",
+     "first_last": [
+      "TP1-2",
+      "CC'14-15"
+     ]
+    }
+   },
+   "loaded_with": "numpy 2.1.0 np.load(allow_pickle=False): OK, no pickled objects",
+   "content": "P2, TI stimulation scenario, SEEG observation (191 bipolar channels)",
+   "attached_as": "P2_TI_SEEG_ts_fit.npz"
+  }
+ ],
+ "files_not_downloaded": [
+  {
+   "path": "data/VepMrtrixLut.txt",
+   "git_blob_sha1_prefix": "bfa199f232",
+   "bytes": 14501,
+   "note": "Region lookup table mapping the 162 SC/gain indices to VEP region names. Not in the task approved_scope (8 .npz only). The identical blob ships inside the package (vep_stim/core/util/data/VepMrtrixLut.txt, vep_stim/core/utils_py/VepMrtrixLut.txt), so it arrives with a pinned code install."
+  }
+ ],
+ "reproduction_inputs": {
+  "to_refit_from_these_files": [
+   "vep-stim package at 5367ef4 (vep_prepare_op.prepare_data_feature_op, vep_mcmc job builders, stan.rdump)",
+   "Stan models vep_stim/stan/vep_mcmc.stan (single modality) and vep_mm_mcmc.stan (SEEG+EEG multimodal); prebuilt binaries must be recompiled for local CmdStan (README pins Stan 2.21.0)",
+   "VepMrtrixLut.txt (in package) for region names",
+   "feature settings from examples/run_samplings_mcmc.ipynb: hpf=10, lpf=1, sfreq=250, n_samples=150; crop samples 100:700, sign flip and mean removal, pad 300/200 samples, additive N(0,0.2) noise (UNSEEDED), then log of envelope features",
+   "inference settings: 50 stan-optimize runs, best 8 as inits, 2 chains per init (16 chains), SVD of gain as 'eig'"
+  ],
+  "notebook_to_file_map": {
+   "examples/run_samplings_mcmc.ipynb": "Patient1/P1_TI_SEEG_fit.npz as committed; other single-modality files by changing basicfilename",
+   "examples/run_samplings-mm_inference.ipynb": "Patient2/P2_SEEG_ts_fit.npz + P2_SEEG_EEG_fit.npz",
+   "examples/stimulation_plot_time_series_P1_TI.ipynb": "P1_TI_EEG_fit.npz",
+   "examples/stimulation_plot_time_series_sensor_P2_EEG.ipynb": "P2_TI_EEG_fit.npz"
+  },
+  "to_regenerate_the_files_themselves": "examples/Sim_SEEG_nf.ipynb and Sim_TI_nf.ipynb need patient TVB data NOT in the repo (connectivity.vep.zip, Cortex_pial*.zip, Cortex_region_map*.txt, gain_*.npz, gain_region_map*.txt under /data/ana/vep/tvb; TI_2_fields_norm_downsampled.npz) plus tvb-library; the repo only has data/EMF/*.mgh fields and data/Patient{1,2}_{SEEG,TI}_stimulation.xlsx (not downloaded)."
+ },
+ "reference_outputs_available": "No numeric posterior samples or x0 estimates in the repo (notebook says HMC output is ~32 GB; sampling cells are commented out). Only PNG posterior plots embedded in notebook outputs (run_samplings_mcmc.ipynb cells 36/40, run_samplings-mm_inference.ipynb, plot_posterior_xv.ipynb) and the paper's figures. The ground-truth x0/EZ used to generate each file is not stored in the npz (example notebooks set EZ='Left-F1-lateral-prefrontal', x0 -2.2/-2.3, in a generic subject dir; per-file mapping not verified).",
+ "limitations": [
+  "Simulated sensor data, not observed patient recordings; cannot validate clinical EZ or outcomes.",
+  "n=2, same patients as the paper (one study family).",
+  "Comparison target is qualitative (paper figures / notebook PNGs) unless the authors' posteriors or generating parameters are obtained.",
+  "Feature extraction adds unseeded Gaussian noise, so exact numeric reproduction is impossible; compare posteriors distributionally.",
+  "Inconsistent key naming (P1 EEG files use 'seeg'; P2 EEG files lack ch_names) and time_steps units (ms vs sample index); loaders must handle each file.",
+  "Signal units and sampling metadata not stated in files.",
+  "Licence ambiguity vs Code Ocean capsule terms (see licence)."
+ ],
+ "supersedes_reason": "A0042 was indeterminate because it only examined Code Ocean (HTTP 403). This card verifies the repo-hosted data files by download, checksum and inspection, and fixes the licence field.",
+ "cohort_overlap": "Same patients as A0042/A0037 (AP-HM / La Timone, Marseille); independent of Penn/JHU/Zurich families.",
+ "checked_on": "2026-11-01"
+}

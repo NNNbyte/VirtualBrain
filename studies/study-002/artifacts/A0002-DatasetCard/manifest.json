@@ -1,0 +1,45 @@
+{
+  "artifact_id": "A0002-DatasetCard",
+  "schema_name": "DatasetCard",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0002",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "sha256sum+numpy/nibabel inspection",
+  "tool_version": "numpy 2.4.6, nibabel 5.4.2",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "8cc27a3a453193b51b8db0531476f709aaab429193099451020441c162dd22c3",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0002-DatasetCard/payload.json",
+      "media_type": "application/json",
+      "sha256": "ab29af3d6e6159437039d5240549e35b496825f470854bcbb7544d6b2dab4ad4",
+      "byte_size": 17059
+    }
+  ],
+  "scientific_context": {
+    "data_nature": "simulated",
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T13:10:44+00:00",
+  "supersedes_id": null,
+  "title": "Wang 2025 VBT_INS_Stimulation @5367ef4: simulated P1/P2 SEEG/EEG, SC, gain, EMF (verified)",
+  "manifest_hash": "46a45862d7a2baa7f29a519da6296237040c0496e4e752c242b3a145ae18313d"
+}

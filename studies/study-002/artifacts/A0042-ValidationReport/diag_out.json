@@ -1,0 +1,424 @@
+{
+ "A0037_attachment_collision": {
+  "summary.csv": {
+   "first_ref_matches_A_run2": true,
+   "second_ref_matches_B_run2": true,
+   "stored_file_matches_second": true
+  },
+  "diag.json": {
+   "first_ref_matches_A_run2": true,
+   "second_ref_matches_B_run2": true,
+   "stored_file_matches_second": true
+  },
+  "score.json": {
+   "first_ref_matches_A_run2": true,
+   "second_ref_matches_B_run2": true,
+   "stored_file_matches_second": true
+  },
+  "per_chain.json": {
+   "first_ref_matches_A_run2": true,
+   "second_ref_matches_B_run2": true,
+   "stored_file_matches_second": true
+  },
+  "optima.json": {
+   "first_ref_matches_A_run2": true,
+   "second_ref_matches_B_run2": true,
+   "stored_file_matches_second": true
+  }
+ },
+ "A0037_armA_x0_draws_shape": [
+  3200,
+  162
+ ],
+ "A0037_armB_x0_draws_shape": [
+  3200,
+  162
+ ],
+ "A0019_post": {
+  "n_draws": 400,
+  "chains": 16,
+  "draws_per_chain_used": 25,
+  "max_rhat_thinned": 3.2588940852659687,
+  "median_rhat": 2.041639652821922,
+  "n_rhat_ge_1_05": 162,
+  "top5_by_mean": [
+   10,
+   7,
+   8,
+   68,
+   71
+  ],
+  "P_rank1_top": [
+   [
+    7,
+    0.1
+   ],
+   [
+    152,
+    0.065
+   ],
+   [
+    140,
+    0.06
+   ],
+   [
+    66,
+    0.043
+   ],
+   [
+    161,
+    0.037
+   ]
+  ],
+  "P_x0_gt_m2_06": {
+   "10": 0.378,
+   "7": 0.347,
+   "8": 0.172,
+   "68": 0.228,
+   "71": 0.265
+  }
+ },
+ "A0019_full": {
+  "n_draws": 400,
+  "chains": 16,
+  "draws_per_chain_used": 25,
+  "max_rhat_thinned": 6.396047571998142,
+  "median_rhat": 3.084273135183416,
+  "n_rhat_ge_1_05": 162,
+  "top5_by_mean": [
+   7,
+   82,
+   12,
+   8,
+   115
+  ],
+  "P_rank1_top": [
+   [
+    82,
+    0.425
+   ],
+   [
+    12,
+    0.155
+   ],
+   [
+    7,
+    0.1
+   ],
+   [
+    113,
+    0.083
+   ],
+   [
+    76,
+    0.07
+   ]
+  ],
+  "P_x0_gt_m2_06": {
+   "7": 0.985,
+   "82": 0.812,
+   "12": 0.632,
+   "8": 0.698,
+   "115": 0.623
+  }
+ },
+ "A0018_post": {
+  "n": 24,
+  "lp_range": [
+   -2269.9623,
+   -2269.6716
+  ],
+  "top1_counts": {
+   "82": 24
+  },
+  "median_x0_top5": [
+   [
+    82,
+    -2.278
+   ],
+   [
+    7,
+    -2.431
+   ],
+   [
+    1,
+    -2.48
+   ],
+   [
+    8,
+    -2.488
+   ],
+   [
+    27,
+    -2.488
+   ]
+  ],
+  "max_x0_overall": -2.2711437,
+  "n_supra_m2_06_median": 0,
+  "terminations": [
+   "line_search_failed"
+  ]
+ },
+ "A0018_full": {
+  "n": 24,
+  "lp_range": [
+   -3996.2746,
+   -3431.555
+  ],
+  "top1_counts": {
+   "1": 1,
+   "4": 1,
+   "7": 3,
+   "12": 5,
+   "76": 1,
+   "82": 12,
+   "89": 1
+  },
+  "median_x0_top5": [
+   [
+    82,
+    -1.748
+   ],
+   [
+    7,
+    -1.821
+   ],
+   [
+    83,
+    -1.932
+   ],
+   [
+    108,
+    -1.944
+   ],
+   [
+    1,
+    -2.002
+   ]
+  ],
+  "max_x0_overall": -1.5926506,
+  "n_supra_m2_06_median": 8,
+  "terminations": [
+   "converged",
+   "line_search_failed"
+  ]
+ },
+ "A0040_pf_A_keys": [
+  "t_pathfinder_s",
+  "x0_mean",
+  "top5",
+  "rank1_freq"
+ ],
+ "A0040_pf_A": {
+  "t_pathfinder_s": 385.4757306575775,
+  "top5": [
+   [
+    38,
+    -2.2730336899999846
+   ],
+   [
+    34,
+    -2.2940317860999757
+   ],
+   [
+    57,
+    -2.3782163838999844
+   ],
+   [
+    48,
+    -2.402937837200014
+   ],
+   [
+    37,
+    -2.4086384799000182
+   ]
+  ],
+  "rank1_freq": {
+   "30": 0.206,
+   "34": 0.153,
+   "37": 0.075,
+   "38": 0.197,
+   "39": 0.006,
+   "41": 0.004,
+   "42": 0.005,
+   "45": 0.001,
+   "48": 0.052,
+   "54": 0.19,
+   "55": 0.002,
+   "57": 0.024,
+   "58": 0.012,
+   "61": 0.001,
+   "69": 0.002,
+   "80": 0.004,
+   "122": 0.001,
+   "137": 0.044,
+   "139": 0.003,
+   "146": 0.018
+  }
+ },
+ "A0040_pf_B_keys": [
+  "t_pathfinder_s",
+  "x0_mean",
+  "top5",
+  "rank1_freq"
+ ],
+ "A0040_pf_B": {
+  "t_pathfinder_s": 726.8997337818146,
+  "top5": [
+   [
+    57,
+    -2.3756494137999833
+   ],
+   [
+    40,
+    -2.39671794339999
+   ],
+   [
+    71,
+    -2.423867784099994
+   ],
+   [
+    122,
+    -2.43973702470001
+   ],
+   [
+    69,
+    -2.446538967799967
+   ]
+  ],
+  "rank1_freq": {
+   "34": 0.001,
+   "38": 0.001,
+   "40": 0.051,
+   "41": 0.135,
+   "42": 0.008,
+   "44": 0.004,
+   "45": 0.112,
+   "47": 0.002,
+   "55": 0.019,
+   "56": 0.003,
+   "57": 0.002,
+   "58": 0.205,
+   "59": 0.037,
+   "60": 0.009,
+   "64": 0.009,
+   "65": 0.002,
+   "66": 0.005,
+   "67": 0.031,
+   "69": 0.001,
+   "71": 0.125,
+   "122": 0.1,
+   "126": 0.002,
+   "137": 0.001,
+   "140": 0.001,
+   "146": 0.134
+  }
+ },
+ "A0040_pf_T11_keys": [
+  "t_pathfinder_s",
+  "x0_mean",
+  "top5",
+  "rank1_freq"
+ ],
+ "A0040_pf_T11": {
+  "t_pathfinder_s": 259.54509115219116,
+  "top5": [
+   [
+    137,
+    -2.2613760305999544
+   ],
+   [
+    139,
+    -2.276466938800017
+   ],
+   [
+    37,
+    -2.325417699299975
+   ],
+   [
+    126,
+    -2.356186169300005
+   ],
+   [
+    30,
+    -2.35798277469999
+   ]
+  ],
+  "rank1_freq": {
+   "30": 0.085,
+   "40": 0.003,
+   "42": 0.014,
+   "44": 0.003,
+   "45": 0.01,
+   "49": 0.001,
+   "54": 0.001,
+   "57": 0.198,
+   "58": 0.001,
+   "59": 0.2,
+   "60": 0.003,
+   "64": 0.001,
+   "66": 0.004,
+   "69": 0.151,
+   "71": 0.054,
+   "80": 0.003,
+   "122": 0.008,
+   "137": 0.219,
+   "139": 0.002,
+   "140": 0.029,
+   "141": 0.001,
+   "145": 0.009
+  }
+ },
+ "A0040_verdict": {
+  "verdict": "NOT QUALIFIED (v3 benchmark failed)",
+  "pass_criterion": "planted EZ rank 1 by posterior mean x0, all free-x0 R-hat < 1.05, no unexplained divergences",
+  "nuts": "no post-warmup draws: NUTS (dense_e, 8 chains/arm, warmup 400, max_treedepth 10) did not finish warmup in 42 min (arm A) / 47 min (arm B); stopped at the 17:00 UTC cut-off. R-hat, ESS, divergences, treedepth: not computable (no draws)",
+  "pathfinder_32_paths": {
+   "arm_A_SYN-P1v3_P1SC": "EZ 58 P(rank 1) 0.012; top mean x0 38, 34, 57(PZ), 48, 37; 385 s",
+   "arm_B_SYN-P1v3_P2SC": "EZ 58 rank 28 by mean, P(rank 1) 0.205; top 57(PZ), 40, 71; 727 s",
+   "T0011_SYN-P1_P1SC": "EZ 44 rank 38, P(rank 1) 0.003; top 137, 139, 37; 260 s",
+   "multimodality": "32 distinct per-path ELBOs per arm (spread ~50 nats)"
+  },
+  "speedup": {
+   "parameters": "68 (v3) vs ~520 (v2), 7.6x fewer",
+   "gradient": "v3 44.5 ms vs v2 21.8 ms on the same VM (0.49x, i.e. slower) because nsub 2 -> 5; per Euler step 1.2x faster",
+   "wall_clock_per_fit": "v2: no complete NUTS fit (frozen settings no warmup iteration 50 in 24 min; run2 partial at 64 min); v3: Pathfinder 4-12 min, NUTS warmup not finished in 42-47 min. No end-to-end speedup demonstrated."
+  },
+  "diagnosis": "the bottleneck is not parameter count but a rugged, multimodal likelihood from structural misfit: the 2D Epileptor + linear log-power observation map cannot reproduce the 6D-generated PC1 time course (per-PC noise sigma_1 ~4x baseline at every optimum); every L-BFGS start (96/96) and every Pathfinder path (32/32) ends in a different optimum; EZ vs PZ separation is 2-4 nats in profile. Pinning z_init and restricting the free set did not remove the EZ/PZ ambiguity.",
+  "recommendation": "do not use v3 for patient fitting. Next: (1) a nonlinear observation model for log power (log of gain^2-weighted source power plus noise floor) or fit generator-consistent features; (2) a time-scale parameter for the fast subsystem or nsub chosen from the data's onset rise time; (3) tempering / SMC or per-mode reporting instead of single-run NUTS; (4) the LEAD's stimulation paradigm (prespecified in the task log) before P2 transfer."
+ },
+ "A0037_rhat_recomputed": {
+  "A": {
+   "max_rhat": 4.735,
+   "n_ge_105": 162,
+   "top5": [
+    40,
+    44,
+    42,
+    53,
+    34
+   ],
+   "rank44": 2,
+   "P44": 0.0256,
+   "P40": 0.065,
+   "P42": 0.1697,
+   "chains_ez_first": 0
+  },
+  "B": {
+   "max_rhat": 4.911,
+   "n_ge_105": 162,
+   "top5": [
+    34,
+    46,
+    42,
+    53,
+    50
+   ],
+   "rank44": 6,
+   "P44": 0.2338,
+   "P40": 0.1169,
+   "P42": 0.0609,
+   "chains_ez_first": 4
+  }
+ }
+}

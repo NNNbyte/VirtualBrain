@@ -1,0 +1,48 @@
+{
+ "claim": "In the ERSET multicenter RCT (n=38, mesial TLE within 2 years of failing 2 AEDs; stopped early for slow accrual), 11/15 randomised to anteromesial temporal resection vs 0/23 continuing AEDs were seizure free during year 2 of follow-up.",
+ "bibliographic_record": {
+  "authors": "Engel J Jr, McDermott MP, Wiebe S, Langfitt JT, Stern JM, et al.; ERSET Study Group",
+  "title": "Early surgical therapy for drug-resistant temporal lobe epilepsy: a randomized trial",
+  "citation": "JAMA 2012;307(9):922-930",
+  "doi": "10.1001/jama.2012.220",
+  "pmid": "22396514",
+  "pmcid": "PMC4821633",
+  "publication_type": "journal article"
+ },
+ "supporting_passage": "Zero of 23 participants in the medical group and 11 of 15 in the surgical group were seizure free during year 2 of follow-up (odds ratio = ∞; 95% CI, 11.8 to ∞; P < .001).",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 22396514; https://europepmc.org/abstract/MED/22396514; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "multicenter randomized controlled parallel-group trial, 16 US centres, NCT00040326; planned 200, halted early for slow accrual",
+  "n_total": 38,
+  "arms": {
+   "AMTR + AED": 15,
+   "continued AED": 23
+  },
+  "crossover": "7 medical-group participants underwent AMTR before end of follow-up; 1 surgical-group participant never received surgery",
+  "population": "mesial temporal lobe epilepsy, age >=12 years, disabling seizures for no more than 2 consecutive years after adequate trials of 2 AEDs (includes adolescents)",
+  "intervention": "standardized anteromesial temporal resection (AMTR)"
+ },
+ "endpoint": {
+  "reported_endpoint": "freedom from disabling seizures during year 2 of follow-up (primary)",
+  "follow_up": "2 years",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "freedom from disabling seizures ~ Engel I -> favourable (approximation; to_verify against full text)",
+  "values": {
+   "surgery": "11/15 (73%)",
+   "medical": "0/23",
+   "OR": "infinity (95% CI 11.8 to infinity)",
+   "p": "<.001"
+  }
+ },
+ "reported_observation": "11/15 vs 0/23 seizure free in year 2; QOLIE-89 ITT difference not significant (P=.08); memory decline in 4 (36%) after surgery.",
+ "author_inference": "Resective surgery plus AED lowered probability of seizures in year 2 vs AED alone; results to be interpreted with caution due to premature termination.",
+ "contradictions": [],
+ "study_family_id": "fam-erset-nct00040326",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

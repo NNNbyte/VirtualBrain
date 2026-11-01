@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ayna Judges Pitch</title>
+<style>
+:root{color-scheme:light;--bg:#e9e7e1;--paper:#fcfcfa;--ink:#111110;--ink2:#4c4b47;--muted:#7a7872;--line:#e2dfd7;
+--blue:#2a78d6;--orange:#eb6834;--green:#1a9e6e;--red:#c8382c;--violet:#6250d6;--slate:#334155;--grey:#9aa4b2}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:1920px;height:1080px;position:relative;flex:none;transform-origin:center}
+.slide{position:absolute;inset:0;background:var(--paper);padding:70px 100px 0;display:none;overflow:hidden}
+.slide.on{display:block}.slide .notes{display:none}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.kicker{font-size:22px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.crit{font-size:19px;font-weight:650;color:var(--slate);background:#eef1f5;border:1.5px solid #d5dbe4;border-radius:999px;padding:7px 18px}
+.crit b{color:var(--blue)}
+h1{font-size:66px;line-height:1.08;letter-spacing:-.02em;margin:0 0 34px;font-weight:740;text-wrap:balance;max-width:1720px}
+h2{font-size:32px;margin:0 0 10px;font-weight:700}
+p,li{font-size:28px;line-height:1.4;color:var(--ink2);margin:0 0 10px}
+ul{margin:0;padding-left:30px}
+strong{color:var(--ink)}
+.card{background:#fff;border:2px solid var(--line);border-radius:22px;padding:30px 34px}
+.big{font-size:84px;font-weight:760;letter-spacing:-.03em;line-height:1}
+.lab{font-size:22px;color:var(--ink2);margin-top:8px;line-height:1.3}
+.banner{border-radius:20px;padding:24px 34px;font-size:31px;line-height:1.35;font-weight:600}
+.foot{position:absolute;left:100px;right:100px;bottom:26px;display:flex;justify-content:space-between;font-size:17px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.tag{display:inline-block;font-size:18px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.tag.no{background:#f9dedb;color:#93231a}.tag.ok{background:#dcf2e8;color:#0d6b47}.tag.warn{background:#fde9d9;color:#9a3b10}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#nav{transition:opacity .4s;opacity:0;position:fixed;right:18px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:10;font:14px system-ui;color:#555}
+#nav.show,#nav:hover{opacity:1}
+#nav button{font:inherit;border:1px solid #c9c6bd;background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:40vh;overflow:auto;background:#1d1d1b;color:#f1efe9;padding:16px 22px 18px;font:18px/1.5 system-ui;display:none;z-index:9}
+#notes.on{display:block}#notes .nt{color:#f0b44c;font-weight:650;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 1 · Problem -->
+<section class="slide" data-time="25">
+  <div class="top"><div class="kicker">Ayna · ScienceClaw hackathon</div><div class="crit">Judging: <b>Problem significance</b> · 20%</div></div>
+  <h1>Surgery or stimulation? For 1 in 3 people with epilepsy, pills don't stop the seizures.</h1>
+  <div style="display:grid;grid-template-columns:1fr 120px 1fr;align-items:center">
+    <div class="card" style="border-color:#f1c3a8">
+      <h2 style="color:#b8501c">Surgery</h2>
+      <p style="font-size:30px"><strong>Can stop seizures</strong>, but only if the right tissue is found. Irreversible.</p>
+    </div>
+    <div style="text-align:center;font-size:40px;font-weight:700;color:var(--muted)">or</div>
+    <div class="card" style="border-color:#b9d3f2">
+      <h2 style="color:#1f5fae">Stimulation</h2>
+      <p style="font-size:30px"><strong>Safer and adjustable</strong>, but rarely stops seizures completely.</p>
+    </div>
+  </div>
+  <div class="banner" style="margin-top:40px;background:#111;color:#fff">
+    Nobody can try both on the same patient. A <span style="color:#f0b44c">virtual-brain twin</span> could, but no one knows yet when its answers can be trusted. That is the open problem.
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px">
+    <div style="border-left:6px solid var(--orange);padding-left:20px"><div class="big" style="font-size:66px">~50 M</div><div class="lab">people live with epilepsy</div></div>
+    <div style="border-left:6px solid var(--orange);padding-left:20px"><div class="big" style="font-size:66px">~1 in 3</div><div class="lab">keep having seizures on medication</div></div>
+    <div style="border-left:6px solid var(--blue);padding-left:20px"><div class="big" style="font-size:66px">0</div><div class="lab">published outcome studies of model-guided stimulation (our literature search)</div></div>
+  </div>
+  <p style="font-size:18px;color:var(--muted);margin-top:22px">Background: WHO epilepsy fact sheet; Kwan &amp; Brodie, NEJM 2000. Treatment trade-offs and the "0" come from our study-001 literature dossier (32 claims, each source-checked by a second agent; open need N001).</p>
+  <div class="foot"><span>Ayna · research on virtual patients, not clinical advice</span><span class="pg"></span></div>
+  <aside class="notes">About fifty million people live with epilepsy, and for one in three, medication doesn't stop the seizures. Their doctors face a hard choice: surgery, which can cure but only if the right tissue is found and removed, or a stimulator, which is safer but rarely stops seizures. You can't try both on the same person. A virtual-brain twin promises exactly that rehearsal, but nobody yet knows when to trust one. That is the problem we took on.</aside>
+</section>
+
+<!-- 2 · System -->
+<section class="slide" data-time="35">
+  <div class="top"><div class="kicker">How Ayna works</div><div class="crit">Judging: <b>Decentralized agency</b> · 20%</div></div>
+  <h1>Seven AI agents with different powers. No agent grades its own work.</h1>
+  <svg viewBox="0 0 1720 330" width="1720" height="330" role="img" aria-label="Six specialist agents pass work through a controller; each result is checked by a different agent">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a877f"/></marker></defs>
+    <g id="agents"></g>
+    <rect x="0" y="232" width="1720" height="92" rx="18" fill="#1f2937"/>
+    <text x="34" y="272" font-size="27" font-weight="720" fill="#fff">Controller: plain code, not an AI</text>
+    <text x="34" y="306" font-size="22" fill="#c7cdd6">admits or refuses every task · logs every step in an append-only ledger · accepts a result only after another agent checks it</text>
+  </svg>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:30px">
+    <div class="card" style="padding:24px 28px"><h2 style="font-size:28px">Sealed answer key</h2><p style="font-size:24px;margin:0">Only the Checker can open it, and only after predictions are frozen.</p></div>
+    <div class="card" style="padding:24px 28px"><h2 style="font-size:28px">Failed check → repair</h2><p style="font-size:24px;margin:0">Everything built on a rejected result is marked stale and redone.</p></div>
+    <div class="card" style="padding:24px 28px"><h2 style="font-size:28px">Needs board</h2><p style="font-size:24px;margin:0">Agents post what they're missing; any eligible agent can claim it.</p></div>
+  </div>
+  <p style="font-size:21px;color:var(--muted);margin-top:22px">A lead agent proposes tasks but cannot approve results. In both studies the plan changed when checks failed.</p>
+  <div class="foot"><span>Roles, permissions and budgets: system/profiles/*.json · procedures: .claude/skills/*/SKILL.md</span><span class="pg"></span></div>
+  <aside class="notes">Ayna is a team of seven Claude agents with different powers. A scout reads the literature, a curator prepares patient data, a modeller builds the brain twin on a cloud machine, a designer simulates surgery and stimulation, a checker re-derives every number and is the only one who can open the answer key, and a reviewer signs off. A lead proposes work, but plain code, the controller, decides: no agent approves its own work, the answer key stays sealed until predictions are frozen, and when a check fails everything downstream is repaired. Agents also post needs that others pick up.</aside>
+</section>
+
+<!-- 3 · Results -->
+<section class="slide" data-time="40">
+  <div class="top"><div class="kicker">What it achieved today</div><div class="crit">Judging: <b>Scientific impact</b> 25% · <b>Execution &amp; validation</b> 10%</div></div>
+  <h1>Two complete studies, end to end, with every step on record</h1>
+  <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:36px">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center"><h2>Study 1 · real patients</h2><span class="tag ok" id="t1"></span></div>
+      <ul style="margin-top:8px">
+        <li><strong>32</strong> literature claims, each source-checked by a second agent</li>
+        <li><strong>10</strong> real patients curated without peeking at outcomes</li>
+        <li>Found the <strong>published brain-twin pipeline not qualified</strong> (4 code bugs)</li>
+      </ul>
+      <div class="banner" style="background:#eef6f2;color:#0d5a3c;font-size:25px;padding:16px 22px;margin-top:14px">So it stopped instead of guessing.</div>
+    </div>
+    <div class="card" style="display:grid;grid-template-columns:400px 1fr;gap:24px;padding:24px 28px">
+      <img src="__BRAIN__" alt="Virtual patient 2 cortex with SEEG contacts and simulated seizure activity" style="width:400px;height:260px;object-fit:cover;border-radius:14px;align-self:start">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-size:29px">Study 2 · blinded twin</h2><span class="tag ok" id="t2"></span></div>
+        <ol style="margin:6px 0 0;padding-left:28px">
+          <li style="font-size:23px;margin-bottom:4px">Answer key sealed</li>
+          <li style="font-size:23px;margin-bottom:4px">Twin fitted, 18 treatments simulated</li>
+          <li style="font-size:23px;margin-bottom:4px">Predictions frozen, then key opened</li>
+        </ol>
+      </div>
+      <div class="banner" style="grid-column:1/3;background:#fdf0e8;color:#7a2e0b;font-size:25px;padding:16px 22px">Result: <strong style="color:#7a2e0b">missed the true seizure-onset zone.</strong> The agents reported it as a negative result: best treatment "not determinable".</div>
+    </div>
+  </div>
+  <div id="totals" style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:30px"></div>
+  <div class="foot"><span>studies/study-001 and study-002 ledgers · outcome evaluation A0043 · final dossier A0052 (accepted by the reviewer after 2 repair rounds)</span><span class="pg"></span></div>
+  <aside class="notes">And it works end to end. Study one, on real patients, in six hours: 32 checked literature claims, 10 patients curated without peeking at outcomes, and the finding that the published brain-twin pipeline was not qualified, with four code bugs. So it stopped instead of guessing. Study two used a blinded virtual patient: the answer key was sealed, a twin was fitted, 18 treatments were simulated, predictions were frozen, and only then was the key opened. Result: we missed the true onset zone, and the agents reported that honestly; the best treatment is not determinable. Across both studies, 134 independent checks, 27 rejections and 11 repairs.</aside>
+</section>
+
+<!-- 4 · Comparison -->
+<section class="slide" data-time="50">
+  <div class="top"><div class="kicker">Does the collective add anything?</div><div class="crit">Judging: <b>Collective capability</b> · 25%</div></div>
+  <h1 style="margin-bottom:24px">Same task, one agent vs the collective, scored on rules fixed before the run</h1>
+  <div style="display:grid;grid-template-columns:1000px 1fr;gap:44px">
+    <div>
+      <svg id="cmp" viewBox="0 0 1000 560" width="1000" height="560" role="img" aria-label="Scores per criterion, single agent versus collective"></svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card" style="padding:22px 26px;border-color:#cfd5dd">
+        <h2 style="font-size:27px;color:#5b6472">Single agent · 2 min</h2>
+        <p style="font-size:22px;margin:0">Ranked the true zone <strong>4th, better than us</strong>. But found <strong>0 of 4</strong> bugs, never tested its method, and recommended stimulating 3 regions that miss the true zone, <strong>with no warning</strong>.</p>
+      </div>
+      <div class="card" style="padding:22px 26px;border-color:#b9d3f2">
+        <h2 style="font-size:27px;color:var(--blue)">Collective · ~4 h</h2>
+        <p style="font-size:22px;margin:0">Also missed the zone (rank 46–159). But caught <strong>4 of 4</strong> bugs, rejected its own models, froze before checking, and said <strong>"not determinable"</strong>.</p>
+      </div>
+      <p style="font-size:18px;color:var(--muted);margin:0">One virtual patient, one baseline run. Baseline had no web access and a 15-min cap (used 2). Criteria hashed before the run: comparison/criteria.md.</p>
+    </div>
+  </div>
+  <div class="banner" style="margin-top:8px;background:#111;color:#fff;font-size:30px;padding:18px 32px">The collective's edge is not a better guess. It is <span style="color:#f0b44c">knowing when a guess can't be trusted</span>, with an audit trail.</div>
+  <div class="foot"><span>comparison/comparison.md · single-agent answer hashed before the truth was read</span><span class="pg"></span></div>
+  <aside class="notes">Does the collective add anything? We gave one Claude agent the same task and scored both systems on seven criteria that were written and hashed before the run. The single agent took two minutes and ranked the true zone fourth, better than our collective. But it found none of the four known bugs, never tested its method, and recommended stimulating three regions that miss the true zone, with no warning. The collective missed too, but caught every bug, rejected its own models, and said the answer was not determinable. Eighteen versus six out of twenty-one. The collective's edge is not a better guess; it is knowing when a guess can't be trusted.</aside>
+</section>
+
+<!-- 5 · Impact + next -->
+<section class="slide" data-time="30">
+  <div class="top"><div class="kicker">Why it matters · next</div><div class="crit">Judging: <b>Impact</b> · <b>Significance</b></div></div>
+  <h1>A trust layer for AI-driven medicine</h1>
+  <div class="banner" style="background:#eef4fc;color:#173f73;font-size:34px">Before an irreversible operation, rehearse surgery vs stimulation on the patient's own brain twin, and <strong style="color:#173f73">believe the twin only after it passes checks like these</strong>.</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px">
+    <div class="card"><div class="big" style="font-size:60px;color:var(--blue)">1</div><h2 style="margin-top:10px">Best of both</h2><p style="font-size:25px">Add the single agent's 2-minute method inside the collective as a checked comparator.</p></div>
+    <div class="card"><div class="big" style="font-size:60px;color:var(--blue)">2</div><h2 style="margin-top:10px">Qualify, then real patients</h2><p style="font-size:25px">Pass the planted-zone benchmark, then run the 10 curated real patients.</p></div>
+    <div class="card"><div class="big" style="font-size:60px;color:var(--blue)">3</div><h2 style="margin-top:10px">Share it</h2><p style="font-size:25px">Open the controller, record schemas and agent skills for other teams to reuse.</p></div>
+  </div>
+  <div class="banner" style="margin-top:40px;background:#111;color:#fff;font-size:36px;text-align:center;padding:30px">Ayna: AI agents that do science, and <span style="color:#f0b44c">tell you when not to trust the answer</span>.</div>
+  <div class="foot"><span>Ayna · research on virtual patients, not clinical advice</span><span class="pg"></span></div>
+  <aside class="notes">For patients, that is what matters: before an irreversible operation, rehearse surgery versus stimulation on their own brain twin, and only believe the twin once it has passed checks like these. Next, we add the single agent's fast method inside the collective as a checked comparator, qualify a model on planted zones, move to our ten real patients, and share the controller and agent skills so other teams can build on them. Thank you.</aside>
+</section>
+
+</div></div>
+<div id="nav"><span id="clock">0:00</span><button id="prev" aria-label="Previous slide">◀</button><span id="pos"></span><button id="next" aria-label="Next slide">▶</button><button id="ntoggle">Notes</button></div>
+<div id="notes"></div>
+<script>
+const D=/*__DATA__*/null;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const NS='http://www.w3.org/2000/svg';
+function el(tag,a,p,t){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;if(p)p.appendChild(e);return e;}
+const hrs=s=>{const m=Math.round((new Date(s.last)-new Date(s.first))/60000);return `${Math.floor(m/60)} h ${String(m%60).padStart(2,'0')} min`;};
+
+/* agents row (slide 2) */
+(function(){const g=$('#agents'),A=[['Scout','reads literature, checks sources','#2f6fb3'],['Curator','prepares patient data','#2b8a6e'],['Modeller','builds the brain twin, cloud compute','#7a4fb0'],['Designer','simulates surgery & stimulation','#c0661c'],['Checker','re-derives every number; opens answer key','#b8321b'],['Reviewer','clinical & engineering sign-off','#334155']];
+  const w=262,gap=29;A.forEach(([n,d,c],i)=>{const x=i*(w+gap);el('rect',{x,y:6,width:w,height:180,rx:18,fill:'#fff',stroke:c,'stroke-width':3},g);
+    el('text',{x:x+22,y:52,'font-size':30,'font-weight':740,fill:c},g,n);
+    const words=d.split(' ');let line='',y=92;words.forEach(wd=>{if((line+' '+wd).length>22){el('text',{x:x+22,y,'font-size':21,fill:'#4c4b47'},g,line.trim());line=wd;y+=28;}else line+=' '+wd;});el('text',{x:x+22,y,'font-size':21,fill:'#4c4b47'},g,line.trim());
+    el('path',{d:`M${x+w/2} 190 L${x+w/2} 226`,stroke:'#8a877f','stroke-width':3,'marker-end':'url(#a)'},g);});
+})();
+
+/* study tags + totals (slide 3) */
+$('#t1').textContent=hrs(D.s1);$('#t2').textContent=hrs(D.s2);
+$('#totals').innerHTML=[[D.tot.tasks,'tasks run by agents'],[D.tot.gates,'independent checks'],[D.tot.not_passed,'results rejected or flagged'],[D.tot.repairs,'repair rounds'],[D.tot.refused,'bad tasks refused by the controller']]
+  .map(([n,l],i)=>`<div style="border-left:6px solid ${['#334155','#2a78d6','#c8382c','#d99000','#6250d6'][i]};padding:2px 0 2px 18px"><div class="big" style="font-size:58px">${n}</div><div class="lab">${l}</div></div>`).join('');
+
+/* comparison chart (slide 4) */
+(function(){const s=$('#cmp'),R=D.scores,x0=430,W=470,rh=56,y0=64,X=v=>x0+v/3*W;
+  el('text',{x:0,y:30,'font-size':22,'font-weight':650,fill:'#111'},s,'Score per criterion (0–3)');
+  el('rect',{x:x0,y:14,width:22,height:18,rx:4,fill:'#9aa4b2'},s);el('text',{x:x0+30,y:30,'font-size':20,fill:'#4c4b47'},s,'Single agent');
+  el('rect',{x:x0+200,y:14,width:22,height:18,rx:4,fill:'#2a78d6'},s);el('text',{x:x0+230,y:30,'font-size':20,fill:'#4c4b47'},s,'Collective');
+  [0,1,2,3].forEach(v=>{el('line',{x1:X(v),x2:X(v),y1:y0-8,y2:y0+R.length*rh,stroke:'#ece9e2'},s);});
+  R.forEach(([n,a,b],i)=>{const y=y0+i*rh;const win=a>b;
+    el('text',{x:0,y:y+33,'font-size':22,fill:win?'#9a3b10':'#111','font-weight':win?700:400},s,n);if(win)el('text',{x:X(a)+34,y:y+23,'font-size':18,fill:'#9a3b10','font-weight':700},s,'← single agent better');
+    el('rect',{x:x0,y:y+6,width:Math.max(X(a)-x0,3),height:20,rx:5,fill:'#9aa4b2'},s);el('text',{x:X(a)+8,y:y+23,'font-size':18,fill:'#5b6472'},s,a);
+    el('rect',{x:x0,y:y+29,width:Math.max(X(b)-x0,3),height:20,rx:5,fill:'#2a78d6'},s);el('text',{x:X(b)+8,y:y+46,'font-size':18,fill:'#1f5fae','font-weight':650},s,b);});
+  const yt=y0+R.length*rh+28;el('line',{x1:0,x2:1000,y1:yt-24,y2:yt-24,stroke:'#d9d6ce'},s);
+  el('text',{x:0,y:yt+18,'font-size':26,'font-weight':700,fill:'#111'},s,'Total (max 21)');
+  el('text',{x:x0,y:yt+22,'font-size':44,'font-weight':760,fill:'#7c8592'},s,`${D.sum_single}`);
+  el('text',{x:x0+200,y:yt+22,'font-size':44,'font-weight':760,fill:'#2a78d6'},s,`${D.sum_multi}`);
+  el('text',{x:x0+60,y:yt+18,'font-size':20,fill:'#5b6472'},s,'single');el('text',{x:x0+268,y:yt+18,'font-size':20,fill:'#1f5fae'},s,'collective');
+})();
+
+/* deck */
+const slides=$$('.slide');let cur=0,t0=null;const times=slides.map(s=>+s.dataset.time),TOT=times.reduce((a,b)=>a+b,0);
+const fmt=x=>`${Math.floor(x/60)}:${String(x%60).padStart(2,'0')}`;
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);$('#stage').style.transform=`scale(${s})`;}addEventListener('resize',fit);fit();
+slides.forEach((s,i)=>{const p=s.querySelector('.pg');if(p)p.textContent=`${i+1} / ${slides.length}`;});
+function show(i){cur=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>s.classList.toggle('on',j===cur));$('#pos').textContent=`${cur+1} / ${slides.length}`;
+  const st=times.slice(0,cur).reduce((a,b)=>a+b,0);$('#notes').innerHTML=`<div class="nt">Slide ${cur+1} · ${times[cur]} s · ${fmt(st)}–${fmt(st+times[cur])} of ${fmt(TOT)}</div>`+slides[cur].querySelector('.notes').innerHTML;
+  history.replaceState(null,'','#'+(cur+1));if(cur>0&&t0===null)t0=Date.now();}
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(cur+1);}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(cur-1);}
+  else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1);else if(e.key==='n'||e.key==='N')$('#notes').classList.toggle('on');
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}});
+$('#prev').onclick=()=>show(cur-1);$('#next').onclick=()=>show(cur+1);$('#ntoggle').onclick=()=>$('#notes').classList.toggle('on');
+$('#stage').addEventListener('click',e=>{if(e.target.closest('button,a'))return;const r=$('#stage').getBoundingClientRect();(e.clientX-r.left)<r.width*0.25?show(cur-1):show(cur+1);});
+let hideT;addEventListener('mousemove',()=>{$('#nav').classList.add('show');clearTimeout(hideT);hideT=setTimeout(()=>$('#nav').classList.remove('show'),2000);});
+setInterval(()=>{if(t0===null)return;const s=Math.round((Date.now()-t0)/1000);$('#clock').textContent=fmt(s);},500);
+addEventListener('hashchange',()=>{const n=(parseInt(location.hash.slice(1))||1)-1;if(n!==cur)show(n);});
+show(Math.max(0,(parseInt(location.hash.slice(1))||1)-1));
+</script>
+</body>
+</html>

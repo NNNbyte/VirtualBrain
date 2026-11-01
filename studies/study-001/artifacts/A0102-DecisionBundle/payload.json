@@ -1,0 +1,627 @@
+{
+ "supported_comparisons": [
+  {
+   "comparison": "temporal resection vs continued medical therapy",
+   "finding": "58% to 73% free of disabling seizures at 1-2 y vs 8% and 0/23 (2 RCT families, n=118)",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0063-Report"
+   ],
+   "strength": "randomised, small"
+  },
+  {
+   "comparison": "long-term temporal resection",
+   "finding": "66% to 72.5% seizure-free; all-procedure adult 52% at 5 y, 47% at 10 y; extratemporal lower (46%/27%, HR 2.0)",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0063-Report"
+   ]
+  },
+  {
+   "comparison": "LITT in MTLE",
+   "finding": "53.4% to 58.0% Engel I at 12-24 months, 3 primary-cohort families, no RCT",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0063-Report"
+   ]
+  },
+  {
+   "comparison": "neurostimulation, median seizure reduction at >=12 months",
+   "finding": "RNS 44-53% (1-2 y) to 75% (9 y), 67-82% real-world/post-approval; ANT-DBS 41-56% to 69-75%; VNS ~45% at 12 mo; seizure freedom RNS 18-22%, SANTE 16% (>=6 mo), VNS ~8%",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0031-Report",
+    "A0061-ValidationReport"
+   ]
+  },
+  {
+   "comparison": "model-guided therapeutic stimulation",
+   "finding": "no clinical seizure-outcome evidence found",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0016-EvidenceClaim",
+    "A0055-EvidenceClaim",
+    "A0056-EvidenceClaim",
+    "A0057-EvidenceClaim",
+    "A0031-Report"
+   ]
+  }
+ ],
+ "tradeoffs": [
+  "LITT has fewer complications than open resection in all three comparative analyses but numerically lower seizure freedom (A0063).",
+  "Resection: memory decline 36% in ERSET; paediatric RCT serious adverse events 33% (A0063).",
+  "Neurostimulation is palliative; long-term gains are confounded by attrition, ASM and programming changes (A0031)."
+ ],
+ "unstable_rankings": [
+  "LITT vs open resection: significant unmatched, not significant after propensity matching (RR 0.85, p=0.30), within TLE, or in nontumoral epilepsy (A0063).",
+  "RNS vs ANT-DBS vs VNS: no head-to-head RCT; indirect only (A0031).",
+  "Neurostimulation vs resection: different endpoints and populations; not directly rankable.",
+  "Virtual-patient candidate ranking: indeterminate, no qualified model (A0098)."
+ ],
+ "missing_evidence": [
+  "N001",
+  "N002",
+  "N003",
+  "N004",
+  "N006",
+  "N010",
+  "N011",
+  "N013",
+  "N014",
+  "N008 (administratively open; replacement A0070 accepted via N012)",
+  "N015/N016 (repair needs for this revision)"
+ ],
+ "limitations": [
+  "Literature is abstract-level only; late denominators unverified.",
+  "VNS pooled/registry data include non-focal epilepsy.",
+  "Virtual-patient arm not run: vep-stim failed reproduction (A0095) and synthetic recovery (A0097); R5 verdict NOT QUALIFIED (A0098), causes include non-identifiability, prior conflict, iid likelihood on AR(1) noise, multimodality. P3-P5 not run; predictions never frozen; V008/V009 never opened.",
+  "Only 10 of 56 eligible ds004100 cases curated; coordinate template identity to_verify; trailing constant EDF pad in 21 of 61 runs, all ictal (21 of 41 ictal runs) (A0094).",
+  "Outcome exposure: discovery roles read participants files before sealing (V001-V007); aggregates on record in superseded A0033/A0058 (ds004100 S36/F22, by therapy), A0040 (277 known), A0035 (5 NR), A0038 (10-46 mo follow-up). Leakage-risk path for any future outcome evaluation on the A0071 split.",
+  "Omni-iEEG (A0040) overlaps ds004100, ds003498, ds003029 and ds003876 and is not independent of them.",
+  "Controller design gaps for next release: summaries cannot cite same-task artifacts; repair marks consuming ValidationReports and ReviewDecisions stale too eagerly."
+ ],
+ "reproducibility_manifest": {
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol": "A0001-StudyProtocol (v1)",
+  "environment": {
+   "python": "3.11; mne 1.13.2, mne-bids 0.20.0",
+   "model_venv": "tvb-library 2.10.0, cmdstanpy 1.3.0, numpy 2.4.6, vep-stim 0.1.0a1 @ 5367ef4afb976271ecc6297b70a95dd3d944af61",
+   "cmdstan": "2.40 conda-forge",
+   "digests": {
+    "main_case_curation": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469",
+    "main_after_A0070": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c",
+    "r1_literature": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+    "model": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85"
+   }
+  },
+  "data": {
+   "ds004100_v1.1.3_retrieval_manifest_sha256": "62e8da45fa70ed025c10efdb5b053bdce53d6c99a1e0b7d43bbd13b249f94c5d",
+   "cohort_split_hash": "255216f575a2e635e3fcece16cc2f3e3ea1d12c6222676f1281d41f90d17fa23"
+  },
+  "artifacts": [
+   {
+    "artifact_id": "A0001-StudyProtocol",
+    "schema": "StudyProtocol",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "3e3d9b8104ad277ec6276fcfdb707bf08701366e441e84d1b868bdcfc624a640",
+    "environment_digest": null
+   },
+   {
+    "artifact_id": "A0016-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "0a6fe0ec8a5c87f09af8768987ee47b376eeb5c25cb8345e60d136f09b95616e",
+    "environment_digest": "sha256:05F3B3AD978E9C307FF91045F102FBB073981E673A9E0586818E34C73B0F8C1D"
+   },
+   {
+    "artifact_id": "A0031-Report",
+    "schema": "Report",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "35a20a475fceb12d855857a07945759362fff5bb3d6b4532ae0a2cb0d7a85e39",
+    "environment_digest": null
+   },
+   {
+    "artifact_id": "A0055-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "e61d4851f564797f957f64ac841c9541491dfb01c204a5e06c6b2df8b73191e2",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0056-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "e770189c0980cb7e8d4cf53d0d17cd9e926c4597714d16fd85fc158bc08766f0",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0057-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "0b757795785008f4705f6782499d5efc52ed04e40298d87bfd95e16d70d633d0",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0059-Report",
+    "schema": "Report",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "4a6fcc14a85f07bcdcd7bbcb0ff45382a9f816c4cdbb598434559e810c641092",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0061-ValidationReport",
+    "schema": "ValidationReport",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "006b63daf95835b0851635a07ba146c74ac8c4821dd3f2c77af9bea4b6bd7e10",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0063-Report",
+    "schema": "Report",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "3e2908f2e2fb0a9bc9263fdf812f4d7f982999b19a95dca272a47c437c19c531",
+    "environment_digest": null
+   },
+   {
+    "artifact_id": "A0034-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "4ad3f459d3509a67723fc585950d51b6a44b0a0f56f9f9548e7d7e7f99833ff6",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0035-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "95200aafe15057afb0d22e5703f53dc36036b121550c42467860a62a7f5e7427",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0038-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "80d7380c3b2d4bb3a5dae93f3b7e030aee221138ab4427616e07341d3122a5ba",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0040-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "160c46ed8c970e84305c0ea9438b207203b7263ecc6e1f18d74824e134b0425d",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0065-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "d7822458ee4c7c28b8b4497d996bb1856bf7f3fc9c2b4467e1ec76290dd9ec8b",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0067-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "54824fcc1cec84c7d5d630394f871d47cb0b4c733c6f930757d496bfddd53bdf",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0070-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "afcb57fec8425367a59decde91136ac5fdff698df4404fedc224a859e450f637",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0037-MethodCard",
+    "schema": "MethodCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "1eb62aa1f1adb5b5492c19b2574ea268820ac42ddb9dcf44bbdab2c0791dd6cb",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0039-MethodCard",
+    "schema": "MethodCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "0628b9332706f373b5d88c2abb1ad8bc02416f7ab2cfccb8891d7b77c1d3c4c2",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0041-MethodCard",
+    "schema": "MethodCard",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "c1485ea068817431f7e870fbe51771701fa659be7ad839bb5645154603e2ed3c",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0068-ValidationReport",
+    "schema": "ValidationReport",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "57e3883ef8bffd9ccf8e65ce7bd992afbf88540b1a84853477efe7a5b7fa551a",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0071-CohortSplit",
+    "schema": "CohortSplit",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "5f125791ca6df17c1b981f978f1dc9c85ffccd1d164d48f7fa6c2f6fe61774e0",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0072-Report",
+    "schema": "Report",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "cf7443fabec286383cd0ef8e8151f31d9215cc83b59c24b12919d055449abdb6",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0094-ValidationReport",
+    "schema": "ValidationReport",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "a8a86d012f5e521a3059aad712b0aa4f9d64a233124f8b73dbfd0fb09fb09525",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0079-NetworkHypothesisSet",
+    "schema": "NetworkHypothesisSet",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "ac8de9b5d616c3c413091d3dcb877b82647f3ce06f8ae4ac59c3ee11d574ccc2",
+    "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85"
+   },
+   {
+    "artifact_id": "A0096-NetworkHypothesisSet",
+    "schema": "NetworkHypothesisSet",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "4d6b5c680e79598ae5c9d7093bfb9685fbba306030c8646e059f55f7ade8cc90",
+    "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85"
+   },
+   {
+    "artifact_id": "A0098-ValidationReport",
+    "schema": "ValidationReport",
+    "validation": "passed",
+    "consumed": true,
+    "manifest_hash": "2822c42deedafb80f9a7886451cbe6d3d03513981a6d7845ced071b217c4743e",
+    "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85"
+   },
+   {
+    "artifact_id": "A0017-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "036271915c7191a914afcc1195eca48e195510e98f4a15ab022bcfa20e2b48fc",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0018-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "11f1f343f42b3782f93de645f985fdf9e3ad1dd412490da5e89d1da3f07dd283",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0019-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "18ed11c11b490d9bc64dc21cd71b717d4e38833190ca4b4dc386ce54a5a7c215",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0020-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "69c844e82fbf881c2333c8a634bd60d67d6ee9a79371154421eda72b2007be3c",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0021-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "e3ac53b1736d93886769d05a7085cb7d5b852e73a61daae0ece238572d25fbc4",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0022-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "f9afafb082693296f7c1b252beeced6f25fcf34f867485a0f81df555b6af285c",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0023-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "b48d6709c2077a7059f666e89bd7ea4b6816e44c827f473aef7f7c8dc4a965c2",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0024-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "eb40c96d4ada0fed4ab20fac8a7a867b86db958c61cb11a1ec097acd610b7fec",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0025-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "a0f4e9ca5610b303a75fa71dc6d7ce012a3b04ff6bd5a820eecadafd4cfe2ebc",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0026-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "c6405c107a36cf258a3ad8c28917b680214d6de39520588565c38cc6f14a014c",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0027-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "633551596cfb46fd4ed7d810f7c45b56537dbf0c419ffd12c4276efa5c64804b",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0028-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "83a6f1ddc91e7ea3736c3e0d73ce185e231b303269883459f4a20d662aad20ce",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0029-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "f30a59fd575d91bbac156a2ad57cfdb4ba38f4eb938e4df79ffdb1f63d872a81",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0030-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "ceb011d6dc331f56e9f9f588694b320e2d7a9dbcc681c9989565bb4169c9230b",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0073-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "a23734a5f1c2208056b120944beba52912a6b81969026cdc4906d039682d7ac9",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0074-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "f1a618448f06bc3129c990236f72d93ea215586a19883ad2b56e7fb1de8b91db",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0075-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "cf983f6ef903160a8a54fba30ee7500abb8e423a8dbc5803923be8de0842c027",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0076-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "e3f00da26954eec1ae6e9aacb737f967ef10edbac3acceb9757dd8279c5f3376",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0077-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "d53e19989ae836715605e2c921212c87ceae7572ee6d7f5f46984f09c63ec779",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0078-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "cc7c1a610aa48ddb3a3d9244f86decfcd298b516b80b486ba7f7804dcc3100d4",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0080-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "bf5fc2ae3654b3567e445ec889af4d3fe3cb6115cc821993f7af32e385f819dc",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0081-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "dbf96d74fcd6f78249eaf313c6d030672493f53ec26feb2d4f7bccceffe61431",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0082-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "93fd8aebc4a8ac9a719b3156adcb1250622ce0b838056416d1597656675cedac",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0083-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "1bc2f460ddd88a89942d290f582fc06d7bc830233df3e49ccc764008b32b3313",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0084-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "07d931a8ab8430752d46404ef3577a2a7e9da3e9f905b66dbd2042ad1fbd4f66",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0085-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "4ba0965a64ddd95a8092e9e256bdb6b6547f14c86024341819a84cc9001b8a44",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0086-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "b8d4b0352c77b622172119f0d4de31d7d0aa4aed36f4b08dff957109cd5ec2a4",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0087-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "c447102be03b5aafc8510849ad2821940fe17d94845181b42639ea3779c1d0d1",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0088-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "270fd1d3bffdb8ef0c5ded8be58ca6be0f296cfeac75a1dc84ddf6222b8dcd25",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0089-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "26bc7467998b80f55189ef45dced27390351f298f3943c75aa2a5c014da0ca38",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0090-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "bcfc3467d2e3371d8b0c336f7d8911227b659abbbc6e374d5026411d10de60b4",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0091-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "41c1c14fafd6d282bb5f90e99ba13cf54b7bb60bd0a950ae9f1ee9cd690a190f",
+    "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469"
+   },
+   {
+    "artifact_id": "A0092-PatientCase",
+    "schema": "PatientCase",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "b2d01167d855113bb057607e51622235a8af1edaff91e14e07198d55cc097dd7",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0093-QCReport",
+    "schema": "QCReport",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "e468b9d25412db193acf220c9f16770a33104d0a55a77fbe3889982866927966",
+    "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c"
+   },
+   {
+    "artifact_id": "A0095-ModelBundle",
+    "schema": "ModelBundle",
+    "validation": "failed",
+    "consumed": false,
+    "manifest_hash": "35f57f2842c28f5e588d527132a2973ef500c575e97d0ea648ff6e51e6a71047",
+    "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85"
+   },
+   {
+    "artifact_id": "A0097-ModelBundle",
+    "schema": "ModelBundle",
+    "validation": "failed",
+    "consumed": false,
+    "manifest_hash": "f44ab7e44e710a584e4988c8fb63b0b033af15978c0969a9236f32d50a02c041",
+    "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85"
+   },
+   {
+    "artifact_id": "A0033-DatasetCard",
+    "schema": "DatasetCard",
+    "validation": "failed",
+    "consumed": false,
+    "manifest_hash": "f42aa09d6301f59a8f3e672af9673047550785027dcc4da1152cf99d8cc581fc",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   },
+   {
+    "artifact_id": "A0058-Report",
+    "schema": "Report",
+    "validation": "passed",
+    "consumed": false,
+    "manifest_hash": "d427d1f05aab041e25ee58d13541088d687719b07d4eda5148a0a5f67db78dd0",
+    "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41"
+   }
+  ],
+  "seeds": {
+   "cohort_split_and_case_selection": 20261101,
+   "vbt_p1_features_T0026": 20261101,
+   "vbt_p1_lbfgs_T0026": "1000-1019",
+   "vbt_p1_nuts_T0026": 12345,
+   "synthetic_planted_truth_T0029": 20261129
+  }
+ },
+ "review_refs": [
+  "A0101-ReviewDecision (revision_requested; addressed by this revision)"
+ ],
+ "release_status": "revision_1_pending_review"
+}

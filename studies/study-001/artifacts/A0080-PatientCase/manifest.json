@@ -1,0 +1,52 @@
+{
+  "artifact_id": "A0080-PatientCase",
+  "schema_name": "PatientCase",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": "HUP157",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0023",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R2-case-curation",
+  "tool_id": "qc_case.py+build_payloads.py",
+  "tool_version": "8fb98caee640768a278aa12688a9410164ce68edde3c61520e6e5b18a8c16d67",
+  "code_commit": null,
+  "environment_digest": "3b6061dde3ada1f855b488f6ce883dc00083f9159486fe6ec0d9f14a0ea60a4c",
+  "consumed_artifact_ids": [
+    "A0070-DatasetCard",
+    "A0071-CohortSplit"
+  ],
+  "input_manifest_hash": "734fe9c76c51dcf81a57ef474b6ccd7b01a776f90eb07048162b5cc61f926301",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0080-PatientCase/payload.json",
+      "media_type": "application/json",
+      "sha256": "a2f4af2ae1849a157bc4c2528655a5e1f7cdb85f4cbee195279ee2bf55c0b334",
+      "byte_size": 18812
+    }
+  ],
+  "scientific_context": {
+    "sample_rate_hz": 1024,
+    "time_window": "ictal runs: n=5, total 1229.0 s",
+    "signal_units": "uV",
+    "reference_montage": "referential as recorded",
+    "coordinate_frame": "MNI-template (ICBM152 per README vs fsaverage/MNI305 per coordsystem.json; to_verify)",
+    "coordinate_units": "mm",
+    "transform_chain_id": "ds004100-coordsystem-as-provided",
+    "evidence_kind": "observed_measurement"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T04:55:46+00:00",
+  "supersedes_id": null,
+  "title": "HUP157 PatientCase (ds004100 v1.1.3, SEEG, 5 ictal + 2 interictal runs)",
+  "manifest_hash": "bf5fc2ae3654b3567e445ec889af4d3fe3cb6115cc821993f7af32e385f819dc"
+}

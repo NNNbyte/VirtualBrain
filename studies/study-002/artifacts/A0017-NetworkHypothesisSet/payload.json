@@ -1,0 +1,38 @@
+{
+ "case_id": "P2",
+ "purpose": "Competing epileptogenic-zone (EZ) and propagation hypotheses for blinded Wang virtual Patient 2 (test case), drafted from the P2 SEEG (P2_SEEG_ts_fit.npz) mapped through the P2 gain, and from the preliminary MAP ensemble of the frozen T0011 model. No ground truth, vault item, reserved notebook or study-001 file was accessed.",
+ "hypotheses": [
+  {"id": "H1", "label": "Left dorsolateral prefrontal EZ: Left-F2-rostral (region idx 7) and/or Left-F2-caudal (8), propagation to Left-Middle-frontal-sulcus (9), Left-SFS-rostral (10)",
+   "ez": [7, 8], "pz_candidates": [9, 10, 12, 15, 16],
+   "basis": "Largest ictal (3.75-5.5 s) vs pre-stimulation (0.25-0.5 s) high-pass log-power rises are on I'13-14 (+14.1), I'14-15 (+13.2), OR'13-14 (+12.9), I'12-13 (+12.5); top-gain region of the I' contacts is Left-F2-caudal (8), of OR'13-14 Left-F2-rostral (7). Largest slow (DC-like) ictal shifts: OR'10-11 (-0.30; top gain Left-MFS 9, then 7), PM'6-7 / PM'5-6 (top gain 7 / 10). Frozen-model MAP: region 7 has the highest mean x0 over 24 starts in the sensitivity window and is 2nd in the primary window."},
+  {"id": "H2", "label": "Orbitofrontal / mesial prefrontal EZ: Right-Orbito-frontal-cortex (82), Left-Orbito-frontal-cortex (1), Right-Gyrus-rectus (83), Left/Right-F1-mesial-prefrontal (12/93), anterior cingulate (27/108)",
+   "ez": [82], "pz_candidates": [1, 83, 12, 93, 27, 108],
+   "basis": "Model-derived: region 82 has the highest MAP x0 in all 24 primary-window starts (x0 -2.28, sub-threshold) and is rank 1 in 50% of sensitivity-window starts; PM'1-2 slow shift (+0.095; top gain 12, then 93, 108). Caveat: region 82 carries the largest gain in the implant (R7-8 88.2, R8-9 69.3), so a small x0 change moves those channels strongly; its ranking may reflect gain leverage rather than ictal involvement."},
+  {"id": "H3", "label": "Left mesial temporal EZ: Left-Amygdala (74) with insula (33)",
+   "ez": [74], "pz_candidates": [33, 53, 78],
+   "basis": "B'2-3 (+9.1) and A'4-5 (+8.9) high-pass log-power rises (top gain Left-Amygdala 74); not supported by the MAP fits (74 not in the top 12 of either window)."},
+  {"id": "H4", "label": "Stimulation-dependent / network-emergent seizure without a supra-threshold autonomous node",
+   "ez": [], "pz_candidates": [7, 8, 82],
+   "basis": "The seizure-like epoch starts ~36 ms after the end of the 50 Hz stimulation train (A0010), so the stimulated tissue may be transiently, not intrinsically, epileptogenic. Primary-window MAP ensemble: no region with x0 > -2.06 at any of 24 starts."}
+ ],
+ "source_evidence": {
+  "signals": "data/wang-5367ef4/data/dataSim/Patient2/P2_SEEG_ts_fit.npz (sha256 fe5a83ac..., 191 bipolar channels, 125 Hz from time_steps): raw high-pass (10 Hz) power by epoch and slow-shift (raw minus 0.25-0.5 s mean) by epoch, computed in work/T0014/explore*.py; fitted features via the frozen features.compute_feature",
+  "anatomy": "P2 SC and gain from the same npz (A0009); region order = VepMrtrixLut 1..162 (to_verify per A0010)",
+  "imaging": "reported_absent (A0009: no MRI, no contact coordinates)",
+  "seeg_markings": "not_applicable (virtual patient, no clinical markings); epochs from A0009/A0010 (stimulation 504-3504 ms, seizure-like ~3540-7400 ms)",
+  "model_fit": "preliminary MAP ensemble (24 L-BFGS starts per window) of the frozen T0011 model, see the T0014 MAP ModelBundle"
+ },
+ "priors": {
+  "x0": "N(-2.5, 0.5) per region (frozen model); isolated-node bifurcation x0 = -2.06",
+  "other": "frozen T0011 priors (z_init at softmin-capped equilibrium + 0.2 N(0,1); K lognormal(0,1); tau0 lognormal(log 10, 0.6); amp, u, sigma data-centred; phi uniform(-1,1))",
+  "hypothesis_priors": "no prior preference among H1-H4"
+ },
+ "unobserved_node_assumptions": "Only 4 of 162 regions have any contact with gain > 25% of the implant maximum; most regions are constrained only by network dynamics and the x0 prior and their x0 is not interpreted. Subcortical/cerebellar nodes kept with P2 SC weights. The 2D inversion model has no stimulus input, so stimulation-driven activity is either excluded (primary window) or must be absorbed as region activity (sensitivity window).",
+ "discrimination_checks": [
+  "H1 vs H2: NUTS posterior P(x0 > -2.06) and P(rank 1) for regions 7, 8 vs 82, 1, 83; robustness of ranking across the two prespecified windows",
+  "H2 gain-leverage check: whether region 82's x0 is driven by R7-8/R8-9 alone (posterior predictive residuals on those channels)",
+  "H3: P(x0 > -2.06) for region 74",
+  "H4: P(no region > -2.06) under the posterior; and fitted 'seizing' indicator (max x > -1 within the window)",
+  "Multimodality: EZ ranking at each of 24 L-BFGS optima; R-hat across 16 chains started from distinct optima"
+ ]
+}

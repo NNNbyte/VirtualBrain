@@ -1,0 +1,6 @@
+{
+  "resource": "openneuro:ds003029",
+  "access_path": "https://openneuro.org/datasets/ds003029",
+  "status": "verified_present (public 4-centre subset)",
+  "conditions": "CC0; Cleveland Clinic subset requires a DUA (README)"
+}

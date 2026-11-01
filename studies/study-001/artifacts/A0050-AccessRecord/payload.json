@@ -1,0 +1,6 @@
+{
+  "resource": "huggingface:Omni-iEEG/Omni-iEEG",
+  "access_path": "https://huggingface.co/datasets/Omni-iEEG/Omni-iEEG",
+  "status": "verified_present (ungated)",
+  "conditions": "licence not stated for data (to_verify); ~159 GB"
+}

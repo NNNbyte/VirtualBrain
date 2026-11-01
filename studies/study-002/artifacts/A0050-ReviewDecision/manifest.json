@@ -1,0 +1,49 @@
+{
+  "artifact_id": "A0050-ReviewDecision",
+  "schema_name": "ReviewDecision",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0025",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "RV-clinical-engineering-review",
+  "tool_id": null,
+  "tool_version": null,
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0048-DecisionBundle",
+    "A0049-Report",
+    "A0038-SimulationBatch",
+    "A0042-ValidationReport",
+    "A0043-OutcomeEvaluation",
+    "A0047-ReviewDecision"
+  ],
+  "input_manifest_hash": "6192ac89348fe1a32605adab9ea0108cb00a1cebec3dfa235f7e7944bc74dbe5",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0050-ReviewDecision/payload.json",
+      "media_type": "application/json",
+      "sha256": "63d77a205aea31b693d65efd91da2588d9d23157f006ddb9387840c04945ac32",
+      "byte_size": 2729
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T17:20:02+00:00",
+  "supersedes_id": null,
+  "title": "RV re-review of revision 1: two items remain (A0040 arm attribution, post-window failure counts)",
+  "manifest_hash": "cb5aeefb7097a5287976e0245d25f31831947b3fb573a41cfd5c92947ce78343"
+}

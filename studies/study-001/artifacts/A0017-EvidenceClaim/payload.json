@@ -1,0 +1,47 @@
+{
+ "claim": "In an RCT of 80 adults with temporal-lobe epilepsy, 58% of patients randomised to surgery vs 8% randomised to one year of medical therapy were free of seizures impairing awareness at one year (P<0.001).",
+ "bibliographic_record": {
+  "authors": "Wiebe S, Blume WT, Girvin JP, Eliasziw M; Effectiveness and Efficiency of Surgery for Temporal Lobe Epilepsy Study Group",
+  "title": "A randomized, controlled trial of surgery for temporal-lobe epilepsy",
+  "citation": "N Engl J Med 2001;345(5):311-318",
+  "doi": "10.1056/NEJM200108023450501",
+  "pmid": "11484687",
+  "pmcid": null,
+  "publication_type": "journal article"
+ },
+ "supporting_passage": "At one year, the cumulative proportion of patients who were free of seizures impairing awareness was 58 percent in the surgical group and 8 percent in the medical group (P<0.001).",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 11484687; https://europepmc.org/abstract/MED/11484687; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "randomized controlled trial (outcome assessors blinded to assignment; number of centres not stated in abstract: to_verify)",
+  "n_total": 80,
+  "arms": {
+   "surgery": 40,
+   "antiepileptic drugs for one year": 40
+  },
+  "population": "temporal-lobe epilepsy (age group and drug-resistance definition not stated in abstract: not_reported)",
+  "intervention": "temporal lobe resection"
+ },
+ "endpoint": {
+  "reported_endpoint": "freedom from seizures that impair awareness of self and surroundings (cumulative proportion)",
+  "follow_up": "1 year",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "Not reported as Engel/ILAE class; closest to Engel I (free of disabling seizures) -> favourable; mapping is an approximation (to_verify against full text)",
+  "values": {
+   "surgery": "58%",
+   "medical": "8%",
+   "p": "<0.001"
+  },
+  "adverse": "Four patients (10 percent) had adverse effects of surgery"
+ },
+ "reported_observation": "58% vs 8% free of seizures impairing awareness at 1 year; 10% surgical adverse effects.",
+ "author_inference": "In temporal-lobe epilepsy, surgery is superior to prolonged medical therapy.",
+ "contradictions": [],
+ "study_family_id": "fam-wiebe2001-tle-rct",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

@@ -1,0 +1,33 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "RV-clinical-engineering-review",
+  "role": "review",
+  "display_name": "RV \u00b7 Clinical & engineering review",
+  "enabled": true,
+  "color": "#0f766e",
+  "stage": "review",
+  "description": "Assess the evidence package; accept, request targeted revision, or flag unsupported conclusions.",
+  "skill": "clinical-engineering-review",
+  "allowed_tools": [
+    "dossier-inspection"
+  ],
+  "allowed_output_types": [
+    "review_decision",
+    "release_record",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": true,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": false
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 6
+  }
+}

@@ -1,0 +1,227 @@
+{
+ "s1": {
+  "events": 538,
+  "tasks": 33,
+  "artifacts": 104,
+  "gates": 101,
+  "gates_passed": 87,
+  "gates_failed": 9,
+  "gates_indeterminate": 5,
+  "repairs": 6,
+  "refused": 3,
+  "needs": 16,
+  "vault": 9,
+  "evaluators": [
+   "LEAD-study-lead",
+   "R5-independent-evaluation",
+   "RV-clinical-engineering-review",
+   "human:user"
+  ],
+  "first": "2026-11-01T03:32:19+00:00",
+  "last": "2026-11-01T09:32:23+00:00"
+ },
+ "s2": {
+  "events": 200,
+  "tasks": 15,
+  "artifacts": 39,
+  "gates": 13,
+  "gates_passed": 12,
+  "gates_failed": 1,
+  "gates_indeterminate": 0,
+  "repairs": 1,
+  "refused": 3,
+  "needs": 2,
+  "vault": 10,
+  "evaluators": [
+   "LEAD-study-lead",
+   "R5-independent-evaluation",
+   "human:user"
+  ],
+  "first": "2026-11-01T13:03:16+00:00",
+  "last": "2026-11-01T16:19:43+00:00"
+ },
+ "sim": {
+  "label": "PRELIMINARY - model not yet qualified (A0018 MAP ensemble; amendment A0015). Simulated results on a virtual patient; not clinical recommendations.",
+  "headline": {
+   "post (primary)": "No baseline seizures in any of 24 optima (x0 max ~ -2.28, sub-threshold in the 6D model). No candidate can reduce seizures; ranking uninformative (16 arms tied). STIM-PT amp <= 2 induced no seizure; amp 4 numerically failed.",
+   "full (sensitivity, 12 optima)": "Baseline median 3.5 seizing regions (5-95%: 2-7.35). RES-EZ+PZ ablation best: median -3.0 regions [-4.9,-1.6], -17.5 s total duration, abolishes all seizures in 42% of optima, ranks first (incl. ties) in 92%; RES-EZ ablation -2.5 [-4.9,-1.0], 25% abolished; RES-1 ablation -1.0; disconnection arms weaker (-1.0); sustained-current STIM-1/STIM-2 -0.5 to -1.0, never abolish; pulse-train arms 0 change in regions and longer total duration (chronic +3.9 to +4.8 s)."
+  },
+  "baseline": {
+   "n_seizing_regions": {
+    "median": 3.5,
+    "p05": 2.0,
+    "p95": 7.349999999999998
+   },
+   "total_seizure_duration_s": {
+    "median": 21.318,
+    "p05": 9.725800000000001,
+    "p95": 35.394199999999984
+   },
+   "n_seeg_channels_exceeding": {
+    "median": 191.0,
+    "p05": 191.0,
+    "p95": 191.0
+   }
+  },
+  "forest": [
+   {
+    "id": "RES-EZ+PZ/ablation",
+    "median": -3.0,
+    "p05": -4.9,
+    "p95": -1.5500000000000007,
+    "abolish": 0.4166666666666667,
+    "n": 12
+   },
+   {
+    "id": "RES-EZ/ablation",
+    "median": -2.5,
+    "p05": -4.9,
+    "p95": -1.0,
+    "abolish": 0.25,
+    "n": 12
+   },
+   {
+    "id": "RES-1/ablation",
+    "median": -1.0,
+    "p05": -1.9,
+    "p95": 0.0,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "RES-EZ+PZ/disconnection",
+    "median": -1.0,
+    "p05": -3.45,
+    "p95": -0.5500000000000007,
+    "abolish": 0.16666666666666666,
+    "n": 12
+   },
+   {
+    "id": "RES-EZ/disconnection",
+    "median": -1.0,
+    "p05": -3.45,
+    "p95": -0.5500000000000007,
+    "abolish": 0.16666666666666666,
+    "n": 12
+   },
+   {
+    "id": "RES-1/disconnection",
+    "median": 0.0,
+    "p05": -2.0,
+    "p95": 0.4499999999999993,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-1/amp2",
+    "median": -1.0,
+    "p05": -1.45,
+    "p95": 1.0,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-1/amp1",
+    "median": -1.0,
+    "p05": -1.9,
+    "p95": 0.0,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-1/amp0.5",
+    "median": -0.5,
+    "p05": -1.0,
+    "p95": 0.4499999999999993,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-2/amp1",
+    "median": -0.5,
+    "p05": -1.9,
+    "p95": 0.0,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-PT/amp0.5",
+    "median": 0.0,
+    "p05": -0.8999999999999999,
+    "p95": 1.0,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-PT/amp1",
+    "median": 0.0,
+    "p05": -0.8999999999999999,
+    "p95": 1.0,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-PT-chronic/amp0.5",
+    "median": 0.0,
+    "p05": -0.44999999999999996,
+    "p95": 1.4499999999999993,
+    "abolish": 0.0,
+    "n": 12
+   },
+   {
+    "id": "STIM-PT-chronic/amp1",
+    "median": 0.0,
+    "p05": -0.8999999999999999,
+    "p95": 1.0,
+    "abolish": 0.0,
+    "n": 12
+   }
+  ],
+  "failed_arms": [
+   "STIM-PT/amp2",
+   "STIM-PT/amp4",
+   "STIM-PT-chronic/amp2",
+   "STIM-PT-chronic/amp4"
+  ],
+  "qual_check": "fail: the median-sample baseline does not reproduce the observed P2 post-stimulation pattern (0/10 overlap of most active channels); STIM-PT (the recorded protocol) also 0/10",
+  "median_sample": "A0018-full-start7",
+  "seizing_median": {
+   "BASELINE": [
+    "Left-F2-rostral",
+    "Right-Gyrus-rectus",
+    "Right-Anterior-cingulate-cortex"
+   ],
+   "RES-EZpPZ__ablation": [],
+   "STIM-PT__amp1": [
+    "Left-F2-rostral",
+    "Right-Gyrus-rectus",
+    "Right-Anterior-cingulate-cortex"
+   ]
+  },
+  "ez_set": [
+   "Left-Orbito-frontal-cortex",
+   "Left-F2-rostral",
+   "Left-Anterior-cingulate-cortex",
+   "Left-STS-anterior",
+   "Right-Orbito-frontal-cortex",
+   "Right-Gyrus-rectus",
+   "Right-Anterior-cingulate-cortex"
+  ],
+  "pz": [
+   "Left-F1-mesial-prefrontal",
+   "Right-F1-mesial-prefrontal"
+  ],
+  "stim_contact": "R7-8",
+  "ablated_names": [
+   "Left-Orbito-frontal-cortex",
+   "Left-F2-rostral",
+   "Left-Anterior-cingulate-cortex",
+   "Left-STS-anterior",
+   "Right-Orbito-frontal-cortex",
+   "Right-Gyrus-rectus",
+   "Right-Anterior-cingulate-cortex",
+   "Left-F1-mesial-prefrontal",
+   "Right-F1-mesial-prefrontal"
+  ]
+ }
+}

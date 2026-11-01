@@ -1,0 +1,7 @@
+{
+  "resource": "VBT_INS_Stimulation source code (GitHub)",
+  "access_path": "https://github.com/HuifangWang/VBT_INS_Stimulation (public; HEAD 5367ef4afb976271ecc6297b70a95dd3d944af61, 2025-11-11; release 0.1.0)",
+  "status": "verified_present (repository metadata, tree, README, pyproject, codemeta, LICENSE inspected via GitHub API on 2026-10-31; not cloned)",
+  "conditions": "Apache-2.0. Repo also contains small derived data: data/EMF/*.mgh electric fields, data/dataSim/Patient{1,2}/*.npz fitted/simulated features (1.3-2.8 MB each), Patient{1,2}_{SEEG,TI}_stimulation.xlsx. Repo size about 41 MB. EBRAINS GitLab mirror (task3.4) not publicly accessible (API 404).",
+  "verified_at": "2026-10-31"
+}

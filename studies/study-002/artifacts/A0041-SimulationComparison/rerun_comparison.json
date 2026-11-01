@@ -1,0 +1,120 @@
+{
+ "meta": {
+  "sim_sha": "0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0",
+  "spec_sha": "70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461",
+  "npz_sha": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+  "horizon": 14400.0,
+  "settings_equal": true
+ },
+ "rows": [
+  {
+   "candidate": "BASELINE",
+   "sample": "A0018-full-start11",
+   "seizing_regions_equal": true,
+   "n_seizing": [
+    3,
+    3
+   ],
+   "total_dur_s": [
+    24.323999999999998,
+    24.323999999999998
+   ],
+   "onsets_equal": true,
+   "max_abs_state_absdiff": 0.0,
+   "other_fields_equal": true,
+   "seeg_channels_equal": true,
+   "wall_s": 28.0
+  },
+  {
+   "candidate": "STIM-1/amp0.5",
+   "sample": "A0018-full-start11",
+   "seizing_regions_equal": true,
+   "n_seizing": [
+    2,
+    2
+   ],
+   "total_dur_s": [
+    15.152000000000001,
+    15.152000000000001
+   ],
+   "onsets_equal": true,
+   "max_abs_state_absdiff": 0.0,
+   "other_fields_equal": true,
+   "seeg_channels_equal": true,
+   "wall_s": 44.7
+  },
+  {
+   "candidate": "RES-EZ+PZ/disconnection",
+   "sample": "A0018-full-start11",
+   "seizing_regions_equal": true,
+   "n_seizing": [
+    3,
+    3
+   ],
+   "total_dur_s": [
+    23.236,
+    23.236
+   ],
+   "onsets_equal": true,
+   "max_abs_state_absdiff": 0.0,
+   "other_fields_equal": true,
+   "seeg_channels_equal": true,
+   "wall_s": 45.1
+  },
+  {
+   "candidate": "STIM-1/amp2",
+   "sample": "A0018-full-start11",
+   "seizing_regions_equal": true,
+   "n_seizing": [
+    2,
+    2
+   ],
+   "total_dur_s": [
+    15.988,
+    15.988
+   ],
+   "onsets_equal": true,
+   "max_abs_state_absdiff": 0.0,
+   "other_fields_equal": true,
+   "seeg_channels_equal": true,
+   "wall_s": 46.5
+  },
+  {
+   "candidate": "STIM-1/amp1",
+   "sample": "A0018-full-start11",
+   "seizing_regions_equal": true,
+   "n_seizing": [
+    2,
+    2
+   ],
+   "total_dur_s": [
+    15.988,
+    15.988
+   ],
+   "onsets_equal": true,
+   "max_abs_state_absdiff": 0.0,
+   "other_fields_equal": true,
+   "seeg_channels_equal": true,
+   "wall_s": 46.7
+  },
+  {
+   "candidate": "RES-EZ+PZ/ablation",
+   "sample": "A0018-full-start11",
+   "seizing_regions_equal": true,
+   "n_seizing": [
+    0,
+    0
+   ],
+   "total_dur_s": [
+    0.0,
+    0.0
+   ],
+   "onsets_equal": true,
+   "max_abs_state_absdiff": 0.0,
+   "other_fields_equal": true,
+   "seeg_channels_equal": true,
+   "wall_s": 47.1
+  }
+ ],
+ "all_exact": true
+}

@@ -1,0 +1,45 @@
+{
+  "artifact_id": "A0033-DatasetCard",
+  "schema_name": "DatasetCard",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0005",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "curl+python-stdlib metadata inspection",
+  "tool_version": "py3.11",
+  "code_commit": null,
+  "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0033-DatasetCard/payload.json",
+      "media_type": "application/json",
+      "sha256": "146d64c4bca70718db2e8f0171f98be57eac4ef1b2e7a1acd276494f71e11b0e",
+      "byte_size": 4146
+    }
+  ],
+  "scientific_context": {
+    "verification_basis": "public_listing_and_metadata_files",
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:42:42+00:00",
+  "supersedes_id": null,
+  "title": "DatasetCard: OpenNeuro ds004100 HUP iEEG (58 subj, coords+resect tags+Engel)",
+  "manifest_hash": "f42aa09d6301f59a8f3e672af9673047550785027dcc4da1152cf99d8cc581fc"
+}

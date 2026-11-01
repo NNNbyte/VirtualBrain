@@ -1,0 +1,76 @@
+{
+  "artifact_id": "A0062-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0008",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "r5-source-check (GitHub API, PyPI, DataCite, Crossref, Europe PMC, PMC, OpenNeuro S3+GraphQL, HF API, arXiv)",
+  "tool_version": "2026-10-31",
+  "code_commit": null,
+  "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+  "consumed_artifact_ids": [
+    "A0033-DatasetCard",
+    "A0034-DatasetCard",
+    "A0035-DatasetCard",
+    "A0036-DatasetCard",
+    "A0037-MethodCard",
+    "A0038-DatasetCard",
+    "A0039-MethodCard",
+    "A0040-DatasetCard",
+    "A0041-MethodCard",
+    "A0042-DatasetCard",
+    "A0043-AccessRecord",
+    "A0044-AccessRecord",
+    "A0045-AccessRecord",
+    "A0046-AccessRecord",
+    "A0047-AccessRecord",
+    "A0048-AccessRecord",
+    "A0049-AccessRecord",
+    "A0050-AccessRecord",
+    "A0051-AccessRecord",
+    "A0052-AccessRecord",
+    "A0053-AccessRecord",
+    "A0054-AccessRecord",
+    "A0055-EvidenceClaim",
+    "A0056-EvidenceClaim",
+    "A0057-EvidenceClaim",
+    "A0058-Report",
+    "A0059-Report"
+  ],
+  "input_manifest_hash": "1de33db616622f4bdac1af890d3ddf1100ef97120114691c20d71e648f49b0db",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0062-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "f24e8e2515fe22d9dcd64c810da8382220da00f524b8c2363853e2c4edd865e5",
+      "byte_size": 6339
+    },
+    {
+      "uri": "artifacts/A0062-ValidationReport/gates.py",
+      "media_type": "application/octet-stream",
+      "sha256": "46748a20381b8763d62bfcb0a68ae25f648e22c465a28326944085315558aa99",
+      "byte_size": 12706
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:53:25+00:00",
+  "supersedes_id": null,
+  "title": "R5 source check of R1 methods and dataset records (T0004+T0005): 20 pass, 2 fail, 5 indeterminate",
+  "manifest_hash": "594d170e1c79bee944ac506a046f6996b32cde826d5004f0c575444f4e7df52f"
+}

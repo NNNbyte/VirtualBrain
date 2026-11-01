@@ -1,0 +1,105 @@
+{
+ "case_id": "P1",
+ "scope": "P1_SEEG_SEEG_fit.npz (primary) and P1_TI_SEEG_fit.npz (second session); SEEG only (EEG files out of scope for this task)",
+ "findings": [
+  {
+   "check": "checksums",
+   "result": "pass",
+   "detail": "P1_SEEG_SEEG_fit.npz, P1_TI_SEEG_fit.npz and VepMrtrixLut.txt sha256 and byte size match data/wang-5367ef4-manifest.csv"
+  },
+  {
+   "check": "array shapes and consistency",
+   "result": "pass",
+   "detail": "seeg (163,1500)/(163,1650), gain (163,162), SC (162,162), ch_names (163,); SC, gain and ch_names byte-identical across both sessions; 162 regions = 162 LUT entries"
+  },
+  {
+   "check": "structural connectome",
+   "result": "pass",
+   "detail": "symmetric, zero diagonal, range [0,1], 91% off-diagonal non-zero, no isolated region, no NaN"
+  },
+  {
+   "check": "gain matrix",
+   "result": "pass_with_note",
+   "detail": "no NaN, no zero column; all entries positive (min 3.2e-7, max 30.37) - not a signed bipolar lead field as stored; construction undocumented"
+  },
+  {
+   "check": "channel list",
+   "result": "pass",
+   "detail": "163 unique bipolar adjacent-contact names on 13 electrodes; no malformed label"
+  },
+  {
+   "check": "sampling interval",
+   "result": "pass_with_limits",
+   "detail": "time_steps uniform step 10 in both files (SEEG 5..14995, TI 10..16500); unit not stored, 100 Hz assumes ms. Stimulus content at 50 Hz (Nyquist) means the stimulation waveform is aliased/undersampled"
+  },
+  {
+   "check": "signal units",
+   "result": "limit",
+   "detail": "not declared; simulated arbitrary units. Channels carry large DC offsets (channel means -4.06..1.85) relative to fluctuations (median channel std 0.005 SEEG session)"
+  },
+  {
+   "check": "NaN / Inf",
+   "result": "pass",
+   "detail": "0 NaN, 0 Inf in both sessions"
+  },
+  {
+   "check": "flat channels",
+   "result": "pass_with_note",
+   "detail": "no channel with std < 1e-6; lowest-std channels PFG'3-4 (2.2e-4), PI'5-6, PFG'2-3, GC'6-7, B'7-8 in SEEG session - low-gain contacts, signal near-constant"
+  },
+  {
+   "check": "clipping",
+   "result": "pass",
+   "detail": "at most 2 samples per channel at the channel min/max; no plateaus"
+  },
+  {
+   "check": "padding / exact repeats",
+   "result": "pass_with_limits",
+   "detail": "no exact repeated samples in any channel (no zero-padding). But the last ~5 s (SEEG) / ~6 s (TI) are a near-stationary decaying tail (mean |diff| ~3-4e-6); these segments carry almost no information and will dominate a naive per-sample likelihood"
+  },
+  {
+   "check": "discontinuities / steps",
+   "result": "pass_with_note",
+   "detail": "largest single-sample steps occur at stimulation onset (0.78 on GL'11-12 at sample 50, SEEG; 2.68 on CU'11-12 at sample 49, TI); these are stimulation artifacts, not file discontinuities"
+  },
+  {
+   "check": "stimulation epochs",
+   "result": "observed",
+   "detail": "SEEG session: stimulation block ~0.41-3.59 s, then ~7.6 Hz rhythmic episode ~3.6-8.3 s. TI session: stimulation ~0.41-6.61 s (5 Hz envelope), then rhythmic episode ~7.7-10.1 s. Derived from the signal only; no annotation file"
+  },
+  {
+   "check": "baseline length",
+   "result": "limit",
+   "detail": "only ~0.4 s (40 samples) of pre-stimulation baseline in each session"
+  },
+  {
+   "check": "anatomy QC",
+   "result": "not_applicable",
+   "detail": "no MRI, no electrode coordinates, no transform chain in the dataset; region-channel link is the gain matrix only"
+  },
+  {
+   "check": "SEEG coverage",
+   "result": "observed",
+   "detail": "20/162 regions have any contact above 25% of global max |gain|; 6 have >=3 such contacts: Left-Supramarginal-posterior (5 contacts, max 30.4), Right-Intraparietal-sulcus (3 contacts, max 21.2), Left-O1 (4 contacts, max 18.9), Left-T2-anterior (3 contacts, max 18.6), Left-Superior-parietal-lobule-P1 (6 contacts, max 17.4), Left-Angular-gyrus (5 contacts, max 14.2). Implantation left-dominant (left mean max gain 3.95 vs right 1.27); frontal/PreSMA regions essentially unsampled"
+  }
+ ],
+ "missingness": {
+  "mri": "reported_absent",
+  "electrode_coordinates": "reported_absent",
+  "coordinate_transforms": "reported_absent",
+  "event_annotations": "reported_absent",
+  "signal_physical_units": "not_reported",
+  "time_unit": "not_reported (ms assumed)",
+  "stimulation_parameters_and_generating_parameters": "not_accessible (reserved files, not opened by design)",
+  "missing_samples": "none (0 NaN)",
+  "missing_channels": "none (163/163 present, matching gain rows)"
+ },
+ "suitability_for_synthetic_benchmark": "SC and gain are complete and coherent; suitable as the structural basis of a synthetic benchmark. Planting the EZ in a region with >=3 contacts above 25% of global max gain is recommended (list under PatientCase anatomy.seeg_coverage_per_region.well_sampled_regions_ge3_contacts). Frontal and right-hemisphere regions are poorly observed and would be weakly identifiable.",
+ "verdict": "accept_with_limits",
+ "verdict_reasons": [
+  "Simulated data: signal units and time unit not declared (100 Hz inferred from step 10, assuming ms).",
+  "No anatomy beyond SC/gain: no MRI, coordinates, or transforms.",
+  "Stimulation epochs are signal-derived only; stimulation parameters are reserved and not available.",
+  "Stimulus waveform undersampled at 100 Hz (50 Hz alias in SEEG session); short 0.4 s baseline; long near-stationary tails."
+ ]
+}

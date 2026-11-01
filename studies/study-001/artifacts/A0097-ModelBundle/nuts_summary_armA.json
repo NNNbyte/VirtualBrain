@@ -1,0 +1,253 @@
+{
+ "arm": "A",
+ "sampler": {
+  "chains_used": 5,
+  "draws_per_chain": 300,
+  "draws_per_chain_all": [
+   300,
+   300,
+   0,
+   300,
+   300,
+   300
+  ],
+  "divergences": 0,
+  "divergences_per_chain": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "treedepth_mean": 8.0,
+  "treedepth_max_observed": 8,
+  "n_at_observed_max_depth": 1500,
+  "n_leapfrog_mean": 255.0,
+  "stepsize_per_chain": [
+   0.0071178235,
+   0.0065350486,
+   0.011395317,
+   0.0082721417,
+   0.0089864771
+  ],
+  "accept_stat_mean": 0.9572984257606666,
+  "lp_mean_per_chain": [
+   38212.23095,
+   38225.696286666665,
+   38165.682616666665,
+   37985.179853333335,
+   37965.89737666667
+  ],
+  "amp_mean_per_chain": [
+   0.05012390907,
+   0.049319613613333334,
+   0.05061648244999999,
+   0.049456951390000004,
+   0.0505551473
+  ],
+  "x0_rhat_max": 1.9550961735105488,
+  "x0_rhat_median": 1.0148318514659214,
+  "x0_n_rhat_gt_1_05": 35,
+  "x0_n_rhat_gt_1_01": 110,
+  "x0_ess_bulk_min": 6.839875218222262,
+  "x0_ess_bulk_median": 346.71886042938786,
+  "EZ_rhat": 1.1920038339899819,
+  "EZ_ess_bulk": 17.050093811881958,
+  "rhat_lp": 2.4235838668708305,
+  "rhat_K": 1.6103754321998467,
+  "rhat_amp": 2.5203242272210824,
+  "rhat_eps": 1.0893316149801455,
+  "ess_lp": 6.226692098280194,
+  "stansummary": {
+   "stansummary_x0_rhat_max": 2.10525,
+   "stansummary_cols": [
+    "Mean",
+    "MCSE",
+    "StdDev",
+    "MAD",
+    "5%",
+    "50%",
+    "95%",
+    "ESS_bulk",
+    "ESS_tail",
+    "ESS_bulk/s",
+    "R_hat"
+   ]
+  }
+ },
+ "recovery": {
+  "truth_EZ": "Right-Amygdala",
+  "truth_PZ": [
+   "Right-Hippocampus-anterior",
+   "Right-Rhinal-cortex"
+  ],
+  "EZ_threshold": -2.05,
+  "EZ_rank_by_posterior_mean_x0": 1,
+  "EZ_rank_per_chain": [
+   1,
+   1,
+   2,
+   2,
+   2
+  ],
+  "EZ_P_rank1": 0.2886666666666667,
+  "EZ_x0_mean": -1.5102873567333333,
+  "EZ_x0_sd": 0.04337290213099789,
+  "EZ_x0_q05_q95": [
+   -1.5845760150000001,
+   -1.44155583
+  ],
+  "EZ_P_x0_gt_thr": 1.0,
+  "EZ_true_x0": -1.6,
+  "PZ": [
+   {
+    "region": "Right-Hippocampus-anterior",
+    "true": -2.1,
+    "mean": -1.6403650006000001,
+    "sd": 0.04620895763795045,
+    "P_gt_thr": 1.0,
+    "rank": 3
+   },
+   {
+    "region": "Right-Rhinal-cortex",
+    "true": -2.1,
+    "mean": -1.7285223522666666,
+    "sd": 0.06205252040243481,
+    "P_gt_thr": 1.0,
+    "rank": 4
+   }
+  ],
+  "regions_P_gt_thr_above_0_5": [
+   "Right-F1-mesial-prefrontal",
+   "Right-Insula-gyri-brevi",
+   "Right-Insula-gyri-longi",
+   "Right-Rhinal-cortex",
+   "Right-Hippocampus-anterior",
+   "Right-Amygdala"
+  ],
+  "false_positives": [
+   {
+    "region": "Right-F1-mesial-prefrontal",
+    "mean": -1.9574299543333333,
+    "P_gt_thr": 0.8886666666666667,
+    "max_gain": 3.965075017871623
+   },
+   {
+    "region": "Right-Insula-gyri-brevi",
+    "mean": -1.9515325172666664,
+    "P_gt_thr": 1.0,
+    "max_gain": 0.8317935669429908
+   },
+   {
+    "region": "Right-Insula-gyri-longi",
+    "mean": -1.6340994755333333,
+    "P_gt_thr": 1.0,
+    "max_gain": 1.3590515312815477
+   }
+  ],
+  "n_false_positives": 3,
+  "top10": [
+   {
+    "region": "Right-Amygdala",
+    "mean": -1.5102873567333333,
+    "sd": 0.04337290213099789,
+    "P_gt_thr": 1.0,
+    "true": -1.6
+   },
+   {
+    "region": "Right-Insula-gyri-longi",
+    "mean": -1.6340994755333333,
+    "sd": 0.0502265592212907,
+    "P_gt_thr": 1.0,
+    "true": -3.1120756902104025
+   },
+   {
+    "region": "Right-Hippocampus-anterior",
+    "mean": -1.6403650006000001,
+    "sd": 0.04620895763795045,
+    "P_gt_thr": 1.0,
+    "true": -2.1
+   },
+   {
+    "region": "Right-Rhinal-cortex",
+    "mean": -1.7285223522666666,
+    "sd": 0.06205252040243481,
+    "P_gt_thr": 1.0,
+    "true": -2.1
+   },
+   {
+    "region": "Left-Gyrus-rectus",
+    "mean": -1.9236141243513336,
+    "sd": 1.2564075856966512,
+    "P_gt_thr": 0.4,
+    "true": -2.758074577280681
+   },
+   {
+    "region": "Right-Insula-gyri-brevi",
+    "mean": -1.9515325172666664,
+    "sd": 0.028155590905854826,
+    "P_gt_thr": 1.0,
+    "true": -2.9756832027837055
+   },
+   {
+    "region": "Right-F1-mesial-prefrontal",
+    "mean": -1.9574299543333333,
+    "sd": 0.16330664666802247,
+    "P_gt_thr": 0.8886666666666667,
+    "true": -3.1911148624160504
+   },
+   {
+    "region": "Left-F3-Pars-Orbitalis",
+    "mean": -2.481200725266667,
+    "sd": 0.31633427168476647,
+    "P_gt_thr": 0.07466666666666667,
+    "true": -3.12651827466333
+   },
+   {
+    "region": "Left-T1-planum-polare",
+    "mean": -2.5148718790666664,
+    "sd": 0.6482920600565591,
+    "P_gt_thr": 0.44133333333333336,
+    "true": -2.9224280314743996
+   },
+   {
+    "region": "Right-Subcallosal-area",
+    "mean": -2.5239164277333335,
+    "sd": 0.7325559089988687,
+    "P_gt_thr": 0.4,
+    "true": -2.9914118162009844
+   }
+  ],
+  "K_mean": 0.39096293212566663,
+  "amp_mean": 0.05001442076466666,
+  "eps_mean": 0.13877092518666667,
+  "truth_K": 1.0,
+  "truth_amp": 0.1,
+  "spearman_posterior_mean_vs_true_x0": 0.10827868615315007,
+  "rmse_x0": 0.32568745160789797,
+  "ppc": {
+   "n_draws": 100,
+   "R2_within_channel_mean": 0.2544658034593519,
+   "informative_channels": [
+    11,
+    12,
+    13,
+    14,
+    81,
+    82
+   ],
+   "R2_informative_channels_vs_noisy_data": 0.8734576460140206,
+   "R2_informative_channels_vs_noise_free_signal": 0.9196707264052383,
+   "P_seizing_in_window": {
+    "Right-Insula-gyri-longi": 1.0,
+    "Right-Hippocampus-anterior": 1.0,
+    "Right-Amygdala": 1.0,
+    "Right-Rhinal-cortex": 1.0,
+    "Right-Insula-gyri-brevi": 0.97,
+    "Left-T1-planum-polare": 0.44,
+    "Right-Subcallosal-area": 0.4,
+    "Left-Gyrus-rectus": 0.4
+   }
+  }
+ }
+}

@@ -1,0 +1,44 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "R4-intervention-design",
+  "role": "intervention_design",
+  "display_name": "R4 \u00b7 Intervention design",
+  "enabled": true,
+  "color": "#c0662b",
+  "stage": "intervention_design",
+  "description": "Generate feasible surgery and stimulation scenarios and specify simulation batches.",
+  "skill": "r4-intervention-design",
+  "allowed_tools": [
+    "epilepsy-surgery-candidates",
+    "epilepsy-stimulation-candidates",
+    "epilepsy-simulation-request",
+    "epilepsy-simulation-comparison"
+  ],
+  "allowed_output_types": [
+    "surgery_plan",
+    "stimulation_plan",
+    "intervention_scenario_set",
+    "feasibility_report",
+    "simulation_request",
+    "simulation_batch",
+    "candidate_comparison_proposal",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": true,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": false
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "case_id": "required_for_case_tasks",
+    "model_bundle_id": "required_for_intervention_tasks",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 10
+  }
+}

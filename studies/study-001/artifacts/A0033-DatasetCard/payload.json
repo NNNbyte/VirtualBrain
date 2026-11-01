@@ -1,0 +1,49 @@
+{
+  "dataset_id": "openneuro:ds004100 (HUP iEEG Epilepsy Dataset)",
+  "study_family_id": "fam-hup-penn",
+  "source_doi": "10.18112/openneuro.ds004100.v1.1.3",
+  "repository_url": "https://openneuro.org/datasets/ds004100",
+  "related_publications": [
+    "Kini & Bernabei et al., Brain 2019, doi:10.1093/brain/awz303 (subset; README)",
+    "Bernabei & Sinha et al., Brain 2022 (subset; README)",
+    "Bernabei & Li et al. (in preparation per README)"
+  ],
+  "reported_subject_count": 58,
+  "reported_subject_count_source": "README: 'Each of the 58 subjects underwent intracranial EEG ...'",
+  "data_access": "verified_present (public, anonymous S3 listing and metadata fetch succeeded; recordings not downloaded)",
+  "licence": "CC0 (dataset_description.json)",
+  "approx_total_size_gb": 19.88,
+  "approx_total_size_basis": "sum of object sizes in S3 listing s3://openneuro.org/ds004100/ (1373 objects) on 2026-10-31",
+  "file_formats": [
+    "EDF (iEEG)",
+    "BIDS sidecars: channels.tsv, electrodes.tsv, coordsystem.json, events.tsv, ieeg.json, scans.tsv"
+  ],
+  "verified_subject_count": 58,
+  "verified_subject_count_basis": "participants.tsv rows (58) and 58 sub-* directories in S3 listing",
+  "verified_modalities": {
+    "ieeg": "verified_present: ECoG n=20, SEEG n=38 (participants.tsv 'implant'); 213 ictal EDF runs across subjects; interictal runs present; sub-HUP165 has no ictal run",
+    "electrode_localisation": "verified_present: *_space-fsaverage_electrodes.tsv for 58/58 subjects with non-n/a x,y,z for intracranial contacts; coordsystem.json iEEGCoordinateSystem='fsaverage', units 'm'. README says 'ICBM152 MNI space' -> frame discrepancy to resolve in R2 QC",
+    "anatomical_mri_ct": "reported_absent in listing: no anat/ or CT files in S3 listing",
+    "seizure_annotations": "verified_present: events.tsv per ictal run; 'soz' tags in channels.tsv status_description (checked sub-HUP060)"
+  },
+  "intervention_linkage": {
+    "status": "verified_present (contact level) for 57/58",
+    "basis": "channels.tsv status_description contains 'resect' tags (README: channels overlapping the resection/ablation zone determined by segmenting the resection cavity); sub-HUP132 first channels.tsv had no 'resect' tag",
+    "intervention_classes": "participants.tsv 'therapy': RESECTION 29, ABLATION (laser) 29; 'RNS' level defined in participants.json but no RNS rows",
+    "stimulation_settings": "reported_absent"
+  },
+  "outcome_fields_present": "participants.tsv: 'engel' (original subclass e.g. 1A..4A), 'outcome' S/F; aggregate only here: S=36 / F=22 (RESECTION S22 F7; ABLATION S14 F15). Per-patient labels must be sealed by R2/vault before modeling.",
+  "follow_up_definition": "not_reported in dataset metadata (no follow-up duration column); Kini 2019 (subset) reports outcome 'measured at a minimum of 1 year after surgery' -> to_verify per patient",
+  "eligibility": "Best fit to protocol: iEEG + localisation + contact-level resection/ablation linkage + Engel class. Caveats: follow-up length per patient not in metadata; coordinate frame discrepancy; no stimulation intervention; no MRI for TVB connectome building (would need atlas/normative connectome).",
+  "cohort_overlap": "Same Penn/HUP family as candidate-epivr (Kini 2019; HUP080 named in Kini 2019 is in ds004100) and Omni-iEEG 'hup' subset (58 sub-hupHUP*).",
+  "metadata_files_inspected_sha256": {
+    "participants.tsv": "9ddb35213f786e844d3a2bf6b3bd688eb10c959289a455a3c56aecedd2df1e73",
+    "participants.json": "6570fc4eff767ba09fa0169475398e43217b5cde2bad37e054039dcafdd43002",
+    "dataset_description.json": "eb41ca13a84fdc9952942419a071a7f4d52995088bdd74b07a64a8477fe1ca19",
+    "README": "13931e55f1948205745c9d67b695ba559904cff55e262c7f14060842df3d7793",
+    "sub-HUP060 electrodes.tsv": "7c45f12deb0369671b02cc6592d89af2305fa2deafcff0b455b54b423dd5a128",
+    "sub-HUP060 coordsystem.json": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+    "sub-HUP060 run-01 channels.tsv": "83b6b351391ba85328302fac2a0b8948bed2d489cf59f7af712a0057ba322f7b"
+  },
+  "checked_on": "2026-10-31"
+}

@@ -1,0 +1,47 @@
+{
+  "artifact_id": "A0044-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0021",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": null,
+  "tool_version": null,
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0017-NetworkHypothesisSet",
+    "A0018-ModelBundle",
+    "A0019-ModelBundle",
+    "A0038-SimulationBatch"
+  ],
+  "input_manifest_hash": "66fbb3acea0b6e10bd6b829de2df7747bb3c7b0be9ee3fe40fd225afccd60ae7",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0044-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "727e6ce5d30486f1242d6c173354270fbddec3310f9bffef3aa4d7dcda5992fa",
+      "byte_size": 3359
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T17:13:48+00:00",
+  "supersedes_id": null,
+  "title": "R5 validation of frozen P2 exploratory predictions against vault V001 - failed (exploratory)",
+  "manifest_hash": "e83aedbe2fd8d916fd50cecaf595d4e564fb076aa92bbaed58eec9f4d4a68d28"
+}

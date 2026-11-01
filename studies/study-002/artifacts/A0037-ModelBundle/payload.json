@@ -1,0 +1,1655 @@
+{
+ "model_family": "2D Epileptor network (vep-stim vep_mcmc lineage, diffusive coupling) inverted with Stan NUTS; patched copy vep_ar1.stan v2 (sha256 f15d0a54...0efb) with AR(1) observation model and data-centred priors",
+ "intended_use": "pipeline qualification benchmark only (synthetic case SYN-P1 derived from Wang P1 SC + gain). Not a patient model, not a clinical prediction; a fitted posterior is not a calibrated probability.",
+ "implementation_versions": {
+  "stan_model": "work/T0011/model_frozen/vep_ar1.stan sha256 f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb (diff vs vep_stim/stan/vep_mcmc.stan sha256 5368394c...732e in vep_ar1.diff)",
+  "features": "work/T0011/model_frozen/features.py sha256 8f717e72... (diff vs vep_prepare_sim.py in features_vs_vep_prepare_sim.diff)",
+  "generator": "work/T0011/sim_syn_p1.py (6D Epileptor network, numba Heun stochastic)",
+  "cmdstan": "2.40.0 (VM conda-forge; build default O0 - stanc --O1 build rejected: wrong log density)",
+  "cmdstanpy": "1.3.0",
+  "python_vm": "3.11.18",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "pandas_vm": "3.1.0",
+  "vep_stim": "0.1.0a1 @5367ef4 (only the .stan source was copied/patched; no package code executed in the fit)",
+  "local": "python 3.11.9 .venv-model (numba 0.68.1) for simulation, features, scoring"
+ },
+ "consumed_case": {
+  "case_id": "P1",
+  "synthetic_case": "SYN-P1",
+  "sc": "P1 SC (A0007) arm A; P2 SC (P2_SEEG_ts_fit.npz key 'SC' only) arm B",
+  "gain": "P1 gain (A0007) both arms",
+  "signals": "synthetic only (work/T0011/syn_p1_seeg.npz, sha256 of seeg bytes 8e7779b8...)"
+ },
+ "hypotheses": {
+  "network_hypothesis_set": "A0014-NetworkHypothesisSet",
+  "fitted": "single network model with per-region x0 (H1-H4 are discriminated by the x0 posterior)"
+ },
+ "fitting_partitions": "development partition only (P1-derived synthetic case, A0011). No P2 signals, no vault, no reserved files, no study-001 files.",
+ "observation_model": "Obs[t,s] = amp * (gain (x_t - x_1))[s] + u[s] + r[t,s]; r[1,s] ~ N(0, sigma/sqrt(1-phi^2)); r[t,s] ~ N(phi r[t-1,s], sigma) for t >= 2, all channels and all time points. Features: 10 Hz high-pass Butterworth order 3 filtfilt -> log of centred 1.0 s moving mean of squares (reflect edges, no zero padding) -> 1 Hz low-pass order 3 filtfilt -> decimate to 2 Hz. No outlier clamping. Feature is log power; Stan does not log it again.",
+ "priors": {
+  "x0": "x0_mu=-2.5, x0_sd=0.5 (x0 = x0_mu + x0_sd * N(0,1), identity instead of eig)",
+  "z_init": "z_eq(softmin(x0, x0_cap=-2.12; cap_k=20), I1) + z0_sd * N(0,1), z0_sd=0.2; x_init on the resting branch for z_init",
+  "K": "logK_mu=0, logK_sd=1",
+  "tau0": "logtau_mu=log(10), logtau_sd=0.6",
+  "amp": "logamp_mu = log(q99 over channels of (max feature - baseline median) / (2.4 * max gain)), logamp_sd=1",
+  "u": "u_mu = per-channel median of the first 5 s of the feature, u_sd=0.5",
+  "sigma": "logsig_mu = log(median over channels of SD of the first 5 s), logsig_sd=1",
+  "phi": "uniform(-1, 1); ar1=1"
+ },
+ "prior_data_centring": {
+  "fs_from_time_steps": 100.0,
+  "target_hz": 2.0,
+  "nt": 42,
+  "ns": 163,
+  "t_first_last_s": [
+   0.005,
+   20.505
+  ],
+  "baseline_samples": 10,
+  "logamp_mu": -2.617176072787133,
+  "amp_prior_median": 0.07300874337196747,
+  "logsig_mu": -1.9366894734693072,
+  "sigma_prior_median": 0.14418047385359642,
+  "q99_channel_range": 5.321166806226441,
+  "feature_lag1_ac_baseline_median": 0.38126876267335996
+ },
+ "fit_configs": {
+  "frozen_fit_config": {
+   "model": "vep_ar1.stan (T0011 v2). Patched copy of vep_stim/stan/vep_mcmc.stan (vep-stim 0.1.0a1 @5367ef4, sha256 5368394c...732e); diff in vep_ar1.diff",
+   "build": "CmdStan 2.40 via cmdstanpy 1.3.0, DEFAULT stanc optimisation (O0). Do NOT use stanc --O1: in T0011 the O1 build returned wrong log densities (rel diff up to 84% vs O0 and vs numpy).",
+   "log_density_check": "lp_numpy.py <exe> <data.json>: numpy vs CmdStan log_prob at 6 random points must agree (T0011 v2: max rel diff 1.4e-8)",
+   "features": {
+    "script": "features.py compute_feature(seeg[ns x nt], time_steps_ms, hpf=10.0, lpf=1.0, win_s=1.0, target_hz=2.0)",
+    "sampling_rate": "from each file's time_steps (ms); never assumed",
+    "steps": "10 Hz high-pass Butterworth order 3 filtfilt -> log of centred 1.0 s moving mean of squares (reflect edges, no zero padding) -> 1 Hz low-pass order 3 filtfilt -> decimate to 2 Hz. No outlier clamping. Feature is log power; Stan does not log it again.",
+    "window": "the fitted window is the whole provided segment; baseline = first 5 s (must be pre-ictal; choose the segment so that it starts >= 5 s before the earliest seizure activity, without looking at outcomes)"
+   },
+   "data_block": "prep_data.py build(target_hz=2.0): nn=162, nt, ns, Obs[nt x ns], SC (from the case file, used as stored, max 1), gain [ns x nn] (from the case file), dt=0.1, nsub=round(4/target_hz)=2, I1=3.1",
+   "priors": {
+    "x0": "x0_mu=-2.5, x0_sd=0.5 (x0 = x0_mu + x0_sd * N(0,1), identity instead of eig)",
+    "z_init": "z_eq(softmin(x0, x0_cap=-2.12; cap_k=20), I1) + z0_sd * N(0,1), z0_sd=0.2; x_init on the resting branch for z_init",
+    "K": "logK_mu=0, logK_sd=1",
+    "tau0": "logtau_mu=log(10), logtau_sd=0.6",
+    "amp": "logamp_mu = log(q99 over channels of (max feature - baseline median) / (2.4 * max gain)), logamp_sd=1",
+    "u": "u_mu = per-channel median of the first 5 s of the feature, u_sd=0.5",
+    "sigma": "logsig_mu = log(median over channels of SD of the first 5 s), logsig_sd=1",
+    "phi": "uniform(-1, 1); ar1=1"
+   },
+   "observation_model": "Obs[t,s] = amp * (gain (x_t - x_1))[s] + u[s] + r[t,s]; r[1,s] ~ N(0, sigma/sqrt(1-phi^2)); r[t,s] ~ N(phi r[t-1,s], sigma) for t >= 2, all channels and all time points",
+   "sampler": {
+    "multi_start": "24 L-BFGS runs (algorithm=lbfgs, iter=20000, tol_param=1e-10, Stan default random inits U(-2,2) unconstrained), seeds seed+i",
+    "nuts": "8 chains, each initialised at one of the top-8 optima by log density; iter_warmup=500, iter_sampling=500, adapt_delta=0.95, max_treedepth=10, seed=<seed>",
+    "command": "python run_fit.py fit <arm> <data.json> --nopt 24 --chains 8 --warmup 500 --samples 500 --seed <seed> --tag _v2",
+    "seeds_policy": "record one integer seed per fit (T0011 used 11011 arm A, 22022 arm B); L-BFGS run i uses seed+i; never re-run with new seeds to select a result"
+   },
+   "ranking": "EZ ranking by posterior mean x0; also report P(rank 1) per draw and P(x0 > -2.06)",
+   "diagnostics_required": "R-hat and bulk/tail ESS for every x0, divergences per chain, treedepth hits, stepsize, per-optimum EZ ranking (multimodality)",
+   "status_at_freeze": "benchmark NUTS for v2 running (arms A and B); qualification verdict pending. Variants tried on synthetic data only: v1 (free z_init N(3.6,0.4), 4 Hz) -> EZ rank 2 at best L-BFGS mode, NUTS aborted (cost); v2 (this file) -> EZ rank 1 at all top-8 optima in arm A."
+  },
+  "run2_fit_config_used": {
+   "name": "v2-run2",
+   "decided_by": "LEAD message to R3 (T0011) ~14:30 UTC 2026-11-01, after the frozen-settings NUTS (500+500, treedepth 10) had not reached warmup iteration 50 in ~20 min",
+   "model": "unchanged: vep_ar1.stan sha256 f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb, priors and features as fit_config.json",
+   "changes_vs_fit_config.json": {
+    "chains": "16 (was 8)",
+    "inits": "each chain at one of the top DISTINCT L-BFGS optima (log density differing by > 0.5), best first, cycling if fewer distinct optima than chains, plus N(0, 0.05) jitter on every unconstrained parameter (phi_raw clipped to +-0.99); rng = numpy default_rng(seed)",
+    "iter_warmup": "200 (was 500)",
+    "iter_sampling": "200 (was 500)",
+    "max_treedepth": "8 (was 10)",
+    "adapt_delta": "0.9 (was 0.95)"
+   },
+   "unchanged": "24 L-BFGS runs (lbfgs, iter 20000, tol_param 1e-10, seeds seed+i); seeds policy; pass criterion (planted EZ rank 1 by posterior mean x0, all x0 R-hat < 1.05, no unexplained divergences)",
+   "runner": "run_fit_run2.py fit <arm> <data.json> --nopt 24 --chains 16 --warmup 200 --samples 200 --max_depth 8 --adapt_delta 0.9 --seed <seed> --tag _run2",
+   "resources": "<= 16 VM cores for T0011 (arm A first, 16 chains); hard stop 15:40 UTC"
+  }
+ },
+ "parameters_or_posterior": {
+  "arm_A_P1_SC": {
+   "arm": "A",
+   "n_draws": 3200,
+   "planted_ez": [
+    44
+   ],
+   "planted_pz": [
+    40,
+    42
+   ],
+   "ez_rank_by_posterior_mean_x0": {
+    "44": 2
+   },
+   "pz_ranks": {
+    "40": 1,
+    "42": 3
+   },
+   "P_rank1": {
+    "34": 0.0109375,
+    "40": 0.065,
+    "42": 0.1696875,
+    "44": 0.025625,
+    "53": 0.02625
+   },
+   "max_x0_rhat": 4.73464,
+   "n_x0_rhat_ge_1.05": 162,
+   "min_x0_ess_bulk": 17.2979,
+   "min_x0_ess_tail": 1600.0,
+   "max_rhat_all_params": 4.73464,
+   "divergences_per_chain": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "divergences_total": 0,
+   "treedepth_max": 8,
+   "treedepth_hits_per_chain": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+   ],
+   "n_leapfrog_mean": 255.0,
+   "stepsize_per_chain": [
+    0.0022287763,
+    0.0070793749,
+    0.004262198,
+    0.0012743324,
+    0.0075536155,
+    0.0046299971,
+    0.004510412,
+    0.0031598172,
+    0.0038188593,
+    0.0042039311,
+    0.0015950452,
+    0.0045491305,
+    0.0021968405,
+    0.002878717,
+    0.0032752648,
+    0.020325242
+   ],
+   "estimated_ez_set_P(x0>-2.06)>0.5": [
+    3,
+    33,
+    34,
+    36,
+    38,
+    40,
+    42,
+    44,
+    46,
+    53
+   ],
+   "false_positives_excluding_ez_and_pz": [
+    3,
+    33,
+    34,
+    36,
+    38,
+    46,
+    53
+   ],
+   "false_positives_excluding_ez_only": [
+    3,
+    33,
+    34,
+    36,
+    38,
+    40,
+    42,
+    46,
+    53
+   ],
+   "regions_P_seizing_gt_0.5": [
+    33,
+    34,
+    35,
+    36,
+    38,
+    40,
+    42,
+    44,
+    46,
+    53
+   ],
+   "globals_mean_q05_q95_rhat_ess": {
+    "K": [
+     18.4397,
+     0.7331,
+     32.4066,
+     3.1988,
+     18.3728
+    ],
+    "tau0": [
+     11.1093,
+     3.053,
+     15.3295,
+     3.5988,
+     17.9232
+    ],
+    "amp": [
+     0.2282,
+     0.1586,
+     0.3447,
+     3.333,
+     18.1706
+    ],
+    "sigma": [
+     0.189,
+     0.1828,
+     0.1952,
+     2.2213,
+     20.8993
+    ],
+    "phi": [
+     0.8595,
+     0.82,
+     0.9242,
+     2.8098,
+     18.9861
+    ],
+    "resid_lag1_ac": [
+     0.3117,
+     0.287,
+     0.3327,
+     2.6777,
+     19.3342
+    ]
+   },
+   "top10": [
+    {
+     "region": 40,
+     "name": "Left-STS-anterior",
+     "rank": 1,
+     "x0_mean": -1.618,
+     "x0_q05_q95": [
+      -2.577,
+      1.657
+     ],
+     "P_x0_gt_crit": 0.563,
+     "P_seizing": 0.938,
+     "rhat": 4.4089,
+     "truth": "PZ"
+    },
+    {
+     "region": 44,
+     "name": "Left-T2-anterior",
+     "rank": 2,
+     "x0_mean": -1.661,
+     "x0_q05_q95": [
+      -3.102,
+      -0.971
+     ],
+     "P_x0_gt_crit": 0.765,
+     "P_seizing": 0.776,
+     "rhat": 4.4493,
+     "truth": "EZ"
+    },
+    {
+     "region": 42,
+     "name": "Left-ITS-anterior",
+     "rank": 3,
+     "x0_mean": -1.681,
+     "x0_q05_q95": [
+      -2.871,
+      -0.902
+     ],
+     "P_x0_gt_crit": 0.748,
+     "P_seizing": 0.875,
+     "rhat": 4.2618,
+     "truth": "PZ"
+    },
+    {
+     "region": 53,
+     "name": "Left-Rhinal-cortex",
+     "rank": 4,
+     "x0_mean": -1.773,
+     "x0_q05_q95": [
+      -2.96,
+      -1.061
+     ],
+     "P_x0_gt_crit": 0.652,
+     "P_seizing": 0.744,
+     "rhat": 2.6681,
+     "truth": "healthy"
+    },
+    {
+     "region": 34,
+     "name": "Left-Temporal-pole",
+     "rank": 5,
+     "x0_mean": -1.86,
+     "x0_q05_q95": [
+      -2.54,
+      -1.249
+     ],
+     "P_x0_gt_crit": 0.749,
+     "P_seizing": 0.815,
+     "rhat": 2.4525,
+     "truth": "healthy"
+    },
+    {
+     "region": 38,
+     "name": "Left-T1-lateral-anterior",
+     "rank": 6,
+     "x0_mean": -1.925,
+     "x0_q05_q95": [
+      -3.72,
+      -0.855
+     ],
+     "P_x0_gt_crit": 0.603,
+     "P_seizing": 0.812,
+     "rhat": 4.7346,
+     "truth": "healthy"
+    },
+    {
+     "region": 36,
+     "name": "Left-Gyrus-of-Heschl",
+     "rank": 7,
+     "x0_mean": -1.994,
+     "x0_q05_q95": [
+      -2.772,
+      -1.352
+     ],
+     "P_x0_gt_crit": 0.579,
+     "P_seizing": 0.518,
+     "rhat": 1.9627,
+     "truth": "healthy"
+    },
+    {
+     "region": 33,
+     "name": "Left-Insula-gyri-longi",
+     "rank": 8,
+     "x0_mean": -2.011,
+     "x0_q05_q95": [
+      -3.027,
+      -0.936
+     ],
+     "P_x0_gt_crit": 0.57,
+     "P_seizing": 0.638,
+     "rhat": 2.5592,
+     "truth": "healthy"
+    },
+    {
+     "region": 46,
+     "name": "Left-T3-anterior",
+     "rank": 9,
+     "x0_mean": -2.026,
+     "x0_q05_q95": [
+      -3.224,
+      -1.105
+     ],
+     "P_x0_gt_crit": 0.749,
+     "P_seizing": 0.75,
+     "rhat": 4.0381,
+     "truth": "healthy"
+    },
+    {
+     "region": 3,
+     "name": "Left-F3-Pars-Orbitalis",
+     "rank": 10,
+     "x0_mean": -2.037,
+     "x0_q05_q95": [
+      -2.859,
+      -1.252
+     ],
+     "P_x0_gt_crit": 0.504,
+     "P_seizing": 0.446,
+     "rhat": 1.6634,
+     "truth": "healthy"
+    }
+   ],
+   "optim": {
+    "t_opt_s": 17.990803241729736,
+    "n_runs": 24,
+    "lp": [
+     1254.3,
+     1246.5,
+     1199.6,
+     1190.5,
+     1177.0,
+     1143.7,
+     1142.0,
+     1091.1,
+     1039.7,
+     1007.4,
+     992.6,
+     970.2,
+     947.7,
+     889.7,
+     861.3,
+     836.0,
+     814.6,
+     788.1,
+     621.4,
+     598.1,
+     432.9,
+     383.8,
+     309.2,
+     103.2
+    ],
+    "top_region_per_run": [
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     40,
+     40,
+     40,
+     46,
+     69,
+     40,
+     80,
+     40,
+     42,
+     40,
+     40,
+     137,
+     59,
+     42,
+     145,
+     44
+    ],
+    "ez_rank_per_run": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     8,
+     162,
+     162,
+     3,
+     3,
+     9,
+     2,
+     143,
+     2,
+     162,
+     24,
+     12,
+     161,
+     65,
+     90,
+     1
+    ]
+   },
+   "t_opt_s": 17.990803241729736,
+   "t_nuts_s": 1444.142936706543,
+   "pass_arm_criteria": {
+    "ez_rank1": false,
+    "all_x0_rhat_lt_1.05": false,
+    "no_divergences": true
+   }
+  },
+  "arm_B_P2_SC": {
+   "arm": "B",
+   "n_draws": 3200,
+   "planted_ez": [
+    44
+   ],
+   "planted_pz": [
+    40,
+    42
+   ],
+   "ez_rank_by_posterior_mean_x0": {
+    "44": 6
+   },
+   "pz_ranks": {
+    "40": 9,
+    "42": 3
+   },
+   "P_rank1": {
+    "34": 0.086875,
+    "40": 0.116875,
+    "42": 0.0609375,
+    "44": 0.23375,
+    "46": 0.0,
+    "50": 0.004375,
+    "53": 0.01125
+   },
+   "max_x0_rhat": 4.91057,
+   "n_x0_rhat_ge_1.05": 162,
+   "min_x0_ess_bulk": 17.2384,
+   "min_x0_ess_tail": 1600.0,
+   "max_rhat_all_params": 4.91057,
+   "divergences_per_chain": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "divergences_total": 0,
+   "treedepth_max": 8,
+   "treedepth_hits_per_chain": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+   ],
+   "n_leapfrog_mean": 255.0,
+   "stepsize_per_chain": [
+    0.0062412666,
+    0.0067632505,
+    0.0046341136,
+    0.0081538923,
+    0.0061763891,
+    0.0023451455,
+    0.0025910079,
+    0.0030288653,
+    0.003613258,
+    0.0037098669,
+    0.0069118611,
+    0.0051308145,
+    0.0063373863,
+    0.0024953486,
+    0.0026656968,
+    0.0026235519
+   ],
+   "estimated_ez_set_P(x0>-2.06)>0.5": [
+    34,
+    36,
+    42,
+    44,
+    46,
+    50,
+    53
+   ],
+   "false_positives_excluding_ez_and_pz": [
+    34,
+    36,
+    46,
+    50,
+    53
+   ],
+   "false_positives_excluding_ez_only": [
+    34,
+    36,
+    42,
+    46,
+    50,
+    53
+   ],
+   "regions_P_seizing_gt_0.5": [
+    34,
+    40,
+    42,
+    44,
+    46,
+    50,
+    53
+   ],
+   "globals_mean_q05_q95_rhat_ess": {
+    "K": [
+     11.1254,
+     0.3814,
+     19.9214,
+     3.1578,
+     18.4864
+    ],
+    "tau0": [
+     9.8023,
+     5.4425,
+     12.2617,
+     3.3101,
+     18.2366
+    ],
+    "amp": [
+     0.4809,
+     0.1649,
+     2.0415,
+     3.8962,
+     17.697
+    ],
+    "sigma": [
+     0.1891,
+     0.1838,
+     0.195,
+     2.0501,
+     21.8069
+    ],
+    "phi": [
+     0.855,
+     0.8239,
+     0.8803,
+     2.3662,
+     20.2116
+    ],
+    "resid_lag1_ac": [
+     0.3142,
+     0.2943,
+     0.3353,
+     2.4697,
+     19.8401
+    ]
+   },
+   "top10": [
+    {
+     "region": 34,
+     "name": "Left-Temporal-pole",
+     "rank": 1,
+     "x0_mean": -1.713,
+     "x0_q05_q95": [
+      -3.036,
+      -1.045
+     ],
+     "P_x0_gt_crit": 0.8,
+     "P_seizing": 0.87,
+     "rhat": 3.3425,
+     "truth": "healthy"
+    },
+    {
+     "region": 46,
+     "name": "Left-T3-anterior",
+     "rank": 2,
+     "x0_mean": -1.77,
+     "x0_q05_q95": [
+      -3.037,
+      -1.198
+     ],
+     "P_x0_gt_crit": 0.817,
+     "P_seizing": 0.816,
+     "rhat": 3.217,
+     "truth": "healthy"
+    },
+    {
+     "region": 42,
+     "name": "Left-ITS-anterior",
+     "rank": 3,
+     "x0_mean": -1.817,
+     "x0_q05_q95": [
+      -2.369,
+      -1.319
+     ],
+     "P_x0_gt_crit": 0.69,
+     "P_seizing": 0.877,
+     "rhat": 3.1295,
+     "truth": "PZ"
+    },
+    {
+     "region": 53,
+     "name": "Left-Rhinal-cortex",
+     "rank": 4,
+     "x0_mean": -1.892,
+     "x0_q05_q95": [
+      -2.935,
+      -0.999
+     ],
+     "P_x0_gt_crit": 0.521,
+     "P_seizing": 0.511,
+     "rhat": 2.4935,
+     "truth": "healthy"
+    },
+    {
+     "region": 50,
+     "name": "Left-Collateral-sulcus",
+     "rank": 5,
+     "x0_mean": -1.907,
+     "x0_q05_q95": [
+      -2.802,
+      -1.407
+     ],
+     "P_x0_gt_crit": 0.736,
+     "P_seizing": 0.734,
+     "rhat": 2.117,
+     "truth": "healthy"
+    },
+    {
+     "region": 44,
+     "name": "Left-T2-anterior",
+     "rank": 6,
+     "x0_mean": -2.07,
+     "x0_q05_q95": [
+      -4.063,
+      -0.622
+     ],
+     "P_x0_gt_crit": 0.625,
+     "P_seizing": 0.625,
+     "rhat": 4.0206,
+     "truth": "EZ"
+    },
+    {
+     "region": 73,
+     "name": "Left-Hippocampus-posterior",
+     "rank": 7,
+     "x0_mean": -2.123,
+     "x0_q05_q95": [
+      -2.933,
+      -1.171
+     ],
+     "P_x0_gt_crit": 0.437,
+     "P_seizing": 0.406,
+     "rhat": 2.31,
+     "truth": "healthy"
+    },
+    {
+     "region": 36,
+     "name": "Left-Gyrus-of-Heschl",
+     "rank": 8,
+     "x0_mean": -2.147,
+     "x0_q05_q95": [
+      -3.178,
+      -1.325
+     ],
+     "P_x0_gt_crit": 0.502,
+     "P_seizing": 0.475,
+     "rhat": 1.9084,
+     "truth": "healthy"
+    },
+    {
+     "region": 40,
+     "name": "Left-STS-anterior",
+     "rank": 9,
+     "x0_mean": -2.162,
+     "x0_q05_q95": [
+      -3.787,
+      -0.813
+     ],
+     "P_x0_gt_crit": 0.473,
+     "P_seizing": 0.688,
+     "rhat": 4.9106,
+     "truth": "PZ"
+    },
+    {
+     "region": 33,
+     "name": "Left-Insula-gyri-longi",
+     "rank": 10,
+     "x0_mean": -2.247,
+     "x0_q05_q95": [
+      -3.069,
+      -1.254
+     ],
+     "P_x0_gt_crit": 0.33,
+     "P_seizing": 0.362,
+     "rhat": 1.5295,
+     "truth": "healthy"
+    }
+   ],
+   "optim": {
+    "t_opt_s": 15.230934619903564,
+    "n_runs": 24,
+    "lp": [
+     1236.6,
+     1235.2,
+     1200.1,
+     1195.4,
+     1195.4,
+     1195.0,
+     1193.3,
+     1172.7,
+     1129.8,
+     1081.4,
+     1055.7,
+     1033.5,
+     1009.1,
+     935.1,
+     933.8,
+     905.2,
+     867.8,
+     761.9,
+     565.5,
+     534.0,
+     531.2,
+     356.4,
+     -1371.5,
+     -6358246.5
+    ],
+    "top_region_per_run": [
+     38,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     42,
+     44,
+     38,
+     44,
+     40,
+     40,
+     40,
+     42,
+     137,
+     44,
+     65,
+     77,
+     53,
+     53,
+     130,
+     54
+    ],
+    "ez_rank_per_run": [
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     160,
+     1,
+     162,
+     1,
+     162,
+     162,
+     162,
+     161,
+     6,
+     1,
+     8,
+     71,
+     160,
+     161,
+     136,
+     6
+    ]
+   },
+   "t_opt_s": 15.230934619903564,
+   "t_nuts_s": 1304.9279305934906,
+   "pass_arm_criteria": {
+    "ez_rank1": false,
+    "all_x0_rhat_lt_1.05": false,
+    "no_divergences": true
+   }
+  }
+ },
+ "numerical_diagnostics": {
+  "log_density_verification": {
+   "method": "independent numpy implementation (lp_numpy.py; np.roots-based resting-branch and equilibrium solvers) vs CmdStan log_prob (jacobian=1) at 6 random points incl. a strongly seizing one",
+   "v1": "max rel diff 2.9e-8",
+   "v2_frozen": "max rel diff 1.4e-8 (abs <= 0.15 on lp -1.06e7, CSV precision)",
+   "stanc_O1_finding": "the --O1 build of the same model returned log densities differing by up to 84% from both O0 and numpy; O1 not used"
+  },
+  "nan_rejections": "occasional NaN likelihood at extreme proposals during early warmup (explicit-Euler blow-up), rejected by the sampler"
+ },
+ "convergence_checks": {
+  "arm_A": {
+   "max_x0_rhat": 4.73464,
+   "n_x0_rhat_ge_1.05": 162,
+   "min_x0_ess_bulk": 17.2979,
+   "min_x0_ess_tail": 1600.0,
+   "max_rhat_all_params": 4.73464,
+   "divergences_total": 0,
+   "divergences_per_chain": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "treedepth_max": 8,
+   "treedepth_hits_per_chain": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+   ],
+   "n_leapfrog_mean": 255.0
+  },
+  "arm_B": {
+   "max_x0_rhat": 4.91057,
+   "n_x0_rhat_ge_1.05": 162,
+   "min_x0_ess_bulk": 17.2384,
+   "divergences_total": 0,
+   "treedepth_max": 8,
+   "treedepth_hits_per_chain": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+   ]
+  },
+  "multistart_LBFGS": {
+   "A_v1": {
+    "n_runs": 16,
+    "t_opt_s": 18.486248016357422,
+    "lp_sorted": [
+     10951.1,
+     10951.0,
+     10951.0,
+     10951.0,
+     10885.9,
+     10847.8,
+     10815.6,
+     10762.8,
+     10761.0,
+     10600.7,
+     10538.2,
+     10502.7,
+     10448.0,
+     9986.7,
+     9944.9,
+     -5611121.1
+    ],
+    "planted_ez_rank_per_optimum": [
+     2,
+     2,
+     2,
+     2,
+     1,
+     2,
+     4,
+     160,
+     162,
+     1,
+     1,
+     161,
+     6,
+     82,
+     6,
+     67
+    ],
+    "top_region_per_optimum": [
+     40,
+     40,
+     40,
+     40,
+     44,
+     66,
+     55,
+     40,
+     40,
+     44,
+     44,
+     40,
+     67,
+     77,
+     56,
+     85
+    ],
+    "n_optima_ez_rank1": 3,
+    "best_optimum": {
+     "run": 0,
+     "lp": 10951.053,
+     "K": 22.779757,
+     "tau0": 7.9375049,
+     "amp": 0.15162477,
+     "sigma": 0.10340072,
+     "phi": 0.94822286
+    }
+   },
+   "A_v2": {
+    "n_runs": 24,
+    "t_opt_s": 12.3535897731781,
+    "lp_sorted": [
+     1254.3,
+     1246.5,
+     1199.6,
+     1190.5,
+     1177.0,
+     1143.7,
+     1142.0,
+     1091.1,
+     1039.7,
+     1007.4,
+     992.6,
+     970.2,
+     947.7,
+     889.7,
+     861.3,
+     836.0,
+     814.6,
+     788.1,
+     621.4,
+     598.1,
+     432.9,
+     383.8,
+     309.2,
+     103.2
+    ],
+    "planted_ez_rank_per_optimum": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     8,
+     162,
+     162,
+     3,
+     3,
+     9,
+     2,
+     143,
+     2,
+     162,
+     24,
+     12,
+     161,
+     65,
+     90,
+     1
+    ],
+    "top_region_per_optimum": [
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     40,
+     40,
+     40,
+     46,
+     69,
+     40,
+     80,
+     40,
+     42,
+     40,
+     40,
+     137,
+     59,
+     42,
+     145,
+     44
+    ],
+    "n_optima_ez_rank1": 9,
+    "best_optimum": {
+     "run": 0,
+     "lp": 1254.2741,
+     "K": 30.942891,
+     "tau0": 12.831481,
+     "amp": 0.24723678,
+     "sigma": 0.18489756,
+     "phi": 0.79799474
+    }
+   },
+   "B_v2": {
+    "n_runs": 24,
+    "t_opt_s": 10.168433427810669,
+    "lp_sorted": [
+     1236.6,
+     1235.2,
+     1200.1,
+     1195.4,
+     1195.4,
+     1195.0,
+     1193.3,
+     1172.7,
+     1129.8,
+     1081.4,
+     1055.7,
+     1033.5,
+     1009.1,
+     935.1,
+     933.8,
+     905.2,
+     867.8,
+     761.9,
+     565.5,
+     534.0,
+     531.2,
+     356.4,
+     -1371.5,
+     -6358246.5
+    ],
+    "planted_ez_rank_per_optimum": [
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     160,
+     1,
+     162,
+     1,
+     162,
+     162,
+     162,
+     161,
+     6,
+     1,
+     8,
+     71,
+     160,
+     161,
+     136,
+     6
+    ],
+    "top_region_per_optimum": [
+     38,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     44,
+     42,
+     44,
+     38,
+     44,
+     40,
+     40,
+     40,
+     42,
+     137,
+     44,
+     65,
+     77,
+     53,
+     53,
+     130,
+     54
+    ],
+    "n_optima_ez_rank1": 10,
+    "best_optimum": {
+     "run": 15,
+     "lp": 1236.5951,
+     "K": 18.385938,
+     "tau0": 12.119613,
+     "amp": 0.25392906,
+     "sigma": 0.18511255,
+     "phi": 0.80591015
+    }
+   }
+  },
+  "arm_A_note_ESS_tail": "CmdStan stansummary reported ESS_tail = 1600 (= total draws) for every parameter including those with R-hat > 4; treated as INVALID/not interpretable. Bulk ESS and R-hat are the convergence evidence.",
+  "arm_A_per_chain": [
+   {
+    "chain": 1,
+    "init_opt_lp": 1254.3,
+    "ez_rank": 2,
+    "top3": [
+     42,
+     44,
+     38
+    ],
+    "n_gt_crit": 23
+   },
+   {
+    "chain": 2,
+    "init_opt_lp": 1246.5,
+    "ez_rank": 2,
+    "top3": [
+     46,
+     44,
+     78
+    ],
+    "n_gt_crit": 14
+   },
+   {
+    "chain": 3,
+    "init_opt_lp": 1199.6,
+    "ez_rank": 3,
+    "top3": [
+     38,
+     42,
+     44
+    ],
+    "n_gt_crit": 12
+   },
+   {
+    "chain": 4,
+    "init_opt_lp": 1190.5,
+    "ez_rank": 2,
+    "top3": [
+     38,
+     44,
+     42
+    ],
+    "n_gt_crit": 22
+   },
+   {
+    "chain": 5,
+    "init_opt_lp": 1177.0,
+    "ez_rank": 3,
+    "top3": [
+     46,
+     38,
+     44
+    ],
+    "n_gt_crit": 15
+   },
+   {
+    "chain": 6,
+    "init_opt_lp": 1143.7,
+    "ez_rank": 6,
+    "top3": [
+     42,
+     78,
+     53
+    ],
+    "n_gt_crit": 19
+   },
+   {
+    "chain": 7,
+    "init_opt_lp": 1142.0,
+    "ez_rank": 3,
+    "top3": [
+     42,
+     40,
+     44
+    ],
+    "n_gt_crit": 19
+   },
+   {
+    "chain": 8,
+    "init_opt_lp": 1091.1,
+    "ez_rank": 2,
+    "top3": [
+     53,
+     44,
+     40
+    ],
+    "n_gt_crit": 20
+   },
+   {
+    "chain": 9,
+    "init_opt_lp": 1039.7,
+    "ez_rank": 14,
+    "top3": [
+     33,
+     40,
+     59
+    ],
+    "n_gt_crit": 24
+   },
+   {
+    "chain": 10,
+    "init_opt_lp": 1007.4,
+    "ez_rank": 60,
+    "top3": [
+     0,
+     33,
+     3
+    ],
+    "n_gt_crit": 31
+   },
+   {
+    "chain": 11,
+    "init_opt_lp": 992.6,
+    "ez_rank": 160,
+    "top3": [
+     12,
+     26,
+     40
+    ],
+    "n_gt_crit": 36
+   },
+   {
+    "chain": 12,
+    "init_opt_lp": 970.2,
+    "ez_rank": 8,
+    "top3": [
+     11,
+     78,
+     125
+    ],
+    "n_gt_crit": 16
+   },
+   {
+    "chain": 13,
+    "init_opt_lp": 947.7,
+    "ez_rank": 6,
+    "top3": [
+     69,
+     1,
+     112
+    ],
+    "n_gt_crit": 19
+   },
+   {
+    "chain": 14,
+    "init_opt_lp": 889.7,
+    "ez_rank": 30,
+    "top3": [
+     40,
+     53,
+     8
+    ],
+    "n_gt_crit": 19
+   },
+   {
+    "chain": 15,
+    "init_opt_lp": 861.3,
+    "ez_rank": 3,
+    "top3": [
+     80,
+     155,
+     44
+    ],
+    "n_gt_crit": 14
+   },
+   {
+    "chain": 16,
+    "init_opt_lp": 836.0,
+    "ez_rank": 120,
+    "top3": [
+     42,
+     13,
+     2
+    ],
+    "n_gt_crit": 15
+   }
+  ],
+  "arm_A_treedepth": "every post-warmup iteration of all 16 chains hit max_treedepth 8 (255 leapfrog steps); adapted step sizes 0.0013-0.020",
+  "arm_B_per_chain": [
+   {
+    "chain": 1,
+    "init_opt_lp": 1236.6,
+    "ez_rank": 4,
+    "top3": [
+     38,
+     33,
+     53
+    ]
+   },
+   {
+    "chain": 2,
+    "init_opt_lp": 1235.2,
+    "ez_rank": 1,
+    "top3": [
+     44,
+     42,
+     53
+    ]
+   },
+   {
+    "chain": 3,
+    "init_opt_lp": 1200.1,
+    "ez_rank": 1,
+    "top3": [
+     44,
+     53,
+     73
+    ]
+   },
+   {
+    "chain": 4,
+    "init_opt_lp": 1195.4,
+    "ez_rank": 4,
+    "top3": [
+     21,
+     4,
+     3
+    ]
+   },
+   {
+    "chain": 5,
+    "init_opt_lp": 1193.3,
+    "ez_rank": 1,
+    "top3": [
+     44,
+     73,
+     78
+    ]
+   },
+   {
+    "chain": 6,
+    "init_opt_lp": 1172.7,
+    "ez_rank": 4,
+    "top3": [
+     34,
+     53,
+     38
+    ]
+   },
+   {
+    "chain": 7,
+    "init_opt_lp": 1129.8,
+    "ez_rank": 154,
+    "top3": [
+     28,
+     42,
+     34
+    ]
+   },
+   {
+    "chain": 8,
+    "init_opt_lp": 1081.4,
+    "ez_rank": 2,
+    "top3": [
+     34,
+     44,
+     40
+    ]
+   },
+   {
+    "chain": 9,
+    "init_opt_lp": 1055.7,
+    "ez_rank": 150,
+    "top3": [
+     75,
+     38,
+     14
+    ]
+   },
+   {
+    "chain": 10,
+    "init_opt_lp": 1033.5,
+    "ez_rank": 1,
+    "top3": [
+     44,
+     78,
+     53
+    ]
+   },
+   {
+    "chain": 11,
+    "init_opt_lp": 1009.1,
+    "ez_rank": 162,
+    "top3": [
+     40,
+     46,
+     42
+    ]
+   },
+   {
+    "chain": 12,
+    "init_opt_lp": 935.1,
+    "ez_rank": 162,
+    "top3": [
+     38,
+     40,
+     42
+    ]
+   },
+   {
+    "chain": 13,
+    "init_opt_lp": 933.8,
+    "ez_rank": 162,
+    "top3": [
+     40,
+     37,
+     42
+    ]
+   },
+   {
+    "chain": 14,
+    "init_opt_lp": 905.2,
+    "ez_rank": 156,
+    "top3": [
+     42,
+     0,
+     18
+    ]
+   },
+   {
+    "chain": 15,
+    "init_opt_lp": 867.8,
+    "ez_rank": 10,
+    "top3": [
+     137,
+     121,
+     75
+    ]
+   },
+   {
+    "chain": 16,
+    "init_opt_lp": 761.9,
+    "ez_rank": 8,
+    "top3": [
+     129,
+     46,
+     50
+    ]
+   }
+  ],
+  "arm_B_treedepth": "100% of post-warmup iterations at max_treedepth 8 in all 16 chains; step sizes 0.0023-0.0082; ESS_tail reported as constant 1600 (invalid)"
+ },
+ "predictive_checks": {
+  "residual_whiteness": "resid_lag1_ac (lag-1 autocorrelation of AR(1) innovations, pooled) reported in globals; feature baseline lag-1 AC before modelling 0.77 (4 Hz)",
+  "held_out_presurgical_seizures": "not_applicable (single synthetic seizure; benchmark is recovery of a planted truth)"
+ },
+ "recovery_identifiability": {
+  "planted": {
+   "ez": [
+    44
+   ],
+   "pz": [
+    40,
+    42
+   ]
+  },
+  "arm_A": {
+   "ez_rank1": false,
+   "all_x0_rhat_lt_1.05": false,
+   "no_divergences": true
+  }
+ },
+ "variants_tried_synthetic_only": [
+  "v1: vep_ar1 with free z_init ~ N(3.6, 0.4), 4 Hz features (nt 84), x_init on resting branch: 16 L-BFGS -> EZ rank 2 at best mode (PZ 40 first, near tie), K 22.8, phi 0.95; NUTS (8 chains, 1000+1000, depth 10) aborted after 12 min for compute (38 ms gradient) - no posterior",
+  "v2 (frozen): z_init centred on isolated-node equilibrium z_eq(softmin(x0,-2.12)) sd 0.2; 2 Hz features with 2 Euler substeps: 24 L-BFGS -> EZ rank 1 at the top-8 optima (9/24 overall)",
+  "v2 with frozen sampler settings (8 chains, 500+500, depth 10, adapt_delta 0.95): killed at 24 min by LEAD decision (no chain reached warmup iteration 50; no draws)",
+  "v2-run2 (LEAD sampler change only): 16 chains at distinct optima + jitter, 200+200, depth 8, adapt_delta 0.9 - results in parameters_or_posterior",
+  "generator design probes before truth logging (generator only, no fit): K 1/3/5/6, PZ x0 -2.08/-2.15/-2.2/-2.25/-2.3, r 3.5e-4 -> 4e-5, EZ x0 -1.6 -> -1.8 to obtain a pre-ictal baseline and PZ recruitment"
+ ],
+ "environment_manifest": {
+  "local_env_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b (sha256 pip freeze .venv-model)",
+  "vm_env_digest": "a055f4c37c1d7864e29805b63e728845a914e73ec14e0e61fe5a551ea3c381a9 (sha256 pip freeze, VM env vbt)",
+  "vm": "scienceclaw-swarm n2-standard-32, Ubuntu kernel 7.0.0-1014-gcp, g++ conda-forge 15.3.0; <=16 cores used",
+  "seeds": {
+   "truth_plant_and_burnin_noise": 20261101,
+   "main_run_noise": 20261103,
+   "sensor_noise": 20261102,
+   "arm_A_LBFGS_and_NUTS": "11011 (L-BFGS run i: 11011+i; jitter rng default_rng(11011))",
+   "arm_B": "22022"
+  },
+  "commands": [
+   "local: .venv-model/Scripts/python.exe sim_syn_p1.py  (writes syn_p1_seeg.npz, syn_p1_truth.json [local only])",
+   "local: .venv-model/Scripts/python.exe prep_data.py  (features 2 Hz -> data_A.json, data_B.json, prior_settings.json)",
+   "python .tools/gcp/gcp_run.py push studies/study-002/work/T0011/remote t0011/v2",
+   "VM: python run_fit.py lpcheck data_A.json",
+   "VM: python run_fit.py fit A data_A.json --nopt 24 --opt_only --seed 11011 --tag _v2opt (and B, seed 22022)",
+   "VM: python run_fit_run2.py fit A data_A.json --nopt 24 --chains 16 --warmup 200 --samples 200 --max_depth 8 --adapt_delta 0.9 --seed 11011 --tag _run2",
+   "python .tools/gcp/gcp_run.py pull t0011/v2/remote/out_A_run2/<files> studies/study-002/work/T0011/results/A_run2/",
+   "local: .venv-model/Scripts/python.exe analyze.py results/A_run2 A  (scores against the local truth file)"
+  ],
+  "frozen_dir_sha256sums": "work/T0011/model_frozen/SHA256SUMS"
+ },
+ "qualification_verdict": {
+  "arm_A": "NOT QUALIFIED",
+  "reasons": [
+   "planted EZ (44) ranks 2nd by pooled posterior mean x0 (PZ region 40 1st); P(rank 1) for EZ 0.026",
+   "max x0 R-hat 4.73, all 162 x0 R-hat >= 1.05, min bulk ESS 17: the 16 chains stayed near their 16 distinct starting optima (no mixing)",
+   "100% tree-depth saturation at the run2 cap of 8: sampler did not explore within 200 warmup iterations",
+   "0 divergences",
+   "even chains started at the two best optima (where EZ is rank 1 at the mode) moved to EZ rank 2 (PZ 42 or region 46 first), i.e. EZ rank 1 is not robust within single modes"
+  ],
+  "diagnosis": "posterior is strongly multimodal (24/24 L-BFGS runs ended at distinct optima, lp 836-1254) and the EZ vs propagation-zone ordering is weakly identified with the 2D model on 6D-generated data (strong fitted coupling K ~ 18-35 synchronises EZ and PZ); amplitude-vs-extent and the 2D/6D model mismatch remain. With the compute available (200+200 iterations, depth 8) convergence cannot be reached.",
+  "consequence": "per the frozen skill and protocol A0001, the pipeline is not qualified; P2 fitting with this model should not be interpreted as EZ recovery evidence (LEAD/R5 decide).",
+  "arm_B": "informative: not converged; EZ rank 6 (P rank1 0.23)"
+ },
+ "arm_B_status": "complete (run2 config, seed 22022, 16 chains x 200 draws, NUTS 1305 s). Informative only: EZ rank 6 by pooled posterior mean, P(EZ rank 1) 0.23 (4/16 chains have EZ 1st by chain mean), max x0 R-hat 4.91, min bulk ESS 17, 0 divergences, 5 false positives beyond EZ+PZ; not converged."
+}

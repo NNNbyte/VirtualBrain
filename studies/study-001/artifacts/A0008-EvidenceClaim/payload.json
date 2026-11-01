@@ -1,0 +1,60 @@
+{
+  "claim": "SANTE RCT (n=110): bilateral ANT stimulation gave a 29% greater seizure reduction than control in the last blinded month (GEE, p=0.002); by 2 years median reduction was 56%, responder rate 54%, and 14 patients were seizure-free >=6 months.",
+  "intervention_modality": "ANT-DBS",
+  "bibliographic_record": {
+    "authors": "Fisher R, Salanova V, Witt T, Worth R, Henry T, Gross R, Oommen K, Osorio I, Nazzaro J, Labar D, Kaplitt M, Sperling M, Sandok E, Neal J, Handforth A, Stern J, DeSalles A, Chung S, Shetter A, Bergen D, Bakay R, Henderson J, French J, Baltuch G, Rosenfeld W, Youkilis A, Marks W, Garcia P, Barbaro N, Fountain N, Bazil C, Goodman R, McKhann G, Babu Krishnamurthy K, Papavassiliou S, Epstein C, Pollard J, Tonder L, Grebin J, Coffey R, Graves N, SANTE Study Group.",
+    "title": "Electrical stimulation of the anterior nucleus of thalamus for treatment of refractory epilepsy.",
+    "journal": "Epilepsia",
+    "year": "2010",
+    "volume": "51",
+    "issue": "5",
+    "pages": "899-908",
+    "doi": "10.1111/j.1528-1167.2010.02536.x",
+    "pmid": "20331461",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/20331461",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20331461/"
+  },
+  "supporting_passage": "One hundred ten participants were randomized. [...] In the last month of the blinded phase the stimulated group had a 29% greater reduction in seizures compared with the control group, as estimated by a generalized estimating equations (GEE) model (p = 0.002). [...] Unadjusted median declines at the end of the blinded phase were 14.5% in the control group and 40.4% in the stimulated group. [...] By 2 years, there was a 56% median percent reduction in seizure frequency; 54% of patients had a seizure reduction of at least 50%, and 14 patients were seizure-free for at least 6 months.",
+  "supporting_passages": [
+    "One hundred ten participants were randomized.",
+    "In the last month of the blinded phase the stimulated group had a 29% greater reduction in seizures compared with the control group, as estimated by a generalized estimating equations (GEE) model (p = 0.002).",
+    "Unadjusted median declines at the end of the blinded phase were 14.5% in the control group and 40.4% in the stimulated group.",
+    "By 2 years, there was a 56% median percent reduction in seizure frequency; 54% of patients had a seizure reduction of at least 50%, and 14 patients were seizure-free for at least 6 months."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 20331461, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 110,
+    "design": "multicenter double-blind RCT, 3-month blinded phase then open-label stimulation",
+    "population": "adults with medically refractory partial seizures incl. secondarily generalized",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "GEE-estimated difference; median % reduction; responder rate; seizure-free >=6 months",
+    "timepoint": "3-month blinded phase; 2 years",
+    "median_pct_reduction": {
+      "3_months_stimulated": 40.4,
+      "3_months_control": 14.5,
+      "24_months": 56
+    },
+    "responder_rate_50pct": {
+      "24_months": 0.54
+    },
+    "seizure_freedom": "14 patients seizure-free >=6 months (by 2 years)",
+    "follow_up_months_reported": 24
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer ANT stimulation reduces seizures with benefit persisting 2 years.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Stimulated group more often reported depression or memory problems as AEs, though formal cognition/mood testing showed no group difference."
+  ],
+  "study_family_id": "fam-SANTE-ANT-DBS-trial"
+}

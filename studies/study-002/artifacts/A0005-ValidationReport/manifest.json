@@ -1,0 +1,58 @@
+{
+  "artifact_id": "A0005-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0003",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "verify_data.py",
+  "tool_version": "f68cdba34361",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0002-DatasetCard",
+    "A0003-MethodCard",
+    "A0004-AccessRecord"
+  ],
+  "input_manifest_hash": "817d2d694d2ae83d6b0b308db7219d553d86f723579532b41c6d8b36869c5b45",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0005-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "4e43ae2706a51afc6ba3de8e380789cbb38d19bba86b8998fcea6c54c7d1e878",
+      "byte_size": 6749
+    },
+    {
+      "uri": "artifacts/A0005-ValidationReport/verify_data.py",
+      "media_type": "application/octet-stream",
+      "sha256": "f68cdba3436107070dc344b66f11feddcef6a53fdf1433b86e9682f20e89514b",
+      "byte_size": 2284
+    },
+    {
+      "uri": "artifacts/A0005-ValidationReport/verify_data_out.json",
+      "media_type": "application/octet-stream",
+      "sha256": "ceee587c479f014efef6d7ca6bec43433b5fe0e3c5c93db0387f7707308fc238",
+      "byte_size": 13493
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T13:14:47+00:00",
+  "supersedes_id": null,
+  "title": "R5 source check of R1 dataset, method and access records (wang-5367ef4)",
+  "manifest_hash": "cb00265659c44da4d6a49ac5f1c7703aa53d37e27f664a5424e3df80be9af337"
+}

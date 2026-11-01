@@ -1,0 +1,48 @@
+{
+ "claim": "A meta-analysis of 15 comparative cohort studies (3873 patients) found pooled seizure freedom of 52.5% after LITT vs 67.1% after open resective surgery (RR 0.78, 95% CI 0.70-0.88), but no significant difference in propensity-score-matched studies (RR 0.85) or TLE studies (RR 0.88); LITT had fewer complications.",
+ "bibliographic_record": {
+  "authors": "Pichardo-Rojas D, Espinosa-Cantú CB, Valenzuela-Rangel AF, et al.",
+  "title": "A comparative assessment of laser interstitial thermal therapy and open resective surgery for drug-resistant epilepsy: a meta-analysis of 3873 patients",
+  "citation": "J Neurosurg 2026;144(1):35-54",
+  "doi": "10.3171/2025.4.JNS25386",
+  "pmid": "40911916",
+  "pmcid": null,
+  "publication_type": "systematic review and meta-analysis"
+ },
+ "supporting_passage": "LITT showed a significantly lower rate of SF compared to ORS (risk ratio [RR] 0.78, 95% CI 0.70-0.88, p ≤ 0.0001). However, when PSM studies (RR 0.85, 95% CI 0.63-1.15, p = 0.30) and studies on patients with temporal lobe epilepsy (TLE) (RR 0.88, 95% CI 0.67-1.14, p = 0.34) were analyzed, the SF rates were similar.",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 40911916; https://europepmc.org/abstract/MED/40911916; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "meta-analysis of 15 comparative cohort studies (no RCTs); search to 2024-03-14",
+  "n_studies": 15,
+  "n_patients": 3873,
+  "population": "focal drug-resistant epilepsy, mixed ages and etiologies (subgroups by age, etiology, PSM)"
+ },
+ "endpoint": {
+  "reported_endpoint": "seizure freedom (definition and follow-up not_reported in abstract)",
+  "follow_up": "not_reported in abstract",
+  "meets_protocol_followup_ge_12mo": "to_verify",
+  "protocol_mapping_v1": "seizure freedom -> favourable (definition to_verify)",
+  "values": {
+   "LITT SF": "52.5% (95% CI 45.3-59.7, I2 47.4%)",
+   "ORS SF": "67.1% (60.2-73.9, I2 57.4%)",
+   "RR overall": "0.78 (0.70-0.88)",
+   "RR PSM": "0.85 (0.63-1.15)",
+   "RR TLE": "0.88 (0.67-1.14)",
+   "complication RR": "0.54 (0.37-0.79)"
+  }
+ },
+ "reported_observation": "Unmatched: open surgery higher SF; matched and TLE subgroups: no significant difference; LITT shorter stay and fewer complications.",
+ "author_inference": "Across unmatched studies ORS showed higher SF, but matched analyses showed no difference; prospective matched studies needed.",
+ "contradictions": [
+  "Ekman 2024 reports TLR superior to LITT in mesial TLE (72.5% vs 57.1%, P<0.01), whereas this paper's TLE subgroup shows no significant difference (RR 0.88, p=0.34)."
+ ],
+ "study_family_id": "fam-litt-pooled-meta-analyses",
+ "overlap_note": "Pools comparative cohorts likely overlapping with Maroufi 2026 and Ekman 2024; not independent evidence.",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "top1": 82,
+ "ez_set": [],
+ "threshold": -2.06,
+ "source": "A0018-ModelBundle map_ensemble_P2_post.csv",
+ "rule": "top1 = argmax median x0 over optima; EZ set = fraction of optima with x0 > -2.06 above 0.5 (empty -> [top1])",
+ "median_x0_top5": [
+  [
+   82,
+   -2.2781212
+  ],
+  [
+   7,
+   -2.4309533500000002
+  ],
+  [
+   1,
+   -2.4796043
+  ],
+  [
+   8,
+   -2.4875974000000003
+  ],
+  [
+   27,
+   -2.4877035999999997
+  ]
+ ],
+ "frac_gt_thr_ez": [],
+ "n_optima": 24
+}

@@ -1,0 +1,7 @@
+{
+  "resource": "Wang et al. 2025 patient raw datasets (SEEG, MRI, CT; 2 patients, La Timone Marseille)",
+  "access_path": "On request from the corresponding authors and F. Bartolomei (per Data availability, PMC12457187)",
+  "status": "not_accessible (not public)",
+  "conditions": "Paper: 'The patient raw datasets cannot be made publicly available due to the data protection concerns regarding potentially identifying and sensitive patient information.' Access would need a request and likely a data-sharing agreement plus ethics approval; user approval required before any request.",
+  "verified_at": "2026-10-31"
+}

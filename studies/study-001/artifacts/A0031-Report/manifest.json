@@ -1,0 +1,44 @@
+{
+  "artifact_id": "A0031-Report",
+  "schema_name": "Report",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0003",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "europepmc-rest+build_claims.py",
+  "tool_version": "1.0",
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "798a2a71e93402d7bed7e0d3b429d9ee5228dec99c6f06d8880559c9fc9f5759",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0031-Report/payload.json",
+      "media_type": "application/json",
+      "sha256": "406f8e6a1ff303f527258e7817396c0fb65ab82cfb2c037e1311f776d4633e72",
+      "byte_size": 4441
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "literature_reported"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:40:35+00:00",
+  "supersedes_id": null,
+  "title": "Neurostimulation outcomes by modality (RNS, ANT-DBS, VNS, SEEG/model-guided)",
+  "manifest_hash": "35a20a475fceb12d855857a07945759362fff5bb3d6b4532ae0a2cb0d7a85e39"
+}

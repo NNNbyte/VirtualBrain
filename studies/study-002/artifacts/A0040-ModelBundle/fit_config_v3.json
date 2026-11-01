@@ -1,0 +1,16 @@
+{
+ "model": "vep_v3.stan (T0018 v3), derived from T0011 v2 vep_ar1.stan sha f15d0a54 (diff vep_v3_vs_v2.diff)",
+ "build": "CmdStan 2.40 via cmdstanpy 1.3.0; default stanc (O0, never --O1); cpp_options STAN_NO_RANGE_CHECKS=true, CXXFLAGS_OPTIM='-O3 -march=native' (appended to CXXFLAGS by stan math make/compiler_flags, equivalent to make/local CXXFLAGS+=)",
+ "log_density_check": "lp_numpy_v3.py <exe> <data.json>: independent numpy (np.roots resting branch/z_eq, SC@x-rowsum*x coupling, offset marginalised as full MVN per PC) vs CmdStan log_prob at 6 random points",
+ "features": "features.py (unchanged from v2, sha identical): compute_feature(seeg, time_steps, target_hz=2.0)",
+ "data": "prep_data_v3.py <seeg.npz> <prefix>: baseline = first 5 s, centre = per-channel baseline median, k=24 PCs of full-window covariance of centred feature, Y=(Obs-base)V, GV=V'gain; free x0 = {max|gain| >= 0.25 max} U top-3 SC neighbours (40 for P1 gain/SC); other x0 fixed -2.5; dt=0.1, nsub=5, I1=3.1",
+ "priors": {"x0_free": "N(-2.5, 0.5)", "z_init": "pinned: z_eq(softmin(x0,-2.12;k=20))", "K": "lognormal(0,1)", "tau0": "lognormal(log 10, 0.6)",
+            "amp": "lognormal(log(q99 channel range/(2.4 max gain)), 1)", "sigma_k": "lognormal(log baseline SD of PC k, 1)", "phi": "uniform(-1,1)", "b_k (PC offsets)": "N(0, 0.5^2), marginalised analytically"},
+ "parameters": "40 x0 + K + tau0 + amp + 24 sigma + phi = 68",
+ "sampler": {"pathfinder": "num_paths=32, draws=1000 (PSIS resampling, CmdStan defaults otherwise), seed=<seed>",
+             "nuts": "8 chains initialised from Pathfinder draws (create_inits), metric=dense_e, iter_warmup=400, iter_sampling=400, adapt_delta=0.9, max_treedepth=10, seed=<seed>",
+             "command": "python run_fit_v3.py fit <name> <data.json> --paths 32 --chains 8 --warmup 400 --samples 400 --adapt_delta 0.9 --max_depth 10 --seed <seed>",
+             "seeds": "SYN-P1v3 arm A 18018, arm B (P2 SC) 28028, T0011 SYN-P1 arm A 38038; never re-run with new seeds to select a result"},
+ "ranking": "EZ ranking by posterior mean x0 over free regions; P(rank 1) per draw; per-chain (mode) top regions and mean lp",
+ "variants_tried_before_freeze": "see T0018 task log: v3a (nsub 2, sigma_sd 1), v3b (nsub 2, sigma_sd 0.3), v3c (nsub 2, sigma_sd 0.5), v3d/e/f (nsub 5 with sigma_sd 0.3/0.5/1.0); frozen = v3f (prespecified sigma prior, nsub 5)"
+}

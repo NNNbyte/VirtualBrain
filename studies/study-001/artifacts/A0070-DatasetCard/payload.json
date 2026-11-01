@@ -1,0 +1,62 @@
+{
+ "dataset_id": "openneuro:ds004100 (HUP iEEG Epilepsy Dataset)",
+ "study_family_id": "fam-hup-penn",
+ "source_doi": "10.18112/openneuro.ds004100.v1.1.3",
+ "release_bound": "OpenNeuro snapshot ds004100:1.1.3 (created 2023-03-22T21:26:14Z; latest of 8 snapshots 1.0.0-1.1.3). All verified fields below describe this snapshot only, not the raw S3 bucket (which still holds stale pre-1.1.0 objects, e.g. sub-HUP132).",
+ "repository_url": "https://openneuro.org/datasets/ds004100/versions/1.1.3",
+ "related_publications": [
+  "Kini & Bernabei et al., Brain 2019 (subset; README ref [1])",
+  "Bernabei & Sinha et al., Brain 2022 (subset; README ref [2])",
+  "Bernabei & Li et al. (in preparation per README)"
+ ],
+ "reported_subject_count": 58,
+ "reported_subject_count_source": "v1.1.3 README: 'Each of the 58 subjects underwent intracranial EEG ...' (README text not updated after sub-HUP132 was dropped at 1.1.0; conflicts with the release file tree)",
+ "data_access": "verified_present (public, anonymous; OpenNeuro GraphQL snapshot query and versioned S3 URLs of small metadata files; no recordings downloaded)",
+ "licence": "CC0 (v1.1.3 dataset_description.json)",
+ "approx_total_size_gb": 14.2,
+ "approx_total_size_basis": "OpenNeuro GraphQL snapshot(datasetId:'ds004100', tag:'1.1.3').summary: size 14196260504 bytes, totalFiles 1341 (summary excludes the two repository dotfiles). Independent recursive walk of snapshot.files including .datalad/ (T0014, walk2.py) gives 1343 files / 14196260851 bytes = 1341 + .gitattributes (284 B) + .datalad/config (63 B); 14196260504 + 284 + 63 = 14196260851, so the two counts reconcile exactly.",
+ "file_formats": [
+  "EDF (iEEG, 319 runs)",
+  "BIDS sidecars: channels.tsv, ieeg.json, events.tsv, electrodes.tsv, coordsystem.json, scans.tsv"
+ ],
+ "verified_subject_count": 57,
+ "verified_subject_count_basis": "v1.1.3 summary.subjects lists 57 ids (HUP060 ... HUP190) and the snapshot tree has 57 sub-* directories; sub-HUP132 is absent (removed at v1.1.0). participants.tsv NOT opened (sealed for this study).",
+ "verified_modalities": {
+  "ieeg": "verified_present: 319 EDF runs in v1.1.3 (task-ictal 208, task-interictal 111); single session 'presurgery'; acquisition label from file names: acq-seeg 37 subjects, acq-ecog 20 subjects. Per-subject run coverage (file names, T0014 re-walk): interictal runs in 56/57 subjects (55 subjects x 2 runs + 1 subject x 1 run = 111); sub-HUP158 has NO interictal run (its only recording is task-ictal_acq-seeg_run-04). Ictal runs in 56/57 subjects (1-5 runs each: 5 runs n=24, 3 n=16, 4 n=6, 2 n=6, 1 n=4); sub-HUP165 has NO ictal run (2 interictal runs only). 55/57 subjects have both ictal and interictal runs.",
+  "electrode_localisation": "verified_present as files: one *_space-fsaverage_electrodes.tsv + coordsystem.json per subject (57/57), all 57 with numeric x,y,z for contacts. Frame/unit conflict -> to_verify (see coordinate_frame_conflict).",
+  "coordinate_frame_conflict": {
+   "status": "to_verify (R2 QC)",
+   "coordsystem_json": "57/57 coordsystem.json: iEEGCoordinateSystem='fsaverage', iEEGCoordinateUnits='m'",
+   "readme": "README: 'electrode localizations in ICBM152 MNI space'",
+   "magnitude_check": "per-subject max |coordinate| ranges 40.7-103.2 across the 57 electrodes.tsv files, i.e. millimetre-scale values, inconsistent with the declared unit 'm'",
+   "action": "R2 must decide frame (fsaverage surface RAS vs ICBM152/MNI volume) and unit (mm vs m) before any geometry artifact; do not treat as verified MNI-mm"
+  },
+  "anatomical_mri_ct_dwi": "reported_absent in the v1.1.3 file tree: only ieeg/ datatype directories; no anat/, dwi/, CT, sourcedata/ or derivatives/. Patient-specific structural connectome cannot be built -> a template/normative connectome (e.g. atlas-based) would be required for TVB-style modeling",
+  "seizure_annotations": "verified_present: events.tsv for all 208 ictal runs (none for interictal runs); channels.tsv status_description carries clinician 'soz' tags in 57/57 subjects (checked first channels.tsv per subject)"
+ },
+ "intervention_linkage": {
+  "status": "verified_present (contact level) for 57/57 subjects in v1.1.3",
+  "basis": "channels.tsv status_description contains 'resect' tags in 57/57 subjects (first channels.tsv per subject inspected); README: channels overlapping the resection/ablation zone 'rigorously determined by segmenting the resection cavity'",
+  "intervention_classes": "README: each patient underwent 'surgical resection or laser ablation'. participants.json defines a 'therapy' column with levels ABLATION / RESECTION / RNS; per-subject therapy values are in participants.tsv, which is sealed and was not opened -> per-subject resection-vs-ablation split not_accessible here (vault/R2 only). The 'resect' tag denotes resection OR ablation zone, not distinguished in channels.tsv",
+  "stimulation_settings": "README-reported only, not verified: the v1.1.3 README describes subsequent treatment by 'surgical resection or laser ablation' and mentions no stimulation; no stimulation/device-setting fields appear in any inspected sidecar. However participants.json (column-definition sidecar, sha256 6570fc4e..., re-fetched in T0014) defines a 'therapy' column with levels ABLATION / RESECTION / RNS ('responsive neurostimulation'), and 'outcome' level NR = 'no resection/surgery'. Whether any subject has therapy=RNS cannot be verified without participants.tsv, which is sealed under the outcome-sealing rule and was not opened -> to_verify (R2). Even if RNS subjects exist, no RNS settings, lead locations or stimulation logs are present in the v1.1.3 file tree.",
+  "rns_therapy_level_status": "to_verify (R2, sealed participants.tsv): schema defines RNS level; per-subject presence not verifiable here"
+ },
+ "outcome_fields_present": "Per participants.json (data dictionary only): 'outcome' (S successful/seizure freedom, F failed, NR no resection/surgery) and 'engel' (1-4). Values live in participants.tsv, SEALED for this study; no outcome counts or splits are reported in this card. CHANGES 1.1.1/1.1.2 state the participants/Engel fields were updated, so outcome labels are release-specific (v1.1.3).",
+ "follow_up_definition": "not_reported in v1.1.3 metadata (participants.json defines no follow-up duration column); Kini 2019 (subset, A0034) reports outcome measured at >=1 year after surgery -> per-patient follow-up to_verify",
+ "eligibility": "Best fit among open candidates: iEEG (ictal+interictal) + per-contact coordinates + contact-level resection/ablation-zone tags + clinician SOZ tags + Engel outcome field (sealed). Caveats: (a) coordinate frame/unit conflict to_verify; (b) no MRI/CT/DWI -> template connectome needed; (c) no per-patient follow-up duration; (d) incomplete per-subject run coverage: sub-HUP165 has no ictal run and sub-HUP158 has no interictal run (55/57 have both); (e) no stimulation intervention is README-reported only - participants.json defines an RNS therapy level, so the presence of RNS-treated subjects is to_verify (R2, sealed participants.tsv); no stimulation settings in any case; (f) README subject count (58) is stale relative to the release (57).",
+ "cohort_overlap": "fam-hup-penn: Kini 2019 / EpiVR cohort is a subset (A0034; HUP080 named in Kini 2019 is in v1.1.3); Omni-iEEG 'hup' subset re-packages this dataset (A0040) - do not count as independent.",
+ "changes_vs_superseded": "Supersedes A0064 (failed R5 gate, T0012/N008; repair need N012): (1) removed false claim 'every subject has >=1 interictal run' - sub-HUP158 has none; caveat (d) now lists HUP158 and HUP165; per-subject run distribution added; (2) file walk now includes .datalad/config (63 B): 1343 walked files / 14196260851 B reconcile with summary 1341 / 14196260504 B; (3) 'no stimulation' re-labelled README-reported; participants.json RNS therapy level noted, RNS presence to_verify (R2). All other figures unchanged and re-verified from file names (57 subj, 319 EDF = 208 ictal / 111 interictal, 37 SEEG / 20 ECoG, 208 events.tsv all ictal). A0064 itself superseded A0033.",
+ "metadata_files_inspected_sha256": {
+  "README (v1.1.3, 2376 B)": "13931e55f1948205745c9d67b695ba559904cff55e262c7f14060842df3d7793",
+  "CHANGES (v1.1.3)": "f53a557df4731d85d490afcd77dd25d3baa5aa3c78a6375f6e9c74829f584808",
+  "dataset_description.json (v1.1.3)": "eb41ca13a84fdc9952942419a071a7f4d52995088bdd74b07a64a8477fe1ca19",
+  "sub-HUP060 space-fsaverage_coordsystem.json": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+  "sub-HUP060 space-fsaverage_electrodes.tsv": "7c45f12deb0369671b02cc6592d89af2305fa2deafcff0b455b54b423dd5a128",
+  "GraphQL snapshot response (work/T0010/raw/ds004100_v113.json)": "4058d09c3f378af0aa532a3a7fc9280c461d6a02f2de47485590e93c7b2516c2",
+  "snapshot file tree (work/T0010/raw/ds004100_v113_tree.json)": "d795432ae8ebb488e97e28c6e3af835220a41c3753d854096712617767b94acd",
+  "participants.json (v1.1.3, dictionary only; re-fetched T0014, identical)": "6570fc4eff767ba09fa0169475398e43217b5cde2bad37e054039dcafdd43002",
+  "snapshot file tree incl. .datalad (work/T0014/ds004100_v113_tree_full.json)": "2db5d75be758c206158e1bb49d6b5d69d152bc99757f8e8efdee6b066b3ab6db"
+ },
+ "files_not_opened": "participants.tsv (sealed); no EDF recordings",
+ "checked_on": "2026-11-01"
+}

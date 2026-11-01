@@ -1,0 +1,280 @@
+{
+ "criterion": {
+  "model_bundle": "A0001: all x0 R-hat < 1.05, no unexplained divergences, synthetic benchmark recovers planted EZ rank 1",
+  "simulation_batch": "A0001: paired baselines present, seeds recorded, numerical checks pass, same horizon for all candidates"
+ },
+ "criterion_version": "A0001-StudyProtocol v1 acceptance_criteria",
+ "evaluator": "R5 (T0020, instance r5-qual2)",
+ "evaluated_artifacts": [
+  "A0014-NetworkHypothesisSet",
+  "A0037-ModelBundle",
+  "A0039-NetworkHypothesisSet",
+  "A0040-ModelBundle",
+  "A0017-NetworkHypothesisSet",
+  "A0018-ModelBundle",
+  "A0019-ModelBundle",
+  "A0034-InterventionScenarioSet",
+  "A0035-SimulationRequest",
+  "A0038-SimulationBatch"
+ ],
+ "held_out_data": "none used; synthetic benchmarks' planted maps are in the NHS/ModelBundle payloads; no vault, truth file, or study-001 access",
+ "result": {
+  "gates": {
+   "A0037-ModelBundle": "failed",
+   "A0014-NetworkHypothesisSet": "failed",
+   "A0040-ModelBundle": "failed",
+   "A0039-NetworkHypothesisSet": "failed",
+   "A0019-ModelBundle": "failed",
+   "A0018-ModelBundle": "failed",
+   "A0017-NetworkHypothesisSet": "indeterminate",
+   "A0034-InterventionScenarioSet": "passed",
+   "A0035-SimulationRequest": "passed",
+   "A0038-SimulationBatch": "indeterminate"
+  },
+  "recomputed_diagnostics": {
+   "A0037_v2": {
+    "A": {
+     "max_rhat": 4.735,
+     "n_ge_105": 162,
+     "top5": [
+      40,
+      44,
+      42,
+      53,
+      34
+     ],
+     "rank44": 2,
+     "P44": 0.0256,
+     "P40": 0.065,
+     "P42": 0.1697,
+     "chains_ez_first": 0
+    },
+    "B": {
+     "max_rhat": 4.911,
+     "n_ge_105": 162,
+     "top5": [
+      34,
+      46,
+      42,
+      53,
+      50
+     ],
+     "rank44": 6,
+     "P44": 0.2338,
+     "P40": 0.1169,
+     "P42": 0.0609,
+     "chains_ez_first": 4
+    }
+   },
+   "A0040_v3_pathfinder": {
+    "A": [
+     [
+      38,
+      -2.2730336899999846
+     ],
+     [
+      34,
+      -2.2940317860999757
+     ],
+     [
+      57,
+      -2.3782163838999844
+     ],
+     [
+      48,
+      -2.402937837200014
+     ],
+     [
+      37,
+      -2.4086384799000182
+     ]
+    ],
+    "B": [
+     [
+      57,
+      -2.3756494137999833
+     ],
+     [
+      40,
+      -2.39671794339999
+     ],
+     [
+      71,
+      -2.423867784099994
+     ],
+     [
+      122,
+      -2.43973702470001
+     ],
+     [
+      69,
+      -2.446538967799967
+     ]
+    ],
+    "T11": [
+     [
+      137,
+      -2.2613760305999544
+     ],
+     [
+      139,
+      -2.276466938800017
+     ],
+     [
+      37,
+      -2.325417699299975
+     ],
+     [
+      126,
+      -2.356186169300005
+     ],
+     [
+      30,
+      -2.35798277469999
+     ]
+    ]
+   },
+   "A0040_P_EZ58_rank1_armA": 0.012,
+   "A0019": {
+    "post": {
+     "max_rhat_thinned": 3.2588940852659687,
+     "median_rhat": 2.041639652821922,
+     "n_rhat_ge_1_05": 162,
+     "top5_by_mean": [
+      10,
+      7,
+      8,
+      68,
+      71
+     ],
+     "P_rank1_top": [
+      [
+       7,
+       0.1
+      ],
+      [
+       152,
+       0.065
+      ],
+      [
+       140,
+       0.06
+      ],
+      [
+       66,
+       0.043
+      ],
+      [
+       161,
+       0.037
+      ]
+     ]
+    },
+    "full": {
+     "max_rhat_thinned": 6.396047571998142,
+     "median_rhat": 3.084273135183416,
+     "n_rhat_ge_1_05": 162,
+     "top5_by_mean": [
+      7,
+      82,
+      12,
+      8,
+      115
+     ],
+     "P_rank1_top": [
+      [
+       82,
+       0.425
+      ],
+      [
+       12,
+       0.155
+      ],
+      [
+       7,
+       0.1
+      ],
+      [
+       113,
+       0.083
+      ],
+      [
+       76,
+       0.07
+      ]
+     ]
+    }
+   },
+   "A0018": {
+    "post": {
+     "lp_range": [
+      -2269.9623,
+      -2269.6716
+     ],
+     "top1_counts": {
+      "82": 24
+     },
+     "max_x0_overall": -2.2711437,
+     "terminations": [
+      "line_search_failed"
+     ]
+    },
+    "full": {
+     "lp_range": [
+      -3996.2746,
+      -3431.555
+     ],
+     "top1_counts": {
+      "1": 1,
+      "4": 1,
+      "7": 3,
+      "12": 5,
+      "76": 1,
+      "82": 12,
+      "89": 1
+     },
+     "max_x0_overall": -1.5926506,
+     "terminations": [
+      "converged",
+      "line_search_failed"
+     ]
+    }
+   }
+  },
+  "r4_checks": {
+   "pairing_mismatches": 0,
+   "seeds_1000_plus_i": true,
+   "horizon_steps": {
+    "post": 155200,
+    "full": 288000
+   },
+   "baselines_nonfinite": 0,
+   "nonfinite_candidate_runs": {
+    "post": {
+     "STIM-PT/amp4": 24,
+     "STIM-PT-chronic/amp4": 23
+    },
+    "full": {
+     "STIM-PT-chronic/amp2": 10,
+     "STIM-PT-chronic/amp4": 12,
+     "STIM-PT/amp4": 9,
+     "STIM-PT/amp2": 2
+    }
+   },
+   "spec_sha256_verified": "70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461",
+   "simulator_sha256_verified": "0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0",
+   "spot_rerun": "6/6 bit-exact (see SimulationComparison)"
+  },
+  "provenance_hashes": "all payload_refs of the 10 artifacts match on disk except A0037: 5 attachment names listed twice (arm A, arm B) are stored once (arm B); arm A hashes resolve to work/T0011/results/A_run2"
+ },
+ "uncertainty_method": "Rank-normalised split R-hat (folded and unfolded, max) recomputed from stored draws: A0037 all 3200 draws as 16x200; A0019 attached thinned draws 16x25 (thinning inflates R-hat noise; post max matches R3, full 6.40 vs R3 6.01). Effects: median and 5-95% across MAP optima.",
+ "failure_cases": [
+  "No model in study-002 is qualified: v2 and v3 benchmarks both fail EZ recovery and convergence.",
+  "P2 fits A0018/A0019 do not meet the qualified-posterior criterion; they are frozen exploratory predictions only.",
+  "A0038: 4 pulse-train arms numerically non-finite at dt 0.05 ms (excluded, disclosed); post window has no baseline seizures, so its ranking is uninformative and frac_abolish_all=1.0 is vacuous.",
+  "A0037 attachment-name collision (arm A files overwritten by arm B in the artifact folder).",
+  "Not checked: A0020-A0033 plan artifacts individually (not in task inputs); full rerun of model fits (not attempted, time limit)."
+ ],
+ "verdict": "NOT QUALIFIED: all model bundles fail A0001 model_bundle criterion; R4 planning records pass; A0038 is reproducible and correctly paired but its numerical check is not clean (indeterminate). Any downstream outcome evaluation of A0017/A0018/A0019 must be reported as evaluation of unqualified exploratory predictions.",
+ "evidence_level": "independent recomputation from stored outputs + 6 bit-exact simulation reruns; no refits"
+}

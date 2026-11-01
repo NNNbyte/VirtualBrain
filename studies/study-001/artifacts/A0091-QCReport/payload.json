@@ -1,0 +1,316 @@
+{
+ "case_id": "HUP105",
+ "verdict": "accept_with_limits",
+ "verdict_reasons": [
+  "coordinate frame template identity (fsaverage/MNI305 vs ICBM152) to_verify; units resolved as mm",
+  "anatomy template-only (no MRI/CT); no atlas labels",
+  "reference electrode not reported (iEEGReference n/a); treat as referential as recorded",
+  "EKG mistyped as ECOG in channels.tsv (bad-status; exclude by name)",
+  "500 Hz sampling (differs from cohort majority)",
+  "end-of-file transient in ictal runs: trim last 1 s",
+  "strong 60-Hz contamination across channels: notch required",
+  "QC-flagged channels (not marked bad in channels.tsv; review before modelling): {'high_amplitude_std_gt_500uV': ['LAT1', 'LAT2', 'LAT3', 'LAT4', 'LF3', 'LF4', 'LH1', 'LH2', 'LH3', 'LH4', 'LMT1', 'LMT2', 'LMT3', 'LMT4', 'LP6', 'LPT1', 'LPT2', 'LPT3', 'RA1', 'RA2', 'RA3', 'RA4', 'RAT1', 'RAT2', 'RAT3', 'RAT4', 'RDNET1', 'RDNET2', 'RDNET3', 'RDNET4', 'RF2', 'RF6', 'RH1', 'RH2', 'RH3', 'RH4', 'RMT2', 'RMT3', 'RMT4', 'RPT1', 'RPT2', 'RPT3', 'RPT4']}"
+ ],
+ "findings": [
+  {
+   "item": "checksums",
+   "status": "pass",
+   "detail": "17/17 files match T0015 manifest sha256+size"
+  },
+  {
+   "item": "signal ictal-run-01",
+   "status": "warn",
+   "detail": {
+    "sfreq_hz": 500.0,
+    "duration_s": 230.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 564.05,
+    "median_line_ratio_db_good": 27.39,
+    "flat": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [
+     "LAT1",
+     "LAT2",
+     "LAT3",
+     "LAT4",
+     "LH1",
+     "LH2",
+     "LH3",
+     "LH4",
+     "LMT1",
+     "LMT2",
+     "LMT3",
+     "LMT4",
+     "LPT3",
+     "RA1",
+     "RA2",
+     "RA3",
+     "RA4",
+     "RAT1",
+     "RDNET1",
+     "RDNET2",
+     "RDNET3",
+     "RDNET4",
+     "RF2",
+     "RF6",
+     "RH1",
+     "RH2",
+     "RH3",
+     "RH4",
+     "RMT2",
+     "RMT4",
+     "RPT4"
+    ],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 1,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 169.998,
+      "duration_s": 49.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal ictal-run-02",
+   "status": "warn",
+   "detail": {
+    "sfreq_hz": 500.0,
+    "duration_s": 254.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 665.63,
+    "median_line_ratio_db_good": 15.62,
+    "flat": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [
+     "LAT1",
+     "LAT3",
+     "LAT4",
+     "LF3",
+     "LF4",
+     "LMT3",
+     "LMT4",
+     "LP6",
+     "LPT1",
+     "LPT2",
+     "RA1",
+     "RA2",
+     "RA3",
+     "RA4",
+     "RAT1",
+     "RAT2",
+     "RAT3",
+     "RAT4",
+     "RDNET1",
+     "RDNET2",
+     "RDNET3",
+     "RDNET4",
+     "RF6",
+     "RH1",
+     "RH2",
+     "RH3",
+     "RH4",
+     "RMT2",
+     "RMT3",
+     "RMT4",
+     "RPT1",
+     "RPT2",
+     "RPT3",
+     "RPT4"
+    ],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 1,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 193.998,
+      "duration_s": 73.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal interictal-run-01",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 500.0,
+    "duration_s": 300.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 77.16,
+    "median_line_ratio_db_good": 16.85,
+    "flat": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0
+   }
+  },
+  {
+   "item": "signal interictal-run-02",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 500.0,
+    "duration_s": 300.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 89.72,
+    "median_line_ratio_db_good": 28.09,
+    "flat": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0
+   }
+  },
+  {
+   "item": "annotation coherence",
+   "status": "pass",
+   "detail": "2/2 ictal runs have sz onset (+offset) inside the recording, events.tsv sample == onset*fs"
+  },
+  {
+   "item": "channel tags",
+   "status": "pass",
+   "detail": {
+    "n_soz": 9,
+    "n_resect": 4,
+    "soz_not_resect": [
+     "RA2",
+     "RA3",
+     "RA4",
+     "RAT1",
+     "RAT2",
+     "RDNET1",
+     "RDNET2"
+    ],
+    "consistent_across_runs": {
+     "same_channel_list": true,
+     "same_soz": true,
+     "same_resect": true,
+     "same_bad": true
+    }
+   }
+  },
+  {
+   "item": "coordinates",
+   "status": "warn",
+   "detail": {
+    "decision": "Units: mm. Template identity: unresolved between fsaverage (=MNI305 Talairach, coordsystem.json) and ICBM152 MNI (README); both are MNI-type template spaces whose axes agree and whose offsets are a few mm, which coordinate values alone cannot separate. Use as MNI-like template coordinates in mm; do not treat as verified ICBM152 nor as patient-native.",
+    "frac_in_mni_box_mm": 1.0,
+    "outside_box": [],
+    "good_channels_without_coords": []
+   }
+  },
+  {
+   "item": "sampling rate",
+   "status": "info",
+   "detail": "500 Hz (lowpass 250 Hz) - lower than the 512/1024 Hz of other HUP cases; resampling needed for pooled analyses"
+  },
+  {
+   "item": "soz vs resect",
+   "status": "info",
+   "detail": "9 soz contacts, 4 resect contacts; soz not in resect: RA2, RA3, RA4, RAT1, RAT2, RDNET1, RDNET2; resect not soz: RAT3, RAT4 (delivered-intervention linkage only, no outcome)"
+  },
+  {
+   "item": "ictal amplitude",
+   "status": "info",
+   "detail": "many good channels exceed 500 uV std over whole ictal runs; segment check (window_check.py): good-channel median std pre-onset 151-165 uV, seizure 779-885 uV, post-offset 212-390 uV, interictal 77-90 uV -> amplitude rise is confined to the annotated seizure (physiological), not a recording fault"
+  },
+  {
+   "item": "end-of-clip transient",
+   "status": "warn",
+   "detail": "both ictal runs contain one all-channel step (~3.2-3.4 mV median) 0.44-0.46 s before the end of the file (229.56 s, 253.54 s), outside the seizure; last 1 s median std 1.6-1.7 mV -> trim the final 1 s of ictal runs"
+  },
+  {
+   "item": "line noise",
+   "status": "warn",
+   "detail": "good-channel median 60-Hz ratio 16-28 dB in all runs (higher than other cases); notch filtering required"
+  },
+  {
+   "item": "peak amplitude",
+   "status": "info",
+   "detail": "absolute max ~15.7 mV (ictal) / ~11.3 mV (interictal) on at least one good channel; possible clipping not assessed per channel"
+  },
+  {
+   "item": "EDF header",
+   "status": "pass",
+   "detail": "61 ch, 500 Hz, uV, no EDF-embedded annotations; durations match ieeg.json RecordingDuration (+1 sample convention)"
+  }
+ ],
+ "missingness": {
+  "mri_ct": "reported_absent",
+  "interictal_events": "not applicable (no events.tsv for interictal runs, as expected)",
+  "channels_without_coords": [
+   "EKG"
+  ],
+  "reference_electrode": "not_reported",
+  "atlas_labels": "not_reported",
+  "ictal_runs": 2,
+  "interictal_runs": 2,
+  "outcomes": "sealed (not accessed)"
+ },
+ "coordinate_frame_decision": {
+  "coordinate_units": "mm",
+  "coordinate_units_status": "resolved (values are millimetres; declared 'm' rejected)",
+  "coordinate_frame": "MNI-like template space (fsaverage/MNI305 surface-RAS vs ICBM152 MNI)",
+  "coordinate_frame_status": "to_verify",
+  "decision_text": "Units: mm. Template identity: unresolved between fsaverage (=MNI305 Talairach, coordsystem.json) and ICBM152 MNI (README); both are MNI-type template spaces whose axes agree and whose offsets are a few mm, which coordinate values alone cannot separate. Use as MNI-like template coordinates in mm; do not treat as verified ICBM152 nor as patient-native."
+ },
+ "qc_thresholds": {
+  "flat_std_uv": 0.5,
+  "flat_diff0_frac": 0.5,
+  "robust_z": 5.0,
+  "high_std_uv": 500.0,
+  "line_band_hz": [
+   59.0,
+   61.0
+  ],
+  "line_ref_hz": [
+   [
+    50,
+    57
+   ],
+   [
+    63,
+    70
+   ]
+  ],
+  "jump": "|diff|>20 robust SD in >50% good channels"
+ },
+ "tooling": {
+  "worker": "case_qc.py",
+  "worker_sha256": "4200abcfed4cbc39592b462e1caee416af1b93e4b5487a2dba76f613145f3835",
+  "versions": {
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3",
+   "scipy": "1.15.1"
+  }
+ }
+}

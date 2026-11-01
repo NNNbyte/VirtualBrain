@@ -1,0 +1,409 @@
+{
+ "case_id": "HUP123",
+ "cohort_split_role": "development",
+ "findings": [
+  {
+   "check": "checksums",
+   "result": "pass",
+   "detail": "25/25 files match manifest sha256+bytes"
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-01",
+   "sfreq_hz": 500.0,
+   "duration_s": 248.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 138.05398285317554,
+    "min": 67.82835633120062,
+    "max": 665.9179123315155
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "RDA3"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 1.84,
+   "frac_channels_line_ratio_gt10": 0.063,
+   "line_noise_outlier_channels": [
+    "EKG1",
+    "EKG2",
+    "RDHP1",
+    "RG01",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [
+    "RDA3"
+   ],
+   "marked_bad_not_flagged": [
+    "RG43",
+    "RMT4"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-02",
+   "sfreq_hz": 500.0,
+   "duration_s": 248.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 85.12465725652518,
+    "min": 58.20958360299781,
+    "max": 359.91929630436493
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 72.68,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "RDHP1",
+    "RG01",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [],
+   "marked_bad_not_flagged": [
+    "EKG2"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-03",
+   "sfreq_hz": 500.0,
+   "duration_s": 321.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 249.96063131327188,
+    "min": 175.52203833879457,
+    "max": 699.3974932451313
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 327.97,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "RDHP1",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [],
+   "marked_bad_not_flagged": [
+    "EKG1",
+    "EKG2",
+    "RG01",
+    "RG37"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "ictal-04",
+   "sfreq_hz": 500.0,
+   "duration_s": 326.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 246.41598000121905,
+    "min": 171.10044100988895,
+    "max": 711.2041723303649
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 500.93,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "RDHP1",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [],
+   "marked_bad_not_flagged": [
+    "EKG1",
+    "EKG2",
+    "RG01"
+   ],
+   "annotations_within_recording": true,
+   "annotation_sample_consistent": true,
+   "seizure_offset_after_onset": true
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "interictal-01",
+   "sfreq_hz": 500.0,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 83.24254118625261,
+    "min": 56.68360022370745,
+    "max": 554.938772592476
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "EKG1",
+    "RDHP1",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 531.22,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "EKG2",
+    "RDHP1",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [],
+   "marked_bad_not_flagged": [
+    "RG01"
+   ],
+   "annotations_within_recording": null,
+   "annotation_sample_consistent": null,
+   "seizure_offset_after_onset": null
+  },
+  {
+   "check": "run_signal_qc",
+   "run": "interictal-02",
+   "sfreq_hz": 500.0,
+   "duration_s": 300.0,
+   "duration_matches_sidecar": true,
+   "edf_format": "EDF+C",
+   "edf_plus_discontinuous": false,
+   "edf_labels_match_channels_tsv": true,
+   "n_nan": 0,
+   "std_uV": {
+    "median": 90.67987493047453,
+    "min": 61.93185841300406,
+    "max": 420.3654772249998
+   },
+   "flat": [],
+   "flatline": [],
+   "high_variance": [
+    "RDHP1",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "low_variance": [],
+   "line_noise_60Hz_ratio_median": 379.43,
+   "frac_channels_line_ratio_gt10": 1.0,
+   "line_noise_outlier_channels": [
+    "EKG2",
+    "RDHP1",
+    "RG37",
+    "RG38",
+    "RG40",
+    "RG41",
+    "RG43",
+    "RMT4"
+   ],
+   "possible_clipping": [],
+   "all_channel_dropouts": {
+    "count": 0,
+    "total_s": 0.0
+   },
+   "qc_flagged_not_marked_bad": [],
+   "marked_bad_not_flagged": [
+    "EKG1",
+    "RG01"
+   ],
+   "annotations_within_recording": null,
+   "annotation_sample_consistent": null,
+   "seizure_offset_after_onset": null
+  },
+  {
+   "check": "resect_tagged_bad_channels",
+   "result": "note",
+   "detail": [
+    "RG37",
+    "RG41",
+    "RG43"
+   ]
+  },
+  {
+   "check": "coordinate_frame",
+   "result": "to_verify",
+   "decision": {
+    "declared_in_coordsystem_json": {
+     "iEEGCoordinateSystem": "fsaverage",
+     "iEEGCoordinateUnits": "m"
+    },
+    "declared_in_dataset_readme": "electrode localizations in ICBM152 MNI space (README, dataset level)",
+    "evidence": {
+     "value_ranges": {
+      "x": [
+       2.25668,
+       68.6132
+      ],
+      "y": [
+       -92.9372,
+       45.2806
+      ],
+      "z": [
+       -49.50893305,
+       63.76856591
+      ]
+     },
+     "abs_max": 92.9372,
+     "mean_norm": 69.61499043677426,
+     "implied_extent_if_metres_mm": 92937.2,
+     "frac_contacts_in_mni_box_mm[-80,80]x[-120,90]x[-70,90]": 1.0,
+     "outside_box": [],
+     "frac_x_lt_0": 0.0,
+     "mne_bids_read_frame": "mni_tal",
+     "mne_bids_abs_max_as_loaded_m": 92.9372
+    },
+    "units_decision": "mm",
+    "units_rationale": "abs max 92.9 with all/most contacts inside a head-sized MNI box: values are mm; the declared 'm' would imply a ~93 m extent, physically impossible",
+    "frame_decision": "MNI-template space (README: ICBM152 MNI); template variant to_verify",
+    "frame_rationale": "Coordinates are in a template (not native) MNI-like space: ranges fit an MNI brain box and the dataset README states ICBM152 MNI. coordsystem.json labels it 'fsaverage' (FreeSurfer surface RAS ~ MNI305). ICBM152 vs MNI305/fsaverage differ by a few mm and cannot be distinguished from contact coordinates alone -> template variant marked to_verify.",
+    "status": "to_verify",
+    "warning": "mne-bids 0.20.0 loads these values as metres (montage abs max ~92.9372 'm'); downstream code must rescale by 1e-3."
+   }
+  },
+  {
+   "check": "channel_tags",
+   "n_soz": 7,
+   "n_resect": 24,
+   "n_bad": 10,
+   "soz_and_resect": [
+    "RDA4",
+    "RDHA2"
+   ],
+   "soz_not_resected": [
+    "DNET17",
+    "RDA1",
+    "RDA2",
+    "RDA3",
+    "RDHP2"
+   ]
+  }
+ ],
+ "missingness": {
+  "mri": "reported_absent",
+  "iEEGReference": "not_reported",
+  "channels_without_coords": [
+   "EKG1",
+   "EKG2",
+   "RS01"
+  ],
+  "electrode_size": "not_reported",
+  "atlas_labels": "not_reported",
+  "interictal_events": "reported_absent (no events.tsv for interictal runs)",
+  "manufacturer": "not_reported",
+  "outcomes": "sealed (not accessed)"
+ },
+ "limits": [
+  "strong 60 Hz line noise on most channels (not notch filtered; SoftwareFilters n/a) in runs ['ictal-02', 'ictal-03', 'ictal-04', 'interictal-01', 'interictal-02']: notch filter downstream",
+  "non-neural channels typed as iEEG in channels.tsv: ['EKG1:ECOG', 'EKG2:ECOG'] (exclude from neural analyses)",
+  "channels without coordinates: ['EKG1', 'EKG2', 'RS01']",
+  "coordinate frame: units resolved as mm; template variant (ICBM152 per README vs fsaverage per coordsystem.json) to_verify; coordsystem.json units 'm' are wrong"
+ ],
+ "exclusion_reasons": [],
+ "verdict": "accept_with_limits",
+ "thresholds": {
+  "flat_std_uV": 0.5,
+  "flatline_zero_diff_frac": 0.5,
+  "robust_z_logstd": 3.5,
+  "line_ratio_flag": 10.0,
+  "clip_frac": 0.001,
+  "dropout_min_s": 0.5
+ },
+ "tool": {
+  "script": "studies/study-001/work/T0020/qc_case.py",
+  "sha256": "76ddfd7e35badbe21c26238dd58d6f43bd52ec6ded653d401ce0dfa6219dad59",
+  "versions": {
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3"
+  }
+ }
+}

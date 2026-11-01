@@ -1,0 +1,95 @@
+{
+  "artifact_id": "A0067-DatasetCard",
+  "schema_name": "DatasetCard",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0011",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "curl + numpy np.load(allow_pickle=False) inspection (work/T0011/scripts)",
+  "tool_version": "numpy 2.1.0, py3.11",
+  "code_commit": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+  "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0037-MethodCard"
+  ],
+  "input_manifest_hash": "6b982551a75de95c935bb36f937a1ef91fcc3ff76e9c6dbd7d6cf5e9f2392f88",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0067-DatasetCard/payload.json",
+      "media_type": "application/json",
+      "sha256": "c051bfdfb291b1640fef860fab7433f3ffb4c39d545cc4c7b76f1be62e9d4b41",
+      "byte_size": 16747
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P1_SEEG_EEG_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "cccc62b702c86d1d82b1ff6b9ba3aec7702567dfe350507a3ed324f7245414fc",
+      "byte_size": 1927126
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P1_SEEG_SEEG_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "2e9251922f98a538203a8ac17e8261f940bfe70ad33a71a5639543a84409b8bf",
+      "byte_size": 2396306
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P1_TI_EEG_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "de8094ebf9b2b84a5cac15fffb1c408e90243c4594ea6020dabd6220d6eb65a2",
+      "byte_size": 2185126
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P1_TI_SEEG_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "9ecfc067a87729690be6bcdc9df2e300588502dcd46ec628898c8c8a756efd55",
+      "byte_size": 2593106
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P2_SEEG_EEG_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "408a85607fe4daa7ddcd0f2a344be51337fd28c29cded881a800affbfa213992",
+      "byte_size": 1924828
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P2_SEEG_ts_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+      "byte_size": 2768838
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P2_TI_EEG_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "677d82bb1011dc8dbf7b2f3be7453258db2fa889593da604c822c7b9411a0d01",
+      "byte_size": 1305628
+    },
+    {
+      "uri": "artifacts/A0067-DatasetCard/P2_TI_SEEG_ts_fit.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "f019151118717f16f8dfa788d39bb0c7aae86fedf1ee87315b31ccd899aba4c9",
+      "byte_size": 1847238
+    }
+  ],
+  "scientific_context": {
+    "verification_basis": "downloaded_and_opened_files",
+    "content_nature": "simulated_sensor_timeseries_plus_patient_SC_gain",
+    "evidence_kind": "simulated_result"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T04:02:43+00:00",
+  "supersedes_id": "A0042-DatasetCard",
+  "title": "DatasetCard: Wang 2025 VBT dataSim fit inputs @5367ef4 (2 patients, simulated SEEG/EEG + SC + gain)",
+  "manifest_hash": "54824fcc1cec84c7d5d630394f871d47cb0b4c733c6f930757d496bfddd53bdf"
+}

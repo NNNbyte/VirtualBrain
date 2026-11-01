@@ -1,0 +1,49 @@
+{
+ "claim": "A systematic review/meta-analysis of 83 studies (no RCTs) with mean/median follow-up >=5 years found median long-term seizure-free proportions of 66% after temporal lobe resection, 46% after occipital/parietal resection and 27% after frontal lobe resection.",
+ "bibliographic_record": {
+  "authors": "Téllez-Zenteno JF, Dhar R, Wiebe S",
+  "title": "Long-term seizure outcomes following epilepsy surgery: a systematic review and meta-analysis",
+  "citation": "Brain 2005;128(Pt 5):1188-1198",
+  "doi": "10.1093/brain/awh449",
+  "pmid": "15758038",
+  "pmcid": null,
+  "publication_type": "systematic review and meta-analysis"
+ },
+ "supporting_passage": "The median proportion of long-term seizure-free patients was 66% with temporal lobe resections, 46% with occipital and parietal resections, and 27% with frontal lobe resections.",
+ "passage_location": "Abstract (unstructured), results sentences. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 15758038; https://europepmc.org/abstract/MED/15758038; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "systematic review and meta-analysis of observational studies (articles since 1991, >=20 patients, any age, mean/median follow-up >=5 y)",
+  "n_studies": "76 articles yielding 83 studies (78 resective, 5 non-resective); 40 temporal, 25 grouped temporal+extratemporal, 7 frontal",
+  "n_patients": "not_reported in abstract",
+  "rcts_included": 0,
+  "controlled_studies": 6,
+  "population": "any age (adult and paediatric mixed)"
+ },
+ "endpoint": {
+  "reported_endpoint": "proportion long-term seizure free (median across studies); outcome classification system varied across studies",
+  "follow_up": "mean/median >=5 years",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "seizure free -> favourable; original classification heterogeneous across included studies",
+  "values": {
+   "temporal": "66%",
+   "occipital/parietal": "46%",
+   "frontal": "27%",
+   "callosotomy (free of most disabling seizures)": "35%",
+   "multiple subpial transection": "16%"
+  }
+ },
+ "reported_observation": "Median long-term seizure freedom 66% temporal, 46% occipital/parietal, 27% frontal; year of operation, follow-up duration and outcome classification most strongly associated with outcomes.",
+ "author_inference": "Long-term (>=5 y) seizure-free rate after temporal resection was similar to short-term controlled studies; extratemporal and palliative surgery consistently lower.",
+ "contradictions": [
+  "de Tisi 2011 (single-centre cohort, n=615 adults) reports lower survival-based seizure freedom (52% at 5 y, 47% at 10 y) using time-to-first-seizure Kaplan-Meier, a stricter definition than cross-sectional 'seizure free at last follow-up' used by many included studies."
+ ],
+ "study_family_id": "fam-tellez2005-ma",
+ "overlap_note": "Pooled observational cohorts; may include earlier reports from centres later published separately (e.g. NHNN London series behind de Tisi 2011) -- cohort overlap to_verify. Does not include Wiebe 2001 (no RCTs included).",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

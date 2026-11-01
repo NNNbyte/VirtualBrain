@@ -1,0 +1,40 @@
+{
+  "dataset_id": "openneuro:ds003029 (Epilepsy-iEEG-Multicenter-Dataset; Fragility)",
+  "study_family_id": "fam-jhu-sarma-multicenter",
+  "source_doi": "10.18112/openneuro.ds003029.v1.0.3",
+  "repository_url": "https://openneuro.org/datasets/ds003029",
+  "related_publications": [
+    "Li et al., Neural fragility as an EEG marker of the seizure onset zone, bioRxiv doi:10.1101/862797 (cited in dataset_description HowToAcknowledge)"
+  ],
+  "reported_subject_count": "100 across 5 centres in study; 4 centres shared here (README); Cleveland Clinic requires DUA",
+  "data_access": "verified_present (public; Cleveland Clinic subset not_accessible without DUA)",
+  "licence": "CC0 (dataset_description.json)",
+  "approx_total_size_gb": 11.12,
+  "approx_total_size_basis": "S3 listing sum (723 objects) on 2026-10-31",
+  "file_formats": [
+    "BrainVision (.vhdr/.vmrk/.eeg)",
+    "BIDS sidecars",
+    "sourcedata/clinical_data_summary.xlsx"
+  ],
+  "verified_subject_count": 35,
+  "verified_subject_count_basis": "participants.tsv has 35 rows; S3 has 37 sub-* dirs (extra sub-jh107, sub-pt1 duplicating sub-pt01?) -> inconsistency",
+  "verified_modalities": {
+    "ieeg": "verified_present (ECoG and one SEEG subject sampled: umf004 acq-seeg)",
+    "electrode_localisation": "reported_absent: 0 electrodes.tsv in S3 listing; README says SEEG electrode_layout.xlsx (tissue class only) was not uploaded",
+    "seizure_annotations": "verified_present: events.tsv; SOZ contacts in clinical_data_summary.xlsx 'soz_contacts'"
+  },
+  "intervention_linkage": {
+    "status": "partial: surgery_type + free-text 'ez_hypo_brainregion' in clinical_data_summary.xlsx; README describes resected/ablated contact determination but no resected-contact column/tags found (channels.tsv status_description only 'excel-file-labeled'/n/a across all 37 subjects)",
+    "stimulation_settings": "reported_absent"
+  },
+  "outcome_fields_present": "participants.tsv: engel_score, ilae_score, outcome S/F/NR, years_follow_up, site (NR = no resection for 5 subjects)",
+  "follow_up_definition": "participants.json: years_follow_up = 'number of years of follow up since the surgery'; values 1-7 years",
+  "eligibility": "Fails protocol dataset rule on localisation and contact-level intervention linkage as published; usable only as outcome-labelled iEEG for SOZ/fragility features. Contact-level resection may be in the paper's supplementary 'clinical Excel table' (to_verify).",
+  "cohort_overlap": "Same Sarma-lab multicenter family as ds003876 (sites NIH/JHH/UMF overlap; Omni-iEEG 'sourcesink' ids umf001-005, jh103, jh105 mirror ds003029 ids) and Omni-iEEG 'Multicenter' subset.",
+  "metadata_files_inspected_sha256": {
+    "participants.tsv": "9241f950e66a292dbc098e586c33adf30d5973e896c2f237427322699ad91d87",
+    "README": "265fcfbe95f0121f687ccfdf8c4860d4fce0c3a9c703f929c6cf40e05fa599e9",
+    "clinical_data_summary.xlsx": "9dc6841c38a39beaa11f882e67b0521618530f7ac50fe2f98a7b0fbf2b27eb45"
+  },
+  "checked_on": "2026-10-31"
+}

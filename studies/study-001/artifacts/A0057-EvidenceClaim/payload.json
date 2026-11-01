@@ -1,0 +1,22 @@
+{
+  "claim": "In a retrospective evaluation of 53 patients, VEP-estimated EZNs matched clinically defined EZNs with precision 0.6; among 25 operated patients, false discovery rate vs resected regions was lower in seizure-free than non-seizure-free patients.",
+  "bibliographic_record": {
+    "authors": "Wang HE, Woodman M, Triebkorn P, Lemarechal J-D, et al.",
+    "title": "Delineating epileptogenic networks using brain imaging data and personalized modeling in drug-resistant epilepsy",
+    "journal": "Science Translational Medicine",
+    "year": 2023,
+    "date": "2023-01-25",
+    "doi": "10.1126/scitranslmed.abp8982",
+    "pmid": "36696482",
+    "verified_via": "Crossref + Europe PMC abstract (full text not read)"
+  },
+  "supporting_passage": "We evaluated the VEP workflow retrospectively using 53 patients with drug-resistant focal epilepsy. VEPs reproduced the clinically defined EZNs with a precision of 0.6, where the physical distance between epileptogenic regions identified by VEP and the clinically defined EZNs was small. Compared with the resected brain regions of 25 patients who underwent surgery, VEP showed lower false discovery rates in seizure-free patients (mean, 0.028) than in non-seizure-free patients (mean, 0.407).",
+  "passage_location": "Abstract (PMID 36696482)",
+  "population_and_design": "Retrospective cohort, n=53 drug-resistant focal epilepsy; surgical subset n=25. Centre not verified from full text.",
+  "endpoint": "Precision vs clinically defined EZN; false discovery rate vs resected regions stratified by seizure-free status (outcome definition and follow-up not extracted; full text not read).",
+  "evidence_kind": "literature_reported",
+  "reported_observation": "precision 0.6; FDR mean 0.028 (seizure-free) vs 0.407 (non-seizure-free), n=25 operated",
+  "authors_inference": "VEP can aid surgical strategy; being evaluated in the EPINOV trial (expected 356 prospective patients).",
+  "contradictions": "None found. Patient overlap with Wang 2025 and BVEP 2020 is possible (same group); treat as one study family until shown otherwise.",
+  "study_family_id": "VEP-INS-Marseille-LaTimone (Jirsa/Bartolomei group; patient overlap across VEP papers not reported - to_verify)"
+}

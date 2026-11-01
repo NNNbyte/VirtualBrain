@@ -1,0 +1,7 @@
+{
+  "resource": "Structural scaffold pipeline (ins-amu/tvb-pipeline) and VEP atlas (HuifangWang/VEP_atlas_shared)",
+  "access_path": "https://github.com/ins-amu/tvb-pipeline (HEAD 70d35ce, 2022-09-30); https://github.com/HuifangWang/VEP_atlas_shared (HEAD 91e32ca, 2026-03-30)",
+  "status": "verified_present (public repos; metadata and top-level tree inspected)",
+  "conditions": "Neither repository declares a licence on GitHub (license: None), so reuse terms are unclear and should be confirmed with the authors before redistribution or reuse beyond internal research.",
+  "verified_at": "2026-10-31"
+}

@@ -1,0 +1,2452 @@
+[
+{
+"path": "CHANGES",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/CHANGES?versionId=y1eq_GU9hPLJ_2X_Hsz7adc4EbYpY2e_"
+},
+{
+"path": "README",
+"size": 3083,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/README?versionId=yl7GerL7jbF8k5pgHa5xS3Z0ZPhH5mmK"
+},
+{
+"path": "dataset_description.json",
+"size": 1692,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/dataset_description.json?versionId=6tA2xsrOjRjhDRN70YOynQ4yeonx6t0P"
+},
+{
+"path": ".gitattributes",
+"size": 284,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/.gitattributes?versionId=emW4IkZRtbxOMQ0gbGbOfEfrW_Idc5Dv"
+},
+{
+"path": "participants.json",
+"size": 2216,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/participants.json?versionId=0n57M89enPzn08uHTcKUPm5yriZpqHl."
+},
+{
+"path": "participants.tsv",
+"size": 2291,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/participants.tsv?versionId=CQVX71FRa8IRXPrseRsyzryK4N..a3Yy"
+},
+{
+"path": "sourcedata/ieeg_database_all.xlsx",
+"size": 57979,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sourcedata/ieeg_database_all.xlsx?versionId=6Nv3r8KxBvO2fEArf09JnYwBmrvHqPS0"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/sub-NIH1_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/sub-NIH1_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH1/ses-extraoperative/sub-NIH1_ses-extraoperative_scans.tsv?versionId=EEVBTg7Eggk7Oxs4GY7h2xd.ViWLHzgr"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/sub-NIH10_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/sub-NIH10_ses-extraoperative_scans.tsv",
+"size": 148,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH10/ses-extraoperative/sub-NIH10_ses-extraoperative_scans.tsv?versionId=vFXmgVdNS2lagrKc_19e5CRdfp2XzfLE"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/sub-NIH11_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/sub-NIH11_ses-extraoperative_scans.tsv",
+"size": 148,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH11/ses-extraoperative/sub-NIH11_ses-extraoperative_scans.tsv?versionId=VqxYkZWFdAOoYAaxiSqi_QV.c92RY7Dq"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/sub-NIH2_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/sub-NIH2_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH2/ses-extraoperative/sub-NIH2_ses-extraoperative_scans.tsv?versionId=Q72MKxxMzjMzZl_WX_QLmpSGzbCMQQqJ"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/sub-NIH3_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/sub-NIH3_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH3/ses-extraoperative/sub-NIH3_ses-extraoperative_scans.tsv?versionId=Nqi3YcPFJJRnvfXs6yk3Kbb0E3fYO16l"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/sub-NIH4_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/sub-NIH4_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH4/ses-extraoperative/sub-NIH4_ses-extraoperative_scans.tsv?versionId=37SqiKWwS.HqlHE0iyKx1LLJs51aJ_j5"
+},
+{
+"path": "sub-NIH5/ses-extraoperative/sub-NIH5_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH5/ses-extraoperative/sub-NIH5_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH5/ses-extraoperative/sub-NIH5_ses-extraoperative_scans.tsv?versionId=02nc3jIo.d6bIOkd5FqrjdI8I0_plfxD"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/sub-NIH6_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/sub-NIH6_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH6/ses-extraoperative/sub-NIH6_ses-extraoperative_scans.tsv?versionId=6nk0v_oaFdn56Wpp9Wq03kSDAFhGBPMB"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/sub-NIH7_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/sub-NIH7_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH7/ses-extraoperative/sub-NIH7_ses-extraoperative_scans.tsv?versionId=rfho1UfsVXMvlX_tsBONVMYX1rW3zAuR"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/sub-NIH8_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/sub-NIH8_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH8/ses-extraoperative/sub-NIH8_ses-extraoperative_scans.tsv?versionId=ty3z_QHUDb6KjNeqHxcjiq2nxsBxkKV."
+},
+{
+"path": "sub-NIH9/ses-extraoperative/sub-NIH9_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-NIH9/ses-extraoperative/sub-NIH9_ses-extraoperative_scans.tsv",
+"size": 146,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH9/ses-extraoperative/sub-NIH9_ses-extraoperative_scans.tsv?versionId=Mt17ZzxT9GjiivkbGNdL5Vh4oY4ccO_g"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/sub-PY18N002_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/sub-PY18N002_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N002/ses-extraoperative/sub-PY18N002_ses-extraoperative_scans.tsv?versionId=D7D12ssztwlqbAWINs8p5V1P2vAlGet6"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/sub-PY18N007_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/sub-PY18N007_ses-extraoperative_scans.tsv",
+"size": 162,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N007/ses-extraoperative/sub-PY18N007_ses-extraoperative_scans.tsv?versionId=xuTa4YQMK70S2nsgGnYY_GBMb8pl2AlJ"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/sub-PY18N013_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/sub-PY18N013_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N013/ses-extraoperative/sub-PY18N013_ses-extraoperative_scans.tsv?versionId=TzJXDLxaIbTq8Q5IYsvt2.n3w4mshevK"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/sub-PY18N015_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/sub-PY18N015_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N015/ses-extraoperative/sub-PY18N015_ses-extraoperative_scans.tsv?versionId=ETPuzgssJzmDaS927KmB3MugSoqtcT8."
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/sub-PY19N012_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/sub-PY19N012_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N012/ses-extraoperative/sub-PY19N012_ses-extraoperative_scans.tsv?versionId=0ulBAXcEfPqqOxMSzyJYjJ9.pmdGgPtr"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/sub-PY19N015_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/sub-PY19N015_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N015/ses-extraoperative/sub-PY19N015_ses-extraoperative_scans.tsv?versionId=hPaPUJLg0UQQ9DRxlC4WuK_PloakTYs5"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/sub-PY19N023_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/sub-PY19N023_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N023/ses-extraoperative/sub-PY19N023_ses-extraoperative_scans.tsv?versionId=3LeqhWZmSWibA1G9YuYQz.pN7BGqYHWe"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/sub-PY19N026_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/sub-PY19N026_ses-extraoperative_scans.tsv",
+"size": 157,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N026/ses-extraoperative/sub-PY19N026_ses-extraoperative_scans.tsv?versionId=u_ObqMQKbkdhiDKVXidYJn3rB1bAEvv1"
+},
+{
+"path": "sub-jh103/ses-extraoperative/sub-jh103_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-jh103/ses-extraoperative/sub-jh103_ses-extraoperative_scans.tsv",
+"size": 268,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/sub-jh103_ses-extraoperative_scans.tsv?versionId=bWfGQ.wbhfsvAbaI9Ju2VZL_LFV6K0LX"
+},
+{
+"path": "sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.tsv",
+"size": 268,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.tsv?versionId=GzBAm26bZ9VAnKV7gZ2dPJz1st3W4J2f"
+},
+{
+"path": "sub-pt1/ses-extraoperative/sub-pt1_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-pt1/ses-extraoperative/sub-pt1_ses-extraoperative_scans.tsv",
+"size": 501,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/sub-pt1_ses-extraoperative_scans.tsv?versionId=80ZJodkjUAYlABiSYcnYGmJG9QUjEz7A"
+},
+{
+"path": "sub-pt2/ses-extraoperative/sub-pt2_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-pt2/ses-extraoperative/sub-pt2_ses-extraoperative_scans.tsv",
+"size": 501,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/sub-pt2_ses-extraoperative_scans.tsv?versionId=Hxn84AtHIpR3KrFi6VbDqnwEODf_Bh_n"
+},
+{
+"path": "sub-pt3/ses-extraoperative/sub-pt3_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-pt3/ses-extraoperative/sub-pt3_ses-extraoperative_scans.tsv",
+"size": 387,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/sub-pt3_ses-extraoperative_scans.tsv?versionId=BOBxPcr9a5U7wqeRYsJX4lOFo.Q8dBWs"
+},
+{
+"path": "sub-rns002/ses-extraoperative/sub-rns002_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns002/ses-extraoperative/sub-rns002_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns002/ses-extraoperative/sub-rns002_ses-extraoperative_scans.tsv?versionId=zbmrNWe2kk33ZAKR0BXEIopZWI3HQ1r3"
+},
+{
+"path": "sub-rns003/ses-extraoperative/sub-rns003_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns003/ses-extraoperative/sub-rns003_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns003/ses-extraoperative/sub-rns003_ses-extraoperative_scans.tsv?versionId=HPMURGOWxbOIbXSukuT_xoZPXwUn5NrI"
+},
+{
+"path": "sub-rns004/ses-extraoperative/sub-rns004_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns004/ses-extraoperative/sub-rns004_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns004/ses-extraoperative/sub-rns004_ses-extraoperative_scans.tsv?versionId=lZHKZSWAt_kmsMyefaj3L0RP.NHJbxWt"
+},
+{
+"path": "sub-rns005/ses-extraoperative/sub-rns005_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns005/ses-extraoperative/sub-rns005_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns005/ses-extraoperative/sub-rns005_ses-extraoperative_scans.tsv?versionId=Ixgo8Hl2V_NXh2u5qLnLNWUWlDsKo9WD"
+},
+{
+"path": "sub-rns006/ses-extraoperative/sub-rns006_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns006/ses-extraoperative/sub-rns006_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns006/ses-extraoperative/sub-rns006_ses-extraoperative_scans.tsv?versionId=mlQbo3dW0Yzd1U1T9JJVoWW92BaERz13"
+},
+{
+"path": "sub-rns009/ses-extraoperative/sub-rns009_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns009/ses-extraoperative/sub-rns009_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns009/ses-extraoperative/sub-rns009_ses-extraoperative_scans.tsv?versionId=2l1blB86LoVbGPOTBXriGR1jC5lDwFRp"
+},
+{
+"path": "sub-rns011/ses-extraoperative/sub-rns011_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns011/ses-extraoperative/sub-rns011_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns011/ses-extraoperative/sub-rns011_ses-extraoperative_scans.tsv?versionId=1M4juqWf31f.1UHQYXUKdzTv7hhpP4Oc"
+},
+{
+"path": "sub-rns013/ses-extraoperative/sub-rns013_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns013/ses-extraoperative/sub-rns013_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns013/ses-extraoperative/sub-rns013_ses-extraoperative_scans.tsv?versionId=ouNnOQfOE3ePaV_YWzIwWPNL3gD9w7T4"
+},
+{
+"path": "sub-rns014/ses-extraoperative/sub-rns014_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns014/ses-extraoperative/sub-rns014_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns014/ses-extraoperative/sub-rns014_ses-extraoperative_scans.tsv?versionId=UYIXq_C_P0esHLT2A6Tc.Ozx_Rv6Gxli"
+},
+{
+"path": "sub-rns015/ses-extraoperative/sub-rns015_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-rns015/ses-extraoperative/sub-rns015_ses-extraoperative_scans.tsv",
+"size": 136,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns015/ses-extraoperative/sub-rns015_ses-extraoperative_scans.tsv?versionId=gwILzKTvY0URATZwsEIf1PqI6q.nEvvz"
+},
+{
+"path": "sub-umf001/ses-extraoperative/sub-umf001_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-umf001/ses-extraoperative/sub-umf001_ses-extraoperative_scans.tsv",
+"size": 283,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf001/ses-extraoperative/sub-umf001_ses-extraoperative_scans.tsv?versionId=nslnk3MEUayw6y43_jC6qqXraKeG7CCH"
+},
+{
+"path": "sub-umf002/ses-extraoperative/sub-umf002_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-umf002/ses-extraoperative/sub-umf002_ses-extraoperative_scans.tsv",
+"size": 283,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/sub-umf002_ses-extraoperative_scans.tsv?versionId=w5TD_lc8EilQ2DhHIbytTOI2R1lLAOza"
+},
+{
+"path": "sub-umf003/ses-extraoperative/sub-umf003_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-umf003/ses-extraoperative/sub-umf003_ses-extraoperative_scans.tsv",
+"size": 283,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/sub-umf003_ses-extraoperative_scans.tsv?versionId=5GgGz3yYVFgjyw8ZcvC7lteqrKby5tdO"
+},
+{
+"path": "sub-umf004/ses-extraoperative/sub-umf004_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-umf004/ses-extraoperative/sub-umf004_ses-extraoperative_scans.tsv",
+"size": 283,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/sub-umf004_ses-extraoperative_scans.tsv?versionId=xyCqQBTcM6X.QNKv58UTIhLeFu8svmTz"
+},
+{
+"path": "sub-umf005/ses-extraoperative/sub-umf005_ses-extraoperative_scans.json",
+"size": 182,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/sub-jh105_ses-extraoperative_scans.json?versionId=rmxI33HF9AynP94CCHW0AlRCtLyN4Ek9"
+},
+{
+"path": "sub-umf005/ses-extraoperative/sub-umf005_ses-extraoperative_scans.tsv",
+"size": 283,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/sub-umf005_ses-extraoperative_scans.tsv?versionId=hqkKhI.cNTcp3gla7JjsiEiF20U.T28N"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 11842,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=Fy1JqVuLwH.AnRE._MiGQhP.39RPuKD5"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=e__MwrgX7pqV7wXcUX.ElGDVMWpQjL6j"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 218385194,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=ASk9omgCRqI1LtkIokxF56qAMFMxinub"
+},
+{
+"path": "sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 474,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH1/ses-extraoperative/ieeg/sub-NIH1_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=4pN0DsbLUmyKkdxLZnHrSUHvVhwmyopc"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7564,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=W1L42PT.klSzsfLQSBKuS.yCKQg5uf5I"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 61,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=WmDwRV5FcAfo7QtJkQVPhHQcAZRtLinN"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 137582438,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=3E51_wMJBVsDVygOdGN4uCwt55MKCAVz"
+},
+{
+"path": "sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH10/ses-extraoperative/ieeg/sub-NIH10_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=jz5Zs5FT43.xqUhTZGZMaELvl8jWmTIN"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7768,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=QbT1Q7m3dj.jARM84NTedT48btxoS3N9"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=z0SG7PoP65Ig1YRKyZ..k_dEWIqN2C8s"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 150520142,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=25b.DTfJeTYRi.bp8BGFLyERTWf_MGVJ"
+},
+{
+"path": "sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 474,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH11/ses-extraoperative/ieeg/sub-NIH11_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=G4A85cQJ1Pkq0U1JSKgyrSgqcbzTX2Rv"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 6831,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=6OK9mTZXW5wsf.Q9n.rVU2TnF_wiCowz"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 63,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=IXOnqC_oev33qZ9U3tdYDWvjFkg0310_"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 133519442,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=eef.K_4xiGqAWgbD82qQN9MMhyHSCwn1"
+},
+{
+"path": "sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH2/ses-extraoperative/ieeg/sub-NIH2_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=IcubvDOXFWYU0UvmZ62nLCY8eCAvxjjk"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 8919,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=FCY7IOMs3oB7Pxx05gsCfOfB7nyQl56_"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=Qn0cRjqehFAa4CKVViZF9tefbFZIduyM"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 161171330,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=WtY970MD0.46plGwL6v.4PMX3.EmrW3z"
+},
+{
+"path": "sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH3/ses-extraoperative/ieeg/sub-NIH3_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=LKBMldcspcG8Q3xEf0c7rEDGi_OCian4"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 6955,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=aaArj4kTwZlYkXN9hP3FjFJI66uFFRHD"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 63,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=ZeFcTXGcNW9OchuBzASLHaSLihvIBXj6"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 128496304,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=sohxp6EZOhEAoNZaSWXR.xuaDlR._p2B"
+},
+{
+"path": "sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH4/ses-extraoperative/ieeg/sub-NIH4_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=xFa3D5zIVZ9AiBJ90fMikbWAOm_pbsU."
+},
+{
+"path": "sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7664,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=NbnIv62R3KLMb.kKCtxJfe_aj9C9M53T"
+},
+{
+"path": "sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=gAFxXj6SW0kYsSvzgnKiytglSF4X7lyP"
+},
+{
+"path": "sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 141935234,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=fWKRhWoN5xVXcDZOI0ieEzIXQWfG7vcF"
+},
+{
+"path": "sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH5/ses-extraoperative/ieeg/sub-NIH5_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=ZR3dPzSCdN927Kj9U5k76yUHOyjX33DL"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 11218,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=rNqKValx7OWAyn42g2Fn9KTQMbsGaU9c"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=5EFoHZCKBZ9qAJvcgnlPwuPy0wv6vBPg"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 118895266,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=qIVHrL5HeHNk46LpQGmw_nh9EuCvjQeu"
+},
+{
+"path": "sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 472,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH6/ses-extraoperative/ieeg/sub-NIH6_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=cH3WXsNRfSZE7fku_P8h6p.28teLHlKV"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 8990,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=OchuL3AcM9gvsxzXpaJ4akXhPVHYl0Sm"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 61,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=FZyGuGS1kIIjEi7YORaV3q1scld1C.xs"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 180109332,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=arkZ6uEFtkyahaDfge5MxZyvTrNUoHcW"
+},
+{
+"path": "sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 474,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH7/ses-extraoperative/ieeg/sub-NIH7_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=4H6urHs0uyXrPwQ1YXw2mtABlyz9WDx7"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 10167,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=WJHeiwkHbkZZB8Y.u9IY1kTB6qJzIxWa"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=CbP901yKNplK8EQw23y6k.c59p2J10Xa"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 209356706,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=hdngj136CRR.ojy8D3jb8usa403SZhla"
+},
+{
+"path": "sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 474,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH8/ses-extraoperative/ieeg/sub-NIH8_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=1ctfidPMPWqitGoLPFmJongwmENTJWx9"
+},
+{
+"path": "sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 8664,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=f3Ts61RdE0XoVr4gsNp.rj28eaZEdcDA"
+},
+{
+"path": "sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 64,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=p.tIlRn_JUce0aWPiGDY2V9q0f2_.ofH"
+},
+{
+"path": "sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 162373586,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=TC0IRN_skW7Oq3zaI3vF1wDETZuuGQxx"
+},
+{
+"path": "sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-NIH9/ses-extraoperative/ieeg/sub-NIH9_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=sdgA1gnOgqlGZBjcA4lTRbfMPeK335kt"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 12088,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=4DC1c1rnJ_BUXR86b08LzsFUPGo7pYIr"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 371,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=pxANSoMfDoRSP2zQZIbSPkoc4JUNau8b"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 248379712,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=6sMYbG2ozHMQAtkCiiz.eGUvVoKR9rlL"
+},
+{
+"path": "sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N002/ses-extraoperative/ieeg/sub-PY18N002_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=tKDRljFYXPsfuJtaiQfPbnWZsok87qCv"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7049,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=CtpYOUyJwuO4LQSA7MFo6wOH.QjM2.8A"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 555,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=tUPSE3Gw1ZPcqtUfa2lSSOXUILp.n9Hx"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 269715856,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=lHRdezsDwlnZk9hdL9h7wTwNNuh415g_"
+},
+{
+"path": "sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 468,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N007/ses-extraoperative/ieeg/sub-PY18N007_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=cVkI3a0ImmxzD8sIpy.Z0V8azJtuvpkN"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 8948,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=SHQAxfhtzzENzt3DFoSXlycRc2K9QUqn"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 426,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=XVN1jVCTkKWZIYKrs6mAAC27FVfzUitv"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 281276624,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=FWq3przVaYa.5Y.PzYEw1epAAAYdr3SR"
+},
+{
+"path": "sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N013/ses-extraoperative/ieeg/sub-PY18N013_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=UixIHORKfeD9qbtDD0edLWZARcLy5F0E"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 9807,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=C8ujr2Och7fEiRD7IpPUTQ4BCtntgPzz"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 441,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=z7YrqYShinujiQZE1kLCJqFGVOkXAE26"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 300916924,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=WL2UwNrcqSC4mhYpMeFpSgBwdIw4TnXK"
+},
+{
+"path": "sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY18N015/ses-extraoperative/ieeg/sub-PY18N015_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=Yh7W9iYdKs7gKiafzSI1egNRba67MCJY"
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 9435,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=Nm7Ew75aBABJjV3hW62C4RMBZ2mWEMYW"
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 490,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=r5WTJNt.GQjCtZWZZTWUmlAiN7bbLdmJ"
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 237492672,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=nS2PPmYRkdjMX9XJXjRfQg5Fgu83gdWx"
+},
+{
+"path": "sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 479,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N012/ses-extraoperative/ieeg/sub-PY19N012_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=mFuVd219E6tJk65qYCFU3fmOfcvvFafF"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 15291,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=jfKElNlV.xIMnnXNGoYOM9LuPXhBiSaV"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 667,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=8S8hL2d49g4UqXos9Wvu3fCoULL9IUSY"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 347770162,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=WDYVRUIGwWvmrKjJQqdR_yGIdwKYLWJJ"
+},
+{
+"path": "sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 488,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N015/ses-extraoperative/ieeg/sub-PY19N015_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=Tjqyh5wxbmkSBvJIeRsI.deBuM0SpgOR"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7092,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=4pD5y1xd70z.47mqxT1QS8uYfyX7Sfxn"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 504,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=fwmy5W0NO5Feo7gNHk6CunJCQazZkDvG"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 250315984,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=xNrRVPwsoriDgY9ctVnuyCyv9a9fs.NJ"
+},
+{
+"path": "sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N023/ses-extraoperative/ieeg/sub-PY19N023_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=mym6QTH.Acww010SzfcpDlwALzi8KrBh"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 5467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=TUyu4whww9j0ZU3ByIikNYAXIK7xnDrv"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 356,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=eMEq6S5vg5jmagqAA7lmZUJ1YsbZh774"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 170950912,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=ILO_gmmIcWUeoq8nZEjzTtcGk3Sp.qBk"
+},
+{
+"path": "sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 466,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-PY19N026/ses-extraoperative/ieeg/sub-PY19N026_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=ZAnbdy68N.v0W_RMQUd84PZ9SXc588QR"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 10486,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=wNjw8w6F7XsvJwuMjHmcfxeOxN_sN1.5"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_events.tsv",
+"size": 297,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_events.tsv?versionId=zZ._uifdwHdZ2Pz5zXFnCjRsaSmm.rKz"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 34463536,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=nS0JPxet_L915d8uPXbmpA1paY3KPxzF"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 495,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=66u8pwHtaKCzl6uIkNgzU0ydfXwc0kLA"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 10486,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_channels.tsv?versionId=eAM1RsdrO3qUwHGnFuxLP6__jLRGe.Lt"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_events.tsv",
+"size": 297,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_events.tsv?versionId=h7c28t4ltawa0mcr4Rz3iYW.exirdD8k"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 38262400,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=5a4sjfNOFSBDSZvtmhvtcBfj403xiWRy"
+},
+{
+"path": "sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 483,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh103/ses-extraoperative/ieeg/sub-jh103_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=1kNbkI0X2MMaMGAxC1kmKqM__ba0ARBM"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 7143,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=8o_86AFBpGt6XGiyfTM0O7zO9xfq7cGa"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_events.tsv",
+"size": 106,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_events.tsv?versionId=Jb8EKKsphKcGjgBTPvjDkmUPIYFpWF_a"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 29868712,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=JiVeS2YDX0xE8YxEvbWljVhbg80YEF2a"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 473,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=mlOPxmA4xsUPtFD6NnXB6irmRlAd5gVk"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 7143,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.tsv?versionId=5CTzQcDID.EIBxG9lXUMXTY3TmE9MBpO"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_events.tsv",
+"size": 159,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_events.tsv?versionId=fGaHYw5DOm2ah4NM2YsgD9DnPzsmmVPu"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 31465216,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=J_VKUsvPjxxddze63RRU5zYuYaCksYoS"
+},
+{
+"path": "sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 472,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=e1WlsloYcxK38.0qpuVoct1hydPveI1D"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 7226,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=Cw7EVClUuuar2XlDeshAOdS2fyPeD_Xa"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=U7c6povoPB9ip.cfoqOPRcTc3QKBSPnf"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 98663260,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=rIt5norGGkYcpqjGJv7LYxBc_XBzZcnh"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 472,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=Uod7U_dDh66UT1KmlK4zYZgVCk8rbPfa"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_channels.tsv",
+"size": 7226,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_channels.tsv?versionId=iygx.duaRv1219sVhjuvb204kJv9f3cS"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=U7c6povoPB9ip.cfoqOPRcTc3QKBSPnf"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_ieeg.edf",
+"size": 80249260,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_ieeg.edf?versionId=cSbbmAb6hV2dWhSPTDWBIm7Nm8niLMp6"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_ieeg.json",
+"size": 472,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_ieeg.json?versionId=dACPLnryyaCJTtaTs0K.HH0daRJ438ev"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 7226,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_channels.tsv?versionId=iygx.duaRv1219sVhjuvb204kJv9f3cS"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=U7c6povoPB9ip.cfoqOPRcTc3QKBSPnf"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 82029280,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=rttPdlB6JQ6LRNnF5KmR9ZcOh9xe66V8"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 471,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=hg2mpACkSwt7YulLMejAICiqRB54Bgg0"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_channels.tsv",
+"size": 7226,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalasleep_run-02_channels.tsv?versionId=iygx.duaRv1219sVhjuvb204kJv9f3cS"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=U7c6povoPB9ip.cfoqOPRcTc3QKBSPnf"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_ieeg.edf",
+"size": 84177580,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_ieeg.edf?versionId=4OlclZZcAWT.u5Qbk94J1X1qODtXBpqh"
+},
+{
+"path": "sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_ieeg.json",
+"size": 471,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt1/ses-extraoperative/ieeg/sub-pt1_ses-extraoperative_task-interictalawake_run-02_ieeg.json?versionId=QPqooF2.mR476L72DsgHnptsEVl4ieS9"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 6444,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=s8kpQj3UzyeAoclwhXseQj2QW5hjQngL"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_events.tsv",
+"size": 195,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_events.tsv?versionId=OlsU3gQTU5vgAvJSaACfMLJd8_kQt66G"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 72930442,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=_MnFpny.EnlACu93jM4x9T3ns5ToANmK"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 471,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=UWrBJHgXsWoHROouXxDifrzx3vsLgQyH"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_channels.tsv",
+"size": 6444,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_channels.tsv?versionId=dBe9D0QHFHI9sXCcDLIvx1DUaISNSMXE"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_events.tsv",
+"size": 128,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=pujyFnqEAHyX1AbwtbZQUZlqyZPA1xYT"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_ieeg.edf",
+"size": 65498380,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_ieeg.edf?versionId=NKJvFu5.jThp0cyjLYK.TuPlAMozNmUx"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_ieeg.json",
+"size": 472,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalasleep_run-02_ieeg.json?versionId=I.w5kNX00HtRvAYTC4EsuH9nLz54C_7y"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 6444,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_channels.tsv?versionId=dBe9D0QHFHI9sXCcDLIvx1DUaISNSMXE"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_events.tsv",
+"size": 128,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=pujyFnqEAHyX1AbwtbZQUZlqyZPA1xYT"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 69122278,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=_ANpPCJ4yOd9qosj3ZKd8XBQPCn_3GZF"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 471,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=A3m5yosyCjvSMA2G1Hd_zaQXEnXHQ3pN"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_channels.tsv",
+"size": 6444,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_channels.tsv?versionId=dBe9D0QHFHI9sXCcDLIvx1DUaISNSMXE"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_events.tsv",
+"size": 128,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_events.tsv?versionId=pujyFnqEAHyX1AbwtbZQUZlqyZPA1xYT"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_ieeg.edf",
+"size": 115618732,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_ieeg.edf?versionId=6pL61QryWhYTP7AZpn7SOkGifrV9gbgw"
+},
+{
+"path": "sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_ieeg.json",
+"size": 471,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt2/ses-extraoperative/ieeg/sub-pt2_ses-extraoperative_task-interictalawake_run-02_ieeg.json?versionId=nLIXhQnN5KyWWNYwd0FsD.PgyN1QZKic"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 10201,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=HsaoAEf8_lgaXHOQ2sBR3ej0iP5ECF3L"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_events.tsv?versionId=g8ji6R3stqPygHpeSrnVaaXmIcfVqMO9"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 103157072,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=2HGHTdR_E69jtx1zVSiRmokYPIcKcB80"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 473,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=tTYZ0t5EobtOZKTZgIdfm7592xd_._vO"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_channels.tsv",
+"size": 10201,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_channels.tsv?versionId=UDjRw5hPP75e9Dvx0NgCyPEovhkKqv9g"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_events.tsv?versionId=g8ji6R3stqPygHpeSrnVaaXmIcfVqMO9"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_ieeg.edf",
+"size": 98505872,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_ieeg.edf?versionId=GpVBLFMNQQZggsfMVFxNwaIOD.JHxW6v"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_ieeg.json",
+"size": 473,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_ieeg.json?versionId=dWy7EwjYFXkAZwMufPTH9fI.fqjQW0hf"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 10201,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_channels.tsv?versionId=UDjRw5hPP75e9Dvx0NgCyPEovhkKqv9g"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_events.tsv",
+"size": 127,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalasleep_run-02_events.tsv?versionId=g8ji6R3stqPygHpeSrnVaaXmIcfVqMO9"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 98811872,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=R5dGmnD71hwDzdbolzql09rhce.wIETf"
+},
+{
+"path": "sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 472,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-pt3/ses-extraoperative/ieeg/sub-pt3_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=2ylLMcqpNZcInW32qJKGRz0D8QAkzi_8"
+},
+{
+"path": "sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7163,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=Hf46suvtaTkd2UMP_mZ0cAGaHLqv.43h"
+},
+{
+"path": "sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 95,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=vMDwxutLjNjaSxz5sKkdZogscn.iifGG"
+},
+{
+"path": "sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 41855200,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=FNYNuQurHmSiqz4cJqjpQ_QTaNMzL8li"
+},
+{
+"path": "sub-rns002/ses-extraoperative/ieeg/sub-rns002_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=5PpoPzf8V2RptNphqpepvGnRN1NcQVjq"
+},
+{
+"path": "sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7164,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=9m.9RTzJmTAzW203xYBmls.U3PlN_buq"
+},
+{
+"path": "sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 208,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=oiSVEsYySm_Y5glxZ8zcAvaGJbdjtt4j"
+},
+{
+"path": "sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 36220480,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=mZpI1LECNUSyrv.AWLxdMK0Di.irh1NU"
+},
+{
+"path": "sub-rns003/ses-extraoperative/ieeg/sub-rns003_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=pX5S_FVMLXW7PKclBZaNPRAiknZDk1P2"
+},
+{
+"path": "sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7298,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=mvlszJcOGanw.EGdkKNullA_UPlqeEeW"
+},
+{
+"path": "sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 68,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=o2nxkYKrirnJ8sY5WseupDFe.Zpf03dj"
+},
+{
+"path": "sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 8696320,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=ZT7NBmBuvH_SbXYWdc31tQeH44zLY49L"
+},
+{
+"path": "sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns004/ses-extraoperative/ieeg/sub-rns004_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=eCbZa1dzK7Oi9rJ1bPCPLjLfNMTuryH1"
+},
+{
+"path": "sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7628,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=RcW9AscxpyCeF1Rrw.lkGGmoTE6.EySO"
+},
+{
+"path": "sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 204,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=aP8Ow0RTQtT.Zj8uD1KzzZ921.z8dLWg"
+},
+{
+"path": "sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 41958880,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=a_Nu02UX1lu28eCzOb43CmuaFnHRbidE"
+},
+{
+"path": "sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns005/ses-extraoperative/ieeg/sub-rns005_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=5PpoPzf8V2RptNphqpepvGnRN1NcQVjq"
+},
+{
+"path": "sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7388,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=5kxd5Ld9LcZ2RSjD8DHAA1vET6EiG0Fr"
+},
+{
+"path": "sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 94,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=fosrw8QxET1fhluVpPZkqxzdIwsnHjS4"
+},
+{
+"path": "sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 9284480,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=2eG.9FHaFfq0Sy.8FdccWVcX54nCXjiE"
+},
+{
+"path": "sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 467,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns006/ses-extraoperative/ieeg/sub-rns006_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=CFf5DGO9osP12y9gJ1ZPX5SnlB06ltEW"
+},
+{
+"path": "sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 2744,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=u115VXVLkcOwRRfTUTgIeib21zjbUb7a"
+},
+{
+"path": "sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 201,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=FjoZqja3pHahzQC3z3ZqSksIrkJ6g2dg"
+},
+{
+"path": "sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 9310528,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=bcqeobJUGbIgHm_63xk6NDBBRyNlZ4gU"
+},
+{
+"path": "sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 474,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns009/ses-extraoperative/ieeg/sub-rns009_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=rIQ87hKF8PMOF.gpkORkiDxw4SpvwoE4"
+},
+{
+"path": "sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7665,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=YjXg2J_TOC6sNNmFRu3T33Tm4PfE7JnB"
+},
+{
+"path": "sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 236,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=5308qwJvWq6bPLLfwC4K3YLVIDjCg6VP"
+},
+{
+"path": "sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 34712480,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=j9ZN4lW1QbK7iBxNZBiNQ3USv_gYw.wh"
+},
+{
+"path": "sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns011/ses-extraoperative/ieeg/sub-rns011_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=8Uft5GXiBy2S6WUsXnVCKfINFg4Xs9ic"
+},
+{
+"path": "sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7644,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=CR162M.FA7k8oNFZWHmyGfbhcjXL6i5Q"
+},
+{
+"path": "sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 224,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=i2XwtOq1vd04.VIcTlTxzvoNALGPRsGD"
+},
+{
+"path": "sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 36153280,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=eRqJRpXsBWVRBNBFPwnAN3WWh0j_XDmu"
+},
+{
+"path": "sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns013/ses-extraoperative/ieeg/sub-rns013_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=pX5S_FVMLXW7PKclBZaNPRAiknZDk1P2"
+},
+{
+"path": "sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7589,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=MqJ8QT2cnPkH1Ska27xktz7YuZScWJ1c"
+},
+{
+"path": "sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 285,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=CewRoFKxPVv1ejivDKRGQtJia.Qwf_Fl"
+},
+{
+"path": "sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 41597040,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=7cz0PMWremigotU1o5zI5FAc2FhsMNqQ"
+},
+{
+"path": "sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns014/ses-extraoperative/ieeg/sub-rns014_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=xMe3k6vo23mZJByiFAvC2nblfQdYaN3r"
+},
+{
+"path": "sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_channels.tsv",
+"size": 7616,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_channels.tsv?versionId=2pZm6aJ4jNRwXNRPTDFLMy8BcLFhcVE_"
+},
+{
+"path": "sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_events.tsv",
+"size": 68,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_events.tsv?versionId=2ItMJq9hB8WYl1Zk9tmjr15XTAetfQDz"
+},
+{
+"path": "sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_ieeg.edf",
+"size": 31260960,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_ieeg.edf?versionId=rm3lBYukBkm_VaBGMY9mxieQuYBJKOJ0"
+},
+{
+"path": "sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_ieeg.json",
+"size": 469,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-rns015/ses-extraoperative/ieeg/sub-rns015_ses-extraoperative_task-interictal_run-01_ieeg.json?versionId=xSE_iL7KOJNxqzwWsLuxyc9UjeWKDtby"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 12966,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_channels.tsv?versionId=kxEmne.0cDqnJvMxsGWhEy6micKlF7rL"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 18147460,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=hg3aWEJBOatuTI9f2QVMzpgLi8ao4GRU"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 493,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=i4wfbpXSktshfKMOBxm0W8A63akymbR8"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 12966,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_channels.tsv?versionId=kxEmne.0cDqnJvMxsGWhEy6micKlF7rL"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 16305340,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=6L_0cYBlb4MDbP0l9Fu0ip9O9UvrxUZZ"
+},
+{
+"path": "sub-umf001/ses-extraoperative/ieeg/sub-umf001_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 492,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=HzRCiEl6X.RYSBZfK06Xpr9BPAiBSkH3"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 12571,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=FKOvY6ykM6zws8tsvhZUKSqR9WaK3rc3"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 16305340,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=2WgZSRzHJ1MB.hdT9HTwpzL1HbyuSTwI"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 493,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=irFjgva3LoHn0X_6ar0XT0gS5LlgAAdg"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 12571,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=FKOvY6ykM6zws8tsvhZUKSqR9WaK3rc3"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 16305340,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=2WgZSRzHJ1MB.hdT9HTwpzL1HbyuSTwI"
+},
+{
+"path": "sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 492,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf002/ses-extraoperative/ieeg/sub-umf002_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=HzRCiEl6X.RYSBZfK06Xpr9BPAiBSkH3"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 12495,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=bxApsX.EFMTZ3Ry4RffsVFPAM0oUZHaE"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 8568436,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=Hm45_GC_lah2gj.7BTzx3QfZXeuwlfmX"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 493,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=sE1pZi1izxeQY8sojrRH0.a5kZ6L.U_t"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 12495,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=bxApsX.EFMTZ3Ry4RffsVFPAM0oUZHaE"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 8814052,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=0MOuP10svi0_rLRfUea9cglG21jTGLvv"
+},
+{
+"path": "sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 493,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf003/ses-extraoperative/ieeg/sub-umf003_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=.v8il8xyyz5o_zbovAQKrtOYHKH5mBiI"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 11451,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=mzlqsJ7GRKZs3u0_dAhsllDTcr2MFFKo"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 12191272,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=PXUIKKuWuHtAfdx3AILtyHrd_J_SQlfg"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 495,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=7KQPW97yHbTEHOFcrgtn3l2srSmMtnlO"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 11451,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=mzlqsJ7GRKZs3u0_dAhsllDTcr2MFFKo"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 15814108,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=SxtCoP7nUdCkWbuRdNtyCS.X6WzN1PBj"
+},
+{
+"path": "sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 492,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf004/ses-extraoperative/ieeg/sub-umf004_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=I2e7S1ecOn7oF8Jd5djh2q6YmpBPR9.e"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_channels.tsv",
+"size": 4577,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=a6EDiho.7L3SozuvZKABPwO28VlK_zpZ"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf",
+"size": 6405792,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_ieeg.edf?versionId=kFY.wo4xzBwcJax3YCqcxOpT7XGk9DmS"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_ieeg.json",
+"size": 494,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_ieeg.json?versionId=mMfqEvGsUyB205n0_xH.fSFZRp4PSxMz"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalawake_run-01_channels.json",
+"size": 281,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-jh105/ses-extraoperative/ieeg/sub-jh105_ses-extraoperative_task-interictalawake_run-01_channels.json?versionId=7KSdf4Pe8VRv2Fa783_fR_I6Fn_GjW8x"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalawake_run-01_channels.tsv",
+"size": 4577,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalasleep_run-01_channels.tsv?versionId=a6EDiho.7L3SozuvZKABPwO28VlK_zpZ"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalawake_run-01_ieeg.edf",
+"size": 6159888,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalawake_run-01_ieeg.edf?versionId=U0Mz4r6gC0_UO6OnhIBvveZ13GpOmWU2"
+},
+{
+"path": "sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalawake_run-01_ieeg.json",
+"size": 493,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/sub-umf005/ses-extraoperative/ieeg/sub-umf005_ses-extraoperative_task-interictalawake_run-01_ieeg.json?versionId=YZViW.l0sevYcPG7m0VfffjLZOIs4WY9"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/ss_ind_info.json",
+"size": 245,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/ss_ind_info.json?versionId=0yxlLCwD_N8.2F9QraLXH3byQMddBhjp"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-002/sub-002_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1016,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-002/sub-002_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=lSf1USH8zP49sKJ_zIbXn31aKvk2JC5f"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-003/sub-003_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 986,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-003/sub-003_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=k15AWqZ6aTueLXCilZQ3Aj1X.lA3gAEO"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-004/sub-004_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 533,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-004/sub-004_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=iGzZiQSOQnKBslcKW2ApDYYSgYGLXIUm"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-006/sub-006_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 555,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-006/sub-006_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=ph4AOD8fyOVTO7ppOr19C5RlxVD7fPxP"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-009/sub-009_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 508,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-009/sub-009_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=TZb23CdEGD8VliLdaN9hue6kZWTMYHTy"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-011/sub-011_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 832,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-011/sub-011_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=E0GotXF0.ZdXfivf12WRoqlzgFlGkWQm"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-013/sub-013_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 524,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-013/sub-013_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=JD6eAj73X4r8WoyjBO6mI1xlwN2.LlnL"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-015/sub-015_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 649,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-015/sub-015_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=PQsqmaltE2nvlYcvZ6sH7qrBHXTwWfsG"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-PY18N002/sub-PY18N002_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1149,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-PY18N002/sub-PY18N002_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=VWHdAwNWDjNfpXkaCg4zoETQKompiEiy"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-PY18N013/sub-PY18N013_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1506,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-PY18N013/sub-PY18N013_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=Y3YcjOvJX_ATt59r9Tyd3h6u8zyVsO9q"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-PY18N015/sub-PY18N015_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 872,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-PY18N015/sub-PY18N015_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=RHD9FQA0astn279eFhr1.mPZs67DAmPC"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-PY19N015/sub-PY19N015_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1010,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-PY19N015/sub-PY19N015_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=zULOMhOcO.UnhoLjEl5MPybqVONQFeSB"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-PY19N023/sub-PY19N023_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1054,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-PY19N023/sub-PY19N023_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=PzMBsNR4fZcqag9vsunnE_lof97nG5dm"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la02/sub-la02_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 706,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la02/sub-la02_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=7p_ZRd4biUbYMh4W1MPQDmN24ET3fb8M"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la03/sub-la03_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 985,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la03/sub-la03_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=RmkpiB5Wurphz6XW3Wn3bnPvXB6.Y2Rm"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la04/sub-la04_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 840,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la04/sub-la04_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=EHtkB6flSFVeGbUTJ9zoZrndFHkXm5ni"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la05/sub-la05_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1321,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la05/sub-la05_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=poeO9qppuDweMtKfrQ9HfM2cob2ksDtU"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la06/sub-la06_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 816,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la06/sub-la06_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=.OSHD9OQ24aKp6KTvdYY2jKCCEUL6qt7"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la08/sub-la08_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 840,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la08/sub-la08_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=72i6qA4U7MRZBHGuxD3KvY_lqnM90CuQ"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la09/sub-la09_ses-presurgery_task-interictal_acq-seeg_run-02_hfo_rates.mat",
+"size": 1055,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la09/sub-la09_ses-presurgery_task-interictal_acq-seeg_run-02_hfo_rates.mat?versionId=33K1_3VqB8EAsYjsiXqvqbNlJVBpe7Qn"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la10/sub-la10_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1048,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la10/sub-la10_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=f_FSNivPPAw9LQCD_g__6nvHC5Y_4AoK"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la11/sub-la11_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1242,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la11/sub-la11_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=i9HGM1BAUW8eBg2eVLqsvH8olptq652j"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la13/sub-la13_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 606,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la13/sub-la13_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=sWXQanO0KtR919m75jn1XyigYqevkCdQ"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la15/sub-la15_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1233,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la15/sub-la15_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=q7r.UFJNDSv66CqR.f8MJJT4dZucMqoU"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la16/sub-la16_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1124,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la16/sub-la16_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=Y1l0AojSL8l7ulapE931kRdKZ1_hZaT_"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la21/sub-la21_ses-presurgery_task-interictal_acq-seeg_run-02_hfo_rates.mat",
+"size": 1196,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la21/sub-la21_ses-presurgery_task-interictal_acq-seeg_run-02_hfo_rates.mat?versionId=9bSIVs9pKfoBDtVx5igU_OODMPe7LEQp"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la22/sub-la22_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1125,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la22/sub-la22_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=vUGljUT9ksV5BC5Aa9bhdMxXr39L0OTL"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la23/sub-la23_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1099,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la23/sub-la23_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=0aFpcdHOdQ2ysuZoV1JHXGNX4gVaAgW3"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-la24/sub-la24_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1238,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-la24/sub-la24_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=Xbbe1r68glnfa0N6ILVMCuikYYMa0Y5R"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih10/sub-nih10_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 911,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih10/sub-nih10_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=PK_wISQH0TBlhqfz3XBYCxZyKapdWhdr"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih11/sub-nih11_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1430,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih11/sub-nih11_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=bzRpQv3ntEGdX6AsQEzuM66_k991g__M"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih2/sub-nih2_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1163,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih2/sub-nih2_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=XExQoo1PFDJf4x_n4M9HMC5vlgSv7tXw"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih3/sub-nih3_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1159,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih3/sub-nih3_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=TNPF3HPrM_y3AH.X52JXh71v1ZOykxOi"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih4/sub-nih4_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1038,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih4/sub-nih4_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=5R2XLXtgH_B.5DoQF8yWDnr0MmQHIO9g"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih5/sub-nih5_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1175,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih5/sub-nih5_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=9kcW1J7t_5yc2f22NF4lyr0HurkzWRg8"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih7/sub-nih7_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1261,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih7/sub-nih7_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=BkSNNbfdClgHHlHZsf.AqmEqCVbadCQd"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih8/sub-nih8_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1661,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih8/sub-nih8_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=qJcM7Gq7eI6ISKvLVPNmUgZTo_li2tdr"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nih9/sub-nih9_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1306,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nih9/sub-nih9_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=b8.w3yP48mOfdeBtg8hhz1D4Btr6ench"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl01/sub-nl01_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1433,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl01/sub-nl01_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=EenKw5Mv4ymNx.nOvmHvNb0DSJNgpiEJ"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl04/sub-nl04_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 919,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl04/sub-nl04_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=rQDjEFIJGwEAC3OnJ7c4RSBvSAWiqiKR"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl05/sub-nl05_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 930,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl05/sub-nl05_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=vSYzo_iilBNIwtpujV6GqlvbiVToRcji"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl07/sub-nl07_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 666,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl07/sub-nl07_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=sJHpKwTPjYAbe3FOgHiu.Pw9swf0F6rs"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl08/sub-nl08_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 884,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl08/sub-nl08_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=3qtEQGd_R4HLyTnvG.kBVl5Y3AF.osTB"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl12/sub-nl12_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1285,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl12/sub-nl12_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=cyDlXQvwCmXfImSMfTzfOG4b8.wsI3En"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl13/sub-nl13_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 727,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl13/sub-nl13_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=SidPG5Zll.vycfE4mG8pgR72OnWJEzTS"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl14/sub-nl14_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1133,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl14/sub-nl14_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=Lpd10OtJZrvDGinORtquQ1k3hso7rX.M"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl15/sub-nl15_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 652,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl15/sub-nl15_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=STKcV35gEbzQ0GoU62GZhywsM.hj3.zO"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl16/sub-nl16_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 797,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl16/sub-nl16_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=Qz.b8wJ_Q.j2jaECQiOBhQqGvLM67Zvd"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl18/sub-nl18_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 926,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl18/sub-nl18_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=U00b74edyKNrKx.3SJcLM1f2OFrCN8I7"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl19/sub-nl19_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 942,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl19/sub-nl19_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=7PbkhlwbpqsANGczbsO0J3BJhuFF8LcV"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-nl20/sub-nl20_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 665,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-nl20/sub-nl20_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=yrg9mvlmJ0pSrSgEQUB7hM776aNels7a"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt1/sub-pt1_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 731,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt1/sub-pt1_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=tqqulqJTRM._QQOVphJjnJ6_Vmo25lGM"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt10/sub-pt10_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1026,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt10/sub-pt10_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=hKmbsQlvt5K1k4wEjGu3DryZx6x3oBUU"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt11/sub-pt11_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 698,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt11/sub-pt11_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=H826JU4vcoYb4Px8PxGtOY1bQdORyKxY"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt12/sub-pt12_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 646,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt12/sub-pt12_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=TDPHMFAlnKkxQnSz4iky421imgb0cZQn"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt13/sub-pt13_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 758,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt13/sub-pt13_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=PhSpj0yvqje18SIR_o4dYcT9svQ0ypke"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt3/sub-pt3_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 881,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt3/sub-pt3_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=xdXXM4.BZCwmCNpc9VTujDDpkD7rgevF"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt4/sub-pt4_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1212,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt4/sub-pt4_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=BLUDSFbOql5r89VbWtyMYq0xLd8COL5S"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt6/sub-pt6_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 636,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt6/sub-pt6_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=ZlKGvzTXEBGBaABaIybtW46cgL0Rb3Mr"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-pt8/sub-pt8_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1252,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-pt8/sub-pt8_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=dLrwkPBHuZ23pqHrMLN_VYkHPgd0JjEz"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-upmc1/sub-upmc1_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1351,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-upmc1/sub-upmc1_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=_exZKL8MIHoTmJxyNJNnH3JDbQTQial8"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-upmc2/sub-upmc2_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1195,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-upmc2/sub-upmc2_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=TKPX8BLQ7ic1qLErh.H7sNRLzFYkiYhs"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-upmc3/sub-upmc3_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1252,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-upmc3/sub-upmc3_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=n0pI_AEulKwoDVX5sRtp6jpu1XzQ4ZNe"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-upmc5/sub-upmc5_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 1185,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-upmc5/sub-upmc5_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=XaKcegHG7y.SAxEJnqKWBjrab_fZLRZ_"
+},
+{
+"path": "derivatives/hfo_detection/rms_detector/car/sub-upmc6/sub-upmc6_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat",
+"size": 674,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/hfo_detection/rms_detector/car/sub-upmc6/sub-upmc6_ses-presurgery_task-interictal_acq-seeg_run-01_hfo_rates.mat?versionId=PkxLiYZeAHXRH8Zgf5ocBgwa6v.kNnqK"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-002/sub-002_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 597222,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-002/sub-002_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=XTXc6lBgiHGu5jmltWWhnf2rCwVxjrLQ"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-003/sub-003_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 410593,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-003/sub-003_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=QMXQMahhZGtWteYAgM3r4UtUOQIiAU57"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-004/sub-004_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 151319,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-004/sub-004_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=KwL7ZJqpSTTg5_wh30tvtTZ94.NVse9v"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-005/sub-005_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 344028,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-005/sub-005_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=TXMpDqOtkX2eKZea_jFBKSRf1ebOPJDM"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-006/sub-006_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 142225,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-006/sub-006_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=H.xQCUg8YZNtIwZVrqRIW5B3fe8j85CM"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-009/sub-009_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 158434,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-009/sub-009_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=BUf_N4f9gEX1KYb0Kg15DxY8Ktfis2Z_"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-011/sub-011_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 319396,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-011/sub-011_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=aHarqAZ0MrrRXQqMTnNfsTiGWsOm7Uw."
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-013/sub-013_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 145078,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-013/sub-013_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=uNrX8LbQtX.XWyo.2sDOjNsHLsvxTSO5"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-014/sub-014_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 81753,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-014/sub-014_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=cgp3YJsIJxUh3JjQaV58j8_aPAFPl5SW"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-015/sub-015_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 199942,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-015/sub-015_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=hwrpmeei93yja0SGpQ_QURvfCLd1U9jY"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH1/sub-NIH1_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 5590666,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH1/sub-NIH1_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=DLdYHCxfmDvuLQMO3cHdg_6okwTWC57l"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH10/sub-NIH10_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2904435,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH10/sub-NIH10_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=9jbH6WCDm7XgVGCj3DbKp_vPF7e16uES"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH11/sub-NIH11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 4006284,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH11/sub-NIH11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=fGCSR.EjfxMLzTPzCmOmxvZz3FcCR2s8"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH2/sub-NIH2_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3106086,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH2/sub-NIH2_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=hCqmBitf4YEnWOlRSikDhSmtLOZehaQC"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH3/sub-NIH3_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3160691,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH3/sub-NIH3_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=AMP7G4n9JaikJiTh18zh_Ed7DARQNiMu"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH4/sub-NIH4_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3358413,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH4/sub-NIH4_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=BCpqqHGcNuarDmcSaGz4TdqoRFRyKaka"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH5/sub-NIH5_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3427057,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH5/sub-NIH5_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=TuTIKF3uQWKW.hE81U7NsRZrIvGN7K.9"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH7/sub-NIH7_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3560909,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH7/sub-NIH7_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=eXzgdxK7yuusi_vL6haVAiJOlPui9uh8"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH8/sub-NIH8_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 5499435,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH8/sub-NIH8_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=DfSV6agRVFrfA9oM1QXymKEIdNDHIA8X"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-NIH9/sub-NIH9_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 4254764,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-NIH9/sub-NIH9_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=lCwwDmAvrqgGs_RSutyrSYpup1WvYzMh"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY18N002/sub-PY18N002_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3575721,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY18N002/sub-PY18N002_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=mUTWZwnJTEzicV4VrepRahy2f.NeNPkg"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY18N013/sub-PY18N013_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 6914401,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY18N013/sub-PY18N013_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=3X4i5l3UqrI7DKaih7x_t1PNftNqzdFC"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY18N015/sub-PY18N015_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3956420,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY18N015/sub-PY18N015_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=cjuky7PfpHgLNp.G3fHDxkdLBuUUBcu0"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N012/sub-PY19N012_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 5244479,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N012/sub-PY19N012_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=PPSP8_y3Vsr.om50R_huWmlZO.Uaw7lG"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N015/sub-PY19N015_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 4733482,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N015/sub-PY19N015_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=yRty1H4Da_fgsTspyQSa0FN02WeUvbzN"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N023/sub-PY19N023_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 5005925,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N023/sub-PY19N023_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=V7jP8P4Bcl7l90Nf.FVj30CX42xi75el"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N026/sub-PY19N026_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3766927,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-PY19N026/sub-PY19N026_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=BBuzJt9D3zS6oAPkbBDBuMMZPK8WxXND"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la01/sub-la01_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1148151,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la01/sub-la01_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=X1.c977xMy1u5np2jO7CONkDF5yWgV_L"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la02/sub-la02_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1270506,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la02/sub-la02_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=E5UQ3QJTa5Hnt8_qaqcBNtUpaarlW0ZP"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la03/sub-la03_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1079640,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la03/sub-la03_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=_ocCJKi.uEOpsr2PKdusjv0txbodaJiO"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la04/sub-la04_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1573566,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la04/sub-la04_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=j.HSSzsht8arTkm8nEz7tk94uFdqxQ8D"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la05/sub-la05_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2981716,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la05/sub-la05_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=9xIhl866cgtSQC7Ro6YB.X4BdD_Ih4Yt"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la06/sub-la06_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1546279,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la06/sub-la06_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=xc5WHT4uU4Sza6aJLyMAmnurA4hw4O0Q"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la07/sub-la07_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3640935,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la07/sub-la07_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=qxJe4pW7BiWrodRWsO.TZ7bsv0fpENBd"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la08/sub-la08_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1782758,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la08/sub-la08_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=H9XoOA1y8_kuqG5rqKggAamhRYBubob0"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la09/sub-la09_ses-presurgery_task-interictal_acq-seeg_run-02_ss_ind.mat",
+"size": 364866,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la09/sub-la09_ses-presurgery_task-interictal_acq-seeg_run-02_ss_ind.mat?versionId=idC3eMncr289PgnhMA_jyGlPEYwEYMh0"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la10/sub-la10_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2556994,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la10/sub-la10_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=YzOnvwwRGHE6koca0RsRwrQqe1gQOZ3d"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la11/sub-la11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2901050,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la11/sub-la11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=hB.f.1n3m68CrWjCG_AltOxj.3nqzfqb"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la13/sub-la13_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 941645,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la13/sub-la13_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=4pouypTD.XqiLecQpjJVw0r76lwHouYu"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la15/sub-la15_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2508644,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la15/sub-la15_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=l2xYygYvEMsoMM6w.QC5clcpUy9X8NNR"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la16/sub-la16_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2710240,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la16/sub-la16_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=hgymyuDLhOl34e1EYQlwSeaADSBG9iAP"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la21/sub-la21_ses-presurgery_task-interictal_acq-seeg_run-02_ss_ind.mat",
+"size": 5396473,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la21/sub-la21_ses-presurgery_task-interictal_acq-seeg_run-02_ss_ind.mat?versionId=2zcCHm9mRRm57M7Idd.KUhKQu1DTBEDt"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la22/sub-la22_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1410114,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la22/sub-la22_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=dJlFRxnaH_pG2ae4ODdp5.qNpb_3Qdhz"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la23/sub-la23_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 140254,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la23/sub-la23_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=6i9PmiANt5SjGLnBEjd7We3bvFH8FGqV"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-la24/sub-la24_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2820891,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-la24/sub-la24_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=SVVMJQH7dqSwrrgPUE7jvG_Qh5AHGMwi"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl01/sub-nl01_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1382252,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl01/sub-nl01_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=pqROg2NH_cL5Yv883JeUZGEs12Yffar2"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl02/sub-nl02_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 3543664,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl02/sub-nl02_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=2Jk_K25VTqHzh2ovjG2dUuEPeApy7Z.p"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl04/sub-nl04_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 347108,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl04/sub-nl04_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=JkbyGlgILuo1_.AAJekUjfoAgelKmt1E"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl05/sub-nl05_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 765563,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl05/sub-nl05_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=VnNyvKy.eoTX7R10nPUVWqx5C8W4Jb_S"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl06/sub-nl06_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 776000,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl06/sub-nl06_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=aTlodelgHjHqiTCMMczdhl5BR4ExoiR3"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl07/sub-nl07_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 202665,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl07/sub-nl07_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=V32f_wosbmkuuT.Ac7vM2Xj2dB5RXL5p"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl08/sub-nl08_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 656752,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl08/sub-nl08_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=Xwce1eqGqtsJTbTwvYWT54BzLzdrDS31"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl11/sub-nl11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 354908,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl11/sub-nl11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=g7kTRqg03nrg665dtWGgbw9PfJGnr6aM"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl12/sub-nl12_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 490967,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl12/sub-nl12_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=Vvjig2K4HhY_L9EGI7nOZ80IFFqENDm6"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl13/sub-nl13_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 247350,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl13/sub-nl13_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=V25wCQBaHls1fx1a.NbqGY6TRmn5zS8o"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl14/sub-nl14_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 450040,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl14/sub-nl14_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=pZYamCRsFF70oslO3Q9hlex.Sz_3P0Q4"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl15/sub-nl15_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 191600,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl15/sub-nl15_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=TB_8pgbuoD1FZQGuv04AOduSCbbOFq9Q"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl16/sub-nl16_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 255059,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl16/sub-nl16_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=ujQn2EK4ccjVyUq9vgB_hOXr34fv2pUt"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl18/sub-nl18_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 357656,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl18/sub-nl18_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=1eLY3l8NQbsFn06pZRn8PFMoY3yel2xJ"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl19/sub-nl19_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 366537,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl19/sub-nl19_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=SX0q5RN4w0Du8x1vRz66SzzcU4ki03Zv"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-nl20/sub-nl20_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 207470,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-nl20/sub-nl20_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=5WJ4bZme_0Lu01shHFwbZuuy0GYt48PU"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt1/sub-pt1_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1073252,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt1/sub-pt1_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=8PemU3hqxo6xK1e063U9GcIkde2JLcbX"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt10/sub-pt10_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1684951,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt10/sub-pt10_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=6O4FtKzdsGbMgaR7uqPxlbNuXtmU8.yk"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt11/sub-pt11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 846265,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt11/sub-pt11_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=4p9J11_lgn1m8lS7Bs3HByz98AEQqeS2"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt12/sub-pt12_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1056893,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt12/sub-pt12_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=eX8AHj47UkEloirSi7SVmX8LtjmlX3Fb"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt13/sub-pt13_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1337269,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt13/sub-pt13_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=ME..6N58KWtXMDbgmLrb_O_6nYzEoUPA"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt2/sub-pt2_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1501141,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt2/sub-pt2_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=YWl1p1lufSgdeQRhfDCNNmRpdgpfTw3n"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt3/sub-pt3_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1478413,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt3/sub-pt3_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=Cs4JOaw4422eIxVVywki7.DpY_CPxFuS"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt4/sub-pt4_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2247855,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt4/sub-pt4_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=P7DQ0gfVSfoZJVmvwsdkgD9mErB5lQRo"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt5/sub-pt5_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1838705,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt5/sub-pt5_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=.LMNhIdosx4Qk2BVxTHP6VCMZOiU6Iwt"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt6/sub-pt6_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 792096,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt6/sub-pt6_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=zfTm1hEr3PGxswqlF4zMJ_J.n9Z.BN2J"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt7/sub-pt7_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1859214,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt7/sub-pt7_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=7lqbBMx60k_t.m.YKf.38AMLgGwjBxds"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt8/sub-pt8_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2298406,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt8/sub-pt8_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=IulCVucbVU334ZpGL4bS6t.gDAZ9_tj8"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-pt9/sub-pt9_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1461721,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-pt9/sub-pt9_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=skp7sSPrjeiE1gUecX.1FJTvoM73au.F"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-upmc1/sub-upmc1_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2382519,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-upmc1/sub-upmc1_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=KtWYkmJKWIsXlJkDA4JxfGfXsDGDAN4G"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-upmc2/sub-upmc2_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2067710,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-upmc2/sub-upmc2_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=wLSIsgtoZsBnZhTfEHi.jhw2ElYDfSkJ"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-upmc3/sub-upmc3_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2284669,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-upmc3/sub-upmc3_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=Sl0Q2nv.niNIE5qAY2bv8WKkyczpONLe"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-upmc5/sub-upmc5_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 2204576,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-upmc5/sub-upmc5_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=Dq1ZND1jE75DP3Kyu4hHVPvLQhPEA8v_"
+},
+{
+"path": "derivatives/sourcesink/car/remove_artifact_wins/sub-upmc6/sub-upmc6_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat",
+"size": 1634384,
+"url": "https://s3.amazonaws.com/openneuro.org/ds003876/derivatives/sourcesink/car/remove_artifact_wins/sub-upmc6/sub-upmc6_ses-presurgery_task-interictal_acq-seeg_run-01_ss_ind.mat?versionId=aclI9ef_L8DrTLcUpXjmqdC_8INfv2Ct"
+}
+]

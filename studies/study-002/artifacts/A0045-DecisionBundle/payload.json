@@ -1,0 +1,98 @@
+{
+ "supported_comparisons": [
+  {
+   "comparison": "virtual interventions on fitted P2 model (exploratory)",
+   "finding": "RES-EZ+PZ ablation median -3.0 seizing regions [-4.9,-1.6], abolished 42%; STIM sustained current -0.5 to -1.0; 50 Hz pulse train no benefit",
+   "refs": [
+    "A0038",
+    "A0041"
+   ],
+   "evidence_kind": "simulated_result"
+  }
+ ],
+ "tradeoffs": [
+  "Ablation of a wrongly estimated EZ would target the wrong regions: truth check shows the estimate missed the true EZ (A0043)."
+ ],
+ "unstable_rankings": [
+  "Treatment ranking not verifiable: true model does not seize spontaneously in the region-level simulator; concordance undefined (A0043)."
+ ],
+ "missing_evidence": [
+  "qualified inversion pipeline",
+  "evaluation under the observed stimulation protocol",
+  "neural-field simulation with patient anatomy",
+  "N001 TI mapping"
+ ],
+ "limitations": [
+  "virtual patients from one study family",
+  "region-level simulation",
+  "12 of 24 samples simulated in full window",
+  "post window uninformative",
+  "unqualified model"
+ ],
+ "reproducibility_manifest": {
+  "system_release_id": "rel-f02dbe461251",
+  "prediction_freeze": "1fcf288aac50be737b697cb5ff9cd0ad6423054b977e1bd2516f4ed34e6464fd",
+  "simulator_sha256": "0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0",
+  "spec_sha256": "70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461",
+  "artifacts": [
+   {
+    "artifact_id": "A0001-StudyProtocol",
+    "manifest_hash": "34271267fd4b1b1d4ccb08f988cfb0095996aed79f1784fbd55d8d33a01ffa5d"
+   },
+   {
+    "artifact_id": "A0002-DatasetCard",
+    "manifest_hash": "46a45862d7a2baa7f29a519da6296237040c0496e4e752c242b3a145ae18313d"
+   },
+   {
+    "artifact_id": "A0006-MethodCard",
+    "manifest_hash": "c0e2e192209f635e6ab817a0d5a78ef8ebf9a40fbf0e7253ce58911d9453bf1d"
+   },
+   {
+    "artifact_id": "A0009-PatientCase",
+    "manifest_hash": "a0913c3f491273a9b3b8f6a1e1807bb36d3294587f81cb9cc3e250c10bf82c90"
+   },
+   {
+    "artifact_id": "A0011-CohortSplit",
+    "manifest_hash": "c6befda6c35f24a822aac7b44fa6bdf308f8f5dcb9b5ce82d57da59f5d114c78"
+   },
+   {
+    "artifact_id": "A0012-Report",
+    "manifest_hash": "45301c79a735fc38c06415bdaee77559f510fcc399fb340e2742d48d8b18cc42"
+   },
+   {
+    "artifact_id": "A0013-ValidationReport",
+    "manifest_hash": "931ab65992fbacb81da5d2964a16f439cebb5a1684b85a9635e3ab2aa3c676bc"
+   },
+   {
+    "artifact_id": "A0015-Report",
+    "manifest_hash": "fa3f00df571e027ac97ba61cd729d4fa0a520a066d9257f78a54ac03424759b0"
+   },
+   {
+    "artifact_id": "A0034-InterventionScenarioSet",
+    "manifest_hash": "31982b12765b45343044324e04628c1db032b7bc19330315bb9258fe34ce7966"
+   },
+   {
+    "artifact_id": "A0035-SimulationRequest",
+    "manifest_hash": "6f58b9009dce8831c4d27cd0fee462a5b280d77a55817e6d670f23766964cd97"
+   },
+   {
+    "artifact_id": "A0041-SimulationComparison",
+    "manifest_hash": "a68dfa6e9668567d88be81b6d9660a8ce8d0730f8a0a254f5183076b2f448de1"
+   },
+   {
+    "artifact_id": "A0042-ValidationReport",
+    "manifest_hash": "669b23d5e585ebe8235d61687b4abc3ffebb6c1108d6ecd68347acb1b1f83c00"
+   },
+   {
+    "artifact_id": "A0043-OutcomeEvaluation",
+    "manifest_hash": "f142d8d47c7a44ae599d8e8959a536a480b398104d714006ef91ac5edc589195"
+   },
+   {
+    "artifact_id": "A0044-ValidationReport",
+    "manifest_hash": "e83aedbe2fd8d916fd50cecaf595d4e564fb076aa92bbaed58eec9f4d4a68d28"
+   }
+  ]
+ },
+ "review_refs": [],
+ "release_status": "draft_pending_review"
+}

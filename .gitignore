@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv*/
+data/*
+!data/*-manifest.csv
+studies/*/vault/
+studies/*/work/
+studies/.current
+system/history/
+.tools/*.exe
+reports/_*.html

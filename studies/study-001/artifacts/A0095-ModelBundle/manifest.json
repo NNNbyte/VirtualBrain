@@ -1,0 +1,93 @@
+{
+  "artifact_id": "A0095-ModelBundle",
+  "schema_name": "ModelBundle",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": "VBT-P1",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0026",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "vep-stim",
+  "tool_version": "0.1.0a1@5367ef4",
+  "code_commit": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+  "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+  "consumed_artifact_ids": [
+    "A0037-MethodCard",
+    "A0067-DatasetCard"
+  ],
+  "input_manifest_hash": "b0dcf8705763039ea02e7f728773f3f89017f3ba4e967ec846e9aa4fd1a0c22f",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0095-ModelBundle/payload.json",
+      "media_type": "application/json",
+      "sha256": "700ddf63f581b7b4248fd735b9bcc5428501935c33a730cce03ef84d1059617f",
+      "byte_size": 46343
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/posterior_x0_EV_by_region.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "f3ee84252c99978a0bfbed0ea785e051e136ad746db9cdf1901006ed6704cb1a",
+      "byte_size": 32294
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/map_ensemble_primary.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "1883ef4c05946fc5e13fcab73a6ad731394c47fa64acb0a3291b84f308e88aa1",
+      "byte_size": 5568
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/map_ensemble_nf.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "4939d90cffed60028a5a9609ca16571b3231f0eac4c010d92e7ebc21d8a56656",
+      "byte_size": 1783
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/nuts_summary.json",
+      "media_type": "application/octet-stream",
+      "sha256": "0d669a32b81cfc26e460bcb196d975dfbc9591a9129ef054aa3637d35db4b530",
+      "byte_size": 7415
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/stansummary.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "13d9d3ab21598ab83ae11c18908fdc5430ef80a690d13edc2232ddd9e7af7617",
+      "byte_size": 100178
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/datafeatures_primary.json",
+      "media_type": "application/octet-stream",
+      "sha256": "b1571d6f1c7e739dfc6969429a603d963c3601d32e47a2e7c2f5caead9cd1b6c",
+      "byte_size": 2240163
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/pip_freeze.txt",
+      "media_type": "application/octet-stream",
+      "sha256": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+      "byte_size": 1512
+    },
+    {
+      "uri": "artifacts/A0095-ModelBundle/fit_scripts.zip",
+      "media_type": "application/octet-stream",
+      "sha256": "7dc8516e115c3aa6ced545e4399228cc2ed40df9695aeeb4f9dfdaefc845e48d",
+      "byte_size": 50555
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "fitted_estimate"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T07:03:11+00:00",
+  "supersedes_id": null,
+  "title": "VBT-P1 recovery benchmark: vep-stim (Wang 2025) VEP Stan fit on simulated P1 SEEG-stim - pipeline runs, NOT converged, EZ (Left-O2) not recovered",
+  "manifest_hash": "35f57f2842c28f5e588d527132a2973ef500c575e97d0ea648ff6e51e6a71047"
+}

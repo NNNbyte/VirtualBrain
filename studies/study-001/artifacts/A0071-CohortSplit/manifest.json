@@ -1,0 +1,51 @@
+{
+  "artifact_id": "A0071-CohortSplit",
+  "schema_name": "CohortSplit",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": "fam-hup-penn",
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0015",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R2-case-curation",
+  "tool_id": "make_split.py+separate_outcomes.py+survey_cases.py",
+  "tool_version": "py3.11.9",
+  "code_commit": null,
+  "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0070-DatasetCard"
+  ],
+  "input_manifest_hash": "18a4e8d78168779731afd1625971d21c17b5ff00d24c704295b76d5950022f6c",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0071-CohortSplit/payload.json",
+      "media_type": "application/json",
+      "sha256": "8242f52f388a7c7c823474470ce031d871d1f7d67e32ee980354e2370e5a58b2",
+      "byte_size": 5169
+    },
+    {
+      "uri": "artifacts/A0071-CohortSplit/split.json",
+      "media_type": "application/octet-stream",
+      "sha256": "0b88f65f698f6fe8efa96bf5aa7ffd6b1089e4b5d8f8f7f65d4845f7135c7389",
+      "byte_size": 2580
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T04:42:27+00:00",
+  "supersedes_id": null,
+  "title": "ds004100 v1.1.3 patient-level 60/40 split (34 dev / 22 test, therapy x implant stratified)",
+  "manifest_hash": "5f125791ca6df17c1b981f978f1dc9c85ffccd1d164d48f7fa6c2f6fe61774e0"
+}

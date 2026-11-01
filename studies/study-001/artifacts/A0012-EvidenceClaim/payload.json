@@ -1,0 +1,51 @@
+{
+  "claim": "VNS E05 RCT: high stimulation (n=94) reduced total seizure frequency by 28% on average vs 15% with low stimulation (n=102) over 3 months (p=0.04).",
+  "intervention_modality": "VNS",
+  "bibliographic_record": {
+    "authors": "Handforth A, DeGiorgio CM, Schachter SC, Uthman BM, Naritoku DK, Tecoma ES, Henry TR, Collins SD, Vaughn BV, Gilmartin RC, Labar DR, Morris GL, Salinsky MC, Osorio I, Ristanovic RK, Labiner DM, Jones JC, Murphy JV, Ney GC, Wheless JW.",
+    "title": "Vagus nerve stimulation therapy for partial-onset seizures: a randomized active-control trial.",
+    "journal": "Neurology",
+    "year": "1998",
+    "volume": "51",
+    "issue": "1",
+    "pages": "48-55",
+    "doi": "10.1212/wnl.51.1.48",
+    "pmid": "9674777",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/9674777",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9674777/"
+  },
+  "supporting_passage": "Patients receiving high stimulation (94 patients, ages 13 to 54 years) had an average 28% reduction in total seizure frequency compared with a 15% reduction in the low stimulation group (102 patients, ages 15 to 60 year; p = 0.04).",
+  "supporting_passages": [
+    "Patients receiving high stimulation (94 patients, ages 13 to 54 years) had an average 28% reduction in total seizure frequency compared with a 15% reduction in the low stimulation group (102 patients, ages 15 to 60 year; p = 0.04)."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 9674777, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 196,
+    "design": "multicenter double-blind randomized active-control (high vs low stimulation) add-on trial",
+    "population": "patients aged 13-60 with refractory partial-onset seizures (>=6 per 30 days)",
+    "age_group": "adolescent and adult"
+  },
+  "endpoint": {
+    "measure": "mean percent change in total seizure frequency vs baseline",
+    "timepoint": "3 months",
+    "median_pct_reduction": "not_reported (average reported)",
+    "responder_rate_50pct": "not_reported (in abstract)",
+    "seizure_freedom": "not_reported (in abstract)",
+    "follow_up_months_reported": 3
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer VNS is an effective and safe adjunctive treatment.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": false,
+  "contradictions": [
+    "Follow-up <12 months: fails protocol follow-up criterion; retained as the controlled anchor for the E05 family (12-month extension in DeGiorgio 2000)."
+  ],
+  "study_family_id": "fam-VNS-E05-trial"
+}

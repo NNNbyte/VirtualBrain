@@ -1,0 +1,46 @@
+{
+ "claim": "An individual-participant-data meta-analysis of 46 studies (450 MRgLITT patients with drug-resistant epilepsy) found 240/415 (57.8%) non-callosotomy patients seizure free at last follow-up (median follow-up 19.0 months); CCM and MTS/atrophy predicted seizure freedom, nonlesional MRI and generalized semiology predicted earlier recurrence.",
+ "bibliographic_record": {
+  "authors": "Chen JS, Lamoureux AA, Shlobin NA, Elkaim LM, Wang A, et al.",
+  "title": "Magnetic resonance-guided laser interstitial thermal therapy for drug-resistant epilepsy: A systematic review and individual participant data meta-analysis",
+  "citation": "Epilepsia 2023;64(8):1957-1974",
+  "doi": "10.1111/epi.17560",
+  "pmid": "36824029",
+  "pmcid": null,
+  "publication_type": "systematic review and IPD meta-analysis"
+ },
+ "supporting_passage": "Overall, 240 (57.8%) of 415 patients (excluding palliative corpus callosotomy) were seizure-free at last follow-up.",
+ "passage_location": "Abstract (unstructured), results sentences. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 36824029; https://europepmc.org/abstract/MED/36824029; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "systematic review + IPD meta-analysis (mixed-effects Cox and logistic regression); databases searched 2010-01-01 to 2021-02-06",
+  "n_studies": 46,
+  "n_patients": 450,
+  "n_analysed_seizure_freedom": 415,
+  "population": "drug-resistant epilepsy, mixed ages (mean age 29.5 +/- 18.1 y) and etiologies; includes paediatric and extratemporal cases"
+ },
+ "endpoint": {
+  "reported_endpoint": "seizure freedom at last follow-up; time to seizure recurrence",
+  "follow_up": "median 19.0 months (individuals may have <12 months)",
+  "meets_protocol_followup_ge_12mo": "partially (median meets; some individuals may fall below 12 months -- to_verify)",
+  "protocol_mapping_v1": "seizure free -> favourable",
+  "values": {
+   "seizure free": "240/415 (57.8%)",
+   "CCM OR": "7.97",
+   "MTS/A OR": "2.21",
+   "operative complications": "28/330 (8.5%)",
+   "neurological deficits": "53/352 (15.1%)"
+  }
+ },
+ "reported_observation": "57.8% seizure free at last follow-up; median follow-up 19 months; complications 8.5%.",
+ "author_inference": "MRgLITT particularly effective for well-circumscribed lesional DRE (CCM, MTS/A), less effective in nonlesional or diffuse-network cases.",
+ "contradictions": [],
+ "study_family_id": "fam-litt-pooled-meta-analyses",
+ "overlap_note": "IPD pooled from small published series (case series typically); overlaps with patients in Kerezoudis 2020, Ekman 2024 and others in this family; do not count as independent.",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

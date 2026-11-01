@@ -1,0 +1,270 @@
+{
+ "true_ez_npz_cols": [
+  15
+ ],
+ "true_ez_names": [
+  "Left-F1-lateral-prefrontal"
+ ],
+ "threshold": -2.06,
+ "sources": {
+  "A0018-ModelBundle:post": {
+   "kind": "MAP optima",
+   "n": 24,
+   "est_ez_set": [],
+   "est_ez_names": [],
+   "precision": null,
+   "precision_note": "undefined: empty estimated set (abstention)",
+   "recall": 0.0,
+   "top1_by_median": 82,
+   "top1_name": "Right-Orbito-frontal-cortex",
+   "top1_correct": false,
+   "true_ez": [
+    {
+     "col": 15,
+     "name": "Left-F1-lateral-prefrontal",
+     "freq_x0_gt_thr": 0.0,
+     "median_x0": -2.5064491,
+     "rank_by_freq": 81.5,
+     "rank_by_median_x0": 159.0,
+     "p_rank1": 0.0,
+     "x0_p05_p95": [
+      -2.50890403,
+      -2.50529026
+     ]
+    }
+   ],
+   "bootstrap": {
+    "precision_ci95": null,
+    "precision_undefined_frac": 1.0,
+    "recall_ci95": [
+     0.0,
+     0.0
+    ],
+    "rank_by_freq_ci95": [
+     81.5,
+     81.5
+    ],
+    "rank_by_median_ci95": [
+     158.0,
+     159.0
+    ]
+   }
+  },
+  "A0018-ModelBundle:full": {
+   "kind": "MAP optima",
+   "n": 24,
+   "est_ez_set": [
+    1,
+    7,
+    27,
+    40,
+    82,
+    83,
+    108
+   ],
+   "est_ez_names": [
+    "Left-Orbito-frontal-cortex",
+    "Left-F2-rostral",
+    "Left-Anterior-cingulate-cortex",
+    "Left-STS-anterior",
+    "Right-Orbito-frontal-cortex",
+    "Right-Gyrus-rectus",
+    "Right-Anterior-cingulate-cortex"
+   ],
+   "precision": 0.0,
+   "precision_note": null,
+   "recall": 0.0,
+   "top1_by_median": 82,
+   "top1_name": "Right-Orbito-frontal-cortex",
+   "top1_correct": false,
+   "true_ez": [
+    {
+     "col": 15,
+     "name": "Left-F1-lateral-prefrontal",
+     "freq_x0_gt_thr": 0.0,
+     "median_x0": -2.4536252,
+     "rank_by_freq": 103.0,
+     "rank_by_median_x0": 46.0,
+     "p_rank1": 0.0,
+     "x0_p05_p95": [
+      -2.505316655,
+      -2.4180232449999997
+     ]
+    }
+   ],
+   "bootstrap": {
+    "precision_ci95": [
+     0.0,
+     0.0
+    ],
+    "precision_undefined_frac": 0.0,
+    "recall_ci95": [
+     0.0,
+     0.0
+    ],
+    "rank_by_freq_ci95": [
+     93.0,
+     102.5
+    ],
+    "rank_by_median_ci95": [
+     40.0,
+     74.0
+    ]
+   }
+  },
+  "A0019-ModelBundle:post": {
+   "kind": "NUTS draws",
+   "n": 400,
+   "est_ez_set": [],
+   "est_ez_names": [],
+   "precision": null,
+   "precision_note": "undefined: empty estimated set (abstention)",
+   "recall": 0.0,
+   "top1_by_median": 10,
+   "top1_name": "Left-SFS-rostral",
+   "top1_correct": false,
+   "true_ez": [
+    {
+     "col": 15,
+     "name": "Left-F1-lateral-prefrontal",
+     "freq_x0_gt_thr": 0.0525,
+     "median_x0": -2.7111235000000002,
+     "rank_by_freq": 126.0,
+     "rank_by_median_x0": 133.0,
+     "p_rank1": 0.0075,
+     "x0_p05_p95": [
+      -3.602136195,
+      -2.0543941000000028
+     ]
+    }
+   ],
+   "bootstrap": {
+    "precision_ci95": null,
+    "precision_undefined_frac": 1.0,
+    "recall_ci95": [
+     0.0,
+     0.0
+    ],
+    "rank_by_freq_ci95": [
+     106.4875,
+     147.5
+    ],
+    "rank_by_median_ci95": [
+     106.0,
+     145.0
+    ]
+   }
+  },
+  "A0019-ModelBundle:full": {
+   "kind": "NUTS draws",
+   "n": 400,
+   "est_ez_set": [
+    1,
+    4,
+    7,
+    8,
+    12,
+    27,
+    40,
+    82,
+    83,
+    108,
+    115
+   ],
+   "est_ez_names": [
+    "Left-Orbito-frontal-cortex",
+    "Left-F3-Pars-triangularis",
+    "Left-F2-rostral",
+    "Left-F2-caudal",
+    "Left-F1-mesial-prefrontal",
+    "Left-Anterior-cingulate-cortex",
+    "Left-STS-anterior",
+    "Right-Orbito-frontal-cortex",
+    "Right-Gyrus-rectus",
+    "Right-Anterior-cingulate-cortex",
+    "Right-Temporal-pole"
+   ],
+   "precision": 0.0,
+   "precision_note": null,
+   "recall": 0.0,
+   "top1_by_median": 82,
+   "top1_name": "Right-Orbito-frontal-cortex",
+   "top1_correct": false,
+   "true_ez": [
+    {
+     "col": 15,
+     "name": "Left-F1-lateral-prefrontal",
+     "freq_x0_gt_thr": 0.1,
+     "median_x0": -2.4317031,
+     "rank_by_freq": 73.5,
+     "rank_by_median_x0": 62.0,
+     "p_rank1": 0.0,
+     "x0_p05_p95": [
+      -3.084299265,
+      -1.9044983800000002
+     ]
+    }
+   ],
+   "bootstrap": {
+    "precision_ci95": [
+     0.0,
+     0.0
+    ],
+    "precision_undefined_frac": 0.0,
+    "recall_ci95": [
+     0.0,
+     0.0
+    ],
+    "rank_by_freq_ci95": [
+     52.0,
+     95.5
+    ],
+    "rank_by_median_ci95": [
+     52.0,
+     75.0
+    ]
+   }
+  }
+ },
+ "A0017": [
+  {
+   "id": "H1",
+   "ez": [
+    7,
+    8
+   ],
+   "true_ez_in_ez": false,
+   "true_ez_in_pz": true,
+   "precision": 0.0,
+   "recall": 0.0
+  },
+  {
+   "id": "H2",
+   "ez": [
+    82
+   ],
+   "true_ez_in_ez": false,
+   "true_ez_in_pz": false,
+   "precision": 0.0,
+   "recall": 0.0
+  },
+  {
+   "id": "H3",
+   "ez": [
+    74
+   ],
+   "true_ez_in_ez": false,
+   "true_ez_in_pz": false,
+   "precision": 0.0,
+   "recall": 0.0
+  },
+  {
+   "id": "H4",
+   "ez": [],
+   "true_ez_in_ez": false,
+   "true_ez_in_pz": false,
+   "precision": null,
+   "recall": 0.0
+  }
+ ]
+}

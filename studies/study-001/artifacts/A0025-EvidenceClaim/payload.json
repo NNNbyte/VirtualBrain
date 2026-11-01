@@ -1,0 +1,46 @@
+{
+ "claim": "A meta-analysis of 13 studies (551 patients) of LITT for temporal lobe epilepsy found a pooled seizure-freedom rate of 58% (95% CI 54-62%), 66% (58-74%) in mesial temporal sclerosis, not associated with ablation volume; pooled complication rate 17%.",
+ "bibliographic_record": {
+  "authors": "Kerezoudis P, Parisi V, Marsh WR, Kaufman TJ, Lehman VT, Worrell GA, Miller KJ, Van Gompel JJ",
+  "title": "Surgical Outcomes of Laser Interstitial Thermal Therapy for Temporal Lobe Epilepsy: Systematic Review and Meta-analysis",
+  "citation": "World Neurosurg 2020;143:527-536.e3",
+  "doi": "10.1016/j.wneu.2020.07.194",
+  "pmid": "32750511",
+  "pmcid": null,
+  "publication_type": "systematic review and meta-analysis"
+ },
+ "supporting_passage": "Overall seizure freedom rate was 58% (95% confidence interval [CI], 54%-62%) and was not significantly associated with total ablation volume (P = 0.42), hippocampal ablation (P = 0.67), or amygdala ablation (P = 0.33).",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 32750511; https://europepmc.org/abstract/MED/32750511; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "systematic review and random-effects meta-analysis of observational studies",
+  "n_studies": 13,
+  "n_patients": 551,
+  "subset": "MTS n=384",
+  "population": "temporal lobe epilepsy treated with LITT"
+ },
+ "endpoint": {
+  "reported_endpoint": "seizure freedom rate (definition/class not specified in abstract)",
+  "follow_up": "not_reported in abstract",
+  "meets_protocol_followup_ge_12mo": "to_verify",
+  "protocol_mapping_v1": "seizure freedom -> favourable (definition to_verify)",
+  "values": {
+   "overall": "58% (54-62)",
+   "MTS": "66% (58-74)",
+   "complications": "17% (13-22)"
+  }
+ },
+ "reported_observation": "Pooled seizure freedom 58% (TLE) and 66% (MTS); no significant association with ablation volume.",
+ "author_inference": "Evidence insufficient to support a relationship between seizure freedom and total, hippocampal or amygdala ablation volume.",
+ "contradictions": [
+  "Wu 2019 (Bayesian location model, n=234) found ablation location/amygdalar volume associated with Engel I; Kerezoudis meta-regression at study level found no volume association (ecological vs patient-level analysis)."
+ ],
+ "study_family_id": "fam-litt-pooled-meta-analyses",
+ "overlap_note": "Pools published LITT cohorts (likely includes Gross 2018 Emory series; to_verify). Shares underlying patients with other LITT meta-analyses in this family; do not count as independent.",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

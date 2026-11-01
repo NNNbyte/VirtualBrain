@@ -1,0 +1,70 @@
+{
+  "method_name": "Bayesian Virtual Epileptic Patient (BVEP): probabilistic inversion of the network Epileptor model",
+  "primary_source": {
+    "authors": "Hashemi M, Vattikonda AN, Sip V, Guye M, Bartolomei F, Woodman MM, Jirsa VK",
+    "title": "The Bayesian Virtual Epileptic Patient: A probabilistic framework designed to infer the spatial map of epileptogenicity in a personalized large-scale brain model of epilepsy spread",
+    "journal": "NeuroImage",
+    "year": 2020,
+    "volume": "217",
+    "article": "116839",
+    "doi": "10.1016/j.neuroimage.2020.116839",
+    "pmid": "32387625",
+    "article_license": "cc by-nc-nd (per Europe PMC); not flagged open access in Europe PMC",
+    "verified_via": "Crossref + Europe PMC abstract; full text not read",
+    "related": [
+      "Hashemi et al. 2021 PLoS Comput Biol 17:e1009129 (priors)",
+      "Vattikonda et al. 2021 Commun Biol 4:1244",
+      "Jha et al. 2022 Mach Learn Sci Technol 3:035016",
+      "Hashemi et al. 2023 Neural Networks 163:178-94 (amortised SBI)"
+    ],
+    "related_note": "related citations as listed in the BVEP README; not individually verified"
+  },
+  "method_summary": "Bayesian inversion of a 2D Epileptor network (source- or SEEG-level) to infer the spatial map of epileptogenicity x0. Implementations in Stan (NUTS, ADVI, MAP), PyMC3, simulation-based inference (sbi: MAF/MDN/NSF) and global optimisation. The VBT_INS_Stimulation Stan inference (vep_mcmc.stan) follows the same design.",
+  "required_inputs": [
+    "structural connectome (patient DWI or template)",
+    "SEEG gain matrix (contact positions from CT/MRI)",
+    "SEEG seizure recording -> log-power envelope features with onset annotation",
+    "priors on x0 (optionally informed by clinical hypothesis)"
+  ],
+  "implementation_versions": {
+    "repository": "https://github.com/ins-amu/BVEP",
+    "licence": "GPL-3.0 (GitHub API spdx)",
+    "default_branch_head": {
+      "commit": "69baec402b75fb48357e157c82960c44b52e0d4b",
+      "date": "2025-09-15T15:24:41Z",
+      "message": "Add files via upload"
+    },
+    "releases": [
+      {
+        "tag": "v0.1",
+        "published": "2021-12-13"
+      }
+    ],
+    "contents": "Stan/ (BVEP1-3 .stan models + patient1 NUTS/MAP notebooks, Epileptor2D_Hypos.stan, shell runners), SBI/ (sbi notebooks, BVEP_Simulator.py), PyMC3/, Optimization/, TVB/, SEEG/, Prior/; no requirements file or package metadata at top level",
+    "dependencies_from_README": [
+      "TVB (simulation)",
+      "Stan (version not pinned)",
+      "PyMC3 (legacy, unpinned)",
+      "sbi (github.com/sbi-dev/sbi; unpinned)"
+    ]
+  },
+  "supported_outputs": [
+    "posterior over regional x0 (epileptogenicity map), global coupling K, noise/scale parameters",
+    "convergence diagnostics (R-hat, ESS, divergences)",
+    "posterior predictive SEEG envelopes"
+  ],
+  "validation_setting": "Technical note. The abstract reports that NUTS and ADVI accurately estimate the degree of epileptogenicity of brain regions, with convergence diagnostics and posterior behaviour analysis supporting reliability. Details of synthetic vs patient data not extracted (full text not read).",
+  "limitations": [
+    "Notebook-style research code, not a package; versions unpinned (PyMC3 deprecated)",
+    "Performance depends on parameterisation (abstract: non-centred parameterisation more efficient)",
+    "Posterior on x0 is a fitted estimate, not a calibrated probability of seizure freedom",
+    "Licence GPL-3.0"
+  ],
+  "reproduction_status": "not_attempted",
+  "local_run_requirements": {
+    "python": "3.10/3.11 with cmdstanpy + CmdStan and a C++ toolchain (Windows: cmdstanpy-installed RTools/MinGW toolchain, or WSL2)",
+    "optional": "torch + sbi for amortised SBI; PyMC3 path not recommended",
+    "installs_require_user_approval": true
+  },
+  "study_family_id": "VEP-INS-Marseille-LaTimone (Jirsa/Bartolomei group; patient overlap across VEP papers not reported - to_verify)"
+}

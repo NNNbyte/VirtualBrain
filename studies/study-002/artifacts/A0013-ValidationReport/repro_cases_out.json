@@ -1,0 +1,5128 @@
+{
+ "checksums": {
+  "data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz": {
+   "sha256": "2e9251922f98a538203a8ac17e8261f940bfe70ad33a71a5639543a84409b8bf",
+   "bytes": 2396306,
+   "manifest_match": true
+  },
+  "data/dataSim/Patient1/P1_TI_SEEG_fit.npz": {
+   "sha256": "9ecfc067a87729690be6bcdc9df2e300588502dcd46ec628898c8c8a756efd55",
+   "bytes": 2593106,
+   "manifest_match": true
+  },
+  "data/dataSim/Patient2/P2_SEEG_ts_fit.npz": {
+   "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+   "bytes": 2768838,
+   "manifest_match": true
+  },
+  "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz": {
+   "sha256": "f019151118717f16f8dfa788d39bb0c7aae86fedf1ee87315b31ccd899aba4c9",
+   "bytes": 1847238,
+   "manifest_match": true
+  },
+  "data/VepMrtrixLut.txt": {
+   "sha256": "837e283a2b99dd4bd1b861bb01adefe0826b5de0d08c6bab2db5967b8bbadee5",
+   "bytes": 14501,
+   "manifest_match": true
+  }
+ },
+ "lut": {
+  "n_entries": 163,
+  "first": [
+   "0",
+   "Unknown"
+  ],
+  "last": [
+   "162",
+   "Right-Cerebellar-cortex"
+  ],
+  "n_regions": 162
+ },
+ "P1": {
+  "sessions": {
+   "data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz": {
+    "keys": {
+     "time_steps": [
+      [
+       1500
+      ],
+      "float64"
+     ],
+     "seeg": [
+      [
+       163,
+       1500
+      ],
+      "float64"
+     ],
+     "SC": [
+      [
+       162,
+       162
+      ],
+      "float64"
+     ],
+     "gain": [
+      [
+       163,
+       162
+      ],
+      "float64"
+     ],
+     "ch_names": [
+      [
+       163
+      ],
+      "<U9"
+     ]
+    },
+    "t_first_last": [
+     5.0,
+     14995.0
+    ],
+    "dt_unique": [
+     10.0
+    ],
+    "fs_assuming_ms": 100.0,
+    "n_ch": 163,
+    "n_samples": 1500,
+    "nan": 0,
+    "inf": 0,
+    "mean_range": [
+     -4.059470582432323,
+     1.851455190452418
+    ],
+    "value_range": [
+     -4.138086447765503,
+     1.9066824290866637
+    ],
+    "median_std": 0.005093241093236646,
+    "min_std": 0.00021856590983276804,
+    "lowest_std_ch": [
+     [
+      "PFG'3-4",
+      0.00021856590983276804
+     ],
+     [
+      "PI'5-6",
+      0.0003757353276987225
+     ],
+     [
+      "PFG'2-3",
+      0.00039042582762835795
+     ],
+     [
+      "GC'6-7",
+      0.0004405269885824184
+     ],
+     [
+      "B'7-8",
+      0.00045113732069487983
+     ]
+    ],
+    "n_std_lt_1e-6": 0,
+    "n_std_lt_1pct_median": 0,
+    "max_samples_at_extreme": 1,
+    "consecutive_equal_samples": 0,
+    "frames_equal_prev": 0,
+    "largest_step": [
+     0.7848123009747325,
+     "GL'11-12",
+     51,
+     0.7848123009747325
+    ],
+    "baseline_median_absdiff_first30": 0.0003629461675776491,
+    "runs_gt10x": [
+     [
+      41,
+      357
+     ],
+     [
+      377,
+      380
+     ],
+     [
+      390,
+      394
+     ],
+     [
+      404,
+      407
+     ],
+     [
+      417,
+      420
+     ],
+     [
+      431,
+      433
+     ],
+     [
+      444,
+      447
+     ],
+     [
+      456,
+      461
+     ],
+     [
+      469,
+      474
+     ],
+     [
+      482,
+      487
+     ],
+     [
+      495,
+      499
+     ],
+     [
+      508,
+      510
+     ],
+     [
+      520,
+      522
+     ],
+     [
+      532,
+      533
+     ],
+     [
+      548,
+      549
+     ],
+     [
+      557,
+      562
+     ],
+     [
+      567,
+      576
+     ],
+     [
+      580,
+      627
+     ],
+     [
+      630,
+      632
+     ],
+     [
+      634,
+      644
+     ],
+     [
+      646,
+      649
+     ],
+     [
+      652,
+      654
+     ],
+     [
+      662,
+      663
+     ],
+     [
+      671,
+      671
+     ],
+     [
+      678,
+      681
+     ],
+     [
+      685,
+      686
+     ],
+     [
+      689,
+      689
+     ],
+     [
+      694,
+      695
+     ]
+    ],
+    "runs_gt3x": [
+     [
+      40,
+      358
+     ],
+     [
+      360,
+      826
+     ],
+     [
+      858,
+      858
+     ]
+    ],
+    "md_ratio_examples": {},
+    "tail_2.5s_mean_absdiff": 7.350554744848137e-06,
+    "tail_5s_mean_absdiff": 6.55310171301304e-05,
+    "tail_6s_mean_absdiff": 0.0001237869866692918
+   },
+   "data/dataSim/Patient1/P1_TI_SEEG_fit.npz": {
+    "keys": {
+     "time_steps": [
+      [
+       1650
+      ],
+      "float64"
+     ],
+     "seeg": [
+      [
+       163,
+       1650
+      ],
+      "float64"
+     ],
+     "SC": [
+      [
+       162,
+       162
+      ],
+      "float64"
+     ],
+     "gain": [
+      [
+       163,
+       162
+      ],
+      "float64"
+     ],
+     "ch_names": [
+      [
+       163
+      ],
+      "<U9"
+     ]
+    },
+    "t_first_last": [
+     10.0,
+     16500.0
+    ],
+    "dt_unique": [
+     10.0
+    ],
+    "fs_assuming_ms": 100.0,
+    "n_ch": 163,
+    "n_samples": 1650,
+    "nan": 0,
+    "inf": 0,
+    "mean_range": [
+     -4.09463676924504,
+     1.86790104881194
+    ],
+    "value_range": [
+     -4.142342792113193,
+     3.177530460208871
+    ],
+    "median_std": 0.013371917043914954,
+    "min_std": 0.0006430581920997941,
+    "lowest_std_ch": [
+     [
+      "PFG'2-3",
+      0.0006430581920997941
+     ],
+     [
+      "TB'3-4",
+      0.0009171825622470801
+     ],
+     [
+      "B'1-2",
+      0.0009364947070709257
+     ],
+     [
+      "TB'4-5",
+      0.0010289727898217292
+     ],
+     [
+      "GC'4-5",
+      0.001039056839200132
+     ]
+    ],
+    "n_std_lt_1e-6": 0,
+    "n_std_lt_1pct_median": 0,
+    "max_samples_at_extreme": 1,
+    "consecutive_equal_samples": 0,
+    "frames_equal_prev": 0,
+    "largest_step": [
+     2.6837043731390335,
+     "CU'11-12",
+     50,
+     -2.6837043731390335
+    ],
+    "baseline_median_absdiff_first30": 0.00045340172202437115,
+    "runs_gt10x": [
+     [
+      40,
+      659
+     ]
+    ],
+    "runs_gt3x": [
+     [
+      40,
+      660
+     ],
+     [
+      773,
+      776
+     ],
+     [
+      781,
+      785
+     ],
+     [
+      788,
+      1008
+     ],
+     [
+      1010,
+      1013
+     ],
+     [
+      1017,
+      1020
+     ]
+    ],
+    "md_ratio_examples": {},
+    "tail_2.5s_mean_absdiff": 1.0854330437153029e-05,
+    "tail_5s_mean_absdiff": 0.00010331907667037996,
+    "tail_6s_mean_absdiff": 0.00017954293867525933
+   }
+  },
+  "identical_across_sessions": {
+   "SC": true,
+   "gain": true,
+   "ch_names": true
+  },
+  "SC": {
+   "shape": [
+    162,
+    162
+   ],
+   "symmetric": true,
+   "diag_zero": true,
+   "min": 0.0,
+   "max": 1.0,
+   "nan": 0,
+   "density_offdiag": 0.9098228663446055,
+   "density_full": 0.9042066758116141,
+   "strength_min_max": [
+    0.0602578571184296,
+    2.2299921343319316
+   ],
+   "isolated": [],
+   "sha256": "4073b5ab10d2bcb3e44def9964e840131e1966cc7b292d05e35e8f27400c7a41"
+  },
+  "gain": {
+   "shape": [
+    163,
+    162
+   ],
+   "min": 3.2483969730073836e-07,
+   "max": 30.36831937555283,
+   "n_negative": 0,
+   "nan": 0,
+   "zero_cols": [],
+   "zero_rows": 0,
+   "sha256": "f1d82c10203fab50ada7d293bc6f94e93a70ae575e1d7b611abdc4f9cd49299f"
+  },
+  "electrodes": {
+   "TB'": 10,
+   "B'": 11,
+   "OT'": 11,
+   "GPH'": 10,
+   "OT": 13,
+   "GL'": 13,
+   "FCA'": 13,
+   "CU'": 13,
+   "GC'": 15,
+   "PFG'": 15,
+   "PFG": 14,
+   "PI'": 13,
+   "PP'": 12
+  },
+  "all_adjacent": true,
+  "unique_names": true,
+  "order_checks": {
+   "SC_intra_vs_inter_hemi_mean": [
+    0.004001078098948669,
+    0.00084101449547087
+   ],
+   "SC_homolog_corr_LL_vs_RR": 0.9041219101608483,
+   "SC_homolog_pairs_mean_vs_LR_mean": [
+    0.023452863622488464,
+    0.00084101449547087
+   ],
+   "gain_cereb_cols_80_161": {
+    "col80_ptp": 3.2879815700516044,
+    "col161_ptp": 1.0819876353467257,
+    "col80_max": 3.3036976795463886,
+    "col161_max": 1.084625473247982,
+    "global_min": 3.2483969730073836e-07,
+    "eq_global_min": false
+   },
+   "primed_channel_argmax_region_left": [
+    136,
+    136
+   ],
+   "unprimed_channel_argmax_region_right": [
+    27,
+    27
+   ],
+   "argmax_region_by_electrode": {
+    "TB'": [
+     [
+      "Left-STS-anterior",
+      5
+     ],
+     [
+      "Left-Amygdala",
+      3
+     ],
+     [
+      "Left-T2-anterior",
+      2
+     ]
+    ],
+    "B'": [
+     [
+      "Left-T2-anterior",
+      6
+     ],
+     [
+      "Left-Hippocampus-anterior",
+      4
+     ],
+     [
+      "Left-STS-anterior",
+      1
+     ]
+    ],
+    "OT'": [
+     [
+      "Left-Fusiform-gyrus",
+      4
+     ],
+     [
+      "Left-Occipito-temporal-sulcus",
+      2
+     ],
+     [
+      "Left-T2-posterior",
+      2
+     ],
+     [
+      "Left-T3-posterior",
+      2
+     ]
+    ],
+    "GPH'": [
+     [
+      "Left-T1-lateral-posterior",
+      5
+     ],
+     [
+      "Left-STS-posterior",
+      2
+     ],
+     [
+      "Left-STS-anterior",
+      2
+     ],
+     [
+      "Left-T1-planum-temporale",
+      1
+     ]
+    ],
+    "OT": [
+     [
+      "Right-Anterior-occipital-sulcus-and-preoccipital-notch",
+      5
+     ],
+     [
+      "Right-Calcarine-sulcus",
+      3
+     ],
+     [
+      "Right-T3-posterior",
+      3
+     ],
+     [
+      "Right-Lingual-gyrus",
+      1
+     ]
+    ],
+    "GL'": [
+     [
+      "Left-O3",
+      5
+     ],
+     [
+      "Left-Lingual-gyrus",
+      4
+     ],
+     [
+      "Left-O2",
+      3
+     ],
+     [
+      "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+      1
+     ]
+    ],
+    "FCA'": [
+     [
+      "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+      5
+     ],
+     [
+      "Left-Calcarine-sulcus",
+      3
+     ],
+     [
+      "Left-T2-posterior",
+      3
+     ],
+     [
+      "Left-Lingual-gyrus",
+      1
+     ]
+    ],
+    "CU'": [
+     [
+      "Left-O1",
+      6
+     ],
+     [
+      "Left-STS-posterior",
+      4
+     ],
+     [
+      "Left-O2",
+      2
+     ],
+     [
+      "Left-Parieto-occipital-sulcus",
+      1
+     ]
+    ],
+    "GC'": [
+     [
+      "Left-Supramarginal-posterior",
+      7
+     ],
+     [
+      "Left-Intraparietal-sulcus",
+      5
+     ],
+     [
+      "Left-Precuneus",
+      2
+     ],
+     [
+      "Left-Posterior-cingulate-cortex-dorsal",
+      1
+     ]
+    ],
+    "PFG'": [
+     [
+      "Left-Postcentral-sulcus",
+      6
+     ],
+     [
+      "Left-Supramarginal-posterior",
+      5
+     ],
+     [
+      "Left-Precuneus",
+      2
+     ],
+     [
+      "Left-Intraparietal-sulcus",
+      2
+     ]
+    ],
+    "PFG": [
+     [
+      "Right-Intraparietal-sulcus",
+      7
+     ],
+     [
+      "Right-STS-posterior",
+      3
+     ],
+     [
+      "Right-Precuneus",
+      2
+     ],
+     [
+      "Right-Angular-gyrus",
+      2
+     ]
+    ],
+    "PI'": [
+     [
+      "Left-Angular-gyrus",
+      5
+     ],
+     [
+      "Left-Precuneus",
+      3
+     ],
+     [
+      "Left-Superior-parietal-lobule-P1",
+      3
+     ],
+     [
+      "Left-Intraparietal-sulcus",
+      2
+     ]
+    ],
+    "PP'": [
+     [
+      "Left-Angular-gyrus",
+      7
+     ],
+     [
+      "Left-Superior-parietal-lobule-P1",
+      5
+     ]
+    ]
+   }
+  },
+  "coverage": {
+   "rows": [
+    {
+     "i": 0,
+     "region": "Left-Frontal-pole",
+     "max_abs_gain": 0.0163,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "TB'8-9",
+      "TB'7-8",
+      "TB'9-10"
+     ]
+    },
+    {
+     "i": 1,
+     "region": "Left-Orbito-frontal-cortex",
+     "max_abs_gain": 0.4774,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "TB'2-3",
+      "TB'3-4",
+      "TB'4-5"
+     ]
+    },
+    {
+     "i": 2,
+     "region": "Left-Gyrus-rectus",
+     "max_abs_gain": 0.2502,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 3,
+     "region": "Left-F3-Pars-Orbitalis",
+     "max_abs_gain": 0.0647,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'9-10"
+     ]
+    },
+    {
+     "i": 4,
+     "region": "Left-F3-Pars-triangularis",
+     "max_abs_gain": 0.0343,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'4-5"
+     ]
+    },
+    {
+     "i": 5,
+     "region": "Left-F3-pars-opercularis",
+     "max_abs_gain": 0.1078,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "TB'9-10",
+      "TB'1-2",
+      "TB'2-3"
+     ]
+    },
+    {
+     "i": 6,
+     "region": "Left-Inferior-frontal-sulcus",
+     "max_abs_gain": 0.0202,
+     "n_gt25_global": 0,
+     "n_gt25_own": 38,
+     "top3": [
+      "TB'9-10",
+      "TB'1-2",
+      "B'10-11"
+     ]
+    },
+    {
+     "i": 7,
+     "region": "Left-F2-rostral",
+     "max_abs_gain": 0.0163,
+     "n_gt25_global": 0,
+     "n_gt25_own": 38,
+     "top3": [
+      "TB'9-10",
+      "TB'8-9",
+      "TB'10-11"
+     ]
+    },
+    {
+     "i": 8,
+     "region": "Left-F2-caudal",
+     "max_abs_gain": 0.0473,
+     "n_gt25_global": 0,
+     "n_gt25_own": 39,
+     "top3": [
+      "PFG'4-5",
+      "PFG'2-3",
+      "PFG'3-4"
+     ]
+    },
+    {
+     "i": 9,
+     "region": "Left-Middle-frontal-sulcus",
+     "max_abs_gain": 0.0043,
+     "n_gt25_global": 0,
+     "n_gt25_own": 43,
+     "top3": [
+      "TB'9-10",
+      "TB'8-9",
+      "TB'7-8"
+     ]
+    },
+    {
+     "i": 10,
+     "region": "Left-SFS-rostral",
+     "max_abs_gain": 0.0064,
+     "n_gt25_global": 0,
+     "n_gt25_own": 70,
+     "top3": [
+      "TB'9-10",
+      "TB'8-9",
+      "B'10-11"
+     ]
+    },
+    {
+     "i": 11,
+     "region": "Left-SFS-caudal",
+     "max_abs_gain": 0.0202,
+     "n_gt25_global": 0,
+     "n_gt25_own": 47,
+     "top3": [
+      "PFG'14-15",
+      "PFG'2-3",
+      "PFG'1-2"
+     ]
+    },
+    {
+     "i": 12,
+     "region": "Left-F1-mesial-prefrontal",
+     "max_abs_gain": 0.0122,
+     "n_gt25_global": 0,
+     "n_gt25_own": 56,
+     "top3": [
+      "TB'7-8",
+      "TB'2-3",
+      "TB'8-9"
+     ]
+    },
+    {
+     "i": 13,
+     "region": "Left-PreSMA",
+     "max_abs_gain": 0.0034,
+     "n_gt25_global": 0,
+     "n_gt25_own": 89,
+     "top3": [
+      "PFG'14-15",
+      "PFG'11-12",
+      "PFG'12-13"
+     ]
+    },
+    {
+     "i": 14,
+     "region": "Left-SMA",
+     "max_abs_gain": 0.0549,
+     "n_gt25_global": 0,
+     "n_gt25_own": 47,
+     "top3": [
+      "PFG'6-7",
+      "PFG'7-8",
+      "PFG'4-5"
+     ]
+    },
+    {
+     "i": 15,
+     "region": "Left-F1-lateral-prefrontal",
+     "max_abs_gain": 0.0078,
+     "n_gt25_global": 0,
+     "n_gt25_own": 72,
+     "top3": [
+      "TB'9-10",
+      "TB'8-9",
+      "TB'7-8"
+     ]
+    },
+    {
+     "i": 16,
+     "region": "Left-F1-lateral-premotor",
+     "max_abs_gain": 0.0403,
+     "n_gt25_global": 0,
+     "n_gt25_own": 46,
+     "top3": [
+      "PFG'12-13",
+      "PFG'14-15",
+      "PFG'11-12"
+     ]
+    },
+    {
+     "i": 17,
+     "region": "Left-Subcallosal-area",
+     "max_abs_gain": 0.2603,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 18,
+     "region": "Left-Precentral-sulcus-inferior-part",
+     "max_abs_gain": 0.0177,
+     "n_gt25_global": 0,
+     "n_gt25_own": 49,
+     "top3": [
+      "TB'1-2",
+      "B'10-11",
+      "TB'9-10"
+     ]
+    },
+    {
+     "i": 19,
+     "region": "Left-Precentral-sulcus-superior-part",
+     "max_abs_gain": 0.0457,
+     "n_gt25_global": 0,
+     "n_gt25_own": 27,
+     "top3": [
+      "PFG'14-15",
+      "PFG'2-3",
+      "PFG'12-13"
+     ]
+    },
+    {
+     "i": 20,
+     "region": "Left-Precentral-gyrus-head-face",
+     "max_abs_gain": 0.0336,
+     "n_gt25_global": 0,
+     "n_gt25_own": 52,
+     "top3": [
+      "B'3-4",
+      "B'2-3",
+      "PFG'8-9"
+     ]
+    },
+    {
+     "i": 21,
+     "region": "Left-Precentral-gyrus-upper-limb",
+     "max_abs_gain": 0.1849,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "PFG'3-4",
+      "PFG'5-6",
+      "PFG'14-15"
+     ]
+    },
+    {
+     "i": 22,
+     "region": "Left-Central-sulcus-head-face",
+     "max_abs_gain": 0.0442,
+     "n_gt25_global": 0,
+     "n_gt25_own": 39,
+     "top3": [
+      "PFG'7-8",
+      "PFG'6-7",
+      "PFG'8-9"
+     ]
+    },
+    {
+     "i": 23,
+     "region": "Left-Central-sulcus-upper-limb",
+     "max_abs_gain": 0.3319,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "PFG'11-12",
+      "PFG'12-13",
+      "PFG'3-4"
+     ]
+    },
+    {
+     "i": 24,
+     "region": "Left-Paracentral-lobule",
+     "max_abs_gain": 0.3349,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "PFG1-2",
+      "PFG2-3",
+      "PFG'4-5"
+     ]
+    },
+    {
+     "i": 25,
+     "region": "Left-Central-operculum",
+     "max_abs_gain": 0.071,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "B'4-5",
+      "B'3-4",
+      "B'6-7"
+     ]
+    },
+    {
+     "i": 26,
+     "region": "Left-Parietal-operculum",
+     "max_abs_gain": 0.1445,
+     "n_gt25_global": 0,
+     "n_gt25_own": 33,
+     "top3": [
+      "B'3-4",
+      "GPH'3-4",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 27,
+     "region": "Left-Anterior-cingulate-cortex",
+     "max_abs_gain": 0.0415,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 28,
+     "region": "Left-Middle-cingulate-cortex-anterior-part",
+     "max_abs_gain": 0.0111,
+     "n_gt25_global": 0,
+     "n_gt25_own": 93,
+     "top3": [
+      "PFG'11-12",
+      "TB'2-3",
+      "PFG'14-15"
+     ]
+    },
+    {
+     "i": 29,
+     "region": "Left-Middle-cingulate-cortex-posterior-part",
+     "max_abs_gain": 0.0801,
+     "n_gt25_global": 0,
+     "n_gt25_own": 38,
+     "top3": [
+      "PFG'6-7",
+      "PFG'4-5",
+      "PFG'3-4"
+     ]
+    },
+    {
+     "i": 30,
+     "region": "Left-Posterior-cingulate-cortex-dorsal",
+     "max_abs_gain": 2.2114,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "GC'1-2",
+      "GC'2-3",
+      "PFG'1-2"
+     ]
+    },
+    {
+     "i": 31,
+     "region": "Left-Posterior-cingulate-cortex-retrosplenial-gyrus",
+     "max_abs_gain": 0.1231,
+     "n_gt25_global": 0,
+     "n_gt25_own": 32,
+     "top3": [
+      "GC'1-2",
+      "OT1-2",
+      "GC'2-3"
+     ]
+    },
+    {
+     "i": 32,
+     "region": "Left-Insula-gyri-brevi",
+     "max_abs_gain": 0.2716,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "TB'1-2",
+      "TB'7-8",
+      "TB'8-9"
+     ]
+    },
+    {
+     "i": 33,
+     "region": "Left-Insula-gyri-longi",
+     "max_abs_gain": 0.7381,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "B'6-7",
+      "B'2-3",
+      "B'5-6"
+     ]
+    },
+    {
+     "i": 34,
+     "region": "Left-Temporal-pole",
+     "max_abs_gain": 1.7574,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "TB'6-7",
+      "TB'7-8",
+      "TB'5-6"
+     ]
+    },
+    {
+     "i": 35,
+     "region": "Left-T1-planum-polare",
+     "max_abs_gain": 0.3237,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "TB'7-8",
+      "TB'5-6",
+      "TB'8-9"
+     ]
+    },
+    {
+     "i": 36,
+     "region": "Left-Gyrus-of-Heschl",
+     "max_abs_gain": 0.3522,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "GPH'3-4",
+      "GPH'7-8",
+      "GPH'8-9"
+     ]
+    },
+    {
+     "i": 37,
+     "region": "Left-T1-planum-temporale",
+     "max_abs_gain": 2.1787,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "GPH'9-10",
+      "GPH'6-7",
+      "GPH'10-11"
+     ]
+    },
+    {
+     "i": 38,
+     "region": "Left-T1-lateral-anterior",
+     "max_abs_gain": 1.6502,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "TB'9-10",
+      "TB'4-5",
+      "TB'5-6"
+     ]
+    },
+    {
+     "i": 39,
+     "region": "Left-T1-lateral-posterior",
+     "max_abs_gain": 7.6388,
+     "n_gt25_global": 1,
+     "n_gt25_own": 5,
+     "top3": [
+      "GPH'10-11",
+      "GPH'8-9",
+      "GPH'6-7"
+     ]
+    },
+    {
+     "i": 40,
+     "region": "Left-STS-anterior",
+     "max_abs_gain": 10.1236,
+     "n_gt25_global": 1,
+     "n_gt25_own": 7,
+     "top3": [
+      "TB'9-10",
+      "TB'6-7",
+      "TB'10-11"
+     ]
+    },
+    {
+     "i": 41,
+     "region": "Left-STS-posterior",
+     "max_abs_gain": 10.2205,
+     "n_gt25_global": 1,
+     "n_gt25_own": 6,
+     "top3": [
+      "CU'12-13",
+      "CU'10-11",
+      "CU'13-14"
+     ]
+    },
+    {
+     "i": 42,
+     "region": "Left-ITS-anterior",
+     "max_abs_gain": 1.1634,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "B'6-7",
+      "B'5-6",
+      "B'10-11"
+     ]
+    },
+    {
+     "i": 43,
+     "region": "Left-ITS-posterior",
+     "max_abs_gain": 1.1812,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "OT'10-11",
+      "OT'11-12",
+      "OT'9-10"
+     ]
+    },
+    {
+     "i": 44,
+     "region": "Left-T2-anterior",
+     "max_abs_gain": 18.5966,
+     "n_gt25_global": 3,
+     "n_gt25_own": 4,
+     "top3": [
+      "TB'7-8",
+      "TB'8-9",
+      "TB'9-10"
+     ]
+    },
+    {
+     "i": 45,
+     "region": "Left-T2-posterior",
+     "max_abs_gain": 11.4355,
+     "n_gt25_global": 2,
+     "n_gt25_own": 5,
+     "top3": [
+      "FCA'7-8",
+      "FCA'13-14",
+      "FCA'11-12"
+     ]
+    },
+    {
+     "i": 46,
+     "region": "Left-T3-anterior",
+     "max_abs_gain": 0.5471,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "TB'8-9",
+      "B'4-5",
+      "TB'2-3"
+     ]
+    },
+    {
+     "i": 47,
+     "region": "Left-T3-posterior",
+     "max_abs_gain": 14.3181,
+     "n_gt25_global": 2,
+     "n_gt25_own": 2,
+     "top3": [
+      "OT'11-12",
+      "OT'10-11",
+      "OT'6-7"
+     ]
+    },
+    {
+     "i": 48,
+     "region": "Left-Fusiform-gyrus",
+     "max_abs_gain": 7.6193,
+     "n_gt25_global": 1,
+     "n_gt25_own": 4,
+     "top3": [
+      "OT'3-4",
+      "OT'1-2",
+      "OT'4-5"
+     ]
+    },
+    {
+     "i": 49,
+     "region": "Left-Occipito-temporal-sulcus",
+     "max_abs_gain": 3.9757,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "OT'1-2",
+      "OT'6-7",
+      "OT'4-5"
+     ]
+    },
+    {
+     "i": 50,
+     "region": "Left-Collateral-sulcus",
+     "max_abs_gain": 0.2185,
+     "n_gt25_global": 0,
+     "n_gt25_own": 18,
+     "top3": [
+      "B'3-4",
+      "B'2-3",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 51,
+     "region": "Left-Lingual-sulcus",
+     "max_abs_gain": 2.7316,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "GL'1-2",
+      "OT'1-2",
+      "GL'4-5"
+     ]
+    },
+    {
+     "i": 52,
+     "region": "Left-Parahippocampal-cortex",
+     "max_abs_gain": 0.2925,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "B'2-3",
+      "B'1-2",
+      "B'3-4"
+     ]
+    },
+    {
+     "i": 53,
+     "region": "Left-Rhinal-cortex",
+     "max_abs_gain": 1.1219,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'6-7"
+     ]
+    },
+    {
+     "i": 54,
+     "region": "Left-Postcentral-gyrus",
+     "max_abs_gain": 0.7199,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "PFG'14-15",
+      "PFG'8-9",
+      "PFG'15-16"
+     ]
+    },
+    {
+     "i": 55,
+     "region": "Left-Postcentral-sulcus",
+     "max_abs_gain": 14.6252,
+     "n_gt25_global": 1,
+     "n_gt25_own": 6,
+     "top3": [
+      "PFG'12-13",
+      "PFG'7-8",
+      "PFG'8-9"
+     ]
+    },
+    {
+     "i": 56,
+     "region": "Left-Superior-parietal-lobule-P1",
+     "max_abs_gain": 17.4306,
+     "n_gt25_global": 6,
+     "n_gt25_own": 8,
+     "top3": [
+      "PP'1-2",
+      "PP'3-4",
+      "PP'2-3"
+     ]
+    },
+    {
+     "i": 57,
+     "region": "Left-Supramarginal-anterior",
+     "max_abs_gain": 0.533,
+     "n_gt25_global": 0,
+     "n_gt25_own": 29,
+     "top3": [
+      "GPH'3-4",
+      "GPH'2-3",
+      "GPH'9-10"
+     ]
+    },
+    {
+     "i": 58,
+     "region": "Left-Supramarginal-posterior",
+     "max_abs_gain": 30.3683,
+     "n_gt25_global": 5,
+     "n_gt25_own": 5,
+     "top3": [
+      "PFG'11-12",
+      "GC'15-16",
+      "PFG'12-13"
+     ]
+    },
+    {
+     "i": 59,
+     "region": "Left-Angular-gyrus",
+     "max_abs_gain": 14.226,
+     "n_gt25_global": 5,
+     "n_gt25_own": 11,
+     "top3": [
+      "PP'4-5",
+      "PI'11-12",
+      "PP'10-11"
+     ]
+    },
+    {
+     "i": 60,
+     "region": "Left-Intraparietal-sulcus",
+     "max_abs_gain": 15.9572,
+     "n_gt25_global": 1,
+     "n_gt25_own": 5,
+     "top3": [
+      "PI'9-10",
+      "PFG'4-5",
+      "PI'5-6"
+     ]
+    },
+    {
+     "i": 61,
+     "region": "Left-Precuneus",
+     "max_abs_gain": 30.1703,
+     "n_gt25_global": 1,
+     "n_gt25_own": 1,
+     "top3": [
+      "PFG'1-2",
+      "PI'1-2",
+      "PFG'2-3"
+     ]
+    },
+    {
+     "i": 62,
+     "region": "Left-Marginal-branch-of-the-cingulate-sulcus",
+     "max_abs_gain": 0.6348,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "PFG'4-5",
+      "PFG'3-4",
+      "PFG'2-3"
+     ]
+    },
+    {
+     "i": 63,
+     "region": "Left-Parieto-occipital-sulcus",
+     "max_abs_gain": 3.729,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "CU'1-2",
+      "PP'3-4",
+      "CU'2-3"
+     ]
+    },
+    {
+     "i": 64,
+     "region": "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+     "max_abs_gain": 20.0258,
+     "n_gt25_global": 2,
+     "n_gt25_own": 4,
+     "top3": [
+      "FCA'8-9",
+      "FCA'7-8",
+      "FCA'6-7"
+     ]
+    },
+    {
+     "i": 65,
+     "region": "Left-O3",
+     "max_abs_gain": 17.4563,
+     "n_gt25_global": 2,
+     "n_gt25_own": 3,
+     "top3": [
+      "GL'12-13",
+      "GL'11-12",
+      "GL'13-14"
+     ]
+    },
+    {
+     "i": 66,
+     "region": "Left-O2",
+     "max_abs_gain": 4.7051,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "GL'11-12",
+      "GL'12-13",
+      "GL'8-9"
+     ]
+    },
+    {
+     "i": 67,
+     "region": "Left-O1",
+     "max_abs_gain": 18.8586,
+     "n_gt25_global": 4,
+     "n_gt25_own": 4,
+     "top3": [
+      "CU'6-7",
+      "CU'5-6",
+      "CU'7-8"
+     ]
+    },
+    {
+     "i": 68,
+     "region": "Left-Occipital-pole",
+     "max_abs_gain": 0.4874,
+     "n_gt25_global": 0,
+     "n_gt25_own": 25,
+     "top3": [
+      "GL'7-8",
+      "GL'5-6",
+      "GL'8-9"
+     ]
+    },
+    {
+     "i": 69,
+     "region": "Left-Lingual-gyrus",
+     "max_abs_gain": 3.6076,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "GL'2-3",
+      "GL'3-4",
+      "GL'1-2"
+     ]
+    },
+    {
+     "i": 70,
+     "region": "Left-Calcarine-sulcus",
+     "max_abs_gain": 3.2402,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "FCA'2-3",
+      "FCA'3-4",
+      "FCA'4-5"
+     ]
+    },
+    {
+     "i": 71,
+     "region": "Left-Cuneus",
+     "max_abs_gain": 1.6863,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "CU'1-2",
+      "CU'2-3",
+      "PP'1-2"
+     ]
+    },
+    {
+     "i": 72,
+     "region": "Left-Hippocampus-anterior",
+     "max_abs_gain": 7.1602,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "B'3-4",
+      "B'2-3",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 73,
+     "region": "Left-Hippocampus-posterior",
+     "max_abs_gain": 1.3337,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "GPH'1-2",
+      "B'2-3",
+      "B'3-4"
+     ]
+    },
+    {
+     "i": 74,
+     "region": "Left-Amygdala",
+     "max_abs_gain": 4.7699,
+     "n_gt25_global": 0,
+     "n_gt25_own": 2,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 75,
+     "region": "Left-Thalamus",
+     "max_abs_gain": 0.5754,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "GPH'1-2",
+      "GPH'2-3",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 76,
+     "region": "Left-Caudate-nucleus",
+     "max_abs_gain": 0.0915,
+     "n_gt25_global": 0,
+     "n_gt25_own": 44,
+     "top3": [
+      "TB'2-3",
+      "TB'5-6",
+      "B'6-7"
+     ]
+    },
+    {
+     "i": 77,
+     "region": "Left-Putamen",
+     "max_abs_gain": 0.5465,
+     "n_gt25_global": 0,
+     "n_gt25_own": 18,
+     "top3": [
+      "B'3-4",
+      "B'4-5",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 78,
+     "region": "Left-Pallidum",
+     "max_abs_gain": 0.3019,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "B'2-3",
+      "B'3-4",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 79,
+     "region": "Left-Nucleus-accumbens",
+     "max_abs_gain": 0.0538,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 80,
+     "region": "Left-Cerebellar-cortex",
+     "max_abs_gain": 3.3037,
+     "n_gt25_global": 0,
+     "n_gt25_own": 22,
+     "top3": [
+      "OT'1-2",
+      "OT'3-4",
+      "OT'4-5"
+     ]
+    },
+    {
+     "i": 81,
+     "region": "Right-Frontal-pole",
+     "max_abs_gain": 0.0163,
+     "n_gt25_global": 0,
+     "n_gt25_own": 33,
+     "top3": [
+      "TB'2-3",
+      "TB'7-8",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 82,
+     "region": "Right-Orbito-frontal-cortex",
+     "max_abs_gain": 0.111,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 83,
+     "region": "Right-Gyrus-rectus",
+     "max_abs_gain": 0.0786,
+     "n_gt25_global": 0,
+     "n_gt25_own": 15,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 84,
+     "region": "Right-F3-Pars-Orbitalis",
+     "max_abs_gain": 0.0086,
+     "n_gt25_global": 0,
+     "n_gt25_own": 61,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 85,
+     "region": "Right-F3-Pars-triangularis",
+     "max_abs_gain": 0.0109,
+     "n_gt25_global": 0,
+     "n_gt25_own": 86,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'4-5"
+     ]
+    },
+    {
+     "i": 86,
+     "region": "Right-F3-pars-opercularis",
+     "max_abs_gain": 0.0144,
+     "n_gt25_global": 0,
+     "n_gt25_own": 103,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 87,
+     "region": "Right-Inferior-frontal-sulcus",
+     "max_abs_gain": 0.0114,
+     "n_gt25_global": 0,
+     "n_gt25_own": 101,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "PFG'3-4"
+     ]
+    },
+    {
+     "i": 88,
+     "region": "Right-F2-rostral",
+     "max_abs_gain": 0.014,
+     "n_gt25_global": 0,
+     "n_gt25_own": 77,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 89,
+     "region": "Right-F2-caudal",
+     "max_abs_gain": 0.0172,
+     "n_gt25_global": 0,
+     "n_gt25_own": 111,
+     "top3": [
+      "PFG'3-4",
+      "PFG13-14",
+      "PFG'2-3"
+     ]
+    },
+    {
+     "i": 90,
+     "region": "Right-Middle-frontal-sulcus",
+     "max_abs_gain": 0.0096,
+     "n_gt25_global": 0,
+     "n_gt25_own": 72,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'5-6"
+     ]
+    },
+    {
+     "i": 91,
+     "region": "Right-SFS-rostral",
+     "max_abs_gain": 0.0052,
+     "n_gt25_global": 0,
+     "n_gt25_own": 113,
+     "top3": [
+      "TB'2-3",
+      "PFG'11-12",
+      "TB'5-6"
+     ]
+    },
+    {
+     "i": 92,
+     "region": "Right-SFS-caudal",
+     "max_abs_gain": 0.0082,
+     "n_gt25_global": 0,
+     "n_gt25_own": 94,
+     "top3": [
+      "PFG9-10",
+      "PFG'3-4",
+      "PFG'4-5"
+     ]
+    },
+    {
+     "i": 93,
+     "region": "Right-F1-mesial-prefrontal",
+     "max_abs_gain": 0.0165,
+     "n_gt25_global": 0,
+     "n_gt25_own": 27,
+     "top3": [
+      "TB'2-3",
+      "TB'7-8",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 94,
+     "region": "Right-PreSMA",
+     "max_abs_gain": 0.004,
+     "n_gt25_global": 0,
+     "n_gt25_own": 97,
+     "top3": [
+      "PFG'11-12",
+      "PFG'14-15",
+      "PFG'12-13"
+     ]
+    },
+    {
+     "i": 95,
+     "region": "Right-SMA",
+     "max_abs_gain": 0.0393,
+     "n_gt25_global": 0,
+     "n_gt25_own": 52,
+     "top3": [
+      "PFG'6-7",
+      "PFG'7-8",
+      "PFG'4-5"
+     ]
+    },
+    {
+     "i": 96,
+     "region": "Right-F1-lateral-prefrontal",
+     "max_abs_gain": 0.0056,
+     "n_gt25_global": 0,
+     "n_gt25_own": 82,
+     "top3": [
+      "TB'2-3",
+      "TB'7-8",
+      "TB'8-9"
+     ]
+    },
+    {
+     "i": 97,
+     "region": "Right-F1-lateral-premotor",
+     "max_abs_gain": 0.0219,
+     "n_gt25_global": 0,
+     "n_gt25_own": 83,
+     "top3": [
+      "PFG9-10",
+      "PFG'6-7",
+      "PFG'7-8"
+     ]
+    },
+    {
+     "i": 98,
+     "region": "Right-Subcallosal-area",
+     "max_abs_gain": 0.0363,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 99,
+     "region": "Right-Precentral-sulcus-inferior-part",
+     "max_abs_gain": 0.008,
+     "n_gt25_global": 0,
+     "n_gt25_own": 113,
+     "top3": [
+      "PFG'3-4",
+      "PFG'2-3",
+      "PFG'1-2"
+     ]
+    },
+    {
+     "i": 100,
+     "region": "Right-Precentral-sulcus-superior-part",
+     "max_abs_gain": 0.0154,
+     "n_gt25_global": 0,
+     "n_gt25_own": 58,
+     "top3": [
+      "PFG9-10",
+      "PFG'2-3",
+      "PFG'3-4"
+     ]
+    },
+    {
+     "i": 101,
+     "region": "Right-Precentral-gyrus-head-face",
+     "max_abs_gain": 0.0086,
+     "n_gt25_global": 0,
+     "n_gt25_own": 119,
+     "top3": [
+      "PFG5-6",
+      "PFG2-3",
+      "PFG1-2"
+     ]
+    },
+    {
+     "i": 102,
+     "region": "Right-Precentral-gyrus-upper-limb",
+     "max_abs_gain": 0.0543,
+     "n_gt25_global": 0,
+     "n_gt25_own": 49,
+     "top3": [
+      "PFG9-10",
+      "PFG12-13",
+      "PFG13-14"
+     ]
+    },
+    {
+     "i": 103,
+     "region": "Right-Central-sulcus-head-face",
+     "max_abs_gain": 0.0118,
+     "n_gt25_global": 0,
+     "n_gt25_own": 68,
+     "top3": [
+      "PFG13-14",
+      "PFG14-15",
+      "PFG1-2"
+     ]
+    },
+    {
+     "i": 104,
+     "region": "Right-Central-sulcus-upper-limb",
+     "max_abs_gain": 0.0726,
+     "n_gt25_global": 0,
+     "n_gt25_own": 34,
+     "top3": [
+      "PFG9-10",
+      "PFG11-12",
+      "PFG'2-3"
+     ]
+    },
+    {
+     "i": 105,
+     "region": "Right-Paracentral-lobule",
+     "max_abs_gain": 0.2105,
+     "n_gt25_global": 0,
+     "n_gt25_own": 18,
+     "top3": [
+      "PFG1-2",
+      "PFG3-4",
+      "PFG2-3"
+     ]
+    },
+    {
+     "i": 106,
+     "region": "Right-Central-operculum",
+     "max_abs_gain": 0.01,
+     "n_gt25_global": 0,
+     "n_gt25_own": 104,
+     "top3": [
+      "PFG5-6",
+      "PFG6-7",
+      "PFG1-2"
+     ]
+    },
+    {
+     "i": 107,
+     "region": "Right-Parietal-operculum",
+     "max_abs_gain": 0.0066,
+     "n_gt25_global": 0,
+     "n_gt25_own": 131,
+     "top3": [
+      "GC'1-2",
+      "PFG5-6",
+      "PFG'1-2"
+     ]
+    },
+    {
+     "i": 108,
+     "region": "Right-Anterior-cingulate-cortex",
+     "max_abs_gain": 0.0473,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 109,
+     "region": "Right-Middle-cingulate-cortex-anterior-part",
+     "max_abs_gain": 0.0121,
+     "n_gt25_global": 0,
+     "n_gt25_own": 101,
+     "top3": [
+      "PFG'11-12",
+      "PFG'9-10",
+      "PFG'7-8"
+     ]
+    },
+    {
+     "i": 110,
+     "region": "Right-Middle-cingulate-cortex-posterior-part",
+     "max_abs_gain": 0.0799,
+     "n_gt25_global": 0,
+     "n_gt25_own": 42,
+     "top3": [
+      "PFG'3-4",
+      "PFG'4-5",
+      "PFG'2-3"
+     ]
+    },
+    {
+     "i": 111,
+     "region": "Right-Posterior-cingulate-cortex-dorsal",
+     "max_abs_gain": 1.07,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "GC'1-2",
+      "PFG'1-2",
+      "GC'2-3"
+     ]
+    },
+    {
+     "i": 112,
+     "region": "Right-Posterior-cingulate-cortex-retrosplenial-gyrus",
+     "max_abs_gain": 0.6432,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "OT1-2",
+      "OT2-3",
+      "OT3-4"
+     ]
+    },
+    {
+     "i": 113,
+     "region": "Right-Insula-gyri-brevi",
+     "max_abs_gain": 0.0271,
+     "n_gt25_global": 0,
+     "n_gt25_own": 72,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 114,
+     "region": "Right-Insula-gyri-longi",
+     "max_abs_gain": 0.0256,
+     "n_gt25_global": 0,
+     "n_gt25_own": 93,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 115,
+     "region": "Right-Temporal-pole",
+     "max_abs_gain": 0.0751,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 116,
+     "region": "Right-T1-planum-polare",
+     "max_abs_gain": 0.0128,
+     "n_gt25_global": 0,
+     "n_gt25_own": 42,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 117,
+     "region": "Right-Gyrus-of-Heschl",
+     "max_abs_gain": 0.0128,
+     "n_gt25_global": 0,
+     "n_gt25_own": 94,
+     "top3": [
+      "PFG5-6",
+      "OT12-13",
+      "PFG1-2"
+     ]
+    },
+    {
+     "i": 118,
+     "region": "Right-T1-planum-temporale",
+     "max_abs_gain": 0.0725,
+     "n_gt25_global": 0,
+     "n_gt25_own": 31,
+     "top3": [
+      "PFG5-6",
+      "PFG6-7",
+      "PFG14-15"
+     ]
+    },
+    {
+     "i": 119,
+     "region": "Right-T1-lateral-anterior",
+     "max_abs_gain": 0.0143,
+     "n_gt25_global": 0,
+     "n_gt25_own": 86,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 120,
+     "region": "Right-T1-lateral-posterior",
+     "max_abs_gain": 0.0577,
+     "n_gt25_global": 0,
+     "n_gt25_own": 26,
+     "top3": [
+      "OT5-6",
+      "OT7-8",
+      "OT4-5"
+     ]
+    },
+    {
+     "i": 121,
+     "region": "Right-STS-anterior",
+     "max_abs_gain": 0.053,
+     "n_gt25_global": 0,
+     "n_gt25_own": 31,
+     "top3": [
+      "OT12-13",
+      "OT3-4",
+      "OT2-3"
+     ]
+    },
+    {
+     "i": 122,
+     "region": "Right-STS-posterior",
+     "max_abs_gain": 13.4846,
+     "n_gt25_global": 2,
+     "n_gt25_own": 3,
+     "top3": [
+      "PFG12-13",
+      "PFG11-12",
+      "PFG13-14"
+     ]
+    },
+    {
+     "i": 123,
+     "region": "Right-ITS-anterior",
+     "max_abs_gain": 0.0079,
+     "n_gt25_global": 0,
+     "n_gt25_own": 54,
+     "top3": [
+      "OT3-4",
+      "OT2-3",
+      "OT5-6"
+     ]
+    },
+    {
+     "i": 124,
+     "region": "Right-ITS-posterior",
+     "max_abs_gain": 3.6374,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "OT8-9",
+      "OT11-12",
+      "OT10-11"
+     ]
+    },
+    {
+     "i": 125,
+     "region": "Right-T2-anterior",
+     "max_abs_gain": 0.0212,
+     "n_gt25_global": 0,
+     "n_gt25_own": 96,
+     "top3": [
+      "OT3-4",
+      "OT2-3",
+      "OT5-6"
+     ]
+    },
+    {
+     "i": 126,
+     "region": "Right-T2-posterior",
+     "max_abs_gain": 2.3666,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "OT12-13",
+      "OT9-10",
+      "OT13-14"
+     ]
+    },
+    {
+     "i": 127,
+     "region": "Right-T3-anterior",
+     "max_abs_gain": 0.0305,
+     "n_gt25_global": 0,
+     "n_gt25_own": 74,
+     "top3": [
+      "OT3-4",
+      "OT2-3",
+      "OT1-2"
+     ]
+    },
+    {
+     "i": 128,
+     "region": "Right-T3-posterior",
+     "max_abs_gain": 6.2979,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "OT11-12",
+      "OT12-13",
+      "OT13-14"
+     ]
+    },
+    {
+     "i": 129,
+     "region": "Right-Fusiform-gyrus",
+     "max_abs_gain": 0.4925,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "OT10-11",
+      "OT2-3",
+      "OT9-10"
+     ]
+    },
+    {
+     "i": 130,
+     "region": "Right-Occipito-temporal-sulcus",
+     "max_abs_gain": 0.403,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "OT10-11",
+      "OT11-12",
+      "OT5-6"
+     ]
+    },
+    {
+     "i": 131,
+     "region": "Right-Collateral-sulcus",
+     "max_abs_gain": 0.0593,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "OT6-7",
+      "OT7-8",
+      "OT5-6"
+     ]
+    },
+    {
+     "i": 132,
+     "region": "Right-Lingual-sulcus",
+     "max_abs_gain": 1.1618,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "OT2-3",
+      "OT5-6",
+      "OT6-7"
+     ]
+    },
+    {
+     "i": 133,
+     "region": "Right-Parahippocampal-cortex",
+     "max_abs_gain": 0.0324,
+     "n_gt25_global": 0,
+     "n_gt25_own": 51,
+     "top3": [
+      "OT4-5",
+      "OT6-7",
+      "OT5-6"
+     ]
+    },
+    {
+     "i": 134,
+     "region": "Right-Rhinal-cortex",
+     "max_abs_gain": 0.0475,
+     "n_gt25_global": 0,
+     "n_gt25_own": 29,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 135,
+     "region": "Right-Postcentral-gyrus",
+     "max_abs_gain": 0.0878,
+     "n_gt25_global": 0,
+     "n_gt25_own": 39,
+     "top3": [
+      "PFG12-13",
+      "PFG13-14",
+      "PFG14-15"
+     ]
+    },
+    {
+     "i": 136,
+     "region": "Right-Postcentral-sulcus",
+     "max_abs_gain": 0.1854,
+     "n_gt25_global": 0,
+     "n_gt25_own": 18,
+     "top3": [
+      "PFG9-10",
+      "PFG11-12",
+      "PFG2-3"
+     ]
+    },
+    {
+     "i": 137,
+     "region": "Right-Superior-parietal-lobule-P1",
+     "max_abs_gain": 3.3117,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "PFG7-8",
+      "PFG8-9",
+      "PFG9-10"
+     ]
+    },
+    {
+     "i": 138,
+     "region": "Right-Supramarginal-anterior",
+     "max_abs_gain": 0.0541,
+     "n_gt25_global": 0,
+     "n_gt25_own": 35,
+     "top3": [
+      "PFG5-6",
+      "PFG6-7",
+      "PFG8-9"
+     ]
+    },
+    {
+     "i": 139,
+     "region": "Right-Supramarginal-posterior",
+     "max_abs_gain": 0.2991,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "PFG8-9",
+      "PFG6-7",
+      "PFG14-15"
+     ]
+    },
+    {
+     "i": 140,
+     "region": "Right-Angular-gyrus",
+     "max_abs_gain": 9.1769,
+     "n_gt25_global": 1,
+     "n_gt25_own": 5,
+     "top3": [
+      "PFG13-14",
+      "PFG11-12",
+      "PFG14-15"
+     ]
+    },
+    {
+     "i": 141,
+     "region": "Right-Intraparietal-sulcus",
+     "max_abs_gain": 21.1658,
+     "n_gt25_global": 3,
+     "n_gt25_own": 5,
+     "top3": [
+      "PFG7-8",
+      "PFG6-7",
+      "PFG4-5"
+     ]
+    },
+    {
+     "i": 142,
+     "region": "Right-Precuneus",
+     "max_abs_gain": 5.8637,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "PFG1-2",
+      "PFG2-3",
+      "PI'1-2"
+     ]
+    },
+    {
+     "i": 143,
+     "region": "Right-Marginal-branch-of-the-cingulate-sulcus",
+     "max_abs_gain": 0.3732,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "PFG1-2",
+      "PFG2-3",
+      "PFG3-4"
+     ]
+    },
+    {
+     "i": 144,
+     "region": "Right-Parieto-occipital-sulcus",
+     "max_abs_gain": 0.7315,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "OT2-3",
+      "OT1-2",
+      "PP'1-2"
+     ]
+    },
+    {
+     "i": 145,
+     "region": "Right-Anterior-occipital-sulcus-and-preoccipital-notch",
+     "max_abs_gain": 11.2357,
+     "n_gt25_global": 1,
+     "n_gt25_own": 3,
+     "top3": [
+      "OT6-7",
+      "OT8-9",
+      "OT9-10"
+     ]
+    },
+    {
+     "i": 146,
+     "region": "Right-O3",
+     "max_abs_gain": 4.2924,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "OT6-7",
+      "OT7-8",
+      "OT11-12"
+     ]
+    },
+    {
+     "i": 147,
+     "region": "Right-O2",
+     "max_abs_gain": 1.9641,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "OT12-13",
+      "OT13-14",
+      "OT11-12"
+     ]
+    },
+    {
+     "i": 148,
+     "region": "Right-O1",
+     "max_abs_gain": 0.5446,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "PP'1-2",
+      "PP'2-3",
+      "PP'3-4"
+     ]
+    },
+    {
+     "i": 149,
+     "region": "Right-Occipital-pole",
+     "max_abs_gain": 0.2866,
+     "n_gt25_global": 0,
+     "n_gt25_own": 34,
+     "top3": [
+      "GL'1-2",
+      "GL'2-3",
+      "CU'2-3"
+     ]
+    },
+    {
+     "i": 150,
+     "region": "Right-Lingual-gyrus",
+     "max_abs_gain": 3.7754,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "OT1-2",
+      "OT2-3",
+      "OT3-4"
+     ]
+    },
+    {
+     "i": 151,
+     "region": "Right-Calcarine-sulcus",
+     "max_abs_gain": 5.9357,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "OT2-3",
+      "OT3-4",
+      "OT4-5"
+     ]
+    },
+    {
+     "i": 152,
+     "region": "Right-Cuneus",
+     "max_abs_gain": 1.1531,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "CU'1-2",
+      "PP'1-2",
+      "CU'2-3"
+     ]
+    },
+    {
+     "i": 153,
+     "region": "Right-Hippocampus-anterior",
+     "max_abs_gain": 0.0524,
+     "n_gt25_global": 0,
+     "n_gt25_own": 49,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 154,
+     "region": "Right-Hippocampus-posterior",
+     "max_abs_gain": 0.0915,
+     "n_gt25_global": 0,
+     "n_gt25_own": 31,
+     "top3": [
+      "OT6-7",
+      "OT4-5",
+      "OT5-6"
+     ]
+    },
+    {
+     "i": 155,
+     "region": "Right-Amygdala",
+     "max_abs_gain": 0.0449,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "TB'1-2",
+      "TB'2-3",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 156,
+     "region": "Right-Thalamus",
+     "max_abs_gain": 0.117,
+     "n_gt25_global": 0,
+     "n_gt25_own": 89,
+     "top3": [
+      "GC'1-2",
+      "B'2-3",
+      "GC'4-5"
+     ]
+    },
+    {
+     "i": 157,
+     "region": "Right-Caudate-nucleus",
+     "max_abs_gain": 0.0542,
+     "n_gt25_global": 0,
+     "n_gt25_own": 64,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 158,
+     "region": "Right-Putamen",
+     "max_abs_gain": 0.0565,
+     "n_gt25_global": 0,
+     "n_gt25_own": 72,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 159,
+     "region": "Right-Pallidum",
+     "max_abs_gain": 0.0348,
+     "n_gt25_global": 0,
+     "n_gt25_own": 63,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 160,
+     "region": "Right-Nucleus-accumbens",
+     "max_abs_gain": 0.0235,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "TB'2-3",
+      "TB'1-2",
+      "TB'3-4"
+     ]
+    },
+    {
+     "i": 161,
+     "region": "Right-Cerebellar-cortex",
+     "max_abs_gain": 1.0846,
+     "n_gt25_global": 0,
+     "n_gt25_own": 47,
+     "top3": [
+      "GL'1-2",
+      "GL'2-3",
+      "OT1-2"
+     ]
+    }
+   ],
+   "global_max": 30.36831937555283,
+   "n_any_gt25_global": 20,
+   "n_ge3_gt25_global": 6,
+   "left_mean": 3.953,
+   "right_mean": 1.272
+  },
+  "n_primed_electrodes": 11
+ },
+ "P2": {
+  "sessions": {
+   "data/dataSim/Patient2/P2_SEEG_ts_fit.npz": {
+    "keys": {
+     "time_steps": [
+      [
+       1500
+      ],
+      "float64"
+     ],
+     "seeg": [
+      [
+       191,
+       1500
+      ],
+      "float64"
+     ],
+     "SC": [
+      [
+       162,
+       162
+      ],
+      "float64"
+     ],
+     "gain": [
+      [
+       191,
+       162
+      ],
+      "float64"
+     ],
+     "ch_names": [
+      [
+       191
+      ],
+      "<U8"
+     ]
+    },
+    "t_first_last": [
+     8.0,
+     12000.0
+    ],
+    "dt_unique": [
+     8.0
+    ],
+    "fs_assuming_ms": 125.0,
+    "n_ch": 191,
+    "n_samples": 1500,
+    "nan": 0,
+    "inf": 0,
+    "mean_range": [
+     -5.992127828019257,
+     5.355225651232258
+    ],
+    "value_range": [
+     -6.020027178193369,
+     5.381319799923321
+    ],
+    "median_std": 0.0018907010592335326,
+    "min_std": 0.0001640518955106463,
+    "lowest_std_ch": [
+     [
+      "OR7-8",
+      0.0001640518955106463
+     ],
+     [
+      "A8-9",
+      0.0002520060337008208
+     ],
+     [
+      "TP1-2",
+      0.0002710794952794165
+     ],
+     [
+      "OR8-9",
+      0.0002723863164144294
+     ],
+     [
+      "A6-7",
+      0.0002862254044541515
+     ]
+    ],
+    "n_std_lt_1e-6": 0,
+    "n_std_lt_1pct_median": 0,
+    "max_samples_at_extreme": 1,
+    "consecutive_equal_samples": 0,
+    "frames_equal_prev": 0,
+    "largest_step": [
+     0.17473613583832015,
+     "OR'10-11",
+     448,
+     0.17473613583832015
+    ],
+    "baseline_median_absdiff_first30": 0.0002118208939758165,
+    "runs_gt10x": [
+     [
+      67,
+      440
+     ]
+    ],
+    "runs_gt3x": [
+     [
+      0,
+      13
+     ],
+     [
+      57,
+      802
+     ],
+     [
+      806,
+      807
+     ]
+    ],
+    "md_ratio_examples": {},
+    "tail_2.5s_mean_absdiff": 3.2471613059819506e-06,
+    "tail_5s_mean_absdiff": 2.854809386782824e-05,
+    "tail_6s_mean_absdiff": 0.0001289730286162346
+   },
+   "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz": {
+    "keys": {
+     "time_steps": [
+      [
+       900
+      ],
+      "float64"
+     ],
+     "seeg": [
+      [
+       191,
+       900
+      ],
+      "float64"
+     ],
+     "SC": [
+      [
+       162,
+       162
+      ],
+      "float64"
+     ],
+     "gain": [
+      [
+       191,
+       162
+      ],
+      "float64"
+     ],
+     "ch_names": [
+      [
+       191
+      ],
+      "<U8"
+     ]
+    },
+    "t_first_last": [
+     10.0,
+     9000.0
+    ],
+    "dt_unique": [
+     10.0
+    ],
+    "fs_assuming_ms": 100.0,
+    "n_ch": 191,
+    "n_samples": 900,
+    "nan": 0,
+    "inf": 0,
+    "mean_range": [
+     -5.254835772738846,
+     4.694153075598017
+    ],
+    "value_range": [
+     -5.895516796011633,
+     5.269716947309636
+    ],
+    "median_std": 0.012785948721537979,
+    "min_std": 0.0009152904587828222,
+    "lowest_std_ch": [
+     [
+      "PM'15-16",
+      0.0009152904587828222
+     ],
+     [
+      "OR6-7",
+      0.0010235312690710667
+     ],
+     [
+      "OR15-16",
+      0.0012086159114343624
+     ],
+     [
+      "B'5-6",
+      0.0014389606211940185
+     ],
+     [
+      "B'6-7",
+      0.0015185125028852864
+     ]
+    ],
+    "n_std_lt_1e-6": 0,
+    "n_std_lt_1pct_median": 0,
+    "max_samples_at_extreme": 1,
+    "consecutive_equal_samples": 0,
+    "frames_equal_prev": 0,
+    "largest_step": [
+     1.1943717212358993,
+     "I'9-10",
+     9,
+     1.1943717212358993
+    ],
+    "baseline_median_absdiff_first30": 0.011349904468730868,
+    "runs_gt10x": [],
+    "runs_gt3x": [],
+    "md_ratio_examples": {},
+    "tail_2.5s_mean_absdiff": 1.6007202262287544e-05,
+    "tail_5s_mean_absdiff": 5.9951128947428414e-05,
+    "tail_6s_mean_absdiff": 0.00011270093002178574
+   }
+  },
+  "identical_across_sessions": {
+   "SC": true,
+   "gain": true,
+   "ch_names": true
+  },
+  "SC": {
+   "shape": [
+    162,
+    162
+   ],
+   "symmetric": true,
+   "diag_zero": true,
+   "min": 0.0,
+   "max": 1.0,
+   "nan": 0,
+   "density_offdiag": 0.8008588298443371,
+   "density_full": 0.7959152568206066,
+   "strength_min_max": [
+    0.09982286799815165,
+    3.341903270524208
+   ],
+   "isolated": [],
+   "sha256": "e3e2dc9f3efa8eceda92136f9fa3e14cc75f96dad3d9870f8f510416ff755d87"
+  },
+  "gain": {
+   "shape": [
+    191,
+    162
+   ],
+   "min": 3.275870908980849e-07,
+   "max": 88.24500038228474,
+   "n_negative": 0,
+   "nan": 0,
+   "zero_cols": [],
+   "zero_rows": 0,
+   "sha256": "25f0330d4ea4fa67394a6a8dec6d6d3d2f2adee371c18bfc2fbe4b07d7bb04b6"
+  },
+  "electrodes": {
+   "TP": 8,
+   "A": 13,
+   "B'": 12,
+   "A'": 14,
+   "OR": 15,
+   "R'": 13,
+   "R": 13,
+   "CR": 15,
+   "PM'": 15,
+   "OF'": 17,
+   "CR'": 14,
+   "OR'": 14,
+   "I'": 14,
+   "CC'": 14
+  },
+  "all_adjacent": true,
+  "unique_names": true,
+  "order_checks": {
+   "SC_intra_vs_inter_hemi_mean": [
+    0.008904006831102465,
+    0.000984921604546609
+   ],
+   "SC_homolog_corr_LL_vs_RR": 0.8789408254500257,
+   "SC_homolog_pairs_mean_vs_LR_mean": [
+    0.025999326841345632,
+    0.000984921604546609
+   ],
+   "gain_cereb_cols_80_161": {
+    "col80_ptp": 0.3867453447240907,
+    "col161_ptp": 0.27023059257200077,
+    "col80_max": 0.38702533340712897,
+    "col161_max": 0.2708572013500832,
+    "global_min": 3.275870908980849e-07,
+    "eq_global_min": false
+   },
+   "primed_channel_argmax_region_left": [
+    127,
+    127
+   ],
+   "unprimed_channel_argmax_region_right": [
+    62,
+    64
+   ],
+   "argmax_region_by_electrode": {
+    "TP": [
+     [
+      "Right-Temporal-pole",
+      5
+     ],
+     [
+      "Right-T2-anterior",
+      2
+     ],
+     [
+      "Right-Rhinal-cortex",
+      1
+     ]
+    ],
+    "A": [
+     [
+      "Right-STS-anterior",
+      6
+     ],
+     [
+      "Right-Amygdala",
+      4
+     ],
+     [
+      "Right-Hippocampus-anterior",
+      2
+     ],
+     [
+      "Right-Putamen",
+      1
+     ]
+    ],
+    "B'": [
+     [
+      "Left-STS-anterior",
+      7
+     ],
+     [
+      "Left-Hippocampus-anterior",
+      3
+     ],
+     [
+      "Left-Amygdala",
+      2
+     ]
+    ],
+    "A'": [
+     [
+      "Left-Amygdala",
+      6
+     ],
+     [
+      "Left-STS-anterior",
+      5
+     ],
+     [
+      "Left-T2-anterior",
+      2
+     ],
+     [
+      "Left-Putamen",
+      1
+     ]
+    ],
+    "OR": [
+     [
+      "Right-F2-caudal",
+      6
+     ],
+     [
+      "Right-Middle-frontal-sulcus",
+      4
+     ],
+     [
+      "Right-Caudate-nucleus",
+      3
+     ],
+     [
+      "Right-Gyrus-rectus",
+      2
+     ]
+    ],
+    "R'": [
+     [
+      "Left-Orbito-frontal-cortex",
+      10
+     ],
+     [
+      "Left-Gyrus-rectus",
+      2
+     ],
+     [
+      "Left-F3-Pars-Orbitalis",
+      1
+     ]
+    ],
+    "R": [
+     [
+      "Right-Orbito-frontal-cortex",
+      9
+     ],
+     [
+      "Right-Anterior-cingulate-cortex",
+      3
+     ],
+     [
+      "Right-F3-Pars-triangularis",
+      1
+     ]
+    ],
+    "CR": [
+     [
+      "Right-Anterior-cingulate-cortex",
+      5
+     ],
+     [
+      "Right-F3-Pars-triangularis",
+      4
+     ],
+     [
+      "Right-Inferior-frontal-sulcus",
+      3
+     ],
+     [
+      "Left-Anterior-cingulate-cortex",
+      2
+     ]
+    ],
+    "PM'": [
+     [
+      "Left-F2-rostral",
+      10
+     ],
+     [
+      "Left-F1-mesial-prefrontal",
+      3
+     ],
+     [
+      "Left-SFS-rostral",
+      2
+     ]
+    ],
+    "OF'": [
+     [
+      "Left-F3-Pars-triangularis",
+      9
+     ],
+     [
+      "Left-Insula-gyri-brevi",
+      6
+     ],
+     [
+      "Left-Anterior-cingulate-cortex",
+      2
+     ]
+    ],
+    "CR'": [
+     [
+      "Left-Anterior-cingulate-cortex",
+      5
+     ],
+     [
+      "Left-Inferior-frontal-sulcus",
+      5
+     ],
+     [
+      "Left-F3-Pars-triangularis",
+      4
+     ]
+    ],
+    "OR'": [
+     [
+      "Left-Orbito-frontal-cortex",
+      5
+     ],
+     [
+      "Left-F2-rostral",
+      5
+     ],
+     [
+      "Left-Middle-frontal-sulcus",
+      4
+     ]
+    ],
+    "I'": [
+     [
+      "Left-F2-caudal",
+      9
+     ],
+     [
+      "Left-Insula-gyri-brevi",
+      4
+     ],
+     [
+      "Left-F3-Pars-triangularis",
+      1
+     ]
+    ],
+    "CC'": [
+     [
+      "Left-F2-caudal",
+      5
+     ],
+     [
+      "Left-Middle-cingulate-cortex-anterior-part",
+      4
+     ],
+     [
+      "Left-Inferior-frontal-sulcus",
+      3
+     ],
+     [
+      "Left-SFS-rostral",
+      2
+     ]
+    ]
+   }
+  },
+  "coverage": {
+   "rows": [
+    {
+     "i": 0,
+     "region": "Left-Frontal-pole",
+     "max_abs_gain": 1.2015,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "OR'5-6",
+      "OR'10-11",
+      "CR'4-5"
+     ]
+    },
+    {
+     "i": 1,
+     "region": "Left-Orbito-frontal-cortex",
+     "max_abs_gain": 18.47,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "R'8-9",
+      "R'7-8",
+      "OR'1-2"
+     ]
+    },
+    {
+     "i": 2,
+     "region": "Left-Gyrus-rectus",
+     "max_abs_gain": 5.9151,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "R'3-4",
+      "R'1-2",
+      "R'4-5"
+     ]
+    },
+    {
+     "i": 3,
+     "region": "Left-F3-Pars-Orbitalis",
+     "max_abs_gain": 1.9716,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "R'13-14",
+      "R'12-13",
+      "R'11-12"
+     ]
+    },
+    {
+     "i": 4,
+     "region": "Left-F3-Pars-triangularis",
+     "max_abs_gain": 11.8629,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "CR'14-15",
+      "OF'17-18",
+      "CR'10-11"
+     ]
+    },
+    {
+     "i": 5,
+     "region": "Left-F3-pars-opercularis",
+     "max_abs_gain": 5.6601,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "I'4-5",
+      "I'5-6",
+      "I'3-4"
+     ]
+    },
+    {
+     "i": 6,
+     "region": "Left-Inferior-frontal-sulcus",
+     "max_abs_gain": 8.8014,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "CR'11-12",
+      "I'5-6",
+      "CR'8-9"
+     ]
+    },
+    {
+     "i": 7,
+     "region": "Left-F2-rostral",
+     "max_abs_gain": 16.5337,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "PM'9-10",
+      "PM'10-11",
+      "OR'12-13"
+     ]
+    },
+    {
+     "i": 8,
+     "region": "Left-F2-caudal",
+     "max_abs_gain": 9.8969,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "I'10-11",
+      "I'12-13",
+      "I'13-14"
+     ]
+    },
+    {
+     "i": 9,
+     "region": "Left-Middle-frontal-sulcus",
+     "max_abs_gain": 13.7185,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "OR'10-11",
+      "OR'7-8",
+      "OR'8-9"
+     ]
+    },
+    {
+     "i": 10,
+     "region": "Left-SFS-rostral",
+     "max_abs_gain": 5.6689,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "PM'5-6",
+      "PM'9-10",
+      "PM'8-9"
+     ]
+    },
+    {
+     "i": 11,
+     "region": "Left-SFS-caudal",
+     "max_abs_gain": 0.489,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "I'10-11",
+      "I'5-6",
+      "I'14-15"
+     ]
+    },
+    {
+     "i": 12,
+     "region": "Left-F1-mesial-prefrontal",
+     "max_abs_gain": 4.7267,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "PM'1-2",
+      "PM'2-3",
+      "PM'3-4"
+     ]
+    },
+    {
+     "i": 13,
+     "region": "Left-PreSMA",
+     "max_abs_gain": 0.7835,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "CC'3-4",
+      "CC'2-3",
+      "CC'1-2"
+     ]
+    },
+    {
+     "i": 14,
+     "region": "Left-SMA",
+     "max_abs_gain": 0.2094,
+     "n_gt25_global": 0,
+     "n_gt25_own": 29,
+     "top3": [
+      "I'5-6",
+      "CC'5-6",
+      "CC'4-5"
+     ]
+    },
+    {
+     "i": 15,
+     "region": "Left-F1-lateral-prefrontal",
+     "max_abs_gain": 1.487,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "OR'10-11",
+      "PM'6-7",
+      "PM'2-3"
+     ]
+    },
+    {
+     "i": 16,
+     "region": "Left-F1-lateral-premotor",
+     "max_abs_gain": 1.6125,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "I'10-11",
+      "I'14-15",
+      "I'11-12"
+     ]
+    },
+    {
+     "i": 17,
+     "region": "Left-Subcallosal-area",
+     "max_abs_gain": 0.7139,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "A'1-2",
+      "A'2-3",
+      "A'3-4"
+     ]
+    },
+    {
+     "i": 18,
+     "region": "Left-Precentral-sulcus-inferior-part",
+     "max_abs_gain": 2.5187,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "I'5-6",
+      "I'10-11",
+      "I'9-10"
+     ]
+    },
+    {
+     "i": 19,
+     "region": "Left-Precentral-sulcus-superior-part",
+     "max_abs_gain": 0.178,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "I'5-6",
+      "I'14-15",
+      "I'10-11"
+     ]
+    },
+    {
+     "i": 20,
+     "region": "Left-Precentral-gyrus-head-face",
+     "max_abs_gain": 0.6792,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "CC'13-14",
+      "CC'11-12",
+      "CC'14-15"
+     ]
+    },
+    {
+     "i": 21,
+     "region": "Left-Precentral-gyrus-upper-limb",
+     "max_abs_gain": 0.2501,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "I'5-6",
+      "I'14-15",
+      "I'7-8"
+     ]
+    },
+    {
+     "i": 22,
+     "region": "Left-Central-sulcus-head-face",
+     "max_abs_gain": 0.1083,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "I'10-11",
+      "I'3-4",
+      "I'2-3"
+     ]
+    },
+    {
+     "i": 23,
+     "region": "Left-Central-sulcus-upper-limb",
+     "max_abs_gain": 0.093,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "I'5-6",
+      "I'3-4",
+      "I'14-15"
+     ]
+    },
+    {
+     "i": 24,
+     "region": "Left-Paracentral-lobule",
+     "max_abs_gain": 0.0425,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "I'5-6",
+      "OR5-6",
+      "CC'10-11"
+     ]
+    },
+    {
+     "i": 25,
+     "region": "Left-Central-operculum",
+     "max_abs_gain": 0.2314,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "I'5-6",
+      "I'10-11",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 26,
+     "region": "Left-Parietal-operculum",
+     "max_abs_gain": 0.1156,
+     "n_gt25_global": 0,
+     "n_gt25_own": 30,
+     "top3": [
+      "I'10-11",
+      "I'5-6",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 27,
+     "region": "Left-Anterior-cingulate-cortex",
+     "max_abs_gain": 29.6945,
+     "n_gt25_global": 1,
+     "n_gt25_own": 1,
+     "top3": [
+      "CR'2-3",
+      "CR'3-4",
+      "CR1-2"
+     ]
+    },
+    {
+     "i": 28,
+     "region": "Left-Middle-cingulate-cortex-anterior-part",
+     "max_abs_gain": 2.058,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "CC'1-2",
+      "CC'3-4",
+      "CC'2-3"
+     ]
+    },
+    {
+     "i": 29,
+     "region": "Left-Middle-cingulate-cortex-posterior-part",
+     "max_abs_gain": 0.0539,
+     "n_gt25_global": 0,
+     "n_gt25_own": 43,
+     "top3": [
+      "I'10-11",
+      "CC'9-10",
+      "CC'7-8"
+     ]
+    },
+    {
+     "i": 30,
+     "region": "Left-Posterior-cingulate-cortex-dorsal",
+     "max_abs_gain": 0.0617,
+     "n_gt25_global": 0,
+     "n_gt25_own": 52,
+     "top3": [
+      "OR5-6",
+      "OR'5-6",
+      "OR10-11"
+     ]
+    },
+    {
+     "i": 31,
+     "region": "Left-Posterior-cingulate-cortex-retrosplenial-gyrus",
+     "max_abs_gain": 0.0304,
+     "n_gt25_global": 0,
+     "n_gt25_own": 43,
+     "top3": [
+      "B'2-3",
+      "B'5-6",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 32,
+     "region": "Left-Insula-gyri-brevi",
+     "max_abs_gain": 8.5884,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "I'5-6",
+      "I'4-5",
+      "I'3-4"
+     ]
+    },
+    {
+     "i": 33,
+     "region": "Left-Insula-gyri-longi",
+     "max_abs_gain": 1.5662,
+     "n_gt25_global": 0,
+     "n_gt25_own": 27,
+     "top3": [
+      "A'6-7",
+      "A'9-10",
+      "A'11-12"
+     ]
+    },
+    {
+     "i": 34,
+     "region": "Left-Temporal-pole",
+     "max_abs_gain": 0.5928,
+     "n_gt25_global": 0,
+     "n_gt25_own": 26,
+     "top3": [
+      "OR'1-2",
+      "OR'5-6",
+      "OR'2-3"
+     ]
+    },
+    {
+     "i": 35,
+     "region": "Left-T1-planum-polare",
+     "max_abs_gain": 0.7838,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "I'1-2",
+      "I'2-3",
+      "I'5-6"
+     ]
+    },
+    {
+     "i": 36,
+     "region": "Left-Gyrus-of-Heschl",
+     "max_abs_gain": 0.221,
+     "n_gt25_global": 0,
+     "n_gt25_own": 28,
+     "top3": [
+      "I'5-6",
+      "B'4-5",
+      "B'11-12"
+     ]
+    },
+    {
+     "i": 37,
+     "region": "Left-T1-planum-temporale",
+     "max_abs_gain": 0.0815,
+     "n_gt25_global": 0,
+     "n_gt25_own": 31,
+     "top3": [
+      "I'10-11",
+      "B'1-2",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 38,
+     "region": "Left-T1-lateral-anterior",
+     "max_abs_gain": 2.8789,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "A'14-15",
+      "B'10-11",
+      "A'12-13"
+     ]
+    },
+    {
+     "i": 39,
+     "region": "Left-T1-lateral-posterior",
+     "max_abs_gain": 0.2621,
+     "n_gt25_global": 0,
+     "n_gt25_own": 20,
+     "top3": [
+      "B'10-11",
+      "B'9-10",
+      "B'8-9"
+     ]
+    },
+    {
+     "i": 40,
+     "region": "Left-STS-anterior",
+     "max_abs_gain": 19.4618,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "B'11-12",
+      "B'8-9",
+      "B'10-11"
+     ]
+    },
+    {
+     "i": 41,
+     "region": "Left-STS-posterior",
+     "max_abs_gain": 0.1338,
+     "n_gt25_global": 0,
+     "n_gt25_own": 23,
+     "top3": [
+      "B'4-5",
+      "B'3-4",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 42,
+     "region": "Left-ITS-anterior",
+     "max_abs_gain": 0.5481,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "B'8-9",
+      "B'12-13",
+      "B'9-10"
+     ]
+    },
+    {
+     "i": 43,
+     "region": "Left-ITS-posterior",
+     "max_abs_gain": 0.0154,
+     "n_gt25_global": 0,
+     "n_gt25_own": 24,
+     "top3": [
+      "B'4-5",
+      "B'3-4",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 44,
+     "region": "Left-T2-anterior",
+     "max_abs_gain": 5.0595,
+     "n_gt25_global": 0,
+     "n_gt25_own": 10,
+     "top3": [
+      "A'11-12",
+      "A'12-13",
+      "A'10-11"
+     ]
+    },
+    {
+     "i": 45,
+     "region": "Left-T2-posterior",
+     "max_abs_gain": 0.1204,
+     "n_gt25_global": 0,
+     "n_gt25_own": 25,
+     "top3": [
+      "B'10-11",
+      "B'7-8",
+      "B'9-10"
+     ]
+    },
+    {
+     "i": 46,
+     "region": "Left-T3-anterior",
+     "max_abs_gain": 0.3523,
+     "n_gt25_global": 0,
+     "n_gt25_own": 27,
+     "top3": [
+      "B'4-5",
+      "B'5-6",
+      "B'8-9"
+     ]
+    },
+    {
+     "i": 47,
+     "region": "Left-T3-posterior",
+     "max_abs_gain": 0.0838,
+     "n_gt25_global": 0,
+     "n_gt25_own": 23,
+     "top3": [
+      "B'4-5",
+      "B'7-8",
+      "B'5-6"
+     ]
+    },
+    {
+     "i": 48,
+     "region": "Left-Fusiform-gyrus",
+     "max_abs_gain": 0.2084,
+     "n_gt25_global": 0,
+     "n_gt25_own": 23,
+     "top3": [
+      "B'8-9",
+      "B'1-2",
+      "B'11-12"
+     ]
+    },
+    {
+     "i": 49,
+     "region": "Left-Occipito-temporal-sulcus",
+     "max_abs_gain": 0.3755,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "B'4-5",
+      "B'3-4",
+      "B'5-6"
+     ]
+    },
+    {
+     "i": 50,
+     "region": "Left-Collateral-sulcus",
+     "max_abs_gain": 0.4011,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "B'5-6",
+      "B'1-2",
+      "B'6-7"
+     ]
+    },
+    {
+     "i": 51,
+     "region": "Left-Lingual-sulcus",
+     "max_abs_gain": 0.0582,
+     "n_gt25_global": 0,
+     "n_gt25_own": 32,
+     "top3": [
+      "B'8-9",
+      "B'5-6",
+      "B'11-12"
+     ]
+    },
+    {
+     "i": 52,
+     "region": "Left-Parahippocampal-cortex",
+     "max_abs_gain": 0.247,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "B'2-3",
+      "B'4-5",
+      "B'3-4"
+     ]
+    },
+    {
+     "i": 53,
+     "region": "Left-Rhinal-cortex",
+     "max_abs_gain": 0.6487,
+     "n_gt25_global": 0,
+     "n_gt25_own": 22,
+     "top3": [
+      "A'6-7",
+      "A'4-5",
+      "A'5-6"
+     ]
+    },
+    {
+     "i": 54,
+     "region": "Left-Postcentral-gyrus",
+     "max_abs_gain": 0.1565,
+     "n_gt25_global": 0,
+     "n_gt25_own": 18,
+     "top3": [
+      "I'5-6",
+      "I'3-4",
+      "I'2-3"
+     ]
+    },
+    {
+     "i": 55,
+     "region": "Left-Postcentral-sulcus",
+     "max_abs_gain": 0.0414,
+     "n_gt25_global": 0,
+     "n_gt25_own": 32,
+     "top3": [
+      "I'5-6",
+      "I'10-11",
+      "I'3-4"
+     ]
+    },
+    {
+     "i": 56,
+     "region": "Left-Superior-parietal-lobule-P1",
+     "max_abs_gain": 0.0215,
+     "n_gt25_global": 0,
+     "n_gt25_own": 61,
+     "top3": [
+      "I'5-6",
+      "B'11-12",
+      "I'3-4"
+     ]
+    },
+    {
+     "i": 57,
+     "region": "Left-Supramarginal-anterior",
+     "max_abs_gain": 0.0921,
+     "n_gt25_global": 0,
+     "n_gt25_own": 37,
+     "top3": [
+      "I'10-11",
+      "B'4-5",
+      "B'3-4"
+     ]
+    },
+    {
+     "i": 58,
+     "region": "Left-Supramarginal-posterior",
+     "max_abs_gain": 0.0192,
+     "n_gt25_global": 0,
+     "n_gt25_own": 56,
+     "top3": [
+      "I'10-11",
+      "I'5-6",
+      "I'14-15"
+     ]
+    },
+    {
+     "i": 59,
+     "region": "Left-Angular-gyrus",
+     "max_abs_gain": 0.0216,
+     "n_gt25_global": 0,
+     "n_gt25_own": 42,
+     "top3": [
+      "I'10-11",
+      "OR'10-11",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 60,
+     "region": "Left-Intraparietal-sulcus",
+     "max_abs_gain": 0.0166,
+     "n_gt25_global": 0,
+     "n_gt25_own": 51,
+     "top3": [
+      "I'10-11",
+      "B'11-12",
+      "OR'10-11"
+     ]
+    },
+    {
+     "i": 61,
+     "region": "Left-Precuneus",
+     "max_abs_gain": 0.0293,
+     "n_gt25_global": 0,
+     "n_gt25_own": 106,
+     "top3": [
+      "B'5-6",
+      "I'10-11",
+      "B'8-9"
+     ]
+    },
+    {
+     "i": 62,
+     "region": "Left-Marginal-branch-of-the-cingulate-sulcus",
+     "max_abs_gain": 0.0094,
+     "n_gt25_global": 0,
+     "n_gt25_own": 72,
+     "top3": [
+      "I'10-11",
+      "I'5-6",
+      "B'5-6"
+     ]
+    },
+    {
+     "i": 63,
+     "region": "Left-Parieto-occipital-sulcus",
+     "max_abs_gain": 0.0184,
+     "n_gt25_global": 0,
+     "n_gt25_own": 56,
+     "top3": [
+      "I'10-11",
+      "B'8-9",
+      "B'5-6"
+     ]
+    },
+    {
+     "i": 64,
+     "region": "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+     "max_abs_gain": 0.0077,
+     "n_gt25_global": 0,
+     "n_gt25_own": 39,
+     "top3": [
+      "I'5-6",
+      "I'10-11",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 65,
+     "region": "Left-O3",
+     "max_abs_gain": 0.0313,
+     "n_gt25_global": 0,
+     "n_gt25_own": 36,
+     "top3": [
+      "I'5-6",
+      "I'10-11",
+      "OR'5-6"
+     ]
+    },
+    {
+     "i": 66,
+     "region": "Left-O2",
+     "max_abs_gain": 0.0305,
+     "n_gt25_global": 0,
+     "n_gt25_own": 43,
+     "top3": [
+      "I'10-11",
+      "I'5-6",
+      "OR'5-6"
+     ]
+    },
+    {
+     "i": 67,
+     "region": "Left-O1",
+     "max_abs_gain": 0.0134,
+     "n_gt25_global": 0,
+     "n_gt25_own": 52,
+     "top3": [
+      "I'10-11",
+      "OR'10-11",
+      "B'11-12"
+     ]
+    },
+    {
+     "i": 68,
+     "region": "Left-Occipital-pole",
+     "max_abs_gain": 0.0137,
+     "n_gt25_global": 0,
+     "n_gt25_own": 62,
+     "top3": [
+      "I'10-11",
+      "I'5-6",
+      "OR'5-6"
+     ]
+    },
+    {
+     "i": 69,
+     "region": "Left-Lingual-gyrus",
+     "max_abs_gain": 0.0688,
+     "n_gt25_global": 0,
+     "n_gt25_own": 48,
+     "top3": [
+      "B'5-6",
+      "B'8-9",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 70,
+     "region": "Left-Calcarine-sulcus",
+     "max_abs_gain": 0.0292,
+     "n_gt25_global": 0,
+     "n_gt25_own": 49,
+     "top3": [
+      "B'5-6",
+      "B'8-9",
+      "I'5-6"
+     ]
+    },
+    {
+     "i": 71,
+     "region": "Left-Cuneus",
+     "max_abs_gain": 0.0183,
+     "n_gt25_global": 0,
+     "n_gt25_own": 65,
+     "top3": [
+      "I'10-11",
+      "B'5-6",
+      "B'8-9"
+     ]
+    },
+    {
+     "i": 72,
+     "region": "Left-Hippocampus-anterior",
+     "max_abs_gain": 15.3468,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "B'4-5",
+      "B'1-2",
+      "B'3-4"
+     ]
+    },
+    {
+     "i": 73,
+     "region": "Left-Hippocampus-posterior",
+     "max_abs_gain": 0.307,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "B'5-6",
+      "B'4-5",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 74,
+     "region": "Left-Amygdala",
+     "max_abs_gain": 9.3778,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "A'5-6",
+      "A'6-7",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 75,
+     "region": "Left-Thalamus",
+     "max_abs_gain": 0.3872,
+     "n_gt25_global": 0,
+     "n_gt25_own": 33,
+     "top3": [
+      "B'2-3",
+      "B'1-2",
+      "A'2-3"
+     ]
+    },
+    {
+     "i": 76,
+     "region": "Left-Caudate-nucleus",
+     "max_abs_gain": 1.2834,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "OR'5-6",
+      "OF'2-3",
+      "OF'4-5"
+     ]
+    },
+    {
+     "i": 77,
+     "region": "Left-Putamen",
+     "max_abs_gain": 2.0996,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "I'5-6",
+      "B'4-5",
+      "A'1-2"
+     ]
+    },
+    {
+     "i": 78,
+     "region": "Left-Pallidum",
+     "max_abs_gain": 0.5946,
+     "n_gt25_global": 0,
+     "n_gt25_own": 18,
+     "top3": [
+      "B'2-3",
+      "A'5-6",
+      "B'3-4"
+     ]
+    },
+    {
+     "i": 79,
+     "region": "Left-Nucleus-accumbens",
+     "max_abs_gain": 0.2949,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "OR'5-6",
+      "A'2-3",
+      "A'1-2"
+     ]
+    },
+    {
+     "i": 80,
+     "region": "Left-Cerebellar-cortex",
+     "max_abs_gain": 0.387,
+     "n_gt25_global": 0,
+     "n_gt25_own": 55,
+     "top3": [
+      "B'5-6",
+      "B'8-9",
+      "I'5-6"
+     ]
+    },
+    {
+     "i": 81,
+     "region": "Right-Frontal-pole",
+     "max_abs_gain": 0.5229,
+     "n_gt25_global": 0,
+     "n_gt25_own": 32,
+     "top3": [
+      "OR10-11",
+      "CR8-9",
+      "CR11-12"
+     ]
+    },
+    {
+     "i": 82,
+     "region": "Right-Orbito-frontal-cortex",
+     "max_abs_gain": 88.245,
+     "n_gt25_global": 2,
+     "n_gt25_own": 2,
+     "top3": [
+      "R7-8",
+      "R8-9",
+      "R11-12"
+     ]
+    },
+    {
+     "i": 83,
+     "region": "Right-Gyrus-rectus",
+     "max_abs_gain": 3.8509,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "OR1-2",
+      "R'1-2",
+      "OR2-3"
+     ]
+    },
+    {
+     "i": 84,
+     "region": "Right-F3-Pars-Orbitalis",
+     "max_abs_gain": 0.605,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "CR15-16",
+      "CR8-9",
+      "CR11-12"
+     ]
+    },
+    {
+     "i": 85,
+     "region": "Right-F3-Pars-triangularis",
+     "max_abs_gain": 5.9173,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "CR13-14",
+      "CR14-15",
+      "CR15-16"
+     ]
+    },
+    {
+     "i": 86,
+     "region": "Right-F3-pars-opercularis",
+     "max_abs_gain": 0.347,
+     "n_gt25_global": 0,
+     "n_gt25_own": 33,
+     "top3": [
+      "OR10-11",
+      "OR5-6",
+      "A5-6"
+     ]
+    },
+    {
+     "i": 87,
+     "region": "Right-Inferior-frontal-sulcus",
+     "max_abs_gain": 6.2355,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "CR11-12",
+      "CR13-14",
+      "CR10-11"
+     ]
+    },
+    {
+     "i": 88,
+     "region": "Right-F2-rostral",
+     "max_abs_gain": 4.0358,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "OR10-11",
+      "OR11-12",
+      "OR13-14"
+     ]
+    },
+    {
+     "i": 89,
+     "region": "Right-F2-caudal",
+     "max_abs_gain": 12.9237,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "OR13-14",
+      "OR10-11",
+      "OR12-13"
+     ]
+    },
+    {
+     "i": 90,
+     "region": "Right-Middle-frontal-sulcus",
+     "max_abs_gain": 5.3837,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "OR9-10",
+      "OR11-12",
+      "OR12-13"
+     ]
+    },
+    {
+     "i": 91,
+     "region": "Right-SFS-rostral",
+     "max_abs_gain": 0.774,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "OR10-11",
+      "OR5-6",
+      "OR9-10"
+     ]
+    },
+    {
+     "i": 92,
+     "region": "Right-SFS-caudal",
+     "max_abs_gain": 0.5413,
+     "n_gt25_global": 0,
+     "n_gt25_own": 2,
+     "top3": [
+      "OR10-11",
+      "OR5-6",
+      "OR8-9"
+     ]
+    },
+    {
+     "i": 93,
+     "region": "Right-F1-mesial-prefrontal",
+     "max_abs_gain": 3.9651,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "PM'1-2",
+      "PM'2-3",
+      "R1-2"
+     ]
+    },
+    {
+     "i": 94,
+     "region": "Right-PreSMA",
+     "max_abs_gain": 1.5539,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "CC'1-2",
+      "PM'1-2",
+      "CC'2-3"
+     ]
+    },
+    {
+     "i": 95,
+     "region": "Right-SMA",
+     "max_abs_gain": 0.2561,
+     "n_gt25_global": 0,
+     "n_gt25_own": 26,
+     "top3": [
+      "CC'3-4",
+      "CC'2-3",
+      "CC'1-2"
+     ]
+    },
+    {
+     "i": 96,
+     "region": "Right-F1-lateral-prefrontal",
+     "max_abs_gain": 0.3923,
+     "n_gt25_global": 0,
+     "n_gt25_own": 17,
+     "top3": [
+      "PM'1-2",
+      "OR10-11",
+      "OR5-6"
+     ]
+    },
+    {
+     "i": 97,
+     "region": "Right-F1-lateral-premotor",
+     "max_abs_gain": 1.2118,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "OR10-11",
+      "OR11-12",
+      "OR5-6"
+     ]
+    },
+    {
+     "i": 98,
+     "region": "Right-Subcallosal-area",
+     "max_abs_gain": 0.4657,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "A1-2",
+      "OR5-6",
+      "A2-3"
+     ]
+    },
+    {
+     "i": 99,
+     "region": "Right-Precentral-sulcus-inferior-part",
+     "max_abs_gain": 0.451,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "OR5-6",
+      "OR7-8",
+      "OR15-16"
+     ]
+    },
+    {
+     "i": 100,
+     "region": "Right-Precentral-sulcus-superior-part",
+     "max_abs_gain": 0.0644,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "OR5-6",
+      "OR10-11",
+      "CC'1-2"
+     ]
+    },
+    {
+     "i": 101,
+     "region": "Right-Precentral-gyrus-head-face",
+     "max_abs_gain": 0.1707,
+     "n_gt25_global": 0,
+     "n_gt25_own": 9,
+     "top3": [
+      "OR5-6",
+      "CR13-14",
+      "CR8-9"
+     ]
+    },
+    {
+     "i": 102,
+     "region": "Right-Precentral-gyrus-upper-limb",
+     "max_abs_gain": 0.1072,
+     "n_gt25_global": 0,
+     "n_gt25_own": 12,
+     "top3": [
+      "OR10-11",
+      "OR5-6",
+      "CC'1-2"
+     ]
+    },
+    {
+     "i": 103,
+     "region": "Right-Central-sulcus-head-face",
+     "max_abs_gain": 0.0325,
+     "n_gt25_global": 0,
+     "n_gt25_own": 15,
+     "top3": [
+      "OR5-6",
+      "A3-4",
+      "A1-2"
+     ]
+    },
+    {
+     "i": 104,
+     "region": "Right-Central-sulcus-upper-limb",
+     "max_abs_gain": 0.0728,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "OR5-6",
+      "CC'1-2",
+      "CC'3-4"
+     ]
+    },
+    {
+     "i": 105,
+     "region": "Right-Paracentral-lobule",
+     "max_abs_gain": 0.0354,
+     "n_gt25_global": 0,
+     "n_gt25_own": 38,
+     "top3": [
+      "I'5-6",
+      "OR5-6",
+      "CC'9-10"
+     ]
+    },
+    {
+     "i": 106,
+     "region": "Right-Central-operculum",
+     "max_abs_gain": 0.0742,
+     "n_gt25_global": 0,
+     "n_gt25_own": 26,
+     "top3": [
+      "A8-9",
+      "A6-7",
+      "A5-6"
+     ]
+    },
+    {
+     "i": 107,
+     "region": "Right-Parietal-operculum",
+     "max_abs_gain": 0.0461,
+     "n_gt25_global": 0,
+     "n_gt25_own": 39,
+     "top3": [
+      "A3-4",
+      "A5-6",
+      "A4-5"
+     ]
+    },
+    {
+     "i": 108,
+     "region": "Right-Anterior-cingulate-cortex",
+     "max_abs_gain": 10.5594,
+     "n_gt25_global": 0,
+     "n_gt25_own": 8,
+     "top3": [
+      "R1-2",
+      "CR4-5",
+      "R2-3"
+     ]
+    },
+    {
+     "i": 109,
+     "region": "Right-Middle-cingulate-cortex-anterior-part",
+     "max_abs_gain": 1.1942,
+     "n_gt25_global": 0,
+     "n_gt25_own": 4,
+     "top3": [
+      "CC'1-2",
+      "CC'2-3",
+      "CC'3-4"
+     ]
+    },
+    {
+     "i": 110,
+     "region": "Right-Middle-cingulate-cortex-posterior-part",
+     "max_abs_gain": 0.0803,
+     "n_gt25_global": 0,
+     "n_gt25_own": 64,
+     "top3": [
+      "CC'3-4",
+      "CC'2-3",
+      "CC'1-2"
+     ]
+    },
+    {
+     "i": 111,
+     "region": "Right-Posterior-cingulate-cortex-dorsal",
+     "max_abs_gain": 0.022,
+     "n_gt25_global": 0,
+     "n_gt25_own": 90,
+     "top3": [
+      "I'10-11",
+      "B'2-3",
+      "OR10-11"
+     ]
+    },
+    {
+     "i": 112,
+     "region": "Right-Posterior-cingulate-cortex-retrosplenial-gyrus",
+     "max_abs_gain": 0.0203,
+     "n_gt25_global": 0,
+     "n_gt25_own": 52,
+     "top3": [
+      "B'2-3",
+      "B'1-2",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 113,
+     "region": "Right-Insula-gyri-brevi",
+     "max_abs_gain": 0.8318,
+     "n_gt25_global": 0,
+     "n_gt25_own": 35,
+     "top3": [
+      "OR10-11",
+      "OR6-7",
+      "R8-9"
+     ]
+    },
+    {
+     "i": 114,
+     "region": "Right-Insula-gyri-longi",
+     "max_abs_gain": 1.3591,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "A10-11",
+      "A6-7",
+      "A5-6"
+     ]
+    },
+    {
+     "i": 115,
+     "region": "Right-Temporal-pole",
+     "max_abs_gain": 5.9119,
+     "n_gt25_global": 0,
+     "n_gt25_own": 7,
+     "top3": [
+      "TP3-4",
+      "TP5-6",
+      "TP6-7"
+     ]
+    },
+    {
+     "i": 116,
+     "region": "Right-T1-planum-polare",
+     "max_abs_gain": 0.3631,
+     "n_gt25_global": 0,
+     "n_gt25_own": 20,
+     "top3": [
+      "A2-3",
+      "A1-2",
+      "A3-4"
+     ]
+    },
+    {
+     "i": 117,
+     "region": "Right-Gyrus-of-Heschl",
+     "max_abs_gain": 0.0567,
+     "n_gt25_global": 0,
+     "n_gt25_own": 15,
+     "top3": [
+      "A5-6",
+      "A6-7",
+      "A8-9"
+     ]
+    },
+    {
+     "i": 118,
+     "region": "Right-T1-planum-temporale",
+     "max_abs_gain": 0.0379,
+     "n_gt25_global": 0,
+     "n_gt25_own": 63,
+     "top3": [
+      "A1-2",
+      "OR10-11",
+      "A4-5"
+     ]
+    },
+    {
+     "i": 119,
+     "region": "Right-T1-lateral-anterior",
+     "max_abs_gain": 1.4994,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "A10-11",
+      "A11-12",
+      "A13-14"
+     ]
+    },
+    {
+     "i": 120,
+     "region": "Right-T1-lateral-posterior",
+     "max_abs_gain": 0.1645,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "A11-12",
+      "A9-10",
+      "A10-11"
+     ]
+    },
+    {
+     "i": 121,
+     "region": "Right-STS-anterior",
+     "max_abs_gain": 25.2815,
+     "n_gt25_global": 1,
+     "n_gt25_own": 3,
+     "top3": [
+      "A9-10",
+      "A11-12",
+      "A12-13"
+     ]
+    },
+    {
+     "i": 122,
+     "region": "Right-STS-posterior",
+     "max_abs_gain": 0.0284,
+     "n_gt25_global": 0,
+     "n_gt25_own": 77,
+     "top3": [
+      "A4-5",
+      "A1-2",
+      "A2-3"
+     ]
+    },
+    {
+     "i": 123,
+     "region": "Right-ITS-anterior",
+     "max_abs_gain": 0.9221,
+     "n_gt25_global": 0,
+     "n_gt25_own": 5,
+     "top3": [
+      "TP5-6",
+      "TP7-8",
+      "TP8-9"
+     ]
+    },
+    {
+     "i": 124,
+     "region": "Right-ITS-posterior",
+     "max_abs_gain": 0.0112,
+     "n_gt25_global": 0,
+     "n_gt25_own": 31,
+     "top3": [
+      "A8-9",
+      "A4-5",
+      "A7-8"
+     ]
+    },
+    {
+     "i": 125,
+     "region": "Right-T2-anterior",
+     "max_abs_gain": 47.63,
+     "n_gt25_global": 1,
+     "n_gt25_own": 1,
+     "top3": [
+      "TP8-9",
+      "A11-12",
+      "TP7-8"
+     ]
+    },
+    {
+     "i": 126,
+     "region": "Right-T2-posterior",
+     "max_abs_gain": 0.0606,
+     "n_gt25_global": 0,
+     "n_gt25_own": 23,
+     "top3": [
+      "A8-9",
+      "A7-8",
+      "A10-11"
+     ]
+    },
+    {
+     "i": 127,
+     "region": "Right-T3-anterior",
+     "max_abs_gain": 1.3844,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "TP5-6",
+      "TP4-5",
+      "TP8-9"
+     ]
+    },
+    {
+     "i": 128,
+     "region": "Right-T3-posterior",
+     "max_abs_gain": 0.0503,
+     "n_gt25_global": 0,
+     "n_gt25_own": 28,
+     "top3": [
+      "A4-5",
+      "A7-8",
+      "A2-3"
+     ]
+    },
+    {
+     "i": 129,
+     "region": "Right-Fusiform-gyrus",
+     "max_abs_gain": 0.206,
+     "n_gt25_global": 0,
+     "n_gt25_own": 21,
+     "top3": [
+      "A11-12",
+      "A12-13",
+      "A13-14"
+     ]
+    },
+    {
+     "i": 130,
+     "region": "Right-Occipito-temporal-sulcus",
+     "max_abs_gain": 0.1134,
+     "n_gt25_global": 0,
+     "n_gt25_own": 14,
+     "top3": [
+      "A12-13",
+      "A13-14",
+      "A7-8"
+     ]
+    },
+    {
+     "i": 131,
+     "region": "Right-Collateral-sulcus",
+     "max_abs_gain": 0.1165,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "A9-10",
+      "A4-5",
+      "A2-3"
+     ]
+    },
+    {
+     "i": 132,
+     "region": "Right-Lingual-sulcus",
+     "max_abs_gain": 0.0144,
+     "n_gt25_global": 0,
+     "n_gt25_own": 53,
+     "top3": [
+      "A11-12",
+      "OR10-11",
+      "A12-13"
+     ]
+    },
+    {
+     "i": 133,
+     "region": "Right-Parahippocampal-cortex",
+     "max_abs_gain": 0.0876,
+     "n_gt25_global": 0,
+     "n_gt25_own": 19,
+     "top3": [
+      "A5-6",
+      "A6-7",
+      "A7-8"
+     ]
+    },
+    {
+     "i": 134,
+     "region": "Right-Rhinal-cortex",
+     "max_abs_gain": 1.4297,
+     "n_gt25_global": 0,
+     "n_gt25_own": 16,
+     "top3": [
+      "TP1-2",
+      "TP2-3",
+      "TP4-5"
+     ]
+    },
+    {
+     "i": 135,
+     "region": "Right-Postcentral-gyrus",
+     "max_abs_gain": 0.1014,
+     "n_gt25_global": 0,
+     "n_gt25_own": 11,
+     "top3": [
+      "OR5-6",
+      "OR10-11",
+      "CC'1-2"
+     ]
+    },
+    {
+     "i": 136,
+     "region": "Right-Postcentral-sulcus",
+     "max_abs_gain": 0.0435,
+     "n_gt25_global": 0,
+     "n_gt25_own": 20,
+     "top3": [
+      "OR5-6",
+      "CC'1-2",
+      "CC'3-4"
+     ]
+    },
+    {
+     "i": 137,
+     "region": "Right-Superior-parietal-lobule-P1",
+     "max_abs_gain": 0.0288,
+     "n_gt25_global": 0,
+     "n_gt25_own": 58,
+     "top3": [
+      "OR5-6",
+      "I'5-6",
+      "CC'3-4"
+     ]
+    },
+    {
+     "i": 138,
+     "region": "Right-Supramarginal-anterior",
+     "max_abs_gain": 0.0278,
+     "n_gt25_global": 0,
+     "n_gt25_own": 71,
+     "top3": [
+      "A4-5",
+      "OR5-6",
+      "A3-4"
+     ]
+    },
+    {
+     "i": 139,
+     "region": "Right-Supramarginal-posterior",
+     "max_abs_gain": 0.0285,
+     "n_gt25_global": 0,
+     "n_gt25_own": 32,
+     "top3": [
+      "OR5-6",
+      "CC'1-2",
+      "CC'3-4"
+     ]
+    },
+    {
+     "i": 140,
+     "region": "Right-Angular-gyrus",
+     "max_abs_gain": 0.0257,
+     "n_gt25_global": 0,
+     "n_gt25_own": 125,
+     "top3": [
+      "OR5-6",
+      "B'2-3",
+      "A'2-3"
+     ]
+    },
+    {
+     "i": 141,
+     "region": "Right-Intraparietal-sulcus",
+     "max_abs_gain": 0.0228,
+     "n_gt25_global": 0,
+     "n_gt25_own": 88,
+     "top3": [
+      "OR5-6",
+      "B'2-3",
+      "CC'3-4"
+     ]
+    },
+    {
+     "i": 142,
+     "region": "Right-Precuneus",
+     "max_abs_gain": 0.0278,
+     "n_gt25_global": 0,
+     "n_gt25_own": 123,
+     "top3": [
+      "B'2-3",
+      "B'5-6",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 143,
+     "region": "Right-Marginal-branch-of-the-cingulate-sulcus",
+     "max_abs_gain": 0.0145,
+     "n_gt25_global": 0,
+     "n_gt25_own": 96,
+     "top3": [
+      "OR5-6",
+      "CC'3-4",
+      "CC'5-6"
+     ]
+    },
+    {
+     "i": 144,
+     "region": "Right-Parieto-occipital-sulcus",
+     "max_abs_gain": 0.018,
+     "n_gt25_global": 0,
+     "n_gt25_own": 80,
+     "top3": [
+      "B'2-3",
+      "B'5-6",
+      "OR10-11"
+     ]
+    },
+    {
+     "i": 145,
+     "region": "Right-Anterior-occipital-sulcus-and-preoccipital-notch",
+     "max_abs_gain": 0.0044,
+     "n_gt25_global": 0,
+     "n_gt25_own": 74,
+     "top3": [
+      "OR10-11",
+      "A4-5",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 146,
+     "region": "Right-O3",
+     "max_abs_gain": 0.01,
+     "n_gt25_global": 0,
+     "n_gt25_own": 57,
+     "top3": [
+      "OR10-11",
+      "OR'5-6",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 147,
+     "region": "Right-O2",
+     "max_abs_gain": 0.0123,
+     "n_gt25_global": 0,
+     "n_gt25_own": 103,
+     "top3": [
+      "OR10-11",
+      "B'2-3",
+      "OR'5-6"
+     ]
+    },
+    {
+     "i": 148,
+     "region": "Right-O1",
+     "max_abs_gain": 0.0122,
+     "n_gt25_global": 0,
+     "n_gt25_own": 105,
+     "top3": [
+      "B'2-3",
+      "B'5-6",
+      "OR'10-11"
+     ]
+    },
+    {
+     "i": 149,
+     "region": "Right-Occipital-pole",
+     "max_abs_gain": 0.0153,
+     "n_gt25_global": 0,
+     "n_gt25_own": 78,
+     "top3": [
+      "OR'5-6",
+      "OR10-11",
+      "I'10-11"
+     ]
+    },
+    {
+     "i": 150,
+     "region": "Right-Lingual-gyrus",
+     "max_abs_gain": 0.0566,
+     "n_gt25_global": 0,
+     "n_gt25_own": 52,
+     "top3": [
+      "B'2-3",
+      "B'1-2",
+      "B'4-5"
+     ]
+    },
+    {
+     "i": 151,
+     "region": "Right-Calcarine-sulcus",
+     "max_abs_gain": 0.022,
+     "n_gt25_global": 0,
+     "n_gt25_own": 60,
+     "top3": [
+      "B'2-3",
+      "OR10-11",
+      "B'1-2"
+     ]
+    },
+    {
+     "i": 152,
+     "region": "Right-Cuneus",
+     "max_abs_gain": 0.0154,
+     "n_gt25_global": 0,
+     "n_gt25_own": 81,
+     "top3": [
+      "I'10-11",
+      "B'5-6",
+      "B'2-3"
+     ]
+    },
+    {
+     "i": 153,
+     "region": "Right-Hippocampus-anterior",
+     "max_abs_gain": 2.8773,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "A5-6",
+      "A6-7",
+      "A7-8"
+     ]
+    },
+    {
+     "i": 154,
+     "region": "Right-Hippocampus-posterior",
+     "max_abs_gain": 0.091,
+     "n_gt25_global": 0,
+     "n_gt25_own": 27,
+     "top3": [
+      "A9-10",
+      "A10-11",
+      "A7-8"
+     ]
+    },
+    {
+     "i": 155,
+     "region": "Right-Amygdala",
+     "max_abs_gain": 8.1485,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "A5-6",
+      "A6-7",
+      "A4-5"
+     ]
+    },
+    {
+     "i": 156,
+     "region": "Right-Thalamus",
+     "max_abs_gain": 0.2877,
+     "n_gt25_global": 0,
+     "n_gt25_own": 36,
+     "top3": [
+      "A2-3",
+      "A3-4",
+      "A1-2"
+     ]
+    },
+    {
+     "i": 157,
+     "region": "Right-Caudate-nucleus",
+     "max_abs_gain": 6.5481,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "OR5-6",
+      "OR3-4",
+      "OR4-5"
+     ]
+    },
+    {
+     "i": 158,
+     "region": "Right-Putamen",
+     "max_abs_gain": 2.256,
+     "n_gt25_global": 0,
+     "n_gt25_own": 6,
+     "top3": [
+      "OR5-6",
+      "A7-8",
+      "OR1-2"
+     ]
+    },
+    {
+     "i": 159,
+     "region": "Right-Pallidum",
+     "max_abs_gain": 0.3549,
+     "n_gt25_global": 0,
+     "n_gt25_own": 13,
+     "top3": [
+      "A4-5",
+      "A5-6",
+      "A6-7"
+     ]
+    },
+    {
+     "i": 160,
+     "region": "Right-Nucleus-accumbens",
+     "max_abs_gain": 0.8212,
+     "n_gt25_global": 0,
+     "n_gt25_own": 3,
+     "top3": [
+      "OR5-6",
+      "OR4-5",
+      "OR1-2"
+     ]
+    },
+    {
+     "i": 161,
+     "region": "Right-Cerebellar-cortex",
+     "max_abs_gain": 0.2709,
+     "n_gt25_global": 0,
+     "n_gt25_own": 49,
+     "top3": [
+      "B'2-3",
+      "OR5-6",
+      "B'1-2"
+     ]
+    }
+   ],
+   "global_max": 88.24500038228474,
+   "n_any_gt25_global": 4,
+   "n_ge3_gt25_global": 0,
+   "left_mean": 2.707,
+   "right_mean": 3.208
+  },
+  "n_primed_electrodes": 9
+ }
+}

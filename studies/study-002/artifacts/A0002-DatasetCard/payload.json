@@ -1,0 +1,393 @@
+{
+  "dataset_id": "wang2025-vbt-ins-stim@5367ef4",
+  "study_family_id": "wang2025-vbt-stimulation",
+  "source_doi": "10.1038/s43588-025-00841-6",
+  "source_citation": "Wang HE, Dollomaja B, Triebkorn P, Duma GM, Williamson A, Makhalova J, Lemarechal J-D, Bartolomei F, Jirsa V (2025). Virtual brain twins for stimulation in epilepsy. Nature Computational Science (citation as given in repo README; paper itself not opened in this task).",
+  "repository_url": "https://github.com/HuifangWang/VBT_INS_Stimulation",
+  "repository_commit": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+  "license": "Apache-2.0 (LICENSE file opened, sha256 58d1e17f...d8bd matches manifest)",
+  "data_nature": "SIMULATED. All time series in data/dataSim are forward simulations of virtual patients (directory 'dataSim'; files '*_fit.npz'). Not observed patient recordings.",
+  "reported_subject_count": "not_reported in README; repo layout names two virtual patients (Patient1, Patient2)",
+  "data_access": "verified_present (local copy data/wang-5367ef4, user-approved download; 26/26 files sha256-match data/wang-5367ef4-manifest.csv; no extra files)",
+  "verified_subject_count": 2,
+  "verified_subject_count_note": "2 virtual (simulated) patients, P1 and P2, from file listing and file contents. Not real-patient recordings.",
+  "verified_modalities": [
+    "simulated bipolar SEEG time series (P1: 163 channels; P2: 191 channels)",
+    "simulated 128-channel scalp EEG time series (P1, P2)",
+    "structural connectome SC 162x162 (VEP atlas, symmetric, zero diagonal, max 1; P1 identical across its 4 files, P2 identical across its 4 files)",
+    "region-to-sensor gain matrices (SEEG 163x162 / 191x162; EEG 128x162)",
+    "TI electric-field maps (normal component, 2 electrode pairs E1/E2 x lh/rh) on fsaverage5 ico5 surface",
+    "VEP atlas lookup table (VepMrtrixLut.txt: index 0 Unknown + 162 regions, Left-Frontal-pole .. Right-Cerebellar-cortex)"
+  ],
+  "files_verified": [
+    {
+      "path": "data/dataSim/Patient1/P1_SEEG_EEG_fit.npz",
+      "sha256": "cccc62b702c86d1d82b1ff6b9ba3aec7702567dfe350507a3ed324f7245414fc",
+      "bytes": 1927126,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(1500,) float64",
+        "seeg": "(128, 1500) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(128, 162) float64",
+        "ch_names": "(128,) <U4"
+      },
+      "n_time_samples": 1500,
+      "time_steps_first_last": [
+        5,
+        14995
+      ],
+      "time_step_increment": 10,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 100.0,
+      "n_channels": 128,
+      "signal_key": "seeg",
+      "ch_names_present": "E1..E128 (scalp EEG labels)",
+      "n_regions": 162,
+      "note": "Key is named 'seeg' but holds 128-channel scalp EEG (E1..E128) under SEEG stimulation."
+    },
+    {
+      "path": "data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz",
+      "sha256": "2e9251922f98a538203a8ac17e8261f940bfe70ad33a71a5639543a84409b8bf",
+      "bytes": 2396306,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(1500,) float64",
+        "seeg": "(163, 1500) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(163, 162) float64",
+        "ch_names": "(163,) <U9"
+      },
+      "n_time_samples": 1500,
+      "time_steps_first_last": [
+        5,
+        14995
+      ],
+      "time_step_increment": 10,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 100.0,
+      "n_channels": 163,
+      "signal_key": "seeg",
+      "ch_names_present": "bipolar SEEG, e.g. TB'1-2 ... PP'12-13",
+      "n_regions": 162
+    },
+    {
+      "path": "data/dataSim/Patient1/P1_TI_EEG_fit.npz",
+      "sha256": "de8094ebf9b2b84a5cac15fffb1c408e90243c4594ea6020dabd6220d6eb65a2",
+      "bytes": 2185126,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(1750,) int64",
+        "seeg": "(128, 1750) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(128, 162) float64",
+        "ch_names": "(128,) <U4"
+      },
+      "n_time_samples": 1750,
+      "time_steps_first_last": [
+        0,
+        1749
+      ],
+      "time_step_increment": 1,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": null,
+      "n_channels": 128,
+      "signal_key": "seeg",
+      "ch_names_present": "E1..E128 (scalp EEG labels)",
+      "n_regions": 162,
+      "note": "time_steps are integer sample indices 0..1749 (step 1), unlike the other files; the authors' plot notebook multiplies by 10, implying 10-ms steps (100 Hz). Key 'seeg' holds scalp EEG."
+    },
+    {
+      "path": "data/dataSim/Patient1/P1_TI_SEEG_fit.npz",
+      "sha256": "9ecfc067a87729690be6bcdc9df2e300588502dcd46ec628898c8c8a756efd55",
+      "bytes": 2593106,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(1650,) float64",
+        "seeg": "(163, 1650) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(163, 162) float64",
+        "ch_names": "(163,) <U9"
+      },
+      "n_time_samples": 1650,
+      "time_steps_first_last": [
+        10,
+        16500
+      ],
+      "time_step_increment": 10,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 100.0,
+      "n_channels": 163,
+      "signal_key": "seeg",
+      "ch_names_present": "bipolar SEEG, same 163 labels as P1_SEEG_SEEG",
+      "n_regions": 162
+    },
+    {
+      "path": "data/dataSim/Patient2/P2_SEEG_EEG_fit.npz",
+      "sha256": "408a85607fe4daa7ddcd0f2a344be51337fd28c29cded881a800affbfa213992",
+      "bytes": 1924828,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(1500,) float64",
+        "eeg": "(128, 1500) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(128, 162) float64"
+      },
+      "n_time_samples": 1500,
+      "time_steps_first_last": [
+        8,
+        12000
+      ],
+      "time_step_increment": 8,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 125.0,
+      "n_channels": 128,
+      "signal_key": "eeg",
+      "ch_names_present": "absent (no ch_names key)",
+      "n_regions": 162
+    },
+    {
+      "path": "data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+      "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+      "bytes": 2768838,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(1500,) float64",
+        "seeg": "(191, 1500) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(191, 162) float64",
+        "ch_names": "(191,) <U8"
+      },
+      "n_time_samples": 1500,
+      "time_steps_first_last": [
+        8,
+        12000
+      ],
+      "time_step_increment": 8,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 125.0,
+      "n_channels": 191,
+      "signal_key": "seeg",
+      "ch_names_present": "bipolar SEEG, e.g. TP1-2 ... CC'14-15",
+      "n_regions": 162
+    },
+    {
+      "path": "data/dataSim/Patient2/P2_TI_EEG_fit.npz",
+      "sha256": "677d82bb1011dc8dbf7b2f3be7453258db2fa889593da604c822c7b9411a0d01",
+      "bytes": 1305628,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(900,) float64",
+        "eeg": "(128, 900) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(128, 162) float64"
+      },
+      "n_time_samples": 900,
+      "time_steps_first_last": [
+        10,
+        9000
+      ],
+      "time_step_increment": 10,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 100.0,
+      "n_channels": 128,
+      "signal_key": "eeg",
+      "ch_names_present": "absent (no ch_names key)",
+      "n_regions": 162
+    },
+    {
+      "path": "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz",
+      "sha256": "f019151118717f16f8dfa788d39bb0c7aae86fedf1ee87315b31ccd899aba4c9",
+      "bytes": 1847238,
+      "sha256_match_manifest": true,
+      "data_type": "simulated (virtual patient forward simulation)",
+      "keys": {
+        "time_steps": "(900,) float64",
+        "seeg": "(191, 900) float64",
+        "SC": "(162, 162) float64",
+        "gain": "(191, 162) float64",
+        "ch_names": "(191,) <U8"
+      },
+      "n_time_samples": 900,
+      "time_steps_first_last": [
+        10,
+        9000
+      ],
+      "time_step_increment": 10,
+      "time_step_unit": "not stated in file; consistent with ms (TVB convention) -> see sampling_rate_hz_if_ms",
+      "sampling_rate_hz_if_ms": 100.0,
+      "n_channels": 191,
+      "signal_key": "seeg",
+      "ch_names_present": "bipolar SEEG, same 191 labels as P2_SEEG_ts",
+      "n_regions": 162
+    }
+  ],
+  "sampling_summary": {
+    "P1 (all except P1_TI_EEG)": "time step 10 -> 100 Hz if ms",
+    "P1_TI_EEG": "integer indices, step 1; 100 Hz implied by authors' notebook (x10)",
+    "P2 SEEG-stimulation files": "time step 8 -> 125 Hz if ms",
+    "P2 TI-stimulation files": "time step 10 -> 100 Hz if ms",
+    "caveat": "time units are not stored in the npz; sampling rates are inferred, not stated"
+  },
+  "emf_files_verified": [
+    {
+      "path": "data/EMF/lh.E1_normal_field_fs_ico5.mgh",
+      "sha256": "fbee21e2574129988c6858c9a1d8018e5f0d8dac0118904fc18cc814a63305b6",
+      "bytes": 54199,
+      "sha256_match_manifest": true,
+      "shape": [
+        10242,
+        1,
+        1
+      ],
+      "dtype": ">f4",
+      "value_min": -0.2352,
+      "value_max": 0.2889,
+      "nan_count": 0,
+      "units": "not stated in MGH header (SimNIBS normal-component field; unit to_verify)"
+    },
+    {
+      "path": "data/EMF/lh.E2_normal_field_fs_ico5.mgh",
+      "sha256": "5d31e4c497b283df9871a6715e5122ba64667e077a37af4e673bc519030054e9",
+      "bytes": 54199,
+      "sha256_match_manifest": true,
+      "shape": [
+        10242,
+        1,
+        1
+      ],
+      "dtype": ">f4",
+      "value_min": -0.159,
+      "value_max": 0.157,
+      "nan_count": 0,
+      "units": "not stated in MGH header (SimNIBS normal-component field; unit to_verify)"
+    },
+    {
+      "path": "data/EMF/rh.E1_normal_field_fs_ico5.mgh",
+      "sha256": "ec2b275dfb8fa7eb854809d96b536c845b16f0498b053cf51decaf4059f2a95d",
+      "bytes": 54199,
+      "sha256_match_manifest": true,
+      "shape": [
+        10242,
+        1,
+        1
+      ],
+      "dtype": ">f4",
+      "value_min": -0.1435,
+      "value_max": 0.1155,
+      "nan_count": 0,
+      "units": "not stated in MGH header (SimNIBS normal-component field; unit to_verify)"
+    },
+    {
+      "path": "data/EMF/rh.E2_normal_field_fs_ico5.mgh",
+      "sha256": "27f84bc91f6b58dc4d76d2035ba1c8f79a3f31488f6bcfb798f72b5f95d61b58",
+      "bytes": 54199,
+      "sha256_match_manifest": true,
+      "shape": [
+        10242,
+        1,
+        1
+      ],
+      "dtype": ">f4",
+      "value_min": -0.03661,
+      "value_max": 0.02907,
+      "nan_count": 0,
+      "units": "not stated in MGH header (SimNIBS normal-component field; unit to_verify)"
+    }
+  ],
+  "emf_surface_check": "Each of the 4 .mgh files has 10242 vertices = fsaverage5 / ico5 vertex count per hemisphere (match). Region mapping from fsaverage5 vertices to the 162 VEP regions is NOT provided in the repo (to_verify / needed for TI region mapping).",
+  "other_files_verified": [
+    {
+      "path": "README.md",
+      "sha256": "aab1a9d147f7c1a280e4843578f721643420123d62138cf212d7d2fd8e6ac45e",
+      "content": "paper citation, abstract, dependency list (FreeSurfer 6, MRtrix 0.3.16, GARDEL 1.0, SimNIBS 4.0, Brainstorm3, FSL 5.0.11, Stan 2.21.0, TVB), pointer to tvb-pipeline"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "content": "Apache License 2.0"
+    },
+    {
+      "path": "data/VepMrtrixLut.txt",
+      "sha256": "837e283a2b99dd4bd1b861bb01adefe0826b5de0d08c6bab2db5967b8bbadee5",
+      "content": "163 lines: 0 Unknown + 162 VEP regions"
+    },
+    {
+      "path": "examples/compute_TI_envelope.ipynb",
+      "sha256": "4deae645b04386012b5933790446837d97e6bad8d9c2fa6e7673eec58f2c070f",
+      "content": "code cells read for stimulation method only"
+    },
+    {
+      "path": "examples/stimulation_plot_time_series_P1_TI.ipynb",
+      "sha256": "c8fe5e6c4ccfd8099e0e12b6753dd4d873ca2bd66ee8307b092af3a71f8dfa0b",
+      "content": "code cells read for stimulation/processing facts only"
+    },
+    {
+      "path": "examples/stimulation_plot_time_series_sensor_P2_EEG.ipynb",
+      "sha256": "31316e5a3d538928dde49c3f84411ab7a7730bcba2ea8f7a4a0eb55ea716e0fd",
+      "content": "code cells read for stimulation/processing facts only"
+    }
+  ],
+  "reserved_files_not_opened": [
+    {
+      "path": "examples/Sim_SEEG_nf.ipynb",
+      "bytes": 700150,
+      "sha256": "deb7b68e56d854560d46f5a5273e3666a5084ffe9bc241d9a32915409adac60c",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "examples/Sim_SEEG_nf_dk.ipynb",
+      "bytes": 378363,
+      "sha256": "ab94f7da726887c823dd76a882a5cb9d679cd99b89a8eb7a239fbf30bed26b7b",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "examples/Sim_SEEG_nf_lc.ipynb",
+      "bytes": 30240,
+      "sha256": "6c6f5fd75ef9bd3ec9abe8fb9806337af309c15847292ca70c5ba98993d0ed2a",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "examples/Sim_TI_nf.ipynb",
+      "bytes": 846686,
+      "sha256": "dc840626525df25b78c67803a31a37b4b8f9f4394e2a00782efda91554a5de16",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "data/Patient1_SEEG_stimulation.xlsx",
+      "bytes": 103768,
+      "sha256": "1461762dfa012e366be482d3497768202c335ba775494c6185aba75b45e58611",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "data/Patient1_TI_stimulation.xlsx",
+      "bytes": 103929,
+      "sha256": "762b942ae504cfc73817a8a798a3648efc0cbe9338215d982d0a2da9a5eaa8d1",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "data/Patient2_SEEG_stimulation.xlsx",
+      "bytes": 78204,
+      "sha256": "500ed23500b1d42343c6d1617fe9d84f83ab82f9908318290cf6d53fc64bc6bb",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    },
+    {
+      "path": "data/Patient2_TI_stimulation.xlsx",
+      "bytes": 81075,
+      "sha256": "733ddbc56783f36adf0af5493a8d0761265a9a5eeb1738518a5ecce3ef1e943f",
+      "status": "reserved_not_opened (sha256 matches manifest); needs vault seal"
+    }
+  ],
+  "intervention_linkage": "Simulated interventions only: files are labelled by stimulation type (SEEG-contact stimulation vs TI stimulation) and monitor (SEEG vs EEG). The stimulation parameters and generating model parameters live in the reserved notebooks/spreadsheets and were not opened. No clinical intervention or outcome linkage exists (virtual patients).",
+  "follow_up_definition": "not_applicable (simulated data; no clinical follow-up)",
+  "eligibility": "Virtual patients only. Per protocol A0001: P2 = held-out test patient (P2_SEEG_ts_fit.npz), P1 = development/qualification only. The connectomes/gains are reported by the authors to derive from patient imaging (not verified here); no identifiable data present in opened files.",
+  "cohort_overlap": "Same two virtual patients appear across all 8 npz files (P1: shared SC sha256 prefix 4073b5ab10d2; P2: e3e2dc9f3efa). All derivatives belong to study family wang2025-vbt-stimulation and are not independent subjects. Overlap with other public cohorts not assessed.",
+  "evidence_label": "registry metadata from inspected files; the signals themselves are simulated_result-type data"
+}

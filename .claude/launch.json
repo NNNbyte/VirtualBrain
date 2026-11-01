@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "agents-dashboard",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["system/ui/server.py", "--port", "8765"],
+      "port": 8765
+    },
+    {
+      "name": "reports",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8770", "--bind", "127.0.0.1", "--directory", "reports"],
+      "port": 8770
+    }
+  ]
+}

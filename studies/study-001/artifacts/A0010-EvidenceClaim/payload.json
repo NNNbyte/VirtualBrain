@@ -1,0 +1,56 @@
+{
+  "claim": "SANTE at 7-10 years: median seizure frequency reduction from baseline was 75% at 7 years; focal to bilateral tonic-clonic seizures reduced by 71%; definite+probable SUDEP rate 2.0/1000 person-years.",
+  "intervention_modality": "ANT-DBS",
+  "bibliographic_record": {
+    "authors": "Salanova V, Sperling MR, Gross RE, Irwin CP, Vollhaber JA, Giftakis JE, Fisher RS, SANTÉ Study Group.",
+    "title": "The SANTÉ study at 10 years of follow-up: Effectiveness, safety, and sudden unexpected death in epilepsy.",
+    "journal": "Epilepsia",
+    "year": "2021",
+    "volume": "62",
+    "issue": "6",
+    "pages": "1306-1317",
+    "doi": "10.1111/epi.16895",
+    "pmid": "33830503",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/33830503",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33830503/"
+  },
+  "supporting_passage": "At 7 years, median seizure frequency percent reduction from baseline was 75% (p < .001), with no outcome differences related to prior vagus nerve stimulation or resective surgery. [...] The most severe seizure type, focal to bilateral tonic-clonic, was reduced by 71%. [...] Prior to study closure, 57 active subjects continued therapy at 14 study centers, with follow-up of at least 10 (maximum 14) years.",
+  "supporting_passages": [
+    "At 7 years, median seizure frequency percent reduction from baseline was 75% (p < .001), with no outcome differences related to prior vagus nerve stimulation or resective surgery.",
+    "The most severe seizure type, focal to bilateral tonic-clonic, was reduced by 71%.",
+    "Prior to study closure, 57 active subjects continued therapy at 14 study centers, with follow-up of at least 10 (maximum 14) years."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 33830503, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "110 implanted; 69 in LTFU phase; 57 active at closure (n at 7 years not given in abstract)",
+    "design": "long-term follow-up and continued therapy access phase of RCT",
+    "population": "adults with drug-resistant focal epilepsy (SANTE)",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "median % seizure frequency reduction",
+    "timepoint": "7 years (follow-up to 10-14 years for safety)",
+    "median_pct_reduction": {
+      "84_months": 75
+    },
+    "responder_rate_50pct": "not_reported (in abstract)",
+    "seizure_freedom": "not_reported (in abstract)",
+    "follow_up_months_reported": "84 for efficacy; up to 168 for safety"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer stable favourable long-term efficacy and that reducing most severe seizures may lower SUDEP risk (hypothesis).",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Heavy attrition (110 -> 57 active); stimulation and medication changes allowed - completer bias likely.",
+    "Same patients as Fisher 2010 and Salanova 2015."
+  ],
+  "study_family_id": "fam-SANTE-ANT-DBS-trial"
+}

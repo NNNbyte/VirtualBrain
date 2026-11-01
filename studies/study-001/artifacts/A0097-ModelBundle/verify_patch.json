@@ -1,0 +1,33 @@
+{
+ "patched": {
+  "stan_lp": -4261540.9,
+  "numpy_lp": -4261540.924021375,
+  "diff": 0.024021374993026257,
+  "seconds_log_prob_call": 0.19,
+  "n_lik_terms": 26740,
+  "fully_dropped_channels": [],
+  "time_points_dropped_for_other_channels": 10
+ },
+ "package": {
+  "stan_lp": -4201980.3,
+  "numpy_lp": -4177407.9105750155,
+  "diff": -24572.389424984343,
+  "seconds_log_prob_call": 0.32,
+  "n_lik_terms": 26740,
+  "fully_dropped_channels": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "time_points_dropped_for_other_channels": 0
+ }
+}

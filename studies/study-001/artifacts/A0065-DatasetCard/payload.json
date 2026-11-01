@@ -1,0 +1,64 @@
+{
+  "dataset_id": "openneuro:ds003876 (Epilepsy-iEEG-Interictal-Multicenter-Dataset; source-sink)",
+  "study_family_id": "fam-jhu-sarma-multicenter",
+  "source_doi": "10.18112/openneuro.ds003876.v1.0.2",
+  "release_bound": "OpenNeuro snapshot ds003876:1.0.2 (created 2023-01-24T01:58:40Z; latest of 3 snapshots). All verified fields describe this snapshot.",
+  "repository_url": "https://openneuro.org/datasets/ds003876/versions/1.0.2",
+  "related_publications": [
+    "Li et al., Neural fragility as an EEG marker of the seizure onset zone, Nat Neurosci 24:1465-1474 (2021), doi:10.1038/s41593-021-00901-w (README [1])",
+    "Gunnarsdottir et al., Source-sink connectivity: a novel resting-state EEG marker of the epileptogenic zone, bioRxiv doi:10.1101/2021.10.15.464594 (README [2])"
+  ],
+  "reported_subject_count": "not_reported as a number in README; README lists shared centres NIH, JHH, UMF and states KUMC, University of Pittsburgh and Cleveland Clinic data from the study are not shared",
+  "data_access": "verified_present (public, anonymous; GraphQL snapshot query + versioned S3 URLs of small sidecars; no recordings downloaded)",
+  "licence": "CC0 (v1.0.2 dataset_description.json)",
+  "approx_total_size_gb": 5.52,
+  "approx_total_size_basis": "Recursive walk of snapshot 1.0.2 files: 489 files (+ .gitattributes) / 5520757350 bytes incl. derivatives (152.1 MB) and sourcedata; GraphQL summary (raw BIDS part only, excludes derivatives/sourcedata): totalFiles 343, size 5368598177 bytes (5.37 GB)",
+  "file_formats": [
+    "EDF (54 interictal runs)",
+    "BIDS sidecars: channels.tsv (+rz/epz/soz columns), channels.json, ieeg.json, events.tsv, scans.tsv/json",
+    "derivatives: sourcesink ss_ind .mat, hfo_detection rms_detector hfo_rates .mat",
+    "sourcedata/ieeg_database_all.xlsx (57979 B) - NOT opened (possible clinical/outcome sheet; treated as sealed)"
+  ],
+  "verified_subject_count": 39,
+  "verified_subject_count_basis": "v1.0.2 summary.subjects lists 39 ids and the tree has 39 sub-* directories: NIH1-NIH11 (11), pt1-pt3 (3), PY18N*/PY19N* (8), jh103, jh105 (2), umf001-umf005 (5), rns002/003/004/005/006/009/011/013/014/015 (10). participants.tsv NOT opened (sealed); its row count is not used.",
+  "verified_modalities": {
+    "ieeg": "verified_present, interictal only: 54 EDF runs; session label 'extraoperative'; tasks interictal / interictalasleep / interictalawake; no ictal task. Channel types: rns* all SEEG; NIH*, PY* SEEG; jh*, pt*, umf001-003/005 ECOG; umf004 SEEG",
+    "electrode_localisation": "reported_absent: 0 electrodes.tsv and 0 coordsystem.json in snapshot 1.0.2; only channel names (e.g. LTP, LAM, LHH in sub-rns002) are available",
+    "anatomical_mri_ct_dwi": "reported_absent: no anat/dwi/CT in snapshot tree",
+    "seizure_annotations": "No ictal recordings. Clinician channel labels verified in channels.tsv: 'soz' column present with >=1 'yes' in 39/39 subjects; 'epz' column in a subset; channels.json defines RZ (resected zone, 'estimated region'), EPZ (early propagation zone), SOZ (seizure onset zone). events.tsv holds clip/annotation notes only"
+  },
+  "intervention_linkage": {
+    "basis": "v1.0.2 README ('Some subjects, namely with the rns prefix in their subject ID were treated with RNS rather then surgical resection/ablation') + per-run channels.tsv/channels.json columns inspected for all 54 runs. participants.tsv and sourcedata xlsx not used.",
+    "by_subject_group": {
+      "RNS-treated (README): sub-rns002, rns003, rns004, rns005, rns006, rns009, rns011, rns013, rns014, rns015 (n=10)": "intervention = responsive neurostimulation (README). channels.tsv has NO 'rz' column in 10/10 (consistent with no resection); 'soz' column with 'yes' channels in 10/10; 'epz' column in 8/10 (absent rns002, rns003). Recordings are pre-implant extraoperative interictal SEEG (128 channels in 9/10, 46 in rns009). Centre not stated per subject in README -> to_verify",
+      "Resection/ablation (README default for non-rns ids): NIH1-11, pt1-3, PY18N002/007/013/015, PY19N012/015/023/026, jh103, jh105, umf001-005 (n=29)": "contact-level 'rz' (clinician-marked resected zone, described in channels.json as 'the estimated region; for rigorous annotation, utilize the post-surgical MRI') present with >=1 'yes' channel in 23/29; absent (no rz column) in 6/29: PY18N007, PY18N015, PY19N012, PY19N015, PY19N023, PY19N026. Resection vs ablation per subject not distinguished in sidecars"
+    },
+    "correction": "A0036 relayed Omni-iEEG has_resection=1 for all 39 subjects; this is contradicted by the README for the 10 rns* subjects. Do not use Omni-iEEG has_resection for these ids.",
+    "stimulation_information": {
+      "rns_device_settings": "reported_absent: no stimulation amplitude, pulse width, frequency, burst duration, charge density or therapy schedule in README, dataset_description, participants.json, channels.tsv/json, ieeg.json (Manufacturer 'n/a'), events.tsv or scans.tsv/json",
+      "rns_lead_locations": "reported_absent: no lead/contact designation for the implanted RNS device and no electrode coordinates; channels.tsv describes the diagnostic SEEG implant only",
+      "detection_parameters": "reported_absent: no detection settings, long-episode/saturation counts or device-recorded ECoG",
+      "post_implant_recordings": "reported_absent: only the pre-implant 'extraoperative' session exists",
+      "derivatives": "derivatives contain source-sink indices and HFO rates for ids sub-002..sub-015 (numbering matches rns ids; mapping to sub-rnsNNN inferred, not stated) plus unshared-site ids (la*, nl*, upmc*, pt4-pt13) - no stimulation fields",
+      "unopened_possible_source": "sourcedata/ieeg_database_all.xlsx (58 KB) may contain clinical columns; it was not opened because clinical/outcome spreadsheets are sealed for this study. Whether it holds RNS lead/target information is to_verify by an authorized vault/column-level review"
+    }
+  },
+  "outcome_fields_present": "Per participants.json (dictionary only): outcome (S/F/NR, described as 'after surgery'), engel_score (1-4, -1 = no surgery or outcome), ilae_score (1-6, -1), years_follow_up, site. Values are in participants.tsv, SEALED; no outcome values or counts are reported here. How RNS-treated subjects are coded (e.g. NR or -1 vs a post-RNS Engel class) is unknown -> to_verify via vault.",
+  "follow_up_definition": "participants.json: years_follow_up = 'The number of years of follow up since the surgery.' Per-patient values sealed -> to_verify; for RNS subjects the reference date (implant vs other) is not defined",
+  "eligibility": "Resection arm: low fit (interictal only, no coordinates, clinician-estimated RZ in 23/29). Stimulation arm: the 10 rns* subjects give a verified treatment-modality label (RNS) plus pre-implant interictal SEEG with clinician SOZ/EPZ channel labels, but no RNS settings, lead locations, detection/stimulation parameters, coordinates or post-implant data. Usable at most as a weak label-level RNS group (e.g. SOZ-channel sets as an unverified proxy for stimulation targets), conditional on vault confirmation that post-RNS outcome labels exist with adequate follow-up; not usable to validate stimulation parameters or target geometry.",
+  "cohort_overlap": "README: NIH pt1, pt2, pt3 and JHH jh103, jh105 are also in ds003029 (pt1=pt01, pt2, pt3, jh103, jh105) where ictal snapshots are stored (fam-jhu-sarma-multicenter, A0035). Present in Omni-iEEG as sub-sourcesink* (A0040) - not independent.",
+  "changes_vs_superseded": "Supersedes A0036: intervention_linkage now per subject group from README + sidecars (10 RNS / 29 resection-ablation); Omni has_resection relay removed; stimulation information itemised; participants.tsv-derived site counts, follow-up strings and 51-row count removed (sealed source); size basis tied to snapshot 1.0.2.",
+  "metadata_files_inspected_sha256": {
+    "README (v1.0.2)": "4e145336a078402002972d4c3ad42b48a38a45f281c9dd6f6cf71de470f8fc42",
+    "CHANGES (v1.0.2)": "d93c676d16cd981a9584b1877e0731730dfc917d21bee34f8c088512ab6133af",
+    "dataset_description.json (v1.0.2)": "85626792f14679bc6a3c7ab4c6a5613fa27deac75987802dbb5d9f5baf1d5e4b",
+    "participants.json (v1.0.2, dictionary only)": "fe0273240862a183fc1d9d653862d54b76b0b23198c434c729de965080c0274c",
+    "sub-rns002 run-01 channels.tsv": "f29cc0d30a3a234c40973cc7cffb94b55263cdefd947b7e5464c942e1280f0a8",
+    "sub-rns002 run-01 channels.json": "8116b77c6cfc6cb12f1f049714bbf4b79f3ab4ce0d113f2d04c683cabcfb0598",
+    "sub-rns002 run-01 ieeg.json": "7ca9bb21a4fe50d461615295ed25ecdce29ccbb8412df9149fbb87022a6a2127",
+    "all 54 runs' channels/ieeg/events + 39 scans.tsv bundle (work/T0010/raw/ds003876_sidecars.json)": "a8c19413c41409f07888196a5b57fc888b86d9d31133487fa72cf762d9b96e76",
+    "snapshot file tree (work/T0010/raw/ds003876_v102_tree.json)": "b5cf9a9ffce7d339aca8dc75b16487534d86c512765415cbcb3e07c530816444"
+  },
+  "files_not_opened": "participants.tsv (sealed); sourcedata/ieeg_database_all.xlsx (possible clinical sheet, treated as sealed); no EDF recordings; derivative .mat files",
+  "checked_on": "2026-11-01"
+}

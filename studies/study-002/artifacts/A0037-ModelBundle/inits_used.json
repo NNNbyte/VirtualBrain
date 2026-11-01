@@ -1,0 +1,86 @@
+{
+ "n_distinct_optima": 24,
+ "jitter_sd": 0.05,
+ "init_sources": [
+  {
+   "chain": 1,
+   "opt_run": 0,
+   "opt_lp": 1254.2741
+  },
+  {
+   "chain": 2,
+   "opt_run": 12,
+   "opt_lp": 1246.4906
+  },
+  {
+   "chain": 3,
+   "opt_run": 6,
+   "opt_lp": 1199.5891
+  },
+  {
+   "chain": 4,
+   "opt_run": 7,
+   "opt_lp": 1190.4724
+  },
+  {
+   "chain": 5,
+   "opt_run": 20,
+   "opt_lp": 1177.0195
+  },
+  {
+   "chain": 6,
+   "opt_run": 8,
+   "opt_lp": 1143.6932
+  },
+  {
+   "chain": 7,
+   "opt_run": 18,
+   "opt_lp": 1142.0034
+  },
+  {
+   "chain": 8,
+   "opt_run": 23,
+   "opt_lp": 1091.1257
+  },
+  {
+   "chain": 9,
+   "opt_run": 2,
+   "opt_lp": 1039.6538
+  },
+  {
+   "chain": 10,
+   "opt_run": 17,
+   "opt_lp": 1007.3549
+  },
+  {
+   "chain": 11,
+   "opt_run": 13,
+   "opt_lp": 992.64994
+  },
+  {
+   "chain": 12,
+   "opt_run": 21,
+   "opt_lp": 970.24754
+  },
+  {
+   "chain": 13,
+   "opt_run": 4,
+   "opt_lp": 947.73858
+  },
+  {
+   "chain": 14,
+   "opt_run": 22,
+   "opt_lp": 889.71677
+  },
+  {
+   "chain": 15,
+   "opt_run": 15,
+   "opt_lp": 861.29649
+  },
+  {
+   "chain": 16,
+   "opt_run": 16,
+   "opt_lp": 835.95449
+  }
+ ]
+}

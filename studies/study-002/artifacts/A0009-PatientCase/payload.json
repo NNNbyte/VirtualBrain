@@ -1,0 +1,1327 @@
+{
+ "case_id": "P2",
+ "dataset_id": "wang2025-vbt-ins-stim@5367ef4",
+ "subject_linkage": "Wang 2025 virtual 'Patient2' (repo directory data/dataSim/Patient2). Pseudonymous; no identifiable data. Virtual patient, simulated data only.",
+ "split_role": "test (per protocol A0001 split_rules)",
+ "sessions": [
+  {
+   "session_id": "P2-ses-seegstim",
+   "label": "simulated SEEG under SEEG-contact stimulation (TEST recording)",
+   "file": "data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+   "role_in_protocol": "primary test recording for EZ recovery (A0001)"
+  },
+  {
+   "session_id": "P2-ses-tistim",
+   "label": "simulated SEEG under temporal-interference (TI) stimulation",
+   "file": "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz",
+   "role_in_protocol": "second session; same virtual patient, same SC/gain/channels"
+  }
+ ],
+ "recordings": [
+  {
+   "session_id": "P2-ses-seegstim",
+   "file": "data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+   "format": "NumPy .npz (allow_pickle=False loads)",
+   "keys": {
+    "time_steps": [
+     [
+      1500
+     ],
+     "float64"
+    ],
+    "seeg": [
+     [
+      191,
+      1500
+     ],
+     "float64"
+    ],
+    "SC": [
+     [
+      162,
+      162
+     ],
+     "float64"
+    ],
+    "gain": [
+     [
+      191,
+      162
+     ],
+     "float64"
+    ],
+    "ch_names": [
+     [
+      191
+     ],
+     "<U8"
+    ]
+   },
+   "signal_key": "seeg",
+   "n_channels": 191,
+   "n_samples": 1500,
+   "time_steps_first_last": [
+    8.0,
+    12000.0
+   ],
+   "time_step_increment": [
+    8.0
+   ],
+   "time_unit": "not stored in file; ms assumed (TVB monitor convention)",
+   "sample_rate_hz": 125.0,
+   "sample_rate_status": "inferred (time_steps increment, ms assumed)",
+   "duration_ms": 12000.0,
+   "data_nature": "SIMULATED forward model output (virtual patient), not an observed recording"
+  },
+  {
+   "session_id": "P2-ses-tistim",
+   "file": "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz",
+   "format": "NumPy .npz (allow_pickle=False loads)",
+   "keys": {
+    "time_steps": [
+     [
+      900
+     ],
+     "float64"
+    ],
+    "seeg": [
+     [
+      191,
+      900
+     ],
+     "float64"
+    ],
+    "SC": [
+     [
+      162,
+      162
+     ],
+     "float64"
+    ],
+    "gain": [
+     [
+      191,
+      162
+     ],
+     "float64"
+    ],
+    "ch_names": [
+     [
+      191
+     ],
+     "<U8"
+    ]
+   },
+   "signal_key": "seeg",
+   "n_channels": 191,
+   "n_samples": 900,
+   "time_steps_first_last": [
+    10.0,
+    9000.0
+   ],
+   "time_step_increment": [
+    10.0
+   ],
+   "time_unit": "not stored in file; ms assumed (TVB monitor convention)",
+   "sample_rate_hz": 100.0,
+   "sample_rate_status": "inferred (time_steps increment, ms assumed)",
+   "duration_ms": 9000.0,
+   "data_nature": "SIMULATED forward model output (virtual patient), not an observed recording"
+  }
+ ],
+ "checksums": [
+  {
+   "path": "data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+   "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+   "bytes": 2768838,
+   "manifest": "data/wang-5367ef4-manifest.csv",
+   "match": true
+  },
+  {
+   "path": "data/dataSim/Patient2/P2_TI_SEEG_ts_fit.npz",
+   "sha256": "f019151118717f16f8dfa788d39bb0c7aae86fedf1ee87315b31ccd899aba4c9",
+   "bytes": 1847238,
+   "manifest": "data/wang-5367ef4-manifest.csv",
+   "match": true
+  },
+  {
+   "path": "data/VepMrtrixLut.txt",
+   "sha256": "837e283a2b99dd4bd1b861bb01adefe0826b5de0d08c6bab2db5967b8bbadee5",
+   "bytes": 14501,
+   "manifest": "data/wang-5367ef4-manifest.csv",
+   "match": true
+  },
+  {
+   "array": "SC (both files)",
+   "sha256_of_float64_bytes": "e3e2dc9f3efa8eceda92136f9fa3e14cc75f96dad3d9870f8f510416ff755d87"
+  },
+  {
+   "array": "gain (both files)",
+   "sha256_of_float64_bytes": "25f0330d4ea4fa67394a6a8dec6d6d3d2f2adee371c18bfc2fbe4b07d7bb04b6"
+  }
+ ],
+ "anatomy": {
+  "atlas": "VEP atlas, 162 regions (data/VepMrtrixLut.txt: index 0 Unknown + 1..162)",
+  "regions": [
+   {
+    "npz_col": 0,
+    "lut_index": 1,
+    "name": "Left-Frontal-pole"
+   },
+   {
+    "npz_col": 1,
+    "lut_index": 2,
+    "name": "Left-Orbito-frontal-cortex"
+   },
+   {
+    "npz_col": 2,
+    "lut_index": 3,
+    "name": "Left-Gyrus-rectus"
+   },
+   {
+    "npz_col": 3,
+    "lut_index": 4,
+    "name": "Left-F3-Pars-Orbitalis"
+   },
+   {
+    "npz_col": 4,
+    "lut_index": 5,
+    "name": "Left-F3-Pars-triangularis"
+   },
+   {
+    "npz_col": 5,
+    "lut_index": 6,
+    "name": "Left-F3-pars-opercularis"
+   },
+   {
+    "npz_col": 6,
+    "lut_index": 7,
+    "name": "Left-Inferior-frontal-sulcus"
+   },
+   {
+    "npz_col": 7,
+    "lut_index": 8,
+    "name": "Left-F2-rostral"
+   },
+   {
+    "npz_col": 8,
+    "lut_index": 9,
+    "name": "Left-F2-caudal"
+   },
+   {
+    "npz_col": 9,
+    "lut_index": 10,
+    "name": "Left-Middle-frontal-sulcus"
+   },
+   {
+    "npz_col": 10,
+    "lut_index": 11,
+    "name": "Left-SFS-rostral"
+   },
+   {
+    "npz_col": 11,
+    "lut_index": 12,
+    "name": "Left-SFS-caudal"
+   },
+   {
+    "npz_col": 12,
+    "lut_index": 13,
+    "name": "Left-F1-mesial-prefrontal"
+   },
+   {
+    "npz_col": 13,
+    "lut_index": 14,
+    "name": "Left-PreSMA"
+   },
+   {
+    "npz_col": 14,
+    "lut_index": 15,
+    "name": "Left-SMA"
+   },
+   {
+    "npz_col": 15,
+    "lut_index": 16,
+    "name": "Left-F1-lateral-prefrontal"
+   },
+   {
+    "npz_col": 16,
+    "lut_index": 17,
+    "name": "Left-F1-lateral-premotor"
+   },
+   {
+    "npz_col": 17,
+    "lut_index": 18,
+    "name": "Left-Subcallosal-area"
+   },
+   {
+    "npz_col": 18,
+    "lut_index": 19,
+    "name": "Left-Precentral-sulcus-inferior-part"
+   },
+   {
+    "npz_col": 19,
+    "lut_index": 20,
+    "name": "Left-Precentral-sulcus-superior-part"
+   },
+   {
+    "npz_col": 20,
+    "lut_index": 21,
+    "name": "Left-Precentral-gyrus-head-face"
+   },
+   {
+    "npz_col": 21,
+    "lut_index": 22,
+    "name": "Left-Precentral-gyrus-upper-limb"
+   },
+   {
+    "npz_col": 22,
+    "lut_index": 23,
+    "name": "Left-Central-sulcus-head-face"
+   },
+   {
+    "npz_col": 23,
+    "lut_index": 24,
+    "name": "Left-Central-sulcus-upper-limb"
+   },
+   {
+    "npz_col": 24,
+    "lut_index": 25,
+    "name": "Left-Paracentral-lobule"
+   },
+   {
+    "npz_col": 25,
+    "lut_index": 26,
+    "name": "Left-Central-operculum"
+   },
+   {
+    "npz_col": 26,
+    "lut_index": 27,
+    "name": "Left-Parietal-operculum"
+   },
+   {
+    "npz_col": 27,
+    "lut_index": 28,
+    "name": "Left-Anterior-cingulate-cortex"
+   },
+   {
+    "npz_col": 28,
+    "lut_index": 29,
+    "name": "Left-Middle-cingulate-cortex-anterior-part"
+   },
+   {
+    "npz_col": 29,
+    "lut_index": 30,
+    "name": "Left-Middle-cingulate-cortex-posterior-part"
+   },
+   {
+    "npz_col": 30,
+    "lut_index": 31,
+    "name": "Left-Posterior-cingulate-cortex-dorsal"
+   },
+   {
+    "npz_col": 31,
+    "lut_index": 32,
+    "name": "Left-Posterior-cingulate-cortex-retrosplenial-gyrus"
+   },
+   {
+    "npz_col": 32,
+    "lut_index": 33,
+    "name": "Left-Insula-gyri-brevi"
+   },
+   {
+    "npz_col": 33,
+    "lut_index": 34,
+    "name": "Left-Insula-gyri-longi"
+   },
+   {
+    "npz_col": 34,
+    "lut_index": 35,
+    "name": "Left-Temporal-pole"
+   },
+   {
+    "npz_col": 35,
+    "lut_index": 36,
+    "name": "Left-T1-planum-polare"
+   },
+   {
+    "npz_col": 36,
+    "lut_index": 37,
+    "name": "Left-Gyrus-of-Heschl"
+   },
+   {
+    "npz_col": 37,
+    "lut_index": 38,
+    "name": "Left-T1-planum-temporale"
+   },
+   {
+    "npz_col": 38,
+    "lut_index": 39,
+    "name": "Left-T1-lateral-anterior"
+   },
+   {
+    "npz_col": 39,
+    "lut_index": 40,
+    "name": "Left-T1-lateral-posterior"
+   },
+   {
+    "npz_col": 40,
+    "lut_index": 41,
+    "name": "Left-STS-anterior"
+   },
+   {
+    "npz_col": 41,
+    "lut_index": 42,
+    "name": "Left-STS-posterior"
+   },
+   {
+    "npz_col": 42,
+    "lut_index": 43,
+    "name": "Left-ITS-anterior"
+   },
+   {
+    "npz_col": 43,
+    "lut_index": 44,
+    "name": "Left-ITS-posterior"
+   },
+   {
+    "npz_col": 44,
+    "lut_index": 45,
+    "name": "Left-T2-anterior"
+   },
+   {
+    "npz_col": 45,
+    "lut_index": 46,
+    "name": "Left-T2-posterior"
+   },
+   {
+    "npz_col": 46,
+    "lut_index": 47,
+    "name": "Left-T3-anterior"
+   },
+   {
+    "npz_col": 47,
+    "lut_index": 48,
+    "name": "Left-T3-posterior"
+   },
+   {
+    "npz_col": 48,
+    "lut_index": 49,
+    "name": "Left-Fusiform-gyrus"
+   },
+   {
+    "npz_col": 49,
+    "lut_index": 50,
+    "name": "Left-Occipito-temporal-sulcus"
+   },
+   {
+    "npz_col": 50,
+    "lut_index": 51,
+    "name": "Left-Collateral-sulcus"
+   },
+   {
+    "npz_col": 51,
+    "lut_index": 52,
+    "name": "Left-Lingual-sulcus"
+   },
+   {
+    "npz_col": 52,
+    "lut_index": 53,
+    "name": "Left-Parahippocampal-cortex"
+   },
+   {
+    "npz_col": 53,
+    "lut_index": 54,
+    "name": "Left-Rhinal-cortex"
+   },
+   {
+    "npz_col": 54,
+    "lut_index": 55,
+    "name": "Left-Postcentral-gyrus"
+   },
+   {
+    "npz_col": 55,
+    "lut_index": 56,
+    "name": "Left-Postcentral-sulcus"
+   },
+   {
+    "npz_col": 56,
+    "lut_index": 57,
+    "name": "Left-Superior-parietal-lobule-P1"
+   },
+   {
+    "npz_col": 57,
+    "lut_index": 58,
+    "name": "Left-Supramarginal-anterior"
+   },
+   {
+    "npz_col": 58,
+    "lut_index": 59,
+    "name": "Left-Supramarginal-posterior"
+   },
+   {
+    "npz_col": 59,
+    "lut_index": 60,
+    "name": "Left-Angular-gyrus"
+   },
+   {
+    "npz_col": 60,
+    "lut_index": 61,
+    "name": "Left-Intraparietal-sulcus"
+   },
+   {
+    "npz_col": 61,
+    "lut_index": 62,
+    "name": "Left-Precuneus"
+   },
+   {
+    "npz_col": 62,
+    "lut_index": 63,
+    "name": "Left-Marginal-branch-of-the-cingulate-sulcus"
+   },
+   {
+    "npz_col": 63,
+    "lut_index": 64,
+    "name": "Left-Parieto-occipital-sulcus"
+   },
+   {
+    "npz_col": 64,
+    "lut_index": 65,
+    "name": "Left-Anterior-occipital-sulcus-and-preoccipital-notch"
+   },
+   {
+    "npz_col": 65,
+    "lut_index": 66,
+    "name": "Left-O3"
+   },
+   {
+    "npz_col": 66,
+    "lut_index": 67,
+    "name": "Left-O2"
+   },
+   {
+    "npz_col": 67,
+    "lut_index": 68,
+    "name": "Left-O1"
+   },
+   {
+    "npz_col": 68,
+    "lut_index": 69,
+    "name": "Left-Occipital-pole"
+   },
+   {
+    "npz_col": 69,
+    "lut_index": 70,
+    "name": "Left-Lingual-gyrus"
+   },
+   {
+    "npz_col": 70,
+    "lut_index": 71,
+    "name": "Left-Calcarine-sulcus"
+   },
+   {
+    "npz_col": 71,
+    "lut_index": 72,
+    "name": "Left-Cuneus"
+   },
+   {
+    "npz_col": 72,
+    "lut_index": 73,
+    "name": "Left-Hippocampus-anterior"
+   },
+   {
+    "npz_col": 73,
+    "lut_index": 74,
+    "name": "Left-Hippocampus-posterior"
+   },
+   {
+    "npz_col": 74,
+    "lut_index": 75,
+    "name": "Left-Amygdala"
+   },
+   {
+    "npz_col": 75,
+    "lut_index": 76,
+    "name": "Left-Thalamus"
+   },
+   {
+    "npz_col": 76,
+    "lut_index": 77,
+    "name": "Left-Caudate-nucleus"
+   },
+   {
+    "npz_col": 77,
+    "lut_index": 78,
+    "name": "Left-Putamen"
+   },
+   {
+    "npz_col": 78,
+    "lut_index": 79,
+    "name": "Left-Pallidum"
+   },
+   {
+    "npz_col": 79,
+    "lut_index": 80,
+    "name": "Left-Nucleus-accumbens"
+   },
+   {
+    "npz_col": 80,
+    "lut_index": 81,
+    "name": "Left-Cerebellar-cortex"
+   },
+   {
+    "npz_col": 81,
+    "lut_index": 82,
+    "name": "Right-Frontal-pole"
+   },
+   {
+    "npz_col": 82,
+    "lut_index": 83,
+    "name": "Right-Orbito-frontal-cortex"
+   },
+   {
+    "npz_col": 83,
+    "lut_index": 84,
+    "name": "Right-Gyrus-rectus"
+   },
+   {
+    "npz_col": 84,
+    "lut_index": 85,
+    "name": "Right-F3-Pars-Orbitalis"
+   },
+   {
+    "npz_col": 85,
+    "lut_index": 86,
+    "name": "Right-F3-Pars-triangularis"
+   },
+   {
+    "npz_col": 86,
+    "lut_index": 87,
+    "name": "Right-F3-pars-opercularis"
+   },
+   {
+    "npz_col": 87,
+    "lut_index": 88,
+    "name": "Right-Inferior-frontal-sulcus"
+   },
+   {
+    "npz_col": 88,
+    "lut_index": 89,
+    "name": "Right-F2-rostral"
+   },
+   {
+    "npz_col": 89,
+    "lut_index": 90,
+    "name": "Right-F2-caudal"
+   },
+   {
+    "npz_col": 90,
+    "lut_index": 91,
+    "name": "Right-Middle-frontal-sulcus"
+   },
+   {
+    "npz_col": 91,
+    "lut_index": 92,
+    "name": "Right-SFS-rostral"
+   },
+   {
+    "npz_col": 92,
+    "lut_index": 93,
+    "name": "Right-SFS-caudal"
+   },
+   {
+    "npz_col": 93,
+    "lut_index": 94,
+    "name": "Right-F1-mesial-prefrontal"
+   },
+   {
+    "npz_col": 94,
+    "lut_index": 95,
+    "name": "Right-PreSMA"
+   },
+   {
+    "npz_col": 95,
+    "lut_index": 96,
+    "name": "Right-SMA"
+   },
+   {
+    "npz_col": 96,
+    "lut_index": 97,
+    "name": "Right-F1-lateral-prefrontal"
+   },
+   {
+    "npz_col": 97,
+    "lut_index": 98,
+    "name": "Right-F1-lateral-premotor"
+   },
+   {
+    "npz_col": 98,
+    "lut_index": 99,
+    "name": "Right-Subcallosal-area"
+   },
+   {
+    "npz_col": 99,
+    "lut_index": 100,
+    "name": "Right-Precentral-sulcus-inferior-part"
+   },
+   {
+    "npz_col": 100,
+    "lut_index": 101,
+    "name": "Right-Precentral-sulcus-superior-part"
+   },
+   {
+    "npz_col": 101,
+    "lut_index": 102,
+    "name": "Right-Precentral-gyrus-head-face"
+   },
+   {
+    "npz_col": 102,
+    "lut_index": 103,
+    "name": "Right-Precentral-gyrus-upper-limb"
+   },
+   {
+    "npz_col": 103,
+    "lut_index": 104,
+    "name": "Right-Central-sulcus-head-face"
+   },
+   {
+    "npz_col": 104,
+    "lut_index": 105,
+    "name": "Right-Central-sulcus-upper-limb"
+   },
+   {
+    "npz_col": 105,
+    "lut_index": 106,
+    "name": "Right-Paracentral-lobule"
+   },
+   {
+    "npz_col": 106,
+    "lut_index": 107,
+    "name": "Right-Central-operculum"
+   },
+   {
+    "npz_col": 107,
+    "lut_index": 108,
+    "name": "Right-Parietal-operculum"
+   },
+   {
+    "npz_col": 108,
+    "lut_index": 109,
+    "name": "Right-Anterior-cingulate-cortex"
+   },
+   {
+    "npz_col": 109,
+    "lut_index": 110,
+    "name": "Right-Middle-cingulate-cortex-anterior-part"
+   },
+   {
+    "npz_col": 110,
+    "lut_index": 111,
+    "name": "Right-Middle-cingulate-cortex-posterior-part"
+   },
+   {
+    "npz_col": 111,
+    "lut_index": 112,
+    "name": "Right-Posterior-cingulate-cortex-dorsal"
+   },
+   {
+    "npz_col": 112,
+    "lut_index": 113,
+    "name": "Right-Posterior-cingulate-cortex-retrosplenial-gyrus"
+   },
+   {
+    "npz_col": 113,
+    "lut_index": 114,
+    "name": "Right-Insula-gyri-brevi"
+   },
+   {
+    "npz_col": 114,
+    "lut_index": 115,
+    "name": "Right-Insula-gyri-longi"
+   },
+   {
+    "npz_col": 115,
+    "lut_index": 116,
+    "name": "Right-Temporal-pole"
+   },
+   {
+    "npz_col": 116,
+    "lut_index": 117,
+    "name": "Right-T1-planum-polare"
+   },
+   {
+    "npz_col": 117,
+    "lut_index": 118,
+    "name": "Right-Gyrus-of-Heschl"
+   },
+   {
+    "npz_col": 118,
+    "lut_index": 119,
+    "name": "Right-T1-planum-temporale"
+   },
+   {
+    "npz_col": 119,
+    "lut_index": 120,
+    "name": "Right-T1-lateral-anterior"
+   },
+   {
+    "npz_col": 120,
+    "lut_index": 121,
+    "name": "Right-T1-lateral-posterior"
+   },
+   {
+    "npz_col": 121,
+    "lut_index": 122,
+    "name": "Right-STS-anterior"
+   },
+   {
+    "npz_col": 122,
+    "lut_index": 123,
+    "name": "Right-STS-posterior"
+   },
+   {
+    "npz_col": 123,
+    "lut_index": 124,
+    "name": "Right-ITS-anterior"
+   },
+   {
+    "npz_col": 124,
+    "lut_index": 125,
+    "name": "Right-ITS-posterior"
+   },
+   {
+    "npz_col": 125,
+    "lut_index": 126,
+    "name": "Right-T2-anterior"
+   },
+   {
+    "npz_col": 126,
+    "lut_index": 127,
+    "name": "Right-T2-posterior"
+   },
+   {
+    "npz_col": 127,
+    "lut_index": 128,
+    "name": "Right-T3-anterior"
+   },
+   {
+    "npz_col": 128,
+    "lut_index": 129,
+    "name": "Right-T3-posterior"
+   },
+   {
+    "npz_col": 129,
+    "lut_index": 130,
+    "name": "Right-Fusiform-gyrus"
+   },
+   {
+    "npz_col": 130,
+    "lut_index": 131,
+    "name": "Right-Occipito-temporal-sulcus"
+   },
+   {
+    "npz_col": 131,
+    "lut_index": 132,
+    "name": "Right-Collateral-sulcus"
+   },
+   {
+    "npz_col": 132,
+    "lut_index": 133,
+    "name": "Right-Lingual-sulcus"
+   },
+   {
+    "npz_col": 133,
+    "lut_index": 134,
+    "name": "Right-Parahippocampal-cortex"
+   },
+   {
+    "npz_col": 134,
+    "lut_index": 135,
+    "name": "Right-Rhinal-cortex"
+   },
+   {
+    "npz_col": 135,
+    "lut_index": 136,
+    "name": "Right-Postcentral-gyrus"
+   },
+   {
+    "npz_col": 136,
+    "lut_index": 137,
+    "name": "Right-Postcentral-sulcus"
+   },
+   {
+    "npz_col": 137,
+    "lut_index": 138,
+    "name": "Right-Superior-parietal-lobule-P1"
+   },
+   {
+    "npz_col": 138,
+    "lut_index": 139,
+    "name": "Right-Supramarginal-anterior"
+   },
+   {
+    "npz_col": 139,
+    "lut_index": 140,
+    "name": "Right-Supramarginal-posterior"
+   },
+   {
+    "npz_col": 140,
+    "lut_index": 141,
+    "name": "Right-Angular-gyrus"
+   },
+   {
+    "npz_col": 141,
+    "lut_index": 142,
+    "name": "Right-Intraparietal-sulcus"
+   },
+   {
+    "npz_col": 142,
+    "lut_index": 143,
+    "name": "Right-Precuneus"
+   },
+   {
+    "npz_col": 143,
+    "lut_index": 144,
+    "name": "Right-Marginal-branch-of-the-cingulate-sulcus"
+   },
+   {
+    "npz_col": 144,
+    "lut_index": 145,
+    "name": "Right-Parieto-occipital-sulcus"
+   },
+   {
+    "npz_col": 145,
+    "lut_index": 146,
+    "name": "Right-Anterior-occipital-sulcus-and-preoccipital-notch"
+   },
+   {
+    "npz_col": 146,
+    "lut_index": 147,
+    "name": "Right-O3"
+   },
+   {
+    "npz_col": 147,
+    "lut_index": 148,
+    "name": "Right-O2"
+   },
+   {
+    "npz_col": 148,
+    "lut_index": 149,
+    "name": "Right-O1"
+   },
+   {
+    "npz_col": 149,
+    "lut_index": 150,
+    "name": "Right-Occipital-pole"
+   },
+   {
+    "npz_col": 150,
+    "lut_index": 151,
+    "name": "Right-Lingual-gyrus"
+   },
+   {
+    "npz_col": 151,
+    "lut_index": 152,
+    "name": "Right-Calcarine-sulcus"
+   },
+   {
+    "npz_col": 152,
+    "lut_index": 153,
+    "name": "Right-Cuneus"
+   },
+   {
+    "npz_col": 153,
+    "lut_index": 154,
+    "name": "Right-Hippocampus-anterior"
+   },
+   {
+    "npz_col": 154,
+    "lut_index": 155,
+    "name": "Right-Hippocampus-posterior"
+   },
+   {
+    "npz_col": 155,
+    "lut_index": 156,
+    "name": "Right-Amygdala"
+   },
+   {
+    "npz_col": 156,
+    "lut_index": 157,
+    "name": "Right-Thalamus"
+   },
+   {
+    "npz_col": 157,
+    "lut_index": 158,
+    "name": "Right-Caudate-nucleus"
+   },
+   {
+    "npz_col": 158,
+    "lut_index": 159,
+    "name": "Right-Putamen"
+   },
+   {
+    "npz_col": 159,
+    "lut_index": 160,
+    "name": "Right-Pallidum"
+   },
+   {
+    "npz_col": 160,
+    "lut_index": 161,
+    "name": "Right-Nucleus-accumbens"
+   },
+   {
+    "npz_col": 161,
+    "lut_index": 162,
+    "name": "Right-Cerebellar-cortex"
+   }
+  ],
+  "region_order_note": "npz SC/gain columns assumed to follow LUT indices 1..162 in order (npz carries no region-label key; to_verify against authors' code). 162 = 162 LUT regions, count matches.",
+  "structural_connectivity": {
+   "shape": [
+    162,
+    162
+   ],
+   "symmetric": true,
+   "zero_diagonal": true,
+   "min": 0.0,
+   "max": 1.0,
+   "density_nonzero": 0.7959,
+   "normalization": "max-normalized to 1 (exact transform not stated in npz)",
+   "identical_across_sessions": true
+  },
+  "gain": {
+   "shape": [
+    191,
+    162
+   ],
+   "min": 3.275870908980849e-07,
+   "max": 88.24500038228474,
+   "nan": 0,
+   "zero_rows": 0,
+   "zero_cols": 0,
+   "meaning": "region-to-bipolar-sensor gain (191 bipolar channels x 162 regions); units not declared",
+   "identical_across_sessions": true
+  },
+  "mri": "reported_absent: no MRI, surface, or volume files for P2 in the repo",
+  "electrode_coordinates": "reported_absent: no contact coordinate file (seeg.xyz) in the repo; anatomy is atlas-level only (SC + gain)"
+ },
+ "coordinate_transforms": {
+  "coordinate_frame": "not_applicable (no coordinates available)",
+  "coordinate_units": "not_applicable",
+  "transform_chain_id": "not_applicable",
+  "note": "Sensor-to-region relation is carried only by the gain matrix."
+ },
+ "channels": {
+  "n": 191,
+  "names": [
+   "TP1-2",
+   "TP2-3",
+   "TP3-4",
+   "TP4-5",
+   "TP5-6",
+   "TP6-7",
+   "TP7-8",
+   "TP8-9",
+   "A1-2",
+   "A2-3",
+   "A3-4",
+   "A4-5",
+   "A5-6",
+   "A6-7",
+   "A7-8",
+   "A8-9",
+   "A9-10",
+   "A10-11",
+   "A11-12",
+   "A12-13",
+   "A13-14",
+   "B'1-2",
+   "B'2-3",
+   "B'3-4",
+   "B'4-5",
+   "B'5-6",
+   "B'6-7",
+   "B'7-8",
+   "B'8-9",
+   "B'9-10",
+   "B'10-11",
+   "B'11-12",
+   "B'12-13",
+   "A'1-2",
+   "A'2-3",
+   "A'3-4",
+   "A'4-5",
+   "A'5-6",
+   "A'6-7",
+   "A'7-8",
+   "A'8-9",
+   "A'9-10",
+   "A'10-11",
+   "A'11-12",
+   "A'12-13",
+   "A'13-14",
+   "A'14-15",
+   "OR1-2",
+   "OR2-3",
+   "OR3-4",
+   "OR4-5",
+   "OR5-6",
+   "OR6-7",
+   "OR7-8",
+   "OR8-9",
+   "OR9-10",
+   "OR10-11",
+   "OR11-12",
+   "OR12-13",
+   "OR13-14",
+   "OR14-15",
+   "OR15-16",
+   "R'1-2",
+   "R'2-3",
+   "R'3-4",
+   "R'4-5",
+   "R'5-6",
+   "R'6-7",
+   "R'7-8",
+   "R'8-9",
+   "R'9-10",
+   "R'10-11",
+   "R'11-12",
+   "R'12-13",
+   "R'13-14",
+   "R1-2",
+   "R2-3",
+   "R3-4",
+   "R4-5",
+   "R5-6",
+   "R6-7",
+   "R7-8",
+   "R8-9",
+   "R9-10",
+   "R10-11",
+   "R11-12",
+   "R12-13",
+   "R13-14",
+   "CR1-2",
+   "CR2-3",
+   "CR3-4",
+   "CR4-5",
+   "CR5-6",
+   "CR6-7",
+   "CR7-8",
+   "CR8-9",
+   "CR9-10",
+   "CR10-11",
+   "CR11-12",
+   "CR12-13",
+   "CR13-14",
+   "CR14-15",
+   "CR15-16",
+   "PM'1-2",
+   "PM'2-3",
+   "PM'3-4",
+   "PM'4-5",
+   "PM'5-6",
+   "PM'6-7",
+   "PM'7-8",
+   "PM'8-9",
+   "PM'9-10",
+   "PM'10-11",
+   "PM'11-12",
+   "PM'12-13",
+   "PM'13-14",
+   "PM'14-15",
+   "PM'15-16",
+   "OF'1-2",
+   "OF'2-3",
+   "OF'3-4",
+   "OF'4-5",
+   "OF'5-6",
+   "OF'6-7",
+   "OF'7-8",
+   "OF'8-9",
+   "OF'9-10",
+   "OF'10-11",
+   "OF'11-12",
+   "OF'12-13",
+   "OF'13-14",
+   "OF'14-15",
+   "OF'15-16",
+   "OF'16-17",
+   "OF'17-18",
+   "CR'1-2",
+   "CR'2-3",
+   "CR'3-4",
+   "CR'4-5",
+   "CR'5-6",
+   "CR'6-7",
+   "CR'7-8",
+   "CR'8-9",
+   "CR'9-10",
+   "CR'10-11",
+   "CR'11-12",
+   "CR'12-13",
+   "CR'13-14",
+   "CR'14-15",
+   "OR'1-2",
+   "OR'2-3",
+   "OR'3-4",
+   "OR'4-5",
+   "OR'5-6",
+   "OR'6-7",
+   "OR'7-8",
+   "OR'8-9",
+   "OR'9-10",
+   "OR'10-11",
+   "OR'11-12",
+   "OR'12-13",
+   "OR'13-14",
+   "OR'14-15",
+   "I'1-2",
+   "I'2-3",
+   "I'3-4",
+   "I'4-5",
+   "I'5-6",
+   "I'6-7",
+   "I'7-8",
+   "I'8-9",
+   "I'9-10",
+   "I'10-11",
+   "I'11-12",
+   "I'12-13",
+   "I'13-14",
+   "I'14-15",
+   "CC'1-2",
+   "CC'2-3",
+   "CC'3-4",
+   "CC'4-5",
+   "CC'5-6",
+   "CC'6-7",
+   "CC'7-8",
+   "CC'8-9",
+   "CC'9-10",
+   "CC'10-11",
+   "CC'11-12",
+   "CC'12-13",
+   "CC'13-14",
+   "CC'14-15"
+  ],
+  "unique": true,
+  "type": "bipolar SEEG (adjacent-contact pairs, e.g. TP1-2)",
+  "electrodes": [
+   "A",
+   "A'",
+   "B'",
+   "CC'",
+   "CR",
+   "CR'",
+   "I'",
+   "OF'",
+   "OR",
+   "OR'",
+   "PM'",
+   "R",
+   "R'",
+   "TP"
+  ],
+  "identical_across_sessions": true
+ },
+ "montage": "bipolar (adjacent contacts on each shaft), as given by channel names; no monopolar data",
+ "events": {
+  "source": "derived by R2 from the signals only (no annotation/event key in the npz)",
+  "P2-ses-seegstim": [
+   {
+    "event": "initial transient",
+    "approx_ms": [
+     8,
+     200
+    ],
+    "evidence": "decaying high mean |diff| over first ~25 samples"
+   },
+   {
+    "event": "stimulation epoch (pulse train)",
+    "approx_ms": [
+     504,
+     3504
+    ],
+    "evidence": "abrupt onset of a 50-Hz-dominant oscillation at ~504 ms, abrupt stop at ~3504 ms (sample-level mean |diff| jumps ~300x)"
+   },
+   {
+    "event": "post-stimulation seizure-like activity",
+    "approx_ms": [
+     3540,
+     7400
+    ],
+    "evidence": "broadband oscillation (peaks ~5-25 Hz) after stimulation offset, ending with a large slow deflection ~7000-7400 ms; R2 does not classify it clinically"
+   },
+   {
+    "event": "quiescent decay",
+    "approx_ms": [
+     7500,
+     12000
+    ],
+    "evidence": "near-zero high-frequency power, smooth decay"
+   }
+  ],
+  "P2-ses-tistim": [
+   {
+    "event": "initial transient",
+    "approx_ms": [
+     10,
+     450
+    ],
+    "evidence": "large-amplitude activity at the start, decaying by ~450 ms"
+   },
+   {
+    "event": "quiescent baseline",
+    "approx_ms": [
+     450,
+     1000
+    ]
+   },
+   {
+    "event": "stimulation epoch (TI)",
+    "approx_ms": [
+     1010,
+     3000
+    ],
+    "evidence": "abrupt onset at ~1010 ms of a periodic pattern repeating every ~200 ms (~5 Hz dominant), abrupt stop at ~3000 ms"
+   },
+   {
+    "event": "post-stimulation",
+    "approx_ms": [
+     3000,
+     9000
+    ],
+    "evidence": "low-amplitude slow decay; no clear seizure-like event"
+   }
+  ],
+  "seizure_onset_markings": "not_reported (none in data); seizure classification is a modeling question, not done here",
+  "stimulation_parameters": "not_accessible from the npz (contacts, amplitude, waveform not stored). Generating configuration is held separately for sealing; not in this artifact."
+ },
+ "units": {
+  "signal": "not declared in file (simulated model output projected through the gain; arbitrary units)",
+  "time": "ms assumed (not stored)",
+  "gain": "not declared",
+  "SC": "normalized, unitless"
+ },
+ "context": {
+  "sample_rate_hz": "125 (ses-seegstim) / 100 (ses-tistim), inferred",
+  "time_window": "ses-seegstim 8-12000 ms (1500 samples); ses-tistim 10-9000 ms (900 samples)",
+  "signal_units": "simulated, units not declared (a.u.)",
+  "reference_montage": "bipolar SEEG"
+ },
+ "ground_truth_file": {
+  "path": "studies/study-002/work/T0005/ground_truth_P2.json",
+  "sha256": "98651a7dee52aecd4e47702a591844e517d377ce28ce2013467059bc56c08b5f",
+  "status": "written for vault sealing; contents deliberately not reproduced here",
+  "extraction": "partially ambiguous (see QCReport)"
+ },
+ "tools": {
+  "numpy": "2.4.6",
+  "scripts": [
+   "work/T0005/inspect_p2.py",
+   "work/T0005/epochs_p2.py",
+   "work/T0005/onsets_p2.py"
+  ]
+ }
+}

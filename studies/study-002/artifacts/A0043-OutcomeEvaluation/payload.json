@@ -1,0 +1,574 @@
+{
+ "permitted_inputs": [
+  "A0017-NetworkHypothesisSet",
+  "A0018-ModelBundle",
+  "A0019-ModelBundle",
+  "A0034-InterventionScenarioSet",
+  "A0038-SimulationBatch",
+  "vault:V001"
+ ],
+ "freeze_manifest": {
+  "freeze_hash": "1fcf288aac50be737b697cb5ff9cd0ad6423054b977e1bd2516f4ed34e6464fd",
+  "ledger_seq": 205,
+  "frozen_at": "2026-11-01T17:06:11+00:00",
+  "artifact_manifest_hashes": {
+   "A0017-NetworkHypothesisSet": "9ce912f4e0983327355e3cb38fe3789cba8f854c592b3861a4a6735968c5c00d",
+   "A0018-ModelBundle": "442db97be004668bebe793717229fa0650f6d9c712d5fe875a3d8c7e089c12c4",
+   "A0019-ModelBundle": "6d0e00a9b36135a375399ed64b1d0b6575644515925ad966f44dc91dadf13cd6",
+   "A0034-InterventionScenarioSet": "31982b12765b45343044324e04628c1db032b7bc19330315bb9258fe34ce7966",
+   "A0038-SimulationBatch": "3c611005473cb2063d2b3d0d288c891d7b9167a5b1a49a3006dd464919a20d7c"
+  },
+  "simulator": {
+   "path": "studies/study-002/work/T0015/sim/p2sim.py",
+   "sha256": "0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0"
+  },
+  "evaluation_scripts": {
+   "ez_recovery.py": "e0e8b391edf0f9d1cd02e00f3114c76f65fe4f57ba879bebfb6a2cddd414cc94",
+   "run_true.py": "d53c3f944e2ed25f62285c7a767b96a9408f86d95dbba39a2295103dff86c14d",
+   "compare.py": "ca60f704cde5ebe6858d064e2ac90fe54402de9aa8a544750705b9b8d8138fec",
+   "build_payloads.py": "b67c9db2a0f06291e665aec63fc33deb7124d7525019978a517a77b4a7a9e104"
+  }
+ },
+ "label_access_log": [
+  {
+   "item": "V001",
+   "vault_sha256_sealed": "98651a7dee52aecd4e47702a591844e517d377ce28ce2013467059bc56c08b5f",
+   "access_granted_ledger_seq": 214,
+   "task": "T0021",
+   "role": "R5-independent-evaluation",
+   "revealed_after_freeze": true,
+   "used_fields": [
+    "ez_regions",
+    "sessions.SEEG_stimulation.x0_per_region/threshold/tau0_z/tau3_m",
+    "model.common_params(tt, Iext, Iext2, tau2)"
+   ],
+   "copies": "truth values used only inside studies/study-002/work/T0021/ (sim_true/runs.json holds the true x0 samples)"
+  }
+ ],
+ "metrics": {
+  "ground_truth_summary": {
+   "true_ez_npz_cols": [
+    15
+   ],
+   "true_ez_names": [
+    "Left-F1-lateral-prefrontal"
+   ],
+   "n_true_ez": 1,
+   "true_pz": "none set"
+  },
+  "ez_recovery": {
+   "rule": "estimated EZ = regions with fraction of optima/draws with x0 > -2.06 above 0.5; ranks 1=most epileptogenic, ties averaged; region order VepMrtrixLut minus Unknown",
+   "per_source_window": {
+    "A0018-ModelBundle:post": {
+     "n": 24,
+     "est_ez_set": [],
+     "precision": null,
+     "precision_note": "undefined: empty estimated set (abstention)",
+     "recall": 0.0,
+     "top1": 82,
+     "top1_name": "Right-Orbito-frontal-cortex",
+     "top1_correct": false,
+     "true_ez": [
+      {
+       "col": 15,
+       "name": "Left-F1-lateral-prefrontal",
+       "freq_x0_gt_thr": 0.0,
+       "median_x0": -2.5064491,
+       "rank_by_freq": 81.5,
+       "rank_by_median_x0": 159.0,
+       "p_rank1": 0.0,
+       "x0_p05_p95": [
+        -2.50890403,
+        -2.50529026
+       ]
+      }
+     ]
+    },
+    "A0018-ModelBundle:full": {
+     "n": 24,
+     "est_ez_set": [
+      1,
+      7,
+      27,
+      40,
+      82,
+      83,
+      108
+     ],
+     "precision": 0.0,
+     "precision_note": null,
+     "recall": 0.0,
+     "top1": 82,
+     "top1_name": "Right-Orbito-frontal-cortex",
+     "top1_correct": false,
+     "true_ez": [
+      {
+       "col": 15,
+       "name": "Left-F1-lateral-prefrontal",
+       "freq_x0_gt_thr": 0.0,
+       "median_x0": -2.4536252,
+       "rank_by_freq": 103.0,
+       "rank_by_median_x0": 46.0,
+       "p_rank1": 0.0,
+       "x0_p05_p95": [
+        -2.505316655,
+        -2.4180232449999997
+       ]
+      }
+     ]
+    },
+    "A0019-ModelBundle:post": {
+     "n": 400,
+     "est_ez_set": [],
+     "precision": null,
+     "precision_note": "undefined: empty estimated set (abstention)",
+     "recall": 0.0,
+     "top1": 10,
+     "top1_name": "Left-SFS-rostral",
+     "top1_correct": false,
+     "true_ez": [
+      {
+       "col": 15,
+       "name": "Left-F1-lateral-prefrontal",
+       "freq_x0_gt_thr": 0.0525,
+       "median_x0": -2.7111235000000002,
+       "rank_by_freq": 126.0,
+       "rank_by_median_x0": 133.0,
+       "p_rank1": 0.0075,
+       "x0_p05_p95": [
+        -3.602136195,
+        -2.0543941000000028
+       ]
+      }
+     ]
+    },
+    "A0019-ModelBundle:full": {
+     "n": 400,
+     "est_ez_set": [
+      1,
+      4,
+      7,
+      8,
+      12,
+      27,
+      40,
+      82,
+      83,
+      108,
+      115
+     ],
+     "precision": 0.0,
+     "precision_note": null,
+     "recall": 0.0,
+     "top1": 82,
+     "top1_name": "Right-Orbito-frontal-cortex",
+     "top1_correct": false,
+     "true_ez": [
+      {
+       "col": 15,
+       "name": "Left-F1-lateral-prefrontal",
+       "freq_x0_gt_thr": 0.1,
+       "median_x0": -2.4317031,
+       "rank_by_freq": 73.5,
+       "rank_by_median_x0": 62.0,
+       "p_rank1": 0.0,
+       "x0_p05_p95": [
+        -3.084299265,
+        -1.9044983800000002
+       ]
+      }
+     ]
+    }
+   },
+   "A0017_hypotheses": [
+    {
+     "id": "H1",
+     "ez": [
+      7,
+      8
+     ],
+     "true_ez_in_ez": false,
+     "true_ez_in_pz": true,
+     "precision": 0.0,
+     "recall": 0.0
+    },
+    {
+     "id": "H2",
+     "ez": [
+      82
+     ],
+     "true_ez_in_ez": false,
+     "true_ez_in_pz": false,
+     "precision": 0.0,
+     "recall": 0.0
+    },
+    {
+     "id": "H3",
+     "ez": [
+      74
+     ],
+     "true_ez_in_ez": false,
+     "true_ez_in_pz": false,
+     "precision": 0.0,
+     "recall": 0.0
+    },
+    {
+     "id": "H4",
+     "ez": [],
+     "true_ez_in_ez": false,
+     "true_ez_in_pz": false,
+     "precision": null,
+     "recall": 0.0
+    }
+   ],
+   "headline": "True EZ = single region npz col 15 Left-F1-lateral-prefrontal. Not recovered: recall 0 in all four source x window estimates; precision 0 (full: MAP set of 7, NUTS set of 11) or undefined (post: empty sets). True-EZ rank by median x0: MAP post 159/162, MAP full 46, NUTS post 133, NUTS full 62; P(x0>-2.06): 0, 0, 0.05, 0.10. A0017: true EZ in no hypothesis EZ set; listed as a propagation candidate of H1 only. All estimates' top-1 = region 82 (Right-Orbito-frontal), except NUTS post (region 10)."
+  },
+  "treatment_ranking": {
+   "design": "R4's 18 frozen candidates per window (A0038 full/post_candidates.json, regions/contacts exactly as R4 defined from its estimated EZ) re-simulated on the TRUE P2 configuration with p2sim (dt 0.05 ms, horizon 14400 ms, paired baseline, R4 seizure metric); plus ORACLE ablation/disconnection of the true EZ. Two true-model variants: A = true x0 + true SEEG-session parameters (threshold per region, tau0, tau3, tt, Iext, Iext2, tau2), K=1 (a=0.1); B = true x0 and coupling with R4's package-default other parameters. Ranking key = (median d n_seizing_regions, median d total duration), as R4.",
+   "true_baselines": {
+    "TRUE-A-full-params": {
+     "n_seizing_regions": 0,
+     "seizing_regions": [],
+     "total_seizure_duration_s": 0.0,
+     "n_seeg_channels_exceeding": 4
+    },
+    "TRUE-B-x0-only": {
+     "n_seizing_regions": 0,
+     "seizing_regions": [],
+     "total_seizure_duration_s": 0.0,
+     "n_seeg_channels_exceeding": 8
+    }
+   },
+   "oracle_effects": {
+    "TRUE-A-full-params": {
+     "ORACLE:true-EZ/ablation": [
+      0,
+      0.0,
+      0
+     ],
+     "ORACLE:true-EZ/disconnection": [
+      0,
+      0.0,
+      0
+     ]
+    },
+    "TRUE-B-x0-only": {
+     "ORACLE:true-EZ/ablation": [
+      0,
+      0.0,
+      0
+     ],
+     "ORACLE:true-EZ/disconnection": [
+      0,
+      0.0,
+      0
+     ]
+    }
+   },
+   "per_window_and_variant": {
+    "full|TRUE-A-full-params": {
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "n_distinct_true_effects": 1,
+     "r4_top": "RES-EZ+PZ/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.5,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.05555555555555555,
+      "tol_s": 0.5
+     }
+    },
+    "full|TRUE-B-x0-only": {
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "n_distinct_true_effects": 1,
+     "r4_top": "RES-EZ+PZ/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.5,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.05555555555555555,
+      "tol_s": 0.5
+     }
+    },
+    "post|TRUE-A-full-params": {
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "n_distinct_true_effects": 1,
+     "r4_top": "RES-1/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.8888888888888888,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.8888888888888888,
+      "tol_s": 0.5
+     }
+    },
+    "post|TRUE-B-x0-only": {
+     "spearman_rho": null,
+     "kendall_tau_b": null,
+     "n_distinct_true_effects": 1,
+     "r4_top": "RES-1/ablation",
+     "r4_top_true_effect": [
+      0,
+      0.0
+     ],
+     "best_true_effect_among_R4_candidates": [
+      0,
+      0.0
+     ],
+     "best_true_candidates": [
+      "RES-1/ablation",
+      "RES-1/disconnection",
+      "RES-EZ/ablation",
+      "RES-EZ/disconnection",
+      "RES-EZ+PZ/ablation",
+      "RES-EZ+PZ/disconnection",
+      "STIM-PT/amp0.5",
+      "STIM-PT/amp1",
+      "STIM-PT/amp2",
+      "STIM-PT/amp4",
+      "STIM-PT-chronic/amp0.5",
+      "STIM-PT-chronic/amp1",
+      "STIM-PT-chronic/amp2",
+      "STIM-PT-chronic/amp4",
+      "STIM-1/amp0.5",
+      "STIM-1/amp1",
+      "STIM-1/amp2",
+      "STIM-2/amp1"
+     ],
+     "regret_vs_best_R4_candidate": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "regret_vs_oracle_true_EZ_ablation": {
+      "d_n": 0,
+      "d_duration_s": 0.0
+     },
+     "sign_agreement_d_n": {
+      "frac": 0.8888888888888888,
+      "n": 18,
+      "frac_where_predicted_nonzero": 0.0
+     },
+     "sign_agreement_d_duration": {
+      "frac": 0.8888888888888888,
+      "tol_s": 0.5
+     }
+    }
+   },
+   "headline": "Degenerate comparison: in both true-model variants the TRUE P2 configuration does not seize spontaneously under p2sim (baseline 0 seizing regions, 0 s), and none of R4's candidates nor the oracle true-EZ ablation changes that (all true d_n = 0, d_duration = 0; no pulse-train-induced onsets). Rank concordance (Spearman/Kendall) is undefined (constant true ranks); regret of R4's top choice = 0 by floor effect (not evidence of a good choice). Sign agreement of d n_seizing_regions: full window 9/18 (every one of R4's 9 nonzero predicted reductions is wrong-signed vs true 0), post window 16/18 (R4's 2 predicted increases, STIM-PT/amp4 arms, not reproduced)."
+  }
+ },
+ "uncertainty": {
+  "ez": {
+   "method": "nonparametric bootstrap over optima/draws (2000 resamples) of precision, recall and true-EZ ranks",
+   "results": {
+    "A0018-ModelBundle:post": {
+     "precision_ci95": null,
+     "precision_undefined_frac": 1.0,
+     "recall_ci95": [
+      0.0,
+      0.0
+     ],
+     "rank_by_freq_ci95": [
+      81.5,
+      81.5
+     ],
+     "rank_by_median_ci95": [
+      158.0,
+      159.0
+     ]
+    },
+    "A0018-ModelBundle:full": {
+     "precision_ci95": [
+      0.0,
+      0.0
+     ],
+     "precision_undefined_frac": 0.0,
+     "recall_ci95": [
+      0.0,
+      0.0
+     ],
+     "rank_by_freq_ci95": [
+      93.0,
+      102.5
+     ],
+     "rank_by_median_ci95": [
+      40.0,
+      74.0
+     ]
+    },
+    "A0019-ModelBundle:post": {
+     "precision_ci95": null,
+     "precision_undefined_frac": 1.0,
+     "recall_ci95": [
+      0.0,
+      0.0
+     ],
+     "rank_by_freq_ci95": [
+      106.4875,
+      147.5
+     ],
+     "rank_by_median_ci95": [
+      106.0,
+      145.0
+     ]
+    },
+    "A0019-ModelBundle:full": {
+     "precision_ci95": [
+      0.0,
+      0.0
+     ],
+     "precision_undefined_frac": 0.0,
+     "recall_ci95": [
+      0.0,
+      0.0
+     ],
+     "rank_by_freq_ci95": [
+      52.0,
+      95.5
+     ],
+     "rank_by_median_ci95": [
+      52.0,
+      75.0
+     ]
+    }
+   }
+  },
+  "ranking": {
+   "method": "bootstrap over R4 model samples (1000 resamples) of the predicted ranking; Spearman vs fixed true ranking (true model is deterministic: one run per variant)",
+   "results": {
+    "full|TRUE-A-full-params": "undefined (constant ranks)",
+    "full|TRUE-B-x0-only": "undefined (constant ranks)",
+    "post|TRUE-A-full-params": "undefined (constant ranks)",
+    "post|TRUE-B-x0-only": "undefined (constant ranks)"
+   }
+  },
+  "structural": [
+   "single virtual patient (n=1): no population inference",
+   "ground truth flagged partially ambiguous by R2 (EZ identity unambiguous; generating notebook/parameter values session-dependent; neural-field vs region-level model)",
+   "true model simulated at region level with R4's simulator, not the authors' neural-field (surface, local coupling) generator; variant B tests parameter sensitivity",
+   "R4 full-window predictions use 12 of 24 optima"
+  ]
+ },
+ "evidence_level": "exploratory; unqualified model; virtual patient",
+ "abstentions": [
+  "precision undefined where the estimated EZ set is empty (post window MAP and NUTS)"
+ ],
+ "notes": "Simulated outcomes on a virtual patient; not clinical recommendations. Evidence kind recorded as simulated ground truth comparison (no clinical follow-up exists)."
+}

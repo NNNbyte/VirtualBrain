@@ -1,0 +1,30 @@
+{
+ "intervention_id": "STIM-PT",
+ "checks": [
+  {
+   "check": "model mapping",
+   "result": "pass",
+   "detail": "TVB StimuliRegion; spatial weight = contact gain row (package convention: per-node weight array), scaled to max 1 and by 0.01 per model unit; temporal = BiphasicPulseTrain (TVB PulseTrain form); enters SpatEpiStim u1 as +400*Istim and the accumulator m (dm=(1/tau3)(-m+1000|Istim|), H(m-1.8) raises excitability)"
+  },
+  {
+   "check": "numerical stability",
+   "result": "pass",
+   "detail": "selftest pulse train amp 4 (max Istim 0.04) finite at dt 0.05 ms"
+  },
+  {
+   "check": "charge density / safety",
+   "result": "not_assessable",
+   "detail": "model amplitudes have no physical units; no contact geometry"
+  },
+  {
+   "check": "anatomical constraints",
+   "result": "not_assessable",
+   "detail": "no MRI/eloquent mapping"
+  }
+ ],
+ "verdict": "feasible_in_silico",
+ "verdict_reasons": [
+  "fully specified in the model",
+  "physical/device feasibility not assessable; amplitudes are model units"
+ ]
+}

@@ -1,0 +1,57 @@
+{
+  "claim": "In a multicenter retrospective series of sEEG-guided neocortical RNS depth leads (55 patients), median clinical seizure reduction was 66.7% at 1 year and 77.5% at long-term follow-up (2.35 ± 0.95 y); 18.2% achieved complete seizure freedom.",
+  "intervention_modality": "SEEG-guided RNS (closed-loop)",
+  "bibliographic_record": {
+    "authors": "Sadeghzadeh S, Purger DA, Bhanot P, Johnson N, Barbosa DAN, Huang Y, Park JJ, Schonfeld E, Abikenari MA, Jain B, Aronson JP, Drees C, Fisher TL, Gerrard J, Gray TE, Ghatan S, Hines K, Jobst BC, Karakis I, Ojemann SG, Quraishi IH, Raslan AM, Sather MD, Skidmore CT, Willie JT, Wu C, Yoo JY, Graber KD, Halpern CH, Buch VP, Parker JJ.",
+    "title": "sEEG-guided responsive neurostimulation to treat neocortical epilepsy: A multicenter retrospective study of the efficacy and safety of depth electrode-mediated neuromodulation.",
+    "journal": "Epilepsia open",
+    "year": "2026",
+    "volume": "11",
+    "issue": "1",
+    "pages": "146-161",
+    "doi": "10.1002/epi4.70180",
+    "pmid": "41251192",
+    "pmcid": "PMC12903807",
+    "source_record_url": "https://europepmc.org/article/MED/41251192",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41251192/"
+  },
+  "supporting_passage": "A total of 87 depth leads were implanted in 55 patients across neocortical brain regions. [...] The median reduction in clinical seizures improved from 66.7% at 1-Y to 77.5% at long-term follow-up (LTFU: 2.35 ± 0.95 years), with 10 patients (18.2%) achieving complete seizure freedom. [...] At 1-Y, shorter Euclidean distance between the sEEG-EF and RNS System depth leads predicted improved seizure outcome in strong responders (β = -0.84, p = 0.008)",
+  "supporting_passages": [
+    "A total of 87 depth leads were implanted in 55 patients across neocortical brain regions.",
+    "The median reduction in clinical seizures improved from 66.7% at 1-Y to 77.5% at long-term follow-up (LTFU: 2.35 ± 0.95 years), with 10 patients (18.2%) achieving complete seizure freedom.",
+    "At 1-Y, shorter Euclidean distance between the sEEG-EF and RNS System depth leads predicted improved seizure outcome in strong responders (β = -0.84, p = 0.008)"
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 41251192, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 55,
+    "design": "multicenter retrospective case series",
+    "population": "patients with neocortical drug-resistant focal epilepsy, RNS depth leads placed guided by sEEG-defined epileptic focus",
+    "age_group": "not_reported (in abstract)"
+  },
+  "endpoint": {
+    "measure": "median % reduction in clinical seizures; complete seizure freedom",
+    "timepoint": "1 year and LTFU (mean 2.35 y)",
+    "median_pct_reduction": {
+      "12_months": 66.7,
+      "LTFU_mean_28_months": 77.5
+    },
+    "responder_rate_50pct": "not_reported (in abstract)",
+    "seizure_freedom": "18.2% (10/55) complete seizure freedom (timepoint presumably LTFU)",
+    "follow_up_months_reported": "mean 28.2 ± 11.4"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer proximity to the sEEG-defined focus drove initial outcomes for strong responders (inference from subgroup regression).",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Distance-to-focus association held at 1 year in strong responders only and not at LTFU; exploratory associations did not survive Bonferroni correction.",
+    "Possible overlap with Razavi 2020 / Eliashiv 2026 centers not reported - to_verify."
+  ],
+  "study_family_id": "fam-RNS-sEEG-guided-neocortical-Sadeghzadeh2026"
+}

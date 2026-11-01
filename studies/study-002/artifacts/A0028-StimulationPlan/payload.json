@@ -1,0 +1,43 @@
+{
+ "intervention_id": "STIM-PT-chronic",
+ "intervention_class": "SEEG-contact electrical stimulation (therapeutic analogue: same pulse train for the whole horizon)",
+ "contacts_and_device": {
+  "contact_rule": "bipolar SEEG channel (P2 montage, 191 channels) with the largest gain to the top-1 estimated EZ region",
+  "device": "virtual SEEG bipolar pair",
+  "waveform": {
+   "shape": "biphasic, charge-balanced, 1 ms/phase",
+   "frequency_hz": 50,
+   "train_onset_ms": 0,
+   "train_duration": "whole horizon",
+   "amplitude_sweep_model_units": [
+    0.5,
+    1,
+    2,
+    4
+   ],
+   "amplitude_scaling": "as STIM-PT"
+  }
+ },
+ "physical_mapping": {
+  "model_nodes": "VEP atlas regions (162)",
+  "mapping": "as STIM-PT",
+  "field_or_VTA_estimate": "gain row used as a reciprocity proxy for the stimulation field (Wang-style weighting); no VTA model",
+  "coordinate_frame": "not_applicable (atlas-level virtual patient)",
+  "coordinate_units": "not_applicable (atlas-level virtual patient)",
+  "transform_chain_id": "not_applicable (atlas-level virtual patient)",
+  "simulator": "studies/study-002/work/T0015/sim/p2sim.py (p2sim 1.0)"
+ },
+ "constraints": {
+  "eloquent_cortex": "not_reported (virtual patient; no functional mapping) - not applied",
+  "vascular": "not_reported (no imaging) - not applied",
+  "contact_positions": "reported_absent (no MRI / electrode coordinates, A0010); contacts are identified only by bipolar channel name and gain row",
+  "reserved_outcomes": "not used; candidates are rules applied to the fitted EZ estimate only",
+  "interpretation": "virtual intervention on a model; research evidence, not a clinical recommendation",
+  "safety_limits": "charge density not assessable: amplitudes are model units with no mapping to mA or contact surface area",
+  "numerical": "dt = 0.05 ms; per-region Istim must stay <= ~0.04 (single-node test: NaN at 0.04 with dt 0.1 ms, stable to 0.045 at 0.05 ms; raw-gain weights (max 88) are numerically infeasible)"
+ },
+ "feasibility_verdict": "feasible_in_silico (model units; not a device setting)",
+ "outputs": "seizure metrics over the horizon (stimulation artefact present in SEEG throughout)",
+ "spec": "studies/study-002/work/amend/r4_common_spec.json v2 (sha256 70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461)",
+ "status_note": "rule committed before any P2 model existed (T0015); concrete contacts are derived in the simulation task"
+}

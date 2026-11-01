@@ -1,0 +1,2109 @@
+{
+ "case_id": "HUP105",
+ "versions": {
+  "mne": "1.13.2",
+  "mne_bids": "0.20.0",
+  "numpy": "2.1.0",
+  "pandas": "2.2.3",
+  "scipy": "1.15.1"
+ },
+ "worker": "case_qc.py",
+ "worker_sha256": "4200abcfed4cbc39592b462e1caee416af1b93e4b5487a2dba76f613145f3835",
+ "checksums": {
+  "files": {
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json": {
+    "sha256": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+    "bytes": 278,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv": {
+    "sha256": "f63a2c1af290e6338663d7507792876d43eb614cd37c4a366119d7683cbedd5b",
+    "bytes": 2648,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_channels.tsv": {
+    "sha256": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+    "bytes": 3745,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_events.tsv": {
+    "sha256": "c368ad52eba4257767e923d49fcad994c82df84715c0ba4d32d5c6959058b165",
+    "bytes": 98,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf": {
+    "sha256": "c425f0ec289c2fe1c6c5e1986ab37335a589ad171863cb91c6552f6b54b6d69b",
+    "bytes": 14072348,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.json": {
+    "sha256": "8a26d12737ed8ff044b04fcdf18b8ab77be75d9a0010514b85e35b291b1c72ff",
+    "bytes": 460,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_channels.tsv": {
+    "sha256": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+    "bytes": 3745,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_events.tsv": {
+    "sha256": "6ab73ded67dae52de62a347b802898722515eb0673a858883c4e7944a76b1de7",
+    "bytes": 98,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf": {
+    "sha256": "a7f4d8aed817fa61a627307ad07132018a97d8233cdc2bfeee9fb04d0d662883",
+    "bytes": 15539084,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.json": {
+    "sha256": "1792a75cecb283864ba3b24c8417f995e095d5994ee273dff896e18b0fe74449",
+    "bytes": 460,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_channels.tsv": {
+    "sha256": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+    "bytes": 3745,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf": {
+    "sha256": "d3bff8d8b90041d050be45e45a068fcc398916afef94c66ffeb5c27027d26b81",
+    "bytes": 18350328,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.json": {
+    "sha256": "5520391e6ed4f156aa6f418016c28cec655f75234dc29179d238b0121c4d94a4",
+    "bytes": 465,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_channels.tsv": {
+    "sha256": "65fe6cab1603a1afabc9b91033ccb9104e66b93253bf8ec63775d60793052fff",
+    "bytes": 3745,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf": {
+    "sha256": "c024d30a92c0f2e12841c4ffa4649d3ccd066d4c5f653fb6cf8123e5099fd2bf",
+    "bytes": 18350328,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.json": {
+    "sha256": "5520391e6ed4f156aa6f418016c28cec655f75234dc29179d238b0121c4d94a4",
+    "bytes": 465,
+    "manifest_match": true
+   },
+   "sub-HUP105/ses-presurgery/sub-HUP105_ses-presurgery_scans.tsv": {
+    "sha256": "b83f2f88e8ddc6d9e33faa414ba87add9a32c4bd4e0e602450e71be31dca2f4b",
+    "bytes": 410,
+    "manifest_match": true
+   }
+  },
+  "n_files": 17,
+  "n_manifest_rows": 17,
+  "mismatches": [],
+  "not_in_manifest": [],
+  "missing_on_disk": [],
+  "all_match": true
+ },
+ "scans_tsv": [
+  {
+   "filename": "ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf",
+   "acq_time": "2022-08-28T22:34:58.000000Z"
+  },
+  {
+   "filename": "ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf",
+   "acq_time": "2022-08-28T22:34:59.000000Z"
+  },
+  {
+   "filename": "ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf",
+   "acq_time": "2022-08-28T22:52:47.000000Z"
+  },
+  {
+   "filename": "ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf",
+   "acq_time": "2022-08-28T22:52:49.000000Z"
+  }
+ ],
+ "runs": [
+  {
+   "file": "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf",
+   "task": "ictal",
+   "run": "01",
+   "acq": "ecog",
+   "edf_header": {
+    "n_channels": 61,
+    "sfreq": 500.0,
+    "n_times": "115000",
+    "duration_s": 230.0,
+    "meas_date": "2022-08-28 22:34:58+00:00",
+    "orig_units": [
+     "\u00b5V"
+    ],
+    "edf_annotations": [],
+    "highpass": 0.0,
+    "lowpass": 250.0
+   },
+   "read_raw_bids": "ok",
+   "read_raw_bids_warnings": [
+    "participants.tsv file not found for data\\ds004100-1.1.3\\sub-HUP105\\ses-presurgery\\ieeg\\sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf"
+   ],
+   "mne_bids_montage": {
+    "coord_frame": "mni_tal",
+    "n_pos": 60,
+    "max_abs_as_loaded": 66.817,
+    "note": "mne-bids applies coordsystem units literally (m)"
+   },
+   "sfreq": 500.0,
+   "n_times": "115000",
+   "duration_s": 230.0,
+   "sidecar": {
+    "SamplingFrequency": 500.0,
+    "RecordingDuration": 229.998,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 61,
+    "SEEGChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "sidecar_duration_match": "True",
+   "channels_tsv_types": {
+    "ECOG": 61
+   },
+   "channels_tsv_units": {
+    "\u00b5V": 61
+   },
+   "channels_tsv_sfreq": [
+    500.0
+   ],
+   "channels_tsv_filters": {
+    "low_cutoff": [
+     "0.0"
+    ],
+    "high_cutoff": [
+     "250.0"
+    ]
+   },
+   "status_counts": {
+    "good": 55,
+    "bad": 6
+   },
+   "bad_channels_tsv": [
+    "EKG",
+    "LA1",
+    "LA2",
+    "LA3",
+    "LA4",
+    "RF5"
+   ],
+   "edf_vs_tsv_names_equal": true,
+   "mne_ch_types": {
+    "ecog": 61
+   },
+   "soz": [
+    "RA2",
+    "RA3",
+    "RA4",
+    "RAT1",
+    "RAT2",
+    "RDNET1",
+    "RDNET2",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "resect": [
+    "RAT3",
+    "RAT4",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "other_status_tags": [],
+   "signal_qc": {
+    "n_nan": 0,
+    "median_std_uv_good": 564.0463480738682,
+    "median_line_ratio_db_good": 27.393544506000893,
+    "flat_channels": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude_std_gt_500uV": [
+     "LAT1",
+     "LAT2",
+     "LAT3",
+     "LAT4",
+     "LH1",
+     "LH2",
+     "LH3",
+     "LH4",
+     "LMT1",
+     "LMT2",
+     "LMT3",
+     "LMT4",
+     "LPT3",
+     "RA1",
+     "RA2",
+     "RA3",
+     "RA4",
+     "RAT1",
+     "RDNET1",
+     "RDNET2",
+     "RDNET3",
+     "RDNET4",
+     "RF2",
+     "RF6",
+     "RH1",
+     "RH2",
+     "RH3",
+     "RH4",
+     "RMT2",
+     "RMT4",
+     "RPT4"
+    ],
+    "all_channel_zero_segments_ge_50ms": [],
+    "common_step_jump_samples": 1,
+    "per_channel": {
+     "EKG": {
+      "std_uv": 837.141,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 14.88
+     },
+     "LA1": {
+      "std_uv": 3025.486,
+      "diff0_frac": 0.0094,
+      "line_ratio_db": 29.96
+     },
+     "LA2": {
+      "std_uv": 3152.099,
+      "diff0_frac": 0.0094,
+      "line_ratio_db": 29.9
+     },
+     "LA3": {
+      "std_uv": 3262.468,
+      "diff0_frac": 0.0048,
+      "line_ratio_db": 31.0
+     },
+     "LA4": {
+      "std_uv": 6662.018,
+      "diff0_frac": 0.0936,
+      "line_ratio_db": 26.78
+     },
+     "LAT1": {
+      "std_uv": 774.796,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 26.73
+     },
+     "LAT2": {
+      "std_uv": 712.6,
+      "diff0_frac": 0.0059,
+      "line_ratio_db": 25.15
+     },
+     "LAT3": {
+      "std_uv": 710.16,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 26.72
+     },
+     "LAT4": {
+      "std_uv": 1430.66,
+      "diff0_frac": 0.0346,
+      "line_ratio_db": 27.59
+     },
+     "LF1": {
+      "std_uv": 421.67,
+      "diff0_frac": 0.0059,
+      "line_ratio_db": 28.2
+     },
+     "LF2": {
+      "std_uv": 297.627,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 29.18
+     },
+     "LF3": {
+      "std_uv": 358.47,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 28.03
+     },
+     "LF4": {
+      "std_uv": 361.779,
+      "diff0_frac": 0.0063,
+      "line_ratio_db": 26.98
+     },
+     "LF5": {
+      "std_uv": 239.928,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 28.43
+     },
+     "LF6": {
+      "std_uv": 332.683,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 25.28
+     },
+     "LH1": {
+      "std_uv": 1368.783,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 28.58
+     },
+     "LH2": {
+      "std_uv": 1361.423,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 28.6
+     },
+     "LH3": {
+      "std_uv": 1588.087,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 27.7
+     },
+     "LH4": {
+      "std_uv": 1981.63,
+      "diff0_frac": 0.0059,
+      "line_ratio_db": 27.14
+     },
+     "LMT1": {
+      "std_uv": 633.733,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 28.54
+     },
+     "LMT2": {
+      "std_uv": 804.468,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 27.34
+     },
+     "LMT3": {
+      "std_uv": 686.859,
+      "diff0_frac": 0.0056,
+      "line_ratio_db": 27.03
+     },
+     "LMT4": {
+      "std_uv": 1110.835,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 25.22
+     },
+     "LP3": {
+      "std_uv": 256.543,
+      "diff0_frac": 0.0063,
+      "line_ratio_db": 25.67
+     },
+     "LP4": {
+      "std_uv": 312.264,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 24.41
+     },
+     "LP5": {
+      "std_uv": 288.97,
+      "diff0_frac": 0.0055,
+      "line_ratio_db": 26.83
+     },
+     "LP6": {
+      "std_uv": 301.562,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 26.95
+     },
+     "LPT1": {
+      "std_uv": 330.586,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 27.08
+     },
+     "LPT2": {
+      "std_uv": 420.753,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 25.89
+     },
+     "LPT3": {
+      "std_uv": 534.445,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 25.22
+     },
+     "LPT4": {
+      "std_uv": 470.244,
+      "diff0_frac": 0.0055,
+      "line_ratio_db": 28.18
+     },
+     "RA1": {
+      "std_uv": 1807.19,
+      "diff0_frac": 0.0197,
+      "line_ratio_db": 28.77
+     },
+     "RA2": {
+      "std_uv": 1924.14,
+      "diff0_frac": 0.0304,
+      "line_ratio_db": 28.71
+     },
+     "RA3": {
+      "std_uv": 2286.29,
+      "diff0_frac": 0.0056,
+      "line_ratio_db": 27.32
+     },
+     "RA4": {
+      "std_uv": 1859.07,
+      "diff0_frac": 0.0307,
+      "line_ratio_db": 28.05
+     },
+     "RAT1": {
+      "std_uv": 564.046,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 28.33
+     },
+     "RAT2": {
+      "std_uv": 367.302,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 28.33
+     },
+     "RAT3": {
+      "std_uv": 454.73,
+      "diff0_frac": 0.0059,
+      "line_ratio_db": 26.84
+     },
+     "RAT4": {
+      "std_uv": 383.105,
+      "diff0_frac": 0.0054,
+      "line_ratio_db": 26.6
+     },
+     "RDNET1": {
+      "std_uv": 970.537,
+      "diff0_frac": 0.0056,
+      "line_ratio_db": 26.52
+     },
+     "RDNET2": {
+      "std_uv": 884.01,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 27.27
+     },
+     "RDNET3": {
+      "std_uv": 541.853,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 27.84
+     },
+     "RDNET4": {
+      "std_uv": 577.679,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 28.23
+     },
+     "RF1": {
+      "std_uv": 350.275,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 27.96
+     },
+     "RF2": {
+      "std_uv": 528.362,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 27.89
+     },
+     "RF3": {
+      "std_uv": 456.058,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 27.39
+     },
+     "RF4": {
+      "std_uv": 354.015,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 29.08
+     },
+     "RF5": {
+      "std_uv": 2570.135,
+      "diff0_frac": 0.0041,
+      "line_ratio_db": 40.29
+     },
+     "RF6": {
+      "std_uv": 591.497,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 28.98
+     },
+     "RH1": {
+      "std_uv": 1244.852,
+      "diff0_frac": 0.0061,
+      "line_ratio_db": 28.34
+     },
+     "RH2": {
+      "std_uv": 749.614,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 27.55
+     },
+     "RH3": {
+      "std_uv": 1172.185,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 26.75
+     },
+     "RH4": {
+      "std_uv": 946.373,
+      "diff0_frac": 0.0058,
+      "line_ratio_db": 28.49
+     },
+     "RMT1": {
+      "std_uv": 404.876,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 28.12
+     },
+     "RMT2": {
+      "std_uv": 1226.663,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 25.24
+     },
+     "RMT3": {
+      "std_uv": 388.268,
+      "diff0_frac": 0.0059,
+      "line_ratio_db": 26.89
+     },
+     "RMT4": {
+      "std_uv": 978.202,
+      "diff0_frac": 0.0056,
+      "line_ratio_db": 28.32
+     },
+     "RPT1": {
+      "std_uv": 341.804,
+      "diff0_frac": 0.0057,
+      "line_ratio_db": 24.64
+     },
+     "RPT2": {
+      "std_uv": 313.631,
+      "diff0_frac": 0.006,
+      "line_ratio_db": 28.01
+     },
+     "RPT3": {
+      "std_uv": 342.29,
+      "diff0_frac": 0.0056,
+      "line_ratio_db": 25.13
+     },
+     "RPT4": {
+      "std_uv": 670.96,
+      "diff0_frac": 0.0059,
+      "line_ratio_db": 25.41
+     }
+    },
+    "thresholds": {
+     "flat_std_uv": 0.5,
+     "flat_diff0_frac": 0.5,
+     "robust_z": 5.0,
+     "high_std_uv": 500.0,
+     "line_band_hz": [
+      59.0,
+      61.0
+     ],
+     "line_ref_hz": [
+      [
+       50,
+       57
+      ],
+      [
+       63,
+       70
+      ]
+     ],
+     "jump": "|diff|>20 robust SD in >50% good channels"
+    }
+   },
+   "events_qc": {
+    "present": true,
+    "events": [
+     {
+      "onset_s": 120.0,
+      "duration_s": 0.0,
+      "trial_type": "sz onset",
+      "value": 2,
+      "sample": 60000,
+      "within_recording": true,
+      "sample_matches_onset": true
+     },
+     {
+      "onset_s": 169.998,
+      "duration_s": 0.0,
+      "trial_type": "sz offset",
+      "value": 1,
+      "sample": 84999,
+      "within_recording": true,
+      "sample_matches_onset": true
+     }
+    ],
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 169.998,
+      "duration_s": 49.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "n_sz_onset": 1,
+    "n_sz_offset": 1,
+    "issues": []
+   },
+   "bids_annotations": [
+    [
+     120.0,
+     "sz onset"
+    ],
+    [
+     169.998,
+     "sz offset"
+    ]
+   ]
+  },
+  {
+   "file": "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf",
+   "task": "ictal",
+   "run": "02",
+   "acq": "ecog",
+   "edf_header": {
+    "n_channels": 61,
+    "sfreq": 500.0,
+    "n_times": "127000",
+    "duration_s": 254.0,
+    "meas_date": "2022-08-28 22:34:59+00:00",
+    "orig_units": [
+     "\u00b5V"
+    ],
+    "edf_annotations": [],
+    "highpass": 0.0,
+    "lowpass": 250.0
+   },
+   "read_raw_bids": "ok",
+   "read_raw_bids_warnings": [
+    "participants.tsv file not found for data\\ds004100-1.1.3\\sub-HUP105\\ses-presurgery\\ieeg\\sub-HUP105_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf"
+   ],
+   "mne_bids_montage": {
+    "coord_frame": "mni_tal",
+    "n_pos": 60,
+    "max_abs_as_loaded": 66.817,
+    "note": "mne-bids applies coordsystem units literally (m)"
+   },
+   "sfreq": 500.0,
+   "n_times": "127000",
+   "duration_s": 254.0,
+   "sidecar": {
+    "SamplingFrequency": 500.0,
+    "RecordingDuration": 253.998,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 61,
+    "SEEGChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "sidecar_duration_match": "True",
+   "channels_tsv_types": {
+    "ECOG": 61
+   },
+   "channels_tsv_units": {
+    "\u00b5V": 61
+   },
+   "channels_tsv_sfreq": [
+    500.0
+   ],
+   "channels_tsv_filters": {
+    "low_cutoff": [
+     "0.0"
+    ],
+    "high_cutoff": [
+     "250.0"
+    ]
+   },
+   "status_counts": {
+    "good": 55,
+    "bad": 6
+   },
+   "bad_channels_tsv": [
+    "EKG",
+    "LA1",
+    "LA2",
+    "LA3",
+    "LA4",
+    "RF5"
+   ],
+   "edf_vs_tsv_names_equal": true,
+   "mne_ch_types": {
+    "ecog": 61
+   },
+   "soz": [
+    "RA2",
+    "RA3",
+    "RA4",
+    "RAT1",
+    "RAT2",
+    "RDNET1",
+    "RDNET2",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "resect": [
+    "RAT3",
+    "RAT4",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "other_status_tags": [],
+   "signal_qc": {
+    "n_nan": 0,
+    "median_std_uv_good": 665.6269920296824,
+    "median_line_ratio_db_good": 15.622285155335724,
+    "flat_channels": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude_std_gt_500uV": [
+     "LAT1",
+     "LAT3",
+     "LAT4",
+     "LF3",
+     "LF4",
+     "LMT3",
+     "LMT4",
+     "LP6",
+     "LPT1",
+     "LPT2",
+     "RA1",
+     "RA2",
+     "RA3",
+     "RA4",
+     "RAT1",
+     "RAT2",
+     "RAT3",
+     "RAT4",
+     "RDNET1",
+     "RDNET2",
+     "RDNET3",
+     "RDNET4",
+     "RF6",
+     "RH1",
+     "RH2",
+     "RH3",
+     "RH4",
+     "RMT2",
+     "RMT3",
+     "RMT4",
+     "RPT1",
+     "RPT2",
+     "RPT3",
+     "RPT4"
+    ],
+    "all_channel_zero_segments_ge_50ms": [],
+    "common_step_jump_samples": 1,
+    "per_channel": {
+     "EKG": {
+      "std_uv": 598.399,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 3.49
+     },
+     "LA1": {
+      "std_uv": 1984.862,
+      "diff0_frac": 0.0064,
+      "line_ratio_db": 27.05
+     },
+     "LA2": {
+      "std_uv": 1900.023,
+      "diff0_frac": 0.0055,
+      "line_ratio_db": 30.88
+     },
+     "LA3": {
+      "std_uv": 1977.625,
+      "diff0_frac": 0.0044,
+      "line_ratio_db": 28.31
+     },
+     "LA4": {
+      "std_uv": 2347.415,
+      "diff0_frac": 0.0073,
+      "line_ratio_db": 24.37
+     },
+     "LAT1": {
+      "std_uv": 538.586,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 14.34
+     },
+     "LAT2": {
+      "std_uv": 412.414,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 14.17
+     },
+     "LAT3": {
+      "std_uv": 680.719,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 16.41
+     },
+     "LAT4": {
+      "std_uv": 819.739,
+      "diff0_frac": 0.0076,
+      "line_ratio_db": 14.94
+     },
+     "LF1": {
+      "std_uv": 340.103,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 16.65
+     },
+     "LF2": {
+      "std_uv": 292.668,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 16.69
+     },
+     "LF3": {
+      "std_uv": 1555.675,
+      "diff0_frac": 0.0076,
+      "line_ratio_db": 14.49
+     },
+     "LF4": {
+      "std_uv": 1586.978,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 13.98
+     },
+     "LF5": {
+      "std_uv": 351.355,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 16.92
+     },
+     "LF6": {
+      "std_uv": 344.51,
+      "diff0_frac": 0.0081,
+      "line_ratio_db": 14.4
+     },
+     "LH1": {
+      "std_uv": 347.083,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 13.51
+     },
+     "LH2": {
+      "std_uv": 280.914,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 13.76
+     },
+     "LH3": {
+      "std_uv": 241.834,
+      "diff0_frac": 0.0083,
+      "line_ratio_db": 13.58
+     },
+     "LH4": {
+      "std_uv": 297.837,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 13.68
+     },
+     "LMT1": {
+      "std_uv": 398.203,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 15.87
+     },
+     "LMT2": {
+      "std_uv": 494.107,
+      "diff0_frac": 0.0081,
+      "line_ratio_db": 15.12
+     },
+     "LMT3": {
+      "std_uv": 691.612,
+      "diff0_frac": 0.0082,
+      "line_ratio_db": 14.76
+     },
+     "LMT4": {
+      "std_uv": 1159.184,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 14.59
+     },
+     "LP3": {
+      "std_uv": 249.106,
+      "diff0_frac": 0.0075,
+      "line_ratio_db": 14.51
+     },
+     "LP4": {
+      "std_uv": 348.128,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 12.74
+     },
+     "LP5": {
+      "std_uv": 288.984,
+      "diff0_frac": 0.008,
+      "line_ratio_db": 15.34
+     },
+     "LP6": {
+      "std_uv": 505.223,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 15.79
+     },
+     "LPT1": {
+      "std_uv": 715.515,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 15.85
+     },
+     "LPT2": {
+      "std_uv": 736.702,
+      "diff0_frac": 0.0076,
+      "line_ratio_db": 16.35
+     },
+     "LPT3": {
+      "std_uv": 446.334,
+      "diff0_frac": 0.0084,
+      "line_ratio_db": 15.63
+     },
+     "LPT4": {
+      "std_uv": 273.518,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 14.7
+     },
+     "RA1": {
+      "std_uv": 1884.788,
+      "diff0_frac": 0.0307,
+      "line_ratio_db": 16.88
+     },
+     "RA2": {
+      "std_uv": 1842.399,
+      "diff0_frac": 0.0303,
+      "line_ratio_db": 16.3
+     },
+     "RA3": {
+      "std_uv": 2329.139,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 14.75
+     },
+     "RA4": {
+      "std_uv": 1786.259,
+      "diff0_frac": 0.0354,
+      "line_ratio_db": 15.62
+     },
+     "RAT1": {
+      "std_uv": 1674.111,
+      "diff0_frac": 0.0076,
+      "line_ratio_db": 16.46
+     },
+     "RAT2": {
+      "std_uv": 553.234,
+      "diff0_frac": 0.008,
+      "line_ratio_db": 16.25
+     },
+     "RAT3": {
+      "std_uv": 530.76,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 15.22
+     },
+     "RAT4": {
+      "std_uv": 566.98,
+      "diff0_frac": 0.0082,
+      "line_ratio_db": 15.23
+     },
+     "RDNET1": {
+      "std_uv": 1036.777,
+      "diff0_frac": 0.0083,
+      "line_ratio_db": 15.25
+     },
+     "RDNET2": {
+      "std_uv": 1736.985,
+      "diff0_frac": 0.0081,
+      "line_ratio_db": 15.62
+     },
+     "RDNET3": {
+      "std_uv": 1134.746,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 15.93
+     },
+     "RDNET4": {
+      "std_uv": 1595.062,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 16.09
+     },
+     "RF1": {
+      "std_uv": 361.494,
+      "diff0_frac": 0.0083,
+      "line_ratio_db": 15.85
+     },
+     "RF2": {
+      "std_uv": 426.593,
+      "diff0_frac": 0.0082,
+      "line_ratio_db": 15.83
+     },
+     "RF3": {
+      "std_uv": 475.425,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 16.62
+     },
+     "RF4": {
+      "std_uv": 471.695,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 16.7
+     },
+     "RF5": {
+      "std_uv": 1505.877,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 31.48
+     },
+     "RF6": {
+      "std_uv": 665.627,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 16.5
+     },
+     "RH1": {
+      "std_uv": 2755.309,
+      "diff0_frac": 0.0263,
+      "line_ratio_db": 16.39
+     },
+     "RH2": {
+      "std_uv": 1871.917,
+      "diff0_frac": 0.0076,
+      "line_ratio_db": 15.49
+     },
+     "RH3": {
+      "std_uv": 2226.773,
+      "diff0_frac": 0.0297,
+      "line_ratio_db": 15.69
+     },
+     "RH4": {
+      "std_uv": 1989.004,
+      "diff0_frac": 0.0377,
+      "line_ratio_db": 16.93
+     },
+     "RMT1": {
+      "std_uv": 412.415,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 16.12
+     },
+     "RMT2": {
+      "std_uv": 804.089,
+      "diff0_frac": 0.0081,
+      "line_ratio_db": 15.75
+     },
+     "RMT3": {
+      "std_uv": 1312.41,
+      "diff0_frac": 0.0078,
+      "line_ratio_db": 15.01
+     },
+     "RMT4": {
+      "std_uv": 600.825,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 15.78
+     },
+     "RPT1": {
+      "std_uv": 713.239,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 13.71
+     },
+     "RPT2": {
+      "std_uv": 1250.408,
+      "diff0_frac": 0.0077,
+      "line_ratio_db": 16.52
+     },
+     "RPT3": {
+      "std_uv": 1101.98,
+      "diff0_frac": 0.0075,
+      "line_ratio_db": 14.82
+     },
+     "RPT4": {
+      "std_uv": 851.234,
+      "diff0_frac": 0.0079,
+      "line_ratio_db": 14.89
+     }
+    },
+    "thresholds": {
+     "flat_std_uv": 0.5,
+     "flat_diff0_frac": 0.5,
+     "robust_z": 5.0,
+     "high_std_uv": 500.0,
+     "line_band_hz": [
+      59.0,
+      61.0
+     ],
+     "line_ref_hz": [
+      [
+       50,
+       57
+      ],
+      [
+       63,
+       70
+      ]
+     ],
+     "jump": "|diff|>20 robust SD in >50% good channels"
+    }
+   },
+   "events_qc": {
+    "present": true,
+    "events": [
+     {
+      "onset_s": 120.0,
+      "duration_s": 0.0,
+      "trial_type": "sz onset",
+      "value": 2,
+      "sample": 60000,
+      "within_recording": true,
+      "sample_matches_onset": true
+     },
+     {
+      "onset_s": 193.998,
+      "duration_s": 0.0,
+      "trial_type": "sz offset",
+      "value": 1,
+      "sample": 96999,
+      "within_recording": true,
+      "sample_matches_onset": true
+     }
+    ],
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 193.998,
+      "duration_s": 73.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "n_sz_onset": 1,
+    "n_sz_offset": 1,
+    "issues": []
+   },
+   "bids_annotations": [
+    [
+     120.0,
+     "sz onset"
+    ],
+    [
+     193.998,
+     "sz offset"
+    ]
+   ]
+  },
+  {
+   "file": "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf",
+   "task": "interictal",
+   "run": "01",
+   "acq": "ecog",
+   "edf_header": {
+    "n_channels": 61,
+    "sfreq": 500.0,
+    "n_times": "150000",
+    "duration_s": 300.0,
+    "meas_date": "2022-08-28 22:52:47+00:00",
+    "orig_units": [
+     "\u00b5V"
+    ],
+    "edf_annotations": [],
+    "highpass": 0.0,
+    "lowpass": 250.0
+   },
+   "read_raw_bids": "ok",
+   "read_raw_bids_warnings": [
+    "Did not find any events.tsv associated with sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01.\n\nThe search strings were:\ndata\\ds004100-1.1.3\\sub-HUP105\\sub-HUP105*events.tsv\ndata\\ds004100-1.1.3\\sub-HUP105\\ieeg\\sub-HUP105*events.tsv\ndata\\ds004100-1.1.3\\sub-HUP105\\ses-presurgery\\sub-HUP105_ses",
+    "participants.tsv file not found for data\\ds004100-1.1.3\\sub-HUP105\\ses-presurgery\\ieeg\\sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf"
+   ],
+   "mne_bids_montage": {
+    "coord_frame": "mni_tal",
+    "n_pos": 60,
+    "max_abs_as_loaded": 66.817,
+    "note": "mne-bids applies coordsystem units literally (m)"
+   },
+   "sfreq": 500.0,
+   "n_times": "150000",
+   "duration_s": 300.0,
+   "sidecar": {
+    "SamplingFrequency": 500.0,
+    "RecordingDuration": 299.998,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 61,
+    "SEEGChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "sidecar_duration_match": "True",
+   "channels_tsv_types": {
+    "ECOG": 61
+   },
+   "channels_tsv_units": {
+    "\u00b5V": 61
+   },
+   "channels_tsv_sfreq": [
+    500.0
+   ],
+   "channels_tsv_filters": {
+    "low_cutoff": [
+     "0.0"
+    ],
+    "high_cutoff": [
+     "250.0"
+    ]
+   },
+   "status_counts": {
+    "good": 55,
+    "bad": 6
+   },
+   "bad_channels_tsv": [
+    "EKG",
+    "LA1",
+    "LA2",
+    "LA3",
+    "LA4",
+    "RF5"
+   ],
+   "edf_vs_tsv_names_equal": true,
+   "mne_ch_types": {
+    "ecog": 61
+   },
+   "soz": [
+    "RA2",
+    "RA3",
+    "RA4",
+    "RAT1",
+    "RAT2",
+    "RDNET1",
+    "RDNET2",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "resect": [
+    "RAT3",
+    "RAT4",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "other_status_tags": [],
+   "signal_qc": {
+    "n_nan": 0,
+    "median_std_uv_good": 77.16095813722441,
+    "median_line_ratio_db_good": 16.845376268355988,
+    "flat_channels": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude_std_gt_500uV": [],
+    "all_channel_zero_segments_ge_50ms": [],
+    "common_step_jump_samples": 0,
+    "per_channel": {
+     "EKG": {
+      "std_uv": 60.732,
+      "diff0_frac": 0.0329,
+      "line_ratio_db": 7.69
+     },
+     "LA1": {
+      "std_uv": 53.957,
+      "diff0_frac": 0.0487,
+      "line_ratio_db": 16.14
+     },
+     "LA2": {
+      "std_uv": 72.095,
+      "diff0_frac": 0.0449,
+      "line_ratio_db": 15.22
+     },
+     "LA3": {
+      "std_uv": 67.796,
+      "diff0_frac": 0.0467,
+      "line_ratio_db": 16.05
+     },
+     "LA4": {
+      "std_uv": 69.461,
+      "diff0_frac": 0.0478,
+      "line_ratio_db": 16.72
+     },
+     "LAT1": {
+      "std_uv": 57.573,
+      "diff0_frac": 0.0444,
+      "line_ratio_db": 16.85
+     },
+     "LAT2": {
+      "std_uv": 59.968,
+      "diff0_frac": 0.0461,
+      "line_ratio_db": 17.42
+     },
+     "LAT3": {
+      "std_uv": 91.401,
+      "diff0_frac": 0.0371,
+      "line_ratio_db": 14.7
+     },
+     "LAT4": {
+      "std_uv": 117.525,
+      "diff0_frac": 0.037,
+      "line_ratio_db": 15.87
+     },
+     "LF1": {
+      "std_uv": 68.54,
+      "diff0_frac": 0.0393,
+      "line_ratio_db": 15.29
+     },
+     "LF2": {
+      "std_uv": 54.055,
+      "diff0_frac": 0.0462,
+      "line_ratio_db": 17.31
+     },
+     "LF3": {
+      "std_uv": 54.655,
+      "diff0_frac": 0.0432,
+      "line_ratio_db": 16.01
+     },
+     "LF4": {
+      "std_uv": 66.279,
+      "diff0_frac": 0.0384,
+      "line_ratio_db": 14.69
+     },
+     "LF5": {
+      "std_uv": 82.419,
+      "diff0_frac": 0.0386,
+      "line_ratio_db": 16.8
+     },
+     "LF6": {
+      "std_uv": 113.923,
+      "diff0_frac": 0.0366,
+      "line_ratio_db": 16.25
+     },
+     "LH1": {
+      "std_uv": 63.47,
+      "diff0_frac": 0.0457,
+      "line_ratio_db": 16.07
+     },
+     "LH2": {
+      "std_uv": 66.446,
+      "diff0_frac": 0.0458,
+      "line_ratio_db": 17.05
+     },
+     "LH3": {
+      "std_uv": 73.31,
+      "diff0_frac": 0.0452,
+      "line_ratio_db": 17.07
+     },
+     "LH4": {
+      "std_uv": 91.053,
+      "diff0_frac": 0.0438,
+      "line_ratio_db": 17.62
+     },
+     "LMT1": {
+      "std_uv": 58.594,
+      "diff0_frac": 0.0483,
+      "line_ratio_db": 16.25
+     },
+     "LMT2": {
+      "std_uv": 90.3,
+      "diff0_frac": 0.0433,
+      "line_ratio_db": 14.67
+     },
+     "LMT3": {
+      "std_uv": 137.597,
+      "diff0_frac": 0.034,
+      "line_ratio_db": 13.3
+     },
+     "LMT4": {
+      "std_uv": 85.192,
+      "diff0_frac": 0.0386,
+      "line_ratio_db": 13.57
+     },
+     "LP3": {
+      "std_uv": 55.434,
+      "diff0_frac": 0.0445,
+      "line_ratio_db": 9.23
+     },
+     "LP4": {
+      "std_uv": 85.984,
+      "diff0_frac": 0.0434,
+      "line_ratio_db": 14.14
+     },
+     "LP5": {
+      "std_uv": 147.704,
+      "diff0_frac": 0.0503,
+      "line_ratio_db": 10.46
+     },
+     "LP6": {
+      "std_uv": 66.964,
+      "diff0_frac": 0.0455,
+      "line_ratio_db": 9.81
+     },
+     "LPT1": {
+      "std_uv": 132.467,
+      "diff0_frac": 0.0296,
+      "line_ratio_db": 12.98
+     },
+     "LPT2": {
+      "std_uv": 128.764,
+      "diff0_frac": 0.0336,
+      "line_ratio_db": 14.65
+     },
+     "LPT3": {
+      "std_uv": 105.782,
+      "diff0_frac": 0.0351,
+      "line_ratio_db": 15.15
+     },
+     "LPT4": {
+      "std_uv": 151.513,
+      "diff0_frac": 0.0309,
+      "line_ratio_db": 11.88
+     },
+     "RA1": {
+      "std_uv": 81.437,
+      "diff0_frac": 0.0326,
+      "line_ratio_db": 16.5
+     },
+     "RA2": {
+      "std_uv": 81.059,
+      "diff0_frac": 0.0324,
+      "line_ratio_db": 16.39
+     },
+     "RA3": {
+      "std_uv": 81.255,
+      "diff0_frac": 0.0321,
+      "line_ratio_db": 16.81
+     },
+     "RA4": {
+      "std_uv": 61.096,
+      "diff0_frac": 0.033,
+      "line_ratio_db": 17.12
+     },
+     "RAT1": {
+      "std_uv": 57.829,
+      "diff0_frac": 0.0312,
+      "line_ratio_db": 16.9
+     },
+     "RAT2": {
+      "std_uv": 59.551,
+      "diff0_frac": 0.0318,
+      "line_ratio_db": 18.12
+     },
+     "RAT3": {
+      "std_uv": 65.101,
+      "diff0_frac": 0.031,
+      "line_ratio_db": 18.29
+     },
+     "RAT4": {
+      "std_uv": 64.509,
+      "diff0_frac": 0.0313,
+      "line_ratio_db": 19.07
+     },
+     "RDNET1": {
+      "std_uv": 46.874,
+      "diff0_frac": 0.032,
+      "line_ratio_db": 19.15
+     },
+     "RDNET2": {
+      "std_uv": 48.631,
+      "diff0_frac": 0.0325,
+      "line_ratio_db": 19.33
+     },
+     "RDNET3": {
+      "std_uv": 51.309,
+      "diff0_frac": 0.0325,
+      "line_ratio_db": 19.36
+     },
+     "RDNET4": {
+      "std_uv": 56.306,
+      "diff0_frac": 0.0316,
+      "line_ratio_db": 19.42
+     },
+     "RF1": {
+      "std_uv": 49.439,
+      "diff0_frac": 0.0347,
+      "line_ratio_db": 18.04
+     },
+     "RF2": {
+      "std_uv": 112.696,
+      "diff0_frac": 0.0337,
+      "line_ratio_db": 17.46
+     },
+     "RF3": {
+      "std_uv": 54.164,
+      "diff0_frac": 0.0323,
+      "line_ratio_db": 17.24
+     },
+     "RF4": {
+      "std_uv": 50.892,
+      "diff0_frac": 0.0336,
+      "line_ratio_db": 18.51
+     },
+     "RF5": {
+      "std_uv": 65.158,
+      "diff0_frac": 0.0331,
+      "line_ratio_db": 18.56
+     },
+     "RF6": {
+      "std_uv": 77.161,
+      "diff0_frac": 0.0331,
+      "line_ratio_db": 18.07
+     },
+     "RH1": {
+      "std_uv": 80.905,
+      "diff0_frac": 0.0306,
+      "line_ratio_db": 17.4
+     },
+     "RH2": {
+      "std_uv": 65.637,
+      "diff0_frac": 0.03,
+      "line_ratio_db": 18.14
+     },
+     "RH3": {
+      "std_uv": 64.391,
+      "diff0_frac": 0.0312,
+      "line_ratio_db": 18.56
+     },
+     "RH4": {
+      "std_uv": 62.513,
+      "diff0_frac": 0.0315,
+      "line_ratio_db": 19.15
+     },
+     "RMT1": {
+      "std_uv": 118.515,
+      "diff0_frac": 0.0333,
+      "line_ratio_db": 18.26
+     },
+     "RMT2": {
+      "std_uv": 87.031,
+      "diff0_frac": 0.0302,
+      "line_ratio_db": 15.28
+     },
+     "RMT3": {
+      "std_uv": 104.16,
+      "diff0_frac": 0.0291,
+      "line_ratio_db": 17.18
+     },
+     "RMT4": {
+      "std_uv": 79.772,
+      "diff0_frac": 0.0324,
+      "line_ratio_db": 17.76
+     },
+     "RPT1": {
+      "std_uv": 95.12,
+      "diff0_frac": 0.0286,
+      "line_ratio_db": 14.34
+     },
+     "RPT2": {
+      "std_uv": 83.628,
+      "diff0_frac": 0.0303,
+      "line_ratio_db": 17.86
+     },
+     "RPT3": {
+      "std_uv": 83.116,
+      "diff0_frac": 0.0293,
+      "line_ratio_db": 14.07
+     },
+     "RPT4": {
+      "std_uv": 83.241,
+      "diff0_frac": 0.0304,
+      "line_ratio_db": 14.19
+     }
+    },
+    "thresholds": {
+     "flat_std_uv": 0.5,
+     "flat_diff0_frac": 0.5,
+     "robust_z": 5.0,
+     "high_std_uv": 500.0,
+     "line_band_hz": [
+      59.0,
+      61.0
+     ],
+     "line_ref_hz": [
+      [
+       50,
+       57
+      ],
+      [
+       63,
+       70
+      ]
+     ],
+     "jump": "|diff|>20 robust SD in >50% good channels"
+    }
+   },
+   "events_qc": {
+    "present": false
+   },
+   "bids_annotations": []
+  },
+  {
+   "file": "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf",
+   "task": "interictal",
+   "run": "02",
+   "acq": "ecog",
+   "edf_header": {
+    "n_channels": 61,
+    "sfreq": 500.0,
+    "n_times": "150000",
+    "duration_s": 300.0,
+    "meas_date": "2022-08-28 22:52:49+00:00",
+    "orig_units": [
+     "\u00b5V"
+    ],
+    "edf_annotations": [],
+    "highpass": 0.0,
+    "lowpass": 250.0
+   },
+   "read_raw_bids": "ok",
+   "read_raw_bids_warnings": [
+    "Did not find any events.tsv associated with sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02.\n\nThe search strings were:\ndata\\ds004100-1.1.3\\sub-HUP105\\sub-HUP105*events.tsv\ndata\\ds004100-1.1.3\\sub-HUP105\\ieeg\\sub-HUP105*events.tsv\ndata\\ds004100-1.1.3\\sub-HUP105\\ses-presurgery\\sub-HUP105_ses",
+    "participants.tsv file not found for data\\ds004100-1.1.3\\sub-HUP105\\ses-presurgery\\ieeg\\sub-HUP105_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf"
+   ],
+   "mne_bids_montage": {
+    "coord_frame": "mni_tal",
+    "n_pos": 60,
+    "max_abs_as_loaded": 66.817,
+    "note": "mne-bids applies coordsystem units literally (m)"
+   },
+   "sfreq": 500.0,
+   "n_times": "150000",
+   "duration_s": 300.0,
+   "sidecar": {
+    "SamplingFrequency": 500.0,
+    "RecordingDuration": 299.998,
+    "PowerLineFrequency": 60,
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 61,
+    "SEEGChannelCount": 0,
+    "RecordingType": "continuous",
+    "SoftwareFilters": "n/a"
+   },
+   "sidecar_duration_match": "True",
+   "channels_tsv_types": {
+    "ECOG": 61
+   },
+   "channels_tsv_units": {
+    "\u00b5V": 61
+   },
+   "channels_tsv_sfreq": [
+    500.0
+   ],
+   "channels_tsv_filters": {
+    "low_cutoff": [
+     "0.0"
+    ],
+    "high_cutoff": [
+     "250.0"
+    ]
+   },
+   "status_counts": {
+    "good": 55,
+    "bad": 6
+   },
+   "bad_channels_tsv": [
+    "EKG",
+    "LA1",
+    "LA2",
+    "LA3",
+    "LA4",
+    "RF5"
+   ],
+   "edf_vs_tsv_names_equal": true,
+   "mne_ch_types": {
+    "ecog": 61
+   },
+   "soz": [
+    "RA2",
+    "RA3",
+    "RA4",
+    "RAT1",
+    "RAT2",
+    "RDNET1",
+    "RDNET2",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "resect": [
+    "RAT3",
+    "RAT4",
+    "RDNET3",
+    "RDNET4"
+   ],
+   "other_status_tags": [],
+   "signal_qc": {
+    "n_nan": 0,
+    "median_std_uv_good": 89.71859232221578,
+    "median_line_ratio_db_good": 28.087815141119382,
+    "flat_channels": [],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude_std_gt_500uV": [],
+    "all_channel_zero_segments_ge_50ms": [],
+    "common_step_jump_samples": 0,
+    "per_channel": {
+     "EKG": {
+      "std_uv": 94.768,
+      "diff0_frac": 0.0113,
+      "line_ratio_db": 17.67
+     },
+     "LA1": {
+      "std_uv": 90.426,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 28.47
+     },
+     "LA2": {
+      "std_uv": 94.178,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 28.19
+     },
+     "LA3": {
+      "std_uv": 84.345,
+      "diff0_frac": 0.0126,
+      "line_ratio_db": 28.72
+     },
+     "LA4": {
+      "std_uv": 90.641,
+      "diff0_frac": 0.0124,
+      "line_ratio_db": 29.57
+     },
+     "LAT1": {
+      "std_uv": 71.187,
+      "diff0_frac": 0.013,
+      "line_ratio_db": 28.56
+     },
+     "LAT2": {
+      "std_uv": 74.899,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 28.12
+     },
+     "LAT3": {
+      "std_uv": 134.752,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 27.3
+     },
+     "LAT4": {
+      "std_uv": 136.741,
+      "diff0_frac": 0.0133,
+      "line_ratio_db": 28.45
+     },
+     "LF1": {
+      "std_uv": 66.328,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 26.81
+     },
+     "LF2": {
+      "std_uv": 63.736,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 29.26
+     },
+     "LF3": {
+      "std_uv": 68.296,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 28.8
+     },
+     "LF4": {
+      "std_uv": 100.855,
+      "diff0_frac": 0.0134,
+      "line_ratio_db": 26.81
+     },
+     "LF5": {
+      "std_uv": 75.478,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 29.49
+     },
+     "LF6": {
+      "std_uv": 138.701,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 26.35
+     },
+     "LH1": {
+      "std_uv": 77.783,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 28.29
+     },
+     "LH2": {
+      "std_uv": 96.866,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 28.74
+     },
+     "LH3": {
+      "std_uv": 84.196,
+      "diff0_frac": 0.0136,
+      "line_ratio_db": 28.77
+     },
+     "LH4": {
+      "std_uv": 118.97,
+      "diff0_frac": 0.0134,
+      "line_ratio_db": 29.27
+     },
+     "LMT1": {
+      "std_uv": 100.668,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 29.0
+     },
+     "LMT2": {
+      "std_uv": 90.681,
+      "diff0_frac": 0.0132,
+      "line_ratio_db": 27.74
+     },
+     "LMT3": {
+      "std_uv": 117.036,
+      "diff0_frac": 0.0124,
+      "line_ratio_db": 27.02
+     },
+     "LMT4": {
+      "std_uv": 83.26,
+      "diff0_frac": 0.0137,
+      "line_ratio_db": 26.46
+     },
+     "LP3": {
+      "std_uv": 89.719,
+      "diff0_frac": 0.0139,
+      "line_ratio_db": 27.21
+     },
+     "LP4": {
+      "std_uv": 78.257,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 26.83
+     },
+     "LP5": {
+      "std_uv": 169.168,
+      "diff0_frac": 0.0126,
+      "line_ratio_db": 28.59
+     },
+     "LP6": {
+      "std_uv": 144.964,
+      "diff0_frac": 0.0137,
+      "line_ratio_db": 27.77
+     },
+     "LPT1": {
+      "std_uv": 101.609,
+      "diff0_frac": 0.0134,
+      "line_ratio_db": 27.33
+     },
+     "LPT2": {
+      "std_uv": 93.261,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 28.22
+     },
+     "LPT3": {
+      "std_uv": 94.507,
+      "diff0_frac": 0.0132,
+      "line_ratio_db": 27.72
+     },
+     "LPT4": {
+      "std_uv": 148.554,
+      "diff0_frac": 0.0123,
+      "line_ratio_db": 23.75
+     },
+     "RA1": {
+      "std_uv": 134.525,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 27.67
+     },
+     "RA2": {
+      "std_uv": 119.833,
+      "diff0_frac": 0.013,
+      "line_ratio_db": 26.85
+     },
+     "RA3": {
+      "std_uv": 120.652,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 27.39
+     },
+     "RA4": {
+      "std_uv": 80.945,
+      "diff0_frac": 0.0131,
+      "line_ratio_db": 28.03
+     },
+     "RAT1": {
+      "std_uv": 68.723,
+      "diff0_frac": 0.0134,
+      "line_ratio_db": 26.35
+     },
+     "RAT2": {
+      "std_uv": 69.792,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 28.18
+     },
+     "RAT3": {
+      "std_uv": 72.319,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 27.62
+     },
+     "RAT4": {
+      "std_uv": 70.685,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 28.93
+     },
+     "RDNET1": {
+      "std_uv": 113.945,
+      "diff0_frac": 0.0132,
+      "line_ratio_db": 28.75
+     },
+     "RDNET2": {
+      "std_uv": 103.575,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 29.09
+     },
+     "RDNET3": {
+      "std_uv": 246.76,
+      "diff0_frac": 0.013,
+      "line_ratio_db": 29.32
+     },
+     "RDNET4": {
+      "std_uv": 146.505,
+      "diff0_frac": 0.0125,
+      "line_ratio_db": 29.58
+     },
+     "RF1": {
+      "std_uv": 68.207,
+      "diff0_frac": 0.0136,
+      "line_ratio_db": 27.58
+     },
+     "RF2": {
+      "std_uv": 64.036,
+      "diff0_frac": 0.0133,
+      "line_ratio_db": 28.09
+     },
+     "RF3": {
+      "std_uv": 73.199,
+      "diff0_frac": 0.0133,
+      "line_ratio_db": 27.33
+     },
+     "RF4": {
+      "std_uv": 102.484,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 29.19
+     },
+     "RF5": {
+      "std_uv": 74.216,
+      "diff0_frac": 0.0127,
+      "line_ratio_db": 29.26
+     },
+     "RF6": {
+      "std_uv": 93.667,
+      "diff0_frac": 0.0134,
+      "line_ratio_db": 28.93
+     },
+     "RH1": {
+      "std_uv": 78.366,
+      "diff0_frac": 0.013,
+      "line_ratio_db": 27.45
+     },
+     "RH2": {
+      "std_uv": 88.237,
+      "diff0_frac": 0.0129,
+      "line_ratio_db": 28.51
+     },
+     "RH3": {
+      "std_uv": 85.67,
+      "diff0_frac": 0.0127,
+      "line_ratio_db": 28.54
+     },
+     "RH4": {
+      "std_uv": 117.287,
+      "diff0_frac": 0.0136,
+      "line_ratio_db": 28.81
+     },
+     "RMT1": {
+      "std_uv": 68.613,
+      "diff0_frac": 0.0125,
+      "line_ratio_db": 29.12
+     },
+     "RMT2": {
+      "std_uv": 79.294,
+      "diff0_frac": 0.0136,
+      "line_ratio_db": 26.42
+     },
+     "RMT3": {
+      "std_uv": 89.629,
+      "diff0_frac": 0.0132,
+      "line_ratio_db": 27.88
+     },
+     "RMT4": {
+      "std_uv": 93.246,
+      "diff0_frac": 0.0128,
+      "line_ratio_db": 28.46
+     },
+     "RPT1": {
+      "std_uv": 89.298,
+      "diff0_frac": 0.0126,
+      "line_ratio_db": 25.38
+     },
+     "RPT2": {
+      "std_uv": 82.004,
+      "diff0_frac": 0.0132,
+      "line_ratio_db": 28.65
+     },
+     "RPT3": {
+      "std_uv": 87.48,
+      "diff0_frac": 0.0134,
+      "line_ratio_db": 26.42
+     },
+     "RPT4": {
+      "std_uv": 90.775,
+      "diff0_frac": 0.0137,
+      "line_ratio_db": 25.71
+     }
+    },
+    "thresholds": {
+     "flat_std_uv": 0.5,
+     "flat_diff0_frac": 0.5,
+     "robust_z": 5.0,
+     "high_std_uv": 500.0,
+     "line_band_hz": [
+      59.0,
+      61.0
+     ],
+     "line_ref_hz": [
+      [
+       50,
+       57
+      ],
+      [
+       63,
+       70
+      ]
+     ],
+     "jump": "|diff|>20 robust SD in >50% good channels"
+    }
+   },
+   "events_qc": {
+    "present": false
+   },
+   "bids_annotations": []
+  }
+ ],
+ "cross_run_consistency": {
+  "same_channel_list": true,
+  "same_soz": true,
+  "same_resect": true,
+  "same_bad": true
+ },
+ "electrodes": {
+  "electrodes_tsv": "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv",
+  "coordsystem_json": "sub-HUP105/ses-presurgery/ieeg/sub-HUP105_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json",
+  "coordsystem": {
+   "iEEGCoordinateSystem": "fsaverage",
+   "iEEGCoordinateSystemDescription": "Defined by FreeSurfer, the MRI (surface RAS) origin is at the center of a 256\u00d7256\u00d7256 mm^3 anisotropic volume (may not be in the center of the head).",
+   "iEEGCoordinateUnits": "m"
+  },
+  "n_rows": 61,
+  "n_with_coords": 60,
+  "rows_without_coords": [
+   "EKG"
+  ],
+  "recorded_channels_without_coords": [
+   "EKG"
+  ],
+  "recorded_good_channels_without_coords": [],
+  "recorded_channels_missing_from_electrodes_tsv": [],
+  "ranges_raw_units": {
+   "x": [
+    -66.817,
+    63.7737
+   ],
+   "y": [
+    -66.3474,
+    36.1831
+   ],
+   "z": [
+    -48.7872126937459,
+    57.9388170659494
+   ]
+  },
+  "max_abs_raw": 66.817,
+  "centroid_raw": [
+   -1.5229616666666668,
+   -19.471328000000003,
+   -14.831966318028927
+  ],
+  "frac_in_mni_box_if_mm": 1.0,
+  "outside_mni_box_if_mm": [],
+  "extent_if_metres_m": 66.817,
+  "nn_distance_raw": {
+   "median": 9.200910363949662,
+   "p05": 4.469153550844955,
+   "p95": 13.122951371261669
+  },
+  "consecutive_contact_distance_raw": {
+   "n": 46,
+   "median": 10.07951987704389,
+   "p05": 4.492705874463741,
+   "p95": 13.609731260209724
+  },
+  "hemisphere_prefix_check": {
+   "L_prefix_n": 30,
+   "L_prefix_x_neg": 30,
+   "R_prefix_n": 30,
+   "R_prefix_x_pos": 30
+  },
+  "mni_box_mm": {
+   "x": [
+    -80,
+    80
+   ],
+   "y": [
+    -120,
+    90
+   ],
+   "z": [
+    -70,
+    90
+   ]
+  }
+ }
+}

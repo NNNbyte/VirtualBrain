@@ -1,0 +1,355 @@
+{
+ "case_id": "HUP141",
+ "verdict": "accept_with_limits",
+ "verdict_reasons": [
+  "coordinate frame template identity (fsaverage/MNI305 vs ICBM152) to_verify; units resolved as mm",
+  "anatomy template-only (no MRI/CT); no atlas labels",
+  "reference electrode not reported (iEEGReference n/a); treat as referential as recorded",
+  "EKG1/EKG2 mistyped as SEEG in channels.tsv (bad-status; exclude by name)",
+  "QC-flagged channels (not marked bad in channels.tsv; review before modelling): {'noisy_line_noise': ['RA04', 'RA05', 'RA06', 'RC06', 'RC07', 'RC08', 'RC10', 'RC12'], 'high_amplitude_std_gt_500uV': ['LB01', 'RB10']}"
+ ],
+ "findings": [
+  {
+   "item": "checksums",
+   "status": "pass",
+   "detail": "29/29 files match T0015 manifest sha256+size"
+  },
+  {
+   "item": "signal ictal-run-01",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 206.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 82.97,
+    "median_line_ratio_db_good": 0.07,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [
+     "RA04",
+     "RA05",
+     "RA06",
+     "RC06",
+     "RC07",
+     "RC08",
+     "RC10",
+     "RC12"
+    ],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 145.998046875,
+      "duration_s": 25.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal ictal-run-02",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 210.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 91.31,
+    "median_line_ratio_db_good": 0.89,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 149.998046875,
+      "duration_s": 29.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal ictal-run-03",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 209.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 88.96,
+    "median_line_ratio_db_good": 1.48,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 148.998046875,
+      "duration_s": 28.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal ictal-run-04",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 206.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 113.59,
+    "median_line_ratio_db_good": 1.01,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 145.998046875,
+      "duration_s": 25.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal ictal-run-05",
+   "status": "warn",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 292.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 201.4,
+    "median_line_ratio_db_good": 0.19,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [
+     "LB01",
+     "RB10"
+    ],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 1,
+    "seizures": [
+     {
+      "onset_s": 120.0,
+      "offset_s": 231.998046875,
+      "duration_s": 111.998,
+      "pre_onset_s": 120.0,
+      "post_offset_s": 60.002
+     }
+    ],
+    "event_issues": []
+   }
+  },
+  {
+   "item": "signal interictal-run-01",
+   "status": "pass",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 300.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 68.23,
+    "median_line_ratio_db_good": 0.43,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 0
+   }
+  },
+  {
+   "item": "signal interictal-run-02",
+   "status": "warn",
+   "detail": {
+    "sfreq_hz": 512.0,
+    "duration_s": 300.0,
+    "read_raw_bids": "ok",
+    "sidecar_duration_match": "True",
+    "names_match": true,
+    "n_nan": 0,
+    "median_std_uv_good": 60.66,
+    "median_line_ratio_db_good": 5.37,
+    "flat": [
+     "LF07"
+    ],
+    "noisy_high_variance": [],
+    "low_variance": [],
+    "noisy_line_noise": [],
+    "high_amplitude": [],
+    "all_channel_zero_segments": [],
+    "common_step_jumps": 4
+   }
+  },
+  {
+   "item": "annotation coherence",
+   "status": "pass",
+   "detail": "5/5 ictal runs have sz onset (+offset) inside the recording, events.tsv sample == onset*fs"
+  },
+  {
+   "item": "channel tags",
+   "status": "pass",
+   "detail": {
+    "n_soz": 13,
+    "n_resect": 13,
+    "soz_not_resect": [],
+    "consistent_across_runs": {
+     "same_channel_list": true,
+     "same_soz": true,
+     "same_resect": true,
+     "same_bad": true
+    }
+   }
+  },
+  {
+   "item": "coordinates",
+   "status": "warn",
+   "detail": {
+    "decision": "Units: mm. Template identity: unresolved between fsaverage (=MNI305 Talairach, coordsystem.json) and ICBM152 MNI (README); both are MNI-type template spaces whose axes agree and whose offsets are a few mm, which coordinate values alone cannot separate. Use as MNI-like template coordinates in mm; do not treat as verified ICBM152 nor as patient-native.",
+    "frac_in_mni_box_mm": 1.0,
+    "outside_box": [],
+    "good_channels_without_coords": []
+   }
+  },
+  {
+   "item": "soz/resect overlap",
+   "status": "info",
+   "detail": "soz set (13 contacts RA01-04, RB01-04, RC01-05) is identical to resect set"
+  },
+  {
+   "item": "line noise",
+   "status": "info",
+   "detail": "robust-z line-noise flags RA04-06, RC06-12 occur only in ictal-01 and have small absolute 60-Hz ratio (~2-3 dB) because the good-channel distribution is narrow (median 0.07 dB); negligible"
+  },
+  {
+   "item": "transients",
+   "status": "info",
+   "detail": "common step-jump detector: 1 sample in ictal-05 at 236.8 s (after sz offset) and 4 samples at 61.99-62.00 s in interictal-02 (~216 uV); brief isolated transients, no zero segments, no NaN"
+  },
+  {
+   "item": "high amplitude",
+   "status": "info",
+   "detail": "LB01, RB10 std >500 uV in ictal-05 only (longest seizure, 112 s); not flagged in other runs"
+  },
+  {
+   "item": "EDF header",
+   "status": "pass",
+   "detail": "117 ch, 512 Hz, uV, no EDF-embedded annotations; durations match ieeg.json RecordingDuration (+1 sample convention)"
+  },
+  {
+   "item": "flat channels already bad-status",
+   "status": "info",
+   "detail": [
+    "LF07"
+   ]
+  }
+ ],
+ "missingness": {
+  "mri_ct": "reported_absent",
+  "interictal_events": "not applicable (no events.tsv for interictal runs, as expected)",
+  "channels_without_coords": [
+   "EKG1",
+   "EKG2"
+  ],
+  "reference_electrode": "not_reported",
+  "atlas_labels": "not_reported",
+  "ictal_runs": 5,
+  "interictal_runs": 2,
+  "outcomes": "sealed (not accessed)"
+ },
+ "coordinate_frame_decision": {
+  "coordinate_units": "mm",
+  "coordinate_units_status": "resolved (values are millimetres; declared 'm' rejected)",
+  "coordinate_frame": "MNI-like template space (fsaverage/MNI305 surface-RAS vs ICBM152 MNI)",
+  "coordinate_frame_status": "to_verify",
+  "decision_text": "Units: mm. Template identity: unresolved between fsaverage (=MNI305 Talairach, coordsystem.json) and ICBM152 MNI (README); both are MNI-type template spaces whose axes agree and whose offsets are a few mm, which coordinate values alone cannot separate. Use as MNI-like template coordinates in mm; do not treat as verified ICBM152 nor as patient-native."
+ },
+ "qc_thresholds": {
+  "flat_std_uv": 0.5,
+  "flat_diff0_frac": 0.5,
+  "robust_z": 5.0,
+  "high_std_uv": 500.0,
+  "line_band_hz": [
+   59.0,
+   61.0
+  ],
+  "line_ref_hz": [
+   [
+    50,
+    57
+   ],
+   [
+    63,
+    70
+   ]
+  ],
+  "jump": "|diff|>20 robust SD in >50% good channels"
+ },
+ "tooling": {
+  "worker": "case_qc.py",
+  "worker_sha256": "4200abcfed4cbc39592b462e1caee416af1b93e4b5487a2dba76f613145f3835",
+  "versions": {
+   "mne": "1.13.2",
+   "mne_bids": "0.20.0",
+   "numpy": "2.1.0",
+   "pandas": "2.2.3",
+   "scipy": "1.15.1"
+  }
+ }
+}

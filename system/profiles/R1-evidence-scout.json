@@ -1,0 +1,42 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "R1-evidence-scout",
+  "role": "evidence_scout",
+  "display_name": "R1 \u00b7 Evidence & dataset scout",
+  "enabled": true,
+  "color": "#2f6fb3",
+  "stage": "discovery",
+  "description": "Search sources, verify evidence, data access and cohort overlap.",
+  "skill": "r1-evidence-scout",
+  "allowed_tools": [
+    "literature-search",
+    "source-verification",
+    "dataset-discovery",
+    "sample-inspection",
+    "method-extraction",
+    "cohort-overlap"
+  ],
+  "allowed_output_types": [
+    "evidence_claim",
+    "dataset_card",
+    "method_card",
+    "access_record",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": false,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": true
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "case_id": "not_applicable",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 12
+  }
+}

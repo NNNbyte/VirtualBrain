@@ -1,0 +1,44 @@
+{
+  "case_id": "P1",
+  "synthetic_case": "SYN-P1 (synthetic qualification case derived from Wang P1 SC + gain; development partition). Simulated data, not a recording.",
+  "purpose": "Pipeline qualification benchmark only. The planted generating map is known by construction; hypotheses below are the alternatives the inversion must discriminate, drafted from the synthetic SEEG features (earliest / largest feature changes mapped through the P1 gain). Disclosure: the same agent planted the truth and drafted these hypotheses, so they are not blind; they serve to define what the fit must rule in/out.",
+  "hypotheses": [
+    {"id": "H1", "label": "focal EZ in Left-T2-anterior (region 44) with propagation to SC neighbours",
+     "ez": [44], "pz_candidates": [40, 42, 38, 46],
+     "basis": "8 of the 12 largest-change channels (TB'7-8 5.8, B'11-12 5.5, TB'8-9 5.2 log-power units) have region 44 as their top-gain region; earliest 50%-onset 9.26 s on TB'7-8 (gain 18.6 to region 44)"},
+    {"id": "H2", "label": "focal EZ in Left-STS-anterior (region 40)",
+     "ez": [40], "pz_candidates": [44, 42],
+     "basis": "TB'9-10, TB'10-11, TB'5-6, TB'6-7 are top-gain to region 40 and change within 0.5-0.75 s of the earliest channels; region 40 is the 2nd-gain region on every top channel, so gain overlap alone cannot separate H1 from H2"},
+    {"id": "H3", "label": "extended EZ (regions 44 + 40 and/or 42 jointly epileptogenic)",
+     "ez": [44, 40, 42], "pz_candidates": [38, 46],
+     "basis": "amplitude-vs-extent alternative named in the study-001 failure causes: a larger EZ with smaller amplitude could explain the same feature amplitudes"},
+    {"id": "H4", "label": "network-emergent seizure without a single autonomous node (all x0 sub-critical, strong coupling)",
+     "ez": [], "pz_candidates": [44, 40, 42],
+     "basis": "null alternative for the network model: high K with sub-critical x0 can generate recruitment"}
+  ],
+  "benchmark_reference": {"note": "planted truth (logged in T0011 task log before any fit; truth file kept local, never pushed)",
+                          "ez": [44], "ez_names": ["Left-T2-anterior"], "pz": [40, 42], "pz_names": ["Left-STS-anterior", "Left-ITS-anterior"]},
+  "source_evidence": {
+    "signals": "work/T0011/syn_p1_seeg.npz (synthetic SEEG, 163 bipolar channels, 100 Hz from P1 time_steps, 21 s) -> features.compute_feature",
+    "anatomy": "P1 SC and gain from data/wang-5367ef4/data/dataSim/Patient1/P1_SEEG_SEEG_fit.npz (A0007); region order VepMrtrixLut minus Unknown (A0013)",
+    "imaging": "reported_absent for P1 (A0007); no imaging evidence used",
+    "seeg_markings": "not_applicable (synthetic; no clinical markings)"
+  },
+  "priors": {
+    "x0": "N(-2.5, 0.5) per region, identity in place of the undocumented eig matrix; isolated-node bifurcation at x0 = -2.06 (prior P(x0 > -2.06) = 0.19 per region)",
+    "z_init": "v2: z_eq(softmin(x0, -2.12; k=20)) + 0.2 N(0,1) (resting equilibrium of the isolated node); v1: N(3.6, 0.4)",
+    "K": "lognormal(0, 1)", "tau0": "lognormal(log 10, 0.6)",
+    "amp": "lognormal(log(q99 channel feature range / (2.4 * max gain)), 1) = data-centred",
+    "u": "N(channel baseline median of first 5 s of features, 0.5)",
+    "sigma": "lognormal(log(median baseline SD), 1)", "phi": "uniform(-1, 1)",
+    "hypothesis_priors": "no prior preference among H1-H4; the network-model posterior over x0 discriminates them"
+  },
+  "unobserved_node_assumptions": "Regions with negligible gain (most of the 162; only 20 have any contact > 25% of global max gain, A0007) are constrained only through the network dynamics and the x0 prior; their x0 posteriors are expected to stay near the prior and are not interpreted as healthy or epileptogenic evidence. Cerebellar and subcortical nodes are kept in the network with P1 SC weights.",
+  "discrimination_checks": [
+    "H1 vs H2: posterior rank of region 44 vs 40 by posterior mean x0 and P(rank 1) per draw; onset ordering reproduced by the fitted model",
+    "H1/H2 vs H3: P(x0 > -2.06) for 40 and 42; an extended EZ predicts P > 0.5 for both",
+    "H4: P(all x0 < -2.06) and posterior K; H4 is supported if no region exceeds the bifurcation with high probability",
+    "Robustness: same ranking under the mismatched P2 connectome (arm B)",
+    "Multimodality: EZ rank at each of 24 multi-start L-BFGS optima; R-hat across 8 chains started from 8 distinct optima"
+  ]
+}

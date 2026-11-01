@@ -1,0 +1,28 @@
+{
+  "claim": "The VBT stimulation framework (Wang et al. 2025) was applied to two surgically treated patients and to synthetic data, for EZN estimation (diagnosis), not for selecting therapeutic stimulation.",
+  "bibliographic_record": {
+    "authors": "Wang HE, Dollomaja B, Triebkorn P, Duma GM, Williamson A, Makhalova J, Lemarechal J-D, Bartolomei F, Jirsa V",
+    "title": "Virtual brain twins for stimulation in epilepsy",
+    "journal": "Nature Computational Science",
+    "year": 2025,
+    "volume": "5",
+    "issue": "9",
+    "pages": "754-768",
+    "doi": "10.1038/s43588-025-00841-6",
+    "pmid": "40764764",
+    "pmcid": "PMC12457187",
+    "published": "2025-08-05",
+    "preprint": "medRxiv 10.1101/2024.07.25.24310396 (seen in search results; not opened)",
+    "article_license": "CC BY 4.0",
+    "verified_via": "Europe PMC full-text XML (PMC12457187) and pmc.ncbi.nlm.nih.gov, fetched 2026-10-31"
+  },
+  "supporting_passage": "We used the data from two patients who underwent a standard presurgical protocol at La Timone Hospital in Marseille. The first patient is a 23-year-old female diagnosed with left occipital lobe epilepsy. She underwent resective surgery and was nearly seizure-free after surgery, with an Engel Class II outcome. The second patient is a 19-year-old male with left frontal lobe epilepsy. He underwent resective surgery resulting in complete seizure freedom and an Engel Class I outcome.",
+  "passage_location": "Methods > Patient data (PMC12457187)",
+  "population_and_design": "Methodological modelling study; n=2 adults with drug-resistant focal epilepsy (SEEG-explored, resected) plus synthetic ground-truth simulations; no control group.",
+  "endpoint": "Model-estimated EZN (epileptogenicity values per VEP region) compared qualitatively with the resected region; Engel class reported as context (P1 Engel II, P2 Engel I; follow-up length not extracted).",
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Two patients; e.g. for P1 the left lateral occipital cortex (O2) was consistently identified as part of the EZN across three seizures (Results > Virtual brain twins for SEEG stimulation).",
+  "authors_inference": "Framework is a basis for moving from invasive to non-invasive diagnosis and treatment. Therapeutic use is framed as future work: 'This framework can be further extended to build high-resolution, patient-specific models for future therapeutic interventions.' (Discussion)",
+  "contradictions": "None found. Minor internal inconsistency: Results (VEP-stimulation workflow) reports 20,284 cortical vertices; Methods (TI electric field) reports 20,484 vertices.",
+  "study_family_id": "VEP-INS-Marseille-LaTimone (Jirsa/Bartolomei group; patient overlap across VEP papers not reported - to_verify)"
+}

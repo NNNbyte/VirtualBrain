@@ -1,0 +1,7 @@
+{
+  "resource": "Code Ocean capsule: Virtual brain twins for stimulation in epilepsy (Part 1)",
+  "access_path": "DOI 10.24433/CO.3316132.v1 -> https://codeocean.com/capsule/8462474/tree/v1",
+  "status": "to_verify: DOI resolves (HTTP 302) and DataCite metadata verified; capsule page returned HTTP 403 to scripted access, so capsule files, environment and data size are NOT verified",
+  "conditions": "DataCite rightsList: 'GNU General Public License (GPL)' and 'Creative Commons Attribution Non Commercial No Derivatives 4.0 International' (cc-by-nc-nd-4.0). Per the paper's Data availability, capsules contain a patient's preprocessed anatomical information and high-resolution simulation data. Whether running/downloading needs a Code Ocean account is not verified. No download made.",
+  "verified_at": "2026-10-31"
+}

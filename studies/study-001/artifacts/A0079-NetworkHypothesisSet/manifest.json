@@ -1,0 +1,57 @@
+{
+  "artifact_id": "A0079-NetworkHypothesisSet",
+  "schema_name": "NetworkHypothesisSet",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": "VBT-P1",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0026",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "repo notebook + paper review (scripts/dump_nb.py)",
+  "tool_version": "vep-stim 0.1.0a1@5367ef4",
+  "code_commit": "5367ef4afb976271ecc6297b70a95dd3d944af61",
+  "environment_digest": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+  "consumed_artifact_ids": [
+    "A0037-MethodCard",
+    "A0067-DatasetCard"
+  ],
+  "input_manifest_hash": "b0dcf8705763039ea02e7f728773f3f89017f3ba4e967ec846e9aa4fd1a0c22f",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0079-NetworkHypothesisSet/payload.json",
+      "media_type": "application/json",
+      "sha256": "ce87033a6dd4e808e184f48e540403feb8155288e87d90404201c1a369ad09bf",
+      "byte_size": 7601
+    },
+    {
+      "uri": "artifacts/A0079-NetworkHypothesisSet/Patient1_SEEG_stimulation.xlsx",
+      "media_type": "application/octet-stream",
+      "sha256": "1461762dfa012e366be482d3497768202c335ba775494c6185aba75b45e58611",
+      "byte_size": 103768
+    },
+    {
+      "uri": "artifacts/A0079-NetworkHypothesisSet/Patient1_TI_stimulation.xlsx",
+      "media_type": "application/octet-stream",
+      "sha256": "762b942ae504cfc73817a8a798a3648efc0cbe9338215d982d0a2da9a5eaa8d1",
+      "byte_size": 103929
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "literature_reported"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T04:55:33+00:00",
+  "supersedes_id": null,
+  "title": "VBT-P1 benchmark: EZ hypotheses (documented truth Left-O2 vs occipital/occipito-temporal/coverage-artefact/null)",
+  "manifest_hash": "ac8de9b5d616c3c413091d3dcb877b82647f3ce06f8ae4ac59c3ee11d574ccc2"
+}

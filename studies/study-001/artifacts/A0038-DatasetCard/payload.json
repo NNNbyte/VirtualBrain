@@ -1,0 +1,27 @@
+{
+  "dataset_id": "openneuro:ds003498 (Zurich iEEG HFO Dataset)",
+  "study_family_id": "fam-zurich-fedele2017",
+  "source_doi": "10.18112/openneuro.ds003498.v1.0.1",
+  "repository_url": "https://openneuro.org/datasets/ds003498 (original: http://crcns.org/data-sets/methods/ieeg-1)",
+  "related_publications": [
+    "Fedele et al., Sci Rep 2017;7:13836, doi:10.1038/s41598-017-13064-1"
+  ],
+  "reported_subject_count": 20,
+  "data_access": "verified_present (public OpenNeuro mirror; CRCNS original requires CRCNS account - not checked)",
+  "licence": "CC0 (dataset_description.json, OpenNeuro mirror)",
+  "approx_total_size_gb": 48.04,
+  "approx_total_size_basis": "S3 listing sum (2370 objects) on 2026-10-31",
+  "verified_subject_count": 20,
+  "verified_subject_count_basis": "participants.tsv 20 rows; 20 sub-* dirs",
+  "verified_modalities": {
+    "ieeg": "verified_present: interictal slow-wave sleep ECoG/depth, 2000 Hz (sub-01 channels.tsv)",
+    "electrode_localisation": "reported_absent in OpenNeuro mirror (0 electrodes.tsv); CRCNS original to_verify",
+    "seizure_annotations": "reported_absent (interictal sleep only; HFO events in events.tsv)"
+  },
+  "intervention_linkage": "verified_present (contact level, clinical sheet): sourcedata/clinical_ch_sheet_zurich.xlsx column 'rz' lists resection-zone contacts per subject; stimulation_settings reported_absent",
+  "outcome_fields_present": "participants.tsv: ilae (1-6), outcome S/F, months_follow_up, epilepsy TLE/ETE, lesion",
+  "follow_up_definition": "participants.json: months_follow_up = 'Number of months since surgery that followed up to get surgical outcome'; range 10-46 months (2 subjects <12 months)",
+  "eligibility": "Partial fit: outcome + contact-level resection, but no coordinates and no ictal recordings -> not suitable for seizure-propagation virtual-brain fitting without CRCNS localisation.",
+  "cohort_overlap": "Present in Omni-iEEG as sub-zurich01..20.",
+  "checked_on": "2026-10-31"
+}

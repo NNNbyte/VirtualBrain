@@ -1,0 +1,2205 @@
+{
+ "model_family": "vep-stim (Wang et al. 2025 VBT_INS_Stimulation) 2D-Epileptor network, Bayesian inversion of SEEG log-power features (vep_mcmc.stan, patched copy) - synthetic recovery benchmark",
+ "implementation_versions": {
+  "vep_stim": "0.1.0a1 @ 5367ef4afb976271ecc6297b70a95dd3d944af61 (installed package NOT modified; patched copies in work/T0029)",
+  "stan_model": "work/T0029/stan/vep_mcmc_fixed.stan (sha256 78a1768312faf580fe9b9ed603e36bcae0f5f4f02c4d924c74b2a9f935d54958)",
+  "stan_model_sensitivity": "work/T0029/stan/vep_mcmc_fixed_wideu.stan (sha256 62a18dc5fb65088e5c5eebbfd89f5698ea2f3138a1aecf6493d92551d5944568)",
+  "package_stan_model_sha256": "5368394cd40dd3714b0db40d13b93ff89756acdaef1ba56d459850dadbdd732e",
+  "cmdstan": "2.40.0 (conda-forge toolchain via .tools/stan_env.py)",
+  "python": ".venv-model (see pip_freeze.txt)",
+  "patches": [
+   {
+    "id": "P1-likelihood-skip (defect fix)",
+    "file": "vep_mcmc.stan",
+    "diff": "patches/vep_mcmc.stan.diff (attached vep_mcmc.stan.diff)",
+    "what": "Package loops i in (10*ns+1):(nt*ns) over the column-major to_vector(xhat2[nt,ns]) and so drops the first floor(10*ns/nt) channels entirely (P2 gain: channels 0-11 plus 10 steps of channel 12) instead of the first 10 time points. Fixed to drop time rows 1..10 for every channel.",
+    "verification": "verify_patch.py: patched Stan lp equals a numpy re-implementation (diff 0.02 = CSV rounding); the package model equals numpy with the column-major mask up to the 26740*log(sqrt(2*pi)) normalising constant (diff -24572.4), confirming the defect."
+   },
+   {
+    "id": "P2-vectorised-integration (performance, identical posterior)",
+    "file": "vep_mcmc.stan",
+    "what": "Scalar triple loop replaced by gx = SC*x - rowsum(SC).*x and matrix sensor projection; same Euler scheme and parameterisation. ~30 ms per L-BFGS iteration vs ~0.2 s/gradient reported in T0026."
+   },
+   {
+    "id": "P3-no-generated-quantities (performance)",
+    "file": "vep_mcmc.stan",
+    "what": "GQ block removed; PPC recomputed in numpy from draws."
+   },
+   {
+    "id": "F1-sampling-rate (defect fix, call site)",
+    "file": "calibrate_p2.py",
+    "what": "sfreq derived from time_steps (P2: 8 ms -> 125 Hz) instead of the notebooks' hard-coded 250 Hz, so hpf/lpf cut-offs are where intended. Used only for the noise calibration from P2 SEEG."
+   },
+   {
+    "id": "F2-padding (defect fix, call site)",
+    "file": "calibrate_p2.py",
+    "what": "No N(0,0.2) noise padding around a window whose CROSS-CHANNEL mean (axis=0) was removed; instead the authors' P2 recipe of a real post-ictal baseline segment prepended and PER-CHANNEL baseline referencing, so channels with DC offset get no step artefact."
+   },
+   {
+    "id": "F3-end-padding (defect fix)",
+    "file": "vep_prepare_op.py -> scripts/vep_prepare_op_fixed.py",
+    "diff": "attached vep_prepare_op.py.diff",
+    "what": "seeg_log_power zero-padded the end of the signal, so the last 100 samples' log-power decays artificially; reflect padding instead."
+   },
+   {
+    "id": "S1-wide-u-prior (SENSITIVITY ONLY, not a fix)",
+    "file": "stan/vep_mcmc_fixed_wideu.stan",
+    "what": "u_star ~ N(0,10) instead of N(0,1); L-BFGS only; used to diagnose the amplitude/offset bias; not part of pass/fail."
+   }
+  ]
+ },
+ "consumed_case": {
+  "case_id": "SYN-P2",
+  "network_hypothesis_set": "A0096-NetworkHypothesisSet",
+  "inputs": "A0067-DatasetCard P2_SEEG_ts_fit.npz (SC, gain; P2 SEEG only for noise calibration) and P1_SEEG_SEEG_fit.npz (SC only, arm B)",
+  "truth_file": "truth.json (attached)"
+ },
+ "hypotheses": [
+  "H1-planted",
+  "H2-alternative-EZ-elsewhere",
+  "H3-mesiotemporal-blur",
+  "H4-offset-artefact"
+ ],
+ "fitting_partitions": {
+  "note": "Synthetic single-seizure case; no cohort split, no reserved outcomes. Whole simulated window (150 steps; first 10 excluded from the likelihood) used for fitting in both arms.",
+  "arm_A": "SC = P2 (generating SC), gain = P2",
+  "arm_B": "SC = P1 template (same VEP atlas), gain = P2",
+  "identical_data": "both arms fit the identical Obs matrix (sha256 a6fec8bfd6855fe6ca87554a30b9d7991b63703f6b35e479400eb472bc2bc88e)"
+ },
+ "observation_model": {
+  "fit": "log(Obs[t,s]) ~ Normal(amp*(gain@x)[s,t] + u[s], eps), t = 11..150 (patched: first 10 time points skipped for every channel)",
+  "generating": "log-feature = amp*(gain@x) + u + AR(1) noise (phi 0.9, marginal sd 0.15; realised sd 0.146) - iid assumption of the fit is deliberately violated",
+  "noise_calibration": {
+   "sfreq_hz": 125.0,
+   "ds": 7,
+   "nt": 152,
+   "ns": 191,
+   "baseline_samples": 28,
+   "xs_min": 0.006696123656830557,
+   "xs_max": 3.881971458743263,
+   "xs_median": 3.5269536820978438,
+   "xs_channel_range_quantiles": {
+    "0.1": 1.1193221102070892,
+    "0.5": 1.306741133237085,
+    "0.9": 2.2245536701030044,
+    "0.99": 3.4806366304652414
+   },
+   "xs_baseline_level_quantiles": {
+    "0.1": 3.447248140789955,
+    "0.5": 3.524177526200802,
+    "0.9": 3.627371339553049
+   },
+   "baseline_sd_quantiles": {
+    "0.1": 0.19257139208168908,
+    "0.5": 0.21944782701709015,
+    "0.9": 0.24610628314074381
+   },
+   "baseline_lag1_ac_quantiles": {
+    "0.1": 0.8956373132747121,
+    "0.5": 0.910186611613602,
+    "0.9": 0.9229467103326165
+   },
+   "firstdiff_sd_quantiles": {
+    "0.1": 0.023753122428093767,
+    "0.5": 0.029202308284026417,
+    "0.9": 0.038365597094279634
+   }
+  },
+  "planted": {
+   "seed": 20261129,
+   "ez_name": "Right-Amygdala",
+   "ez_index0": 155,
+   "pz_names": [
+    "Right-Hippocampus-anterior",
+    "Right-Rhinal-cortex"
+   ],
+   "pz_index0": [
+    153,
+    134
+   ],
+   "K": 1.0,
+   "amp": 0.1,
+   "amp_star_equiv": 9.5,
+   "u_star_equiv_quantiles": [
+    2.266601287494451,
+    3.9890820347511715,
+    20.547786313628702
+   ],
+   "noise": {
+    "kind": "AR1 in log-feature space",
+    "phi": 0.9,
+    "marginal_sd": 0.15
+   },
+   "seizing_onsets": {
+    "Right-Amygdala": 80
+   },
+   "channel_max_deflection_quantiles": {
+    "0.5": 0.035709939616556774,
+    "0.9": 0.12703766602728273,
+    "0.99": 0.9030576068490083,
+    "1.0": 2.237704246807454
+   },
+   "n_channels_deflection_gt_2sd": 6,
+   "SC_P1_vs_P2_upper_tri_corr": 0.778834780413202,
+   "pz_SC_weights": [
+    0.06293320326538995,
+    0.029483493351132106
+   ],
+   "pz_SC_weights_in_P1": [
+    0.03241339215485107,
+    0.011771143257754522
+   ]
+  },
+  "lp_at_truth_jacobian_false": {
+   "A": 35496.004,
+   "B": 35494.141
+  }
+ },
+ "parameters_or_posterior": {
+  "nuts": {
+   "A": {
+    "truth_EZ": "Right-Amygdala",
+    "truth_PZ": [
+     "Right-Hippocampus-anterior",
+     "Right-Rhinal-cortex"
+    ],
+    "EZ_threshold": -2.05,
+    "EZ_rank_by_posterior_mean_x0": 1,
+    "EZ_rank_per_chain": [
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "EZ_P_rank1": 0.2886666666666667,
+    "EZ_x0_mean": -1.5102873567333333,
+    "EZ_x0_sd": 0.04337290213099789,
+    "EZ_x0_q05_q95": [
+     -1.5845760150000001,
+     -1.44155583
+    ],
+    "EZ_P_x0_gt_thr": 1.0,
+    "EZ_true_x0": -1.6,
+    "PZ": [
+     {
+      "region": "Right-Hippocampus-anterior",
+      "true": -2.1,
+      "mean": -1.6403650006000001,
+      "sd": 0.04620895763795045,
+      "P_gt_thr": 1.0,
+      "rank": 3
+     },
+     {
+      "region": "Right-Rhinal-cortex",
+      "true": -2.1,
+      "mean": -1.7285223522666666,
+      "sd": 0.06205252040243481,
+      "P_gt_thr": 1.0,
+      "rank": 4
+     }
+    ],
+    "regions_P_gt_thr_above_0_5": [
+     "Right-F1-mesial-prefrontal",
+     "Right-Insula-gyri-brevi",
+     "Right-Insula-gyri-longi",
+     "Right-Rhinal-cortex",
+     "Right-Hippocampus-anterior",
+     "Right-Amygdala"
+    ],
+    "false_positives": [
+     {
+      "region": "Right-F1-mesial-prefrontal",
+      "mean": -1.9574299543333333,
+      "P_gt_thr": 0.8886666666666667,
+      "max_gain": 3.965075017871623
+     },
+     {
+      "region": "Right-Insula-gyri-brevi",
+      "mean": -1.9515325172666664,
+      "P_gt_thr": 1.0,
+      "max_gain": 0.8317935669429908
+     },
+     {
+      "region": "Right-Insula-gyri-longi",
+      "mean": -1.6340994755333333,
+      "P_gt_thr": 1.0,
+      "max_gain": 1.3590515312815477
+     }
+    ],
+    "n_false_positives": 3,
+    "top10": [
+     {
+      "region": "Right-Amygdala",
+      "mean": -1.5102873567333333,
+      "sd": 0.04337290213099789,
+      "P_gt_thr": 1.0,
+      "true": -1.6
+     },
+     {
+      "region": "Right-Insula-gyri-longi",
+      "mean": -1.6340994755333333,
+      "sd": 0.0502265592212907,
+      "P_gt_thr": 1.0,
+      "true": -3.1120756902104025
+     },
+     {
+      "region": "Right-Hippocampus-anterior",
+      "mean": -1.6403650006000001,
+      "sd": 0.04620895763795045,
+      "P_gt_thr": 1.0,
+      "true": -2.1
+     },
+     {
+      "region": "Right-Rhinal-cortex",
+      "mean": -1.7285223522666666,
+      "sd": 0.06205252040243481,
+      "P_gt_thr": 1.0,
+      "true": -2.1
+     },
+     {
+      "region": "Left-Gyrus-rectus",
+      "mean": -1.9236141243513336,
+      "sd": 1.2564075856966512,
+      "P_gt_thr": 0.4,
+      "true": -2.758074577280681
+     },
+     {
+      "region": "Right-Insula-gyri-brevi",
+      "mean": -1.9515325172666664,
+      "sd": 0.028155590905854826,
+      "P_gt_thr": 1.0,
+      "true": -2.9756832027837055
+     },
+     {
+      "region": "Right-F1-mesial-prefrontal",
+      "mean": -1.9574299543333333,
+      "sd": 0.16330664666802247,
+      "P_gt_thr": 0.8886666666666667,
+      "true": -3.1911148624160504
+     },
+     {
+      "region": "Left-F3-Pars-Orbitalis",
+      "mean": -2.481200725266667,
+      "sd": 0.31633427168476647,
+      "P_gt_thr": 0.07466666666666667,
+      "true": -3.12651827466333
+     },
+     {
+      "region": "Left-T1-planum-polare",
+      "mean": -2.5148718790666664,
+      "sd": 0.6482920600565591,
+      "P_gt_thr": 0.44133333333333336,
+      "true": -2.9224280314743996
+     },
+     {
+      "region": "Right-Subcallosal-area",
+      "mean": -2.5239164277333335,
+      "sd": 0.7325559089988687,
+      "P_gt_thr": 0.4,
+      "true": -2.9914118162009844
+     }
+    ],
+    "K_mean": 0.39096293212566663,
+    "amp_mean": 0.05001442076466666,
+    "eps_mean": 0.13877092518666667,
+    "truth_K": 1.0,
+    "truth_amp": 0.1,
+    "spearman_posterior_mean_vs_true_x0": 0.10827868615315007,
+    "rmse_x0": 0.32568745160789797,
+    "ppc": {
+     "n_draws": 100,
+     "R2_within_channel_mean": 0.2544658034593519,
+     "informative_channels": [
+      11,
+      12,
+      13,
+      14,
+      81,
+      82
+     ],
+     "R2_informative_channels_vs_noisy_data": 0.8734576460140206,
+     "R2_informative_channels_vs_noise_free_signal": 0.9196707264052383,
+     "P_seizing_in_window": {
+      "Right-Insula-gyri-longi": 1.0,
+      "Right-Hippocampus-anterior": 1.0,
+      "Right-Amygdala": 1.0,
+      "Right-Rhinal-cortex": 1.0,
+      "Right-Insula-gyri-brevi": 0.97,
+      "Left-T1-planum-polare": 0.44,
+      "Right-Subcallosal-area": 0.4,
+      "Left-Gyrus-rectus": 0.4
+     }
+    }
+   },
+   "B": {
+    "truth_EZ": "Right-Amygdala",
+    "truth_PZ": [
+     "Right-Hippocampus-anterior",
+     "Right-Rhinal-cortex"
+    ],
+    "EZ_threshold": -2.05,
+    "EZ_rank_by_posterior_mean_x0": 1,
+    "EZ_rank_per_chain": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "EZ_P_rank1": 0.9044444444444445,
+    "EZ_x0_mean": -1.5118639183333336,
+    "EZ_x0_sd": 0.0396302449930326,
+    "EZ_x0_q05_q95": [
+     -1.577908795,
+     -1.44433867
+    ],
+    "EZ_P_x0_gt_thr": 1.0,
+    "EZ_true_x0": -1.6,
+    "PZ": [
+     {
+      "region": "Right-Hippocampus-anterior",
+      "true": -2.1,
+      "mean": -1.631941071333333,
+      "sd": 0.038351781864622236,
+      "P_gt_thr": 1.0,
+      "rank": 3
+     },
+     {
+      "region": "Right-Rhinal-cortex",
+      "true": -2.1,
+      "mean": -1.6741177608888889,
+      "sd": 0.04130469497649232,
+      "P_gt_thr": 1.0,
+      "rank": 4
+     }
+    ],
+    "regions_P_gt_thr_above_0_5": [
+     "Right-Insula-gyri-brevi",
+     "Right-Insula-gyri-longi",
+     "Right-Rhinal-cortex",
+     "Right-Hippocampus-anterior",
+     "Right-Amygdala"
+    ],
+    "false_positives": [
+     {
+      "region": "Right-Insula-gyri-brevi",
+      "mean": -1.9730004357222222,
+      "P_gt_thr": 0.9966666666666667,
+      "max_gain": 0.8317935669429908
+     },
+     {
+      "region": "Right-Insula-gyri-longi",
+      "mean": -1.5994589344999999,
+      "P_gt_thr": 1.0,
+      "max_gain": 1.3590515312815477
+     }
+    ],
+    "n_false_positives": 2,
+    "top10": [
+     {
+      "region": "Right-Amygdala",
+      "mean": -1.5118639183333336,
+      "sd": 0.0396302449930326,
+      "P_gt_thr": 1.0,
+      "true": -1.6
+     },
+     {
+      "region": "Right-Insula-gyri-longi",
+      "mean": -1.5994589344999999,
+      "sd": 0.05124740485065684,
+      "P_gt_thr": 1.0,
+      "true": -3.1120756902104025
+     },
+     {
+      "region": "Right-Hippocampus-anterior",
+      "mean": -1.631941071333333,
+      "sd": 0.038351781864622236,
+      "P_gt_thr": 1.0,
+      "true": -2.1
+     },
+     {
+      "region": "Right-Rhinal-cortex",
+      "mean": -1.6741177608888889,
+      "sd": 0.04130469497649232,
+      "P_gt_thr": 1.0,
+      "true": -2.1
+     },
+     {
+      "region": "Right-Insula-gyri-brevi",
+      "mean": -1.9730004357222222,
+      "sd": 0.03150636727281199,
+      "P_gt_thr": 0.9966666666666667,
+      "true": -2.9756832027837055
+     },
+     {
+      "region": "Right-F1-mesial-prefrontal",
+      "mean": -2.1692256341111107,
+      "sd": 0.23122188176931738,
+      "P_gt_thr": 0.44055555555555553,
+      "true": -3.1911148624160504
+     },
+     {
+      "region": "Left-T1-lateral-posterior",
+      "mean": -2.4807481336111112,
+      "sd": 0.6532599437583341,
+      "P_gt_thr": 0.41388888888888886,
+      "true": -2.9164155395002447
+     },
+     {
+      "region": "Left-T1-planum-polare",
+      "mean": -2.5093677442222218,
+      "sd": 0.6434407696804003,
+      "P_gt_thr": 0.43277777777777776,
+      "true": -2.9224280314743996
+     },
+     {
+      "region": "Left-F3-Pars-Orbitalis",
+      "mean": -2.5193383123333337,
+      "sd": 0.3055473494785979,
+      "P_gt_thr": 0.042222222222222223,
+      "true": -3.12651827466333
+     },
+     {
+      "region": "Left-SFS-rostral",
+      "mean": -2.5655063715,
+      "sd": 0.17030504618943856,
+      "P_gt_thr": 0.0,
+      "true": -2.7121132020147494
+     }
+    ],
+    "K_mean": 0.7934084061627777,
+    "amp_mean": 0.05142444508944444,
+    "eps_mean": 0.138523725,
+    "truth_K": 1.0,
+    "truth_amp": 0.1,
+    "spearman_posterior_mean_vs_true_x0": 0.11741269799829472,
+    "rmse_x0": 0.30271497003793374,
+    "ppc": {
+     "n_draws": 100,
+     "R2_within_channel_mean": 0.25722521462324566,
+     "informative_channels": [
+      11,
+      12,
+      13,
+      14,
+      81,
+      82
+     ],
+     "R2_informative_channels_vs_noisy_data": 0.876022980500609,
+     "R2_informative_channels_vs_noise_free_signal": 0.9239355363439636,
+     "P_seizing_in_window": {
+      "Right-Insula-gyri-longi": 1.0,
+      "Right-Hippocampus-anterior": 1.0,
+      "Right-Amygdala": 1.0,
+      "Right-Rhinal-cortex": 1.0,
+      "Right-Insula-gyri-brevi": 0.99,
+      "Left-T1-planum-polare": 0.43,
+      "Left-T1-lateral-posterior": 0.41,
+      "Left-SFS-caudal": 0.34
+     }
+    }
+   }
+  },
+  "lbfgs_ensemble": {
+   "A_round1_package_tol": [
+    {
+     "job": 1,
+     "seed": 2901,
+     "converged": true,
+     "lp": 36062.51,
+     "iters": 463,
+     "K": 0.0042507836,
+     "amp": 0.005,
+     "eps": 0.15504085,
+     "EZ_x0": -1.5108425,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.43",
+     "n_FP": 12,
+     "rmse_x0": 0.36619192826496677,
+     "top5": "Right-Amygdala(-1.51);Right-F2-rostral(-1.60);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-T1-lateral-anterior(-1.68)"
+    },
+    {
+     "job": 7,
+     "seed": 2907,
+     "converged": true,
+     "lp": 36057.462,
+     "iters": 808,
+     "K": 1.1867368,
+     "amp": 0.005,
+     "eps": 0.15528662,
+     "EZ_x0": -1.4996918,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.58;-2.37",
+     "n_FP": 6,
+     "rmse_x0": 0.2982102567144579,
+     "top5": "Right-Amygdala(-1.50);Right-Hippocampus-anterior(-1.58);Right-Insula-gyri-longi(-1.61);Right-Temporal-pole(-1.68);Right-Orbito-frontal-cortex(-1.69)"
+    },
+    {
+     "job": 6,
+     "seed": 2906,
+     "converged": true,
+     "lp": 36047.637,
+     "iters": 1151,
+     "K": 1.2427051,
+     "amp": 0.005,
+     "eps": 0.15515953,
+     "EZ_x0": -1.5028745,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.58;-1.69",
+     "n_FP": 9,
+     "rmse_x0": 0.35735505879357754,
+     "top5": "Right-Amygdala(-1.50);Right-Hippocampus-anterior(-1.58);Right-Temporal-pole(-1.68);Right-Orbito-frontal-cortex(-1.69);Right-Rhinal-cortex(-1.69)"
+    },
+    {
+     "job": 2,
+     "seed": 2902,
+     "converged": true,
+     "lp": 36042.22,
+     "iters": 746,
+     "K": 1.0996517,
+     "amp": 0.0050019521,
+     "eps": 0.15524146,
+     "EZ_x0": -1.4991432,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.58;-2.28",
+     "n_FP": 9,
+     "rmse_x0": 0.33504316083873276,
+     "top5": "Right-Amygdala(-1.50);Right-Hippocampus-anterior(-1.58);Right-Insula-gyri-longi(-1.61);Right-Temporal-pole(-1.68);Left-Hippocampus-anterior(-1.68)"
+    },
+    {
+     "job": 4,
+     "seed": 2904,
+     "converged": true,
+     "lp": 36037.713,
+     "iters": 408,
+     "K": 0.0,
+     "amp": 0.005,
+     "eps": 0.15519533,
+     "EZ_x0": -1.5113605,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.50",
+     "n_FP": 12,
+     "rmse_x0": 0.3682104920192434,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Putamen(-1.66);Right-Temporal-pole(-1.69)"
+    },
+    {
+     "job": 8,
+     "seed": 2908,
+     "converged": true,
+     "lp": 36033.422,
+     "iters": 745,
+     "K": 1.1060525,
+     "amp": 0.005,
+     "eps": 0.15527196,
+     "EZ_x0": -1.5046323,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.58;-2.46",
+     "n_FP": 11,
+     "rmse_x0": 0.3511703741525055,
+     "top5": "Right-Amygdala(-1.50);Right-Hippocampus-anterior(-1.58);Left-F2-rostral(-1.59);Right-Insula-gyri-longi(-1.61);Right-Temporal-pole(-1.67)"
+    },
+    {
+     "job": 3,
+     "seed": 2903,
+     "converged": true,
+     "lp": 35954.802,
+     "iters": 543,
+     "K": 0.00059126859,
+     "amp": 0.0050008828,
+     "eps": 0.15580415,
+     "EZ_x0": -1.5124389,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.3140322389290388,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.69);Right-Rhinal-cortex(-1.70)"
+    },
+    {
+     "job": 5,
+     "seed": 2905,
+     "converged": true,
+     "lp": 35935.422,
+     "iters": 432,
+     "K": 0.0,
+     "amp": 0.0050000015,
+     "eps": 0.15587716,
+     "EZ_x0": -1.5145753,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.71",
+     "n_FP": 9,
+     "rmse_x0": 0.3265518888954554,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-STS-anterior(-1.65);Right-Insula-gyri-longi(-1.67);Right-Temporal-pole(-1.70)"
+    },
+    {
+     "job": 0,
+     "seed": 2900,
+     "converged": false,
+     "lp": -3558013300.0,
+     "iters": 1,
+     "K": 2.833901,
+     "amp": 0.18725055,
+     "eps": 0.016247841,
+     "EZ_x0": -3.0218112,
+     "EZ_rank": 83,
+     "PZ_x0": "-2.31;-4.60",
+     "n_FP": 31,
+     "rmse_x0": 0.9634359023657878,
+     "top5": "Left-Occipital-pole(-0.77);Right-Postcentral-sulcus(-0.99);Left-F3-Pars-Orbitalis(-1.21);Left-Middle-cingulate-cortex-posterior-part(-1.25);Right-F2-caudal(-1.28)"
+    },
+    {
+     "job": 9,
+     "seed": 2909,
+     "converged": false,
+     "lp": -4742747100.0,
+     "iters": 1,
+     "K": 12.057864,
+     "amp": 0.9244303,
+     "eps": 0.059987316,
+     "EZ_x0": -2.3328769,
+     "EZ_rank": 29,
+     "PZ_x0": "-3.79;-2.43",
+     "n_FP": 17,
+     "rmse_x0": 0.8346748365339213,
+     "top5": "Left-T2-posterior(-1.09);Left-Gyrus-of-Heschl(-1.13);Right-Middle-cingulate-cortex-anterior-part(-1.32);Left-Rhinal-cortex(-1.38);Left-Occipito-temporal-sulcus(-1.60)"
+    }
+   ],
+   "A_round2_tight_tol": [
+    {
+     "job": 4,
+     "seed": 2954,
+     "converged": true,
+     "lp": 38430.11,
+     "iters": 7142,
+     "K": 0.1563684,
+     "amp": 0.048835717,
+     "eps": 0.13848994,
+     "EZ_x0": -1.5334517,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.65;-1.71",
+     "n_FP": 3,
+     "rmse_x0": 0.3276905195011843,
+     "top5": "Right-Putamen(-1.40);Right-Amygdala(-1.53);Right-Hippocampus-anterior(-1.65);Right-Insula-gyri-longi(-1.65);Right-Rhinal-cortex(-1.71)"
+    },
+    {
+     "job": 9,
+     "seed": 2959,
+     "converged": true,
+     "lp": 38410.069,
+     "iters": 12534,
+     "K": 8.0415674e-12,
+     "amp": 0.05006261,
+     "eps": 0.13834074,
+     "EZ_x0": -1.5633999,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.68;-1.72",
+     "n_FP": 5,
+     "rmse_x0": 0.35776102266430393,
+     "top5": "Right-T1-lateral-anterior(-0.96);Right-Amygdala(-1.56);Right-Hippocampus-anterior(-1.68);Right-Insula-gyri-longi(-1.69);Right-Rhinal-cortex(-1.72)"
+    },
+    {
+     "job": 6,
+     "seed": 2956,
+     "converged": true,
+     "lp": 38229.127,
+     "iters": 7844,
+     "K": 0.21898353,
+     "amp": 0.049917952,
+     "eps": 0.13853465,
+     "EZ_x0": -1.5165665,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.66;-1.70",
+     "n_FP": 6,
+     "rmse_x0": 0.37850570703829634,
+     "top5": "Left-Gyrus-rectus(-0.41);Right-Amygdala(-1.52);Right-Insula-gyri-longi(-1.65);Right-Hippocampus-anterior(-1.66);Right-Subcallosal-area(-1.68)"
+    },
+    {
+     "job": 1,
+     "seed": 2951,
+     "converged": true,
+     "lp": 38153.328,
+     "iters": 8415,
+     "K": 0.24001827,
+     "amp": 0.049869276,
+     "eps": 0.13877214,
+     "EZ_x0": -1.5059783,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.66;-1.68",
+     "n_FP": 4,
+     "rmse_x0": 0.38744677385660187,
+     "top5": "Left-Amygdala(0.20);Right-Amygdala(-1.51);Right-Insula-gyri-longi(-1.65);Right-Hippocampus-anterior(-1.66);Right-Rhinal-cortex(-1.68)"
+    },
+    {
+     "job": 7,
+     "seed": 2957,
+     "converged": true,
+     "lp": 37926.346,
+     "iters": 14713,
+     "K": 0.00027720373,
+     "amp": 0.048881528,
+     "eps": 0.13890991,
+     "EZ_x0": -1.5359111,
+     "EZ_rank": 3,
+     "PZ_x0": "-1.68;-1.72",
+     "n_FP": 5,
+     "rmse_x0": 0.4494902954582062,
+     "top5": "Right-T2-anterior(0.83);Right-T1-lateral-anterior(-0.97);Right-Amygdala(-1.54);Right-Hippocampus-anterior(-1.68);Right-Insula-gyri-longi(-1.69)"
+    },
+    {
+     "job": 8,
+     "seed": 2958,
+     "converged": true,
+     "lp": 36086.635,
+     "iters": 1018,
+     "K": 3.751096e-08,
+     "amp": 0.005,
+     "eps": 0.15504422,
+     "EZ_x0": -1.5107667,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.3103895660005608,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-Rhinal-cortex(-1.70)"
+    },
+    {
+     "job": 10,
+     "seed": 2960,
+     "converged": true,
+     "lp": 36059.423,
+     "iters": 2588,
+     "K": 1.0227566,
+     "amp": 0.005,
+     "eps": 0.15516356,
+     "EZ_x0": -1.5059666,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.59;-1.68",
+     "n_FP": 9,
+     "rmse_x0": 0.32327453805597045,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.59);Right-Insula-gyri-longi(-1.61);Left-F2-rostral(-1.62);Right-Temporal-pole(-1.68)"
+    },
+    {
+     "job": 0,
+     "seed": 2950,
+     "converged": true,
+     "lp": 36046.939,
+     "iters": 2012,
+     "K": 1.0082426e-05,
+     "amp": 0.005,
+     "eps": 0.15514914,
+     "EZ_x0": -1.5138085,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.60",
+     "n_FP": 12,
+     "rmse_x0": 0.3712119850380014,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Caudate-nucleus(-1.63);Right-STS-anterior(-1.66);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 15,
+     "seed": 2965,
+     "converged": true,
+     "lp": 35967.686,
+     "iters": 1252,
+     "K": 9.7255537e-14,
+     "amp": 0.005,
+     "eps": 0.1555171,
+     "EZ_x0": -1.5119566,
+     "EZ_rank": 3,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 10,
+     "rmse_x0": 0.3727230457041272,
+     "top5": "Left-Anterior-cingulate-cortex(-1.33);Left-F3-Pars-triangularis(-1.35);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 2,
+     "seed": 2952,
+     "converged": true,
+     "lp": 35959.214,
+     "iters": 1006,
+     "K": 1.3788752e-05,
+     "amp": 0.005,
+     "eps": 0.15544381,
+     "EZ_x0": -1.5125882,
+     "EZ_rank": 3,
+     "PZ_x0": "-1.61;-2.56",
+     "n_FP": 10,
+     "rmse_x0": 0.38537617722251166,
+     "top5": "Left-Orbito-frontal-cortex(-0.70);Right-T2-anterior(-0.99);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 11,
+     "seed": 2961,
+     "converged": true,
+     "lp": 35933.806,
+     "iters": 2856,
+     "K": 6.9641389e-08,
+     "amp": 0.005,
+     "eps": 0.15595598,
+     "EZ_x0": -1.5120235,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.48",
+     "n_FP": 9,
+     "rmse_x0": 0.31557539765579334,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.69);Right-Orbito-frontal-cortex(-1.76)"
+    },
+    {
+     "job": 3,
+     "seed": 2953,
+     "converged": true,
+     "lp": 35928.16,
+     "iters": 1890,
+     "K": 3.0397199e-09,
+     "amp": 0.0050000049,
+     "eps": 0.15594328,
+     "EZ_x0": -1.5131213,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-2.56",
+     "n_FP": 8,
+     "rmse_x0": 0.3247197186662796,
+     "top5": "Right-T2-anterior(-0.99);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.72)"
+    },
+    {
+     "job": 12,
+     "seed": 2962,
+     "converged": true,
+     "lp": 35886.14,
+     "iters": 1469,
+     "K": 8.1469922e-07,
+     "amp": 0.005,
+     "eps": 0.15619765,
+     "EZ_x0": -1.5129774,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.60",
+     "n_FP": 10,
+     "rmse_x0": 0.33852311657575435,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-Orbito-frontal-cortex(-1.76)"
+    },
+    {
+     "job": 13,
+     "seed": 2963,
+     "converged": true,
+     "lp": 35860.849,
+     "iters": 681,
+     "K": 1.389635e-07,
+     "amp": 0.005,
+     "eps": 0.15597019,
+     "EZ_x0": -1.5137944,
+     "EZ_rank": 3,
+     "PZ_x0": "-1.61;-1.71",
+     "n_FP": 9,
+     "rmse_x0": 0.37794175215671705,
+     "top5": "Left-Orbito-frontal-cortex(-0.69);Right-T2-anterior(-0.99);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 5,
+     "seed": 2955,
+     "converged": false,
+     "lp": -17698677000.0,
+     "iters": 1,
+     "K": 0.0076329274,
+     "amp": 0.52224631,
+     "eps": 0.015062147,
+     "EZ_x0": -2.6610139,
+     "EZ_rank": 68,
+     "PZ_x0": "-3.04;-1.76",
+     "n_FP": 29,
+     "rmse_x0": 0.9334417296965942,
+     "top5": "Left-Posterior-cingulate-cortex-dorsal(-0.87);Left-Central-sulcus-head-face(-1.05);Left-T3-anterior(-1.21);Left-Parahippocampal-cortex(-1.28);Right-Gyrus-rectus(-1.28)"
+    },
+    {
+     "job": 14,
+     "seed": 2964,
+     "converged": false,
+     "lp": -52297455000.0,
+     "iters": 1,
+     "K": 0.029325382,
+     "amp": 0.86726311,
+     "eps": 0.014519719,
+     "EZ_x0": -4.222729,
+     "EZ_rank": 155,
+     "PZ_x0": "-2.65;-3.63",
+     "n_FP": 21,
+     "rmse_x0": 0.8738045987226593,
+     "top5": "Left-Gyrus-of-Heschl(-0.67);Right-ITS-anterior(-0.68);Right-Central-sulcus-head-face(-0.72);Right-Supramarginal-anterior(-1.00);Right-Cuneus(-1.08)"
+    }
+   ],
+   "B_round1_package_tol": [
+    {
+     "job": 9,
+     "seed": 3909,
+     "converged": true,
+     "lp": 38464.186,
+     "iters": 4241,
+     "K": 0.38688002,
+     "amp": 0.051688963,
+     "eps": 0.13810438,
+     "EZ_x0": -1.5417798,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.66;-1.69",
+     "n_FP": 2,
+     "rmse_x0": 0.29566229053769627,
+     "top5": "Right-Amygdala(-1.54);Right-Insula-gyri-longi(-1.63);Right-Hippocampus-anterior(-1.66);Right-Rhinal-cortex(-1.69);Right-F1-mesial-prefrontal(-1.99)"
+    },
+    {
+     "job": 1,
+     "seed": 3901,
+     "converged": true,
+     "lp": 38403.377,
+     "iters": 3113,
+     "K": 2.7046504e-05,
+     "amp": 0.050126991,
+     "eps": 0.13844476,
+     "EZ_x0": -1.5613617,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.68;-1.72",
+     "n_FP": 3,
+     "rmse_x0": 0.33603804498518763,
+     "top5": "Right-T1-lateral-anterior(-0.95);Right-Amygdala(-1.56);Right-Hippocampus-anterior(-1.68);Right-Insula-gyri-longi(-1.69);Right-Rhinal-cortex(-1.72)"
+    },
+    {
+     "job": 4,
+     "seed": 3904,
+     "converged": true,
+     "lp": 38396.302,
+     "iters": 2613,
+     "K": 0.025511596,
+     "amp": 0.053227882,
+     "eps": 0.1383786,
+     "EZ_x0": -1.5802822,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.68;-2.02",
+     "n_FP": 1,
+     "rmse_x0": 0.2749092472558005,
+     "top5": "Right-Amygdala(-1.58);Right-Hippocampus-anterior(-1.68);Right-Insula-gyri-longi(-1.69);Right-Rhinal-cortex(-2.02);Right-F1-mesial-prefrontal(-2.28)"
+    },
+    {
+     "job": 3,
+     "seed": 3903,
+     "converged": true,
+     "lp": 36083.285,
+     "iters": 389,
+     "K": 0.013441603,
+     "amp": 0.0050000001,
+     "eps": 0.15503738,
+     "EZ_x0": -1.5108611,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.49",
+     "n_FP": 9,
+     "rmse_x0": 0.3318490323987368,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-F3-Pars-triangularis(-1.62);Right-Insula-gyri-longi(-1.65);Right-Putamen(-1.66)"
+    },
+    {
+     "job": 5,
+     "seed": 3905,
+     "converged": true,
+     "lp": 36074.095,
+     "iters": 502,
+     "K": 0.0072967394,
+     "amp": 0.005,
+     "eps": 0.15510645,
+     "EZ_x0": -1.5106177,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.31622714402951785,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-Rhinal-cortex(-1.70)"
+    },
+    {
+     "job": 2,
+     "seed": 3902,
+     "converged": true,
+     "lp": 36072.75,
+     "iters": 426,
+     "K": 0.01280361,
+     "amp": 0.005,
+     "eps": 0.15503025,
+     "EZ_x0": -1.5115076,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-2.36",
+     "n_FP": 8,
+     "rmse_x0": 0.3396984044862617,
+     "top5": "Right-T2-anterior(-0.99);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-T1-lateral-anterior(-1.69)"
+    },
+    {
+     "job": 0,
+     "seed": 3900,
+     "converged": true,
+     "lp": 36047.904,
+     "iters": 554,
+     "K": 0.012293992,
+     "amp": 0.005,
+     "eps": 0.15506755,
+     "EZ_x0": -1.5136575,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.59",
+     "n_FP": 14,
+     "rmse_x0": 0.3852420677476941,
+     "top5": "Right-Amygdala(-1.51);Right-F2-rostral(-1.61);Right-Hippocampus-anterior(-1.61);Right-STS-anterior(-1.66);Right-Putamen(-1.66)"
+    },
+    {
+     "job": 7,
+     "seed": 3907,
+     "converged": true,
+     "lp": 35972.486,
+     "iters": 612,
+     "K": 0.0094002563,
+     "amp": 0.005,
+     "eps": 0.1556783,
+     "EZ_x0": -1.5136612,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-2.57",
+     "n_FP": 9,
+     "rmse_x0": 0.33280918260715325,
+     "top5": "Left-Anterior-cingulate-cortex(-1.32);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-STS-anterior(-1.66);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 8,
+     "seed": 3908,
+     "converged": true,
+     "lp": 35941.967,
+     "iters": 457,
+     "K": 0.00061395362,
+     "amp": 0.005,
+     "eps": 0.15586414,
+     "EZ_x0": -1.5123958,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.43",
+     "n_FP": 9,
+     "rmse_x0": 0.3419312729348113,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Middle-frontal-sulcus(-1.63);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.69)"
+    },
+    {
+     "job": 6,
+     "seed": 3906,
+     "converged": false,
+     "lp": -10388191000.0,
+     "iters": 1,
+     "K": 0.17384379,
+     "amp": 0.63621391,
+     "eps": 0.026311989,
+     "EZ_x0": -2.5735434,
+     "EZ_rank": 54,
+     "PZ_x0": "-2.21;-4.64",
+     "n_FP": 22,
+     "rmse_x0": 0.9243431450344484,
+     "top5": "Right-Supramarginal-anterior(-0.19);Right-T2-posterior(-1.06);Left-F3-Pars-triangularis(-1.06);Left-F2-rostral(-1.12);Right-Angular-gyrus(-1.26)"
+    }
+   ],
+   "B_round2_tight_tol": [
+    {
+     "job": 1,
+     "seed": 3951,
+     "converged": true,
+     "lp": 38474.59,
+     "iters": 11031,
+     "K": 0.72861658,
+     "amp": 0.05154787,
+     "eps": 0.13803753,
+     "EZ_x0": -1.5133305,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.64;-1.68",
+     "n_FP": 3,
+     "rmse_x0": 0.30207621815259034,
+     "top5": "Right-Amygdala(-1.51);Right-Insula-gyri-longi(-1.62);Right-Hippocampus-anterior(-1.64);Right-Rhinal-cortex(-1.68);Right-F1-mesial-prefrontal(-1.97)"
+    },
+    {
+     "job": 2,
+     "seed": 3952,
+     "converged": true,
+     "lp": 38470.437,
+     "iters": 20000,
+     "K": 0.0030726706,
+     "amp": 0.051924749,
+     "eps": 0.13803348,
+     "EZ_x0": -1.5745883,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.68;-1.70",
+     "n_FP": 3,
+     "rmse_x0": 0.3031927057957626,
+     "top5": "Right-Amygdala(-1.57);Right-Hippocampus-anterior(-1.68);Right-Insula-gyri-longi(-1.69);Right-Rhinal-cortex(-1.70);Right-Insula-gyri-brevi(-2.00)"
+    },
+    {
+     "job": 5,
+     "seed": 3955,
+     "converged": true,
+     "lp": 38075.027,
+     "iters": 7811,
+     "K": 1.1420322,
+     "amp": 0.053504294,
+     "eps": 0.13853369,
+     "EZ_x0": -1.4833224,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.66;-1.65",
+     "n_FP": 4,
+     "rmse_x0": 0.3733585000498033,
+     "top5": "Left-Hippocampus-anterior(0.15);Right-Amygdala(-1.48);Right-Rhinal-cortex(-1.65);Right-Hippocampus-anterior(-1.66);Right-Insula-gyri-brevi(-1.95)"
+    },
+    {
+     "job": 6,
+     "seed": 3956,
+     "converged": true,
+     "lp": 36095.146,
+     "iters": 5537,
+     "K": 1.392112e-05,
+     "amp": 0.0050000013,
+     "eps": 0.15497237,
+     "EZ_x0": -1.5107824,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.3197298960752012,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Insula-gyri-brevi(-1.66);Right-Temporal-pole(-1.69)"
+    },
+    {
+     "job": 11,
+     "seed": 3961,
+     "converged": true,
+     "lp": 36079.214,
+     "iters": 809,
+     "K": 0.0,
+     "amp": 0.005,
+     "eps": 0.1549631,
+     "EZ_x0": -1.5112716,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 10,
+     "rmse_x0": 0.35572739142731064,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-F3-Pars-triangularis(-1.62);Right-Caudate-nucleus(-1.63);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 13,
+     "seed": 3963,
+     "converged": true,
+     "lp": 36058.027,
+     "iters": 5834,
+     "K": 4.7640765e-05,
+     "amp": 0.005,
+     "eps": 0.15512322,
+     "EZ_x0": -1.5110469,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.47",
+     "n_FP": 11,
+     "rmse_x0": 0.3584852979551064,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-T3-anterior(-1.72)"
+    },
+    {
+     "job": 8,
+     "seed": 3958,
+     "converged": true,
+     "lp": 36054.874,
+     "iters": 3401,
+     "K": 4.5476875e-05,
+     "amp": 0.005,
+     "eps": 0.15524329,
+     "EZ_x0": -1.5111308,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.31134332738090575,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.69);Right-Rhinal-cortex(-1.70)"
+    },
+    {
+     "job": 10,
+     "seed": 3960,
+     "converged": true,
+     "lp": 36053.746,
+     "iters": 1283,
+     "K": 7.7612891e-06,
+     "amp": 0.005,
+     "eps": 0.15521265,
+     "EZ_x0": -1.5111487,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.31428790690887576,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-Rhinal-cortex(-1.70)"
+    },
+    {
+     "job": 15,
+     "seed": 3965,
+     "converged": true,
+     "lp": 36047.662,
+     "iters": 1012,
+     "K": 4.0809274e-05,
+     "amp": 0.005,
+     "eps": 0.15521254,
+     "EZ_x0": -1.5110984,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.47",
+     "n_FP": 11,
+     "rmse_x0": 0.3422732912635461,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-T3-anterior(-1.72)"
+    },
+    {
+     "job": 14,
+     "seed": 3964,
+     "converged": true,
+     "lp": 36042.471,
+     "iters": 2864,
+     "K": 2.7412448,
+     "amp": 0.005,
+     "eps": 0.15528273,
+     "EZ_x0": -1.5054405,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.58;-1.68",
+     "n_FP": 8,
+     "rmse_x0": 0.30802751292044034,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.58);Right-Insula-gyri-longi(-1.63);Right-Orbito-frontal-cortex(-1.68);Right-Rhinal-cortex(-1.68)"
+    },
+    {
+     "job": 9,
+     "seed": 3959,
+     "converged": true,
+     "lp": 35964.836,
+     "iters": 840,
+     "K": 3.1280751e-07,
+     "amp": 0.005,
+     "eps": 0.15562004,
+     "EZ_x0": -1.512266,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-2.54",
+     "n_FP": 11,
+     "rmse_x0": 0.34542558429856346,
+     "top5": "Left-Hippocampus-anterior(-1.43);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-T1-lateral-anterior(-1.68)"
+    },
+    {
+     "job": 12,
+     "seed": 3962,
+     "converged": true,
+     "lp": 35961.289,
+     "iters": 1553,
+     "K": 0.11261587,
+     "amp": 0.005,
+     "eps": 0.15538695,
+     "EZ_x0": -1.5122957,
+     "EZ_rank": 3,
+     "PZ_x0": "-1.61;-2.55",
+     "n_FP": 12,
+     "rmse_x0": 0.39998719184061227,
+     "top5": "Left-Orbito-frontal-cortex(-0.69);Right-T2-anterior(-0.98);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66)"
+    },
+    {
+     "job": 0,
+     "seed": 3950,
+     "converged": true,
+     "lp": 35954.634,
+     "iters": 726,
+     "K": 3.0985824e-07,
+     "amp": 0.005,
+     "eps": 0.15568172,
+     "EZ_x0": -1.5143877,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-2.60",
+     "n_FP": 11,
+     "rmse_x0": 0.3644680845917135,
+     "top5": "Left-Anterior-cingulate-cortex(-1.35);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-STS-anterior(-1.66);Right-Insula-gyri-longi(-1.67)"
+    },
+    {
+     "job": 7,
+     "seed": 3957,
+     "converged": true,
+     "lp": 35920.489,
+     "iters": 2478,
+     "K": 0.67982263,
+     "amp": 0.005,
+     "eps": 0.15554628,
+     "EZ_x0": -1.5108072,
+     "EZ_rank": 5,
+     "PZ_x0": "-1.60;-1.69",
+     "n_FP": 13,
+     "rmse_x0": 0.41790017475656066,
+     "top5": "Right-T2-anterior(-0.96);Left-Anterior-cingulate-cortex(-1.16);Left-F3-Pars-triangularis(-1.31);Left-Hippocampus-anterior(-1.46);Right-Amygdala(-1.51)"
+    },
+    {
+     "job": 4,
+     "seed": 3954,
+     "converged": true,
+     "lp": 35918.625,
+     "iters": 1799,
+     "K": 2.7148258e-06,
+     "amp": 0.005,
+     "eps": 0.15600922,
+     "EZ_x0": -1.5142973,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-1.71",
+     "n_FP": 9,
+     "rmse_x0": 0.3168298633887265,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-STS-anterior(-1.66);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.69)"
+    },
+    {
+     "job": 3,
+     "seed": 3953,
+     "converged": false,
+     "lp": -25614426000.0,
+     "iters": 1,
+     "K": 22.209161,
+     "amp": 0.86858743,
+     "eps": 0.023665075,
+     "EZ_x0": -2.0140133,
+     "EZ_rank": 24,
+     "PZ_x0": "-4.11;-2.88",
+     "n_FP": 23,
+     "rmse_x0": 0.9184897191215989,
+     "top5": "Left-Supramarginal-anterior(-0.52);Left-Central-sulcus-head-face(-1.18);Left-ITS-posterior(-1.30);Left-Fusiform-gyrus(-1.36);Right-Lingual-gyrus(-1.36)"
+    }
+   ],
+   "A_sensitivity_wide_u_prior": [
+    {
+     "job": 0,
+     "seed": 5950,
+     "converged": true,
+     "lp": 39620.059,
+     "iters": 14528,
+     "K": 0.0013307012,
+     "amp": 0.069451022,
+     "eps": 0.13705535,
+     "EZ_x0": -1.7105493,
+     "EZ_rank": 3,
+     "PZ_x0": "-1.70;-1.84",
+     "n_FP": 2,
+     "rmse_x0": 0.3227697426101299,
+     "top5": "Right-Insula-gyri-longi(-1.18);Right-Hippocampus-anterior(-1.70);Right-Amygdala(-1.71);Right-Rhinal-cortex(-1.84);Right-F1-mesial-prefrontal(-2.03)"
+    },
+    {
+     "job": 4,
+     "seed": 5954,
+     "converged": true,
+     "lp": 38987.843,
+     "iters": 19279,
+     "K": 0.00016988531,
+     "amp": 0.063429447,
+     "eps": 0.13774443,
+     "EZ_x0": -1.6983271,
+     "EZ_rank": 5,
+     "PZ_x0": "-1.70;-1.86",
+     "n_FP": 4,
+     "rmse_x0": 0.46070572677849386,
+     "top5": "Right-T2-anterior(0.83);Right-T3-anterior(-1.02);Right-Insula-gyri-longi(-1.64);Right-Hippocampus-anterior(-1.70);Right-Amygdala(-1.70)"
+    },
+    {
+     "job": 5,
+     "seed": 5955,
+     "converged": true,
+     "lp": 36352.738,
+     "iters": 4117,
+     "K": 0.9988662,
+     "amp": 0.005,
+     "eps": 0.15479346,
+     "EZ_x0": -1.5071571,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.59;-1.70",
+     "n_FP": 10,
+     "rmse_x0": 0.3793611790835173,
+     "top5": "Right-T2-anterior(-0.67);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.59);Right-Insula-gyri-longi(-1.62);Left-F2-rostral(-1.63)"
+    },
+    {
+     "job": 2,
+     "seed": 5952,
+     "converged": true,
+     "lp": 36339.29,
+     "iters": 5564,
+     "K": 1.9871589e-05,
+     "amp": 0.005,
+     "eps": 0.15512911,
+     "EZ_x0": -1.5109017,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.48",
+     "n_FP": 9,
+     "rmse_x0": 0.32922806881124117,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-Temporal-pole(-1.69);Right-Gyrus-rectus(-1.70)"
+    },
+    {
+     "job": 1,
+     "seed": 5951,
+     "converged": true,
+     "lp": 36288.17,
+     "iters": 781,
+     "K": 0.0,
+     "amp": 0.005,
+     "eps": 0.15529028,
+     "EZ_x0": -1.5125935,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-2.63",
+     "n_FP": 10,
+     "rmse_x0": 0.3632291127639711,
+     "top5": "Right-T2-anterior(-1.01);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.65);Right-F3-Pars-Orbitalis(-1.70)"
+    },
+    {
+     "job": 3,
+     "seed": 5953,
+     "converged": true,
+     "lp": 36278.529,
+     "iters": 2482,
+     "K": 0.00033250166,
+     "amp": 0.005,
+     "eps": 0.15516539,
+     "EZ_x0": -1.5122078,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.61;-1.70",
+     "n_FP": 10,
+     "rmse_x0": 0.3737439085393345,
+     "top5": "Left-Orbito-frontal-cortex(-0.71);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Putamen(-1.66)"
+    }
+   ],
+   "B_sensitivity_wide_u_prior": [
+    {
+     "job": 1,
+     "seed": 6951,
+     "converged": true,
+     "lp": 39678.343,
+     "iters": 15297,
+     "K": 0.0015896823,
+     "amp": 0.077103062,
+     "eps": 0.13689869,
+     "EZ_x0": -1.7046067,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.73;-2.02",
+     "n_FP": 2,
+     "rmse_x0": 0.2749395397940686,
+     "top5": "Right-Amygdala(-1.70);Right-Hippocampus-anterior(-1.73);Right-Insula-gyri-brevi(-2.01);Right-Rhinal-cortex(-2.02);Right-F1-mesial-prefrontal(-2.04)"
+    },
+    {
+     "job": 0,
+     "seed": 6950,
+     "converged": true,
+     "lp": 39059.991,
+     "iters": 14854,
+     "K": 0.0019051796,
+     "amp": 0.067546613,
+     "eps": 0.13742443,
+     "EZ_x0": -1.7088861,
+     "EZ_rank": 4,
+     "PZ_x0": "-1.69;-1.83",
+     "n_FP": 3,
+     "rmse_x0": 0.4384981279884542,
+     "top5": "Right-T2-anterior(0.93);Right-Insula-gyri-longi(-1.22);Right-Hippocampus-anterior(-1.69);Right-Amygdala(-1.71);Right-Rhinal-cortex(-1.83)"
+    },
+    {
+     "job": 2,
+     "seed": 6952,
+     "converged": true,
+     "lp": 38939.395,
+     "iters": 7109,
+     "K": 2.693627e-09,
+     "amp": 0.060744453,
+     "eps": 0.13791548,
+     "EZ_x0": -1.6929695,
+     "EZ_rank": 5,
+     "PZ_x0": "-1.69;-1.86",
+     "n_FP": 6,
+     "rmse_x0": 0.47064211397669736,
+     "top5": "Right-T2-anterior(0.89);Right-Putamen(-1.27);Right-F3-pars-opercularis(-1.57);Right-Insula-gyri-longi(-1.67);Right-Amygdala(-1.69)"
+    },
+    {
+     "job": 3,
+     "seed": 6953,
+     "converged": true,
+     "lp": 36292.617,
+     "iters": 3444,
+     "K": 2.7935873,
+     "amp": 0.005,
+     "eps": 0.15528121,
+     "EZ_x0": -1.5050965,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.59;-1.70",
+     "n_FP": 8,
+     "rmse_x0": 0.3404307018331761,
+     "top5": "Right-T2-anterior(-0.73);Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.59);Right-Insula-gyri-longi(-1.66);Right-Orbito-frontal-cortex(-1.67)"
+    },
+    {
+     "job": 5,
+     "seed": 6955,
+     "converged": true,
+     "lp": 36215.467,
+     "iters": 1519,
+     "K": 4.8130623e-06,
+     "amp": 0.005,
+     "eps": 0.155946,
+     "EZ_x0": -1.5122948,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.61;-2.49",
+     "n_FP": 8,
+     "rmse_x0": 0.2993655817623007,
+     "top5": "Right-Amygdala(-1.51);Right-Hippocampus-anterior(-1.61);Right-Insula-gyri-longi(-1.66);Right-Temporal-pole(-1.69);Right-Orbito-frontal-cortex(-1.76)"
+    }
+   ],
+   "A_unpatched_package_model": [
+    {
+     "job": 5,
+     "seed": 7955,
+     "converged": true,
+     "lp": 13978.796,
+     "iters": 7626,
+     "K": 0.0,
+     "amp": 0.045027693,
+     "eps": 0.13856097,
+     "EZ_x0": -1.5672084,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.64;-2.67",
+     "n_FP": 3,
+     "rmse_x0": 0.3106077942901764,
+     "top5": "Right-Amygdala(-1.57);Right-Insula-gyri-longi(-1.57);Right-Hippocampus-anterior(-1.64);Right-T2-anterior(-2.01);Left-Caudate-nucleus(-2.02)"
+    },
+    {
+     "job": 8,
+     "seed": 7958,
+     "converged": true,
+     "lp": 13971.205,
+     "iters": 6864,
+     "K": 5.5447976e-05,
+     "amp": 0.044565829,
+     "eps": 0.13874338,
+     "EZ_x0": -1.5969769,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.63;-2.45",
+     "n_FP": 3,
+     "rmse_x0": 0.2980559106780144,
+     "top5": "Right-Amygdala(-1.60);Right-Hippocampus-anterior(-1.63);Right-Insula-gyri-longi(-1.66);Right-Insula-gyri-brevi(-1.99);Left-Caudate-nucleus(-2.02)"
+    },
+    {
+     "job": 0,
+     "seed": 7950,
+     "converged": true,
+     "lp": 13964.387,
+     "iters": 7010,
+     "K": 0.24704476,
+     "amp": 0.042370983,
+     "eps": 0.13886957,
+     "EZ_x0": -1.5422014,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.63;-2.65",
+     "n_FP": 3,
+     "rmse_x0": 0.327569746742915,
+     "top5": "Right-Amygdala(-1.54);Right-Hippocampus-anterior(-1.63);Right-Insula-gyri-longi(-1.65);Left-T1-lateral-anterior(-1.83);Right-T2-anterior(-1.96)"
+    },
+    {
+     "job": 6,
+     "seed": 7956,
+     "converged": true,
+     "lp": 12969.332,
+     "iters": 4047,
+     "K": 1.218237,
+     "amp": 0.005,
+     "eps": 0.14695713,
+     "EZ_x0": -1.6001472,
+     "EZ_rank": 2,
+     "PZ_x0": "-1.62;-2.83",
+     "n_FP": 9,
+     "rmse_x0": 0.33377748781391453,
+     "top5": "Left-F2-rostral(-1.54);Right-Amygdala(-1.60);Right-Hippocampus-anterior(-1.62);Right-Putamen(-1.68);Left-Hippocampus-anterior(-1.68)"
+    },
+    {
+     "job": 1,
+     "seed": 7951,
+     "converged": true,
+     "lp": 12955.287,
+     "iters": 3296,
+     "K": 1.2094153,
+     "amp": 0.005,
+     "eps": 0.14718721,
+     "EZ_x0": -1.5999158,
+     "EZ_rank": 1,
+     "PZ_x0": "-1.62;-2.83",
+     "n_FP": 6,
+     "rmse_x0": 0.2858298329037593,
+     "top5": "Right-Amygdala(-1.60);Right-Hippocampus-anterior(-1.62);Right-Orbito-frontal-cortex(-1.66);Left-Amygdala(-1.77);Left-SFS-rostral(-1.78)"
+    },
+    {
+     "job": 7,
+     "seed": 7957,
+     "converged": false,
+     "lp": -6327706700.0,
+     "iters": 1,
+     "K": 1.4234572,
+     "amp": 0.36885497,
+     "eps": 0.021488286,
+     "EZ_x0": -2.7399505,
+     "EZ_rank": 63,
+     "PZ_x0": "-4.50;-1.45",
+     "n_FP": 23,
+     "rmse_x0": 0.9282923616968222,
+     "top5": "Left-Subcallosal-area(-0.83);Right-F2-rostral(-1.05);Right-T3-posterior(-1.20);Left-Precentral-sulcus-inferior-part(-1.44);Left-Inferior-frontal-sulcus(-1.44)"
+    },
+    {
+     "job": 9,
+     "seed": 7959,
+     "converged": false,
+     "lp": -6360576400.0,
+     "iters": 1,
+     "K": 0.075832751,
+     "amp": 0.16244908,
+     "eps": 0.010963819,
+     "EZ_x0": -1.9839484,
+     "EZ_rank": 25,
+     "PZ_x0": "-1.89;-2.11",
+     "n_FP": 25,
+     "rmse_x0": 0.8707831589102981,
+     "top5": "Left-F2-rostral(-0.78);Left-Middle-cingulate-cortex-posterior-part(-1.03);Right-Collateral-sulcus(-1.06);Right-F2-caudal(-1.21);Right-O2(-1.25)"
+    },
+    {
+     "job": 4,
+     "seed": 7954,
+     "converged": false,
+     "lp": -8820160900.0,
+     "iters": 1,
+     "K": 0.014784027,
+     "amp": 1.3030511,
+     "eps": 0.051887722,
+     "EZ_x0": -1.6440187,
+     "EZ_rank": 9,
+     "PZ_x0": "-4.39;-4.12",
+     "n_FP": 19,
+     "rmse_x0": 0.8833710325669571,
+     "top5": "Left-F3-Pars-triangularis(-0.49);Right-Intraparietal-sulcus(-0.98);Left-Superior-parietal-lobule-P1(-1.36);Right-T3-anterior(-1.50);Left-O2(-1.51)"
+    }
+   ],
+   "package_model_comparison": "Unpatched package model (T0026 vep_mcmc_nogq.exe, model block identical to vep_stim/stan/vep_mcmc.stan), 10 L-BFGS starts on arm-A data, tight tol: 5 converged (1 segfault 0xC0000005 at launch, 3 line-search failures at init, 1 stopped at the time box after 9899 iterations). Converged optima sorted by lp: EZ rank [1, 1, 1, 2, 1], amp [0.045, 0.045, 0.042, 0.005, 0.005], n_FP [3, 3, 3, 9, 6], lp [13979, 13971, 13964, 12969, 12955] (lp includes the 26740*log(sqrt(2*pi)) constant, so it is not comparable to the patched lp). See map_ensemble_A_pkgmodel.csv."
+  },
+  "files": "posterior_x0_by_region_arm{A,B}.csv, map_ensemble_*.csv (attached)"
+ },
+ "numerical_diagnostics": {
+  "patch_verification": {
+   "patched": {
+    "stan_lp": -4261540.9,
+    "numpy_lp": -4261540.924021375,
+    "diff": 0.024021374993026257,
+    "seconds_log_prob_call": 0.19,
+    "n_lik_terms": 26740,
+    "fully_dropped_channels": [],
+    "time_points_dropped_for_other_channels": 10
+   },
+   "package": {
+    "stan_lp": -4201980.3,
+    "numpy_lp": -4177407.9105750155,
+    "diff": -24572.389424984343,
+    "seconds_log_prob_call": 0.32,
+    "n_lik_terms": 26740,
+    "fully_dropped_channels": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "time_points_dropped_for_other_channels": 0
+   }
+  },
+  "nuts_sampler": {
+   "A": {
+    "chains_used": 5,
+    "draws_per_chain": 300,
+    "draws_per_chain_all": [
+     300,
+     300,
+     0,
+     300,
+     300,
+     300
+    ],
+    "divergences": 0,
+    "divergences_per_chain": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "treedepth_mean": 8.0,
+    "treedepth_max_observed": 8,
+    "n_at_observed_max_depth": 1500,
+    "n_leapfrog_mean": 255.0,
+    "stepsize_per_chain": [
+     0.0071178235,
+     0.0065350486,
+     0.011395317,
+     0.0082721417,
+     0.0089864771
+    ],
+    "accept_stat_mean": 0.9572984257606666,
+    "lp_mean_per_chain": [
+     38212.23095,
+     38225.696286666665,
+     38165.682616666665,
+     37985.179853333335,
+     37965.89737666667
+    ],
+    "amp_mean_per_chain": [
+     0.05012390907,
+     0.049319613613333334,
+     0.05061648244999999,
+     0.049456951390000004,
+     0.0505551473
+    ],
+    "x0_rhat_max": 1.9550961735105488,
+    "x0_rhat_median": 1.0148318514659214,
+    "x0_n_rhat_gt_1_05": 35,
+    "x0_n_rhat_gt_1_01": 110,
+    "x0_ess_bulk_min": 6.839875218222262,
+    "x0_ess_bulk_median": 346.71886042938786,
+    "EZ_rhat": 1.1920038339899819,
+    "EZ_ess_bulk": 17.050093811881958,
+    "rhat_lp": 2.4235838668708305,
+    "rhat_K": 1.6103754321998467,
+    "rhat_amp": 2.5203242272210824,
+    "rhat_eps": 1.0893316149801455,
+    "ess_lp": 6.226692098280194,
+    "stansummary": {
+     "stansummary_x0_rhat_max": 2.10525,
+     "stansummary_cols": [
+      "Mean",
+      "MCSE",
+      "StdDev",
+      "MAD",
+      "5%",
+      "50%",
+      "95%",
+      "ESS_bulk",
+      "ESS_tail",
+      "ESS_bulk/s",
+      "R_hat"
+     ]
+    }
+   },
+   "B": {
+    "chains_used": 6,
+    "draws_per_chain": 300,
+    "draws_per_chain_all": [
+     300,
+     300,
+     300,
+     300,
+     300,
+     300
+    ],
+    "divergences": 0,
+    "divergences_per_chain": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "treedepth_mean": 8.0,
+    "treedepth_max_observed": 8,
+    "n_at_observed_max_depth": 1800,
+    "n_leapfrog_mean": 255.0,
+    "stepsize_per_chain": [
+     0.015054455,
+     0.0094990744,
+     0.0074138978,
+     0.011576414,
+     0.013289148,
+     0.012877101
+    ],
+    "accept_stat_mean": 0.9491699153927778,
+    "lp_mean_per_chain": [
+     38225.35825333333,
+     38223.55482666667,
+     38226.004056666665,
+     38227.81213333333,
+     38209.02752333333,
+     38239.23428666666
+    ],
+    "amp_mean_per_chain": [
+     0.05179537958666666,
+     0.052160556749999996,
+     0.05214759877,
+     0.05105612677,
+     0.050043775049999996,
+     0.051343233610000004
+    ],
+    "x0_rhat_max": 1.6760440259193778,
+    "x0_rhat_median": 1.005919324611483,
+    "x0_n_rhat_gt_1_05": 16,
+    "x0_n_rhat_gt_1_01": 45,
+    "x0_ess_bulk_min": 9.410522199222294,
+    "x0_ess_bulk_median": 949.5104741125111,
+    "EZ_rhat": 1.090091600347066,
+    "EZ_ess_bulk": 38.243646305525395,
+    "rhat_lp": 1.1454362664774673,
+    "rhat_K": 1.068014639882511,
+    "rhat_amp": 1.9899779395873838,
+    "rhat_eps": 1.0289209437190165,
+    "ess_lp": 25.483857034422797,
+    "stansummary": {
+     "stansummary_x0_rhat_max": 1.54711,
+     "stansummary_cols": [
+      "Mean",
+      "MCSE",
+      "StdDev",
+      "MAD",
+      "5%",
+      "50%",
+      "95%",
+      "ESS_bulk",
+      "ESS_tail",
+      "ESS_bulk/s",
+      "R_hat"
+     ]
+    }
+   }
+  },
+  "nuts_manifest": {
+   "A": [
+    {
+     "arm": "A",
+     "chain_id": 1,
+     "init_from": "opt_A_tight/j04",
+     "init_opt_lp": 38430.11,
+     "init_amp": 0.048835717,
+     "seed": 29029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=1 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=29029 data file=studies/study-001/work/T0029/out/synth/data_armA.json init=studies/study-001/work/T0029/out/nuts_A/init_b0.json output file=studies/study-001/work/T0029/out/nuts_A/chain1.csv refresh=10"
+    },
+    {
+     "arm": "A",
+     "chain_id": 2,
+     "init_from": "opt_A_tight/j04",
+     "init_opt_lp": 38430.11,
+     "init_amp": 0.048835717,
+     "seed": 29029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=2 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=29029 data file=studies/study-001/work/T0029/out/synth/data_armA.json init=studies/study-001/work/T0029/out/nuts_A/init_b0.json output file=studies/study-001/work/T0029/out/nuts_A/chain2.csv refresh=10"
+    },
+    {
+     "arm": "A",
+     "chain_id": 3,
+     "init_from": "opt_A_tight/j09",
+     "init_opt_lp": 38410.069,
+     "init_amp": 0.05006261,
+     "seed": 29029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=3 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=29029 data file=studies/study-001/work/T0029/out/synth/data_armA.json init=studies/study-001/work/T0029/out/nuts_A/init_b1.json output file=studies/study-001/work/T0029/out/nuts_A/chain3.csv refresh=10"
+    },
+    {
+     "arm": "A",
+     "chain_id": 4,
+     "init_from": "opt_A_tight/j09",
+     "init_opt_lp": 38410.069,
+     "init_amp": 0.05006261,
+     "seed": 29029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=4 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=29029 data file=studies/study-001/work/T0029/out/synth/data_armA.json init=studies/study-001/work/T0029/out/nuts_A/init_b1.json output file=studies/study-001/work/T0029/out/nuts_A/chain4.csv refresh=10"
+    },
+    {
+     "arm": "A",
+     "chain_id": 5,
+     "init_from": "opt_A_tight/j06",
+     "init_opt_lp": 38229.127,
+     "init_amp": 0.049917952,
+     "seed": 29029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=5 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=29029 data file=studies/study-001/work/T0029/out/synth/data_armA.json init=studies/study-001/work/T0029/out/nuts_A/init_b2.json output file=studies/study-001/work/T0029/out/nuts_A/chain5.csv refresh=10"
+    },
+    {
+     "arm": "A",
+     "chain_id": 6,
+     "init_from": "opt_A_tight/j06",
+     "init_opt_lp": 38229.127,
+     "init_amp": 0.049917952,
+     "seed": 29029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=6 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=29029 data file=studies/study-001/work/T0029/out/synth/data_armA.json init=studies/study-001/work/T0029/out/nuts_A/init_b2.json output file=studies/study-001/work/T0029/out/nuts_A/chain6.csv refresh=10"
+    }
+   ],
+   "B": [
+    {
+     "arm": "B",
+     "chain_id": 1,
+     "init_from": "opt_B_tight/j01",
+     "init_opt_lp": 38474.59,
+     "init_amp": 0.05154787,
+     "seed": 39029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=1 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=39029 data file=studies/study-001/work/T0029/out/synth/data_armB.json init=studies/study-001/work/T0029/out/nuts_B/init_b0.json output file=studies/study-001/work/T0029/out/nuts_B/chain1.csv refresh=10"
+    },
+    {
+     "arm": "B",
+     "chain_id": 2,
+     "init_from": "opt_B_tight/j01",
+     "init_opt_lp": 38474.59,
+     "init_amp": 0.05154787,
+     "seed": 39029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=2 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=39029 data file=studies/study-001/work/T0029/out/synth/data_armB.json init=studies/study-001/work/T0029/out/nuts_B/init_b0.json output file=studies/study-001/work/T0029/out/nuts_B/chain2.csv refresh=10"
+    },
+    {
+     "arm": "B",
+     "chain_id": 3,
+     "init_from": "opt_B_tight/j02",
+     "init_opt_lp": 38470.437,
+     "init_amp": 0.051924749,
+     "seed": 39029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=3 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=39029 data file=studies/study-001/work/T0029/out/synth/data_armB.json init=studies/study-001/work/T0029/out/nuts_B/init_b1.json output file=studies/study-001/work/T0029/out/nuts_B/chain3.csv refresh=10"
+    },
+    {
+     "arm": "B",
+     "chain_id": 4,
+     "init_from": "opt_B_tight/j02",
+     "init_opt_lp": 38470.437,
+     "init_amp": 0.051924749,
+     "seed": 39029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=4 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=39029 data file=studies/study-001/work/T0029/out/synth/data_armB.json init=studies/study-001/work/T0029/out/nuts_B/init_b1.json output file=studies/study-001/work/T0029/out/nuts_B/chain4.csv refresh=10"
+    },
+    {
+     "arm": "B",
+     "chain_id": 5,
+     "init_from": "opt_B/j09",
+     "init_opt_lp": 38464.186,
+     "init_amp": 0.051688963,
+     "seed": 39029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=5 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=39029 data file=studies/study-001/work/T0029/out/synth/data_armB.json init=studies/study-001/work/T0029/out/nuts_B/init_b2.json output file=studies/study-001/work/T0029/out/nuts_B/chain5.csv refresh=10"
+    },
+    {
+     "arm": "B",
+     "chain_id": 6,
+     "init_from": "opt_B/j09",
+     "init_opt_lp": 38464.186,
+     "init_amp": 0.051688963,
+     "seed": 39029,
+     "cmd": "C:\\Users\\Pengrui\\Documents\\Claude\\Projects\\AA\\studies\\study-001\\work\\T0029\\stan\\vep_mcmc_fixed.exe id=6 sample save_warmup=0 num_warmup=300 num_samples=300 adapt delta=0.9 algorithm=hmc engine=nuts max_depth=8 random seed=39029 data file=studies/study-001/work/T0029/out/synth/data_armB.json init=studies/study-001/work/T0029/out/nuts_B/init_b2.json output file=studies/study-001/work/T0029/out/nuts_B/chain6.csv refresh=10"
+    }
+   ]
+  }
+ },
+ "convergence_checks": {
+  "criterion": "task: arm A passes if planted EZ ranks 1st by posterior x0 with R-hat < 1.05 on all x0 (or a converged, agreeing L-BFGS ensemble if NUTS cannot finish); arm B informative",
+  "arm_A_nuts": "FAIL. 5 of 6 chains (chain 3 crashed with exit 0xC0000005 during warmup, no draws) x 300 draws; rank-normalised split R-hat max 1.96 (35/162 x0 > 1.05; CmdStan stansummary max 2.10525); EZ R-hat 1.19; lp R-hat 2.42; amp R-hat 2.52; bulk ESS min 6.8 (median 347); divergences 0; treedepth at max 8 on 1500/1500 draws; chain lp means [38212, 38226, 38166, 37985, 37966] (chains 5-6, started from optimum j06, stay ~250 lp units lower: separate mode).",
+  "arm_A_lbfgs": "FAIL as an agreeing ensemble. Round 2 (tight tol): 5 high-amp optima (lp 37.9-38.4k, eps at the 0.138 noise floor) rank the EZ 2nd (4) or 3rd (1), each behind a different spurious region; 9 low-amp optima (amp at the 0.005 bound, lp ~36k) rank the EZ 1st-3rd with 8-12 FPs. Each run converged by CmdStan criteria; they disagree.",
+  "arm_B_nuts": "Not converged by the same rule: 6/6 chains x 300 draws, R-hat max 1.68 (16/162 > 1.05; stansummary 1.54711); EZ R-hat 1.09; lp R-hat 1.15; amp R-hat 1.99; ESS min 9.4; divergences 0; treedepth saturated on all draws.",
+  "verdict_arm_A": "FAIL (convergence criterion not met; EZ is 1st by pooled posterior mean but P(rank 1)=0.29 and 2nd in 3/5 chains)",
+  "verdict_arm_B": "informative: EZ 1st in all 6 chains, P(rank 1)=0.90, 2 FPs, not converged"
+ },
+ "predictive_checks": {
+  "A": {
+   "n_draws": 100,
+   "R2_within_channel_mean": 0.2544658034593519,
+   "informative_channels": [
+    11,
+    12,
+    13,
+    14,
+    81,
+    82
+   ],
+   "R2_informative_channels_vs_noisy_data": 0.8734576460140206,
+   "R2_informative_channels_vs_noise_free_signal": 0.9196707264052383,
+   "P_seizing_in_window": {
+    "Right-Insula-gyri-longi": 1.0,
+    "Right-Hippocampus-anterior": 1.0,
+    "Right-Amygdala": 1.0,
+    "Right-Rhinal-cortex": 1.0,
+    "Right-Insula-gyri-brevi": 0.97,
+    "Left-T1-planum-polare": 0.44,
+    "Right-Subcallosal-area": 0.4,
+    "Left-Gyrus-rectus": 0.4
+   }
+  },
+  "B": {
+   "n_draws": 100,
+   "R2_within_channel_mean": 0.25722521462324566,
+   "informative_channels": [
+    11,
+    12,
+    13,
+    14,
+    81,
+    82
+   ],
+   "R2_informative_channels_vs_noisy_data": 0.876022980500609,
+   "R2_informative_channels_vs_noise_free_signal": 0.9239355363439636,
+   "P_seizing_in_window": {
+    "Right-Insula-gyri-longi": 1.0,
+    "Right-Hippocampus-anterior": 1.0,
+    "Right-Amygdala": 1.0,
+    "Right-Rhinal-cortex": 1.0,
+    "Right-Insula-gyri-brevi": 0.99,
+    "Left-T1-planum-polare": 0.43,
+    "Left-T1-lateral-posterior": 0.41,
+    "Left-SFS-caudal": 0.34
+   }
+  },
+  "note": "Deterministic mean path at 100 thinned draws per arm; R2 within channel over all 191 channels ~0.25 because most channels carry only noise; informative channels (clean deflection > 2 noise sd) = 11, 12, 13, 14, 81, 82."
+ },
+ "recovery_benchmark": {
+  "planted": "EZ Right-Amygdala x0=-1.6 (only seizing region, onset step 80); PZ Right-Hippocampus-anterior, Right-Rhinal-cortex x0=-2.1 (sub-threshold, do not seize); amp 0.1, K 1",
+  "arm_A_matching_P2_SC": {
+   "EZ_rank_pooled_mean": 1,
+   "EZ_rank_per_chain": [
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "EZ_P_rank1": 0.2886666666666667,
+   "EZ_x0_mean_sd": [
+    -1.5102873567333333,
+    0.04337290213099789
+   ],
+   "EZ_x0_90pct": [
+    -1.5845760150000001,
+    -1.44155583
+   ],
+   "EZ_x0_true": -1.6,
+   "false_positives_P_x0_gt_-2.05_above_0.5": [
+    {
+     "region": "Right-F1-mesial-prefrontal",
+     "mean": -1.9574299543333333,
+     "P_gt_thr": 0.8886666666666667,
+     "max_gain": 3.965075017871623
+    },
+    {
+     "region": "Right-Insula-gyri-brevi",
+     "mean": -1.9515325172666664,
+     "P_gt_thr": 1.0,
+     "max_gain": 0.8317935669429908
+    },
+    {
+     "region": "Right-Insula-gyri-longi",
+     "mean": -1.6340994755333333,
+     "P_gt_thr": 1.0,
+     "max_gain": 1.3590515312815477
+    }
+   ],
+   "PZ": [
+    {
+     "region": "Right-Hippocampus-anterior",
+     "true": -2.1,
+     "mean": -1.6403650006000001,
+     "sd": 0.04620895763795045,
+     "P_gt_thr": 1.0,
+     "rank": 3
+    },
+    {
+     "region": "Right-Rhinal-cortex",
+     "true": -2.1,
+     "mean": -1.7285223522666666,
+     "sd": 0.06205252040243481,
+     "P_gt_thr": 1.0,
+     "rank": 4
+    }
+   ],
+   "amp_mean": 0.05001442076466666,
+   "K_mean": 0.39096293212566663,
+   "pass": false
+  },
+  "arm_B_template_P1_SC": {
+   "EZ_rank_pooled_mean": 1,
+   "EZ_rank_per_chain": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "EZ_P_rank1": 0.9044444444444445,
+   "EZ_x0_mean_sd": [
+    -1.5118639183333336,
+    0.0396302449930326
+   ],
+   "EZ_x0_90pct": [
+    -1.577908795,
+    -1.44433867
+   ],
+   "EZ_x0_true": -1.6,
+   "false_positives_P_x0_gt_-2.05_above_0.5": [
+    {
+     "region": "Right-Insula-gyri-brevi",
+     "mean": -1.9730004357222222,
+     "P_gt_thr": 0.9966666666666667,
+     "max_gain": 0.8317935669429908
+    },
+    {
+     "region": "Right-Insula-gyri-longi",
+     "mean": -1.5994589344999999,
+     "P_gt_thr": 1.0,
+     "max_gain": 1.3590515312815477
+    }
+   ],
+   "PZ": [
+    {
+     "region": "Right-Hippocampus-anterior",
+     "true": -2.1,
+     "mean": -1.631941071333333,
+     "sd": 0.038351781864622236,
+     "P_gt_thr": 1.0,
+     "rank": 3
+    },
+    {
+     "region": "Right-Rhinal-cortex",
+     "true": -2.1,
+     "mean": -1.6741177608888889,
+     "sd": 0.04130469497649232,
+     "P_gt_thr": 1.0,
+     "rank": 4
+    }
+   ],
+   "amp_mean": 0.05142444508944444,
+   "K_mean": 0.7934084061627777,
+   "pass": "not applicable (informative arm)"
+  },
+  "note": "Both arms over-estimate the extent: the sub-threshold PZ and Right-Insula-gyri-longi are estimated EZ-like (x0 -1.6 to -1.73) and seize in 100% of posterior draws, while amp is estimated at ~0.05 (half the truth). Arm B looking better than arm A is most plausibly an initialisation effect (its best L-BFGS optima happened to be EZ-first modes), not evidence that a mismatched SC helps."
+ },
+ "identifiability": {
+  "amplitude_vs_extent": "amp x number of co-seizing regions is a near-flat direction: the EZ is seen by 3 contacts (max gain 8.1) that also see R-Hippocampus-anterior, R-Rhinal-cortex and R-Insula-gyri-longi, so half the amplitude with 3-4 co-seizing neighbours reproduces the sensor data (PPC R2 0.87 on the 6 informative channels vs data, 0.92 vs the noise-free signal) with the wrong network.",
+  "offset_prior_conflict": "u~N(2,1) and amp's half-normal prior penalise the realistic intercepts (planted u_star up to 20.5), pulling amp down and favouring regions that seize for the whole window (they act as channel offsets). Sensitivity S1 (u_star sd 10, L-BFGS) raised amp to 0.06-0.077 and reduced co-seizing neighbours, but the optima still disagreed (EZ rank 1-5) with spurious early/whole-window seizing regions (e.g. R-T2-anterior, gain 47.6, seizing from step 9).",
+  "x0_vs_z_init": "x0 and z_init trade off for onset timing; low-gain regions can be fitted as seizing early (R-Insula-gyri-longi ~step 48 in some optima), absorbing AR(1)-correlated noise that the iid likelihood treats as signal.",
+  "coupling": "K weakly identified (posterior mean 0.39 in A, 0.79 in B; truth 1); with P2 SC weights to the EZ of 0.03-0.06 the coupling barely shapes the data, which is why swapping in P1 SC changed little.",
+  "unobserved_regions": "Spearman(posterior mean x0, true x0) only ~0.11-0.12 over 162 regions: most regions are invisible to the 191 contacts and stay at the prior."
+ },
+ "intended_use": "pipeline qualification benchmark only (synthetic virtual patient; not a clinical prediction, not evidence about Wang P1/P2 or any HUP patient; a fitted posterior is not a calibrated probability of seizure freedom)",
+ "implications_for_HUP": [
+  "Even with the matching connectome, the correct gain, the model's own forward model and the channel-skip bug fixed, vep-stim did not meet the convergence criterion and over-estimated EZ extent (4-5 EZ-like regions for one planted EZ). Template-connectome fits of HUP patients should therefore not be used for x0 maps, EZ extent or a single 'the EZ' call; at most for rank-based, ensemble-reported hypothesis generation with the multimodality shown explicitly.",
+  "The template-SC arm was not worse than the matching-SC arm here (EZ 1st in all arm-B chains): with weak SC weights and K ~0.4-0.8 the inference is driven by gain and onset timing, so SC mismatch is a second-order error next to the identifiability problems. One seed and one EZ only: this does not show that a template SC is safe in general (e.g. for EZs whose spread runs through strong SC edges).",
+  "The package likelihood bug drops the first 10*ns likelihood terms in column-major order: here channels 0-11 entirely plus steps 1-110 of channel 12, i.e. two of the six informative EZ channels lose all or most of their onset. In this instance it did NOT change the MAP ranking (the 3 converged high-amp unpatched optima ranked the EZ 1st with 3 FPs, because channel 13 and late channel 12 still carry the EZ signal; 3 vs 5 optima is too few to compare with the patched ensemble). It is still a correctness defect whose damage depends on where informative contacts fall in the channel order; HUP fits must use the patched likelihood (P1).",
+  "The u/amp priors must be data-centred (or features baseline-referenced) before HUP fitting; otherwise realistic feature offsets push amplitude toward its bound and create whole-window seizing artefacts.",
+  "NUTS needs a reparameterisation or a different sampler setup: every draw hit max_depth 8 (step size ~0.007-0.015); 600 iterations took ~55 min per chain here. Budget several hours per patient, start multiple chains from diverse optima, and treat R-hat > 1.05 as a hard stop."
+ ],
+ "deviations_from_package_recipe": [
+  "Synthetic data generated at the model's own observation level (log-feature = amp*gain@x + u + noise) rather than as raw SEEG passed through the feature pipeline, so arm A tests inference, not the feature pipeline; the fixed feature pipeline was used only to calibrate realistic noise/levels from P2's simulated SEEG.",
+  "Observation noise AR(1) (phi 0.9, sd 0.15) instead of the iid noise the likelihood assumes (deliberate, realistic: the 1 Hz low-pass in the pipeline makes feature noise strongly autocorrelated; P2 baseline lag-1 AC ~0.91).",
+  "Design iteration before any fit (simulation only, logged): first draft amp=0.015 gave max channel deflection 0.34 (2.3 noise SD, 1 channel) - judged unrealistically weak vs P2 feature ranges; amp raised to 0.10 and channel intercepts set to give P2-like baseline levels (~3.5). PZ x0 -2.1 kept although coupling-driven recruitment does not occur (P2 SC weights to the EZ 0.03-0.06; higher K suppresses rather than recruits in this model).",
+  "L-BFGS: 10 starts/arm with package settings (lbfgs tol_param=1e-10 iter=20000 init=5) plus 16 starts/arm with tightened tol_rel_grad=1e2, tol_rel_obj=1e1, tol_grad=1e-10 because package defaults stopped at ||grad|| up to 15 inside a prior-driven low-amp basin (package uses 50 starts on a cluster).",
+  "NUTS: 6 chains/arm = best 3 L-BFGS optima x 2 (package: best 8 x 2), warmup 300 / samples 300 (package 500/500), adapt delta 0.9 and max_depth 8 (package 0.99 / 7, which saturated in T0026).",
+  "CmdStan 2.40.0 instead of README-pinned 2.21.0; direct exe calls instead of GNU parallel."
+ ],
+ "environment_manifest": {
+  "env_digest_sha256_pip_freeze": "a3a5df5eee455a284346a5c3b7cd32eda2aecf9c6ae6c0f225c02586bfac4f85",
+  "pip_freeze_file": "attached pip_freeze.txt",
+  "cwd": "C:/Users/Pengrui/Documents/Claude/Projects/AA",
+  "commands": [
+   "cd C:/Users/Pengrui/Documents/Claude/Projects/AA; P=.venv-model/Scripts/python.exe; W=studies/study-001/work/T0029; A=studies/study-001/artifacts/A0067-DatasetCard",
+   "$P $W/scripts/calibrate_p2.py $A/P2_SEEG_ts_fit.npz $W/out/calib",
+   "$P $W/scripts/make_synth.py $A/P2_SEEG_ts_fit.npz $A/P1_SEEG_SEEG_fit.npz $W/out/synth 20261129",
+   "$P $W/scripts/compile.py $W/stan/vep_mcmc_fixed.stan   (and vep_mcmc_fixed_wideu.stan)",
+   "$P $W/scripts/verify_patch.py $W/out/synth/data_armA.json $W/out/verify_patch.json   (package model block = T0026/stan/vep_mcmc_nogq.exe)",
+   "$P $W/scripts/lp_truth.py",
+   "$P $W/scripts/run_opt.py A 10 2900 10 ; $P $W/scripts/run_opt.py B 10 3900 10   # lbfgs tol_param=1e-10 iter=20000 init=5",
+   "$P $W/scripts/run_opt.py A 16 2950 11 5 _tight tol_rel_grad=1e2,tol_rel_obj=1e1,tol_grad=1e-10 ; same for B with seed0 3950",
+   "T0029_EXE=$W/stan/vep_mcmc_fixed_wideu.exe $P $W/scripts/run_opt.py A 6 5950 3 5 _wideu tol_rel_grad=1e2,tol_rel_obj=1e1,tol_grad=1e-10 ; B with seed0 6950",
+   "T0029_EXE=studies/study-001/work/T0026/stan/vep_mcmc_nogq.exe $P $W/scripts/run_opt.py A 10 7950 10 5 _pkgmodel tol_rel_grad=1e2,tol_rel_obj=1e1,tol_grad=1e-10",
+   "$P $W/scripts/run_nuts.py A 3 2 300 300 29029 8 0.9 ,_tight ; $P $W/scripts/run_nuts.py B 3 2 300 300 39029 8 0.9 ,_tight",
+   "$P $W/scripts/map_ensemble.py <A|B> <suffix> ; $P $W/scripts/spurious.py <A|B> ; $P $W/scripts/analyze_nuts.py <A|B> 50",
+   "$P $W/scripts/write_notes.py ; $P $W/scripts/build_bundle.py $W/bundle_notes.json"
+  ],
+  "seeds": {
+   "synthetic": 20261129,
+   "lbfgs_A_round1": "2900+j",
+   "lbfgs_B_round1": "3900+j",
+   "lbfgs_A_round2": "2950+j",
+   "lbfgs_B_round2": "3950+j",
+   "lbfgs_A_wideu": "5950+j",
+   "lbfgs_B_wideu": "6950+j",
+   "nuts_A": 29029,
+   "nuts_B": 39029
+  },
+  "runtime": {
+   "wall_clock": "compute ~02:12 to ~04:04 EST 2026-11-01 (about 1 h 52 min wall, under the 3 h stopping rule); two CmdStan processes segfaulted (0xC0000005) on this Windows toolchain (NUTS arm A chain 3 in warmup; one package-model L-BFGS at launch)",
+   "lbfgs": "patched model ~30 ms/iteration; 400-20000 iterations, 15 s - 6.5 min per start",
+   "nuts": "~55 min wall per chain (600 iterations x 255 leapfrog steps), 11 chains in parallel (~10 CPU-hours)",
+   "package_model": "~0.3 s/iteration (scalar loops), ~10x slower than patched"
+  }
+ }
+}

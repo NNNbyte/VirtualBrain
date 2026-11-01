@@ -1,0 +1,255 @@
+{
+ "label": "PRELIMINARY - model not yet qualified (A0018 MAP ensemble; A0015)",
+ "plan_refs": [
+  "A0020-SurgeryPlan",
+  "A0022-SurgeryPlan",
+  "A0024-SurgeryPlan",
+  "A0026-StimulationPlan",
+  "A0028-StimulationPlan",
+  "A0030-StimulationPlan"
+ ],
+ "excluded_plans": {
+  "A0032-StimulationPlan": "TI infeasible (A0033, N001)"
+ },
+ "model_bundle_id": "A0018-ModelBundle",
+ "model_samples": {
+  "primary": "window 'post': all 24 L-BFGS optima (24/24 line-search termination at a common mode, lp spread 0.3)",
+  "sensitivity": "window 'full': all 24 L-BFGS optima (23 line-search + 1 converged; 3 within 10 lp of best; distinct modes) - per-sample results kept so the 3 top-lp modes can be summarised separately",
+  "per_window": {
+   "post": {
+    "samples_file": "studies/study-002/work/T0017/samples_post.json (sha256 4daa71144d55aa33a6d834356ab1cb2fc3aa3b21334837ec92ca3040f569cd5c)",
+    "n_samples": 24,
+    "horizon_ms": 7760.0,
+    "horizon_rule": "2 x fitted window length (3.88 s, A0018 window 'post') in model ms",
+    "ez_estimate": {
+     "top1": 82,
+     "ez_set": [],
+     "threshold": -2.06,
+     "source": "A0018-ModelBundle map_ensemble_P2_post.csv",
+     "rule": "top1 = argmax median x0 over optima; EZ set = fraction of optima with x0 > -2.06 above 0.5 (empty -> [top1])",
+     "median_x0_top5": [
+      [
+       82,
+       -2.2781212
+      ],
+      [
+       7,
+       -2.4309533500000002
+      ],
+      [
+       1,
+       -2.4796043
+      ],
+      [
+       8,
+       -2.4875974000000003
+      ],
+      [
+       27,
+       -2.4877035999999997
+      ]
+     ],
+     "frac_gt_thr_ez": [],
+     "n_optima": 24,
+     "top1_name": "Right-Orbito-frontal-cortex",
+     "ez_set_names": [
+      "Right-Orbito-frontal-cortex"
+     ]
+    },
+    "derived": {
+     "top1": 82,
+     "ez_set": [
+      82
+     ],
+     "pz": [
+      81,
+      88
+     ],
+     "stim1_contact": 81,
+     "stim2_contacts": [
+      81,
+      82
+     ],
+     "pz_names": [
+      "Right-Frontal-pole",
+      "Right-F2-rostral"
+     ],
+     "stim1_contact_name": "R7-8",
+     "stim2_contact_names": [
+      "R7-8",
+      "R8-9"
+     ]
+    },
+    "candidates": [
+     "RES-1/ablation",
+     "RES-1/disconnection",
+     "RES-EZ/ablation",
+     "RES-EZ/disconnection",
+     "RES-EZ+PZ/ablation",
+     "RES-EZ+PZ/disconnection",
+     "STIM-PT/amp0.5",
+     "STIM-PT/amp1",
+     "STIM-PT/amp2",
+     "STIM-PT/amp4",
+     "STIM-PT-chronic/amp0.5",
+     "STIM-PT-chronic/amp1",
+     "STIM-PT-chronic/amp2",
+     "STIM-PT-chronic/amp4",
+     "STIM-1/amp0.5",
+     "STIM-1/amp1",
+     "STIM-1/amp2",
+     "STIM-2/amp1"
+    ]
+   },
+   "full": {
+    "samples_file": "studies/study-002/work/T0017/samples_full.json (sha256 e58ad16947b2dbf8eedd56216aa993b40a00feb49e0a6d6cff543f46edbc725b)",
+    "n_samples": 24,
+    "horizon_ms": 14400.0,
+    "horizon_rule": "2 x fitted window length (7.20 s, A0018 window 'full') in model ms",
+    "ez_estimate": {
+     "top1": 82,
+     "ez_set": [
+      1,
+      7,
+      27,
+      40,
+      82,
+      83,
+      108
+     ],
+     "threshold": -2.06,
+     "source": "A0018-ModelBundle map_ensemble_P2_full.csv",
+     "rule": "top1 = argmax median x0 over optima; EZ set = fraction of optima with x0 > -2.06 above 0.5 (empty -> [top1])",
+     "median_x0_top5": [
+      [
+       82,
+       -1.74768675
+      ],
+      [
+       7,
+       -1.8212464
+      ],
+      [
+       83,
+       -1.93175125
+      ],
+      [
+       108,
+       -1.9438368000000001
+      ],
+      [
+       1,
+       -2.00182135
+      ]
+     ],
+     "frac_gt_thr_ez": [
+      [
+       1,
+       0.7916666666666666
+      ],
+      [
+       7,
+       0.9166666666666666
+      ],
+      [
+       27,
+       0.7916666666666666
+      ],
+      [
+       40,
+       0.875
+      ],
+      [
+       82,
+       0.75
+      ],
+      [
+       83,
+       0.75
+      ],
+      [
+       108,
+       0.875
+      ]
+     ],
+     "n_optima": 24,
+     "top1_name": "Right-Orbito-frontal-cortex",
+     "ez_set_names": [
+      "Left-Orbito-frontal-cortex",
+      "Left-F2-rostral",
+      "Left-Anterior-cingulate-cortex",
+      "Left-STS-anterior",
+      "Right-Orbito-frontal-cortex",
+      "Right-Gyrus-rectus",
+      "Right-Anterior-cingulate-cortex"
+     ]
+    },
+    "derived": {
+     "top1": 82,
+     "ez_set": [
+      1,
+      7,
+      27,
+      40,
+      82,
+      83,
+      108
+     ],
+     "pz": [
+      12,
+      93
+     ],
+     "stim1_contact": 81,
+     "stim2_contacts": [
+      81,
+      82
+     ],
+     "pz_names": [
+      "Left-F1-mesial-prefrontal",
+      "Right-F1-mesial-prefrontal"
+     ],
+     "stim1_contact_name": "R7-8",
+     "stim2_contact_names": [
+      "R7-8",
+      "R8-9"
+     ]
+    },
+    "candidates": [
+     "RES-1/ablation",
+     "RES-1/disconnection",
+     "RES-EZ/ablation",
+     "RES-EZ/disconnection",
+     "RES-EZ+PZ/ablation",
+     "RES-EZ+PZ/disconnection",
+     "STIM-PT/amp0.5",
+     "STIM-PT/amp1",
+     "STIM-PT/amp2",
+     "STIM-PT/amp4",
+     "STIM-PT-chronic/amp0.5",
+     "STIM-PT-chronic/amp1",
+     "STIM-PT-chronic/amp2",
+     "STIM-PT-chronic/amp4",
+     "STIM-1/amp0.5",
+     "STIM-1/amp1",
+     "STIM-1/amp2",
+     "STIM-2/amp1"
+    ]
+   }
+  },
+  "parameter_transfer": "x0 (162) inserted unchanged into SpatEpiStim (paper VBT workflow); coupling a = 0.1 * K (package Heaviside default scaled by the 2D-fit K relative to its prior mean 1); 2D tau0 and z_init not transferred (different model time scale/state); all other SpatEpiStim constants package defaults"
+ },
+ "objectives": [
+  "reduce number of seizing regions (primary)",
+  "reduce total seizure duration summed over regions",
+  "delay first onset",
+  "reduce SEEG channels with log-power > baseline-window mean + 3 SD",
+  "cost: regions removed (surgery) / stimulation amplitude (model units)"
+ ],
+ "controls": {
+  "no_intervention": "paired baseline per sample (same x0, K, initial state, horizon, integrator, noise seed)",
+  "sham": "not run separately: STIM arms at amplitude 0 are identical to baseline (deterministic model)",
+  "clinically_delivered": "the P2 recording itself contains a 50 Hz SEEG train 0.5-3.5 s (A0009); STIM-PT reproduces this protocol as the diagnostic arm; no clinical intervention exists for the virtual patient"
+ },
+ "uncertainty_sampling": "MAP-ensemble optima (not posterior draws): spread across optima reported as median and 5-95% interval; final run on NUTS draws when a converged bundle exists",
+ "stopping_criteria": "one SimulationBatch covering all candidates on all optima of both windows by 16:45 UTC; if time runs out, the primary window is committed and the sensitivity window is reported as not run"
+}

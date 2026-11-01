@@ -1,0 +1,253 @@
+{
+ "supported_comparisons": [
+  {
+   "comparison": "temporal resection vs continued medical therapy",
+   "finding": "58% to 73% free of disabling seizures at 1-2 y vs 8% and 0/23 (2 RCT families, n=118)",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0063-Report"
+   ],
+   "strength": "randomised, small"
+  },
+  {
+   "comparison": "long-term temporal resection",
+   "finding": "66% to 72.5% seizure-free; all-procedure adult 52% at 5 y, 47% at 10 y; extratemporal lower (46%/27%, HR 2.0)",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0063-Report"
+   ]
+  },
+  {
+   "comparison": "LITT in MTLE",
+   "finding": "53.4% to 58.0% Engel I at 12-24 months, 3 primary-cohort families, no RCT",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0063-Report"
+   ]
+  },
+  {
+   "comparison": "neurostimulation, median seizure reduction at >=12 months",
+   "finding": "RNS 44-53% (1-2 y) to 75% (9 y), 67-82% real-world; ANT-DBS 41-56% to 69-75%; VNS ~45% at 12 mo; seizure freedom RNS 18-22%, SANTE 16% (>=6 mo), VNS ~8%",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0031-Report",
+    "A0061-ValidationReport"
+   ]
+  },
+  {
+   "comparison": "model-guided therapeutic stimulation",
+   "finding": "no clinical seizure-outcome evidence found",
+   "evidence_kind": "literature_reported",
+   "refs": [
+    "A0016-EvidenceClaim",
+    "A0055-EvidenceClaim",
+    "A0056-EvidenceClaim",
+    "A0057-EvidenceClaim",
+    "A0031-Report"
+   ]
+  }
+ ],
+ "tradeoffs": [
+  "LITT has fewer complications than open resection in all three comparative analyses but numerically lower seizure freedom (A0063).",
+  "Resection: memory decline 36% in ERSET; paediatric RCT serious adverse events 33% (A0063).",
+  "Neurostimulation is palliative; long-term gains are confounded by attrition, ASM and programming changes (A0031)."
+ ],
+ "unstable_rankings": [
+  "LITT vs open resection: significant unmatched, not significant after propensity matching (RR 0.85, p=0.30), within TLE, or in nontumoral epilepsy (A0063).",
+  "RNS vs ANT-DBS vs VNS: no head-to-head RCT; indirect only (A0031).",
+  "Neurostimulation vs resection: different endpoints and populations; not directly rankable.",
+  "Virtual-patient candidate ranking: indeterminate, no qualified model (A0098)."
+ ],
+ "missing_evidence": [
+  "N001",
+  "N002",
+  "N003",
+  "N004",
+  "N006",
+  "N010",
+  "N011",
+  "N013",
+  "N014",
+  "N008 (administratively open; replacement A0070 accepted via N012)"
+ ],
+ "limitations": [
+  "Literature is abstract-level only; late denominators unverified.",
+  "VNS pooled/registry data include non-focal epilepsy.",
+  "Virtual-patient arm not run: vep-stim failed reproduction (A0095) and synthetic recovery (A0097); R5 verdict NOT QUALIFIED (A0098). P3-P5 not run; predictions never frozen; vault never opened.",
+  "Only 10 of 56 eligible ds004100 cases curated; coordinate template identity to_verify; trailing EDF padding in 21/61 ictal runs (A0094).",
+  "Controller design gaps for next release: summaries cannot cite same-task artifacts; repair marks consuming ValidationReports stale too eagerly."
+ ],
+ "reproducibility_manifest": {
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol": "A0001-StudyProtocol (v1)",
+  "environment": {
+   "python": "3.11; mne 1.13.2, mne-bids 0.20.0",
+   "model_venv": "tvb-library 2.10.0, cmdstanpy 1.3.0, numpy 2.4.6, vep-stim 0.1.0a1 @ 5367ef4afb976271ecc6297b70a95dd3d944af61",
+   "cmdstan": "2.40 conda-forge"
+  },
+  "data": {
+   "ds004100_v1.1.3_retrieval_manifest_sha256": "62e8da45fa70ed025c10efdb5b053bdce53d6c99a1e0b7d43bbd13b249f94c5d",
+   "cohort_split_hash": "255216f575a2e635e3fcece16cc2f3e3ea1d12c6222676f1281d41f90d17fa23"
+  },
+  "artifacts": [
+   {
+    "artifact_id": "A0001-StudyProtocol",
+    "schema": "StudyProtocol",
+    "manifest_hash": "3e3d9b8104ad277ec6276fcfdb707bf08701366e441e84d1b868bdcfc624a640",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0016-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "manifest_hash": "0a6fe0ec8a5c87f09af8768987ee47b376eeb5c25cb8345e60d136f09b95616e",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0031-Report",
+    "schema": "Report",
+    "manifest_hash": "35a20a475fceb12d855857a07945759362fff5bb3d6b4532ae0a2cb0d7a85e39",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0055-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "manifest_hash": "e61d4851f564797f957f64ac841c9541491dfb01c204a5e06c6b2df8b73191e2",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0056-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "manifest_hash": "e770189c0980cb7e8d4cf53d0d17cd9e926c4597714d16fd85fc158bc08766f0",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0057-EvidenceClaim",
+    "schema": "EvidenceClaim",
+    "manifest_hash": "0b757795785008f4705f6782499d5efc52ed04e40298d87bfd95e16d70d633d0",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0059-Report",
+    "schema": "Report",
+    "manifest_hash": "4a6fcc14a85f07bcdcd7bbcb0ff45382a9f816c4cdbb598434559e810c641092",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0061-ValidationReport",
+    "schema": "ValidationReport",
+    "manifest_hash": "006b63daf95835b0851635a07ba146c74ac8c4821dd3f2c77af9bea4b6bd7e10",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0063-Report",
+    "schema": "Report",
+    "manifest_hash": "3e2908f2e2fb0a9bc9263fdf812f4d7f982999b19a95dca272a47c437c19c531",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0034-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "4ad3f459d3509a67723fc585950d51b6a44b0a0f56f9f9548e7d7e7f99833ff6",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0035-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "95200aafe15057afb0d22e5703f53dc36036b121550c42467860a62a7f5e7427",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0038-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "80d7380c3b2d4bb3a5dae93f3b7e030aee221138ab4427616e07341d3122a5ba",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0040-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "160c46ed8c970e84305c0ea9438b207203b7263ecc6e1f18d74824e134b0425d",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0065-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "d7822458ee4c7c28b8b4497d996bb1856bf7f3fc9c2b4467e1ec76290dd9ec8b",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0067-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "54824fcc1cec84c7d5d630394f871d47cb0b4c733c6f930757d496bfddd53bdf",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0070-DatasetCard",
+    "schema": "DatasetCard",
+    "manifest_hash": "afcb57fec8425367a59decde91136ac5fdff698df4404fedc224a859e450f637",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0037-MethodCard",
+    "schema": "MethodCard",
+    "manifest_hash": "1eb62aa1f1adb5b5492c19b2574ea268820ac42ddb9dcf44bbdab2c0791dd6cb",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0039-MethodCard",
+    "schema": "MethodCard",
+    "manifest_hash": "0628b9332706f373b5d88c2abb1ad8bc02416f7ab2cfccb8891d7b77c1d3c4c2",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0041-MethodCard",
+    "schema": "MethodCard",
+    "manifest_hash": "c1485ea068817431f7e870fbe51771701fa659be7ad839bb5645154603e2ed3c",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0068-ValidationReport",
+    "schema": "ValidationReport",
+    "manifest_hash": "57e3883ef8bffd9ccf8e65ce7bd992afbf88540b1a84853477efe7a5b7fa551a",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0071-CohortSplit",
+    "schema": "CohortSplit",
+    "manifest_hash": "5f125791ca6df17c1b981f978f1dc9c85ffccd1d164d48f7fa6c2f6fe61774e0",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0072-Report",
+    "schema": "Report",
+    "manifest_hash": "cf7443fabec286383cd0ef8e8151f31d9215cc83b59c24b12919d055449abdb6",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0094-ValidationReport",
+    "schema": "ValidationReport",
+    "manifest_hash": "a8a86d012f5e521a3059aad712b0aa4f9d64a233124f8b73dbfd0fb09fb09525",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0079-NetworkHypothesisSet",
+    "schema": "NetworkHypothesisSet",
+    "manifest_hash": "ac8de9b5d616c3c413091d3dcb877b82647f3ce06f8ae4ac59c3ee11d574ccc2",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0096-NetworkHypothesisSet",
+    "schema": "NetworkHypothesisSet",
+    "manifest_hash": "4d6b5c680e79598ae5c9d7093bfb9685fbba306030c8646e059f55f7ade8cc90",
+    "validation": "passed"
+   },
+   {
+    "artifact_id": "A0098-ValidationReport",
+    "schema": "ValidationReport",
+    "manifest_hash": "2822c42deedafb80f9a7886451cbe6d3d03513981a6d7845ced071b217c4743e",
+    "validation": "passed"
+   }
+  ]
+ },
+ "review_refs": [],
+ "release_status": "draft_pending_review"
+}

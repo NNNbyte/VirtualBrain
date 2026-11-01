@@ -1,0 +1,58 @@
+{
+  "artifact_id": "A0086-PatientCase",
+  "schema_name": "PatientCase",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": "HUP141",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0018",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R2-case-curation",
+  "tool_id": "case_qc.py+build_payloads.py",
+  "tool_version": "case_qc.py sha256:4200abcfed4cbc39592b462e1caee416af1b93e4b5487a2dba76f613145f3835; build_payloads.py sha256:30cafc124f422930272f0bba42a1fede806a9538e1b0af05a96c61c7dd1be148; jump_check.py sha256:258d5bd621189862cf2ef4d612fbd115dcb64fd9aa14263f395a9d7dcdf52a90 (all in work/T0016)",
+  "code_commit": null,
+  "environment_digest": "09f208293c60c5f430293c3600d3041287996d32cd2a193db8ad575b97cc9469",
+  "consumed_artifact_ids": [
+    "A0070-DatasetCard",
+    "A0071-CohortSplit"
+  ],
+  "input_manifest_hash": "734fe9c76c51dcf81a57ef474b6ccd7b01a776f90eb07048162b5cc61f926301",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0086-PatientCase/payload.json",
+      "media_type": "application/json",
+      "sha256": "fe0246e607bec661776a22a3d4ca9fadbc7980b51493b8388d612a0cfeb04dfe",
+      "byte_size": 17198
+    },
+    {
+      "uri": "artifacts/A0086-PatientCase/qc_HUP141.json",
+      "media_type": "application/octet-stream",
+      "sha256": "8f0dc183b6c279a043a52c7b1cb981c832a3f28a339976e8673a187b6e1cce07",
+      "byte_size": 125280
+    }
+  ],
+  "scientific_context": {
+    "sample_rate_hz": 512,
+    "time_window": "ictal runs: 5, total 1123.0 s (interictal 2, 600.0 s)",
+    "signal_units": "uV",
+    "reference_montage": "referential as recorded (reference not reported)",
+    "coordinate_frame": "MNI-like template (fsaverage/MNI305 vs ICBM152 to_verify)",
+    "coordinate_units": "mm",
+    "transform_chain_id": "ds004100-coordsystem-as-provided",
+    "evidence_kind": "observed_measurement"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T04:58:57+00:00",
+  "supersedes_id": null,
+  "title": "HUP141 PatientCase (ds004100 v1.1.3, SEEG, 5 ictal runs)",
+  "manifest_hash": "b8d4b0352c77b622172119f0d4de31d7d0aa4aed36f4b08dff957109cd5ec2a4"
+}

@@ -1,0 +1,528 @@
+{
+ "status": "PRELIMINARY MAP ensemble (not a posterior; not qualified). Final NUTS bundle follows as a separate artifact.",
+ "model_family": "2D Epileptor network (vep-stim vep_mcmc.stan patched: vep_ar1.stan v2, frozen in T0011, sha256 f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb) with diffusive SC coupling, AR(1) observation model on log high-pass power features",
+ "implementation_versions": {
+  "stan_model_sha256": "f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb",
+  "frozen_dir": "studies/study-002/work/T0011/model_frozen (SHA256SUMS verified; copied unchanged to work/T0014/model_frozen)",
+  "features.py": "8f717e72...",
+  "run_fit.py": "9d96f5e6...",
+  "fit_config.json": "0896432c...",
+  "cmdstan": "2.40 (local Windows mingw build, stanc default O0)",
+  "cmdstanpy": "1.3.0",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1"
+ },
+ "consumed_case": {
+  "case_id": "P2",
+  "patient_case": "A0009-PatientCase",
+  "qc": "A0010-QCReport",
+  "file": "data/wang-5367ef4/data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+  "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd (matches manifest)",
+  "sample_rate_hz": 125.0,
+  "sample_rate_source": "time_steps (8 ms)",
+  "n_channels": 191,
+  "n_regions": 162
+ },
+ "hypotheses": {
+  "set": "A0017-NetworkHypothesisSet (H1 L dorsolateral PFC F2 7/8; H2 orbito/mesial PFC 82; H3 L amygdala 74; H4 no supra-threshold node)",
+  "fitted": "single network model with region-wise x0; hypotheses are discriminated by the x0 ensemble, not fitted separately"
+ },
+ "fitting_partitions": {
+  "test_case": "P2 (CohortSplit A0011, test). Blinded: no vault, truth, reserved notebook or study-001 access.",
+  "windows_prespecified_before_fit": {
+   "post (PRIMARY)": {
+    "t_s": [
+     3.52,
+     7.4
+    ],
+    "nt": 8,
+    "note": "post-stimulation seizure-like epoch; first obs 16 ms after the stim train ends"
+   },
+   "full (SENSITIVITY)": {
+    "t_s": [
+     0.2,
+     7.4
+    ],
+    "nt": 15,
+    "note": "includes the 50 Hz stimulation epoch, which the 2D model can only explain as region activity"
+   }
+  },
+  "excluded": "initial transient; post-ictal tail > 7.4 s (noise-free simulation: high-pass power at float round-off, frozen feature returns NaN)",
+  "data_plumbing_vs_frozen": "prep_p2.py: P2 signal/SC/gain; windows above; decimation q=62 (0.496 s/obs at 125 Hz); frozen 5-s pre-ictal baseline unavailable -> frozen prep rule applied literally (u_mu, sigma, amp from first min(10, nt) obs). Stan data sha256: post 773e76ad..., full c97b6d81...",
+  "prior_settings": {
+   "post": {
+    "window": "post",
+    "baseline_obs_used": 8,
+    "file": "data\\wang-5367ef4\\data\\dataSim\\Patient2\\P2_SEEG_ts_fit.npz",
+    "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+    "fs_from_time_steps": 125.0,
+    "window_ms": [
+     3520.0,
+     7400.0
+    ],
+    "n_raw_samples": 486,
+    "decim_q": 62,
+    "target_hz": 2.0,
+    "nt": 8,
+    "ns": 191,
+    "t_obs_s": [
+     3.52,
+     4.016,
+     4.512,
+     5.008,
+     5.504,
+     6.0,
+     6.496,
+     6.992
+    ],
+    "logamp_mu": -4.2901558205287955,
+    "amp_prior_median": 0.013702789955027413,
+    "logsig_mu": 0.12369582241883774,
+    "sigma_prior_median": 1.1316715895137066,
+    "q99_channel_range": 2.9020864915674283,
+    "median_channel_range": 2.4286379782576564
+   },
+   "full": {
+    "window": "full",
+    "baseline_obs_used": 10,
+    "file": "data\\wang-5367ef4\\data\\dataSim\\Patient2\\P2_SEEG_ts_fit.npz",
+    "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+    "fs_from_time_steps": 125.0,
+    "window_ms": [
+     200.0,
+     7400.0
+    ],
+    "n_raw_samples": 901,
+    "decim_q": 62,
+    "target_hz": 2.0,
+    "nt": 15,
+    "ns": 191,
+    "t_obs_s": [
+     0.2,
+     0.696,
+     1.192,
+     1.688,
+     2.184,
+     2.68,
+     3.176,
+     3.672,
+     4.168,
+     4.664,
+     5.16,
+     5.656,
+     6.152,
+     6.648,
+     7.144
+    ],
+    "logamp_mu": -4.187128271119015,
+    "amp_prior_median": 0.015189843410977266,
+    "logsig_mu": 0.13159301626133107,
+    "sigma_prior_median": 1.1406440012285881,
+    "q99_channel_range": 3.2170265702604826,
+    "median_channel_range": 1.036939176581102
+   }
+  }
+ },
+ "observation_model": "Obs[t,s] = amp * (gain (x_t - x_1))[s] + u[s] + r[t,s], r AR(1) (phi, sigma) over time per channel, all elements (frozen T0011). Feature: frozen features.compute_feature (10 Hz HPF, log 1-s centred power, 1 Hz LPF, decimate to ~2 Hz).",
+ "parameters_or_posterior": {
+  "kind": "MAP ensemble: 24 L-BFGS starts per window (frozen settings: lbfgs, iter 20000, tol_param 1e-10, Stan random inits, seed+i; seeds post 20140+i, full 20141+i)",
+  "attached_samples": {
+   "map_ensemble_P2_post.csv": "PRIMARY; 24 rows sorted by lp: window, start, seed, lp, termination, K, tau0, amp, sigma, phi, x0_0..x0_161, z_init_0..z_init_161, seizing_0..seizing_161 (region index = VepMrtrixLut index - 1)",
+   "map_ensemble_P2_full.csv": "SENSITIVITY; same columns"
+  },
+  "summary": {
+   "post": {
+    "n_starts": 24,
+    "lp_best": -2269.6716,
+    "lp_range": [
+     -2269.9623,
+     -2269.6716
+    ],
+    "n_within_10_lp_of_best": 24,
+    "termination_counts": {
+     "line_search_failed": 24
+    },
+    "K_median": 1.07707105,
+    "tau0_median": 9.4271821,
+    "phi_median": 0.883211135,
+    "amp_median": 0.016763771,
+    "best_start_supra_threshold": [],
+    "ranking_by_mean_x0_over_starts": [
+     {
+      "rank": 1,
+      "region": 82,
+      "name": "Right-Orbito-frontal-cortex",
+      "mean_x0": -2.281,
+      "sd_x0": 0.009,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 1.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 2,
+      "region": 7,
+      "name": "Left-F2-rostral",
+      "mean_x0": -2.429,
+      "sd_x0": 0.006,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 3,
+      "region": 1,
+      "name": "Left-Orbito-frontal-cortex",
+      "mean_x0": -2.477,
+      "sd_x0": 0.005,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 4,
+      "region": 8,
+      "name": "Left-F2-caudal",
+      "mean_x0": -2.487,
+      "sd_x0": 0.002,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 5,
+      "region": 27,
+      "name": "Left-Anterior-cingulate-cortex",
+      "mean_x0": -2.487,
+      "sd_x0": 0.002,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 6,
+      "region": 108,
+      "name": "Right-Anterior-cingulate-cortex",
+      "mean_x0": -2.488,
+      "sd_x0": 0.002,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 7,
+      "region": 125,
+      "name": "Right-T2-anterior",
+      "mean_x0": -2.49,
+      "sd_x0": 0.001,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 8,
+      "region": 89,
+      "name": "Right-F2-caudal",
+      "mean_x0": -2.491,
+      "sd_x0": 0.001,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 9,
+      "region": 4,
+      "name": "Left-F3-Pars-triangularis",
+      "mean_x0": -2.493,
+      "sd_x0": 0.002,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 10,
+      "region": 121,
+      "name": "Right-STS-anterior",
+      "mean_x0": -2.494,
+      "sd_x0": 0.001,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 11,
+      "region": 40,
+      "name": "Left-STS-anterior",
+      "mean_x0": -2.494,
+      "sd_x0": 0.002,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 12,
+      "region": 32,
+      "name": "Left-Insula-gyri-brevi",
+      "mean_x0": -2.498,
+      "sd_x0": 0.001,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     }
+    ],
+    "regions_supra_in_majority_of_starts": []
+   },
+   "full": {
+    "n_starts": 24,
+    "lp_best": -3431.555,
+    "lp_range": [
+     -3996.2746,
+     -3431.555
+    ],
+    "n_within_10_lp_of_best": 3,
+    "termination_counts": {
+     "line_search_failed": 23,
+     "converged": 1
+    },
+    "K_median": 2.94183385,
+    "tau0_median": 3.2402166,
+    "phi_median": 0.912875875,
+    "amp_median": 3.35323415,
+    "best_start_supra_threshold": [
+     {
+      "region": 4,
+      "name": "Left-F3-Pars-triangularis",
+      "x0": -1.978
+     },
+     {
+      "region": 7,
+      "name": "Left-F2-rostral",
+      "x0": -1.747
+     },
+     {
+      "region": 8,
+      "name": "Left-F2-caudal",
+      "x0": -1.948
+     },
+     {
+      "region": 12,
+      "name": "Left-F1-mesial-prefrontal",
+      "x0": -1.627
+     },
+     {
+      "region": 27,
+      "name": "Left-Anterior-cingulate-cortex",
+      "x0": -2.015
+     },
+     {
+      "region": 40,
+      "name": "Left-STS-anterior",
+      "x0": -2.021
+     },
+     {
+      "region": 44,
+      "name": "Left-T2-anterior",
+      "x0": -1.938
+     },
+     {
+      "region": 82,
+      "name": "Right-Orbito-frontal-cortex",
+      "x0": -1.684
+     },
+     {
+      "region": 83,
+      "name": "Right-Gyrus-rectus",
+      "x0": -1.915
+     },
+     {
+      "region": 108,
+      "name": "Right-Anterior-cingulate-cortex",
+      "x0": -1.955
+     },
+     {
+      "region": 115,
+      "name": "Right-Temporal-pole",
+      "x0": -1.977
+     }
+    ],
+    "ranking_by_mean_x0_over_starts": [
+     {
+      "rank": 1,
+      "region": 7,
+      "name": "Left-F2-rostral",
+      "mean_x0": -1.856,
+      "sd_x0": 0.208,
+      "frac_starts_x0_gt_thr": 0.917,
+      "frac_starts_rank1": 0.125,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 2,
+      "region": 82,
+      "name": "Right-Orbito-frontal-cortex",
+      "mean_x0": -1.954,
+      "sd_x0": 0.418,
+      "frac_starts_x0_gt_thr": 0.75,
+      "frac_starts_rank1": 0.5,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 3,
+      "region": 108,
+      "name": "Right-Anterior-cingulate-cortex",
+      "mean_x0": -2.01,
+      "sd_x0": 0.161,
+      "frac_starts_x0_gt_thr": 0.875,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 4,
+      "region": 83,
+      "name": "Right-Gyrus-rectus",
+      "mean_x0": -2.063,
+      "sd_x0": 0.236,
+      "frac_starts_x0_gt_thr": 0.75,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 5,
+      "region": 1,
+      "name": "Left-Orbito-frontal-cortex",
+      "mean_x0": -2.083,
+      "sd_x0": 0.187,
+      "frac_starts_x0_gt_thr": 0.792,
+      "frac_starts_rank1": 0.042,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 6,
+      "region": 40,
+      "name": "Left-STS-anterior",
+      "mean_x0": -2.087,
+      "sd_x0": 0.196,
+      "frac_starts_x0_gt_thr": 0.875,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 7,
+      "region": 27,
+      "name": "Left-Anterior-cingulate-cortex",
+      "mean_x0": -2.103,
+      "sd_x0": 0.234,
+      "frac_starts_x0_gt_thr": 0.792,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 8,
+      "region": 4,
+      "name": "Left-F3-Pars-triangularis",
+      "mean_x0": -2.106,
+      "sd_x0": 0.133,
+      "frac_starts_x0_gt_thr": 0.417,
+      "frac_starts_rank1": 0.042,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 9,
+      "region": 115,
+      "name": "Right-Temporal-pole",
+      "mean_x0": -2.138,
+      "sd_x0": 0.224,
+      "frac_starts_x0_gt_thr": 0.5,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 10,
+      "region": 8,
+      "name": "Left-F2-caudal",
+      "mean_x0": -2.165,
+      "sd_x0": 0.18,
+      "frac_starts_x0_gt_thr": 0.25,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.042
+     },
+     {
+      "rank": 11,
+      "region": 155,
+      "name": "Right-Amygdala",
+      "mean_x0": -2.182,
+      "sd_x0": 0.146,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.0
+     },
+     {
+      "rank": 12,
+      "region": 93,
+      "name": "Right-F1-mesial-prefrontal",
+      "mean_x0": -2.222,
+      "sd_x0": 0.195,
+      "frac_starts_x0_gt_thr": 0.0,
+      "frac_starts_rank1": 0.0,
+      "frac_starts_seizing": 0.042
+     }
+    ],
+    "regions_supra_in_majority_of_starts": [
+     "Left-Orbito-frontal-cortex",
+     "Left-F2-rostral",
+     "Left-Anterior-cingulate-cortex",
+     "Left-STS-anterior",
+     "Right-Orbito-frontal-cortex",
+     "Right-Gyrus-rectus",
+     "Right-Anterior-cingulate-cortex"
+    ]
+   }
+  },
+  "ez_estimate_preliminary": {
+   "threshold": "x0 > -2.06 (isolated-node bifurcation)",
+   "post (primary)": "EMPTY: no region exceeds -2.06 at any of 24 starts (all starts reach the same mode, lp -2269.7 +/- 0.3). Highest x0: Right-Orbito-frontal-cortex (82) -2.28 (rank 1 in 24/24), Left-F2-rostral (7) -2.43, Left-OFC (1) -2.48.",
+   "full (sensitivity)": "multimodal (lp -3431.6 to -3996.3; 3 starts within 10 lp of best). Regions with x0 > -2.06 in > 50% of starts: Left-F2-rostral (7, 92%), Right-ACC (108, 88%), Left-STS-anterior (40, 88%), Right-OFC (82, 75%), Right-Gyrus-rectus (83, 75%), Left-OFC (1, 79%), Left-ACC (27, 79%). Rank 1 across starts: 82 in 50%, 7 in 12.5%. But 'seizing' (max x > -1 within the window) is 0 for every region in 23/24 starts: amp ~3.4 (prior median 0.015) - the fit explains the features with sub-threshold x excursions times a large gain scale."
+  }
+ },
+ "numerical_diagnostics": {
+  "lp_check": "VM: numpy re-implementation vs CmdStan log_prob on data_P2_post.json at 6 random points, abs diff <= ~2.5e-4 on |lp| ~1.9e4 (CSV precision)",
+  "lbfgs_termination": "post: 24/24 'line search failed to achieve sufficient decrease' (lp spread 0.3 -> same mode); full: 23/24 line-search stop, 1/24 normal convergence",
+  "runtime": "post 8 s, full 6 s for 24 starts (local, 22 cores)"
+ },
+ "convergence_checks": "Not a posterior: no R-hat/ESS. Optimizer: line-search termination at a common mode (post); multiple distinct modes (full). NUTS diagnostics will be in the final bundle.",
+ "predictive_checks": "not_performed for the MAP bundle (no held-out presurgical seizure exists for P2; posterior predictive residual checks planned in the NUTS bundle)",
+ "intended_use": "intervention simulation input; not qualified. PRELIMINARY: lets R4 set up and test intervention simulations before the final NUTS bundle; predictions must not be frozen on this bundle. Research on a virtual patient; not a clinical prediction; a fitted estimate is not a calibrated probability.",
+ "limitations": [
+  "Model qualification pending (T0011 benchmark running); per A0015 P2 results are 'not qualified' unless R5 passes the benchmark.",
+  "Primary window violates the observation model's rest-at-first-observation assumption: 177/191 channels have their feature maximum at the first post-stimulation observation (power decays after the stim train). The frozen model then finds no supra-threshold node (H4-like) - this may be a model/data mismatch rather than evidence against an EZ.",
+  "Short windows: 8 (post) / 15 (full) observations at ~2 Hz = 1.6 / 2.8 model time units (frozen dt*nsub = 0.2 per obs), too short for sub-critical-to-seizure transitions of the 2D Epileptor; regions with x0 > -2.06 mostly do not seize within the window.",
+  "Sensitivity window includes stimulation-driven activity that the 2D model (no stimulus input) can only attribute to regions; EZ estimates there may track the stimulated tissue.",
+  "Region 82 (Right-OFC) carries the implant's largest gain (R7-8 88.2); its top x0 rank may reflect gain leverage.",
+  "Generator/inverter mismatch (6D+m SpatEpiStim vs 2D Epileptor), noise-free data with float-round-off tails, frozen baseline rule unsatisfiable on P2."
+ ],
+ "for_R4": "Each CSV row is one model sample (x0, z_init, K, tau0 with frozen constants I1=3.1, dt=0.1, nsub=2, P2 SC). The primary (post) ensemble has no supra-threshold region, so its baseline simulations inside the fitted horizon show no seizure; the sensitivity (full) ensemble has supra-threshold regions. Which ensemble to simulate is a LEAD/R4 decision; both are not qualified.",
+ "environment_manifest": {
+  "commands": [
+   "python prep_p2.py  (work/T0014; -> data_P2_post.json, data_P2_full.json)",
+   "python run_local.py run_fit.py compile  (local_run/, frozen run_fit.py via CmdStan env shim)",
+   "python run_local.py run_fit.py fit post data_P2_post.json --nopt 24 --chains 8 --seed 20140 --tag _map --opt_only",
+   "python run_local.py run_fit.py fit full data_P2_full.json --nopt 24 --chains 8 --seed 20141 --tag _map --opt_only",
+   "python map_bundle.py; python make_map_payload.py",
+   "VM: python run_fit.py lpcheck data_P2_post.json (~/aa/jobs/t0014/v1/remote/remote)"
+  ],
+  "seeds": {
+   "post": "20140 + i, i=0..23",
+   "full": "20141 + i, i=0..23"
+  },
+  "env_digest": "sha256(pip freeze .venv-model) = a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "files_sha256": {
+   "prep_p2.py": "a9367871c0354760e3fb0da545766423192971cabcecf2c4dd500675ed26fc6f",
+   "run_local.py": "1cd93dad654dbc6f894291bdd89f552e21d654786a2681e10c2ce223bce62486",
+   "map_bundle.py": "b5cc5ed8af22fe080dba8316c363064c217bad96ddcc20b8ceab83954af31b1b",
+   "data_P2_post.json": "773e76add049e76ef72ac1ea28e8250f261a0d8f41dfaf1c0c72dab5949d01da",
+   "data_P2_full.json": "c97b6d81147b16d64cacdeb3ce67727d1e1e6144986b195ed37d900d9f5f1a39",
+   "map_ensemble_P2_post.csv": "52ee0d332116c292c21fe004a5da2aeb3296a826c1e98e1306675ea7b5349ad6",
+   "map_ensemble_P2_full.csv": "9b09a17a87043692c9ad52825f8ba71585927e6116f146bcc180b3e78b7db2f9"
+  }
+ }
+}

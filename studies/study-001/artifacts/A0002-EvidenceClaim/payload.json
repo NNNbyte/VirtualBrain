@@ -1,0 +1,52 @@
+{
+  "claim": "In the RNS System pivotal RCT (n=191), responsive cortical stimulation reduced seizures by 37.9% vs 17.3% with sham over the 12-week blinded period (p=0.012).",
+  "intervention_modality": "RNS",
+  "bibliographic_record": {
+    "authors": "Morrell MJ, RNS System in Epilepsy Study Group.",
+    "title": "Responsive cortical stimulation for the treatment of medically intractable partial epilepsy.",
+    "journal": "Neurology",
+    "year": "2011",
+    "volume": "77",
+    "issue": "13",
+    "pages": "1295-1304",
+    "doi": "10.1212/wnl.0b013e3182302056",
+    "pmid": "21917777",
+    "pmcid": null,
+    "source_record_url": "https://europepmc.org/article/MED/21917777",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21917777/"
+  },
+  "supporting_passage": "A total of 191 adults with medically intractable partial epilepsy were implanted with a responsive neurostimulator connected to depth or subdural leads placed at 1 or 2 predetermined seizure foci. [...] Seizures were significantly reduced in the treatment (-37.9%, n = 97) compared to the sham group (-17.3%, n = 94; p = 0.012) during the blinded period",
+  "supporting_passages": [
+    "A total of 191 adults with medically intractable partial epilepsy were implanted with a responsive neurostimulator connected to depth or subdural leads placed at 1 or 2 predetermined seizure foci.",
+    "Seizures were significantly reduced in the treatment (-37.9%, n = 97) compared to the sham group (-17.3%, n = 94; p = 0.012) during the blinded period"
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 21917777, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 191,
+    "design": "multicenter double-blind sham-controlled RCT (1:1), 12-week blinded period then 84-week open label",
+    "population": "adults, medically intractable partial (focal) epilepsy, 1-2 seizure foci, failed >=2 AEDs, >=3 seizures/month (per abstract classification statement)",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "mean/GEE percent change in disabling seizure frequency vs baseline (abstract does not state median)",
+    "timepoint": "12-week blinded evaluation period",
+    "follow_up_months_reported": "blinded 3 months; total 2 years in open label (results reported in Heck 2014)",
+    "median_pct_reduction": "not_reported",
+    "responder_rate_50pct": "not_reported",
+    "seizure_freedom": "not_reported"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer RNS reduces disabling partial seizures and is well tolerated; Class I evidence for a 12-week effect.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": false,
+  "contradictions": [
+    "Blinded endpoint is <12 months; protocol follow-up requirement met only by the open-label phase (see Heck 2014, same family)."
+  ],
+  "study_family_id": "fam-RNS-NeuroPace-feasibility-pivotal-LTT"
+}

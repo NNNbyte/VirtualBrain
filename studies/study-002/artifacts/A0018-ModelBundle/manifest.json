@@ -1,0 +1,64 @@
+{
+  "artifact_id": "A0018-ModelBundle",
+  "schema_name": "ModelBundle",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P2",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0014",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "vep_ar1.stan+run_fit.py",
+  "tool_version": "T0011-v2-frozen",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0006-MethodCard",
+    "A0009-PatientCase",
+    "A0010-QCReport",
+    "A0011-CohortSplit",
+    "A0015-Report",
+    "A0017-NetworkHypothesisSet"
+  ],
+  "input_manifest_hash": "2f6a607d5734062ae6c0ebc9bcfe9b5577452066f0c4ac21802adada84532bb2",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0018-ModelBundle/payload.json",
+      "media_type": "application/json",
+      "sha256": "7230020e01d126996b8e6662a17199671748923a520991caad13cce307c1c744",
+      "byte_size": 18679
+    },
+    {
+      "uri": "artifacts/A0018-ModelBundle/map_ensemble_P2_post.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "52ee0d332116c292c21fe004a5da2aeb3296a826c1e98e1306675ea7b5349ad6",
+      "byte_size": 95503
+    },
+    {
+      "uri": "artifacts/A0018-ModelBundle/map_ensemble_P2_full.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "9b09a17a87043692c9ad52825f8ba71585927e6116f146bcc180b3e78b7db2f9",
+      "byte_size": 95400
+    }
+  ],
+  "scientific_context": {
+    "intended_use": "intervention simulation input; not qualified",
+    "sample_rate_hz": 125,
+    "evidence_kind": "fitted_estimate"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T14:33:12+00:00",
+  "supersedes_id": null,
+  "title": "PRELIMINARY MAP ensemble P2 (frozen vep_ar1 v2; 24 L-BFGS starts x 2 prespecified windows)",
+  "manifest_hash": "442db97be004668bebe793717229fa0650f6d9c712d5fe875a3d8c7e089c12c4"
+}

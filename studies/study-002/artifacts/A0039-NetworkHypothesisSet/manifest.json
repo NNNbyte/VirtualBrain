@@ -1,0 +1,45 @@
+{
+  "artifact_id": "A0039-NetworkHypothesisSet",
+  "schema_name": "NetworkHypothesisSet",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": "P1",
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0018",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R3-virtual-patient",
+  "tool_id": "features.py+prep_data_v3.py",
+  "tool_version": "T0018-v3",
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0007-PatientCase",
+    "A0006-MethodCard"
+  ],
+  "input_manifest_hash": "c3c6b0bb80c9a5440e6f94485c4b41efd693c7db6d39bc0bc9cf8c91467952d3",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0039-NetworkHypothesisSet/payload.json",
+      "media_type": "application/json",
+      "sha256": "522844e047fbce6f906e32e813613f5330fd702dbbb2ca32eed7e9a64878d771",
+      "byte_size": 2744
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "fitted_estimate"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T16:07:55+00:00",
+  "supersedes_id": null,
+  "title": "SYN-P1v3 network hypotheses for v3 qualification benchmark",
+  "manifest_hash": "e67f88813688834a06c1542ad00f92cacbc2fcaa26c687c89d1e216c579b95c7"
+}

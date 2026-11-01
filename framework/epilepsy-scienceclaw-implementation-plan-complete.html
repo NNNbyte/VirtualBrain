@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<meta name="description" content="ScienceClaw implementation plan for an epilepsy research agent system: problem statement, illustrated architecture, research roles, and scientific and task contracts.">
+<title>Epilepsy research agent system — ScienceClaw implementation plan</title>
+<style>
+:root{--ink:#19313e;--muted:#52656e;--teal:#086c61;--paper:#f7f7f2;--line:#d5e0db;--rail:260px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.7 "Segoe UI",Arial,sans-serif}a{color:var(--teal);text-underline-offset:3px}a:focus-visible{outline:3px solid #bc7725;outline-offset:4px}.skip{position:fixed;top:-100px;left:15px;background:white;padding:9px;z-index:9}.skip:focus{top:10px}.rail{position:fixed;inset:0 auto 0 0;width:var(--rail);padding:32px 23px;background:#edf2ed;border-right:1px solid var(--line);overflow-y:auto}.brand{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal)}.rail p{font-size:13px;color:var(--muted)}nav{margin:26px 0}nav a{display:block;padding:11px 9px;margin:5px 0;border-radius:7px;font-size:14px;text-decoration:none;background:#e0ebe2}nav a span{display:block;font-size:11px;letter-spacing:.12em;color:#4a756a}main{margin-left:var(--rail);max-width:1450px;padding:48px clamp(26px,5vw,80px) 80px}.eyebrow{font-size:12px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:700}.meta{font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:18px}h1,h2,h3{line-height:1.2;letter-spacing:-.025em}h1{font-size:clamp(34px,4.1vw,57px);max-width:950px;margin:20px 0 24px}h2{font-size:31px;color:var(--teal);margin:0 0 28px}h3{font-size:22px;margin:32px 0 14px}p{margin:0 0 18px}li{margin:9px 0}ul,ol{padding-left:24px}.section{border-top:1px solid var(--line);padding-top:40px;margin-top:40px;scroll-margin-top:24px}.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:10px;margin:20px 0 27px}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}th,td{text-align:left;vertical-align:top;padding:13px 16px;border-bottom:1px solid var(--line)}th{background:#e8f0e9;color:#2c544b;font-size:12px;text-transform:uppercase;letter-spacing:.035em}td:first-child{min-width:190px;width:25%}tr:last-child td{border-bottom:0}code{font:.87em/1.55 Consolas,"Courier New",monospace;background:#e8efea;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#19313e;color:#e7f0eb;border-radius:10px;padding:22px;overflow:auto;font:13px/1.7 Consolas,"Courier New",monospace;margin:20px 0 26px}pre code{background:transparent;color:inherit;padding:0;font:inherit;overflow-wrap:normal}footer{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;font-size:12px;color:var(--muted)}
+@media(max-width:850px){.rail{position:static;width:auto;padding:20px;border-right:0;border-bottom:1px solid var(--line)}.rail p{margin:10px 0}nav{display:flex;gap:8px;overflow:auto;margin:15px 0 0}nav a{min-width:185px;margin:0}main{margin-left:0;padding:28px 22px 60px}h2{font-size:27px}h3{font-size:21px}.section{margin-top:32px;padding-top:32px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{size:A4;margin:17mm 15mm}.rail,.skip,.eyebrow{display:none}body{background:white;font:10pt/1.5 Arial,sans-serif}main{margin:0;padding:0;max-width:none}h1{font-size:27pt}h2{font-size:20pt}h3{font-size:14pt;break-after:avoid}.section{margin-top:24px;padding-top:24px}.table-wrap{overflow:visible;border-radius:0}table{font-size:8.5pt}th,td{padding:8px;min-width:0!important}tr{break-inside:avoid}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eff3f0;color:var(--ink);font-size:8pt;border:1px solid var(--line)}a{color:var(--ink)}}
+
+:root{--teal-soft:#e6f3ee;--blue-soft:#eaf1fa;--amber-soft:#fff3df;--purple-soft:#f2edf8}
+main{max-width:1580px}h1{font-weight:650;max-width:980px}h1 em{color:var(--teal);font-style:normal}
+.hero{padding:8px 0 14px}.lead{font-size:20px;line-height:1.6;max-width:980px;color:#3d5660}
+.meta{border:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 12px}
+.tag{border:1px solid #c4d5cc;border-radius:30px;padding:4px 12px;background:#fff;font-size:12px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+h2{font-size:clamp(28px,2.7vw,38px);max-width:980px}.section-intro{font-size:18px;color:#445e68;max-width:1020px}
+.rail p{line-height:1.65}.rail nav a{margin:6px 0}.rail-bottom{border-top:1px solid var(--line);margin-top:27px;padding-top:18px}
+.rail-bottom button{width:100%;padding:9px 12px;border:1px solid #bdcfc4;background:#fff;border-radius:7px;font:13px 'Segoe UI',Arial,sans-serif;color:var(--ink);cursor:pointer}
+button:focus-visible{outline:3px solid #bc7725;outline-offset:4px}.paper-jump{font-size:14px;margin-top:23px}.paper-jump a{font-weight:650}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}
+.callout{padding:20px 23px;border-left:4px solid var(--teal);background:var(--teal-soft);border-radius:0 10px 10px 0;margin:22px 0}.callout p:last-child{margin:0}
+.small{font-size:14px;color:var(--muted)}.figure{margin:27px 0;background:#fff;padding:22px;border:1px solid var(--line);border-radius:14px}
+.figure>h3{margin:0 0 18px}.figure svg{display:block;width:100%;height:auto}.figure svg text{font-family:'Segoe UI',Arial,sans-serif;fill:var(--ink)}.figure svg .muted{fill:var(--muted)}
+.figure figcaption{font-size:13px;line-height:1.65;color:var(--muted);margin-top:17px}.diagram-mobile{display:none}
+th,td{padding:13px 15px}td:first-child{min-width:180px;width:23%}#contracts td:first-child{min-width:190px;width:23%}#contracts td:last-child{width:24%}
+pre{tab-size:2}.figure .paper-mini p{margin-bottom:0}footer{line-height:1.7}
+@media(max-width:1100px){.figure .diagram-desktop{display:none}.diagram-mobile{display:block}.figure{padding:17px}}
+@media(max-width:850px){.rail nav a{min-width:170px}.rail-bottom{display:none}.hero{padding-top:2px}h1{font-size:39px}.section-intro{font-size:17px}}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}.figure{padding:14px}.lead{font-size:18px}h1{font-size:34px}.table-wrap{max-width:100%}}
+@media print{.no-print{display:none!important}.hero{padding:0}.lead{font-size:12pt}.meta{margin-top:12px}h1{font-size:28pt}h2{font-size:21pt}.kicker{font-size:8pt}.section-intro{font-size:11pt}.callout{background:#edf5ef;border-left:3px solid #086c61}.figure{break-inside:avoid;padding:12px}.figure .diagram-desktop{display:none}.diagram-mobile{display:block}.figure figcaption,.small{font-size:8.5pt}thead{display:table-header-group}h2,h3{break-after:avoid}p{orphans:3;widows:3}.tag{font-size:8pt}.figure svg text{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+
+/* Paper-style system plate: original vector artwork, embedded for offline use. */
+.paper-plate .paper-plate-heading{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.paper-plate .paper-plate-heading h3{margin:0}
+.paper-plate .plate-button{font:600 13px/1.4 "Segoe UI",Arial,sans-serif;border:1px solid #a7c1b8;border-radius:7px;background:#edf6f0;color:#155c52;padding:9px 13px}
+.paper-plate .paper-structure-frame{display:block;max-width:100%;overflow-x:auto;margin-top:18px;overscroll-behavior-x:contain}
+.paper-plate .paper-structure-svg{display:block;width:100%;min-width:1000px;max-width:none;height:auto;margin:0}
+.paper-plate .plate-scroll-hint{font-size:13px;color:#47616c;margin:9px 0 0}
+.paper-plate .paper-structure-frame:focus-visible{outline:3px solid #17675f;outline-offset:4px}
+.paper-plate .plate-description{font-size:15px;margin:13px 0 0;color:#47616c}
+.paper-plate .paper-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}
+.paper-plate .paper-mini article{padding:15px;border:1px solid #cadbd6;border-radius:10px;background:#f0f6f2}
+.paper-plate .paper-mini article strong{display:block;font-size:15px}
+.paper-plate .paper-mini article p{font-size:14px;line-height:1.55;margin:7px 0 0}
+.paper-jump{margin-top:20px;font-size:14px}
+.paper-jump a{font-weight:650}
+.paper-dialog{width:min(97vw,1700px);height:95vh;max-width:none;max-height:95vh;padding:0;border:1px solid #a9c0b6;border-radius:15px;background:#fff;color:#19323f}
+.paper-dialog::backdrop{background:rgba(18,37,47,.68)}
+.paper-dialog .plate-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px;background:#edf4f0;border-bottom:1px solid #cedbd5}
+.paper-dialog .plate-toolbar p{font-size:14px;margin:0}
+.paper-dialog .plate-close{font:600 14px "Segoe UI",Arial,sans-serif;padding:8px 13px;background:#fff;border:1px solid #b3c8bf;border-radius:6px;color:#183640}
+.paper-dialog .plate-canvas{height:calc(100% - 64px);overflow:auto;padding:18px;background:#fff}
+.paper-dialog .plate-canvas svg{display:block;width:1640px;max-width:none;height:auto}
+@media(max-width:650px){.paper-plate .paper-mini{grid-template-columns:1fr}.paper-dialog .plate-toolbar{align-items:flex-start}.paper-dialog .plate-toolbar p{font-size:12px}}
+@media print{.paper-plate .plate-button,.paper-plate .plate-scroll-hint,.paper-jump,.paper-dialog{display:none!important}.paper-plate{break-inside:auto}.paper-plate .paper-structure-frame{overflow:visible;break-inside:avoid}.paper-plate .paper-structure-svg{width:100%;min-width:0;max-width:100%}.paper-plate .diagram-mobile{display:none!important}}
+
+nav a.active{background:#d0e4d9;font-weight:650}
+</style></head><body><a class="skip" href="#content">Skip to the plan</a>
+<aside class="rail"><div class="brand">Research blueprint</div><p>ScienceClaw<br>Epilepsy research agent system</p>
+<nav aria-label="Plan contents"><a href="#problem"><span>01</span>Problem statement</a><a href="#architecture"><span>02</span>System architecture</a><a href="#agents"><span>03</span>Research roles and services</a><a href="#contracts"><span>04</span>Scientific and task contracts</a></nav>
+<div class="rail-bottom"><button id="print-plan" type="button">Print / save as PDF</button><p>Self-contained document.<br>Illustrations work offline.</p></div></aside>
+<main id="content"><header class="hero"><div class="eyebrow">From evidence to intervention</div>
+<h1>A research agent system for <em>epilepsy surgery &amp; stimulation.</em></h1>
+<p class="lead">An implementation plan for connecting verified evidence, virtual patients, and feasible intervention scenarios through shared artifacts and controlled research workflows.</p>
+<div class="meta"><span class="tag">ScienceClaw artifact exchange</span><span class="tag">Six research roles + controller services</span><span class="tag">Versioned evidence and scientific gates</span></div>
+<p class="paper-jump no-print"><a href="#paper-agent-structure">View the system structure illustration ↓</a></p></header>
+<section class="section" id="problem" aria-labelledby="problem-title">
+<div class="kicker">01 / Research objective</div>
+<h2 id="problem-title">Problem statement</h2>
+<p class="section-intro">Identify the best therapy for epilepsy by conducting an extensive literature survey, proposing treatments, building models, running and validating simulations, and validating the findings, follow the proposed framwork below.</p>
+</section>
+<section class="section" id="architecture" aria-labelledby="architecture-title"><div class="kicker">02 / System architecture</div><h2 id="architecture-title">A shared research graph with controlled case workflows.</h2><p class="section-intro">Six research roles exchange evidence and artifacts through scoped needs. A deterministic controller governs tasks and scientific gates, while numerical workers execute declared calculations.</p><figure aria-labelledby="paper-plate-heading" class="figure paper-plate" id="paper-agent-structure">
+<div class="paper-plate-heading"><h3 id="paper-plate-heading">Research agent system structure</h3><button aria-controls="paper-structure-dialog" aria-haspopup="dialog" class="plate-button no-print" id="open-paper-structure" type="button">Enlarge illustration</button></div>
+<p class="plate-description">Grouped agent roles contain their tool chains and example artifact records. Solid arrows show execution, orange dashed arrows show accepted artifact exchange, and teal dotted arrows show requests for missing evidence or revision.</p>
+<div aria-label="Full agent system illustration; scroll horizontally to inspect" class="paper-structure-frame" role="region" tabindex="0"><svg aria-labelledby="eps-plate-title eps-plate-desc" class="paper-structure-svg" role="img" viewbox="0 0 1640 1470" xmlns="http://www.w3.org/2000/svg">
+<title id="eps-plate-title">Proposed epilepsy research agents, tool chains, and artifact exchange</title>
+<desc id="eps-plate-desc">Six grouped research roles exchange accepted artifacts through a scoped ScienceClaw artifact index and rule-based study controller. Evidence and patient data feed qualified virtual-patient models. Intervention scenarios are evaluated by parallel numerical workers and an independent evaluation role. Clinical and engineering review produces a report decision or repair. The improvement role submits proposals to an independent offline release gate for future studies only. Artifact IDs and parents are schematic examples, not recorded patient results. R1 finds cases similar to the current patient in existing datasets and the literature, and passes their evidence to R4 to guide treatment strategy selection.</desc>
+<defs>
+<symbol id="eps-plate-agent" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M18 5v5M7 17H3v8h4m22-8h4v8h-4"></path><circle cx="18" cy="4" r="2.5"></circle><rect height="21" rx="4" width="22" x="7" y="10"></rect><circle cx="13" cy="19" r="1.5"></circle><circle cx="23" cy="19" r="1.5"></circle><path d="M13 25h10"></path></g></symbol>
+<symbol id="eps-plate-document" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M8 3h13l7 7v23H8Z"></path><path d="M21 3v8h7M12 17h12M12 22h12M12 27h8"></path></g></symbol>
+<symbol id="eps-plate-network" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="m7 8 21-2-8 13L6 28l25 3-11-12L7 8l-1 20M28 6l3 25"></path><g fill="#fff"><circle cx="7" cy="8" r="3"></circle><circle cx="28" cy="6" r="3"></circle><circle cx="20" cy="19" r="3"></circle><circle cx="6" cy="28" r="3"></circle><circle cx="31" cy="31" r="3"></circle></g></g></symbol>
+<symbol id="eps-plate-check" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"><circle cx="18" cy="18" r="14"></circle><path d="m10 18 5 6 12-13" stroke-width="2.4"></path></g></symbol>
+<symbol id="eps-plate-signal" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"><path d="M3 4v29h30M4 21h7l3-12 5 20 4-13 4 5h6"></path></g></symbol>
+<symbol id="eps-plate-workers" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect height="12" rx="2" width="12" x="3" y="3"></rect><rect height="12" rx="2" width="12" x="21" y="3"></rect><rect height="12" rx="2" width="12" x="3" y="21"></rect><rect height="12" rx="2" width="12" x="21" y="21"></rect></g></symbol>
+<symbol id="eps-plate-lock" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"><rect height="17" rx="3" width="22" x="7" y="15"></rect><path d="M11 15V9a7 7 0 0 1 14 0v6M18 22v5"></path></g></symbol>
+<marker id="eps-plate-execution" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#2e4652"></path></marker>
+<marker id="eps-plate-exchange" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#b9652a"></path></marker>
+<marker id="eps-plate-need" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#2c8279"></path></marker>
+<marker id="eps-plate-offline" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#8067a3"></path></marker>
+</defs>
+<rect fill="#fff" height="1470" rx="12" width="1640" x="0" y="0"></rect>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text fill="#17675f" font-size="21" font-weight="700" text-anchor="start" x="20" y="31">PROPOSED STRUCTURE</text>
+<text fill="#526b75" font-size="20" font-weight="400" text-anchor="end" x="1620" y="31">Roles, tool chains &amp; explicit computational ancestry</text>
+<rect fill="#f0f4f5" height="151" rx="20" stroke="#afc2c7" stroke-width="1.8" width="1600" x="20" y="52"></rect>
+<use aria-hidden="true" color="#3c6774" height="35" href="#eps-plate-network" width="35" x="43" y="72"></use>
+<text fill="#19323f" font-size="28" font-weight="700" text-anchor="start" x="91" y="99">Shared artifact index + study controller</text>
+<rect fill="#fff" height="60" rx="9" stroke="#c5d2d6" stroke-width="1.8" width="492" x="43" y="120"></rect>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="63" y="147">Typed artifacts + versioned lineage</text>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="63" y="171">Actual inputs, hashes, sources, and validation status</text>
+<rect fill="#fff" height="60" rx="9" stroke="#c5d2d6" stroke-width="1.8" width="492" x="555" y="120"></rect>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="575" y="147">Scoped needs + accepted fulfillments</text>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="575" y="171">Study / patient / stage / version · loop prevention</text>
+<rect fill="#fff" height="60" rx="9" stroke="#c5d2d6" stroke-width="1.8" width="530" x="1067" y="120"></rect>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1087" y="147">Gates · permissions · leases · budgets</text>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="1087" y="171">Admit useful tasks; preserve frozen evaluation</text>
+<rect fill="#edf5ff" height="330" rx="19" stroke="#4487b7" stroke-width="1.8" width="490" x="20" y="268"></rect>
+<use aria-hidden="true" color="#4487b7" height="33" href="#eps-plate-agent" width="33" x="42" y="287"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="86" y="313">R1 · Evidence &amp; dataset scout</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="44" y="345">Literature → accessible, verified data</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="363"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-document" width="31" x="59" y="378"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="394">Search &amp; verify sources</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="424">e1 · evidence table + source records</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="449">parents = []</text>
+<path d="M265 465v22" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="487"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-check" width="31" x="59" y="502"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="518">Inspect access &amp; cohort overlap</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="548">e2 · verified dataset card</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="573">parents = [e1]</text>
+<rect fill="#eaf5ef" height="330" rx="19" stroke="#3f8873" stroke-width="1.8" width="490" x="575" y="268"></rect>
+<use aria-hidden="true" color="#3f8873" height="33" href="#eps-plate-agent" width="33" x="597" y="287"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="641" y="313">R2 · Case-curation agent</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="599" y="345">Raw files → coherent patient data</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="363"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-signal" width="31" x="614" y="378"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="394">Prepare signals &amp; anatomy</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="424">d1 · versioned derivatives</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="449">parents = [e2, raw1]</text>
+<path d="M820 465v22" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="487"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-check" width="31" x="614" y="502"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="518">Check quality &amp; registration</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="548">c1 · patient case + QC report</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="573">parents = [d1, e2]</text>
+<rect fill="#f1edf9" height="330" rx="19" stroke="#8975ad" stroke-width="1.8" width="490" x="1130" y="268"></rect>
+<use aria-hidden="true" color="#8975ad" height="33" href="#eps-plate-agent" width="33" x="1152" y="287"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="1196" y="313">R3 · Virtual-patient agent</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="1154" y="345">Alternative hypotheses + uncertainty</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="363"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-network" width="31" x="1169" y="378"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="394">Fit competing patient models</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="424">m1 · model / hypothesis ensemble</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="449">parents = [c1, e1]</text>
+<path d="M1375 465v22" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="487"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-check" width="31" x="1169" y="502"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="518">Test held-out model behavior</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="548">m2 · qualified virtual patient</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="573">parents = [m1, c1]</text>
+<rect fill="#fff4e4" height="330" rx="19" stroke="#b88234" stroke-width="1.8" width="490" x="20" y="676"></rect>
+<use aria-hidden="true" color="#b88234" height="33" href="#eps-plate-agent" width="33" x="42" y="695"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="86" y="721">R4 · Intervention-design agent</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="44" y="753">Separate surgery / stimulation contracts</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="771"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-network" width="31" x="59" y="786"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="802">Generate feasible candidates</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="832">s1 · intervention scenarios</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="857">parents = [m2, c1, e1, e2]</text>
+<path d="M265 873v22" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="895"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-workers" width="31" x="59" y="910"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="926">Specify controlled batches</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="956">s2 · versioned simulation requests</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="981">parents = [s1, m2]</text>
+<rect fill="#faedf2" height="330" rx="19" stroke="#af6e89" stroke-width="1.8" width="490" x="575" y="676"></rect>
+<use aria-hidden="true" color="#af6e89" height="33" href="#eps-plate-agent" width="33" x="597" y="695"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="641" y="721">R5 · Independent evaluation</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="599" y="753">Robustness + blinded historical testing</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="771"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-check" width="31" x="614" y="786"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="802">Compare &amp; validate results</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="832">v1 · comparison + validation reports</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="857">parents = [w1, s2, m2]</text>
+<path d="M820 873v22" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="895"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-document" width="31" x="614" y="910"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="926">Audit evidence &amp; uncertainty</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="956">v2 · research evidence dossier</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="981">parents = [v1, e1, c1]</text>
+<rect fill="#edf2f5" height="330" rx="19" stroke="#617c8b" stroke-width="1.8" width="490" x="1130" y="676"></rect>
+<use aria-hidden="true" color="#617c8b" height="33" href="#eps-plate-agent" width="33" x="1152" y="695"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="1196" y="721">R6 · Improvement research</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="1154" y="753">Separate offline development cycle</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="771"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-network" width="31" x="1169" y="786"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="802">Diagnose failures &amp; feedback</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="832">l1 · evidence-linked proposal</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="857">parents = [v1, review1]</text>
+<path d="M1375 873v22" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="895"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-document" width="31" x="1169" y="910"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="926">Submit an offline test plan</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="956">l2 · benchmark / regression request</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="981">parents = [l1]</text>
+<g fill="none" marker-end="url(#eps-plate-exchange)" stroke="#b9652a" stroke-dasharray="9 6" stroke-width="2.7">
+<path d="M486 529H538V405H599"></path>
+<path d="M486 405H522V234H1100V405H1154"></path>
+<path d="M1041 529H1097V405H1154"></path>
+<path d="M1375 598V639H265V676"></path>
+<path d="M820 598V639"></path>
+<path d="M1065 1113H1098V815H1041"></path>
+<path d="M1041 940H1114V1278H1065"></path>
+<path d="M1041 815H1080V660H1630V815H1596"></path>
+<path d="M1030 1344V1366H1630V815H1596"></path>
+</g>
+<text fill="#9b5425" font-size="19" font-weight="400" text-anchor="middle" x="815" y="226">e1 · evidence context</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="539" y="478">e2</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="1097" y="478">c1</text>
+<text fill="#9b5425" font-size="19" font-weight="400" text-anchor="middle" x="753" y="631">c1 + m2 · qualified patient inputs</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="1098" y="1046">w1</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="1114" y="1210">v2</text>
+<text fill="#9b5425" font-size="18" font-weight="400" text-anchor="middle" x="1110" y="654">v1 → improvement research</text>
+<text fill="#9b5425" font-size="18" font-weight="400" text-anchor="middle" x="1290" y="1360">review1 → improvement research</text>
+<g fill="none" marker-end="url(#eps-plate-need)" stroke="#2c8279" stroke-dasharray="3 6" stroke-width="2.5">
+<path d="M820 268V205"></path>
+<path d="M1375 268V205"></path>
+</g>
+<text fill="#246e67" font-size="18" font-weight="400" text-anchor="start" x="827" y="249">needs / repair</text>
+<text fill="#246e67" font-size="18" font-weight="400" text-anchor="start" x="1383" y="249">model gaps</text>
+<path d="M265 1007v43" fill="none" marker-end="url(#eps-plate-execution)" stroke="#2e4652" stroke-width="2.6"></path>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="278" y="1038">s2 → executable batch</text>
+<rect fill="#eff3fb" height="117" rx="17" stroke="#6a87b0" stroke-width="1.8" width="1045" x="20" y="1056"></rect>
+<use aria-hidden="true" color="#4e6d99" height="37" href="#eps-plate-workers" width="37" x="44" y="1078"></use>
+<text fill="#19323f" font-size="26" font-weight="700" text-anchor="start" x="97" y="1099">Simulation workers · parallel, versioned runs</text>
+<text fill="#19323f" font-family="Consolas,monospace" font-size="21" font-weight="400" text-anchor="start" x="44" y="1134">w1 · outputs + numerical checks      parents = [s2, m2]</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="44" y="1160">Matched baselines · model samples · initial states · resource limits</text>
+<rect fill="#f2edf8" height="117" rx="17" stroke="#9b87b5" stroke-width="1.8" width="490" x="1130" y="1056"></rect>
+<use aria-hidden="true" color="#8067a3" height="34" href="#eps-plate-check" width="34" x="1154" y="1077"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="1203" y="1099">Independent release gate</text>
+<text fill="#19323f" font-family="Consolas,monospace" font-size="21" font-weight="400" text-anchor="start" x="1154" y="1131">bench1 + review → release1</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="1154" y="1159">Validated benchmark + separate approval</text>
+<path d="M1375 1007v43" fill="none" marker-end="url(#eps-plate-offline)" stroke="#8067a3" stroke-width="2.6"></path>
+<rect fill="#eaf5ef" height="116" rx="17" stroke="#75a394" stroke-width="1.8" width="1045" x="20" y="1228"></rect>
+<use aria-hidden="true" color="#3f8873" height="37" href="#eps-plate-check" width="37" x="44" y="1250"></use>
+<text fill="#19323f" font-size="27" font-weight="700" text-anchor="start" x="97" y="1270">Clinical + engineering review</text>
+<text fill="#19323f" font-size="22" font-weight="400" text-anchor="start" x="44" y="1304">review1 · accept research report / request targeted repair</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="44" y="1331">A report decision records evidence readiness and intended research use.</text>
+<rect fill="#f2edf8" height="116" rx="17" stroke="#9b87b5" stroke-width="1.8" width="490" x="1130" y="1228"></rect>
+<text fill="#19323f" font-size="26" font-weight="700" text-anchor="start" x="1154" y="1270">Future study version</text>
+<text fill="#19323f" font-size="21" font-weight="400" text-anchor="start" x="1154" y="1304">Apply reviewed releases to new runs.</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="1154" y="1331">Active studies retain their frozen version.</text>
+<path d="M1375 1174v46" fill="none" marker-end="url(#eps-plate-offline)" stroke="#8067a3" stroke-width="2.6"></path>
+<path d="M44 1288H7V225H605V203" fill="none" marker-end="url(#eps-plate-need)" stroke="#2c8279" stroke-dasharray="3 6" stroke-width="2.1"></path>
+<path d="M30 1394h58" fill="none" stroke="#2e4652" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="102" y="1401">Tool execution</text>
+<path d="M390 1394h58" fill="none" stroke="#b9652a" stroke-dasharray="9 6" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="462" y="1401">Accepted artifact exchange</text>
+<path d="M850 1394h58" fill="none" stroke="#2c8279" stroke-dasharray="3 6" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="922" y="1401">Need / revision</text>
+<path d="M1240 1394h58" fill="none" stroke="#8067a3" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="1312" y="1401">Offline promotion</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="20" y="1448">Schematic artifact IDs and parent links. No patient data, clinical effect sizes, or measured agent interactions are shown.</text>
+<g id="eps-plate-r1-r4-guidance" aria-labelledby="eps-plate-r1-r4-guidance-title">
+<title id="eps-plate-r1-r4-guidance-title">R1 to R4: similar patient cases from literature and datasets guide treatment strategy selection</title>
+<path d="M100 598V676" fill="none" marker-end="url(#eps-plate-exchange)" stroke="#b9652a" stroke-dasharray="9 6" stroke-width="2.7"></path>
+<text fill="#9b5425" font-size="18" font-weight="400" text-anchor="start" x="124" y="624">Similar cases → treatment strategy guidance</text>
+</g>
+</g></svg></div>
+<p class="plate-scroll-hint">This complete SVG is embedded in the HTML and works offline. On a smaller screen, scroll sideways or use “Enlarge illustration” to inspect it.</p>
+<div class="diagram-mobile">
+<div class="callout blue"><strong>Shared artifact index + study controller</strong><br/>Versioned records, scoped needs, accepted fulfillments, gates, leases, and budgets.</div>
+<div class="paper-mini">
+<article><strong>R1 · Evidence &amp; dataset scout</strong><p>Search sources → verify access and cohorts.<br/><code>e1</code> evidence records → <code>e2</code> dataset card.</p></article>
+<article><strong>R2 · Case curation</strong><p>Prepare signals and anatomy → check quality.<br/><code>d1</code> derivatives → <code>c1</code> patient case and QC.</p></article>
+<article><strong>R3 · Virtual patient</strong><p>Fit competing models → test held-out behavior.<br/><code>m1</code> ensemble → <code>m2</code> qualified model bundle.</p></article>
+<article><strong>R4 · Intervention design</strong><p>Generate feasible scenarios → specify batches.<br/><code>s1</code> scenarios → <code>s2</code> simulation requests.</p></article>
+<article><strong>R5 · Independent evaluation</strong><p>Compare simulations and historical outcomes through separate tasks.<br/><code>v1</code> validation → <code>v2</code> evidence dossier.</p></article>
+<article><strong>R6 · Improvement research</strong><p>Diagnose failures → submit an offline test plan.<br/><code>l1</code> proposal → <code>l2</code> benchmark request.</p></article>
+</div>
+<div class="callout"><strong>Parallel numerical workers → clinical and engineering review</strong><br/>Results and actual inputs are recorded. Targeted repair creates a new artifact and reruns affected descendants.</div>
+<div class="callout blue"><strong>Independent offline release gate → future studies</strong><br/>Benchmarked and reviewed improvements enter a new release. Active studies retain their frozen version.</div>
+<p class="small">Use “Enlarge illustration” to inspect the complete vector diagram. It can be panned on a small screen.</p>
+</div>
+<figcaption>Figure 1. Structure of the proposed epilepsy research system, using the grouped-agent, tool-chain, and artifact-lineage visual grammar of ScienceClaw + Infinite Figures 3 and 8. Artifact IDs are explanatory examples; omitted source records include raw files, held-out recordings, and authorized outcome data. Parent links refer to consumed inputs and versions. Workflow feedback creates new records; it does not make the computational artifact graph cyclic. Clinical review concerns the research evidence package, and offline promotion applies to future study versions. <a href="https://arxiv.org/abs/2603.14312v1">Wang et al., arXiv:2603.14312v1</a></figcaption>
+</figure><h3>Shared artifacts and deterministic control</h3>
+<p>Build six research roles around a shared evidence and artifact store. A deterministic study controller MUST admit tasks, enforce study and patient boundaries, check prerequisites, apply resource limits, and record gate decisions. Numerical workers MUST execute calculations through declared, typed interfaces.</p>
+<p>Keep these responsibilities separate:</p>
+<ul><li>Agents propose scientific hypotheses, intervention scenarios, and follow-up tasks with a concise rationale and named inputs.</li><li>The controller decides whether a proposed task is permitted and eligible. Its criteria come from the versioned study protocol.</li><li>Workers perform preprocessing, fitting, simulation, and evaluation, and record the inputs they actually consumed.</li><li>Gates record <code>passed</code>, <code>failed</code>, or <code>indeterminate</code> against a frozen criterion. A successful worker process does not imply a passed scientific gate.</li><li>Clinical and engineering reviewers assess the resulting evidence package and issue structured review decisions.</li></ul>
+<p>Use the following coordination structure:</p>
+<pre><code class="language-text">Study controller
+  admits scoped tasks and records gates
+       |
+Shared artifact store and needs router
+  evidence, inputs, candidate outputs, accepted fulfillments, repairs
+       |
+R1 Evidence scout &lt;-&gt; R2 Case curator &lt;-&gt; R3 Virtual patient
+R4 Intervention design &lt;-&gt; R5 Independent evaluation
+       |
+Typed numerical workers -&gt; committed results -&gt; expert review
+
+R6 Improvement research -&gt; independent offline review -&gt; future release
+Reserved evaluation artifacts -&gt; outcome-evaluation service only</code></pre>
+<figure class="figure">
+<h3>The system is organized around evidence.</h3>
+<svg aria-labelledby="arch-svg-title arch-svg-desc" class="diagram-desktop" role="img" viewbox="0 0 1000 660">
+<title id="arch-svg-title">ScienceClaw-based epilepsy research architecture</title>
+<desc id="arch-svg-desc">Evidence discovery, case curation, virtual-patient modeling, intervention design and independent evaluation exchange versioned artifacts and scoped need signals through a shared store. A rule-based controller enforces gates. Numerical workers run computations. Outcomes are held in a separate evaluation vault. Improvement proposals are validated offline and promoted only to future study versions.</desc>
+<defs><marker id="arrow-a" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#718f8a"></path></marker></defs>
+<rect fill="#eaf1fa" height="82" rx="13" width="998" x="1" y="1"></rect><text font-size="16" font-weight="700" x="24" y="30">Study controller · rules and durable state</text><text font-size="14" x="24" y="57">Protocol · permissions · gates · task claims · budgets · version freeze</text>
+<rect fill="#e8f2ed" height="80" rx="12" width="270" x="1" y="113"></rect><text font-size="16" font-weight="700" x="20" y="143">Evidence + dataset scout</text><text font-size="13" x="20" y="169">Sources · cohort links · access · methods</text>
+<rect fill="#e8f2ed" height="80" rx="12" width="270" x="1" y="222"></rect><text font-size="16" font-weight="700" x="20" y="252">Case-curation agent</text><text font-size="13" x="20" y="278">Signals · anatomy · coordinates · QC</text>
+<rect fill="#e8f2ed" height="80" rx="12" width="270" x="1" y="331"></rect><text font-size="16" font-weight="700" x="20" y="361">Virtual-patient agent</text><text font-size="13" x="20" y="387">Competing hypotheses · model ensemble</text>
+<rect fill="#eaf1fa" height="175" rx="16" width="318" x="341" y="177"></rect><text font-size="18" font-weight="700" text-anchor="middle" x="500" y="211">Shared research graph</text><text font-size="14" text-anchor="middle" x="500" y="241">Immutable artifacts + consumed inputs</text><text font-size="14" text-anchor="middle" x="500" y="268">Patient / study / version scope</text><text font-size="14" text-anchor="middle" x="500" y="295">Open needs + accepted fulfillments</text><text font-size="14" text-anchor="middle" x="500" y="322">Contradictions + validation history</text>
+<rect fill="#e8f2ed" height="80" rx="12" width="270" x="729" y="113"></rect><text font-size="16" font-weight="700" x="748" y="143">Intervention-design agent</text><text font-size="13" x="748" y="169">Surgery / stimulation · constraints</text>
+<rect fill="#e8f2ed" height="80" rx="12" width="270" x="729" y="222"></rect><text font-size="16" font-weight="700" x="748" y="252">Independent-evaluation agent</text><text font-size="13" x="748" y="278">Robustness · blinded outcome testing</text>
+<rect fill="#fff3df" height="80" rx="12" width="270" x="729" y="331"></rect><text font-size="16" font-weight="700" x="748" y="361">Evaluation vault</text><text font-size="13" x="748" y="387">Reserved outcomes · staged reveal</text>
+<g fill="none" marker-end="url(#arrow-a)" marker-start="url(#arrow-a)" stroke="#718f8a" stroke-width="1.7"><path d="M272 153h34v65h34"></path><path d="M272 262h68"></path><path d="M272 371h34v-65h34"></path><path d="M660 218h34v-65h34"></path><path d="M660 262h68"></path></g>
+<path d="M864 330v-27" marker-end="url(#arrow-a)" stroke="#718f8a" stroke-width="1.7"></path>
+<path d="M500 84v92" marker-end="url(#arrow-a)" stroke="#718f8a" stroke-width="1.7"></path>
+<path d="M500 353v88" marker-end="url(#arrow-a)" marker-start="url(#arrow-a)" stroke="#718f8a" stroke-width="1.7"></path>
+<rect fill="#f2edf8" height="81" rx="13" width="658" x="1" y="448"></rect><text font-size="16" font-weight="700" x="24" y="479">Numerical worker pool + execution service</text><text font-size="14" x="24" y="506">Prepare · fit · simulate · compare · reproduce · commit results</text>
+<rect fill="#fff3df" height="81" rx="13" width="270" x="729" y="448"></rect><text font-size="16" font-weight="700" x="748" y="479">Clinical + engineering review</text><text font-size="13" x="748" y="506">Accept report · request targeted repair</text>
+<path d="M660 489h68" marker-end="url(#arrow-a)" stroke="#718f8a" stroke-width="1.7"></path>
+<rect fill="#f2edf8" height="83" rx="13" width="998" x="1" y="575"></rect><text font-size="16" font-weight="700" x="24" y="607">Improvement agent · separate development and validation cycle</text><text font-size="14" x="24" y="634">Failure evidence → proposal → offline benchmark → reviewed release → future study version</text>
+<path d="M864 530v44" marker-end="url(#arrow-a)" stroke="#718f8a" stroke-width="1.7"></path>
+</svg>
+<div class="diagram-mobile">
+<div class="card" style="background:var(--blue-soft)"><strong>Study controller</strong><br/>Protocol, versions, permissions, budgets, and required checks.</div>
+<p style="text-align:center;margin:8px">↓ admits eligible tasks</p>
+<div class="card"><strong>Shared research graph</strong><br/>Artifacts, actual inputs, contradictions, open needs, and validation records.</div>
+<div class="grid2" style="margin-top:16px"><div class="card" style="background:var(--teal-soft)"><strong>Discovery and patient modeling</strong><br/>Evidence scout ↔ case curator ↔ virtual-patient agent.</div><div class="card" style="background:var(--teal-soft)"><strong>Intervention and evaluation</strong><br/>Intervention designer ↔ independent evaluator. Reserved outcomes stay in a separate vault.</div></div>
+<p style="text-align:center;margin:8px">↓ typed computation requests / ↑ recorded results</p>
+<div class="card" style="background:var(--purple-soft)"><strong>Numerical workers</strong><br/>Prepare, fit, simulate, compare, reproduce, and commit.</div>
+<p style="text-align:center;margin:8px">↓</p><div class="card" style="background:var(--amber-soft)"><strong>Clinical and engineering review</strong><br/>Accept the research report or route a specific repair request.</div>
+<p style="text-align:center;margin:8px">↓ separate improvement cycle</p><div class="card" style="background:var(--purple-soft)"><strong>Improvement agent</strong><br/>Propose → benchmark offline → review → release for a future study version.</div>
+</div>
+<figcaption>Figure 2. Proposed operating architecture. The graph is the shared scientific record. Agents can discover useful work through needs; the controller enforces which tasks may run and which results may advance. The evaluation vault and improvement cycle have separate access and version boundaries.</figcaption>
+</figure><h3>Architecture invariants</h3>
+<ol><li>Every task MUST declare its study, stage, run, and frozen system release. Case tasks MUST also declare the patient case and applicable model version. Reject missing or incompatible scope.</li><li>A task MUST consume exact artifact versions. Freeze protocol, split, model, and release references at the appropriate study boundary; record an explicit branch when a scientific choice changes.</li><li>Keep computational provenance acyclic. Parent links MUST identify actual consumed inputs. Store scheduling order and review history separately.</li><li>Repairs MUST create new artifacts with explicit supersession links. Mark affected descendants stale in the index, prevent their reuse as current results, and recompute the affected branch. Preserve prior manifests and payloads.</li><li>A need MUST remain open until a permitted candidate fulfillment passes its declared acceptance checks. Task completion alone MUST NOT close it.</li><li>Outcome masks and reserved labels MUST remain inaccessible to fitting and intervention-design tasks. Enforce this in services and storage access, including delegated tool calls.</li><li>Retrieved papers, repository text, and dataset metadata MUST be treated as evidence. They MUST NOT alter permissions, role profiles, or the frozen protocol.</li><li>Improvement proposals MUST target a future release. R6 MUST NOT mutate an active study or approve its own proposal.</li></ol>
+<h3>Coordination loops</h3>
+<ul><li><strong>Discovery:</strong> R1 searches and verifies evidence, methods, data access, and cohort overlap. Represent new evidence as candidate records and explicit needs.</li><li><strong>Case research:</strong> R2 prepares a case, R3 proposes and qualifies model hypotheses, R4 proposes feasible interventions, and R5 evaluates the resulting evidence. A failed gate routes a repair to the earliest affected stage.</li><li><strong>Improvement research:</strong> R6 analyzes authorized failure and review records and proposes a change for independent offline evaluation. Active studies retain their frozen release.</li></ul>
+<h3>Scoped need handling</h3>
+<p>For each missing prerequisite, the controller and needs router MUST perform the following operations:</p>
+<ol><li>Record the required input, why it is needed, and its acceptance criterion.</li><li>Publish a <code>ScopedNeed</code> with study, case when applicable, stage, version, and access scope.</li><li>Claim the need under a lease and admit only a compatible task within its resource budget.</li><li>Execute the declared worker and commit a candidate artifact with its execution record.</li><li>Check the candidate against the need and record a <code>GateVerdict</code>. Accept the fulfillment on a pass; otherwise retain the unmet need and record the failure or targeted repair.</li></ol>
+<p>Claims, leases, retries, and commits MUST be durable. Expired or duplicate work MUST NOT produce multiple accepted fulfillments for the same need revision.</p>
+<figure class="figure">
+<h3>How an unmet need becomes useful work</h3>
+<svg aria-labelledby="need-title need-desc" class="diagram-desktop" role="img" viewbox="0 0 1000 265">
+<title id="need-title">Validated need fulfillment cycle</title><desc id="need-desc">An artifact exposes a missing prerequisite. A scoped need is advertised. A suitable agent claims it through the controller. A worker creates a candidate artifact. Validation accepts the fulfillment or returns a targeted repair need.</desc>
+<defs><marker id="arrow-n" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#718f8a"></path></marker></defs>
+<g font-size="15" font-weight="600"><rect fill="#e8f2ed" height="83" rx="11" width="174" x="1" y="30"></rect><text text-anchor="middle" x="88" y="62">Missing prerequisite</text><text font-size="13" font-weight="400" text-anchor="middle" x="88" y="87">Named input + check</text>
+<rect fill="#eaf1fa" height="83" rx="11" width="174" x="207" y="30"></rect><text text-anchor="middle" x="294" y="62">Scoped need</text><text font-size="13" font-weight="400" text-anchor="middle" x="294" y="87">Case + stage + version</text>
+<rect fill="#eaf1fa" height="83" rx="11" width="174" x="413" y="30"></rect><text text-anchor="middle" x="500" y="62">Claim and admit</text><text font-size="13" font-weight="400" text-anchor="middle" x="500" y="87">Capability + lease + budget</text>
+<rect fill="#f2edf8" height="83" rx="11" width="174" x="619" y="30"></rect><text text-anchor="middle" x="706" y="62">Worker result</text><text font-size="13" font-weight="400" text-anchor="middle" x="706" y="87">Candidate artifact</text>
+<rect fill="#fff3df" height="83" rx="11" width="174" x="825" y="30"></rect><text text-anchor="middle" x="912" y="62">Acceptance gate</text><text font-size="13" font-weight="400" text-anchor="middle" x="912" y="87">Fulfilled or repair</text></g>
+<g fill="none" marker-end="url(#arrow-n)" stroke="#718f8a" stroke-width="1.7"><path d="M176 71h30"></path><path d="M382 71h30"></path><path d="M588 71h30"></path><path d="M794 71h30"></path><path d="M912 114v65H294v-65"></path></g>
+<text class="muted" font-size="14" text-anchor="middle" x="550" y="205">Failed or indeterminate checks create a specific repair task.</text>
+<text class="muted" font-size="14" text-anchor="middle" x="550" y="235">Accepted outputs unlock only the descendants whose prerequisites are satisfied.</text>
+</svg>
+<div class="diagram-mobile"><ol><li>Record the missing prerequisite and its acceptance check.</li><li>Advertise a need with patient, study, stage, and version scope.</li><li>Claim and admit a permitted, useful task within budget.</li><li>Run the worker and save a candidate artifact.</li><li>Accept the fulfillment or issue a targeted repair request.</li></ol></div>
+<figcaption>Figure 3. Proposed extension to ScienceClaw’s need-driven coordination. A completed tool call produces a candidate result; a need becomes fulfilled after its declared acceptance checks pass.</figcaption>
+</figure><h3>ScienceClaw integration boundaries</h3><p>The integration reference is ScienceClaw commit <a href="https://github.com/lamm-mit/scienceclaw/tree/894598cd3a90891a077c254566276bd379038bad"><code>894598cd3a90891a077c254566276bd379038bad</code></a>. The plan defines target interfaces. Inspect the target checkout before reusing an interface, map existing equivalents explicitly, and record the actual implementation commit.</p>
+<p>Reuse verified equivalents of <code>ArtifactStore</code> for artifacts and lineage; <code>NeedItem</code> and <code>ArtifactReactor</code> for discovering missing inputs; the skill registry and executor for worker adapters; journals for durable events; and a dependency graph for scoped task execution. Add admission and contract checks at these boundaries.</p>
+<p>Exploratory literature tasks may use bounded search. Frozen patient tasks MUST use declared task templates with exact artifact references, parameter sets, model samples, intervention specifications, and acceptance checks. Heartbeat activity may supervise work and discover evidence; the controller retains authority over case state and frozen scientific choices.</p>
+<p>Use the following as a proposed responsibility map. Adapt file locations to the target repository while preserving the boundaries.</p>
+<pre><code class="language-text">core/
+  agent_profile.py          # canonical capabilities and role scope
+  skill_contracts.py        # entry points and typed schemas
+  execution_service.py      # task admission and execution records
+  job_backend.py            # claims, leases, retries, durable commits
+
+domains/epilepsy/
+  schemas.py                # scientific and coordination contracts
+  controller.py             # deterministic state and dispatch
+  needs_router.py           # scoped needs and accepted fulfillment
+  agents.py                 # six role profiles and task proposals
+  evidence.py               # claims, source passages, contradictions
+  datasets.py               # registry, access, and cohort links
+  case_builder.py           # case preparation and quality checks
+  models/                   # declared model and fitting adapters
+  interventions/            # distinct surgery and stimulation adapters
+  optimization.py           # feasible candidate search and comparisons
+  evaluation.py             # simulation and historical evaluation tasks
+  outcome_vault.py          # controlled access to reserved artifacts
+  review.py                 # decisions, repairs, and affected stages
+  improvement.py            # proposals and offline benchmark records
+  release_registry.py       # reviewed release and study versions
+  reporting.py              # dossier assembly from committed artifacts
+  __main__.py               # explicit commands and resume entry points
+
+skills/epilepsy-*/           # thin adapters to declared domain workers
+tests/epilepsy/              # contracts and architecture invariants
+tests/integration/           # opt-in engine and authorized data checks</code></pre>
+<p>The model adapters can cover a reproducible network baseline, The Virtual Brain (TVB), and optional Bayesian Virtual Epileptic Patient (BVEP) inference. Contract and invariant tests also cover repairs and release promotion; real-data and engine integration checks remain opt-in.</p><p>Journals and knowledge graphs SHOULD act as inspectable indexes into evidence. Extracted cross-run principles MUST remain proposals until tested and reviewed.</p></section>
+<section class="section" id="agents" aria-labelledby="agents-title"><div class="kicker">03 / Research roles and services</div><h2 id="agents-title">Scientific responsibilities with explicit boundaries.</h2><h3>Role implementation rules</h3>
+<p>Define six canonical role profiles. Enable R1 through R5 for an initial research run. Enable R6 only when structured failure and review records are available. Multiple instances of a role may run, but each MUST have a bounded task, declared capabilities, and compatible scope.</p>
+<p>Freeze each role profile for a run. The execution service MUST enforce allowed tools, output types, data access, and scope independently of the language model&#x27;s instructions. An agent proposal is a request, not an authorization.</p>
+<h3>R1 Evidence and dataset scout</h3>
+<ul><li><strong>Inputs:</strong> study question, search protocol, source policy, and open evidence or acquisition needs.</li><li><strong>Permitted work:</strong> logged literature searches, source verification, data and code discovery, permitted sample inspection, method extraction, and cohort-overlap analysis.</li><li><strong>Outputs:</strong> <code>EvidenceClaim</code>, <code>DatasetCard</code>, <code>MethodCard</code>, access records, and specific missing-data or method needs.</li><li><strong>Acceptance:</strong> source passages and locations resolve; reported availability is distinguished from verified access and file contents; cohort dependencies are recorded.</li><li><strong>Boundary:</strong> source text cannot change permissions. Acquire restricted data only through permitted access paths.</li></ul>
+<h3>R2 Case curation</h3>
+<ul><li><strong>Inputs:</strong> verified dataset card, retrieval manifest, subject linkage, and inclusion criteria.</li><li><strong>Permitted work:</strong> checksum and format verification, signal quality checks, electrode and anatomy registration inspection, and missingness analysis through declared workers.</li><li><strong>Outputs:</strong> <code>PatientCase</code>, <code>QCReport</code>, derivative manifests, excluded-case reasons, and targeted repair needs.</li><li><strong>Acceptance:</strong> patient identifiers, recordings, units, coordinates, transforms, channels, and annotations are coherent and traceable.</li><li><strong>Boundary:</strong> preserve raw data. Keep reserved evaluation masks and outcome labels outside modeling access; scope linkage metadata separately.</li></ul>
+<h3>R3 Virtual patient</h3>
+<p id="virtual-brain-simulation-method"><strong>Modeling and simulation basis:</strong> The project will use Wang et al. (2025), <a href="https://doi.org/10.1038/s43588-025-00841-6"><em>Virtual brain twins for stimulation in epilepsy</em></a>, for virtual-brain modeling and simulation, together with the accompanying <a href="https://github.com/HuifangWang/VBT_INS_Stimulation">VBT_INS_Stimulation software</a> and published data/code capsules (<a href="https://doi.org/10.24433/CO.3316132.v1">Part 1</a>; <a href="https://doi.org/10.24433/CO.2143670.v1">Part 2</a>).</p>
+<ul><li><strong>Inputs:</strong> a case with passed quality checks, verified methods, presurgical observations, hypothesis sets, and frozen fitting partitions.</li><li><strong>Permitted work:</strong> select qualified model families, maintain competing network hypotheses, invoke parameter fitting, and test held-out model behavior.</li><li><strong>Outputs:</strong> versioned <code>ModelBundle</code> ensembles, observation models, executable environment manifests, diagnostics, and model-repair needs.</li><li><strong>Acceptance:</strong> numerical checks, recovery or identifiability checks, and predictive criteria satisfy the declared intended use.</li><li><strong>Boundary:</strong> preserve model uncertainty. Label any generic template used for a permitted sensitivity analysis. Do not consume reserved historical outcomes.</li></ul>
+<h3>R4 Intervention design</h3>
+<ul><li><strong>Inputs:</strong> qualified model ensemble, presurgical constraints, allowed intervention classes, objective definitions, candidate budget, and permitted comparison records.</li><li><strong>Permitted work:</strong> generate surgery or stimulation scenarios, request physical-model checks, propose candidate tradeoffs, and request fresh comparisons when uncertainty warrants them.</li><li><strong>Outputs:</strong> <code>InterventionScenarioSet</code>, feasibility reports, <code>SimulationRequest</code>, proposed Pareto comparisons, and targeted follow-up needs.</li><li><strong>Acceptance:</strong> parameters, geometry, constraints, controls, uncertainty sampling, and stopping rules are explicit. Final comparison claims resolve to independent evaluation records.</li><li><strong>Boundary:</strong> use separate surgery and stimulation worker contracts. A disease-model parameter change alone does not define a realizable intervention. Reserved outcomes remain inaccessible.</li></ul>
+<h3>R5 Independent evaluation</h3>
+<ul><li><strong>Inputs:</strong> frozen protocol and versions, simulation and prediction records, review criteria, and evaluation artifacts authorized for the specific task.</li><li><strong>Permitted work:</strong> independent reruns, robustness checks, source checks, simulation comparison, and a distinct blinded historical-outcome evaluation task.</li><li><strong>Outputs:</strong> <code>SimulationComparison</code>, <code>OutcomeEvaluation</code>, <code>ValidationReport</code>, failure examples, abstentions, and structured revision needs.</li><li><strong>Acceptance:</strong> preserve split independence; calculate patient-level metrics and uncertainty as specified; attach each claim to the appropriate evidence kind.</li><li><strong>Boundary:</strong> do not rewrite the frozen model after seeing test outcomes. The outcome-evaluation service controls and logs reveal; simulation-comparison tasks do not receive reserved labels.</li></ul>
+<h3>R6 Improvement research</h3>
+<ul><li><strong>Inputs:</strong> authorized development artifacts, structured failures, review feedback, resource traces, and released method versions.</li><li><strong>Permitted work:</strong> diagnose recurring failures and propose scoped changes to methods, tools, scheduling, prompts, or checks.</li><li><strong>Outputs:</strong> <code>ImprovementProposal</code> containing failure evidence, an exact change, parent version, anticipated benefit, offline test protocol, risks, acceptance criteria, and rollback.</li><li><strong>Acceptance:</strong> link the proposal to a <code>BenchmarkRun</code>, independent review, and a <code>ReleaseRecord</code> before adoption into a future release.</li><li><strong>Boundary:</strong> do not alter the active study, promote your own change, or treat an exposed test cohort as fresh independent evidence.</li></ul>
+<p>When refining uncertain candidate comparisons, R4 requests fresh validation samples and records the paired baselines. R6 may propose changes to tests as well as methods, tools, scheduling, prompts, and checks; its offline benchmark compares the proposal against its parent version.</p><h3>Scientific rationale for the role boundaries</h3><div class="table-wrap"><table><thead><tr><th>Research function</th><th>System responsibility</th><th>Scientific rationale</th></tr></thead><tbody>
+<tr><td>Evidence acquisition</td><td>Evidence and dataset scout with a verified registry.</td><td>Dataset discovery, cohort overlap, method extraction, and data access are part of evidence acquisition.</td></tr>
+<tr><td>Patient modeling</td><td>Virtual-patient agent producing a model ensemble and executable environment manifest.</td><td>Separate scientific uncertainty from software reproducibility while preserving both.</td></tr>
+<tr><td>Intervention design</td><td>One intervention-design role with distinct surgery and stimulation tool contracts.</td><td>Share research reasoning while preserving intervention-specific geometry and physics.</td></tr>
+<tr><td>Independent evaluation</td><td>Independent evaluator with two task types: simulation robustness and blinded historical-outcome testing.</td><td>The two tasks require different data and support different claims.</td></tr>
+<tr><td>Evidence review</td><td>Structured ReviewDecision with an affected stage, reason, and acceptance check.</td><td>Fixing data or model errors must invalidate and recompute dependent results.</td></tr>
+<tr><td>Improvement research</td><td>Offline improvement researcher with proposal, benchmark, and release artifacts.</td><td>Use lessons from failures while preserving the frozen version and independence of evaluation.</td></tr>
+</tbody></table></div><h3>Service responsibilities</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Component</th><th scope="col">Required responsibility</th><th scope="col">Decision or output</th></tr></thead><tbody><tr><td>Study controller</td><td>Own protocol references, access checks, dependency state, admission, budgets, leases, repairs, and freezes.</td><td>Admit permitted tasks and advance only on recorded gate verdicts. Apply scientific criteria from the protocol.</td></tr><tr><td>Artifact store and needs router</td><td>Store consumed inputs, candidate results, open needs, accepted fulfillments, contradictions, and staleness events.</td><td>Commit transactional records and route work by scope. Artifact counts and timestamps do not establish scientific validity.</td></tr><tr><td>Numerical worker pool</td><td>Execute declared preprocessing, inference, geometry, simulation, statistics, and reference calculations.</td><td>Produce <code>ExecutionRecord</code> and typed outputs, with execution and validation status recorded separately.</td></tr><tr><td>Outcome-evaluation service</td><td>Protect reserved masks and labels, verify prediction freeze, authorize staged reveal, and calculate locked outcome metrics.</td><td>Produce <code>OutcomeEvaluation</code> and access audits. Reject access from fitting and strategy tasks.</td></tr><tr><td>Dossier builder</td><td>Assemble evidence links, tables, figures, uncertainties, and limitations from committed records.</td><td>Produce a draft <code>DecisionBundle</code> and check consistency between claims and artifact references.</td></tr><tr><td>Clinical and engineering reviewers</td><td>Assess intended use, anatomy and functional assumptions, numerical validity, and completeness.</td><td>Issue <code>ReviewDecision</code>: accept the report, request a targeted revision, or identify an unsupported conclusion. Acceptance concerns the stated research use.</td></tr></tbody></table></div>
+<h3>Canonical role profile</h3>
+<p>Implement an equivalent machine-readable profile and validate it at admission. These identifiers illustrate proposed interfaces; register actual worker IDs in the target implementation.</p>
+<pre><code class="language-yaml">profile_version: &quot;2.0&quot;
+agent_id: &quot;R4-intervention-design&quot;
+role: &quot;intervention_design&quot;
+allowed_tools:
+  - &quot;epilepsy-surgery-candidates&quot;
+  - &quot;epilepsy-stimulation-candidates&quot;
+  - &quot;epilepsy-simulation-request&quot;
+  - &quot;epilepsy-simulation-comparison&quot;
+allowed_output_types:
+  - &quot;intervention_scenario_set&quot;
+  - &quot;feasibility_report&quot;
+  - &quot;simulation_request&quot;
+  - &quot;candidate_comparison_proposal&quot;
+  - &quot;scoped_need&quot;
+permissions:
+  read_reserved_outcomes: false
+  publish_external: false
+  control_device: false
+scope_requirements:
+  study_id: &quot;required&quot;
+  case_id: &quot;required_for_case_tasks&quot;
+  model_bundle_id: &quot;required_for_intervention_tasks&quot;
+  system_release_id: &quot;frozen_at_run_start&quot;</code></pre>
+<p>Every task message MUST name the objective, exact input artifacts, permitted output schemas, scientific acceptance criteria, dependencies, resource estimate and limit, stage scope, and stopping rule. Request a new model or hypothesis branch explicitly; record its version and invalidate affected comparisons.</p></section>
+<section class="section" id="contracts" aria-labelledby="contracts-title"><div class="kicker">04 / Scientific and task contracts</div><h2 id="contracts-title">A common language for every handoff.</h2><p class="section-intro">An artifact is a laboratory record the software can use. Its type states what the result represents, which patient and recording it belongs to, how it was obtained, and what validation it has passed.</p><h3>Required record types</h3>
+<p>Implement typed, versioned schemas for the following records. Validate them before committing an artifact or admitting a consuming task. Use explicit unknown and missingness states where evidence is incomplete.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Contract</th><th scope="col">Required content and meaning</th><th scope="col">Scientific purpose</th></tr></thead><tbody><tr><td><code>StudyProtocol</code></td><td>Question, population, inclusion rules, endpoints and follow-up, analysis and split rules, metrics, budgets, version, and freeze history. Freeze the relevant rules before examining test outcomes.</td><td>Fix the study’s rules before test outcomes are examined.</td></tr><tr><td><code>EvidenceClaim</code></td><td>Claim, bibliographic record, supporting passage and location, population and design, endpoint, evidence kind, contradictions, and study-family identifier. Separate reported observations from inference.</td><td>Keep a reported observation separate from an inference or simulation claim.</td></tr><tr><td><code>DatasetCard</code></td><td>Repository or accession, reported and verified contents, subject linkage, modalities, intervention and outcome availability, license and access conditions, cohort overlap, and retrieval status.</td><td>Determine which research questions the actual files can support.</td></tr><tr><td><code>MethodCard</code></td><td>Primary method source, required inputs, implementation and dependency versions, supported outputs, validation setting, limitations, and reproduction status.</td><td>Let model selection and tool adaptation use verified method capabilities.</td></tr><tr><td><code>PatientCase</code> and <code>QCReport</code></td><td>Pseudonymous IDs, session and recording references, checksums, anatomy, coordinate transforms, contacts and channels, montage, events, units, quality findings, missingness, and acceptance verdict.</td><td>Prevent incompatible signals and anatomical objects from being combined.</td></tr><tr><td><code>CohortSplit</code></td><td>Development and test subject IDs, site and cohort families, seizure or time partitions, label-access policy, and immutable split hash. Make patient overlap and reuse explicit.</td><td>Make leakage and reuse of the same patients visible.</td></tr><tr><td><code>NetworkHypothesisSet</code></td><td>Alternative initiation and propagation hypotheses, source evidence, priors, unobserved-node assumptions, and planned discrimination checks.</td><td>Preserve uncertainty about the seizure-generating network.</td></tr><tr><td><code>ModelBundle</code></td><td>Model family and implementation versions, consumed case data and hypotheses, fitting partitions, observation model, parameters or posterior, numerical diagnostics, predictive checks, and intended use.</td><td>Represent a fitted explanation with a declared domain of use.</td></tr><tr><td><code>SurgeryPlan</code> and <code>StimulationPlan</code></td><td>Intervention class, geometry or contact and device configuration, physical mapping, constraints, feasibility verdict, and a model-independent intervention identifier. Keep the two contracts distinct.</td><td>Specify a realizable intervention without conflating it with a predicted benefit.</td></tr><tr><td><code>InterventionScenarioSet</code> and <code>SimulationRequest</code></td><td>Candidate plan references, exact model samples and versions, objectives, controls, uncertainty sampling, requested worker operation, parameter sets, and stopping criteria.</td><td>Make each candidate comparison an explicit, reproducible computation request.</td></tr><tr><td><code>SimulationBatch</code></td><td>Actual model samples, candidate IDs, seeds and initial states, solver settings, paired baselines, output references, numerical checks, and resource use.</td><td>Compare interventions across controlled sources of uncertainty.</td></tr><tr><td><code>SimulationComparison</code> and <code>OutcomeEvaluation</code></td><td>Separate task types with permitted inputs, freeze manifest, metrics, uncertainty, controls, and evidence level. Historical evaluation also records authorized staged label access.</td><td>Keep simulated benefit separate from observed outcomes for delivered interventions.</td></tr><tr><td><code>ValidationReport</code></td><td>Frozen criterion and version, evaluator, exact evaluated artifacts and held-out data, result, interval and uncertainty method, failure cases, verdict, and evidence level.</td><td>Record what was tested and the limits of the result.</td></tr><tr><td><code>DecisionBundle</code></td><td>Supported candidate comparisons, tradeoffs, unstable rankings, missing evidence, limitations, reproducibility manifest, review references, and release status.</td><td>Provide a readable research result for expert assessment.</td></tr><tr><td><code>ScopedNeed</code> and <code>GateVerdict</code></td><td>Requester, missing input, study and patient scope, stage and versions, acceptance criterion, claim and lease, candidate fulfillment, gate result, and repair reason.</td><td>Turn useful information gaps into bounded work and record when a prerequisite is actually satisfied.</td></tr><tr><td><code>ReviewDecision</code></td><td>Reviewer identity and role, decision, intended research use, affected artifact IDs, reason, repair stage, and acceptance checks for a revision.</td><td>Route review feedback into specific, traceable revisions.</td></tr><tr><td><code>ImprovementProposal</code> and <code>BenchmarkRun</code></td><td>Failure evidence, exact proposed change, parent version, permitted data, fixed test protocol, matched resource conditions, regression results, uncertainty, acceptance criteria, and rollback reference.</td><td>Test system improvements as offline experiments.</td></tr><tr><td><code>ReleaseRecord</code></td><td>Accepted proposals, implementation and environment hashes, independent review, permitted scope, migration notes, and rollback reference.</td><td>Promote reviewed changes without silently mutating an active study.</td></tr><tr><td><code>ExecutionRecord</code></td><td>Task and attempt IDs, admitted inputs, actual consumed inputs, resolved tool and environment versions, parameters, seeds, timestamps, resource use, execution status, errors, and committed output references.</td><td>Reconstruct what a worker actually executed and keep execution status separate from scientific acceptance.</td></tr></tbody></table></div>
+<p>Feasibility reports, access records, derivative manifests, and candidate comparison proposals MUST also use a registered schema and the common artifact envelope when persisted or passed between roles.</p>
+<p>Model diagnostics include explicit convergence checks alongside numerical and predictive checks.</p><h3>Common artifact envelope</h3>
+<p>All scientific artifacts MUST carry the following envelope. A question mark marks a field whose requirement depends on scope; enforce its applicability in the schema rather than filling it with invented values.</p>
+<pre><code class="language-text">ArtifactEnvelope
+  artifact_id, schema_name, schema_version
+  study_id, cohort_id?, case_id?, session_id?, run_id, task_id
+  system_release_id, protocol_version, model_bundle_id?
+  producer_role, tool_id, tool_version, code_commit, environment_digest
+  consumed_artifact_ids[], input_manifest_hash
+  payload_refs[]: {uri, media_type, sha256, byte_size}
+  scientific_context:
+    time_window?, sample_rate_hz?, signal_units?, reference_montage?
+    coordinate_frame?, coordinate_units?, transform_chain_id?
+    atlas_id?, atlas_version?, evidence_kind
+  execution_status
+  validation_status: unreviewed | passed | failed | indeterminate
+  access_classification, permitted_destinations[]
+  created_at, manifest_hash, supersedes_id?</code></pre>
+<p>Patient fields are mandatory for case artifacts. Signal artifacts MUST specify the applicable sampling rate, time window, units, and montage. Geometry artifacts MUST identify coordinate frame, units, and transform chain. Literature records may be study scoped without a patient. Reject artifacts with inconsistent scientific context or inaccessible payload references.</p>
+<p>Record the validation state at commit and append later gate and staleness events without rewriting a committed manifest. The artifact index MUST resolve the current effective validation and staleness state from those records. Consuming tasks MUST check that effective state before use.</p>
+<p>Define the manifest hashing procedure and schema version explicitly. Hashes MUST cover the declared immutable manifest content and referenced payload digests; exclude the manifest&#x27;s own hash field from its hash input. Parent references MUST resolve to immutable artifact versions.</p>
+<h3>Task admission contract</h3>
+<p>Implement a <code>TaskMessage</code> with these required fields:</p>
+<pre><code class="language-text">task_id, task_type, objective
+requester_role, assigned_role, role_profile_version
+scope: {study_id, case_id?, stage, run_id, system_release_id}
+protocol_version, cohort_split_id?, model_bundle_id?
+input_artifact_ids[], dependency_task_ids[]
+permitted_output_schemas[]
+worker_id, worker_contract_version, parameters
+scientific_acceptance_criteria[]
+resource_estimate, resource_limit, stopping_rule
+access_classification, permitted_destinations[]
+need_id?, need_revision?, lease_id?</code></pre>
+<p>Admission MUST verify the role&#x27;s capability, input schema and version compatibility, scope, current gate status, split and release compatibility, access rights, budget, and dependency completion. Refuse an unauthorized proposal and record the reason. Persist task attempts and execution results separately from scientific acceptance.</p>
+<p>Use <code>passed</code>, <code>failed</code>, and <code>indeterminate</code> consistently for gate verdicts. Treat absent evidence or an unresolved check as <code>indeterminate</code>; only a passed criterion satisfies the corresponding prerequisite.</p>
+<figure class="figure">
+<h3>Provenance follows the consumed inputs.</h3>
+<svg aria-labelledby="prov-title prov-desc" class="diagram-desktop" role="img" viewbox="0 0 1000 330">
+<title id="prov-title">Computational provenance for a virtual intervention</title><desc id="prov-desc">A model consumes a case and a hypothesis set. A simulation consumes the model and an intervention. A validation report consumes the simulation, the split and the evaluation labels. The final report cites all of these through explicit parent records.</desc>
+<defs><marker id="arrow-p" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#718f8a"></path></marker></defs>
+<g fill="none" marker-end="url(#arrow-p)" stroke="#718f8a" stroke-width="2"><path d="M200 65h45v77h35"></path><path d="M200 175h45v-33h35"></path><path d="M458 142h54"></path><path d="M600 66v46"></path><path d="M691 142h40"></path><path d="M822 253V173"></path></g>
+<rect fill="#e8f2ed" height="60" rx="10" width="195" x="5" y="35"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="102" y="61">Patient case</text><text font-size="12" text-anchor="middle" x="102" y="82">Signals + geometry + QC</text>
+<rect fill="#e8f2ed" height="60" rx="10" width="195" x="5" y="145"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="102" y="171">Hypothesis set</text><text font-size="12" text-anchor="middle" x="102" y="192">Alternatives + evidence</text>
+<rect fill="#eaf1fa" height="60" rx="10" width="178" x="280" y="112"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="369" y="137">Model bundle</text><text font-size="12" text-anchor="middle" x="369" y="158">Fit + uncertainty</text>
+<rect fill="#fff3df" height="60" rx="10" width="179" x="512" y="7"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="601" y="33">Intervention</text><text font-size="12" text-anchor="middle" x="601" y="54">Declared geometry</text>
+<rect fill="#f2edf8" height="60" rx="10" width="179" x="512" y="112"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="601" y="137">Simulation batch</text><text font-size="12" text-anchor="middle" x="601" y="158">Paired controls + seeds</text>
+<rect fill="#e8f2ed" height="60" rx="10" width="264" x="731" y="112"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="863" y="137">Validation report</text><text font-size="12" text-anchor="middle" x="863" y="158">Criterion + result + limitations</text>
+<rect fill="#fff3df" height="60" rx="10" width="345" x="650" y="253"></rect><text font-size="15" font-weight="600" text-anchor="middle" x="822" y="279">Locked split + evaluation labels</text><text font-size="12" text-anchor="middle" x="822" y="300">Accessible to the evaluation task only</text>
+<text class="muted" font-size="13" x="8" y="291">Each arrow is an actual consumed-input relationship.</text><text class="muted" font-size="13" x="8" y="312">Sequential task order is stored separately as execution history.</text>
+</svg>
+<div class="diagram-mobile"><p><strong>Case + hypothesis set → model bundle</strong></p><p><strong>Model bundle + intervention → simulation batch</strong></p><p><strong>Simulation + locked split + evaluation labels → validation report</strong></p><p class="small">The final evidence package links all consumed inputs. Task order is separate execution history.</p></div>
+<figcaption>Figure 4. Explicit ancestry shows which evidence and computations a result consumed. Papers and agents sharing the same patients or sources remain dependent evidence.</figcaption>
+</figure><h3>Consumed input lineage</h3>
+<p>Record the actual dependencies of each result. These examples describe artifact ancestry, not scheduling instructions:</p>
+<pre><code class="language-text">PatientCase + NetworkHypothesisSet + fitting partition -&gt; ModelBundle
+ModelBundle + SurgeryPlan or StimulationPlan + SimulationRequest
+  -&gt; SimulationBatch
+SimulationBatch + frozen comparison criteria + permitted validation inputs
+  -&gt; SimulationComparison
+Frozen predictions + locked CohortSplit + authorized outcome artifacts
+  -&gt; OutcomeEvaluation
+Evaluated artifacts + applicable criteria and data -&gt; ValidationReport
+Comparisons + applicable evaluations + validation and review records
+  -&gt; DecisionBundle</code></pre>
+<p>Include outcome artifacts as parents only when the authorized outcome task actually consumed them. Keep their sensitive content in the protected evaluation store. A simulation comparison MUST NOT inherit reserved labels merely because another evaluation task uses them.</p>
+<p>Any change to a consumed input, model branch, intervention, split, or criterion MUST identify affected descendants. Recompute the affected results and issue new validation records before using the revised branch in a current decision bundle.</p>
+<h3>Evidence semantics and missingness</h3>
+<p>Use explicit evidence kinds: literature reported, observed measurement, fitted estimate, simulated result, and clinical follow-up. Preserve the distinction in claims and reports. A fitted posterior probability MUST NOT automatically be presented as a calibrated probability of seizure freedom, and a simulated comparison MUST NOT be reported as an observed clinical outcome.</p>
+<p>Distinguish <code>not_reported</code>, <code>reported_absent</code>, <code>not_accessible</code>, and <code>verified_present</code>. Separate reported subject counts and modalities from those verified in actual files. Preserve original clinical outcome categories; any mapping to a binary endpoint MUST be versioned and prespecified.</p>
+<p>The following is an unverified registry placeholder, not an acquired or eligible dataset:</p>
+<pre><code class="language-json">{
+  &quot;dataset_id&quot;: &quot;candidate-unverified&quot;,
+  &quot;study_family_id&quot;: null,
+  &quot;source_doi&quot;: null,
+  &quot;repository_url&quot;: null,
+  &quot;reported_subject_count&quot;: null,
+  &quot;data_access&quot;: &quot;to_verify&quot;,
+  &quot;verified_subject_count&quot;: null,
+  &quot;verified_modalities&quot;: [],
+  &quot;intervention_linkage&quot;: &quot;to_verify&quot;,
+  &quot;follow_up_definition&quot;: &quot;to_extract&quot;,
+  &quot;eligibility&quot;: &quot;pending_file_inspection&quot;
+}</code></pre>
+<h3>Named candidate dataset-card example</h3><p>This initial registry entry illustrates a named candidate source. The reported subject count is source metadata; access, actual file contents, intervention linkage, follow-up, and eligibility remain to be verified. It is not a completed acquisition.</p><pre><code>{
+  "dataset_id": "candidate-epivr",
+  "study_family_id": "kini-2019-virtual-resection",
+  "source_doi": "10.1093/brain/awz303",
+  "reported_subject_count": 28,
+  "repository_url": "https://github.com/ieeg-portal/EpiVR",
+  "data_access": "to_verify",
+  "verified_subject_count": null,
+  "verified_modalities": [],
+  "intervention_linkage": "to_verify",
+  "follow_up_definition": "to_extract",
+  "eligibility": "pending_file_inspection"
+}</code></pre><p>Do not infer independent evidence from multiple agents, papers, or artifacts that reuse the same patients, sources, or computations. Record those dependencies in cohort-family and provenance fields so that evaluation and review can account for them.</p></section>
+<footer>Epilepsy research agent system · ScienceClaw implementation plan<br>Self-contained HTML with embedded vector illustrations, technical specifications, and navigation.</footer>
+</main><dialog aria-labelledby="paper-dialog-title" class="paper-dialog" id="paper-structure-dialog"><div class="plate-toolbar"><p id="paper-dialog-title"><strong>Proposed epilepsy research agents</strong><br/>Full vector illustration · scroll to pan · Escape to close</p><button aria-label="Close illustration" class="plate-close" id="close-paper-structure" type="button">Close ×</button></div><div class="plate-canvas"><svg aria-labelledby="eps-plate-large-title eps-plate-large-desc" class="paper-structure-svg" role="img" viewbox="0 0 1640 1470" xmlns="http://www.w3.org/2000/svg">
+<title id="eps-plate-large-title">Proposed epilepsy research agents, tool chains, and artifact exchange</title>
+<desc id="eps-plate-large-desc">Six grouped research roles exchange accepted artifacts through a scoped ScienceClaw artifact index and rule-based study controller. Evidence and patient data feed qualified virtual-patient models. Intervention scenarios are evaluated by parallel numerical workers and an independent evaluation role. Clinical and engineering review produces a report decision or repair. The improvement role submits proposals to an independent offline release gate for future studies only. Artifact IDs and parents are schematic examples, not recorded patient results. R1 finds cases similar to the current patient in existing datasets and the literature, and passes their evidence to R4 to guide treatment strategy selection.</desc>
+<defs>
+<symbol id="eps-plate-large-agent" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M18 5v5M7 17H3v8h4m22-8h4v8h-4"></path><circle cx="18" cy="4" r="2.5"></circle><rect height="21" rx="4" width="22" x="7" y="10"></rect><circle cx="13" cy="19" r="1.5"></circle><circle cx="23" cy="19" r="1.5"></circle><path d="M13 25h10"></path></g></symbol>
+<symbol id="eps-plate-large-document" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M8 3h13l7 7v23H8Z"></path><path d="M21 3v8h7M12 17h12M12 22h12M12 27h8"></path></g></symbol>
+<symbol id="eps-plate-large-network" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="m7 8 21-2-8 13L6 28l25 3-11-12L7 8l-1 20M28 6l3 25"></path><g fill="#fff"><circle cx="7" cy="8" r="3"></circle><circle cx="28" cy="6" r="3"></circle><circle cx="20" cy="19" r="3"></circle><circle cx="6" cy="28" r="3"></circle><circle cx="31" cy="31" r="3"></circle></g></g></symbol>
+<symbol id="eps-plate-large-check" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"><circle cx="18" cy="18" r="14"></circle><path d="m10 18 5 6 12-13" stroke-width="2.4"></path></g></symbol>
+<symbol id="eps-plate-large-signal" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"><path d="M3 4v29h30M4 21h7l3-12 5 20 4-13 4 5h6"></path></g></symbol>
+<symbol id="eps-plate-large-workers" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect height="12" rx="2" width="12" x="3" y="3"></rect><rect height="12" rx="2" width="12" x="21" y="3"></rect><rect height="12" rx="2" width="12" x="3" y="21"></rect><rect height="12" rx="2" width="12" x="21" y="21"></rect></g></symbol>
+<symbol id="eps-plate-large-lock" viewbox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"><rect height="17" rx="3" width="22" x="7" y="15"></rect><path d="M11 15V9a7 7 0 0 1 14 0v6M18 22v5"></path></g></symbol>
+<marker id="eps-plate-large-execution" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#2e4652"></path></marker>
+<marker id="eps-plate-large-exchange" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#b9652a"></path></marker>
+<marker id="eps-plate-large-need" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#2c8279"></path></marker>
+<marker id="eps-plate-large-offline" markerheight="7" markerwidth="7" orient="auto" refx="8.5" refy="5" viewbox="0 0 10 10"><path d="m0 0 10 5-10 5Z" fill="#8067a3"></path></marker>
+</defs>
+<rect fill="#fff" height="1470" rx="12" width="1640" x="0" y="0"></rect>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text fill="#17675f" font-size="21" font-weight="700" text-anchor="start" x="20" y="31">PROPOSED STRUCTURE</text>
+<text fill="#526b75" font-size="20" font-weight="400" text-anchor="end" x="1620" y="31">Roles, tool chains &amp; explicit computational ancestry</text>
+<rect fill="#f0f4f5" height="151" rx="20" stroke="#afc2c7" stroke-width="1.8" width="1600" x="20" y="52"></rect>
+<use aria-hidden="true" color="#3c6774" height="35" href="#eps-plate-large-network" width="35" x="43" y="72"></use>
+<text fill="#19323f" font-size="28" font-weight="700" text-anchor="start" x="91" y="99">Shared artifact index + study controller</text>
+<rect fill="#fff" height="60" rx="9" stroke="#c5d2d6" stroke-width="1.8" width="492" x="43" y="120"></rect>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="63" y="147">Typed artifacts + versioned lineage</text>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="63" y="171">Actual inputs, hashes, sources, and validation status</text>
+<rect fill="#fff" height="60" rx="9" stroke="#c5d2d6" stroke-width="1.8" width="492" x="555" y="120"></rect>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="575" y="147">Scoped needs + accepted fulfillments</text>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="575" y="171">Study / patient / stage / version · loop prevention</text>
+<rect fill="#fff" height="60" rx="9" stroke="#c5d2d6" stroke-width="1.8" width="530" x="1067" y="120"></rect>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1087" y="147">Gates · permissions · leases · budgets</text>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="1087" y="171">Admit useful tasks; preserve frozen evaluation</text>
+<rect fill="#edf5ff" height="330" rx="19" stroke="#4487b7" stroke-width="1.8" width="490" x="20" y="268"></rect>
+<use aria-hidden="true" color="#4487b7" height="33" href="#eps-plate-large-agent" width="33" x="42" y="287"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="86" y="313">R1 · Evidence &amp; dataset scout</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="44" y="345">Literature → accessible, verified data</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="363"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-document" width="31" x="59" y="378"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="394">Search &amp; verify sources</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="424">e1 · evidence table + source records</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="449">parents = []</text>
+<path d="M265 465v22" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="487"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-check" width="31" x="59" y="502"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="518">Inspect access &amp; cohort overlap</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="548">e2 · verified dataset card</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="573">parents = [e1]</text>
+<rect fill="#eaf5ef" height="330" rx="19" stroke="#3f8873" stroke-width="1.8" width="490" x="575" y="268"></rect>
+<use aria-hidden="true" color="#3f8873" height="33" href="#eps-plate-large-agent" width="33" x="597" y="287"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="641" y="313">R2 · Case-curation agent</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="599" y="345">Raw files → coherent patient data</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="363"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-signal" width="31" x="614" y="378"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="394">Prepare signals &amp; anatomy</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="424">d1 · versioned derivatives</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="449">parents = [e2, raw1]</text>
+<path d="M820 465v22" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="487"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-check" width="31" x="614" y="502"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="518">Check quality &amp; registration</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="548">c1 · patient case + QC report</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="573">parents = [d1, e2]</text>
+<rect fill="#f1edf9" height="330" rx="19" stroke="#8975ad" stroke-width="1.8" width="490" x="1130" y="268"></rect>
+<use aria-hidden="true" color="#8975ad" height="33" href="#eps-plate-large-agent" width="33" x="1152" y="287"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="1196" y="313">R3 · Virtual-patient agent</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="1154" y="345">Alternative hypotheses + uncertainty</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="363"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-network" width="31" x="1169" y="378"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="394">Fit competing patient models</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="424">m1 · model / hypothesis ensemble</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="449">parents = [c1, e1]</text>
+<path d="M1375 465v22" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="487"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-check" width="31" x="1169" y="502"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="518">Test held-out model behavior</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="548">m2 · qualified virtual patient</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="573">parents = [m1, c1]</text>
+<rect fill="#fff4e4" height="330" rx="19" stroke="#b88234" stroke-width="1.8" width="490" x="20" y="676"></rect>
+<use aria-hidden="true" color="#b88234" height="33" href="#eps-plate-large-agent" width="33" x="42" y="695"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="86" y="721">R4 · Intervention-design agent</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="44" y="753">Separate surgery / stimulation contracts</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="771"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-network" width="31" x="59" y="786"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="802">Generate feasible candidates</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="832">s1 · intervention scenarios</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="857">parents = [m2, c1, e1, e2]</text>
+<path d="M265 873v22" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="44" y="895"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-workers" width="31" x="59" y="910"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="103" y="926">Specify controlled batches</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="61" y="956">s2 · versioned simulation requests</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="61" y="981">parents = [s1, m2]</text>
+<rect fill="#faedf2" height="330" rx="19" stroke="#af6e89" stroke-width="1.8" width="490" x="575" y="676"></rect>
+<use aria-hidden="true" color="#af6e89" height="33" href="#eps-plate-large-agent" width="33" x="597" y="695"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="641" y="721">R5 · Independent evaluation</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="599" y="753">Robustness + blinded historical testing</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="771"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-check" width="31" x="614" y="786"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="802">Compare &amp; validate results</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="832">v1 · comparison + validation reports</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="857">parents = [w1, s2, m2]</text>
+<path d="M820 873v22" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="599" y="895"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-document" width="31" x="614" y="910"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="658" y="926">Audit evidence &amp; uncertainty</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="616" y="956">v2 · research evidence dossier</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="616" y="981">parents = [v1, e1, c1]</text>
+<rect fill="#edf2f5" height="330" rx="19" stroke="#617c8b" stroke-width="1.8" width="490" x="1130" y="676"></rect>
+<use aria-hidden="true" color="#617c8b" height="33" href="#eps-plate-large-agent" width="33" x="1152" y="695"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="1196" y="721">R6 · Improvement research</text>
+<text fill="#4d6671" font-size="19" font-weight="400" text-anchor="start" x="1154" y="753">Separate offline development cycle</text>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="771"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-network" width="31" x="1169" y="786"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="802">Diagnose failures &amp; feedback</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="832">l1 · evidence-linked proposal</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="857">parents = [v1, review1]</text>
+<path d="M1375 873v22" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.4"></path>
+<rect fill="#ffffff" height="101" rx="11" stroke="#bccfd2" stroke-width="1.8" width="442" x="1154" y="895"></rect>
+<use aria-hidden="true" color="#284c58" height="31" href="#eps-plate-large-document" width="31" x="1169" y="910"></use>
+<text fill="#19323f" font-size="22" font-weight="600" text-anchor="start" x="1213" y="926">Submit an offline test plan</text>
+<text fill="#19323f" font-size="20" font-weight="500" text-anchor="start" x="1171" y="956">l2 · benchmark / regression request</text>
+<text fill="#526b75" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="start" x="1171" y="981">parents = [l1]</text>
+<g fill="none" marker-end="url(#eps-plate-large-exchange)" stroke="#b9652a" stroke-dasharray="9 6" stroke-width="2.7">
+<path d="M486 529H538V405H599"></path>
+<path d="M486 405H522V234H1100V405H1154"></path>
+<path d="M1041 529H1097V405H1154"></path>
+<path d="M1375 598V639H265V676"></path>
+<path d="M820 598V639"></path>
+<path d="M1065 1113H1098V815H1041"></path>
+<path d="M1041 940H1114V1278H1065"></path>
+<path d="M1041 815H1080V660H1630V815H1596"></path>
+<path d="M1030 1344V1366H1630V815H1596"></path>
+</g>
+<text fill="#9b5425" font-size="19" font-weight="400" text-anchor="middle" x="815" y="226">e1 · evidence context</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="539" y="478">e2</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="1097" y="478">c1</text>
+<text fill="#9b5425" font-size="19" font-weight="400" text-anchor="middle" x="753" y="631">c1 + m2 · qualified patient inputs</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="1098" y="1046">w1</text>
+<text fill="#9b5425" font-family="Consolas,monospace" font-size="18" font-weight="400" text-anchor="middle" x="1114" y="1210">v2</text>
+<text fill="#9b5425" font-size="18" font-weight="400" text-anchor="middle" x="1110" y="654">v1 → improvement research</text>
+<text fill="#9b5425" font-size="18" font-weight="400" text-anchor="middle" x="1290" y="1360">review1 → improvement research</text>
+<g fill="none" marker-end="url(#eps-plate-large-need)" stroke="#2c8279" stroke-dasharray="3 6" stroke-width="2.5">
+<path d="M820 268V205"></path>
+<path d="M1375 268V205"></path>
+</g>
+<text fill="#246e67" font-size="18" font-weight="400" text-anchor="start" x="827" y="249">needs / repair</text>
+<text fill="#246e67" font-size="18" font-weight="400" text-anchor="start" x="1383" y="249">model gaps</text>
+<path d="M265 1007v43" fill="none" marker-end="url(#eps-plate-large-execution)" stroke="#2e4652" stroke-width="2.6"></path>
+<text fill="#526b75" font-size="18" font-weight="400" text-anchor="start" x="278" y="1038">s2 → executable batch</text>
+<rect fill="#eff3fb" height="117" rx="17" stroke="#6a87b0" stroke-width="1.8" width="1045" x="20" y="1056"></rect>
+<use aria-hidden="true" color="#4e6d99" height="37" href="#eps-plate-large-workers" width="37" x="44" y="1078"></use>
+<text fill="#19323f" font-size="26" font-weight="700" text-anchor="start" x="97" y="1099">Simulation workers · parallel, versioned runs</text>
+<text fill="#19323f" font-family="Consolas,monospace" font-size="21" font-weight="400" text-anchor="start" x="44" y="1134">w1 · outputs + numerical checks      parents = [s2, m2]</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="44" y="1160">Matched baselines · model samples · initial states · resource limits</text>
+<rect fill="#f2edf8" height="117" rx="17" stroke="#9b87b5" stroke-width="1.8" width="490" x="1130" y="1056"></rect>
+<use aria-hidden="true" color="#8067a3" height="34" href="#eps-plate-large-check" width="34" x="1154" y="1077"></use>
+<text fill="#19323f" font-size="24" font-weight="700" text-anchor="start" x="1203" y="1099">Independent release gate</text>
+<text fill="#19323f" font-family="Consolas,monospace" font-size="21" font-weight="400" text-anchor="start" x="1154" y="1131">bench1 + review → release1</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="1154" y="1159">Validated benchmark + separate approval</text>
+<path d="M1375 1007v43" fill="none" marker-end="url(#eps-plate-large-offline)" stroke="#8067a3" stroke-width="2.6"></path>
+<rect fill="#eaf5ef" height="116" rx="17" stroke="#75a394" stroke-width="1.8" width="1045" x="20" y="1228"></rect>
+<use aria-hidden="true" color="#3f8873" height="37" href="#eps-plate-large-check" width="37" x="44" y="1250"></use>
+<text fill="#19323f" font-size="27" font-weight="700" text-anchor="start" x="97" y="1270">Clinical + engineering review</text>
+<text fill="#19323f" font-size="22" font-weight="400" text-anchor="start" x="44" y="1304">review1 · accept research report / request targeted repair</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="44" y="1331">A report decision records evidence readiness and intended research use.</text>
+<rect fill="#f2edf8" height="116" rx="17" stroke="#9b87b5" stroke-width="1.8" width="490" x="1130" y="1228"></rect>
+<text fill="#19323f" font-size="26" font-weight="700" text-anchor="start" x="1154" y="1270">Future study version</text>
+<text fill="#19323f" font-size="21" font-weight="400" text-anchor="start" x="1154" y="1304">Apply reviewed releases to new runs.</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="1154" y="1331">Active studies retain their frozen version.</text>
+<path d="M1375 1174v46" fill="none" marker-end="url(#eps-plate-large-offline)" stroke="#8067a3" stroke-width="2.6"></path>
+<path d="M44 1288H7V225H605V203" fill="none" marker-end="url(#eps-plate-large-need)" stroke="#2c8279" stroke-dasharray="3 6" stroke-width="2.1"></path>
+<path d="M30 1394h58" fill="none" stroke="#2e4652" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="102" y="1401">Tool execution</text>
+<path d="M390 1394h58" fill="none" stroke="#b9652a" stroke-dasharray="9 6" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="462" y="1401">Accepted artifact exchange</text>
+<path d="M850 1394h58" fill="none" stroke="#2c8279" stroke-dasharray="3 6" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="922" y="1401">Need / revision</text>
+<path d="M1240 1394h58" fill="none" stroke="#8067a3" stroke-width="2.8"></path>
+<text fill="#19323f" font-size="19" font-weight="400" text-anchor="start" x="1312" y="1401">Offline promotion</text>
+<text fill="#526b75" font-size="19" font-weight="400" text-anchor="start" x="20" y="1448">Schematic artifact IDs and parent links. No patient data, clinical effect sizes, or measured agent interactions are shown.</text>
+<g id="eps-plate-large-r1-r4-guidance" aria-labelledby="eps-plate-large-r1-r4-guidance-title">
+<title id="eps-plate-large-r1-r4-guidance-title">R1 to R4: similar patient cases from literature and datasets guide treatment strategy selection</title>
+<path d="M100 598V676" fill="none" marker-end="url(#eps-plate-large-exchange)" stroke="#b9652a" stroke-dasharray="9 6" stroke-width="2.7"></path>
+<text fill="#9b5425" font-size="18" font-weight="400" text-anchor="start" x="124" y="624">Similar cases → treatment strategy guidance</text>
+</g>
+</g></svg></div></dialog><script>
+(function(){
+  const dialog=document.getElementById('paper-structure-dialog');
+  const opener=document.getElementById('open-paper-structure');
+  const closer=document.getElementById('close-paper-structure');
+  opener.addEventListener('click',()=>dialog.showModal());
+  closer.addEventListener('click',()=>{dialog.close();opener.focus();});
+  dialog.addEventListener('close',()=>opener.focus());
+  document.getElementById('print-plan').addEventListener('click',()=>window.print());
+  const links=Array.from(document.querySelectorAll('nav a'));
+  const observer=new IntersectionObserver(entries=>{
+    for(const entry of entries){if(entry.isIntersecting){
+      for(const link of links){
+        const active=link.getAttribute('href')==='#'+entry.target.id;
+        link.classList.toggle('active',active);
+        if(active){link.setAttribute('aria-current','location')}else{link.removeAttribute('aria-current')}
+      }
+    }}
+  },{rootMargin:'-8% 0px -65% 0px'});
+  document.querySelectorAll('main>section').forEach(section=>observer.observe(section));
+})();
+</script></body></html>

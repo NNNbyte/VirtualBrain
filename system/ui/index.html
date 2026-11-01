@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Agents Console</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --panel2:#f1f3f6; --ink:#16202c; --muted:#5d6b7a; --line:#dde2e8;
+  --accent:#2563eb; --ok:#15803d; --okbg:#e7f6ec; --bad:#b42318; --badbg:#fdecea; --warn:#a15c07; --warnbg:#fdf3e1;
+  --run:#1d4ed8; --runbg:#e6eefe; --idle:#64748b; --idlebg:#eef1f4; --mono:ui-monospace,SFMono-Regular,Consolas,"Cascadia Mono",monospace;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f1419; --panel:#161d25; --panel2:#1c2530; --ink:#e6ebf0; --muted:#93a1b1; --line:#2a3644;
+  --accent:#6ea0ff; --ok:#4ade80; --okbg:#12321f; --bad:#ff8a80; --badbg:#3a1714; --warn:#fbbf24; --warnbg:#35280b;
+  --run:#93b4ff; --runbg:#18284a; --idle:#94a3b8; --idlebg:#1f2833; --shadow:none;}
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}
+header{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:12px 20px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header h1{font-size:16px;margin:0;font-weight:650;letter-spacing:.1px}
+header .sub{color:var(--muted);font-size:12px}
+.spacer{flex:1}
+select,input[type=text]{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);white-space:nowrap}
+.badge.warn{background:var(--warnbg);color:var(--warn);border-color:transparent}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block}
+.dot.stale{background:var(--warn)}
+nav{display:flex;gap:2px;padding:0 20px;background:var(--panel);border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px;cursor:pointer;color:var(--muted);white-space:nowrap}
+nav button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+nav .count{font-size:11px;background:var(--panel2);border-radius:999px;padding:1px 6px;margin-left:4px}
+main{padding:18px 20px;max-width:1500px;margin:0 auto}
+section{display:none} section.on{display:block}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:18px 0 8px;font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.empty{color:var(--muted);padding:18px;text-align:center}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.pill.running,.pill.admitted{background:var(--runbg);color:var(--run)}
+.pill.queued{background:var(--warnbg);color:var(--warn)}
+.pill.idle,.pill.proposed,.pill.unreviewed,.pill.open{background:var(--idlebg);color:var(--idle)}
+.pill.disabled{background:var(--panel2);color:var(--muted);text-decoration:line-through}
+.pill.succeeded,.pill.passed,.pill.fulfilled{background:var(--okbg);color:var(--ok)}
+.pill.failed,.pill.refused,.pill.denied{background:var(--badbg);color:var(--bad)}
+.pill.indeterminate,.pill.abstained,.pill.stale{background:var(--warnbg);color:var(--warn)}
+/* pipeline */
+.pipeline{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.stage{flex:1 0 118px;padding:10px 12px;border-radius:8px;background:var(--panel);border:1px solid var(--line);position:relative}
+.stage .n{font-size:11px;color:var(--muted)}
+.stage .t{font-weight:600;font-size:13px}
+.stage .bar{height:4px;border-radius:2px;background:var(--panel2);margin-top:8px;overflow:hidden;display:flex}
+.stage .bar i{display:block;height:100%}
+.stage.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+/* agents */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.agent{padding:14px 14px 12px;border-left:4px solid var(--c,#888);display:flex;flex-direction:column;gap:8px;min-height:190px}
+.agent .top{display:flex;align-items:center;gap:8px}
+.agent .name{font-weight:650;flex:1}
+.agent .desc{color:var(--muted);font-size:12.5px}
+.agent .now{background:var(--panel2);border-radius:6px;padding:8px 10px;font-size:13px}
+.agent .now .obj{font-weight:550}
+.agent .now ul{margin:6px 0 0;padding-left:16px;color:var(--muted);font-size:12.5px}
+.agent .stats{display:flex;gap:10px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.agent .stats b{color:var(--ink)}
+.agent .actions{display:flex;gap:6px;margin-top:auto}
+.btn{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer;font-size:12.5px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:default}
+.budget{height:4px;background:var(--panel2);border-radius:2px;overflow:hidden}
+.budget i{display:block;height:100%;background:var(--c,#888)}
+.pulse{animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;padding:8px 10px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.click{cursor:pointer} tr.click:hover td{background:var(--panel2)}
+tr.sel td{background:var(--runbg)}
+.mono{font-family:var(--mono);font-size:12px}
+.muted{color:var(--muted)}
+.scroll{max-height:62vh;overflow:auto}
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px}
+@media (max-width:980px){.two{grid-template-columns:1fr}}
+.feed{list-style:none;margin:0;padding:0}
+.feed li{display:grid;grid-template-columns:62px 44px 1fr;gap:8px;padding:7px 12px;border-bottom:1px solid var(--line);font-size:13px}
+.feed .ts{color:var(--muted);font-family:var(--mono);font-size:11.5px}
+.role{display:inline-block;font-size:11px;font-weight:700;padding:1px 5px;border-radius:4px;color:#fff;background:var(--c,#888);text-align:center}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+pre.json{font-family:var(--mono);font-size:12px;background:var(--panel2);padding:10px;border-radius:6px;overflow:auto;max-height:46vh;margin:0;white-space:pre-wrap;word-break:break-word}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:4px 10px;font-size:12.5px;margin-bottom:10px}
+.kv div:nth-child(odd){color:var(--muted)}
+/* editor */
+.editor{display:grid;grid-template-columns:270px minmax(0,1fr);gap:14px}
+@media (max-width:900px){.editor{grid-template-columns:1fr}}
+.tree{padding:6px 0;max-height:78vh;overflow:auto}
+.tree .g{padding:8px 12px 4px;font-weight:600;font-size:12.5px;display:flex;gap:6px;align-items:center}
+.tree .g .sw{width:9px;height:9px;border-radius:2px;background:var(--c)}
+.tree a{display:block;padding:4px 12px 4px 27px;color:var(--ink);text-decoration:none;font-size:12.5px;border-left:2px solid transparent;cursor:pointer}
+.tree a:hover{background:var(--panel2)}
+.tree a.on{background:var(--runbg);border-left-color:var(--accent)}
+.tree a .k{color:var(--muted);font-size:11px;margin-left:4px}
+.edhead{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-bottom:1px solid var(--line)}
+.edhead .path{font-family:var(--mono);font-size:12.5px;flex:1;min-width:200px}
+textarea#ed{width:100%;height:62vh;border:0;resize:vertical;padding:12px 14px;font-family:var(--mono);font-size:12.8px;line-height:1.55;background:var(--panel);outline:none;tab-size:2}
+.note{padding:8px 12px;font-size:12.5px;border-bottom:1px solid var(--line);background:var(--warnbg);color:var(--warn)}
+.note.info{background:var(--runbg);color:var(--run)}
+.hist{border-top:1px solid var(--line);padding:8px 12px;font-size:12.5px}
+.hist summary{cursor:pointer;color:var(--muted)}
+.hist .row{display:flex;gap:8px;align-items:center;padding:4px 0;border-bottom:1px dashed var(--line)}
+.diff{font-family:var(--mono);font-size:12px;max-height:62vh;overflow:auto;padding:8px 0}
+.diff div{padding:0 12px;white-space:pre-wrap;word-break:break-word}
+.diff .a{background:var(--okbg);color:var(--ok)} .diff .d{background:var(--badbg);color:var(--bad)} .diff .s{color:var(--muted);font-style:italic}
+.toast{position:fixed;bottom:18px;right:18px;background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:10}
+.toast.on{opacity:.95}
+.guide{padding:16px 18px}
+.guide code{font-family:var(--mono);background:var(--panel2);padding:1px 5px;border-radius:4px}
+@media (max-width:600px){header,nav,main{padding-left:16px;padding-right:16px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Epilepsy research agents</h1><div class="sub">ScienceClaw framework · controller-governed multi-agent workflow</div></div>
+  <div class="spacer"></div>
+  <label class="muted" style="font-size:12px">Study <select id="study"></select></label>
+  <span id="rel" class="badge" title="System release frozen for this study">release —</span>
+  <span id="live" class="badge"><span class="dot"></span><span id="livet">connecting</span></span>
+</header>
+<nav id="tabs">
+  <button data-t="agents" class="on">Agents</button>
+  <button data-t="timeline">Timeline <span class="count" id="c-tasks">0</span></button>
+  <button data-t="needs">Needs &amp; gates <span class="count" id="c-needs">0</span></button>
+  <button data-t="artifacts">Artifacts <span class="count" id="c-arts">0</span></button>
+  <button data-t="skills">Skills &amp; agents</button>
+</nav>
+<main>
+<section id="agents" class="on">
+  <div id="question" class="muted" style="margin-bottom:10px"></div>
+  <div class="pipeline" id="pipeline"></div>
+  <h2>Agents</h2>
+  <div class="grid" id="agentgrid"></div>
+</section>
+
+<section id="timeline">
+  <div class="filters">
+    <select id="f-role"><option value="">All agents</option></select>
+    <select id="f-state"><option value="">All task states</option></select>
+    <input type="text" id="f-text" placeholder="Filter text…">
+  </div>
+  <div class="two">
+    <div class="card scroll"><table><thead><tr><th>Task</th><th>Agent</th><th>Stage</th><th>Objective</th><th>State</th></tr></thead><tbody id="tasks"></tbody></table></div>
+    <div class="card scroll"><ul class="feed" id="feed"></ul></div>
+  </div>
+</section>
+
+<section id="needs">
+  <h2>Open needs</h2>
+  <div class="card scroll" style="max-height:34vh"><table><thead><tr><th>Need</th><th>Requester</th><th>Missing input</th><th>Acceptance criterion</th><th>Stage / case</th><th>Lease</th><th>State</th></tr></thead><tbody id="needtbl"></tbody></table></div>
+  <div class="two" style="margin-top:4px">
+    <div><h2>Gate verdicts</h2><div class="card scroll" style="max-height:40vh"><table><thead><tr><th>Artifact</th><th>Verdict</th><th>Evaluator</th><th>Criterion · reason</th></tr></thead><tbody id="gatetbl"></tbody></table></div></div>
+    <div><h2>Refusals &amp; vault audit</h2><div class="card scroll" style="max-height:40vh"><ul class="feed" id="audit"></ul></div></div>
+  </div>
+</section>
+
+<section id="artifacts">
+  <div class="filters">
+    <select id="a-schema"><option value="">All schemas</option></select>
+    <select id="a-val"><option value="">Any validation</option><option>passed</option><option>unreviewed</option><option>failed</option><option>indeterminate</option><option value="stale">stale</option></select>
+  </div>
+  <div class="two">
+    <div class="card scroll"><table><thead><tr><th>Artifact</th><th>Producer</th><th>Case</th><th>Title</th><th>Validation</th></tr></thead><tbody id="arttbl"></tbody></table></div>
+    <div class="card" id="artdetail"><div class="empty">Select an artifact to see its envelope, lineage and payload.</div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="editor">
+    <div class="card tree" id="tree"></div>
+    <div class="card" id="edpane"><div class="empty">Choose a skill, agent definition or role profile to edit.</div></div>
+  </div>
+</section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const STAGES = [["protocol","Protocol"],["discovery","Discovery"],["case_curation","Case curation"],["modeling","Virtual patient"],
+  ["intervention_design","Intervention"],["evaluation","Evaluation"],["dossier","Dossier"],["review","Review"],["improvement","Improvement"]];
+let S = { study: null, state: null, lastSeq: -1, editables: null, file: null, profiles: {}, selArt: null };
+
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("on"),2600); }
+async function api(path, opts){ const r = await fetch(path, opts); const j = await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error||r.statusText); return j; }
+const short = id => (id||"").split("-")[0];
+const color = id => (S.profiles[id]||{}).color || "#64748b";
+const roleTag = id => id ? (id.startsWith("human:") ? `<span class="role" style="--c:#0f172a">${esc(id.slice(6,10))}</span>` : `<span class="role" style="--c:${color(id)}">${esc(short(id))}</span>`) : "";
+const pill = s => `<span class="pill ${esc(s)}">${esc(String(s).replace("_"," "))}</span>`;
+const hhmm = ts => ts ? new Date(ts).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit",second:"2-digit"}) : "";
+
+// ---------- tabs
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => showTab(b.dataset.t));
+function showTab(t){
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.t===t));
+  document.querySelectorAll("main section").forEach(s => s.classList.toggle("on", s.id===t));
+  try{ localStorage.setItem("tab", t); }catch(e){}
+  if(t==="skills" && !S.editables) loadEditables();
+}
+
+// ---------- data
+async function loadStudies(){
+  const j = await api("/api/studies");
+  const sel = $("#study"); const prev = sel.value || S.study;
+  sel.innerHTML = j.studies.length ? j.studies.slice().reverse().map(s => `<option value="${esc(s.study_id)}">${esc(s.study_id)} · ${esc(s.status)}</option>`).join("")
+                                   : `<option value="">no studies yet</option>`;
+  S.study = (prev && j.studies.some(s=>s.study_id===prev)) ? prev : (j.current || (j.studies.at(-1)||{}).study_id || null);
+  if(S.study) sel.value = S.study;
+}
+$("#study").onchange = e => { S.study = e.target.value; S.lastSeq=-1; S.selArt=null; refresh(true); };
+
+async function refresh(force){
+  try{
+    if(!S.study){ await loadStudies(); }
+    if(!S.study){ renderEmpty(); setLive(true); return; }
+    const st = await api("/api/state?study="+encodeURIComponent(S.study));
+    const seq = st.events.length ? st.events.at(-1).seq : 0;
+    setLive(true);
+    if(!force && seq===S.lastSeq){ return; }
+    S.lastSeq = seq; S.state = st;
+    for(const [id,a] of Object.entries(st.agents)) S.profiles[id] = Object.assign(S.profiles[id]||{}, {color:a.color, display_name:a.display_name});
+    render();
+  }catch(e){ setLive(false, e.message); }
+}
+function setLive(ok, msg){ $("#live .dot").classList.toggle("stale", !ok); $("#livet").textContent = ok ? "live · "+hhmm(new Date()) : "offline: "+msg; }
+setInterval(()=>refresh(false), 2500);
+setInterval(loadStudies, 15000);
+
+// ---------- render
+function render(){
+  const st = S.state;
+  $("#question").innerHTML = `<b>Question:</b> ${esc(st.study.question)} <span class="muted">· created ${esc(new Date(st.study.created_at).toLocaleString())}</span>`;
+  const drift = st.live_release_id !== st.study.system_release_id;
+  $("#rel").className = "badge" + (drift ? " warn" : "");
+  $("#rel").innerHTML = `release <span class="mono">${esc(st.study.system_release_id)}</span>` + (drift ? ` · ${st.release_changed_files.length} skill/profile edit(s) apply to next study` : "");
+  $("#rel").title = drift ? "Changed since this study froze:\n" + st.release_changed_files.join("\n") : "Live skills match this study's frozen release";
+  const tasks = Object.values(st.tasks);
+  $("#c-tasks").textContent = tasks.length;
+  $("#c-needs").textContent = Object.values(st.needs).filter(n=>n.state==="open").length;
+  $("#c-arts").textContent = Object.keys(st.artifacts).length;
+  renderPipeline(tasks); renderAgents(st, tasks); renderTimeline(); renderNeeds(); renderArtifacts();
+}
+
+function renderEmpty(){
+  $("#question").innerHTML = "";
+  $("#pipeline").innerHTML = "";
+  $("#agentgrid").innerHTML = `<div class="card guide" style="grid-column:1/-1">
+    <b>No study yet.</b> In Claude Code (this project folder) run <code>/run-study &lt;your research question&gt;</code>.
+    The lead creates a study with <code>python system/controller.py study init</code>; agents will appear here as they work.
+    You can already edit each agent's skill in <a href="#" onclick="showTab('skills');return false">Skills &amp; agents</a>.</div>`;
+}
+
+function renderPipeline(tasks){
+  $("#pipeline").innerHTML = STAGES.map(([k,label],i) => {
+    const ts = tasks.filter(t=>t.stage===k);
+    const c = s => ts.filter(t=>t.state===s).length;
+    const ok=c("succeeded"), run=c("running")+c("admitted"), bad=c("failed")+c("refused"), n=ts.length||1;
+    return `<div class="stage ${run?"active":""}"><div class="n">${i} · ${ts.length} task${ts.length===1?"":"s"}</div><div class="t">${label}</div>
+      <div class="bar"><i style="width:${ok/n*100}%;background:var(--ok)"></i><i style="width:${run/n*100}%;background:var(--run)" class="${run?"pulse":""}"></i><i style="width:${bad/n*100}%;background:var(--bad)"></i></div></div>`;
+  }).join("");
+}
+
+function renderAgents(st, tasks){
+  const order = ["LEAD","R1","R2","R3","R4","R5","RV","R6"];
+  const agents = Object.values(st.agents).sort((a,b)=>order.indexOf(short(a.agent_id))-order.indexOf(short(b.agent_id)));
+  $("#agentgrid").innerHTML = agents.map(a => {
+    const cur = [...a.running, ...a.queued].map(id=>st.tasks[id])[0] || (a.last_task && st.tasks[a.last_task]);
+    const used = tasks.filter(t=>t.assigned_role===a.agent_id && !["refused","proposed"].includes(t.state)).length;
+    const prog = cur ? cur.progress.slice(-3).reverse() : [];
+    const now = cur ? `<div class="now"><div><span class="mono">${esc(cur.task_id)}</span> ${pill(cur.state)} <span class="muted">${esc(cur.task_type)}${cur.case_id?" · case "+esc(cur.case_id):""}</span></div>
+        <div class="obj">${esc(cur.objective)}</div>
+        ${prog.length?`<ul>${prog.map(p=>`<li><span class="muted mono">${hhmm(p.ts)}</span> ${esc(p.msg)}</li>`).join("")}</ul>`:""}
+        ${cur.summary?`<div class="muted" style="margin-top:4px">↳ ${esc(cur.summary)}</div>`:""}</div>`
+      : `<div class="now muted">No tasks yet.</div>`;
+    const status = a.status==="running" ? `<span class="pill running pulse">running</span>` : pill(a.status);
+    return `<div class="card agent" style="--c:${esc(a.color)}">
+      <div class="top"><span class="role" style="--c:${esc(a.color)}">${esc(short(a.agent_id))}</span><span class="name">${esc(a.display_name.replace(/^[A-Z0-9]+ · /,""))}</span>${status}</div>
+      ${now}
+      <div class="stats"><span><b>${a.counts.succeeded}</b> succeeded</span><span><b>${a.counts.failed}</b> failed</span><span><b>${a.counts.refused}</b> refused</span><span><b>${a.queued.length}</b> queued</span>
+        <span style="margin-left:auto">budget ${used}/${a.budget ?? "∞"}</span></div>
+      <div class="budget"><i style="width:${a.budget?Math.min(100,used/a.budget*100):0}%"></i></div>
+      <div class="actions"><button class="btn" onclick="openSkillFor('${esc(a.agent_id)}')">Edit skill</button>
+        <button class="btn" onclick="filterRole('${esc(a.agent_id)}')">Tasks</button></div></div>`;
+  }).join("");
+}
+
+function filterRole(id){ $("#f-role").value = id; showTab("timeline"); renderTimeline(); }
+
+function eventText(e, st){
+  const t = id => st.tasks[id] || {};
+  switch(e.type){
+    case "study_initialized": return [null, `Study initialized, release <span class="mono">${esc(e.study.system_release_id)}</span>`];
+    case "task_proposed": return [e.task.requester_role && resolveId(e.task.requester_role), `proposed <span class="mono">${esc(e.task.task_id)}</span> → ${roleTag(e.task.assigned_role)} ${esc(e.task.objective)}`];
+    case "task_admitted": return [t(e.task_id).assigned_role, `<span class="mono">${esc(e.task_id)}</span> admitted by controller`];
+    case "task_refused": return [t(e.task_id).assigned_role, `<span class="mono">${esc(e.task_id)}</span> ${pill("refused")} ${esc(e.reasons.join("; "))}`];
+    case "task_started": return [t(e.task_id).assigned_role, `started <span class="mono">${esc(e.task_id)}</span> <span class="muted">(${esc(e.instance)}, attempt ${e.attempt})</span>`];
+    case "task_progress": return [t(e.task_id).assigned_role, `<span class="mono muted">${esc(e.task_id)}</span> ${esc(e.msg)}`];
+    case "task_finished": return [t(e.task_id).assigned_role, `<span class="mono">${esc(e.task_id)}</span> ${pill(e.status)} ${esc(e.summary||"")}`];
+    case "artifact_committed": return [e.envelope.producer_role, `committed <a href="#" onclick="openArt('${esc(e.envelope.artifact_id)}');return false" class="mono">${esc(e.envelope.artifact_id)}</a> ${esc(e.envelope.title||"")}`];
+    case "artifact_rejected": return [t(e.task_id).assigned_role, `${pill("refused")} artifact ${esc(e.schema)}: ${esc(e.reasons.join("; "))}`];
+    case "gate_recorded": return [e.evaluator, `gate on <span class="mono">${esc(e.artifact_id)}</span> ${pill(e.verdict)} ${esc(e.reason)}`];
+    case "need_opened": return [e.need.requester, `opened need <b>${esc(e.need.need_id)}</b>: ${esc(e.need.missing_input)}`];
+    case "need_claimed": return [e.role, `claimed <b>${esc(e.need_id)}</b>`];
+    case "need_fulfilled": return [null, `need <b>${esc(e.need_id)}</b> ${pill("fulfilled")} by <span class="mono">${esc(e.artifact_id)}</span>`];
+    case "need_attempt_failed": return [null, `need <b>${esc(e.need_id)}</b> candidate <span class="mono">${esc(e.artifact_id)}</span> ${pill(e.verdict)}`];
+    case "need_released": return [null, `need <b>${esc(e.need_id)}</b> lease released`];
+    case "repair_issued": return [e.by, `repair of <span class="mono">${esc(e.artifact_id)}</span> → ${e.affected.length} artifact(s) stale: ${esc(e.reason)}`];
+    case "artifact_stale": return [null, `<span class="mono">${esc(e.artifact_id)}</span> ${pill("stale")} <span class="muted">${esc(e.reason)}</span>`];
+    case "artifact_superseded": return [null, `<span class="mono">${esc(e.artifact_id)}</span> superseded by <span class="mono">${esc(e.by)}</span>`];
+    case "predictions_frozen": return [resolveId(e.by), `froze predictions ${esc(e.artifact_ids.join(", "))}`];
+    case "vault_sealed": return [null, `vault sealed <b>${esc(e.item_id)}</b> · ${esc(e.label)}`];
+    case "vault_access_granted": return [e.role, `vault reveal <b>${esc(e.item_id)}</b> for <span class="mono">${esc(e.task_id)}</span> (audited)`];
+    case "vault_access_denied": return [t(e.task_id).assigned_role, `${pill("denied")} vault <b>${esc(e.item_id)}</b>: ${esc(e.reasons.join("; "))}`];
+    case "study_status": return [null, `study marked ${pill(e.status)} ${esc(e.note||"")}`];
+    default: return [null, esc(e.type)];
+  }
+}
+function resolveId(r){ if(!r) return null; if(r.startsWith("human:")) return r; return Object.keys(S.profiles).find(k => k===r || short(k)===r) || null; }
+
+function renderTimeline(){
+  const st = S.state; if(!st) return;
+  const roleSel = $("#f-role"), stateSel = $("#f-state");
+  if(roleSel.options.length<=1) for(const id of Object.keys(st.agents)) roleSel.add(new Option(st.agents[id].display_name, id));
+  const states = [...new Set(Object.values(st.tasks).map(t=>t.state))];
+  const keep = stateSel.value; stateSel.innerHTML = `<option value="">All task states</option>` + states.map(s=>`<option>${esc(s)}</option>`).join(""); stateSel.value = keep;
+  const fr = roleSel.value, fs = stateSel.value, ft = $("#f-text").value.toLowerCase();
+  const tasks = Object.values(st.tasks).filter(t => (!fr||t.assigned_role===fr) && (!fs||t.state===fs) && (!ft||JSON.stringify(t).toLowerCase().includes(ft))).reverse();
+  $("#tasks").innerHTML = tasks.map(t => `<tr><td class="mono">${esc(t.task_id)}</td><td>${roleTag(t.assigned_role)}</td><td class="muted">${esc(t.stage)}</td>
+     <td>${esc(t.objective)}${t.refusal?`<div style="color:var(--bad);font-size:12px">${esc(t.refusal.join("; "))}</div>`:""}</td><td>${pill(t.state)}</td></tr>`).join("") || `<tr><td colspan=5 class="empty">No tasks match.</td></tr>`;
+  const evs = st.events.slice().reverse().map(e => [e, ...eventText(e, st)]).filter(([e,who,txt]) => (!fr || who===fr || (e.task_id && st.tasks[e.task_id]?.assigned_role===fr)) && (!ft || txt.toLowerCase().includes(ft)));
+  $("#feed").innerHTML = evs.map(([e,who,txt]) => `<li><span class="ts">${hhmm(e.ts)}</span><span>${roleTag(who)}</span><span>${txt}</span></li>`).join("") || `<li class="empty">No events.</li>`;
+}
+["#f-role","#f-state"].forEach(s=>$(s).onchange=renderTimeline); $("#f-text").oninput=renderTimeline;
+
+function renderNeeds(){
+  const st = S.state;
+  const needs = Object.values(st.needs).reverse();
+  $("#needtbl").innerHTML = needs.map(n => `<tr><td><b>${esc(n.need_id)}</b></td><td>${roleTag(n.requester)}${n.suggested_role?` → ${roleTag(n.suggested_role)}`:""}</td>
+    <td>${esc(n.missing_input)}<div class="muted" style="font-size:12px">${esc(n.why)}</div></td><td>${esc(n.acceptance_criterion)}</td>
+    <td class="muted">${esc(n.stage)}${n.case_id?" · "+esc(n.case_id):""}</td>
+    <td class="muted">${n.claim?`${roleTag(n.claim.role)} until ${hhmm(n.claim.expires_at)}`:(n.lease_expired?"expired":"—")}</td>
+    <td>${pill(n.state)}${n.fulfillment?` <span class="mono">${esc(n.fulfillment)}</span>`:""}</td></tr>`).join("") || `<tr><td colspan=7 class="empty">No needs.</td></tr>`;
+  $("#gatetbl").innerHTML = st.gates.slice().reverse().map(g => `<tr class="click" onclick="openArt('${esc(g.artifact_id)}')"><td class="mono">${esc(g.artifact_id)}</td><td>${pill(g.verdict)}</td><td>${roleTag(g.evaluator)}</td>
+    <td>${esc(g.criterion)}<div class="muted" style="font-size:12px">${esc(g.reason)}</div></td></tr>`).join("") || `<tr><td colspan=4 class="empty">No gates recorded.</td></tr>`;
+  const audit = st.events.filter(e => ["task_refused","artifact_rejected","vault_access_granted","vault_access_denied","vault_sealed","predictions_frozen"].includes(e.type)).reverse();
+  $("#audit").innerHTML = audit.map(e => { const [who,txt] = eventText(e, st); return `<li><span class="ts">${hhmm(e.ts)}</span><span>${roleTag(who)}</span><span>${txt}</span></li>`; }).join("") || `<li class="empty">No refusals or vault access.</li>`;
+}
+
+function renderArtifacts(){
+  const st = S.state;
+  const sch = $("#a-schema"); const keep = sch.value;
+  const schemas = [...new Set(Object.values(st.artifacts).map(a=>a.schema_name))].sort();
+  sch.innerHTML = `<option value="">All schemas</option>` + schemas.map(s=>`<option>${esc(s)}</option>`).join(""); sch.value = keep;
+  const fv = $("#a-val").value;
+  const arts = Object.values(st.artifacts).filter(a => (!sch.value || a.schema_name===sch.value) && (!fv || (fv==="stale" ? a.stale : a.effective_validation===fv && !a.stale))).reverse();
+  $("#arttbl").innerHTML = arts.map(a => `<tr class="click ${S.selArt===a.artifact_id?"sel":""}" onclick="openArt('${esc(a.artifact_id)}')"><td class="mono">${esc(a.artifact_id)}</td><td>${roleTag(a.producer_role)}</td>
+    <td class="muted">${esc(a.case_id||"")}</td><td>${esc(a.title||"")}</td><td>${a.stale?pill("stale"):pill(a.effective_validation)}</td></tr>`).join("") || `<tr><td colspan=5 class="empty">No artifacts yet.</td></tr>`;
+}
+["#a-schema","#a-val"].forEach(s=>$(s).onchange=renderArtifacts);
+
+async function openArt(id){
+  showTab("artifacts"); S.selArt = id; renderArtifacts();
+  try{
+    const j = await api(`/api/artifact?study=${encodeURIComponent(S.study)}&id=${encodeURIComponent(id)}`);
+    const e = j.envelope;
+    const link = x => `<a href="#" class="mono" onclick="openArt('${esc(x)}');return false">${esc(x)}</a>`;
+    $("#artdetail").innerHTML = `<div style="padding:12px 14px">
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><b class="mono">${esc(e.artifact_id)}</b>${e.stale?pill("stale"):pill(e.effective_validation)}</div>
+      <div style="margin-bottom:10px">${esc(e.title||"")}</div>
+      <div class="kv"><div>Producer</div><div>${roleTag(e.producer_role)} task <span class="mono">${esc(e.task_id)}</span></div>
+        <div>Evidence kind</div><div>${esc(e.scientific_context.evidence_kind)}</div>
+        <div>Case</div><div>${esc(e.case_id||"—")}</div>
+        <div>Consumed (parents)</div><div>${e.consumed_artifact_ids.map(link).join(", ")||"—"}</div>
+        <div>Descendants</div><div>${j.descendants.map(link).join(", ")||"—"}</div>
+        <div>Tool</div><div class="mono">${esc([e.tool_id,e.tool_version].filter(Boolean).join(" @ ")||"—")}</div>
+        <div>Manifest hash</div><div class="mono" style="word-break:break-all">${esc(e.manifest_hash)}</div>
+        ${e.stale_reason?`<div>Stale because</div><div>${esc(e.stale_reason)}</div>`:""}
+        ${e.superseded_by?`<div>Superseded by</div><div>${link(e.superseded_by)}</div>`:""}</div>
+      <h2 style="margin-top:6px">Payload</h2><pre class="json">${esc(j.payload===null?"(reserved — only visible to the outcome-evaluation task)":JSON.stringify(j.payload,null,2))}</pre>
+      <details style="margin-top:8px"><summary class="muted">Full envelope</summary><pre class="json">${esc(JSON.stringify(e,null,2))}</pre></details></div>`;
+  }catch(err){ $("#artdetail").innerHTML = `<div class="empty">${esc(err.message)}</div>`; }
+}
+
+// ---------- skills editor
+async function loadEditables(){
+  const j = await api("/api/editables"); S.editables = j.groups;
+  for(const g of j.groups) S.profiles[g.agent_id] = Object.assign(S.profiles[g.agent_id]||{}, {color:g.color, display_name:g.display_name});
+  const kindLabel = {skill:"skill", reference:"shared protocol", agent:"agent definition", profile:"role profile"};
+  $("#tree").innerHTML = j.groups.map(g => `<div class="g" style="--c:${esc(g.color)}"><span class="sw"></span>${esc(g.display_name)}
+      <button class="btn" style="margin-left:auto;padding:1px 7px;font-size:11px" title="Enable/disable this role for future studies" onclick="toggleRole('${esc(g.agent_id)}')">${g.enabled?"on":"off"}</button></div>` +
+    g.files.map(f => `<a data-p="${esc(f.path)}" onclick="openFile('${esc(f.path)}')">${esc(f.path.split("/").slice(-1)[0])}<span class="k">${kindLabel[f.kind]}</span></a>`).join("")).join("");
+  if(S.file) markTree();
+}
+function markTree(){ document.querySelectorAll("#tree a").forEach(a => a.classList.toggle("on", S.file && a.dataset.p===S.file.path)); }
+function openSkillFor(agentId){
+  showTab("skills");
+  const go = () => { const g = S.editables.find(g=>g.agent_id===agentId); const f = g && g.files.find(f=>f.kind==="skill"); if(f) openFile(f.path); };
+  S.editables ? go() : loadEditables().then(go);
+}
+async function toggleRole(id){
+  try{ const j = await api("/api/profile/toggle",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({agent_id:id})});
+    toast(`${id} ${j.enabled?"enabled":"disabled"} for future studies`); await loadEditables(); if(S.file && S.file.path.endsWith(id+".json")) openFile(S.file.path, true);
+  }catch(e){ toast(e.message); }
+}
+function dirty(){ return S.file && $("#ed") && $("#ed").value !== S.file.content; }
+async function openFile(path, force){
+  if(!force && dirty() && !confirm("Discard unsaved changes?")) return;
+  const j = await api("/api/file?path="+encodeURIComponent(path));
+  S.file = j; markTree(); renderEditor();
+}
+function renderEditor(){
+  const f = S.file;
+  const frozenNote = S.state ? `<div class="note info">Edits apply to studies started after you save. Study <b>${esc(S.state.study.study_id)}</b> keeps its frozen release <span class="mono">${esc(S.state.study.system_release_id)}</span>.</div>` : `<div class="note info">Edits apply to the next study you start.</div>`;
+  $("#edpane").innerHTML = `
+    <div class="edhead"><span class="path">${esc(f.path)}</span><span id="dirty" class="muted"></span>
+      ${S.state && !f.path.startsWith(".claude/agents")?`<button class="btn" onclick="diffFrozen()">Diff vs frozen</button>`:""}
+      <button class="btn" onclick="openFile(S.file.path)">Revert</button>
+      <input type="text" id="note" placeholder="Change note (optional)" style="width:190px">
+      <button class="btn primary" id="save" onclick="saveFile()">Save</button></div>
+    ${frozenNote}
+    <div id="edbody"><textarea id="ed" spellcheck="false"></textarea></div>
+    <details class="hist" ${f.history.length?"":"hidden"}><summary>Version history (${f.history.length})</summary>
+      ${f.history.map(h => `<div class="row"><span class="mono">${esc(h.ts)}</span><span style="flex:1">${esc(h.note||"")}</span>
+        ${h.prev?`<button class="btn" onclick="histDiff('${esc(h.prev)}')">Diff → current</button><button class="btn" onclick="histRestore('${esc(h.prev)}')">Load into editor</button>`:"<span class='muted'>created</span>"}</div>`).join("")}</details>`;
+  const ed = $("#ed"); ed.value = f.content;
+  ed.oninput = () => { $("#dirty").textContent = dirty() ? "● unsaved" : ""; };
+  ed.onkeydown = e => {
+    if(e.key==="Tab"){ e.preventDefault(); const s=ed.selectionStart; ed.setRangeText("  ", s, ed.selectionEnd, "end"); ed.oninput(); }
+    if((e.ctrlKey||e.metaKey) && e.key==="s"){ e.preventDefault(); saveFile(); }
+  };
+}
+async function saveFile(){
+  if(!dirty()){ toast("No changes"); return; }
+  try{
+    const j = await api("/api/file",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({path:S.file.path, content:$("#ed").value, base_sha:S.file.sha, note:$("#note").value})});
+    toast("Saved · next release "+j.live_release_id); await openFile(S.file.path, true); if(S.file.path.includes("profiles/")) loadEditables(); refresh(true);
+  }catch(e){ toast("Save failed: "+e.message); }
+}
+async function histRestore(v){
+  const j = await api(`/api/history?path=${encodeURIComponent(S.file.path)}&version=${encodeURIComponent(v)}`);
+  if(!$("#ed")) renderEditor();
+  $("#ed").value = j.content; $("#ed").oninput(); toast("Old version loaded — Save to restore it");
+}
+async function histDiff(v){
+  const j = await api(`/api/history?path=${encodeURIComponent(S.file.path)}&version=${encodeURIComponent(v)}`);
+  showDiff(j.content, $("#ed") ? $("#ed").value : S.file.content, `version ${v} → editor`);
+}
+async function diffFrozen(){
+  try{ const j = await api(`/api/frozen?study=${encodeURIComponent(S.study)}&path=${encodeURIComponent(S.file.path)}`);
+    showDiff(j.content, $("#ed") ? $("#ed").value : S.file.content, `frozen in ${S.study} → editor`);
+  }catch(e){ toast(e.message); }
+}
+function showDiff(a, b, label){
+  const pending = $("#ed") ? $("#ed").value : S.file.content;
+  const A = a.replace(/\r\n/g,"\n").split("\n"), B = b.replace(/\r\n/g,"\n").split("\n");
+  const n=A.length, m=B.length, L = Array.from({length:n+1},()=>new Int32Array(m+1));
+  for(let i=n-1;i>=0;i--) for(let j=m-1;j>=0;j--) L[i][j] = A[i]===B[j] ? L[i+1][j+1]+1 : Math.max(L[i+1][j], L[i][j+1]);
+  const rows=[]; let i=0,j=0;
+  while(i<n||j<m){ if(i<n&&j<m&&A[i]===B[j]){rows.push([" ",A[i]]);i++;j++;} else if(j<m&&(i===n||L[i][j+1]>=L[i+1][j])){rows.push(["+",B[j]]);j++;} else {rows.push(["-",A[i]]);i++;} }
+  const out=[]; rows.forEach((r,k)=>{ const near = rows.slice(Math.max(0,k-2),k+3).some(x=>x[0]!==" "); if(r[0]!==" ") out.push(`<div class="${r[0]==="+"?"a":"d"}">${r[0]} ${esc(r[1])}</div>`); else if(near) out.push(`<div>  ${esc(r[1])}</div>`); else if(out.at(-1)!=="…") out.push("…"); });
+  const changed = rows.some(r=>r[0]!==" ");
+  $("#edbody").innerHTML = `<div class="note info" style="display:flex;align-items:center;gap:8px">Diff · ${esc(label)}<span style="flex:1"></span><button class="btn" id="backed">Back to editor</button></div>
+    <div class="diff">${changed ? out.map(x=>x==="…"?`<div class="s">…</div>`:x).join("") : `<div class="s">No differences.</div>`}</div>`;
+  $("#backed").onclick = () => { $("#edbody").innerHTML = `<textarea id="ed" spellcheck="false"></textarea>`; renderEditorBody(pending); };
+}
+function renderEditorBody(content){ const keep = S.file.content; renderEditor(); $("#ed").value = content; $("#ed").oninput(); S.file.content = keep; }
+window.addEventListener("beforeunload", e => { if(dirty()){ e.preventDefault(); e.returnValue=""; } });
+
+// ---------- boot
+(async () => {
+  let t = "agents"; try{ t = localStorage.getItem("tab") || "agents"; }catch(e){}
+  await loadStudies(); await refresh(true); showTab(t);
+  if(!S.editables) loadEditables();
+})();
+</script>
+</body>
+</html>

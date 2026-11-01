@@ -1,0 +1,2132 @@
+{
+ "case_id": "HUP070",
+ "bids_root": "data/ds004100-1.1.3",
+ "checksums": {
+  "n_files": 29,
+  "n_match": 29,
+  "mismatches": [],
+  "not_in_manifest": [],
+  "in_manifest_missing_locally": [],
+  "files": [
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json",
+    "bytes": 278,
+    "sha256": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+    "manifest_sha256": "8daf203e979fc907f1b0057782ce3ee225b8732360de34d2ac43b0486f99743a",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv",
+    "bytes": 4261,
+    "sha256": "8c25fff5a1718095ce13d65f5a152d927af5324ab0a2048e69e8cfbdf3695683",
+    "manifest_sha256": "8c25fff5a1718095ce13d65f5a152d927af5324ab0a2048e69e8cfbdf3695683",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_events.tsv",
+    "bytes": 104,
+    "sha256": "14d8fb37e11736cb15bb73c5eb97b96550617f8a68e9aceaef22b67cf8aa3921",
+    "manifest_sha256": "14d8fb37e11736cb15bb73c5eb97b96550617f8a68e9aceaef22b67cf8aa3921",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf",
+    "bytes": 16249330,
+    "sha256": "9294c10ea66f63d1564da458b0cd792b50fbcd9d7ba346d7532374d8ffd5ee13",
+    "manifest_sha256": "9294c10ea66f63d1564da458b0cd792b50fbcd9d7ba346d7532374d8ffd5ee13",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.json",
+    "bytes": 466,
+    "sha256": "dc7a1ddcc5bcf182b99bfea72ae6791b49fb0626efbf0919aa75adb4e35bae14",
+    "manifest_sha256": "dc7a1ddcc5bcf182b99bfea72ae6791b49fb0626efbf0919aa75adb4e35bae14",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_events.tsv",
+    "bytes": 104,
+    "sha256": "ce6f3d9903e63684757ef0456e4ade024c70c010ec83bff910499ecc7d70dd26",
+    "manifest_sha256": "ce6f3d9903e63684757ef0456e4ade024c70c010ec83bff910499ecc7d70dd26",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf",
+    "bytes": 15913002,
+    "sha256": "7190184a4d538d1a9d20897e7fc913ac6714025af8f3d051d81e41371fe95032",
+    "manifest_sha256": "7190184a4d538d1a9d20897e7fc913ac6714025af8f3d051d81e41371fe95032",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.json",
+    "bytes": 466,
+    "sha256": "eeb50215920e11aa6a119fbe521afaa0558bae6025ca269e41fe4e00aea2c764",
+    "manifest_sha256": "eeb50215920e11aa6a119fbe521afaa0558bae6025ca269e41fe4e00aea2c764",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_events.tsv",
+    "bytes": 104,
+    "sha256": "ce6f3d9903e63684757ef0456e4ade024c70c010ec83bff910499ecc7d70dd26",
+    "manifest_sha256": "ce6f3d9903e63684757ef0456e4ade024c70c010ec83bff910499ecc7d70dd26",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_ieeg.edf",
+    "bytes": 15913002,
+    "sha256": "1051e7928675ff800f0518489d6454e199ea108534ed4dcb9b48d28b9a03b5d9",
+    "manifest_sha256": "1051e7928675ff800f0518489d6454e199ea108534ed4dcb9b48d28b9a03b5d9",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_ieeg.json",
+    "bytes": 466,
+    "sha256": "eeb50215920e11aa6a119fbe521afaa0558bae6025ca269e41fe4e00aea2c764",
+    "manifest_sha256": "eeb50215920e11aa6a119fbe521afaa0558bae6025ca269e41fe4e00aea2c764",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_events.tsv",
+    "bytes": 104,
+    "sha256": "b6d42f8fcfeb12ef6f73d0e8f13501f24334a98859bb001dde7617b149650bf9",
+    "manifest_sha256": "b6d42f8fcfeb12ef6f73d0e8f13501f24334a98859bb001dde7617b149650bf9",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_ieeg.edf",
+    "bytes": 15576674,
+    "sha256": "94a8a27443d01ed4b10251e02751243ab46c57821d091a9b7a105e762eb71a5d",
+    "manifest_sha256": "94a8a27443d01ed4b10251e02751243ab46c57821d091a9b7a105e762eb71a5d",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_ieeg.json",
+    "bytes": 466,
+    "sha256": "03ecdeaace3480fe507efac74b49ac80a8935a863d4c7daff1863f36a6a7a96e",
+    "manifest_sha256": "03ecdeaace3480fe507efac74b49ac80a8935a863d4c7daff1863f36a6a7a96e",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_events.tsv",
+    "bytes": 104,
+    "sha256": "e0051f2d09f95f31fec0bd120ef20381a86f17f7340e0e524168f9109e311cf1",
+    "manifest_sha256": "e0051f2d09f95f31fec0bd120ef20381a86f17f7340e0e524168f9109e311cf1",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_ieeg.edf",
+    "bytes": 15744838,
+    "sha256": "2b052acfbb1d9e66b93455edad68227ba8c4a88799dbf047ec8582c171f46d7c",
+    "manifest_sha256": "2b052acfbb1d9e66b93455edad68227ba8c4a88799dbf047ec8582c171f46d7c",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_ieeg.json",
+    "bytes": 466,
+    "sha256": "625b514ec3a8519fc276a17440627f63ca9b3ae50d5edaea95be452571decba8",
+    "manifest_sha256": "625b514ec3a8519fc276a17440627f63ca9b3ae50d5edaea95be452571decba8",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-01_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf",
+    "bytes": 25246104,
+    "sha256": "7363896d8e9407ac0ce32a6d8884568f4dd6a74b48c19552dce470bdac6d13bc",
+    "manifest_sha256": "7363896d8e9407ac0ce32a6d8884568f4dd6a74b48c19552dce470bdac6d13bc",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.json",
+    "bytes": 471,
+    "sha256": "72ef6a132e5b1aac022baad211ab8ae45170e5310d4f1dbcf21d2eaa1e0c59c4",
+    "manifest_sha256": "72ef6a132e5b1aac022baad211ab8ae45170e5310d4f1dbcf21d2eaa1e0c59c4",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-02_channels.tsv",
+    "bytes": 5852,
+    "sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "manifest_sha256": "be463f04b92bd587f2fe163d9aa05129b62433788930b2414635af5861430c68",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf",
+    "bytes": 25246104,
+    "sha256": "46d62bba88dc5dd91340408ac33e2413fd997940befa4bfabc1acd8a3cb66224",
+    "manifest_sha256": "46d62bba88dc5dd91340408ac33e2413fd997940befa4bfabc1acd8a3cb66224",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.json",
+    "bytes": 471,
+    "sha256": "72ef6a132e5b1aac022baad211ab8ae45170e5310d4f1dbcf21d2eaa1e0c59c4",
+    "manifest_sha256": "72ef6a132e5b1aac022baad211ab8ae45170e5310d4f1dbcf21d2eaa1e0c59c4",
+    "match": true
+   },
+   {
+    "path": "sub-HUP070/ses-presurgery/sub-HUP070_ses-presurgery_scans.tsv",
+    "bytes": 695,
+    "sha256": "a7aaa63655fade6333aefdd22bb944299fe1b6620832ec9f93ee081984ae480e",
+    "manifest_sha256": "a7aaa63655fade6333aefdd22bb944299fe1b6620832ec9f93ee081984ae480e",
+    "match": true
+   }
+  ]
+ },
+ "versions": {
+  "python": "3.11.9",
+  "mne": "1.13.2",
+  "mne_bids": "0.20.0",
+  "numpy": "2.1.0",
+  "pandas": "2.2.3"
+ },
+ "scans_tsv": [
+  "sub-HUP070/ses-presurgery/sub-HUP070_ses-presurgery_scans.tsv"
+ ],
+ "runs": [
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "ictal",
+    "acq": "ecog",
+    "run": "01"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 193,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "ictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 192.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 2,
+    "annotation_descriptions": [
+     "sz offset",
+     "sz onset"
+    ],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 98816,
+   "duration_s": 193.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 58.06756591796875,
+    "median_line60_ratio": 2.3405513763427734,
+    "flagged": {
+     "flat": [],
+     "high_variance": [],
+     "low_variance": [],
+     "line_noise": [],
+     "hf_noise": [
+      "EEG LG 21-Ref"
+     ],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 1,
+    "all_channel_flat_segments": [],
+    "simultaneous_step_events": [
+     {
+      "t_s": 128.619140625,
+      "n_samples": 1
+     }
+    ],
+    "n_simultaneous_step_events": 1,
+    "run_level_line60_ratio_median": 2.3405513763427734,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_inside_seizure_window": 1,
+    "step_events_outside_seizure_window": []
+   },
+   "events_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-01_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 61440,
+     "within_recording": true,
+     "sample_matches_onset": true
+    },
+    {
+     "onset_s": 132.998046875,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 68095,
+     "within_recording": true,
+     "sample_matches_onset": true
+    }
+   ],
+   "event_coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 12.998046875,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.001953125
+   }
+  },
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "ictal",
+    "acq": "ecog",
+    "run": "02"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 189,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "ictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 188.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 2,
+    "annotation_descriptions": [
+     "sz offset",
+     "sz onset"
+    ],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 96768,
+   "duration_s": 189.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 61.730812072753906,
+    "median_line60_ratio": 4.698418140411377,
+    "flagged": {
+     "flat": [],
+     "high_variance": [],
+     "low_variance": [],
+     "line_noise": [],
+     "hf_noise": [
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref"
+     ],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 2,
+    "all_channel_flat_segments": [],
+    "simultaneous_step_events": [],
+    "n_simultaneous_step_events": 0,
+    "run_level_line60_ratio_median": 4.698418140411377,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_inside_seizure_window": 0,
+    "step_events_outside_seizure_window": []
+   },
+   "events_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-02_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 61440,
+     "within_recording": true,
+     "sample_matches_onset": true
+    },
+    {
+     "onset_s": 128.998046875,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 66047,
+     "within_recording": true,
+     "sample_matches_onset": true
+    }
+   ],
+   "event_coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 8.998046875,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.001953125
+   }
+  },
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "ictal",
+    "acq": "ecog",
+    "run": "03"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 189,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "ictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 188.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 2,
+    "annotation_descriptions": [
+     "sz offset",
+     "sz onset"
+    ],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 96768,
+   "duration_s": 189.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 47.13264083862305,
+    "median_line60_ratio": 2.367525815963745,
+    "flagged": {
+     "flat": [],
+     "high_variance": [
+      "EEG LG 22-Ref"
+     ],
+     "low_variance": [],
+     "line_noise": [],
+     "hf_noise": [],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 1,
+    "all_channel_flat_segments": [],
+    "simultaneous_step_events": [],
+    "n_simultaneous_step_events": 0,
+    "run_level_line60_ratio_median": 2.367525815963745,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_inside_seizure_window": 0,
+    "step_events_outside_seizure_window": []
+   },
+   "events_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-03_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 61440,
+     "within_recording": true,
+     "sample_matches_onset": true
+    },
+    {
+     "onset_s": 128.998046875,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 66047,
+     "within_recording": true,
+     "sample_matches_onset": true
+    }
+   ],
+   "event_coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 8.998046875,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.001953125
+   }
+  },
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "ictal",
+    "acq": "ecog",
+    "run": "04"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 185,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "ictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 184.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 2,
+    "annotation_descriptions": [
+     "sz offset",
+     "sz onset"
+    ],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 94720,
+   "duration_s": 185.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 69.21529388427734,
+    "median_line60_ratio": 0.9209676384925842,
+    "flagged": {
+     "flat": [],
+     "high_variance": [],
+     "low_variance": [],
+     "line_noise": [],
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 07-Ref",
+      "EEG LG 14-Ref",
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref"
+     ],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 5,
+    "all_channel_flat_segments": [],
+    "simultaneous_step_events": [],
+    "n_simultaneous_step_events": 0,
+    "run_level_line60_ratio_median": 0.9209676384925842,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_inside_seizure_window": 0,
+    "step_events_outside_seizure_window": []
+   },
+   "events_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-04_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 61440,
+     "within_recording": true,
+     "sample_matches_onset": true
+    },
+    {
+     "onset_s": 124.998046875,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 63999,
+     "within_recording": true,
+     "sample_matches_onset": true
+    }
+   ],
+   "event_coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 4.998046875,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.001953125
+   }
+  },
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "ictal",
+    "acq": "ecog",
+    "run": "05"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 187,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "ictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 186.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 2,
+    "annotation_descriptions": [
+     "sz offset",
+     "sz onset"
+    ],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 95744,
+   "duration_s": 187.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 67.49369812011719,
+    "median_line60_ratio": 0.9540342092514038,
+    "flagged": {
+     "flat": [],
+     "high_variance": [],
+     "low_variance": [],
+     "line_noise": [],
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 07-Ref",
+      "EEG LG 14-Ref",
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref"
+     ],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 5,
+    "all_channel_flat_segments": [
+     {
+      "start_s": 186.451171875,
+      "dur_s": 0.546875
+     }
+    ],
+    "simultaneous_step_events": [
+     {
+      "t_s": 186.44921875,
+      "n_samples": 1
+     }
+    ],
+    "n_simultaneous_step_events": 1,
+    "run_level_line60_ratio_median": 0.9540342092514038,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_inside_seizure_window": 0,
+    "step_events_outside_seizure_window": [
+     186.449
+    ]
+   },
+   "events_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-ictal_acq-ecog_run-05_events.tsv",
+   "events": [
+    {
+     "onset_s": 120.0,
+     "duration_s": 0.0,
+     "trial_type": "sz onset",
+     "value": 2,
+     "sample": 61440,
+     "within_recording": true,
+     "sample_matches_onset": true
+    },
+    {
+     "onset_s": 126.998046875,
+     "duration_s": 0.0,
+     "trial_type": "sz offset",
+     "value": 1,
+     "sample": 65023,
+     "within_recording": true,
+     "sample_matches_onset": true
+    }
+   ],
+   "event_coherence": {
+    "n_onset": 1,
+    "n_offset": 1,
+    "all_within_recording": true,
+    "all_samples_match": true,
+    "offset_after_onset": true,
+    "seizure_duration_s": 6.998046875,
+    "pre_onset_s": 120.0,
+    "post_offset_s": 60.001953125
+   }
+  },
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-01_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "interictal",
+    "acq": "ecog",
+    "run": "01"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 300,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "interictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 299.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 0,
+    "annotation_descriptions": [],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 153600,
+   "duration_s": 300.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-01_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 40.02596664428711,
+    "median_line60_ratio": 1.138291597366333,
+    "flagged": {
+     "flat": [],
+     "high_variance": [
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref",
+      "EEG LG 29-Ref",
+      "EEG LG 57-Ref",
+      "EEG LG 58-Ref"
+     ],
+     "low_variance": [],
+     "line_noise": [
+      "EEG LG 57-Ref"
+     ],
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 57-Ref"
+     ],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 6,
+    "all_channel_flat_segments": [],
+    "simultaneous_step_events": [],
+    "n_simultaneous_step_events": 0,
+    "run_level_line60_ratio_median": 1.138291597366333,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_outside_seizure_window": []
+   },
+   "events_tsv": null,
+   "events": [],
+   "event_coherence": {
+    "note": "no events.tsv for this run"
+   }
+  },
+  {
+   "edf": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-02_ieeg.edf",
+   "entities": {
+    "sub": "HUP070",
+    "ses": "presurgery",
+    "task": "interictal",
+    "acq": "ecog",
+    "run": "02"
+   },
+   "edf_header": {
+    "version": "0",
+    "reserved44": "EDF+C",
+    "n_records": 300,
+    "record_duration_s": 1.0,
+    "n_signals": 83,
+    "phys_dim_values": [
+     "",
+     "uV"
+    ],
+    "sampling_rates_hz": [
+     57.0,
+     512.0
+    ]
+   },
+   "edf_type": "EDF+C",
+   "sidecar": {
+    "TaskName": "interictal",
+    "Manufacturer": "n/a",
+    "PowerLineFrequency": 60,
+    "SamplingFrequency": 512.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 299.998046875,
+    "RecordingType": "continuous",
+    "iEEGReference": "n/a",
+    "ECOGChannelCount": 82,
+    "SEEGChannelCount": 0,
+    "EEGChannelCount": 0,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+   },
+   "mne_bids_read": {
+    "ok": true,
+    "n_channels": 82,
+    "bads": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "n_annotations": 0,
+    "annotation_descriptions": [],
+    "ch_types": {
+     "ecog": 82
+    },
+    "n_dig_points": 82,
+    "dig_coord_frame": 2003,
+    "dig_abs_max_internal_units": 83.2155212722208,
+    "warnings": []
+   },
+   "sfreq_hz": 512.0,
+   "n_samples": 153600,
+   "duration_s": 300.0,
+   "n_channels_edf": 82,
+   "edf_annotations": [],
+   "channels_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_task-interictal_acq-ecog_run-02_channels.tsv",
+   "channels_tsv_names_match_edf": true,
+   "channels_only_in_tsv": [],
+   "channels_only_in_edf": [],
+   "soz": [
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref"
+   ],
+   "resect": [
+    "EEG LG 03-Ref",
+    "EEG LG 04-Ref",
+    "EEG LG 05-Ref",
+    "EEG LG 06-Ref",
+    "EEG LG 11-Ref",
+    "EEG LG 12-Ref",
+    "EEG LG 13-Ref",
+    "EEG LG 14-Ref",
+    "EEG LG 15-Ref",
+    "EEG LG 18-Ref",
+    "EEG LG 19-Ref",
+    "EEG LG 20-Ref",
+    "EEG LG 21-Ref",
+    "EEG LG 22-Ref",
+    "EEG LG 23-Ref",
+    "EEG LG 26-Ref",
+    "EEG LG 27-Ref",
+    "EEG LG 28-Ref",
+    "EEG LG 29-Ref",
+    "EEG LG 30-Ref",
+    "EEG LG 31-Ref",
+    "EEG LG 36-Ref",
+    "EEG LG 37-Ref"
+   ],
+   "status_description_values": {
+    "n/a": 59,
+    "resect": 13,
+    "resect,soz": 10
+   },
+   "type_counts": {
+    "ECOG": 82
+   },
+   "status_counts": {
+    "good": 63,
+    "bad": 19
+   },
+   "tsv_units": [
+    "\u00b5V"
+   ],
+   "tsv_sampling_frequency": [
+    "512.0"
+   ],
+   "bad_in_tsv": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG LCZ 01-Ref",
+    "EEG LCZ 02-Ref",
+    "EEG LCZ 03-Ref",
+    "EEG LCZ 04-Ref",
+    "EEG LFP 01-Ref",
+    "EEG LFP 02-Ref",
+    "EEG LFP 03-Ref",
+    "EEG LFP 04-Ref",
+    "EEG LFP 05-Ref",
+    "EEG LFP 06-Ref",
+    "EEG LG 51-Ref",
+    "EEG LST 01-Ref",
+    "EEG LST 02-Ref",
+    "EEG LST 03-Ref",
+    "EEG LST 04-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_named_channels": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "non_neural_typed_as_neural": [
+    "EEG EKG1-Ref",
+    "EEG EKG2-Ref",
+    "EEG RR-Ref",
+    "EEG Rate-Ref"
+   ],
+   "edf_phys_range_uv": [
+    [
+     -50000.0,
+     50000.0
+    ]
+   ],
+   "signal_qc": {
+    "evaluated_channels": 63,
+    "excluded_from_eval": [
+     "EEG EKG1-Ref",
+     "EEG EKG2-Ref",
+     "EEG LCZ 01-Ref",
+     "EEG LCZ 02-Ref",
+     "EEG LCZ 03-Ref",
+     "EEG LCZ 04-Ref",
+     "EEG LFP 01-Ref",
+     "EEG LFP 02-Ref",
+     "EEG LFP 03-Ref",
+     "EEG LFP 04-Ref",
+     "EEG LFP 05-Ref",
+     "EEG LFP 06-Ref",
+     "EEG LG 51-Ref",
+     "EEG LST 01-Ref",
+     "EEG LST 02-Ref",
+     "EEG LST 03-Ref",
+     "EEG LST 04-Ref",
+     "EEG RR-Ref",
+     "EEG Rate-Ref"
+    ],
+    "median_std_uv": 55.56425857543945,
+    "median_line60_ratio": 3.662717342376709,
+    "flagged": {
+     "flat": [],
+     "high_variance": [
+      "EEG LG 21-Ref",
+      "EEG LG 29-Ref",
+      "EEG LG 57-Ref",
+      "EEG LG 58-Ref"
+     ],
+     "low_variance": [],
+     "line_noise": [
+      "EEG LG 57-Ref"
+     ],
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 08-Ref",
+      "EEG LG 57-Ref",
+      "EEG LG 58-Ref"
+     ],
+     "clipping": [],
+     "nan": []
+    },
+    "n_flagged_any": 6,
+    "all_channel_flat_segments": [],
+    "simultaneous_step_events": [
+     {
+      "t_s": 299.86328125,
+      "n_samples": 14
+     }
+    ],
+    "n_simultaneous_step_events": 1,
+    "run_level_line60_ratio_median": 3.662717342376709,
+    "run_level_line_noise": false,
+    "edf_record_count_x_duration_equals_samples": true,
+    "thresholds": "flat: std<0.5uV or >50% zero first-differences; high/low variance: |robust z(log10 std)|>5 among evaluated channels; line_noise: robust z(log10 P59-61/median P50-57,63-70)>5 and ratio>10 (Welch 2 s, first 120 s); hf_noise: robust z(P80-200/P1-200)>5; clipping: >0.1% samples within 1.5 LSB of EDF phys min/max; discontinuity: >=0.5 s where all evaluated channels have zero first-difference, or samples where >50% of evaluated channels jump >20x their median |diff|",
+    "step_events_outside_seizure_window": [
+     299.863
+    ]
+   },
+   "events_tsv": null,
+   "events": [],
+   "event_coherence": {
+    "note": "no events.tsv for this run"
+   }
+  }
+ ],
+ "cross_run": {
+  "soz_identical_across_runs": true,
+  "resect_identical_across_runs": true,
+  "bad_identical_across_runs": true,
+  "sfreqs": [
+   512.0
+  ],
+  "channel_counts": [
+   82
+  ]
+ },
+ "coordinates": {
+  "electrodes_tsv": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv",
+  "coordsystem_json": "sub-HUP070/ses-presurgery/ieeg/sub-HUP070_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json",
+  "coordsystem": {
+   "iEEGCoordinateSystem": "fsaverage",
+   "iEEGCoordinateSystemDescription": "Defined by FreeSurfer, the MRI (surface RAS) origin is at the center of a 256\u00d7256\u00d7256 mm^3 anisotropic volume (may not be in the center of the head).",
+   "iEEGCoordinateUnits": "m"
+  },
+  "n_rows": 82,
+  "n_with_xyz": 78,
+  "rows_without_xyz": [
+   "EEG EKG1-Ref",
+   "EEG EKG2-Ref",
+   "EEG RR-Ref",
+   "EEG Rate-Ref"
+  ],
+  "channels_without_electrode_row": [],
+  "electrode_rows_without_channel": [],
+  "range": {
+   "x": [
+    -68.7042,
+    -13.0145
+   ],
+   "y": [
+    -49.2276,
+    69.94
+   ],
+   "z": [
+    -47.9734428452793,
+    83.2155212722208
+   ]
+  },
+  "abs_max": 83.2155212722208,
+  "frac_inside_mni_box_mm": 1.0,
+  "outside_mni_box": [],
+  "median_within_shaft_nn_dist": 9.343798911458999,
+  "iqr_within_shaft_nn_dist": [
+   7.961431900425758,
+   10.232421042482718
+  ],
+  "hemisphere_check": {
+   "n_L_prefixed": 78,
+   "frac_L_x_neg": 1.0,
+   "n_R_prefixed": 0,
+   "frac_R_x_pos": null
+  },
+  "centroid": [
+   -52.39159743589744,
+   -3.6640505897435913,
+   12.743110976426026
+  ],
+  "decision": {
+   "units": "mm",
+   "units_basis": "value magnitudes and inter-contact spacing; coordsystem.json iEEGCoordinateUnits='m' judged a metadata error",
+   "frame": "MNI-like template space (RAS, mm); specific template to_verify: README says ICBM152 MNI, coordsystem.json says fsaverage (FreeSurfer fsaverage = MNI305 Talairach space). MNI305 vs ICBM152 differ by a near-identity affine (few mm), not resolvable from coordinate values alone",
+   "frame_status": "to_verify",
+   "evidence": [
+    "abs max coordinate 83.2155212722208: >1 so values cannot be metres for a head (would be >1 m)",
+    "median within-shaft nearest-contact spacing 9.34 (typical SEEG/ECoG pitch 3.5-10 mm)",
+    "100.0% of contacts inside MNI brain box [-80,80]x[-120,90]x[-70,90] mm",
+    "L-prefixed contacts with x<0: 1.0; R-prefixed with x>0: None (RAS orientation check)"
+   ]
+  },
+  "good_neural_channels_without_xyz": [],
+  "soz_without_xyz": [],
+  "resect_without_xyz": []
+ }
+}

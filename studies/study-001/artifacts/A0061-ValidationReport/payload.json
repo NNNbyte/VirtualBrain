@@ -1,0 +1,34 @@
+{
+  "criterion": [
+    "EvidenceClaim: supporting passage and location resolve in the cited source; population, design and endpoint transcribed correctly (protocol acceptance_criteria.evidence_claim)",
+    "Report: every number traces to a committed artifact in the same task"
+  ],
+  "criterion_version": "protocol v1 (A0001-StudyProtocol acceptance_criteria.evidence_claim); TaskMessage T0007 scientific_acceptance_criteria; release rel-823fa0c912cb",
+  "evaluator": "R5-independent-evaluation (instance r5-src-stim, task T0007); did not produce any evaluated artifact",
+  "evaluated_artifacts": [
+    "A0002-EvidenceClaim", "A0003-EvidenceClaim", "A0004-EvidenceClaim", "A0005-EvidenceClaim",
+    "A0006-EvidenceClaim", "A0007-EvidenceClaim", "A0008-EvidenceClaim", "A0009-EvidenceClaim",
+    "A0010-EvidenceClaim", "A0011-EvidenceClaim", "A0012-EvidenceClaim", "A0013-EvidenceClaim",
+    "A0014-EvidenceClaim", "A0015-EvidenceClaim", "A0016-EvidenceClaim", "A0031-Report"
+  ],
+  "held_out_data": "not_applicable (literature source check; no patient data or reserved outcome labels used)",
+  "result": {
+    "method": "R1's attached abstract snapshots and its own verification fields were NOT used. For each claim R5 re-fetched the record from Europe PMC REST (EXT_ID:<pmid> AND SRC:MED, and DOI:<doi>, resultType=core) and separately from PubMed E-utilities efetch (XML), on 2026-11-01. Bibliographic fields were compared, each supporting_passage was tested for verbatim presence (after whitespace/HTML-entity/inline-tag normalisation) in both abstracts, and the full abstracts were read to check population, design, endpoint, numbers, follow-up flag and study_family_id. For A0016 the open-access full text (PMC12457187 fullTextXML) was read to test the absence claim. For A0031 every number in the body was traced to a committed claim.",
+    "counts": {"passed": 16, "failed": 0, "indeterminate": 0},
+    "bibliographic_match": "15/15 (title, journal, year, volume, issue, pages, DOI, PMCID); each DOI query returned exactly the cited PMID",
+    "passage_resolution": "40/40 supporting_passages verbatim in Europe PMC abstract and 40/40 in PubMed abstract",
+    "follow_up_flags": "A0002 (12-week blinded) and A0012 (3-month) correctly flagged meets_protocol_follow_up_ge_12mo=false; A0016 not_applicable; all others >=12 months as recorded",
+    "study_families": "Grouping confirmed sensible: RNS feasibility/pivotal/LTT (A0002-A0004); SANTE RCT+LTFU (A0008-A0010); VNS E05 RCT+extension (A0012-A0013); others as separate families with overlap flagged (Englot 2011/2016 vs E05; Razavi/Sadeghzadeh/Eliashiv centre overlap to_verify)",
+    "A0016_full_text_finding": "Full text includes 2 patients whose clinical outcomes are post-resection Engel II and Engel I (used to validate EZN estimates); no seizure outcome after model-guided therapeutic stimulation. Absence claim holds beyond the abstract.",
+    "minor_observations": [
+      "A0005 and A0007: follow-up converted to months (27.6; 28.2 +/- 11.4) without the 'computed' label the claims' own reported_observation promises.",
+      "A0010: claim's SUDEP 2.0/1000 person-years is in the abstract but not quoted in supporting_passages, and it pools SANTE with prior pilot studies (not SANTE-only).",
+      "A0015: 'manufacturer registry' is not stated in the abstract.",
+      "A0031: envelope consumed_artifact_ids lists only A0001 although the body summarises A0002-A0016; process count '17 screened' not checkable from artifacts."
+    ]
+  },
+  "uncertainty_method": "not_applicable (deterministic verbatim-match and manual transcription check; no statistical estimate). Residual uncertainty: abstract-level only for A0002-A0015; full-text denominators remain open under need N002.",
+  "failure_cases": [],
+  "verdict": "passed",
+  "evidence_level": "abstract-level source verification against two independent indexes (Europe PMC, PubMed) for A0002-A0015; full-text verification for A0016; not a check of late-timepoint denominators or full-text tables"
+}

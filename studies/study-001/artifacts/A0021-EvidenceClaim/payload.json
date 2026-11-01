@@ -1,0 +1,51 @@
+{
+ "claim": "In 615 adults followed prospectively after epilepsy surgery (497 anterior temporal resections; median follow-up 8 years), Kaplan-Meier estimates of remaining seizure free (apart from simple partial seizures) were 52% at 5 years and 47% at 10 years; extratemporal resections had higher recurrence than anterior temporal resections (HR 2.0).",
+ "bibliographic_record": {
+  "authors": "de Tisi J, Bell GS, Peacock JL, McEvoy AW, Harkness WF, Sander JW, Duncan JS",
+  "title": "The long-term outcome of adult epilepsy surgery, patterns of seizure remission, and relapse: a cohort study",
+  "citation": "Lancet 2011;378(9800):1388-1395",
+  "doi": "10.1016/S0140-6736(11)60890-8",
+  "pmid": "22000136",
+  "pmcid": null,
+  "publication_type": "journal article"
+ },
+ "supporting_passage": "We used survival methods to estimate that 52% (95% CI 48-56) of patients remained seizure free (apart from simple partial seizures [SPS]) at 5 years after surgery, and 47% (42-51) at 10 years.",
+ "passage_location": "Abstract, Findings section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 22000136; https://europepmc.org/abstract/MED/22000136; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "single-centre prospective cohort with annual follow-up (UK, NHNN/UCL)",
+  "n_total": 615,
+  "procedures": {
+   "anterior temporal resection": 497,
+   "temporal lesionectomy": 40,
+   "extratemporal lesionectomy": 40,
+   "extratemporal resection": 20,
+   "hemispherectomy": 11,
+   "palliative": 7
+  },
+  "population": "adults with refractory focal epilepsy"
+ },
+ "endpoint": {
+  "reported_endpoint": "time to first seizure (excluding simple partial seizures), Kaplan-Meier; approximates ILAE 1-2 / Engel I continuous seizure freedom",
+  "follow_up": "median 8 years (range 1-19)",
+  "meets_protocol_followup_ge_12mo": true,
+  "protocol_mapping_v1": "seizure free apart from SPS -> favourable (equivalent to ILAE 2 / Engel I criterion; to_verify)",
+  "values": {
+   "5y": "52% (95% CI 48-56)",
+   "10y": "47% (42-51)",
+   "HR extratemporal vs ATR": "2.0 (1.1-3.6), p=0.02"
+  }
+ },
+ "reported_observation": "52% at 5 y and 47% at 10 y continuously seizure free (apart from SPS); 104/365 (28%) seizure-free patients off drugs at last follow-up.",
+ "author_inference": "Surgery is appealing for selected people with refractory focal epilepsy; data give realistic expectations.",
+ "contradictions": [
+  "Lower than the 66% median long-term seizure freedom after temporal resection pooled by Tellez-Zenteno 2005; difference plausibly due to stricter survival (time-to-first-seizure) definition vs cross-sectional definitions."
+ ],
+ "study_family_id": "fam-nhnn-london-adult-surgery-cohort",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

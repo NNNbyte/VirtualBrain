@@ -1,0 +1,305 @@
+{
+ "permitted_inputs": [
+  "A0038-SimulationBatch (full window runs, samples, EZ estimate)",
+  "A0035-SimulationRequest",
+  "A0034-InterventionScenarioSet",
+  "p2sim.py sha256 0c6f3923...",
+  "r4_common_spec.json sha256 70ee917c...",
+  "P2_SEEG_ts_fit.npz sha256 fe5a83ac... (SC, gain only, via p2sim)"
+ ],
+ "reserved_labels_used": "none (no vault, no truth files, no study-001)",
+ "freeze_manifest": {
+  "artifacts/A0038-SimulationBatch/full_runs.json": "12ce6a6af9e5dd86d32096d2c58934898bb10b414fe152f4aa7813acdbbd92b6",
+  "artifacts/A0038-SimulationBatch/samples_full.json": "a4539005325b8cbc9a759fd8938313c468946daf7d3b21e45f54480d6daaedac",
+  "artifacts/A0038-SimulationBatch/ez_full.json": "bee02f34b1bd325f211e010a637f874d04abfe2c90c4dadd6fed175971b32949",
+  "artifacts/A0038-SimulationBatch/payload.json": "840a1668515376aa9737a22df706756314aada487c89c24a040f9b767c9a21b6",
+  "work/T0015/sim/p2sim.py": "0c6f392352226bc73cf6a4d6cb3a1893d9c6f1563be77cacd384215b7624d4e0",
+  "work/amend/r4_common_spec.json": "70ee917cacab98f42c37c092b9695b8d48ae52ed017a8bed0efd1b7751fa0461",
+  "work/T0020/rerun/samples_full_s0.json": "ce4e0d6fd9c7ab5eee5a8d1a691d375094d2411063edd8b5a0e0e11adc1ef069",
+  "work/T0020/rerun/full_s0/runs.json": "56ff2b86c932f37f1872f21674a1530a2e184e676b7df0a1fbb3c2bd31f435e5",
+  "work/T0020/rerun/full_s0/candidates.json": "eb8e94f9a0f2bf8ea64e1db16d4eae893805b8f65580b24752f7f4827b78d875"
+ },
+ "rerun_design": {
+  "window": "full (sensitivity)",
+  "horizon_ms": 14400,
+  "sample": "A0018-full-start11 (sample_index 0, SEEG noise seed 1000)",
+  "arms": [
+   "BASELINE",
+   "RES-EZ+PZ/ablation",
+   "RES-EZ+PZ/disconnection",
+   "STIM-1/amp0.5",
+   "STIM-1/amp1",
+   "STIM-1/amp2"
+  ],
+  "command": "p2sim.py batch --samples samples_full_s0.json --ez ez_full.json --out full_s0 --jobs 6 --horizon-ms 14400 --only RES-EZ+PZ,STIM-1",
+  "settings_identical_to_A0038": true
+ },
+ "metrics": {
+  "reproducibility": [
+   {
+    "candidate": "BASELINE",
+    "sample": "A0018-full-start11",
+    "seizing_regions_equal": true,
+    "n_seizing": [
+     3,
+     3
+    ],
+    "total_dur_s": [
+     24.323999999999998,
+     24.323999999999998
+    ],
+    "onsets_equal": true,
+    "max_abs_state_absdiff": 0.0,
+    "other_fields_equal": true,
+    "seeg_channels_equal": true,
+    "wall_s": 28.0
+   },
+   {
+    "candidate": "STIM-1/amp0.5",
+    "sample": "A0018-full-start11",
+    "seizing_regions_equal": true,
+    "n_seizing": [
+     2,
+     2
+    ],
+    "total_dur_s": [
+     15.152000000000001,
+     15.152000000000001
+    ],
+    "onsets_equal": true,
+    "max_abs_state_absdiff": 0.0,
+    "other_fields_equal": true,
+    "seeg_channels_equal": true,
+    "wall_s": 44.7
+   },
+   {
+    "candidate": "RES-EZ+PZ/disconnection",
+    "sample": "A0018-full-start11",
+    "seizing_regions_equal": true,
+    "n_seizing": [
+     3,
+     3
+    ],
+    "total_dur_s": [
+     23.236,
+     23.236
+    ],
+    "onsets_equal": true,
+    "max_abs_state_absdiff": 0.0,
+    "other_fields_equal": true,
+    "seeg_channels_equal": true,
+    "wall_s": 45.1
+   },
+   {
+    "candidate": "STIM-1/amp2",
+    "sample": "A0018-full-start11",
+    "seizing_regions_equal": true,
+    "n_seizing": [
+     2,
+     2
+    ],
+    "total_dur_s": [
+     15.988,
+     15.988
+    ],
+    "onsets_equal": true,
+    "max_abs_state_absdiff": 0.0,
+    "other_fields_equal": true,
+    "seeg_channels_equal": true,
+    "wall_s": 46.5
+   },
+   {
+    "candidate": "STIM-1/amp1",
+    "sample": "A0018-full-start11",
+    "seizing_regions_equal": true,
+    "n_seizing": [
+     2,
+     2
+    ],
+    "total_dur_s": [
+     15.988,
+     15.988
+    ],
+    "onsets_equal": true,
+    "max_abs_state_absdiff": 0.0,
+    "other_fields_equal": true,
+    "seeg_channels_equal": true,
+    "wall_s": 46.7
+   },
+   {
+    "candidate": "RES-EZ+PZ/ablation",
+    "sample": "A0018-full-start11",
+    "seizing_regions_equal": true,
+    "n_seizing": [
+     0,
+     0
+    ],
+    "total_dur_s": [
+     0.0,
+     0.0
+    ],
+    "onsets_equal": true,
+    "max_abs_state_absdiff": 0.0,
+    "other_fields_equal": true,
+    "seeg_channels_equal": true,
+    "wall_s": 47.1
+   }
+  ],
+  "all_bit_exact": true,
+  "recomputed_paired_effects_full_window_finite_arms": {
+   "RES-1/ablation": {
+    "n": 12,
+    "med": -1.0,
+    "p05": -1.9,
+    "p95": 0.0,
+    "med_dur": -2.25,
+    "abolish": 0.0
+   },
+   "RES-1/disconnection": {
+    "n": 12,
+    "med": 0.0,
+    "p05": -2.0,
+    "p95": 0.45,
+    "med_dur": -0.37,
+    "abolish": 0.0
+   },
+   "RES-EZ+PZ/ablation": {
+    "n": 12,
+    "med": -3.0,
+    "p05": -4.9,
+    "p95": -1.55,
+    "med_dur": -17.47,
+    "abolish": 0.417
+   },
+   "RES-EZ+PZ/disconnection": {
+    "n": 12,
+    "med": -1.0,
+    "p05": -3.45,
+    "p95": -0.55,
+    "med_dur": -5.53,
+    "abolish": 0.167
+   },
+   "RES-EZ/ablation": {
+    "n": 12,
+    "med": -2.5,
+    "p05": -4.9,
+    "p95": -1.0,
+    "med_dur": -13.47,
+    "abolish": 0.25
+   },
+   "RES-EZ/disconnection": {
+    "n": 12,
+    "med": -1.0,
+    "p05": -3.45,
+    "p95": -0.55,
+    "med_dur": -5.0,
+    "abolish": 0.167
+   },
+   "STIM-1/amp0.5": {
+    "n": 12,
+    "med": -0.5,
+    "p05": -1.0,
+    "p95": 0.45,
+    "med_dur": -3.14,
+    "abolish": 0.0
+   },
+   "STIM-1/amp1": {
+    "n": 12,
+    "med": -1.0,
+    "p05": -1.9,
+    "p95": 0.0,
+    "med_dur": -5.08,
+    "abolish": 0.0
+   },
+   "STIM-1/amp2": {
+    "n": 12,
+    "med": -1.0,
+    "p05": -1.45,
+    "p95": 1.0,
+    "med_dur": -5.76,
+    "abolish": 0.0
+   },
+   "STIM-2/amp1": {
+    "n": 12,
+    "med": -0.5,
+    "p05": -1.9,
+    "p95": 0.0,
+    "med_dur": -5.07,
+    "abolish": 0.0
+   },
+   "STIM-PT-chronic/amp0.5": {
+    "n": 12,
+    "med": 0.0,
+    "p05": -0.45,
+    "p95": 1.45,
+    "med_dur": 3.9,
+    "abolish": 0.0
+   },
+   "STIM-PT-chronic/amp1": {
+    "n": 12,
+    "med": 0.0,
+    "p05": -0.9,
+    "p95": 1.0,
+    "med_dur": 4.85,
+    "abolish": 0.0
+   },
+   "STIM-PT-chronic/amp2": {
+    "n": 2,
+    "med": 1.0,
+    "p05": 0.1,
+    "p95": 1.9,
+    "med_dur": 4.37,
+    "abolish": 0.0
+   },
+   "STIM-PT/amp0.5": {
+    "n": 12,
+    "med": 0.0,
+    "p05": -0.9,
+    "p95": 1.0,
+    "med_dur": 0.6,
+    "abolish": 0.0
+   },
+   "STIM-PT/amp1": {
+    "n": 12,
+    "med": 0.0,
+    "p05": -0.9,
+    "p95": 1.0,
+    "med_dur": 0.54,
+    "abolish": 0.0
+   },
+   "STIM-PT/amp2": {
+    "n": 10,
+    "med": 0.0,
+    "p05": -0.55,
+    "p95": 1.0,
+    "med_dur": -0.51,
+    "abolish": 0.0
+   },
+   "STIM-PT/amp4": {
+    "n": 3,
+    "med": 2.0,
+    "p05": 1.1,
+    "p95": 2.0,
+    "med_dur": 2.86,
+    "abolish": 0.0
+   }
+  },
+  "recomputed_paired_effects_match_payload": "yes for every arm compared (median and 5-95% of d_n_seizing_regions; e.g. RES-EZ+PZ ablation -3.0 [-4.9,-1.55], RES-EZ ablation -2.5 [-4.9,-1.0], RES-1 ablation -1.0 [-1.9,0])",
+  "post_window": "baseline seizes in 0/24 optima; all paired effects 0; frac_abolish_all=1.0 is vacuous"
+ },
+ "uncertainty": "Across-sample spread only (12 MAP optima, full window; median and 5-95% percentiles). No posterior uncertainty: the model is not qualified (A0018 MAP ensemble; A0019 R-hat 3.3/6.4). Reproducibility checked on 1 sample x 6 arms only.",
+ "robustness": {
+  "ranking_stability": "Full window: RES-EZ+PZ ablation tied-first in 11/12 optima per A0038; ranking not tested across hypotheses or posterior samples (no qualified posterior). Post window: ranking uninformative (16 arms tied, no baseline seizures). Rankings are unstable to the window choice: primary window shows no effect at all.",
+  "numerical_failures": {
+   "STIM-PT-chronic/amp2": 10,
+   "STIM-PT-chronic/amp4": 12,
+   "STIM-PT/amp4": 9,
+   "STIM-PT/amp2": 2
+  }
+ },
+ "controls": {
+  "paired_no_intervention": "per sample, identical x0/K/initial state/horizon/dt/noise seed; 0 pairing mismatches across 648 candidate runs",
+  "sham": "not run (deterministic model: amplitude 0 equals baseline)"
+ },
+ "evidence_level": "simulated_result on a virtual patient from an unqualified model; reproducibility verified, scientific validity not established. Not a clinical recommendation."
+}

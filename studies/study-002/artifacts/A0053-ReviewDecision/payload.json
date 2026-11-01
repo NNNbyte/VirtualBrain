@@ -1,0 +1,13 @@
+{
+ "reviewer_role": "clinical+engineering",
+ "decision": "accept",
+ "intended_use": "Research report on one virtual patient (Wang et al. 2025 P2): EZ-recovery and virtual-intervention ranking with an unqualified, exploratory model. Not a clinical recommendation.",
+ "affected_artifact_ids": ["A0051-DecisionBundle", "A0052-Report"],
+ "reason": "Final re-review (cycle 2) of revision 2 against the two items left open in A0050. (a) Fixed and verified: the report now gives the A0040 v3 figures as Pathfinder approximations (NUTS never finished warm-up), arm A (matching connectome, P1 SC) P(EZ rank 1) 0.012 and arm B (mismatched connectome, P2 SC) EZ rank 28 by mean, P(rank 1) 0.205. These match A0040 pathfinder_32_paths and rank1_freq (A '58': 0.012; B '58': 0.205). The bundle adds the same as limitation 8. (b) Fixed and verified: the post-window non-finite counts STIM-PT amp4 24/24 and STIM-PT-chronic amp4 23/24 match A0038 results.post.numerically_failed_arms. The full-window counts (2/12, 9/12, 10/12, 12/12) are labelled 'full window' in both the report and the bundle limitation and match A0038 results.full.numerically_failed_arms. A structured diff of A0052 vs work/T0024/report.json and of A0051 vs work/T0024/decision_bundle.json shows changes only to these two items, plus the title/status revision label, review_refs (adds A0050) and release_status (revision_2_pending_review). All other text and numbers are unchanged, and the committed payloads equal work/T0026. No new error found. The exploratory, virtual-patient and not-a-clinical-recommendation framing is intact. Acceptance covers the stated research use only.",
+ "repair_stage": null,
+ "acceptance_checks": [
+  "A0040 figures attributed to Pathfinder arm A (0.012) and arm B (rank 28, 0.205): met",
+  "Post-window non-finite counts stated and full-window counts labelled full window, matching A0038: met",
+  "No other text or numbers changed vs revision 1: met"
+ ]
+}

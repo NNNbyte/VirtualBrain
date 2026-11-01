@@ -1,0 +1,55 @@
+{
+  "claim": "Final RNS pivotal-trial results: median seizure reduction in the open-label period was 44% at 1 year and 53% at 2 years post-implant (n=191 randomized).",
+  "intervention_modality": "RNS",
+  "bibliographic_record": {
+    "authors": "Heck CN, King-Stephens D, Massey AD, Nair DR, Jobst BC, Barkley GL, Salanova V, Cole AJ, Smith MC, Gwinn RP, Skidmore C, Van Ness PC, Bergey GK, Park YD, Miller I, Geller E, Rutecki PA, Zimmerman R, Spencer DC, Goldman A, Edwards JC, Leiphart JW, Wharen RE, Fessler J, Fountain NB, Worrell GA, Gross RE, Eisenschenk S, Duckrow RB, Hirsch LJ, Bazil C, O'Donovan CA, Sun FT, Courtney TA, Seale CG, Morrell MJ.",
+    "title": "Two-year seizure reduction in adults with medically intractable partial onset epilepsy treated with responsive neurostimulation: final results of the RNS System Pivotal trial.",
+    "journal": "Epilepsia",
+    "year": "2014",
+    "volume": "55",
+    "issue": "3",
+    "pages": "432-441",
+    "doi": "10.1111/epi.12534",
+    "pmid": "24621228",
+    "pmcid": "PMC4233950",
+    "source_record_url": "https://europepmc.org/article/MED/24621228",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24621228/"
+  },
+  "supporting_passage": "All 191 subjects were randomized. [...] The median percent reduction in seizures in the OLP was 44% at 1 year and 53% at 2 years, which represents a progressive and significant improvement with time (p < 0.0001).",
+  "supporting_passages": [
+    "All 191 subjects were randomized.",
+    "The median percent reduction in seizures in the OLP was 44% at 1 year and 53% at 2 years, which represents a progressive and significant improvement with time (p < 0.0001)."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 24621228, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": 191,
+    "design": "same RCT as Morrell 2011; open-label extension to 2 years post-implant",
+    "population": "adults, medically intractable partial onset seizures from 1 or 2 foci",
+    "age_group": "adult"
+  },
+  "endpoint": {
+    "measure": "median percent reduction in seizure frequency",
+    "timepoint": "1 and 2 years post-implant",
+    "median_pct_reduction": {
+      "12_months": 44,
+      "24_months": 53
+    },
+    "responder_rate_50pct": "not_reported (in abstract)",
+    "seizure_freedom": "not_reported (in abstract)",
+    "follow_up_months_reported": 24
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors infer progressive improvement over time and an additional treatment option.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": true,
+  "contradictions": [
+    "Same patients as Morrell 2011 and contributes 191 of the 256 patients in Nair 2020 (not independent evidence)."
+  ],
+  "study_family_id": "fam-RNS-NeuroPace-feasibility-pivotal-LTT"
+}

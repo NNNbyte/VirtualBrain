@@ -1,0 +1,955 @@
+{
+ "status": "FINAL NUTS fit (run2) of the frozen T0011 model on P2. Not a supersession of the MAP bundle A0018. Qualified posterior: post=False, full=False (criterion: all x0 R-hat < 1.05, no unexplained divergences).",
+ "model_family": "2D Epileptor network (vep_ar1.stan v2 frozen in T0011, sha256 f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb), diffusive SC coupling, AR(1) observation model on log high-pass power features",
+ "implementation_versions": {
+  "stan_model_sha256": "f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb",
+  "frozen_dir": "studies/study-002/work/T0011/model_frozen (SHA256SUMS verified, copied unchanged)",
+  "cmdstan": "2.40 (VM conda-forge Linux; local Windows mingw), stanc default O0",
+  "cmdstanpy": "1.3.0",
+  "runner": "run_fit_run2.py (sampler configuration 'v2-run2' per LEAD; L-BFGS identical to frozen run_fit.py)"
+ },
+ "consumed_case": {
+  "case_id": "P2",
+  "patient_case": "A0009-PatientCase",
+  "qc": "A0010-QCReport",
+  "file": "data/wang-5367ef4/data/dataSim/Patient2/P2_SEEG_ts_fit.npz",
+  "sha256": "fe5a83acf0ff34547f449f3ca88de6061e24dcf39dc261fd4e53fbf7bc421dbd",
+  "sample_rate_hz": 125.0,
+  "n_channels": 191,
+  "n_regions": 162
+ },
+ "hypotheses": {
+  "set": "A0017-NetworkHypothesisSet",
+  "assessment": {
+   "H1 L dorsolateral PFC (7, 8)": "supported most consistently: top-3 posterior-mean x0 in the primary window (10, 7, 8); L-F2-rostral P(x0>-2.06)=0.98 in the sensitivity window",
+   "H2 orbito/mesial PFC (82)": "rank 1 at every primary-window MAP start but not in the primary-window posterior top 8; sensitivity window P(rank 1)=0.42 for 82 (highest-gain region in the implant; leverage caveat)",
+   "H3 L amygdala (74)": "not supported in either window (not in the top 12)",
+   "H4 no autonomous node": "primary window: no region with P(x0 > -2.06) > 0.5; but each draw has many prior-driven supra-threshold unobserved regions, so the posterior cannot exclude or confirm H4"
+  }
+ },
+ "fitting_partitions": {
+  "test_case": "P2 (A0011 test). Blinded: no vault, truth, reserved notebook or study-001 access.",
+  "windows_prespecified_before_fit": {
+   "post (PRIMARY)": [
+    3.52,
+    7.4
+   ],
+   "full (SENSITIVITY)": [
+    0.2,
+    7.4
+   ]
+  },
+  "data_plumbing": "as in A0018 (prep_p2.py; Stan data sha256 post 773e76ad..., full c97b6d81...)"
+ },
+ "observation_model": "Obs[t,s] = amp * (gain (x_t - x_1))[s] + u[s] + r[t,s], AR(1) residuals (frozen)",
+ "parameters_or_posterior": {
+  "sampler": "NUTS 'v2-run2': 16 chains, chain c initialised at the c-th best of 24 L-BFGS optima (seeds seed+i) + N(0, 0.1) jitter on all unconstrained parameters, iter_warmup 200, iter_sampling 200, max_treedepth 8, adapt_delta 0.9; seed post 20140 (GCP VM), full 20141 (local)",
+  "attached_draws": {
+   "nuts_posterior_P2_post.csv": "PRIMARY window; 400 draws thinned from 3200 (every 8th; chain, draw, K, tau0, amp, sigma, phi, x0_0..161, z_init_0..161)",
+   "nuts_posterior_P2_full.csv": "SENSITIVITY window; same layout"
+  },
+  "ez_estimate": {
+   "rule": "regions with posterior P(x0 > -2.06) > 0.5; ranking by posterior mean x0; uncertainty = 90% interval of x0 and of rank, P(rank 1)",
+   "post (primary)": {
+    "ez_set": [],
+    "ranking_top12": [
+     {
+      "rank": 1,
+      "region": 10,
+      "name": "Left-SFS-rostral",
+      "mean_x0": -2.143,
+      "x0_q05_q95": [
+       -2.64,
+       -1.618
+      ],
+      "p_x0_gt_thr": 0.374,
+      "p_rank1": 0.021,
+      "median_rank": 25.0,
+      "rank_q05_q95": [
+       3.0,
+       94.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 1.993,
+      "ess_bulk": 22.4
+     },
+     {
+      "rank": 2,
+      "region": 7,
+      "name": "Left-F2-rostral",
+      "mean_x0": -2.153,
+      "x0_q05_q95": [
+       -2.624,
+       -1.38
+      ],
+      "p_x0_gt_thr": 0.345,
+      "p_rank1": 0.098,
+      "median_rank": 37.0,
+      "rank_q05_q95": [
+       1.0,
+       89.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.65,
+      "ess_bulk": 19.5
+     },
+     {
+      "rank": 3,
+      "region": 8,
+      "name": "Left-F2-caudal",
+      "mean_x0": -2.295,
+      "x0_q05_q95": [
+       -2.59,
+       -1.908
+      ],
+      "p_x0_gt_thr": 0.175,
+      "p_rank1": 0.0,
+      "median_rank": 46.0,
+      "rank_q05_q95": [
+       9.0,
+       85.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.315,
+      "ess_bulk": 20.4
+     },
+     {
+      "rank": 4,
+      "region": 68,
+      "name": "Left-Occipital-pole",
+      "mean_x0": -2.312,
+      "x0_q05_q95": [
+       -2.933,
+       -1.545
+      ],
+      "p_x0_gt_thr": 0.233,
+      "p_rank1": 0.013,
+      "median_rank": 48.0,
+      "rank_q05_q95": [
+       3.0,
+       127.0
+      ],
+      "p_seizing_in_window": 0.042,
+      "rhat": 1.68,
+      "ess_bulk": 26.0
+     },
+     {
+      "rank": 5,
+      "region": 71,
+      "name": "Left-Cuneus",
+      "mean_x0": -2.32,
+      "x0_q05_q95": [
+       -3.042,
+       -1.664
+      ],
+      "p_x0_gt_thr": 0.258,
+      "p_rank1": 0.015,
+      "median_rank": 40.0,
+      "rank_q05_q95": [
+       3.0,
+       137.0
+      ],
+      "p_seizing_in_window": 0.012,
+      "rhat": 1.889,
+      "ess_bulk": 23.3
+     },
+     {
+      "rank": 6,
+      "region": 52,
+      "name": "Left-Parahippocampal-cortex",
+      "mean_x0": -2.354,
+      "x0_q05_q95": [
+       -3.253,
+       -1.622
+      ],
+      "p_x0_gt_thr": 0.342,
+      "p_rank1": 0.013,
+      "median_rank": 38.0,
+      "rank_q05_q95": [
+       3.0,
+       149.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.413,
+      "ess_bulk": 20.0
+     },
+     {
+      "rank": 7,
+      "region": 132,
+      "name": "Right-Lingual-sulcus",
+      "mean_x0": -2.37,
+      "x0_q05_q95": [
+       -3.358,
+       -1.706
+      ],
+      "p_x0_gt_thr": 0.271,
+      "p_rank1": 0.017,
+      "median_rank": 43.0,
+      "rank_q05_q95": [
+       5.0,
+       153.0
+      ],
+      "p_seizing_in_window": 0.015,
+      "rhat": 1.802,
+      "ess_bulk": 24.3
+     },
+     {
+      "rank": 8,
+      "region": 44,
+      "name": "Left-T2-anterior",
+      "mean_x0": -2.393,
+      "x0_q05_q95": [
+       -2.939,
+       -1.979
+      ],
+      "p_x0_gt_thr": 0.096,
+      "p_rank1": 0.0,
+      "median_rank": 50.0,
+      "rank_q05_q95": [
+       15.0,
+       118.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.179,
+      "ess_bulk": 21.2
+     },
+     {
+      "rank": 9,
+      "region": 161,
+      "name": "Right-Cerebellar-cortex",
+      "mean_x0": -2.399,
+      "x0_q05_q95": [
+       -3.158,
+       -1.564
+      ],
+      "p_x0_gt_thr": 0.24,
+      "p_rank1": 0.037,
+      "median_rank": 59.0,
+      "rank_q05_q95": [
+       2.0,
+       145.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 3.07,
+      "ess_bulk": 18.6
+     },
+     {
+      "rank": 10,
+      "region": 77,
+      "name": "Left-Putamen",
+      "mean_x0": -2.399,
+      "x0_q05_q95": [
+       -3.012,
+       -1.963
+      ],
+      "p_x0_gt_thr": 0.089,
+      "p_rank1": 0.0,
+      "median_rank": 48.0,
+      "rank_q05_q95": [
+       14.0,
+       130.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 1.937,
+      "ess_bulk": 22.8
+     },
+     {
+      "rank": 11,
+      "region": 108,
+      "name": "Right-Anterior-cingulate-cortex",
+      "mean_x0": -2.406,
+      "x0_q05_q95": [
+       -2.778,
+       -2.098
+      ],
+      "p_x0_gt_thr": 0.031,
+      "p_rank1": 0.0,
+      "median_rank": 54.0,
+      "rank_q05_q95": [
+       14.0,
+       111.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.299,
+      "ess_bulk": 20.8
+     },
+     {
+      "rank": 12,
+      "region": 76,
+      "name": "Left-Caudate-nucleus",
+      "mean_x0": -2.431,
+      "x0_q05_q95": [
+       -3.165,
+       -1.765
+      ],
+      "p_x0_gt_thr": 0.191,
+      "p_rank1": 0.004,
+      "median_rank": 51.0,
+      "rank_q05_q95": [
+       6.0,
+       143.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.626,
+      "ess_bulk": 19.4
+     }
+    ],
+    "p_no_region_supra": 0.0,
+    "n_supra_regions_per_draw_q05_50_95": [
+     9.0,
+     19.0,
+     26.0
+    ]
+   },
+   "full (sensitivity)": {
+    "ez_set": [
+     {
+      "region": 1,
+      "name": "Left-Orbito-frontal-cortex",
+      "p_x0_gt_thr": 0.652,
+      "mean_x0": -2.138,
+      "rhat": 3.973
+     },
+     {
+      "region": 4,
+      "name": "Left-F3-Pars-triangularis",
+      "p_x0_gt_thr": 0.666,
+      "mean_x0": -2.042,
+      "rhat": 1.774
+     },
+     {
+      "region": 7,
+      "name": "Left-F2-rostral",
+      "p_x0_gt_thr": 0.983,
+      "mean_x0": -1.731,
+      "rhat": 4.437
+     },
+     {
+      "region": 8,
+      "name": "Left-F2-caudal",
+      "p_x0_gt_thr": 0.698,
+      "mean_x0": -1.955,
+      "rhat": 3.17
+     },
+     {
+      "region": 12,
+      "name": "Left-F1-mesial-prefrontal",
+      "p_x0_gt_thr": 0.632,
+      "mean_x0": -1.932,
+      "rhat": 2.645
+     },
+     {
+      "region": 27,
+      "name": "Left-Anterior-cingulate-cortex",
+      "p_x0_gt_thr": 0.83,
+      "mean_x0": -2.07,
+      "rhat": 3.788
+     },
+     {
+      "region": 40,
+      "name": "Left-STS-anterior",
+      "p_x0_gt_thr": 0.587,
+      "mean_x0": -2.146,
+      "rhat": 4.611
+     },
+     {
+      "region": 82,
+      "name": "Right-Orbito-frontal-cortex",
+      "p_x0_gt_thr": 0.812,
+      "mean_x0": -1.775,
+      "rhat": 6.007
+     },
+     {
+      "region": 83,
+      "name": "Right-Gyrus-rectus",
+      "p_x0_gt_thr": 0.664,
+      "mean_x0": -2.09,
+      "rhat": 3.311
+     },
+     {
+      "region": 108,
+      "name": "Right-Anterior-cingulate-cortex",
+      "p_x0_gt_thr": 0.677,
+      "mean_x0": -2.073,
+      "rhat": 2.694
+     },
+     {
+      "region": 115,
+      "name": "Right-Temporal-pole",
+      "p_x0_gt_thr": 0.612,
+      "mean_x0": -2.034,
+      "rhat": 2.985
+     }
+    ],
+    "ranking_top12": [
+     {
+      "rank": 1,
+      "region": 7,
+      "name": "Left-F2-rostral",
+      "mean_x0": -1.731,
+      "x0_q05_q95": [
+       -2.029,
+       -1.487
+      ],
+      "p_x0_gt_thr": 0.983,
+      "p_rank1": 0.094,
+      "median_rank": 4.0,
+      "rank_q05_q95": [
+       1.0,
+       18.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 4.437,
+      "ess_bulk": 17.4
+     },
+     {
+      "rank": 2,
+      "region": 82,
+      "name": "Right-Orbito-frontal-cortex",
+      "mean_x0": -1.775,
+      "x0_q05_q95": [
+       -2.832,
+       -1.2
+      ],
+      "p_x0_gt_thr": 0.812,
+      "p_rank1": 0.418,
+      "median_rank": 2.0,
+      "rank_q05_q95": [
+       1.0,
+       132.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 6.007,
+      "ess_bulk": 17.0
+     },
+     {
+      "rank": 3,
+      "region": 12,
+      "name": "Left-F1-mesial-prefrontal",
+      "mean_x0": -1.932,
+      "x0_q05_q95": [
+       -2.421,
+       -1.565
+      ],
+      "p_x0_gt_thr": 0.632,
+      "p_rank1": 0.158,
+      "median_rank": 10.0,
+      "rank_q05_q95": [
+       1.0,
+       79.0
+      ],
+      "p_seizing_in_window": 0.005,
+      "rhat": 2.645,
+      "ess_bulk": 19.4
+     },
+     {
+      "rank": 4,
+      "region": 8,
+      "name": "Left-F2-caudal",
+      "mean_x0": -1.955,
+      "x0_q05_q95": [
+       -2.188,
+       -1.585
+      ],
+      "p_x0_gt_thr": 0.698,
+      "p_rank1": 0.013,
+      "median_rank": 11.0,
+      "rank_q05_q95": [
+       2.0,
+       41.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 3.17,
+      "ess_bulk": 18.4
+     },
+     {
+      "rank": 5,
+      "region": 115,
+      "name": "Right-Temporal-pole",
+      "mean_x0": -2.034,
+      "x0_q05_q95": [
+       -2.25,
+       -1.854
+      ],
+      "p_x0_gt_thr": 0.612,
+      "p_rank1": 0.0,
+      "median_rank": 20.0,
+      "rank_q05_q95": [
+       5.0,
+       49.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.985,
+      "ess_bulk": 18.7
+     },
+     {
+      "rank": 6,
+      "region": 4,
+      "name": "Left-F3-Pars-triangularis",
+      "mean_x0": -2.042,
+      "x0_q05_q95": [
+       -2.1,
+       -1.965
+      ],
+      "p_x0_gt_thr": 0.666,
+      "p_rank1": 0.0,
+      "median_rank": 21.0,
+      "rank_q05_q95": [
+       12.0,
+       29.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 1.774,
+      "ess_bulk": 24.6
+     },
+     {
+      "rank": 7,
+      "region": 93,
+      "name": "Right-F1-mesial-prefrontal",
+      "mean_x0": -2.064,
+      "x0_q05_q95": [
+       -2.271,
+       -1.519
+      ],
+      "p_x0_gt_thr": 0.403,
+      "p_rank1": 0.0,
+      "median_rank": 28.0,
+      "rank_q05_q95": [
+       3.0,
+       51.0
+      ],
+      "p_seizing_in_window": 0.261,
+      "rhat": 2.827,
+      "ess_bulk": 19.0
+     },
+     {
+      "rank": 8,
+      "region": 27,
+      "name": "Left-Anterior-cingulate-cortex",
+      "mean_x0": -2.07,
+      "x0_q05_q95": [
+       -2.69,
+       -1.903
+      ],
+      "p_x0_gt_thr": 0.83,
+      "p_rank1": 0.0,
+      "median_rank": 16.0,
+      "rank_q05_q95": [
+       9.0,
+       116.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 3.788,
+      "ess_bulk": 17.8
+     },
+     {
+      "rank": 9,
+      "region": 108,
+      "name": "Right-Anterior-cingulate-cortex",
+      "mean_x0": -2.073,
+      "x0_q05_q95": [
+       -2.597,
+       -1.896
+      ],
+      "p_x0_gt_thr": 0.677,
+      "p_rank1": 0.0,
+      "median_rank": 14.0,
+      "rank_q05_q95": [
+       7.0,
+       105.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.694,
+      "ess_bulk": 19.2
+     },
+     {
+      "rank": 10,
+      "region": 83,
+      "name": "Right-Gyrus-rectus",
+      "mean_x0": -2.09,
+      "x0_q05_q95": [
+       -2.754,
+       -1.836
+      ],
+      "p_x0_gt_thr": 0.664,
+      "p_rank1": 0.0,
+      "median_rank": 11.0,
+      "rank_q05_q95": [
+       3.0,
+       126.04999999999973
+      ],
+      "p_seizing_in_window": 0.038,
+      "rhat": 3.311,
+      "ess_bulk": 18.2
+     },
+     {
+      "rank": 11,
+      "region": 155,
+      "name": "Right-Amygdala",
+      "mean_x0": -2.128,
+      "x0_q05_q95": [
+       -2.216,
+       -2.033
+      ],
+      "p_x0_gt_thr": 0.124,
+      "p_rank1": 0.0,
+      "median_rank": 31.0,
+      "rank_q05_q95": [
+       19.0,
+       44.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 2.524,
+      "ess_bulk": 19.6
+     },
+     {
+      "rank": 12,
+      "region": 1,
+      "name": "Left-Orbito-frontal-cortex",
+      "mean_x0": -2.138,
+      "x0_q05_q95": [
+       -2.866,
+       -1.899
+      ],
+      "p_x0_gt_thr": 0.652,
+      "p_rank1": 0.0,
+      "median_rank": 15.0,
+      "rank_q05_q95": [
+       7.0,
+       137.0
+      ],
+      "p_seizing_in_window": 0.0,
+      "rhat": 3.973,
+      "ess_bulk": 17.7
+     }
+    ],
+    "p_no_region_supra": 0.0,
+    "n_supra_regions_per_draw_q05_50_95": [
+     16.0,
+     22.0,
+     29.0
+    ]
+   },
+   "caveat": "Chains have not converged (R-hat >> 1.05), so these probabilities are chain-mixture frequencies, not posterior probabilities. Each draw has ~10-30 supra-threshold regions, mostly weakly observed regions whose x0 follow the N(-2.5, 0.5) prior (prior P(x0 > -2.06) = 0.19 per region)."
+  },
+  "scalars_q05_50_95": {
+   "post": {
+    "K": [
+     0.19860627549999998,
+     12.5320105,
+     52.328302949999994
+    ],
+    "tau0": [
+     2.346948525,
+     14.9981845,
+     40.41600189999999
+    ],
+    "amp": [
+     0.8537856615,
+     2.22023225,
+     4.114421914999999
+    ],
+    "sigma": [
+     0.6155196049999999,
+     0.639163875,
+     0.673933657
+    ],
+    "phi": [
+     0.8715992885,
+     0.8911744699999999,
+     0.907690754
+    ]
+   },
+   "full": {
+    "K": [
+     2.4605337449999998,
+     4.4173984,
+     8.499550185
+    ],
+    "tau0": [
+     2.58729445,
+     3.6618258,
+     4.300052455
+    ],
+    "amp": [
+     2.041219315,
+     2.8366315999999996,
+     3.6505282499999994
+    ],
+    "sigma": [
+     0.604076834,
+     0.624759345,
+     0.642328075
+    ],
+    "phi": [
+     0.908451321,
+     0.924359515,
+     0.936632528
+    ]
+   }
+  }
+ },
+ "numerical_diagnostics": {
+  "post": {
+   "chains": 16,
+   "draws_per_chain": 200,
+   "t_nuts_s": 469.2309284210205,
+   "divergences_total": 0,
+   "divergences_per_chain": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "treedepth_max": 8,
+   "treedepth_hits_frac": 1.0,
+   "treedepth_hits_per_chain": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+   ],
+   "stepsize_per_chain": [
+    0.0017511856,
+    0.0031172114,
+    0.0013363245,
+    0.0066457341,
+    0.0031572194,
+    0.0029919315,
+    0.0032997174,
+    0.0018703256,
+    0.0053778629,
+    0.0032971743,
+    0.0075651985,
+    0.0019841261,
+    0.0074332894,
+    0.0024946216,
+    0.0048786073,
+    0.0064012155
+   ],
+   "n_leapfrog_mean": 255.0,
+   "x0_rhat": {
+    "max": 3.25755,
+    "median": 2.087715,
+    "n_gt_1.05": 162,
+    "n_gt_1.1": 162,
+    "n_nan": 0
+   },
+   "x0_ess_bulk": {
+    "min": 18.3233,
+    "median": 21.654400000000003
+   },
+   "x0_ess_tail": {
+    "min": 1600.0,
+    "median": 1600.0
+   },
+   "scalar_rhat": {
+    "K": 3.54511,
+    "tau0": 3.22611,
+    "amp": 2.69701,
+    "sigma": 1.54424,
+    "phi": 1.22132,
+    "lp__": 2.8223
+   },
+   "lp_mean_per_chain": [
+    -2351.5999174999997,
+    -2389.6304625000002,
+    -2433.80395,
+    -2311.9921830000003,
+    -2369.7864834999996,
+    -2383.9720644999998,
+    -2357.793841,
+    -2361.0718739999998,
+    -2350.5853115,
+    -2408.017479,
+    -2366.148714,
+    -2359.597876,
+    -2381.988869,
+    -2371.5574515,
+    -2376.2114685,
+    -2406.5447215
+   ]
+  },
+  "full": {
+   "chains": 16,
+   "draws_per_chain": 200,
+   "t_nuts_s": 785.1260499954224,
+   "divergences_total": 0,
+   "divergences_per_chain": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "treedepth_max": 8,
+   "treedepth_hits_frac": 1.0,
+   "treedepth_hits_per_chain": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+   ],
+   "stepsize_per_chain": [
+    0.0060935918,
+    0.0013625609,
+    0.0058001062,
+    0.0046104472,
+    0.02116922,
+    0.016997784,
+    0.0037721445,
+    0.0022825048,
+    0.00011797823,
+    0.0035387545,
+    0.0012065259,
+    0.003056202,
+    0.00084452377,
+    0.0028700541,
+    0.00012794555,
+    0.0038821221
+   ],
+   "n_leapfrog_mean": 255.0,
+   "x0_rhat": {
+    "max": 6.00709,
+    "median": 3.12353,
+    "n_gt_1.05": 162,
+    "n_gt_1.1": 162,
+    "n_nan": 0
+   },
+   "x0_ess_bulk": {
+    "min": 16.9906,
+    "median": 18.48185
+   },
+   "x0_ess_tail": {
+    "min": 1600.0,
+    "median": 1600.0
+   },
+   "scalar_rhat": {
+    "K": 4.9001,
+    "tau0": 3.14476,
+    "amp": 4.21335,
+    "sigma": 1.52119,
+    "phi": 1.74064,
+    "lp__": 4.00312
+   },
+   "lp_mean_per_chain": [
+    -3527.8531275000005,
+    -3615.8768415,
+    -3530.6948709999997,
+    -3598.3237555,
+    -3584.7984054999997,
+    -3615.713700999999,
+    -3565.4680695,
+    -3598.5432405,
+    -3556.6783499999997,
+    -3603.1029130000006,
+    -3593.877071,
+    -3547.9182625000003,
+    -3660.726104,
+    -3619.9148235000007,
+    -3588.2668815,
+    -3606.643084
+   ]
+  },
+  "lp_check": "numpy vs CmdStan log_prob agreement on data_P2_post.json (VM; abs diff <= ~2.5e-4 on |lp| ~1.9e4)"
+ },
+ "convergence_checks": {
+  "criterion": "all x0 R-hat < 1.05 and no unexplained divergences (A0001)",
+  "post": "FAIL: x0 R-hat max 3.26, median 2.09, 162/162 > 1.05; bulk ESS min 18; 0 divergences; 100% of transitions at max treedepth",
+  "full": "FAIL: x0 R-hat max 6.01, median 3.12, 162/162 > 1.05; bulk ESS min 17; 0 divergences; 100% of transitions at max treedepth",
+  "diagnosis": "Treedepth-8 saturation with step sizes ~1e-3 (stiff Epileptor ODE likelihood) and 200 warmup iterations: chains stay near their L-BFGS-optimum starts and drift in the ~150 weakly observed x0 dimensions; between-chain lp levels differ by ~100-130. The run is too short for this geometry; it is not evidence of multimodality alone.",
+  "verdict": "NOT a qualified posterior in either window."
+ },
+ "predictive_checks": {
+  "whitened_innovation_lag1_ac_posterior_mean": {
+   "post": [
+    0.125823
+   ],
+   "full": [
+    0.405676
+   ]
+  },
+  "note": "post-window innovations are close to white (0.13); full-window innovations remain autocorrelated (0.41), i.e. the AR(1) model does not absorb the stimulation-epoch structure. No held-out presurgical seizure exists for P2, so no out-of-sample predictive check was possible.",
+  "seizing_in_window": "see ranking_top12.p_seizing_in_window (fraction of draws where max x > -1 within the fitted window)"
+ },
+ "intended_use": "intervention simulation input; not qualified (non-converged posterior, model benchmark verdict pending). Rank candidate interventions on this virtual patient as exploratory evidence only; not a clinical prediction; fitted frequencies are not calibrated probabilities.",
+ "limitations": [
+  "Not converged (see convergence_checks); EZ probabilities are chain-mixture frequencies.",
+  "Primary window violates the observation model's rest-at-first-observation assumption (177/191 channels peak at the first post-stimulation observation).",
+  "Short windows (8 / 15 obs at ~2 Hz = 1.6 / 2.8 model time units): onset dynamics barely constrained; most supra-threshold regions do not seize within the window.",
+  "Sensitivity window contains stimulation-driven activity the 2D model cannot represent (innovation AC 0.41).",
+  "Region 82 has the largest gain in the implant (R7-8 88.2); its ranking may reflect gain leverage.",
+  "Generator/inverter mismatch; noise-free simulated data; frozen 5-s pre-ictal baseline rule unsatisfiable on P2; model qualification (T0011) pending."
+ ],
+ "environment_manifest": {
+  "commands": [
+   "VM (~/aa/jobs/t0014/v1/remote/remote): setsid nohup python run_fit_run2.py post data_P2_post.json --seed 20140  (defaults: 16 chains, warmup 200, samples 200, td 8, ad 0.9, jitter 0.1)",
+   "local (work/T0014/local_run): python ../run_local.py run_fit_run2.py full data_P2_full.json --seed 20141",
+   "pull ~/aa/jobs/t0014/v1/remote/remote/out_post_run2 -> work/T0014/vm_out/out_post_run2",
+   "python nuts_analyze.py vm_out/out_post_run2 post; python nuts_analyze.py local_run/out_full_run2 full; python make_nuts_payload.py"
+  ],
+  "seeds": {
+   "post": 20140,
+   "full": 20141,
+   "lbfgs": "seed+i, i=0..23",
+   "jitter": "numpy default_rng(seed)"
+  },
+  "env_digest": "sha256(pip freeze .venv-model) = a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b (local); VM pinned stack per A0012",
+  "files_sha256": {
+   "run_fit_run2.py": "562ee25cf0e5da9421d71119d5ee1203a63b47afb4667a95733025ad48c7786e",
+   "nuts_analyze.py": "3c239e0415cbfeeddb961ddbfb4548223e95e0ba031c20d5f0f531398f85f1f7",
+   "prep_p2.py": "a9367871c0354760e3fb0da545766423192971cabcecf2c4dd500675ed26fc6f",
+   "data_P2_post.json": "773e76add049e76ef72ac1ea28e8250f261a0d8f41dfaf1c0c72dab5949d01da",
+   "data_P2_full.json": "c97b6d81147b16d64cacdeb3ce67727d1e1e6144986b195ed37d900d9f5f1a39",
+   "nuts_posterior_P2_post.csv": "8c84e666d11788ae3220043786d95ce86a877cb7acc4a3abe3147cde68fb3a95",
+   "nuts_posterior_P2_full.csv": "48c4cb5e74f2079e0aa10099563fac5c19b070c2151eabd8ece4674dc4aa62d3"
+  }
+ }
+}

@@ -1,0 +1,6 @@
+{
+  "resource": "IEEG.org data for Kini et al. 2019 (candidate-epivr)",
+  "access_path": "https://www.ieeg.org",
+  "status": "not_accessible (portal page did not render in fetch tool; account registration required per platform practice - to_verify)",
+  "conditions": "to_verify: IEEG.org terms of use / registration"
+}

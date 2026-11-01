@@ -1,0 +1,34 @@
+{
+  "criterion": [
+    "EvidenceClaim: supporting passage and location resolve in the cited source; population, design and endpoint transcribed correctly (protocol acceptance_criteria.evidence_claim)",
+    "Report: every number traces to a committed artifact in the same task"
+  ],
+  "criterion_version": "protocol v1 (A0001-StudyProtocol, acceptance_criteria.evidence_claim); TaskMessage T0006 scientific_acceptance_criteria",
+  "evaluator": "R5-independent-evaluation (instance r5-src-surgery, task T0006)",
+  "evaluated_artifacts": ["A0017-EvidenceClaim", "A0018-EvidenceClaim", "A0019-EvidenceClaim", "A0020-EvidenceClaim", "A0021-EvidenceClaim", "A0022-EvidenceClaim", "A0023-EvidenceClaim", "A0024-EvidenceClaim", "A0025-EvidenceClaim", "A0026-EvidenceClaim", "A0027-EvidenceClaim", "A0028-EvidenceClaim", "A0029-EvidenceClaim", "A0030-EvidenceClaim", "A0032-Report"],
+  "held_out_data": "not_applicable (literature source check; no outcome labels or vault items accessed)",
+  "method": "Independent re-retrieval, not reusing R1's verification: Europe PMC REST search (EXT_ID:<pmid> AND SRC:MED, resultType=core) for the 13 PubMed-indexed claims; normalised substring match of supporting_passage against abstractText (HTML tags, dashes and whitespace normalised) plus manual reading of every abstract for population, design, endpoint, numbers, follow-up and bibliographic fields (title, DOI, PMCID, journal/volume/issue/pages). A0024 checked against the cited aesnet.org abstract page via WebFetch, and its design paper PMID 32412094 via Europe PMC. A0030 co-publication PMID 42929804 checked. Wu 2019 'US centres' checked from Europe PMC author affiliations. Script: studies/study-001/work/T0006/fetch_check.py; raw records in work/T0006/sources/.",
+  "result": {
+    "evidence_claims": {"checked": 14, "passed": 14, "failed": 0, "indeterminate": 0,
+      "passage_verbatim": "14/14 (13 Europe PMC abstracts + 1 AES abstract page)",
+      "bibliographic_match": "13/13 PMID records match title and DOI; SLATE AES abstract number, date and authors match",
+      "follow_up_vs_protocol_ge_12mo": "meets: A0017-A0024, A0027; to_verify (not in abstract, correctly flagged): A0025, A0028, A0029; partially (median 19 mo, some individuals possibly <12 mo, flagged): A0026; not_applicable: A0030"},
+    "report": {"checked": 1, "passed": 0, "failed": 1, "indeterminate": 0}
+  },
+  "uncertainty_method": "not_applicable (deterministic verification; no statistical estimate). Limitation: R5, like R1, accessed abstracts only (NEJM full text returned 403; Europe PMC fullTextXML returned HTTP 500); full-text-only details (e.g. Wiebe 2001 age criterion, SF definitions and follow-up in A0025/A0028/A0029) remain unverified.",
+  "failure_cases": [
+    {"artifact": "A0032-Report", "issue": "'5 study families' for LITT, but cited claims carry 4 family ids (fam-slate-nct02844465, fam-litt-mtle-us-multicenter-wu2019, fam-emory-slah, fam-litt-pooled-meta-analyses); sentence self-contradictory."},
+    {"artifact": "A0032-Report", "issue": "'Range for temporal resection: about 47-77%' includes the paediatric mixed-procedure Dwivedi 77% (A0019) and the all-procedure de Tisi 47% (A0021); the label is not traceable to temporal-resection-specific data."},
+    {"artifact": "A0032-Report", "issue": "LITT range stated as 53-58% (section 2) and 55-58% (bottom line); A0023 gives 53.4%."},
+    {"artifact": "A0032-Report", "issue": "'15 sources opened' does not trace to any committed artifact."},
+    {"artifact": "A0032-Report", "issue": "Envelope consumed_artifact_ids = [A0001] only; the claims A0017-A0030 used for every number are not recorded as consumed."}
+  ],
+  "observations_not_failures": [
+    "A0017 headline says 'adults' but the abstract states no age criterion (the structured population field correctly says not_reported); R5 could not open the NEJM full text.",
+    "A0024: aesnet page states 'Study funded by Medtronic', which resolves R1's funding to_verify; no peer-reviewed SLATE results paper found in R5's Europe PMC search (2024-2026).",
+    "R5's Europe PMC search surfaced PMID 41943816 (2026 commentary on a 'LAANTERN' LITT study) and PMID 42425569 (MINE RCT protocol); neither is committed. They may be worth an R1 follow-up for LITT evidence, but this is outside T0006's scope.",
+    "Study-family grouping: pooling A0025-A0029 into one family is conservative and sensible. Overlap between the pooled family and the primary series (A0022, A0023) and between A0020 and A0021 is correctly flagged to_verify."
+  ],
+  "verdict": "EvidenceClaims A0017-A0030: passed (14/14). Report A0032: failed (repairable traceability and labelling defects; underlying claims sound).",
+  "evidence_level": "literature_reported claims verified against source abstracts (abstract-level verification only; not full text)"
+}

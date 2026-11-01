@@ -1,0 +1,34 @@
+{
+  "dataset_id": "huggingface:Omni-iEEG/Omni-iEEG",
+  "study_family_id": "multi: fam-hup-penn + fam-jhu-sarma-multicenter + fam-zurich-fedele2017 + fam-omni-ucla-detroit",
+  "source_doi": "arXiv:2602.16072 (Duan et al., ICLR 2026)",
+  "repository_url": "https://huggingface.co/datasets/Omni-iEEG/Omni-iEEG",
+  "reported_subject_count": "302 patients, 8 centres; 233 with resection margins + >=1 year outcome (project page / search summaries)",
+  "data_access": "verified_present (HF API: gated=false, private=false, 4277 files, lastModified 2026-07-15)",
+  "licence": "not_reported for data (HF cardData null; GitHub repo licence null). arXiv paper itself is CC BY-NC-ND 4.0. -> to_verify before use",
+  "approx_total_size_gb": 159.25,
+  "approx_total_size_basis": "HF treesize API 159247652055 bytes on 2026-10-31",
+  "file_formats": [
+    "EDF",
+    "BIDS-like channels.tsv/json",
+    "derivatives/hfo CSV",
+    "derivatives/datasplit"
+  ],
+  "verified_subject_count": 328,
+  "verified_subject_count_basis": "participants.tsv 328 rows (openieeg 185, hup 58, sourcesink 39, Multicenter 26, zurich 20); 339 raw sub-* dirs in listing",
+  "verified_modalities": {
+    "ieeg": "verified_present (re-referenced bipolar, resampled per project page)",
+    "electrode_localisation": "reported_absent as coordinates (0 electrodes.tsv); channels.tsv has 'anatomical' label column (verified in sub-openieegUCLA01: e.g. 'superiorparietal')",
+    "seizure_annotations": "'soz' channel flag column"
+  },
+  "intervention_linkage": "verified_present (channel-level 'resection' 0/1 column in channels.tsv); participants has_resection flag; 277 participants with known binary outcome and has_resection=1",
+  "outcome_fields_present": "participants.tsv 'outcome': 1 = Engel class 1, 0 = Engel 2+, -1 unknown (binary only; original Engel/ILAE subclasses not preserved)",
+  "follow_up_definition": "reported '>= one year' (search summary of paper); not in metadata",
+  "eligibility": "Large but derived: no coordinates, binary outcome only, licence unclear, and HUP/Multicenter/Zurich subsets duplicate ds004100/ds003029/ds003876/ds003498. The new UCLA (50) + Detroit (135) 'openieeg' subsets have anatomical labels + resection + outcome but no coordinates; original source to_verify.",
+  "cohort_overlap": "Must NOT be counted as independent of ds004100, ds003029, ds003876, ds003498.",
+  "metadata_files_inspected_sha256": {
+    "participants.tsv": "45df8eafcdfe590d11690c0bc0f937eedd420981a477eb4041141751f1db919c",
+    "participants.json": "1bc4bd6a49a3412ba1589b8c6690bb1b34e2d9c02f366ee8ee12a45ba72e5c52"
+  },
+  "checked_on": "2026-10-31"
+}

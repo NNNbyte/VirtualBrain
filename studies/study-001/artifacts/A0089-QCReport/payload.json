@@ -1,0 +1,286 @@
+{
+ "case_id": "HUP070",
+ "findings": [
+  {
+   "id": "checksum",
+   "severity": "info",
+   "finding": "all 29 case files match retrieval manifest sha256 and byte size"
+  },
+  {
+   "id": "read",
+   "severity": "info",
+   "finding": "mne-bids/mne read succeeded for all 7 runs (header + full data)"
+  },
+  {
+   "id": "format",
+   "severity": "info",
+   "finding": "EDF+C (continuous) all runs; 512.0 Hz; 82 channels; records x duration == samples in all runs: True; sidecar RecordingDuration = EDF duration - 1 sample (convention, benign)"
+  },
+  {
+   "id": "discontinuity",
+   "severity": "info",
+   "finding": "EDF+D files: none; all-channel flatline segments >=0.5 s: {'task-ictal_acq-ecog_run-05': [{'start_s': 186.451171875, 'dur_s': 0.546875}]} (only at the very end of the file: trailing pad, trim before analysis); simultaneous multi-channel step events are mostly inside annotated seizure windows (ictal activity, not acquisition gaps)",
+   "evidence": {
+    "task-ictal_acq-ecog_run-01": {
+     "inside_sz": 1,
+     "outside_sz_t_s": []
+    },
+    "task-ictal_acq-ecog_run-02": {
+     "inside_sz": 0,
+     "outside_sz_t_s": []
+    },
+    "task-ictal_acq-ecog_run-03": {
+     "inside_sz": 0,
+     "outside_sz_t_s": []
+    },
+    "task-ictal_acq-ecog_run-04": {
+     "inside_sz": 0,
+     "outside_sz_t_s": []
+    },
+    "task-ictal_acq-ecog_run-05": {
+     "inside_sz": 0,
+     "outside_sz_t_s": [
+      186.449
+     ]
+    },
+    "task-interictal_acq-ecog_run-01": {
+     "inside_sz": null,
+     "outside_sz_t_s": []
+    },
+    "task-interictal_acq-ecog_run-02": {
+     "inside_sz": null,
+     "outside_sz_t_s": [
+      299.863
+     ]
+    }
+   }
+  },
+  {
+   "id": "line_noise",
+   "severity": "info",
+   "finding": "no run-level 60 Hz contamination above ratio 10",
+   "evidence": {
+    "task-ictal_acq-ecog_run-01": 2.3,
+    "task-ictal_acq-ecog_run-02": 4.7,
+    "task-ictal_acq-ecog_run-03": 2.4,
+    "task-ictal_acq-ecog_run-04": 0.9,
+    "task-ictal_acq-ecog_run-05": 1.0,
+    "task-interictal_acq-ecog_run-01": 1.1,
+    "task-interictal_acq-ecog_run-02": 3.7
+   }
+  },
+  {
+   "id": "channel_flags",
+   "severity": "minor",
+   "finding": "channels flagged by signal metrics (not tagged bad in channels.tsv); recurrent (>= half of runs): ['EEG LG 02-Ref', 'EEG LG 21-Ref', 'EEG LG 22-Ref']",
+   "evidence": {
+    "task-ictal_acq-ecog_run-01": {
+     "hf_noise": [
+      "EEG LG 21-Ref"
+     ]
+    },
+    "task-ictal_acq-ecog_run-02": {
+     "hf_noise": [
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref"
+     ]
+    },
+    "task-ictal_acq-ecog_run-03": {
+     "high_variance": [
+      "EEG LG 22-Ref"
+     ]
+    },
+    "task-ictal_acq-ecog_run-04": {
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 07-Ref",
+      "EEG LG 14-Ref",
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref"
+     ]
+    },
+    "task-ictal_acq-ecog_run-05": {
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 07-Ref",
+      "EEG LG 14-Ref",
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref"
+     ]
+    },
+    "task-interictal_acq-ecog_run-01": {
+     "high_variance": [
+      "EEG LG 21-Ref",
+      "EEG LG 22-Ref",
+      "EEG LG 29-Ref",
+      "EEG LG 57-Ref",
+      "EEG LG 58-Ref"
+     ],
+     "line_noise": [
+      "EEG LG 57-Ref"
+     ],
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 57-Ref"
+     ]
+    },
+    "task-interictal_acq-ecog_run-02": {
+     "high_variance": [
+      "EEG LG 21-Ref",
+      "EEG LG 29-Ref",
+      "EEG LG 57-Ref",
+      "EEG LG 58-Ref"
+     ],
+     "line_noise": [
+      "EEG LG 57-Ref"
+     ],
+     "hf_noise": [
+      "EEG LG 02-Ref",
+      "EEG LG 08-Ref",
+      "EEG LG 57-Ref",
+      "EEG LG 58-Ref"
+     ]
+    }
+   }
+  },
+  {
+   "id": "soz_flagged",
+   "severity": "minor",
+   "finding": "SOZ-tagged channels with recurrent high-variance/noise flags (may reflect epileptiform activity rather than artefact): ['EEG LG 21-Ref', 'EEG LG 22-Ref']"
+  },
+  {
+   "id": "bad_channels",
+   "severity": "info",
+   "finding": "19 channels status=bad in channels.tsv: ['EEG EKG1-Ref', 'EEG EKG2-Ref', 'EEG LCZ 01-Ref', 'EEG LCZ 02-Ref', 'EEG LCZ 03-Ref', 'EEG LCZ 04-Ref', 'EEG LFP 01-Ref', 'EEG LFP 02-Ref', 'EEG LFP 03-Ref', 'EEG LFP 04-Ref', 'EEG LFP 05-Ref', 'EEG LFP 06-Ref', 'EEG LG 51-Ref', 'EEG LST 01-Ref', 'EEG LST 02-Ref', 'EEG LST 03-Ref', 'EEG LST 04-Ref', 'EEG RR-Ref', 'EEG Rate-Ref']"
+  },
+  {
+   "id": "channel_types",
+   "severity": "minor",
+   "finding": "non-neural channels typed SEEG/ECOG in channels.tsv: ['EEG EKG1-Ref', 'EEG EKG2-Ref', 'EEG RR-Ref', 'EEG Rate-Ref'] (status bad; must be dropped by name, not by type)"
+  },
+  {
+   "id": "annotations",
+   "severity": "info",
+   "finding": "all ictal runs have exactly one 'sz onset' and one 'sz offset' inside the recording, offset after onset, sample column == onset*fs; EDF files carry no embedded annotations",
+   "evidence": {
+    "task-ictal_acq-ecog_run-01": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 12.998046875,
+     "post_offset_s": 60.001953125
+    },
+    "task-ictal_acq-ecog_run-02": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 8.998046875,
+     "post_offset_s": 60.001953125
+    },
+    "task-ictal_acq-ecog_run-03": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 8.998046875,
+     "post_offset_s": 60.001953125
+    },
+    "task-ictal_acq-ecog_run-04": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 4.998046875,
+     "post_offset_s": 60.001953125
+    },
+    "task-ictal_acq-ecog_run-05": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 6.998046875,
+     "post_offset_s": 60.001953125
+    }
+   }
+  },
+  {
+   "id": "soz_resect",
+   "severity": "info",
+   "finding": "soz tags n=10, resect tags n=23, overlap n=10; identical across runs: {'soz': True, 'resect': True, 'bad': True}"
+  },
+  {
+   "id": "coordinates_missing",
+   "severity": "info",
+   "finding": "78/82 electrodes.tsv rows have xyz; without: ['EEG EKG1-Ref', 'EEG EKG2-Ref', 'EEG RR-Ref', 'EEG Rate-Ref']; good neural channels without xyz: []"
+  },
+  {
+   "id": "coordinate_frame",
+   "severity": "minor",
+   "finding": "units resolved to mm (coordsystem.json 'm' is a metadata error); template frame ICBM152 (README) vs fsaverage/MNI305 (coordsystem.json) to_verify",
+   "evidence": [
+    "abs max coordinate 83.2155212722208: >1 so values cannot be metres for a head (would be >1 m)",
+    "median within-shaft nearest-contact spacing 9.34 (typical SEEG/ECoG pitch 3.5-10 mm)",
+    "100.0% of contacts inside MNI brain box [-80,80]x[-120,90]x[-70,90] mm",
+    "L-prefixed contacts with x<0: 1.0; R-prefixed with x>0: None (RAS orientation check)"
+   ]
+  }
+ ],
+ "missingness": {
+  "mri_ct": "reported_absent (dataset level)",
+  "atlas_labels": "not_reported",
+  "reference_electrode": "not_reported (iEEGReference n/a)",
+  "interictal_events": "not_applicable",
+  "channels_without_coordinates": [
+   "EEG EKG1-Ref",
+   "EEG EKG2-Ref",
+   "EEG RR-Ref",
+   "EEG Rate-Ref"
+  ],
+  "hardware_filters": "channels.tsv low_cutoff/high_cutoff only (0-fs/2), SoftwareFilters n/a",
+  "manufacturer": "n/a in sidecar",
+  "outcome": "sealed (not missing; intentionally inaccessible)"
+ },
+ "verdict": "accept_with_limits",
+ "verdict_reasons": [
+  "coordinate template (ICBM152 vs fsaverage/MNI305) to_verify; template-only anatomy, no subject MRI/CT; declared unit 'm' must be overridden to mm"
+ ],
+ "usable_runs": {
+  "ictal": [
+   "task-ictal_acq-ecog_run-01",
+   "task-ictal_acq-ecog_run-02",
+   "task-ictal_acq-ecog_run-03",
+   "task-ictal_acq-ecog_run-04",
+   "task-ictal_acq-ecog_run-05"
+  ],
+  "interictal": [
+   "task-interictal_acq-ecog_run-01",
+   "task-interictal_acq-ecog_run-02"
+  ]
+ },
+ "recommended_channel_exclusions": {
+  "tsv_bad": [
+   "EEG EKG1-Ref",
+   "EEG EKG2-Ref",
+   "EEG LCZ 01-Ref",
+   "EEG LCZ 02-Ref",
+   "EEG LCZ 03-Ref",
+   "EEG LCZ 04-Ref",
+   "EEG LFP 01-Ref",
+   "EEG LFP 02-Ref",
+   "EEG LFP 03-Ref",
+   "EEG LFP 04-Ref",
+   "EEG LFP 05-Ref",
+   "EEG LFP 06-Ref",
+   "EEG LG 51-Ref",
+   "EEG LST 01-Ref",
+   "EEG LST 02-Ref",
+   "EEG LST 03-Ref",
+   "EEG LST 04-Ref",
+   "EEG RR-Ref",
+   "EEG Rate-Ref"
+  ],
+  "non_neural": [
+   "EEG EKG1-Ref",
+   "EEG EKG2-Ref",
+   "EEG RR-Ref",
+   "EEG Rate-Ref"
+  ],
+  "signal_flag_recurrent_review": [
+   "EEG LG 02-Ref",
+   "EEG LG 21-Ref",
+   "EEG LG 22-Ref"
+  ]
+ },
+ "methods": "qc_case.py (sha256 42e05a88cce877ce02ec1dddb95768bf6f56433d2e60db076845b3b0e0c8ffb2): sha256 vs manifest; EDF header parse; mne_bids.read_raw_bids (metadata) + mne.io.read_raw_edf (full data); per-channel std/ptp/zero-diff/clipping/Welch 60,120 Hz ratios/80-200 Hz fraction with robust-z outliers over status=good neural channels; discontinuity scan; events.tsv coherence; electrodes.tsv ranges, within-shaft spacing, MNI-box and hemisphere-sign checks. Thresholds in qc_summary attachment.",
+ "attachments": [
+  "qc_summary_HUP070.json",
+  "qc_channels_HUP070.csv"
+ ]
+}

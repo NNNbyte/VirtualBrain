@@ -1,0 +1,51 @@
+{
+ "ictal-01": {
+  "duration_s": 227.0,
+  "segments": [
+   {
+    "start_s": 226.133,
+    "end_s": 226.996,
+    "len_s": 0.863,
+    "value_uV_median": 0.7629510948318056
+   }
+  ]
+ },
+ "ictal-02": {
+  "duration_s": 215.0,
+  "segments": [
+   {
+    "start_s": 214.031,
+    "end_s": 214.996,
+    "len_s": 0.965,
+    "value_uV_median": 0.7629510948318056
+   }
+  ]
+ },
+ "ictal-03": {
+  "duration_s": 205.0,
+  "segments": []
+ },
+ "ictal-04": {
+  "duration_s": 235.0,
+  "segments": []
+ },
+ "ictal-05": {
+  "duration_s": 274.0,
+  "segments": [
+   {
+    "start_s": 273.332,
+    "end_s": 273.996,
+    "len_s": 0.664,
+    "value_uV_median": 0.7629510948318056
+   }
+  ]
+ },
+ "interictal-01": {
+  "duration_s": 300.0,
+  "segments": []
+ },
+ "interictal-02": {
+  "duration_s": 300.0,
+  "segments": []
+ }
+}

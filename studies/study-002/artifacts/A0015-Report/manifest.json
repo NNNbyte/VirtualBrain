@@ -1,0 +1,44 @@
+{
+  "artifact_id": "A0015-Report",
+  "schema_name": "Report",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0012",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "LEAD-study-lead",
+  "tool_id": null,
+  "tool_version": null,
+  "code_commit": null,
+  "environment_digest": null,
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "8cc27a3a453193b51b8db0531476f709aaab429193099451020441c162dd22c3",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0015-Report/payload.json",
+      "media_type": "application/json",
+      "sha256": "9b47e8d2377bc147291d5dde7620241d8450c8f6ac030c119a8b1b3a979b0f52",
+      "byte_size": 1377
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T14:12:31+00:00",
+  "supersedes_id": null,
+  "title": "Protocol amendment 2: parallel schedule for 17:00 UTC deadline",
+  "manifest_hash": "fa3f00df571e027ac97ba61cd729d4fa0a520a066d9257f78a54ac03424759b0"
+}

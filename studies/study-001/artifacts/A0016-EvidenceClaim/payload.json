@@ -1,0 +1,52 @@
+{
+  "claim": "Wang et al. (2025) virtual brain twins for stimulation is a diagnostic modelling framework for estimating the epileptogenic zone network from stimulation-induced seizures; the abstract reports no clinical seizure-outcome data after model-guided therapeutic stimulation.",
+  "intervention_modality": "model-guided stimulation",
+  "bibliographic_record": {
+    "authors": "Wang HE, Dollomaja B, Triebkorn P, Duma GM, Williamson A, Makhalova J, Lemarechal JD, Bartolomei F, Jirsa V.",
+    "title": "Virtual brain twins for stimulation in epilepsy.",
+    "journal": "Nature computational science",
+    "year": "2025",
+    "volume": "5",
+    "issue": "9",
+    "pages": "754-768",
+    "doi": "10.1038/s43588-025-00841-6",
+    "pmid": "40764764",
+    "pmcid": "PMC12457187",
+    "source_record_url": "https://europepmc.org/article/MED/40764764",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40764764/"
+  },
+  "supporting_passage": "This paper offers a high-resolution virtual brain twin framework for EZN diagnosis based on stimulation-induced seizures. [...] Here we consider invasive SEEG stimulation and non-invasive temporal interference stimulation as a complementary approach.",
+  "supporting_passages": [
+    "This paper offers a high-resolution virtual brain twin framework for EZN diagnosis based on stimulation-induced seizures.",
+    "Here we consider invasive SEEG stimulation and non-invasive temporal interference stimulation as a complementary approach."
+  ],
+  "passage_location": "Abstract (structured where labelled) of PMID 40764764, retrieved 2026-10-31 from Europe PMC REST API (resultType=core) = PubMed abstract; full text NOT read. Snapshot attached.",
+  "population_and_design": {
+    "n": "not_reported (in abstract)",
+    "design": "computational modelling / methods paper",
+    "population": "drug-resistant focal epilepsy (SEEG patients); details not in abstract",
+    "age_group": "not_reported"
+  },
+  "endpoint": {
+    "measure": "none clinical; model-based EZN estimation",
+    "timepoint": "not_applicable",
+    "median_pct_reduction": "reported_absent",
+    "responder_rate_50pct": "reported_absent",
+    "seizure_freedom": "reported_absent",
+    "follow_up_months_reported": "not_applicable"
+  },
+  "evidence_kind": "literature_reported",
+  "reported_observation": "Numbers above are as reported by authors in the abstract; none re-derived except where explicitly marked 'computed'.",
+  "author_inference": "Authors frame it as a methodological basis for moving from invasive to non-invasive diagnosis and treatment.",
+  "verification": {
+    "source_opened": "abstract_only",
+    "passage_exact_match": true,
+    "verified_by": "r1-stim substring check against retrieved abstract text",
+    "fields_not_verifiable_from_abstract": "denominators at later timepoints, responder definitions beyond abstract, full AE tables"
+  },
+  "meets_protocol_follow_up_ge_12mo": "not_applicable",
+  "contradictions": [
+    "Absence claim is based on the abstract only; full text not read - verify whether any patient-level outcome comparison is included."
+  ],
+  "study_family_id": "fam-VBT-stimulation-Wang2025"
+}

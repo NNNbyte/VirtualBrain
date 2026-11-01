@@ -1,0 +1,53 @@
+--- vep_ar1_v1.stan	2026-11-01 09:08:02.456965000 -0500
++++ vep_ar1.stan	2026-11-01 09:08:02.562977100 -0500
+@@ -8,6 +8,8 @@
+ //    offsets are data-centred: mu = amp * gain * (x - x_init) + u, u ~ N(u_mu (channel baseline), u_sd)
+ //  - log-normal amp prior centred on the data range / (gain, x excursion); sigma prior centred on data
+ //  - coupling unchanged (diffusive, vep_mcmc.stan:104-107) but vectorised; tau0 (time scale) and K estimated
++//  - v2: z_init centred on each region's isolated equilibrium z_eq(softmin(x0, x0_cap)) (sd z0_sd), so a
++//    healthy region starts at rest and onset time cannot be traded freely against x0
+ //  - x0 prior N(x0_mu, x0_sd) with identity in place of the undocumented `eig` matrix
+ //  - generated quantities use the SAME likelihood (log_lik per time point) - fixes log_lik_sum scale defect
+ //  - unused transformed data (wt, wtm) removed
+@@ -31,6 +33,21 @@
+     }
+     return x;
+   }
++  // isolated-node equilibrium slow variable for x0s <= critical: x solves x^3 + 2x^2 + 4x - 4 x0s - (I1 + 1) = 0
++  // (derivative 3x^2 + 4x + 4 > 0, unique root; 15 Newton steps from x = -2), z_eq = 4 (x - x0s)
++  // softmin(x0, cap) = -(1/k) log(exp(-k x0) + exp(-k cap)); returned negated
++  vector log_sum_exp_vec(vector x0, real cap, real k) {
++    int n = rows(x0);
++    vector[n] out;
++    for (i in 1:n) out[i] = log_sum_exp(-k * x0[i], -k * cap) / k;
++    return out;
++  }
++  vector z_eq(vector x0s, real I1) {
++    int n = rows(x0s);
++    vector[n] x = rep_vector(-2.0, n);
++    for (k in 1:15) x -= (x .* x .* x + 2.0 * x .* x + 4.0 * x - 4.0 * x0s - (I1 + 1.0)) ./ (3.0 * x .* x + 4.0 * x + 4.0);
++    return 4.0 * (x - x0s);
++  }
+   matrix epi2d(vector x0, vector z_init, real K, real tau0, matrix SC, vector SCrow,
+                real dt, int nsub, int nt, real I1) {
+     int nn = rows(x0);
+@@ -63,7 +80,8 @@
+   real I1;
+   real x0_mu;
+   real<lower=0> x0_sd;
+-  real z0_mu;
++  real x0_cap;          // soft cap (just below the bifurcation) used to centre z_init
++  real<lower=0> cap_k;  // softmin sharpness
+   real<lower=0> z0_sd;
+   real logK_mu;
+   real<lower=0> logK_sd;
+@@ -92,7 +110,8 @@
+ }
+ transformed parameters {
+   vector[nn] x0 = x0_mu + x0_sd * x0_star;
+-  vector[nn] z_init = z0_mu + z0_sd * z_init_star;
++  vector[nn] x0s = -log_sum_exp_vec(x0, x0_cap, cap_k);
++  vector[nn] z_init = z_eq(x0s, I1) + z0_sd * z_init_star;
+   real K = exp(logK_mu + logK_sd * logK_star);
+   real tau0 = exp(logtau_mu + logtau_sd * logtau_star);
+   real amp = exp(logamp_mu + logamp_sd * logamp_star);

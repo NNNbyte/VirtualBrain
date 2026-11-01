@@ -1,0 +1,330 @@
+{
+ "case_id": "HUP166",
+ "findings": [
+  {
+   "id": "checksum",
+   "severity": "info",
+   "finding": "all 17 case files match retrieval manifest sha256 and byte size"
+  },
+  {
+   "id": "read",
+   "severity": "info",
+   "finding": "mne-bids/mne read succeeded for all 4 runs (header + full data)"
+  },
+  {
+   "id": "format",
+   "severity": "info",
+   "finding": "EDF+C (continuous) all runs; 1024.0 Hz; 172 channels; records x duration == samples in all runs: True; sidecar RecordingDuration = EDF duration - 1 sample (convention, benign)"
+  },
+  {
+   "id": "discontinuity",
+   "severity": "info",
+   "finding": "EDF+D files: none; all-channel flatline segments >=0.5 s: none; simultaneous multi-channel step events are mostly inside annotated seizure windows (ictal activity, not acquisition gaps)",
+   "evidence": {
+    "task-ictal_acq-seeg_run-01": {
+     "inside_sz": 1,
+     "outside_sz_t_s": [
+      47.769,
+      59.863,
+      75.51
+     ]
+    },
+    "task-ictal_acq-seeg_run-02": {
+     "inside_sz": 109,
+     "outside_sz_t_s": [
+      266.109,
+      312.472,
+      317.701,
+      320.875,
+      321.396,
+      323.595,
+      325.436
+     ]
+    },
+    "task-interictal_acq-seeg_run-01": {
+     "inside_sz": null,
+     "outside_sz_t_s": [
+      247.214,
+      278.687,
+      278.907,
+      279.088,
+      279.417,
+      279.546,
+      279.679,
+      280.122,
+      289.368,
+      289.88,
+      290.505
+     ]
+    },
+    "task-interictal_acq-seeg_run-02": {
+     "inside_sz": null,
+     "outside_sz_t_s": [
+      164.245
+     ]
+    }
+   }
+  },
+  {
+   "id": "line_noise",
+   "severity": "minor",
+   "finding": "run-level 60 Hz contamination (median P59-61 / P50-57,63-70 ratio >10) in ['task-interictal_acq-seeg_run-02']; notch filtering required before spectral/connectivity analysis",
+   "evidence": {
+    "task-ictal_acq-seeg_run-01": 2.4,
+    "task-ictal_acq-seeg_run-02": 1.3,
+    "task-interictal_acq-seeg_run-01": 3.4,
+    "task-interictal_acq-seeg_run-02": 11.1
+   }
+  },
+  {
+   "id": "channel_flags",
+   "severity": "minor",
+   "finding": "channels flagged by signal metrics (not tagged bad in channels.tsv); recurrent (>= half of runs): ['LB0', 'LB11', 'LB12', 'LF6', 'LF7', 'LF8', 'LI7', 'LI8', 'LK11', 'LK12', 'LM5', 'RB8', 'RB9', 'RC6', 'RC7', 'RC8']",
+   "evidence": {
+    "task-ictal_acq-seeg_run-01": {
+     "line_noise": [
+      "LA11"
+     ],
+     "hf_noise": [
+      "LB0",
+      "LB11",
+      "LB12",
+      "LF6",
+      "LF7",
+      "LF8",
+      "LI7",
+      "LI8",
+      "LK11",
+      "LK12",
+      "RB8",
+      "RB9",
+      "RC6",
+      "RC7",
+      "RC8"
+     ]
+    },
+    "task-ictal_acq-seeg_run-02": {
+     "line_noise": [
+      "LM5"
+     ],
+     "hf_noise": [
+      "LB0",
+      "LB11",
+      "LB12",
+      "LF6",
+      "LF7",
+      "LF8",
+      "LI6",
+      "LI7",
+      "LI8",
+      "LK11",
+      "LK12",
+      "RB8",
+      "RB9",
+      "RC6",
+      "RC7",
+      "RC8"
+     ]
+    },
+    "task-interictal_acq-seeg_run-01": {
+     "flat": [
+      "LC11"
+     ],
+     "line_noise": [
+      "LM5"
+     ],
+     "hf_noise": [
+      "LB0",
+      "LB11",
+      "LB12",
+      "LF6",
+      "LF7",
+      "LF8",
+      "LI8",
+      "LK10",
+      "LK11",
+      "LK12",
+      "RB8",
+      "RB9",
+      "RC6",
+      "RC7",
+      "RC8"
+     ]
+    },
+    "task-interictal_acq-seeg_run-02": {
+     "low_variance": [
+      "LC11"
+     ],
+     "line_noise": [
+      "LC11"
+     ],
+     "hf_noise": [
+      "LB11",
+      "LB12",
+      "LF8",
+      "RC7",
+      "RC8"
+     ]
+    }
+   }
+  },
+  {
+   "id": "flat",
+   "severity": "minor",
+   "finding": "flat channels among status=good: ['LC11']"
+  },
+  {
+   "id": "bad_channels",
+   "severity": "info",
+   "finding": "8 channels status=bad in channels.tsv: ['EKG1', 'EKG2', 'LF5', 'LH2', 'LL1', 'RB10', 'RC10', 'RC9']"
+  },
+  {
+   "id": "channel_types",
+   "severity": "minor",
+   "finding": "non-neural channels typed SEEG/ECOG in channels.tsv: ['EKG1', 'EKG2'] (status bad; must be dropped by name, not by type)"
+  },
+  {
+   "id": "annotations",
+   "severity": "info",
+   "finding": "all ictal runs have exactly one 'sz onset' and one 'sz offset' inside the recording, offset after onset, sample column == onset*fs; EDF files carry no embedded annotations",
+   "evidence": {
+    "task-ictal_acq-seeg_run-01": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 119.9990234375,
+     "post_offset_s": 60.0009765625
+    },
+    "task-ictal_acq-seeg_run-02": {
+     "pre_onset_s": 120.0,
+     "seizure_duration_s": 145.9990234375,
+     "post_offset_s": 60.0009765625
+    }
+   }
+  },
+  {
+   "id": "soz_resect",
+   "severity": "info",
+   "finding": "soz tags n=5, resect tags n=15, overlap n=0; identical across runs: {'soz': True, 'resect': True, 'bad': True}"
+  },
+  {
+   "id": "soz_resect_disjoint",
+   "severity": "minor",
+   "finding": "SOZ-tagged and resect-tagged contact sets are disjoint (no SOZ contact inside the tagged intervention zone); tags are reported as provided - not corrected; relevant to any SOZ/resection-overlap analysis",
+   "evidence": {
+    "soz": [
+     "LJ1",
+     "LJ2",
+     "LJ3",
+     "LJ4",
+     "LJ5"
+    ],
+    "resect": [
+     "LA1",
+     "LA2",
+     "LA3",
+     "LA4",
+     "LA5",
+     "LA6",
+     "LA7",
+     "LB0",
+     "LB2",
+     "LE3",
+     "LE4",
+     "LE5",
+     "LE6",
+     "LE8",
+     "LE9"
+    ]
+   }
+  },
+  {
+   "id": "tagged_without_xyz",
+   "severity": "minor",
+   "finding": "tagged contacts lacking coordinates - soz: [], resect: ['LB0']; excluded from any geometric intervention-zone model"
+  },
+  {
+   "id": "coordinates_missing",
+   "severity": "info",
+   "finding": "169/172 electrodes.tsv rows have xyz; without: ['EKG1', 'EKG2', 'LB0']; good neural channels without xyz: ['LB0']"
+  },
+  {
+   "id": "coordinate_frame",
+   "severity": "minor",
+   "finding": "units resolved to mm (coordsystem.json 'm' is a metadata error); template frame ICBM152 (README) vs fsaverage/MNI305 (coordsystem.json) to_verify",
+   "evidence": [
+    "abs max coordinate 92.492208: >1 so values cannot be metres for a head (would be >1 m)",
+    "median within-shaft nearest-contact spacing 4.70 (typical SEEG/ECoG pitch 3.5-10 mm)",
+    "100.0% of contacts inside MNI brain box [-80,80]x[-120,90]x[-70,90] mm",
+    "L-prefixed contacts with x<0: 1.0; R-prefixed with x>0: 1.0 (RAS orientation check)"
+   ]
+  }
+ ],
+ "missingness": {
+  "mri_ct": "reported_absent (dataset level)",
+  "atlas_labels": "not_reported",
+  "reference_electrode": "not_reported (iEEGReference n/a)",
+  "interictal_events": "not_applicable",
+  "channels_without_coordinates": [
+   "EKG1",
+   "EKG2",
+   "LB0"
+  ],
+  "hardware_filters": "channels.tsv low_cutoff/high_cutoff only (0-fs/2), SoftwareFilters n/a",
+  "manufacturer": "n/a in sidecar",
+  "outcome": "sealed (not missing; intentionally inaccessible)"
+ },
+ "verdict": "accept_with_limits",
+ "verdict_reasons": [
+  "60 Hz line noise in 1/4 runs (notch needed)",
+  "tagged contacts without coordinates (soz [], resect ['LB0'])",
+  "coordinate template (ICBM152 vs fsaverage/MNI305) to_verify; template-only anatomy, no subject MRI/CT; declared unit 'm' must be overridden to mm"
+ ],
+ "usable_runs": {
+  "ictal": [
+   "task-ictal_acq-seeg_run-01",
+   "task-ictal_acq-seeg_run-02"
+  ],
+  "interictal": [
+   "task-interictal_acq-seeg_run-01",
+   "task-interictal_acq-seeg_run-02"
+  ]
+ },
+ "recommended_channel_exclusions": {
+  "tsv_bad": [
+   "EKG1",
+   "EKG2",
+   "LF5",
+   "LH2",
+   "LL1",
+   "RB10",
+   "RC10",
+   "RC9"
+  ],
+  "non_neural": [
+   "EKG1",
+   "EKG2"
+  ],
+  "signal_flag_recurrent_review": [
+   "LB0",
+   "LB11",
+   "LB12",
+   "LF6",
+   "LF7",
+   "LF8",
+   "LI7",
+   "LI8",
+   "LK11",
+   "LK12",
+   "LM5",
+   "RB8",
+   "RB9",
+   "RC6",
+   "RC7",
+   "RC8"
+  ]
+ },
+ "methods": "qc_case.py (sha256 42e05a88cce877ce02ec1dddb95768bf6f56433d2e60db076845b3b0e0c8ffb2): sha256 vs manifest; EDF header parse; mne_bids.read_raw_bids (metadata) + mne.io.read_raw_edf (full data); per-channel std/ptp/zero-diff/clipping/Welch 60,120 Hz ratios/80-200 Hz fraction with robust-z outliers over status=good neural channels; discontinuity scan; events.tsv coherence; electrodes.tsv ranges, within-shaft spacing, MNI-box and hemisphere-sign checks. Thresholds in qc_summary attachment.",
+ "attachments": [
+  "qc_summary_HUP166.json",
+  "qc_channels_HUP166.csv"
+ ]
+}

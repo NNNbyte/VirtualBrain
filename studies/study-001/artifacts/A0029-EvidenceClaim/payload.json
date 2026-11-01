@@ -1,0 +1,48 @@
+{
+ "claim": "A meta-analysis of 11 comparative studies in nontumoral epilepsy (389 LITT vs 557 open surgery) found complete seizure freedom 53.7% after LITT vs 68.1% after open surgery (RR 0.81, p=0.07, not significant), with significantly fewer complications after LITT (18.3% vs 30.0%).",
+ "bibliographic_record": {
+  "authors": "Maroufi SF, Fallahi MS, Amirkhani N, Dehghani Arani P, Theodore JN, Cohen-Gadol AA, Sheehan JP, Van Gompel JJ",
+  "title": "Laser interstitial thermal therapy versus open resective surgery for nontumoral epilepsy: systematic review and meta-analysis of comparative studies",
+  "citation": "J Neurosurg 2026;144(4):787-798",
+  "doi": "10.3171/2025.8.JNS25496",
+  "pmid": "41576371",
+  "pmcid": null,
+  "publication_type": "systematic review and meta-analysis"
+ },
+ "supporting_passage": "Open surgery demonstrated higher rates of complete seizure freedom, although not reaching significance (68.1% vs 53.7%, RR 0.81, p = 0.07).",
+ "passage_location": "Abstract, Results section. Abstract only (full text not read). Europe PMC REST API (resultType=core, abstractText) for PMID 41576371; https://europepmc.org/abstract/MED/41576371; accessed 2026-11-01",
+ "population_and_design": {
+  "design": "systematic review and random-effects meta-analysis of comparative (non-randomised) studies",
+  "n_studies": 11,
+  "n_patients": {
+   "LITT": 389,
+   "open surgery": 557
+  },
+  "population": "nontumoral epilepsy (TLE, focal cortical dysplasia, tuberous sclerosis), mixed ages"
+ },
+ "endpoint": {
+  "reported_endpoint": "complete seizure freedom; 'adequate seizure freedom' secondary",
+  "follow_up": "not_reported in abstract",
+  "meets_protocol_followup_ge_12mo": "to_verify",
+  "protocol_mapping_v1": "complete seizure freedom -> favourable",
+  "values": {
+   "complete SF": "open 68.1% vs LITT 53.7%, RR 0.81, p=0.07",
+   "adequate SF": "LITT 63.0% vs open 74.0%, RR 0.90, p=0.11",
+   "complications": "open 30.0% vs LITT 18.3%, RR 0.55, p<0.01"
+  }
+ },
+ "reported_observation": "Non-significant trend favouring open surgery for complete seizure freedom; significant in EZ-directed resection subgroup; fewer complications and shorter stay with LITT.",
+ "author_inference": "Open surgery remains slightly superior for long-term seizure freedom; LITT less invasive with lower morbidity.",
+ "contradictions": [
+  "Ekman 2024 reports significant superiority of resection in MTLE; here overall difference is not significant (p=0.07) and sensitive to influential-study analysis."
+ ],
+ "study_family_id": "fam-litt-pooled-meta-analyses",
+ "overlap_note": "Comparative studies likely overlap with Pichardo-Rojas 2026; not independent evidence.",
+ "evidence_kind": "literature_reported",
+ "verification": {
+  "passage_verified_verbatim": true,
+  "access_level": "abstract_only",
+  "verified_by": "r1-surgery",
+  "verified_on": "2026-11-01"
+ }
+}

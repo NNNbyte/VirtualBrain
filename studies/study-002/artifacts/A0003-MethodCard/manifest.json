@@ -1,0 +1,44 @@
+{
+  "artifact_id": "A0003-MethodCard",
+  "schema_name": "MethodCard",
+  "schema_version": "1.0",
+  "study_id": "study-002",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0002",
+  "system_release_id": "rel-f02dbe461251",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R1-evidence-scout",
+  "tool_id": "source inspection of vep_stim package",
+  "tool_version": "vep-stim 0.1.0a1; tvb-library 2.10.0",
+  "code_commit": null,
+  "environment_digest": "a43570f3d0ab5b41bebf3a692f87829da9f74eb977bb9bb9a18e57db6233717b",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol"
+  ],
+  "input_manifest_hash": "8cc27a3a453193b51b8db0531476f709aaab429193099451020441c162dd22c3",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0003-MethodCard/payload.json",
+      "media_type": "application/json",
+      "sha256": "857549ce2dd2edfcaa7ead711338a67ac7bfcc40c65310bff1134e510db22a48",
+      "byte_size": 8550
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T13:10:49+00:00",
+  "supersedes_id": null,
+  "title": "vep-stim 0.1.0a1 @5367ef4: Stan 2D-Epileptor inversion + TVB SpatEpiStim stimulation simulator (defects recorded)",
+  "manifest_hash": "2d554586652e7cc10a8ff7a9da381430be9054b66f5db9c0c52ec3e0c564f9c0"
+}

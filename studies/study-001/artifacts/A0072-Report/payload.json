@@ -1,0 +1,177 @@
+{
+ "title": "ds004100 v1.1.3 retrieval manifest and outcome-blind case-selection proposal",
+ "body": "## 1. Retrieval manifest (OpenNeuro ds004100 snapshot 1.1.3, CC0; user-approved download 2026-10-31)\n- Source list: OpenNeuro GraphQL `snapshot(datasetId:\"ds004100\",tag:\"1.1.3\")` recursive walk (work/T0015/fetch_tree.py); identical (path+size) to the A0070 attachment ds004100_v113_tree_full.json.\n- Location: `data/ds004100-1.1.3/` (project root, gitignored). Raw files not modified.\n- Downloaded 1343/1343 files = 1341 release files (14,196,260,504 B, matches snapshot summary) + .gitattributes (284 B) + .datalad/config (63 B); total 14,196,260,851 B. 0 failed, 0 retries.\n- Verification: every file present with expected size; no extra or partial files; 57 sub-* directories; sub-HUP132 absent.\n- sha256 for all 1343 files in attached retrieval_manifest.csv (path, bytes, sha256); manifest file sha256 = 62e8da45fa70ed025c10efdb5b053bdce53d6c99a1e0b7d43bbd13b249f94c5d.\n- Cross-check: README, CHANGES, dataset_description.json, participants.json, sub-HUP060 coordsystem.json and electrodes.tsv sha256 equal the values recorded in A0070.\n- Content counts (file names + sidecars): 319 EDF (208 ictal, 111 interictal); 208 events.tsv, each with 'sz onset' and 'sz offset' rows (208 each); SOZ- and resect-tagged channels present in 57/57; contacts with numeric xyz in 57/57. Implant from participants.tsv agrees with acq- file label for 57/57 (37 SEEG / 20 ECoG).\n- participants.tsv: 58 rows (includes sub-HUP132, which has no recordings in 1.1.3); one participant_id has a trailing space ('sub-HUP151 '), stripped in derived JSON only. Therapy levels present: ABLATION and RESECTION only - no RNS rows (resolves A0070 to_verify item; no stimulation cases in this dataset).\n\n## 2. Outcome sealing\n- Outcome columns per participants.json: 'outcome' (S/F/NR) and 'engel' (1-4). Written only to work/T0015/outcomes_to_seal.json for the lead to seal; no outcome values in any artifact or log.\n- Non-outcome linkage (therapy, implant, sex, age, hand, target, lesion_status, age_onset) in work/T0015/linkage.json (not committed).\n- Raw `data/ds004100-1.1.3/participants.tsv` still contains outcome columns: lead should restrict access to it.\n\n## 3. Cohort split\n- See A0071-CohortSplit: 56 eligible (sub-HUP165 excluded: no ictal run); 34 development / 22 test; stratified by therapy x implant; seed 20261101; split_hash 255216f575a2e635e3fcece16cc2f3e3ea1d12c6222676f1281d41f90d17fa23.\n\n## 4. Case-selection proposal (protocol max_cases = 10; outcome-blind)\nRule (work/T0015/select_cases.py, seed 20261101): qualified = >=2 ictal runs with events.tsv, >=1 interictal run, >=1 SOZ-tagged and >=1 resect-tagged channel, contacts with xyz. SOZ/resect overlap was deliberately NOT used, because it correlates with outcome. Quotas give balance on therapy and implant in each partition: development 6 = ABLATION|SEEG 2, ABLATION|ECOG 1, RESECTION|ECOG 2, RESECTION|SEEG 1 (3 ablation / 3 resection, 3 SEEG / 3 ECoG); test 4 = one per cell (2/2, 2/2). Random pick within each cell. Qualified pool per cell: development {\"ABLATION|SEEG\": 15, \"ABLATION|ECOG\": 1, \"RESECTION|SEEG\": 6, \"RESECTION|ECOG\": 10}; test {\"ABLATION|SEEG\": 9, \"ABLATION|ECOG\": 1, \"RESECTION|SEEG\": 4, \"RESECTION|ECOG\": 6}. The ABLATION|ECOG cell has only one qualified case per partition, so sub-HUP126 and sub-HUP114 were forced picks.\n\n| subject | partition | therapy | implant | ictal runs | interictal runs | SOZ ch | resect ch | contacts xyz |\n|---|---|---|---|---|---|---|---|---|\n| sub-HUP126 | development | ABLATION | ECOG | 4 | 2 | 2 | 9 | 114 |\n| sub-HUP151 | development | ABLATION | SEEG | 5 | 2 | 3 | 7 | 178 |\n| sub-HUP141 | development | ABLATION | SEEG | 5 | 2 | 13 | 13 | 115 |\n| sub-HUP105 | development | RESECTION | ECOG | 2 | 2 | 9 | 4 | 60 |\n| sub-HUP123 | development | RESECTION | ECOG | 4 | 2 | 7 | 24 | 124 |\n| sub-HUP173 | development | RESECTION | SEEG | 5 | 2 | 8 | 19 | 124 |\n| sub-HUP114 | test | ABLATION | ECOG | 4 | 2 | 2 | 4 | 125 |\n| sub-HUP157 | test | ABLATION | SEEG | 5 | 2 | 14 | 6 | 170 |\n| sub-HUP070 | test | RESECTION | ECOG | 5 | 2 | 10 | 23 | 78 |\n| sub-HUP166 | test | RESECTION | SEEG | 2 | 2 | 5 | 15 | 169 |\n\n## 5. Open items / limitations (to_verify, not done in this task)\n- Per-case signal QC (EDF headers, units, sampling rate, flat/noisy channels, line noise) and anatomy QC are not yet done; no PatientCase/QCReport committed here.\n- Coordinate frame/unit conflict (coordsystem.json says fsaverage, unit 'm'; values are mm-scale; README says MNI ICBM152) remains to_verify before any geometry artifact.\n- No MRI/CT/DWI in the release: a template connectome is required.\n- No stimulation (RNS/DBS/VNS) cases: this dataset can test only resection/ablation questions.\n- Per-patient follow-up duration is not in the metadata.\n",
+ "retrieval_summary": {
+  "files": 1343,
+  "release_files": 1341,
+  "bytes_total": 14196260851,
+  "bytes_release": 14196260504,
+  "missing": 0,
+  "size_mismatch": 0,
+  "manifest_sha256": "62e8da45fa70ed025c10efdb5b053bdce53d6c99a1e0b7d43bbd13b249f94c5d"
+ },
+ "case_selection": {
+  "seed": 20261101,
+  "qualified_counts": {
+   "development": 32,
+   "test": 20
+  },
+  "qualified_by_cell": {
+   "development": {
+    "ABLATION|SEEG": 15,
+    "ABLATION|ECOG": 1,
+    "RESECTION|SEEG": 6,
+    "RESECTION|ECOG": 10
+   },
+   "test": {
+    "ABLATION|SEEG": 9,
+    "ABLATION|ECOG": 1,
+    "RESECTION|SEEG": 4,
+    "RESECTION|ECOG": 6
+   }
+  },
+  "proposal": [
+   {
+    "subject": "sub-HUP126",
+    "partition": "development",
+    "therapy": "ABLATION",
+    "implant": "ECOG",
+    "acq": [
+     "ecog"
+    ],
+    "n_ictal_runs": 4,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 2,
+    "n_resect_channels": 9,
+    "n_contacts_with_xyz": 114
+   },
+   {
+    "subject": "sub-HUP151",
+    "partition": "development",
+    "therapy": "ABLATION",
+    "implant": "SEEG",
+    "acq": [
+     "seeg"
+    ],
+    "n_ictal_runs": 5,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 3,
+    "n_resect_channels": 7,
+    "n_contacts_with_xyz": 178
+   },
+   {
+    "subject": "sub-HUP141",
+    "partition": "development",
+    "therapy": "ABLATION",
+    "implant": "SEEG",
+    "acq": [
+     "seeg"
+    ],
+    "n_ictal_runs": 5,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 13,
+    "n_resect_channels": 13,
+    "n_contacts_with_xyz": 115
+   },
+   {
+    "subject": "sub-HUP105",
+    "partition": "development",
+    "therapy": "RESECTION",
+    "implant": "ECOG",
+    "acq": [
+     "ecog"
+    ],
+    "n_ictal_runs": 2,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 9,
+    "n_resect_channels": 4,
+    "n_contacts_with_xyz": 60
+   },
+   {
+    "subject": "sub-HUP123",
+    "partition": "development",
+    "therapy": "RESECTION",
+    "implant": "ECOG",
+    "acq": [
+     "ecog"
+    ],
+    "n_ictal_runs": 4,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 7,
+    "n_resect_channels": 24,
+    "n_contacts_with_xyz": 124
+   },
+   {
+    "subject": "sub-HUP173",
+    "partition": "development",
+    "therapy": "RESECTION",
+    "implant": "SEEG",
+    "acq": [
+     "seeg"
+    ],
+    "n_ictal_runs": 5,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 8,
+    "n_resect_channels": 19,
+    "n_contacts_with_xyz": 124
+   },
+   {
+    "subject": "sub-HUP114",
+    "partition": "test",
+    "therapy": "ABLATION",
+    "implant": "ECOG",
+    "acq": [
+     "ecog"
+    ],
+    "n_ictal_runs": 4,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 2,
+    "n_resect_channels": 4,
+    "n_contacts_with_xyz": 125
+   },
+   {
+    "subject": "sub-HUP157",
+    "partition": "test",
+    "therapy": "ABLATION",
+    "implant": "SEEG",
+    "acq": [
+     "seeg"
+    ],
+    "n_ictal_runs": 5,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 14,
+    "n_resect_channels": 6,
+    "n_contacts_with_xyz": 170
+   },
+   {
+    "subject": "sub-HUP070",
+    "partition": "test",
+    "therapy": "RESECTION",
+    "implant": "ECOG",
+    "acq": [
+     "ecog"
+    ],
+    "n_ictal_runs": 5,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 10,
+    "n_resect_channels": 23,
+    "n_contacts_with_xyz": 78
+   },
+   {
+    "subject": "sub-HUP166",
+    "partition": "test",
+    "therapy": "RESECTION",
+    "implant": "SEEG",
+    "acq": [
+     "seeg"
+    ],
+    "n_ictal_runs": 2,
+    "n_interictal_runs": 2,
+    "n_soz_channels": 5,
+    "n_resect_channels": 15,
+    "n_contacts_with_xyz": 169
+   }
+  ]
+ },
+ "cohort_split": "A0071-CohortSplit"
+}

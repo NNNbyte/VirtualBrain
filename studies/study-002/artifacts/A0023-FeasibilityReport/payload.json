@@ -1,0 +1,30 @@
+{
+ "intervention_id": "RES-EZ",
+ "checks": [
+  {
+   "check": "model mapping",
+   "result": "pass",
+   "detail": "whole-region ablation/disconnection maps exactly onto model nodes"
+  },
+  {
+   "check": "simulator",
+   "result": "pass",
+   "detail": "p2sim selftest: TVB run finite; package equations bitwise reproduced"
+  },
+  {
+   "check": "eloquent/vascular constraints",
+   "result": "not_assessable",
+   "detail": "no functional or vascular data for the virtual patient"
+  },
+  {
+   "check": "patient-space geometry",
+   "result": "not_assessable",
+   "detail": "no MRI/coordinates (A0010); atlas-level only"
+  }
+ ],
+ "verdict": "feasible_in_silico",
+ "verdict_reasons": [
+  "model-level intervention fully specified",
+  "clinical/surgical feasibility not assessable for a virtual patient"
+ ]
+}

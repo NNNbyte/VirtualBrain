@@ -1,0 +1,60 @@
+{
+  "artifact_id": "A0061-ValidationReport",
+  "schema_name": "ValidationReport",
+  "schema_version": "1.0",
+  "study_id": "study-001",
+  "cohort_id": null,
+  "case_id": null,
+  "session_id": null,
+  "run_id": "run-1",
+  "task_id": "T0007",
+  "system_release_id": "rel-823fa0c912cb",
+  "protocol_version": "v1",
+  "model_bundle_id": null,
+  "producer_role": "R5-independent-evaluation",
+  "tool_id": "europepmc-rest+pubmed-efetch+fetch_check.py+record_gates.py",
+  "tool_version": "1.0",
+  "code_commit": null,
+  "environment_digest": "bf0397532557faa31ae3eba12081a222e0bb3713bc3e1d7018624fb09e1e0a41",
+  "consumed_artifact_ids": [
+    "A0001-StudyProtocol",
+    "A0002-EvidenceClaim",
+    "A0003-EvidenceClaim",
+    "A0004-EvidenceClaim",
+    "A0005-EvidenceClaim",
+    "A0006-EvidenceClaim",
+    "A0007-EvidenceClaim",
+    "A0008-EvidenceClaim",
+    "A0009-EvidenceClaim",
+    "A0010-EvidenceClaim",
+    "A0011-EvidenceClaim",
+    "A0012-EvidenceClaim",
+    "A0013-EvidenceClaim",
+    "A0014-EvidenceClaim",
+    "A0015-EvidenceClaim",
+    "A0016-EvidenceClaim",
+    "A0031-Report"
+  ],
+  "input_manifest_hash": "fb4df640c95b21613991d0d46778d4f0c8713cd4b7062294a4929c21e29eedc2",
+  "payload_refs": [
+    {
+      "uri": "artifacts/A0061-ValidationReport/payload.json",
+      "media_type": "application/json",
+      "sha256": "c546a8f38d724a54e5179a45736804b6796c5090be31818a6fafac428d6b6d51",
+      "byte_size": 4019
+    }
+  ],
+  "scientific_context": {
+    "evidence_kind": "not_applicable"
+  },
+  "execution_status": "succeeded",
+  "validation_status": "unreviewed",
+  "access_classification": "internal",
+  "permitted_destinations": [
+    "study_store"
+  ],
+  "created_at": "2026-11-01T03:49:20+00:00",
+  "supersedes_id": null,
+  "title": "R5 source check of R1 neurostimulation claims A0002-A0016 and Report A0031: 16/16 passed",
+  "manifest_hash": "006b63daf95835b0851635a07ba146c74ac8c4821dd3f2c77af9bea4b6bd7e10"
+}

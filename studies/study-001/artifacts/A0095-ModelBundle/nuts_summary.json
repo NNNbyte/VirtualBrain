@@ -1,0 +1,308 @@
+{
+ "sampler": {
+  "chains_used": 8,
+  "draws_per_chain": 75,
+  "draws_per_chain_all": [
+   75,
+   75,
+   75,
+   75,
+   75,
+   75,
+   75,
+   75
+  ],
+  "divergences": 8,
+  "divergences_per_chain": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   8,
+   0,
+   0
+  ],
+  "treedepth_mean": 6.966666666666667,
+  "treedepth_max_hits": 592,
+  "n_leapfrog_mean": 125.94333333333333,
+  "stepsize_per_chain": [
+   0.0013816222,
+   0.0014049775,
+   0.0010595007,
+   0.0012135082,
+   0.0003805084,
+   0.00056552097,
+   0.0012316012,
+   0.0014063917
+  ],
+  "accept_stat_mean": 0.9508120239916668,
+  "lp_mean_per_chain": [
+   24492.75836,
+   24502.3132,
+   24193.48830666667,
+   24158.582440000002,
+   24206.969333333334,
+   24199.085266666665,
+   23978.96418666667,
+   23971.09141333333
+  ],
+  "x0_rhat_max": 4.185852386686063,
+  "x0_rhat_median": 2.77097921542509,
+  "x0_n_rhat_gt_1_05": 162,
+  "x0_n_rhat_gt_1_01": 162,
+  "x0_ess_bulk_min": 8.600251119915871,
+  "x0_ess_bulk_median": 9.32346482967034,
+  "rhat_lp": 3.5226261043983222,
+  "rhat_K": 2.8733552991066262,
+  "rhat_amp": 2.7501209986928314,
+  "rhat_eps": 1.8181672954733679,
+  "ess_lp": 8.820115676192266
+ },
+ "recovery": {
+  "truth": [
+   "Left-O2"
+  ],
+  "rank_true_EZ_by_x0_mean": 113,
+  "rank_true_EZ_by_EV_mean": 8,
+  "O2": {
+   "x0_mean": -3.0959082258333335,
+   "x0_sd": 1.0218433676724838,
+   "P_x0_gt_m2_05": 0.25,
+   "EV_mean": 0.15389105602824288,
+   "EV_median": 0.0,
+   "frac_draws_seizing": 0.265
+  },
+  "regions_P_x0_gt_m2_05_above_0_5": [],
+  "n_regions_P_x0_gt_m2_05_above_0_5": 0,
+  "true_positive": [],
+  "false_positive": [],
+  "top10_by_x0_mean": [
+   {
+    "region": "Left-T3-posterior",
+    "x0_mean": -2.25,
+    "x0_sd": 0.951,
+    "P_x0_gt_m2_05": 0.5,
+    "EV_mean": 0.232
+   },
+   {
+    "region": "Left-F3-pars-opercularis",
+    "x0_mean": -2.313,
+    "x0_sd": 0.618,
+    "P_x0_gt_m2_05": 0.5,
+    "EV_mean": 0.105
+   },
+   {
+    "region": "Left-Caudate-nucleus",
+    "x0_mean": -2.352,
+    "x0_sd": 0.687,
+    "P_x0_gt_m2_05": 0.5,
+    "EV_mean": 0.109
+   },
+   {
+    "region": "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+    "x0_mean": -2.466,
+    "x0_sd": 1.215,
+    "P_x0_gt_m2_05": 0.5,
+    "EV_mean": 0.429
+   },
+   {
+    "region": "Left-SMA",
+    "x0_mean": -2.581,
+    "x0_sd": 0.474,
+    "P_x0_gt_m2_05": 0.25,
+    "EV_mean": 0.049
+   },
+   {
+    "region": "Left-Precuneus",
+    "x0_mean": -2.589,
+    "x0_sd": 0.973,
+    "P_x0_gt_m2_05": 0.25,
+    "EV_mean": 0.308
+   },
+   {
+    "region": "Left-Occipito-temporal-sulcus",
+    "x0_mean": -2.597,
+    "x0_sd": 0.626,
+    "P_x0_gt_m2_05": 0.25,
+    "EV_mean": 0.065
+   },
+   {
+    "region": "Right-Supramarginal-anterior",
+    "x0_mean": -2.613,
+    "x0_sd": 0.564,
+    "P_x0_gt_m2_05": 0.25,
+    "EV_mean": 0.057
+   },
+   {
+    "region": "Left-Postcentral-sulcus",
+    "x0_mean": -2.654,
+    "x0_sd": 0.828,
+    "P_x0_gt_m2_05": 0.5,
+    "EV_mean": 0.118
+   },
+   {
+    "region": "Right-Anterior-cingulate-cortex",
+    "x0_mean": -2.659,
+    "x0_sd": 0.541,
+    "P_x0_gt_m2_05": 0.25,
+    "EV_mean": 0.052
+   }
+  ],
+  "top10_by_EV_mean": [
+   {
+    "region": "Left-Anterior-occipital-sulcus-and-preoccipital-notch",
+    "EV_mean": 0.429
+   },
+   {
+    "region": "Left-Precuneus",
+    "EV_mean": 0.308
+   },
+   {
+    "region": "Left-Supramarginal-posterior",
+    "EV_mean": 0.247
+   },
+   {
+    "region": "Left-Cerebellar-cortex",
+    "EV_mean": 0.233
+   },
+   {
+    "region": "Left-T3-posterior",
+    "EV_mean": 0.232
+   },
+   {
+    "region": "Left-STS-posterior",
+    "EV_mean": 0.223
+   },
+   {
+    "region": "Left-Superior-parietal-lobule-P1",
+    "EV_mean": 0.194
+   },
+   {
+    "region": "Left-O2",
+    "EV_mean": 0.154
+   },
+   {
+    "region": "Left-T2-anterior",
+    "EV_mean": 0.151
+   },
+   {
+    "region": "Left-O3",
+    "EV_mean": 0.147
+   }
+  ],
+  "H4_spearman_x0mean_vs_gain_colsum": {
+   "rho": -0.24783328464310056,
+   "p": 0.0014741095020752253
+  },
+  "H4_top5_gain_regions": [
+   "Left-Angular-gyrus",
+   "Left-Supramarginal-posterior",
+   "Left-Superior-parietal-lobule-P1",
+   "Left-Intraparietal-sulcus",
+   "Left-Precuneus"
+  ],
+  "H0_prior_contraction": {
+   "median": 0.5680794911024225,
+   "O2": -10.601820756180478,
+   "n_regions_contraction_gt_0_5": 92
+  },
+  "authors_xlsx_comparison": [
+   {
+    "region": "Left-O2",
+    "authors_EV_median": 1.0,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.15389105602824288,
+    "ours_x0_mean": -3.0959082258333335,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-O1",
+    "authors_EV_median": 0.0,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.0,
+    "ours_x0_mean": -4.0834307395,
+    "ours_P_x0_gt_m2_05": 0.0
+   },
+   {
+    "region": "Left-Lingual-gyrus",
+    "authors_EV_median": 0.6123819489093046,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.0651646888972186,
+    "ours_x0_mean": -3.1997251075,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-T2-posterior",
+    "authors_EV_median": 0.0,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.14386905332000594,
+    "ours_x0_mean": -2.9179456169999995,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-Occipital-pole",
+    "authors_EV_median": 0.6710802237061848,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.06082476054559294,
+    "ours_x0_mean": -2.806221412166667,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-Calcarine-sulcus",
+    "authors_EV_median": 0.4914365893698151,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.0,
+    "ours_x0_mean": -3.4225965761666672,
+    "ours_P_x0_gt_m2_05": 0.0
+   },
+   {
+    "region": "Left-STS-posterior",
+    "authors_EV_median": 0.5118131767650711,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.22339723188325347,
+    "ours_x0_mean": -3.1232600515,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-Cuneus",
+    "authors_EV_median": 0.0,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.05898556606211635,
+    "ours_x0_mean": -2.931986261833333,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-Lingual-sulcus",
+    "authors_EV_median": 0.0,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.06647527018452899,
+    "ours_x0_mean": -2.927262289166667,
+    "ours_P_x0_gt_m2_05": 0.25
+   },
+   {
+    "region": "Left-Temporal-pole",
+    "authors_EV_median": 0.0,
+    "ours_EV_median": 0.0,
+    "ours_EV_mean": 0.05369483809583341,
+    "ours_x0_mean": -2.747045507166667,
+    "ours_P_x0_gt_m2_05": 0.25
+   }
+  ],
+  "spearman_authors_EVmedian_vs_ours_EVmean_10regions": {
+   "rho": 0.3890857498980905,
+   "p": 0.2664428924099046
+  }
+ },
+ "ppc": {
+  "rmse_log_features": 0.08402005847176983,
+  "R2_log_features": 0.5083720460427463,
+  "coverage_90pct_predictive_interval": 0.9157798088560578,
+  "channel_corr_median": 0.7205973017790743,
+  "channel_corr_top20_most_variable_median": 0.7961850203637011,
+  "eps_posterior_mean": 0.085660735875,
+  "n_ppc_draws": 400,
+  "likelihood_mask": "column-major index >= 10*ns (package model skips first ~10 channels, not first 10 time points)",
+  "note": "Features = log of envelope features the model was fit to (in-sample PPC; no held-out seizure exists for this simulated case)"
+ }
+}

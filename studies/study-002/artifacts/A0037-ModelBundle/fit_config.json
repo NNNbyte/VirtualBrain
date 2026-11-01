@@ -1,0 +1,32 @@
+{
+ "model": "vep_ar1.stan (T0011 v2). Patched copy of vep_stim/stan/vep_mcmc.stan (vep-stim 0.1.0a1 @5367ef4, sha256 5368394c...732e); diff in vep_ar1.diff",
+ "build": "CmdStan 2.40 via cmdstanpy 1.3.0, DEFAULT stanc optimisation (O0). Do NOT use stanc --O1: in T0011 the O1 build returned wrong log densities (rel diff up to 84% vs O0 and vs numpy).",
+ "log_density_check": "lp_numpy.py <exe> <data.json>: numpy vs CmdStan log_prob at 6 random points must agree (T0011 v2: max rel diff 1.4e-8)",
+ "features": {
+  "script": "features.py compute_feature(seeg[ns x nt], time_steps_ms, hpf=10.0, lpf=1.0, win_s=1.0, target_hz=2.0)",
+  "sampling_rate": "from each file's time_steps (ms); never assumed",
+  "steps": "10 Hz high-pass Butterworth order 3 filtfilt -> log of centred 1.0 s moving mean of squares (reflect edges, no zero padding) -> 1 Hz low-pass order 3 filtfilt -> decimate to 2 Hz. No outlier clamping. Feature is log power; Stan does not log it again.",
+  "window": "the fitted window is the whole provided segment; baseline = first 5 s (must be pre-ictal; choose the segment so that it starts >= 5 s before the earliest seizure activity, without looking at outcomes)"
+ },
+ "data_block": "prep_data.py build(target_hz=2.0): nn=162, nt, ns, Obs[nt x ns], SC (from the case file, used as stored, max 1), gain [ns x nn] (from the case file), dt=0.1, nsub=round(4/target_hz)=2, I1=3.1",
+ "priors": {
+  "x0": "x0_mu=-2.5, x0_sd=0.5 (x0 = x0_mu + x0_sd * N(0,1), identity instead of eig)",
+  "z_init": "z_eq(softmin(x0, x0_cap=-2.12; cap_k=20), I1) + z0_sd * N(0,1), z0_sd=0.2; x_init on the resting branch for z_init",
+  "K": "logK_mu=0, logK_sd=1",
+  "tau0": "logtau_mu=log(10), logtau_sd=0.6",
+  "amp": "logamp_mu = log(q99 over channels of (max feature - baseline median) / (2.4 * max gain)), logamp_sd=1",
+  "u": "u_mu = per-channel median of the first 5 s of the feature, u_sd=0.5",
+  "sigma": "logsig_mu = log(median over channels of SD of the first 5 s), logsig_sd=1",
+  "phi": "uniform(-1, 1); ar1=1"
+ },
+ "observation_model": "Obs[t,s] = amp * (gain (x_t - x_1))[s] + u[s] + r[t,s]; r[1,s] ~ N(0, sigma/sqrt(1-phi^2)); r[t,s] ~ N(phi r[t-1,s], sigma) for t >= 2, all channels and all time points",
+ "sampler": {
+  "multi_start": "24 L-BFGS runs (algorithm=lbfgs, iter=20000, tol_param=1e-10, Stan default random inits U(-2,2) unconstrained), seeds seed+i",
+  "nuts": "8 chains, each initialised at one of the top-8 optima by log density; iter_warmup=500, iter_sampling=500, adapt_delta=0.95, max_treedepth=10, seed=<seed>",
+  "command": "python run_fit.py fit <arm> <data.json> --nopt 24 --chains 8 --warmup 500 --samples 500 --seed <seed> --tag _v2",
+  "seeds_policy": "record one integer seed per fit (T0011 used 11011 arm A, 22022 arm B); L-BFGS run i uses seed+i; never re-run with new seeds to select a result"
+ },
+ "ranking": "EZ ranking by posterior mean x0; also report P(rank 1) per draw and P(x0 > -2.06)",
+ "diagnostics_required": "R-hat and bulk/tail ESS for every x0, divergences per chain, treedepth hits, stepsize, per-optimum EZ ranking (multimodality)",
+ "status_at_freeze": "benchmark NUTS for v2 running (arms A and B); qualification verdict pending. Variants tried on synthetic data only: v1 (free z_init N(3.6,0.4), 4 Hz) -> EZ rank 2 at best L-BFGS mode, NUTS aborted (cost); v2 (this file) -> EZ rank 1 at all top-8 optima in arm A."
+}

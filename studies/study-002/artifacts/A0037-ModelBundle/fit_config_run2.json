@@ -1,0 +1,14 @@
+{
+ "name": "v2-run2",
+ "decided_by": "LEAD message to R3 (T0011) ~14:30 UTC 2026-11-01, after the frozen-settings NUTS (500+500, treedepth 10) had not reached warmup iteration 50 in ~20 min",
+ "model": "unchanged: vep_ar1.stan sha256 f15d0a54bea8b75d433386fd6c45af341003e0e23796cbb91e9c84c4b2b90efb, priors and features as fit_config.json",
+ "changes_vs_fit_config.json": {
+  "chains": "16 (was 8)",
+  "inits": "each chain at one of the top DISTINCT L-BFGS optima (log density differing by > 0.5), best first, cycling if fewer distinct optima than chains, plus N(0, 0.05) jitter on every unconstrained parameter (phi_raw clipped to +-0.99); rng = numpy default_rng(seed)",
+  "iter_warmup": "200 (was 500)", "iter_sampling": "200 (was 500)",
+  "max_treedepth": "8 (was 10)", "adapt_delta": "0.9 (was 0.95)"
+ },
+ "unchanged": "24 L-BFGS runs (lbfgs, iter 20000, tol_param 1e-10, seeds seed+i); seeds policy; pass criterion (planted EZ rank 1 by posterior mean x0, all x0 R-hat < 1.05, no unexplained divergences)",
+ "runner": "run_fit_run2.py fit <arm> <data.json> --nopt 24 --chains 16 --warmup 200 --samples 200 --max_depth 8 --adapt_delta 0.9 --seed <seed> --tag _run2",
+ "resources": "<= 16 VM cores for T0011 (arm A first, 16 chains); hard stop 15:40 UTC"
+}

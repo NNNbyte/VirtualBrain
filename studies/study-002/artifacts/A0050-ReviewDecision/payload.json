@@ -1,0 +1,13 @@
+{
+ "reviewer_role": "clinical+engineering",
+ "decision": "revision_requested",
+ "intended_use": "Research report on one virtual patient (Wang et al. 2025 P2): EZ-recovery and virtual-intervention ranking with an unqualified, exploratory model. Not a clinical recommendation.",
+ "affected_artifact_ids": ["A0048-DecisionBundle", "A0049-Report"],
+ "reason": "Re-review of revision 1 against A0047. Met and verified against sources: A0037 arm A max x0 R-hat 4.73 with EZ rank 2, arm B 4.91 with rank 6 (A0037 convergence_checks). The reproducibility claim is now scoped to A0041 (1 sample x 6 arms bit-exact), and 'every simulation was reproducible' is removed. The full window is labeled sensitivity (12 of 24 optima), and the post window is labeled uninformative with no baseline seizures, in both the report and the bundle (A0038 headline). R5 gate verdicts match the ledger: A0014, A0018, A0019, A0037, A0039 and A0040 failed; A0017 and A0038 indeterminate; A0034 and A0035 passed (seq 218-227). The failed baseline check (0/10 top-channel overlap) appears in the report and the bundle limitations. Full-window non-finite counts match A0038 (STIM-PT amp2 2/12, amp4 9/12; chronic amp2 10/12, amp4 12/12). '~4 s' is now cited to A0009 (seizure-like activity 3540-7400 ms). The manifest adds A0014, A0017, A0018, A0019, A0037, A0038, A0039 and A0040, and every hash matches the controller's envelope manifest_hash. The optional H1 propagation-candidate note is added. The other numbers are unchanged. The lessons change from 'more parameters' to 'fewer parameters' is a correct fix (A0040: 68 vs ~520 parameters). The exploratory, virtual-patient and not-a-clinical-recommendation wording is kept. No new error was found. Two items remain open: (a) A0047 check 2 was not addressed. The report still gives A0040 'P(EZ rank 1) 0.012' without saying it is Pathfinder arm A, and it omits arm B (P2 SC: EZ rank 28 by mean, P(rank 1) 0.205; A0040). (b) Post-window non-finite counts are not stated: STIM-PT amp4 24/24 and STIM-PT-chronic amp4 23/24 (A0038 results.post.numerically_failed_arms). A0047 item 6 listed them. The bundle's numerical-failure limitation covers only the full window and should be labeled 'full window'.",
+ "repair_stage": "reporting",
+ "acceptance_checks": [
+  "Report states A0040 P(EZ rank 1) 0.012 as Pathfinder arm A (P1 SC) and gives arm B (P2 SC): EZ rank 28 by mean, P(rank 1) 0.205",
+  "Report and bundle state the post-window non-finite counts (STIM-PT amp4 24/24, STIM-PT-chronic amp4 23/24) or cite A0038 results.post.numerically_failed_arms; bundle limitation labels the existing counts as full window",
+  "Revised A0048/A0049 committed with --supersedes; all other text and numbers unchanged"
+ ]
+}

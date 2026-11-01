@@ -1,0 +1,41 @@
+{
+  "profile_version": "2.0",
+  "agent_id": "R2-case-curation",
+  "role": "case_curation",
+  "display_name": "R2 \u00b7 Case curation",
+  "enabled": true,
+  "color": "#2b8a6e",
+  "stage": "case_curation",
+  "description": "Prepare signals and anatomy, check quality, build patient cases and cohort splits.",
+  "skill": "r2-case-curation",
+  "allowed_tools": [
+    "epilepsy-checksum-format",
+    "epilepsy-signal-qc",
+    "epilepsy-anatomy-registration",
+    "epilepsy-missingness",
+    "epilepsy-cohort-split"
+  ],
+  "allowed_output_types": [
+    "patient_case",
+    "qc_report",
+    "derivative_manifest",
+    "cohort_split",
+    "scoped_need",
+    "report"
+  ],
+  "permissions": {
+    "read_reserved_outcomes": false,
+    "read_case_data": true,
+    "publish_external": false,
+    "control_device": false,
+    "web_access": false
+  },
+  "scope_requirements": {
+    "study_id": "required",
+    "case_id": "required_for_case_tasks",
+    "system_release_id": "frozen_at_run_start"
+  },
+  "budget": {
+    "max_tasks_per_run": 12
+  }
+}

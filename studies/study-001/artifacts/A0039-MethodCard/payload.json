@@ -1,0 +1,72 @@
+{
+  "method_name": "TVB Epileptor network baseline (The Virtual Brain, tvb-library)",
+  "primary_source": {
+    "software_paper": {
+      "authors": "Sanz Leon P, Knock SA, Woodman MM, Domide L, Mersmann J, McIntosh AR, Jirsa V",
+      "title": "The Virtual Brain: a simulator of primate brain network dynamics",
+      "journal": "Frontiers in Neuroinformatics",
+      "year": 2013,
+      "doi": "10.3389/fninf.2013.00010",
+      "verified_via": "Crossref API"
+    },
+    "model_paper": {
+      "authors": "Jirsa VK, Stacey WC, Quilichini PP, Ivanov AI, Bernard C",
+      "title": "On the nature of seizure dynamics",
+      "journal": "Brain",
+      "year": 2014,
+      "doi": "10.1093/brain/awu133",
+      "verified_via": "Crossref API (metadata only)"
+    },
+    "network_application": {
+      "authors": "Jirsa VK, Proix T, Perdikis D, Woodman MM, et al.",
+      "title": "The Virtual Epileptic Patient: Individualized whole-brain models of epilepsy spread",
+      "journal": "NeuroImage",
+      "year": 2017,
+      "doi": "10.1016/j.neuroimage.2016.04.049",
+      "verified_via": "Crossref API (metadata only; full text not read)"
+    }
+  },
+  "method_summary": "Forward simulation of a connectome-coupled network of Epileptor neural masses (6D Epileptor, or the reduced Epileptor2D) with region-specific excitability x0. Seizure onset/propagation is read from simulated node activity (recruitment, onset times, duration). Virtual resection = removing nodes/edges; stimulation = external stimulus pattern applied to nodes. No inference by itself: x0 must be set by hypothesis (clinical EZ/PZ) or estimated (see BVEP/VBT).",
+  "required_inputs": [
+    "structural connectome (weights + tract lengths) in a parcellation matching the SEEG gain model; tvb-data 3.0.0 provides default connectivity for testing (~52 MB wheel)",
+    "region excitability hypothesis x0 (from clinical EZ/PZ labels, or from inference)",
+    "SEEG contact positions + gain matrix to project to sensors (optional, for comparison with recordings)",
+    "intervention description (resected/ablated regions, or stimulated contacts mapped to regions)"
+  ],
+  "implementation_versions": {
+    "repository": "https://github.com/the-virtual-brain/tvb-root (monorepo; library under tvb_library/)",
+    "default_branch_head": {
+      "commit": "928f90da249fffde2bb5bddbb851e8b812de5658",
+      "date": "2026-10-20T15:35:49Z"
+    },
+    "latest_release": "2.10.0 (GitHub release 2025-07-25; PyPI tvb-library 2.10.0 uploaded 2025-07-22)",
+    "pypi": "tvb-library 2.10.0, requires-python >=3.8, deps: autopep8, deprecated, docutils, ipywidgets, mako>=1.1.4, matplotlib, networkx, numba, numexpr, numpy, scipy, six",
+    "licence": "GPL-3.0-or-later (PyPI licence text; GitHub API reports NOASSERTION)",
+    "epileptor_classes_verified": [
+      "tvb.simulator.models.epileptor.Epileptor (line 104 at 928f90d)",
+      "tvb.simulator.models.epileptor.Epileptor2D (line 489)",
+      "tvb.simulator.models.epileptor_rs.EpileptorRestingState",
+      "epileptorcodim3.py present"
+    ],
+    "test_data": "tvb-data 3.0.0 on PyPI (source gitlab.ebrains.eu/ri/tech-hub/apps/tvb/tvb-data)"
+  },
+  "supported_outputs": [
+    "simulated regional/source time series",
+    "simulated SEEG via gain matrix",
+    "derived: recruited-node count, onset delays, seizure duration. These match the protocol's virtual_patient endpoint when paired with a no-intervention baseline."
+  ],
+  "validation_setting": "Epileptor model introduced and compared with seizure recordings across species in Jirsa et al. 2014 (not re-read here). Network VEP models were evaluated retrospectively by the INS group (see Wang 2023 Sci Transl Med EvidenceClaim). The TVB baseline itself has no outcome validation for this study.",
+  "limitations": [
+    "Forward model only; needs an x0 hypothesis or a separate inference step",
+    "Results sensitive to coupling K, x0 thresholds and noise; choices must be prespecified",
+    "Requires a patient connectome (DWI) for patient-specific use; a template connectome makes the model generic rather than personalised",
+    "GPL-3.0: redistributed derivative code must be GPL-compatible"
+  ],
+  "reproduction_status": "not_attempted",
+  "local_run_requirements": {
+    "python": "3.10 or 3.11 (pip install tvb-library==2.10.0; optional tvb-data==3.0.0 ~52 MB)",
+    "os": "pure Python + numba; expected to run natively on Windows (not tested)",
+    "installs_require_user_approval": true
+  },
+  "study_family_id": "TVB-Epileptor-software (not a patient cohort)"
+}
