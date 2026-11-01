@@ -1,20 +1,10 @@
-# VirtualBrain: a controller-governed multi-agent research system for epilepsy treatment choice
+# VirtualBrain: a decentrualized multi-agent research system for epilepsy treatment choice
 
 VirtualBrain is a collective of specialised AI agents that does research on one hard clinical question: should a patient with drug-resistant focal epilepsy get surgery or neurostimulation? The agents survey the evidence, curate patient cases, build virtual-brain models, simulate treatments and check one another's work.
 
 No agent can approve its own output. A deterministic controller admits each task against a frozen role profile, and it records every artifact, gate decision, need and repair in an append-only ledger. Outcome labels stay sealed in a vault until predictions are frozen. The design follows the ScienceClaw framework in `framework/`.
 
 > Research evidence on literature and virtual patients only. Nothing in this repository is a clinical recommendation.
-
-## At a glance
-
-| Judging criterion | Evidence in this repository |
-|---|---|
-| **Problem significance and complexity** | Treatment choice in drug-resistant epilepsy depends on locating the seizure-onset zone, which is uncertain, multimodal and high-stakes. [More](#1-the-problem) |
-| **Scientific and technical impact** | Two complete studies (one on real patients, one blinded on a virtual patient). The collective found four known defects in the public pipeline code, rejected its own unqualified models, and checked its frozen predictions against sealed ground truth. [More](#2-what-was-achieved) |
-| **Decentralized agency** | 7 roles with different data access, tools, permissions and output types. Coordination runs through gates, needs and repairs posted to a shared ledger, not through a script. [More](#3-decentralized-agency) |
-| **Collective capability** | A matched single-agent baseline on the same virtual patient scored **6/21**; the multi-agent collective scored **18/21**. The collective caught **4 of 4** known defects, the single agent **0 of 4**. Of 134 independent gate decisions, 27 did not pass. [More](#4-collective-capability-multi-agent-vs-single-agent) |
-| **Execution and validation** | A working system with a CLI controller, 12 passing invariant tests, a live dashboard, ledgers of 844 events, synthetic-truth benchmarks, a blinded vault and a bit-exact rerun. [More](#5-execution-and-validation) |
 
 ## 1. The problem
 
@@ -62,28 +52,7 @@ Each role has its own information, tools and permissions, set in `system/profile
 
 **Honest limit.** A lead role (`run-study`) proposes tasks and dispatches agents. It cannot read case data or the vault, and it does not admit tasks: the controller admits or refuses each one against the role profiles. The collective is governed, not leaderless.
 
-## 4. Collective capability: multi-agent vs single-agent
-
-We ran a matched comparison on study-002's virtual patient. A single general-purpose agent got the same local inputs, no roles, no controller and no checker. The scoring criteria (`comparison/criteria.md`) were fixed and hashed before the run, and the baseline's answer was hashed before the truth was read.
-
-| Criterion (0–3 each) | Single agent | Multi-agent |
-|---|---|---|
-| Onset-zone recovery | **1** (true region ranked 4th) | 0 (true region ranked 46th–159th) |
-| Calibration and honesty | 2 | **3** |
-| Error detection (4 known defects) | 0 (0 of 4) | **3** (4 of 4) |
-| Validation on known-truth synthetic data | 0 | **3** |
-| Blinding and leakage control | 1 | **3** |
-| Traceability and reproducibility | 1 | **3** |
-| Treatment recommendation | 1 (circular simulation, targets miss the true region) | **3** (declared not determinable) |
-| **Total (max 21)** | **6** | **18** |
-| Wall clock | **2 min 11 s** | about 4 h 11 min |
-
-- **What the collective adds.** It knows when its answer cannot be trusted, and it leaves an auditable record of why. The single agent recommended stimulating three regions that do not include the true one, and nothing in its own output warned the reader.
-- **Where the single agent did better.** Localisation on this one patient, and speed. A cheap source-imaging heuristic should be added to the pipeline as a benchmarked comparator.
-- **Collaborative vs isolated.** Of 134 gate decisions, 27 did not pass an independent role's check (20 failed, 7 indeterminate). Without gates, those artifacts would have been accepted on the producer's word.
-- **Caveats.** One patient, one baseline run, and the baseline had no web access. Full evidence is in `comparison/comparison.md` and `comparison/comparison.html`.
-
-## 5. Execution and validation
+## 4. Execution and validation
 
 - **A functioning system.** The controller is a working CLI. The dashboard shows agents, timeline, needs, gates and artifacts live. Both studies ran end to end: study-001 in 6 h (33 tasks, 104 artifacts, 538 ledger events) and study-002 in about 4 h 20 min (23 tasks, 53 artifacts, 306 ledger events).
 - **Invariant tests.** 12 controller tests (`python -m unittest discover -s system/tests -v`), all passing. They cover role permissions and scope, no self-gating, unreviewed or stale inputs, repairs, needs, vault access only for R5 after the freeze, budgets and frozen releases.
