@@ -12,7 +12,75 @@ No agent can approve its own output. A deterministic controller admits each task
 - **Open-ended and hard.** The onset zone is not directly observable. It has to be inferred from intracranial EEG, MRI and connectivity through nonlinear brain models whose inversion is often ill-posed. The clinical literature compares treatments across different cohorts, endpoints and follow-up times.
 - **Scientifically meaningful.** Virtual brain twins (Wang et al. 2025, *Nat. Comput. Sci.*) propose to simulate each treatment on a personalised model before acting. Whether such models can be fitted and trusted on a given patient is an open question. Answering it needs exactly the discipline this system enforces: benchmarks on known truth, blinding, independent checking and an audit trail.
 
-## 2. What was achieved
+## 2. Technical pathway: from virtual brain to treatment comparison
+
+Study-002 follows the full pathway on Patient 2 of Wang et al. 2025. Each step is a separate task by a separate role. It ends in a committed artifact (`A00xx`) that another role must pass before the next step may use it.
+
+```mermaid
+flowchart LR
+    D["Data and QC<br/>R2"] --> H["Onset-zone hypotheses<br/>R3"]
+    H --> M["Bayesian model inversion<br/>R3 (Stan)"]
+    M --> Q{"Qualification on<br/>synthetic truth<br/>R5"}
+    Q --> I["Intervention design<br/>R4"]
+    I --> S["Paired treatment simulations<br/>R4 (TVB)"]
+    S --> C["Comparison and rerun<br/>R5"]
+    C --> F["Freeze predictions"]
+    F --> V["Blinded outcome analysis<br/>R5 opens vault"]
+    V --> R["Dossier and review<br/>LEAD, RV"]
+```
+
+### 2.1 Data and case curation (R2: `A0007`–`A0011`)
+- **Inputs.** Each virtual patient has simulated bipolar SEEG, a structural connectome over the 162-region VEP atlas and an SEEG gain matrix. Patient 2 has 191 channels sampled at 125 Hz.
+- **Checks.** R2 re-hashed every file against the retrieval manifest. It also checked montage, units and sampling rate.
+- **Split.** Patient 1 is the development case and the source of the synthetic benchmarks. Patient 2 is the blinded test case, and its ground truth went into the vault.
+
+### 2.2 Virtual brain model and inversion (R3: `A0017`–`A0019`, `A0036`, `A0037`, `A0040`)
+- **Network model.** A 2D Epileptor sits at each atlas region, and the regions are coupled diffusively through the connectome. The key unknown is each region's excitability `x0`. A region counts as epileptogenic when `x0 > -2.06`, the bifurcation point of an isolated node.
+- **Observation model.** SEEG features are high-passed at 10 Hz, log-power is taken over 1 s, and the result is downsampled to about 2 Hz. The model maps them to the network state through the gain matrix, with channel offsets and AR(1) residuals.
+- **Hypotheses.** R3 stated four competing onset-zone hypotheses before fitting: left dorsolateral prefrontal, orbito/mesial prefrontal, left amygdala, or no supra-threshold region. It also prespecified two analysis windows: post-stimulation (primary) and full (sensitivity).
+- **Inversion.** Bayesian inversion ran in Stan (CmdStan 2.40). It used a 24-start L-BFGS MAP ensemble and NUTS with 16 chains on a cloud VM. The log density was verified against an independent NumPy implementation.
+- **Model versions.**
+  - **v2** patches the package's `vep_mcmc.stan`. It fixes the channel-skipping likelihood loop and the double log, and adds AR(1) residuals.
+  - **v3** cuts the model from about 520 to 68 parameters (40 free `x0`) with a principal-component likelihood.
+
+### 2.3 Qualification on known truth (R5: `A0042`)
+- **Benchmark.** Before its use on Patient 2 counts, each model version must recover a planted onset zone from synthetic SEEG built on Patient 1's connectome.
+- **Pass rule.** The planted region must rank first, every `x0` R-hat must be below 1.05, and there must be no unexplained divergences.
+- **Result.**
+  - **v2** ranked the planted region 2nd, with R-hat up to 4.7.
+  - **v3** never finished NUTS warm-up.
+  - R5 recomputed R-hat from the stored draws and ruled every model bundle NOT QUALIFIED. The Patient 2 fits therefore continue only as labelled exploratory predictions.
+
+### 2.4 Intervention design (R4: `A0020`–`A0035`)
+R4 turned the onset-zone estimate into 18 candidate treatments, each with an explicit region or contact rule:
+- **Virtual resection or ablation** of the top-1 region, the estimated onset zone, or the onset zone plus propagation zone. Each one is modelled either as ablation (`x0` set to the healthy value −3.0) or as disconnection (its connectome rows and columns set to 0).
+- **SEEG stimulation** at the contact with the largest gain to the estimated onset zone. The options are a biphasic 50 Hz pulse train (acute or chronic, 4 amplitudes) and sustained current at one or two sites.
+- **Excluded.** Temporal-interference stimulation was planned but excluded as infeasible: there was no mapping from the field maps to the atlas regions.
+
+### 2.5 Treatment simulation (R4: `A0038`)
+- **Forward model.** The paper's 6D Epileptor with a stimulation term (`SpatEpiStim`) in The Virtual Brain (TVB). It used a Heun integrator with dt = 0.05 ms, over horizons of 7.8 s (post window) and 14.4 s (full window).
+- **Paired design.** Every candidate run has a no-treatment baseline that shares its `x0`, coupling, initial state and noise seed (`1000 + i`). This covers 648 candidate runs over 24 + 12 MAP optima, with no pairing mismatches.
+- **Outcome definitions.** A region is *seizing* when its fast variable keeps crossing −1 (gaps under 250 ms) for at least 1 s. The SEEG metric counts channels whose log-power exceeds the paired baseline by 3 SD for at least 1 s.
+
+### 2.6 Comparison (R4 and R5: `A0038`, `A0041`)
+- **Effects.** Each effect is the candidate minus its paired baseline for the same optimum, reported as the median with a 5–95% range across optima.
+- **Ranking.** Candidates are ranked by the median reduction in seizing regions, with ties broken by total seizure duration.
+- **Exploratory result.**
+  - **Full window.** Ablating the onset plus propagation zone did best: −3.0 seizing regions (median, 5–95%: −4.9 to −1.6), abolishing all seizures in 42% of optima. Pulse-train stimulation gave no reduction.
+  - **Primary window.** No optimum seized at baseline, so the ranking there was uninformative.
+- **Independent rerun.** R5 reran six arms and got bit-identical results. It also recomputed every effect from the stored runs.
+
+### 2.7 Blinded outcome analysis (R5: `A0043`)
+- **Order of access.** The predictions were frozen and hashed first (ledger seq 205). Only then did R5 alone get vault access (seq 214).
+- **Onset-zone recovery.** R5 scored precision, recall and the true region's rank for every frozen estimate, with 2000-resample bootstrap intervals.
+- **Treatment check.** R5 re-simulated R4's 18 frozen candidates on the true Patient 2 configuration, plus an oracle ablation of the true onset zone.
+- **Result.** Recall was 0 in every window, with the true region ranked 46th–159th of 162. The true model has no spontaneous seizure, so a treatment ranking cannot be checked. The dossier reports both points.
+
+### 2.8 Reports and visualisation
+- **`reports/study-002-summary.html`.** An interactive 3D view of the Patient 2 cortex with 205 SEEG contacts and simulated region activity before and after treatment, plus the truth check.
+- **`reports/study-002-R4-simulations.html`.** Per-region seizure heatmaps and effect distributions for every candidate. Its generator re-derives each effect and re-hashes the batch files.
+
+## 3. What was achieved
 
 ### Study-001: real patients, literature and public data
 - **Literature dossier.** R1 committed 32 evidence claims comparing resection, laser ablation (LITT) and neurostimulation (RNS, ANT-DBS, VNS). R5 checked each claim against its source text, and grouped papers on the same patients into one study family.
@@ -29,7 +97,7 @@ No agent can approve its own output. A deterministic controller admits each task
 
 **Why this matters.** Both studies end in negative results, and the system reached them on its own before any claim was made. Catching a broken pipeline and an unsupported treatment ranking is the outcome a trustworthy research collective should produce when the evidence is not there. The novel part is the method: preregistration-style blinding, frozen releases and independent gates, enforced in code for a team of AI agents.
 
-## 3. Decentralized agency
+## 4. Decentralized agency
 
 Each role has its own information, tools and permissions, set in `system/profiles/*.json` and enforced by the controller when a task is admitted.
 
@@ -52,7 +120,7 @@ Each role has its own information, tools and permissions, set in `system/profile
 
 **Honest limit.** A lead role (`run-study`) proposes tasks and dispatches agents. It cannot read case data or the vault, and it does not admit tasks: the controller admits or refuses each one against the role profiles. The collective is governed, not leaderless.
 
-## 4. Execution and validation
+## 5. Execution and validation
 
 - **A functioning system.** The controller is a working CLI. The dashboard shows agents, timeline, needs, gates and artifacts live. Both studies ran end to end: study-001 in 6 h (33 tasks, 104 artifacts, 538 ledger events) and study-002 in about 4 h 20 min (23 tasks, 53 artifacts, 306 ledger events).
 - **Invariant tests.** 12 controller tests (`python -m unittest discover -s system/tests -v`), all passing. They cover role permissions and scope, no self-gating, unreviewed or stale inputs, repairs, needs, vault access only for R5 after the freeze, budgets and frozen releases.
